@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Calive Pixel";
+  src: url("/CalivepixelRegularDemo-OG8p8.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-mono: "Inter Variable", "JetBrains Mono", "Fira Code", sans-serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Calive Pixel", "Inter Variable", sans-serif;
+  --font-secondary: "Inter Variable", sans-serif;
+  --font-retro: "Special Elite", "Courier New", monospace;
+  --font-playful: "Swanky and Moo Moo", cursive;
+  
+  --color-offwhite: #f0ede8;
+  --color-offwhite-warm: #e8e4de;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-600: #52525b;
+  --color-zinc-500: #71717a;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-50: #fafafa;
+  
+  --color-blue-600: #2563eb;
+  --color-blue-500: #3b82f6;
+  --color-blue-400: #60a5fa;
+  --color-orange-600: #ea580c;
+  --color-orange-500: #f97316;
+  --color-orange-400: #fb923c;
+  --color-green-500: #22c55e;
+  --color-red-500: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+/* Calive Pixel font letter spacing */
+.font-display, [class*="font-display"] {
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background: var(--color-blue-500);
+  color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+
+/* Fade-in for scrollytelling transitions */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+.animate-delay-400 { animation-delay: 0.4s; }
+.animate-delay-500 { animation-delay: 0.5s; }
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: "█";
+  animation: blink 1s step-end infinite;
+  color: var(--color-blue-500);
+}
+
+/* Caret blink for terminal animation */
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@utility animate-caret-blink {
+  animation: caret-blink 1s step-end infinite;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: var(--color-zinc-200);
+}
+
+.dark .section-divider {
+  background: var(--color-zinc-800);
+}
+
+/* Light mode = rounded corners, Dark mode = sharp corners
+   Targeted selectors — never use `.light *` as it overrides nav pill inline styles */
+.light button,
+.light a[class*="bg-"],
+.light [class*="border-zinc"][class*="bg-"],
+.light [class*="bg-white"],
+.light [class*="bg-zinc-50"],
+.light footer,
+.light footer *,
+.light input,
+.light textarea,
+.light select,
+.light [role="button"] {
+  border-radius: 8px !important;
+}
+
+/* Header shapes — light mode rounded, dark mode sharp */
+.light .nav-pill {
+  border-radius: 8px !important;
+}
+
+.dark .nav-pill {
+  border-radius: 0 !important;
+}
+
+/* Theme toggle — rounded in light mode, sharp in dark */
+.light label:has(input[type="checkbox"]),
+.light label:has(input[type="checkbox"]) > span,
+.light label:has(input[type="checkbox"]) > img {
+  border-radius: 9999px !important;
+}
+
+.light .rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}

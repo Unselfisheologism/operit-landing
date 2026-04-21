@@ -1,0 +1,93 @@
+# Twent Documentation
+# https://twent.xyz/docs
+
+## Documentation Structure
+
+### Getting Started
+- [Installation](https://twent.xyz/docs#installation) - How to install Twent on Android
+- [First Setup](https://twent.xyz/docs#first-setup) - Configuring your first AI model
+- [Your First Chat](https://twent.xyz/docs#first-chat) - Starting your first conversation
+- [Permissions](https://twent.xyz/docs#permissions) - Required and optional permissions
+
+### Chat Features
+- [Chat Overview](https://twent.xyz/docs#chat-overview) - Main chat features and capabilities
+- [Chat Styles](https://twent.xyz/docs#chat-styles) - Cursor and bubble display modes
+- [Floating Chat](https://twent.xyz/docs#floating-chat) - Using Twent in overlay mode
+
+### Tools (40+ Built-in Tools)
+- [Tools Overview](https://twent.xyz/docs#tools-overview) - All available tools
+- [File System](https://twent.xyz/docs#file-system) - Read, write, search files
+- [Shell & Terminal](https://twent.xyz/docs#shell) - Ubuntu terminal and commands
+- [Web Tools](https://twent.xyz/docs#web) - Fetch pages, search, download
+- [Media Tools](https://twent.xyz/docs#media) - FFmpeg, camera, OCR, TTS/STT
+- [UI Automation](https://twent.xyz/docs#ui-automation) - Tap, swipe, type, screenshot
+- [JavaScript](https://twent.xyz/docs#javascript) - Run JS/TS with Node.js
+- [MCP Tools](https://twent.xyz/docs#mcp) - Model Context Protocol servers
+
+### Automation
+- [Automation Overview](https://twent.xyz/docs#automation-overview) - UI automation, workflows, triggers
+- [Tasker Integration](https://twent.xyz/docs#tasker) - Connect with Tasker app
+
+### Packages & Marketplace
+- [Packages Overview](https://twent.xyz/docs#packages-overview) - Extension system
+- [Skills](https://twent.xyz/docs#skills) - AI behavior bundles
+- [Marketplace](https://twent.xyz/docs#marketplace) - Browse and install community packages
+
+### Workflows
+- [Workflows Overview](https://twent.xyz/docs#workflows-overview) - Multi-step automations
+- [Workflow Examples](https://twent.xyz/docs#workflow-examples) - Real-world examples
+
+### More Features
+- [Memory](https://twent.xyz/docs#memory) - Persistent knowledge storage
+- [Voice](https://twent.xyz/docs#voice) - TTS, STT, wake word detection
+- [Settings](https://twent.xyz/docs#settings) - Deep customization options
+- [Toolbox](https://twent.xyz/docs#toolbox) - Built-in utility screens
+- [Tool Reference](https://twent.xyz/docs#tool-reference) - Complete parameter reference
+
+## Key Concepts
+
+### Tools
+Twent has 40+ built-in tools that give AI real capabilities on your device:
+- File system operations
+- Shell command execution
+- Web browsing and search
+- Media processing
+- UI automation
+- JavaScript execution
+- MCP server integration
+
+### Automation
+Twent automates anything on Android:
+- UI automation (tap, swipe, type)
+- Shell commands and scripts
+- Android intents
+- Workflow triggers and conditions
+- Tasker integration
+
+### Packages
+Extension system for Twent:
+- Skills: AI behavior bundles
+- MCP Servers: External tool providers
+- Plugins: JS/TS tool bundles
+- Workflows: Pre-built automations
+
+### Privacy
+Twent is privacy-first:
+- BYOK (Bring Your Own Key)
+- Local AI models
+- No telemetry
+- Encrypted storage
+- Full data ownership
+
+## Technical Details
+- Android 8.0+ (API 26)
+- arm64-v8a architecture
+- 3GB RAM recommended
+- 500MB+ storage
+- No root required
+
+## Links
+- Main Website: https://twent.xyz
+- Documentation: https://twent.xyz/docs
+- GitHub: https://github.com/user/operit
+- Download: https://twent.xyz (or GitHub releases)

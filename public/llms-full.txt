@@ -1,0 +1,301 @@
+# Twent - Personal Agentic OS for Android
+# https://twent.xyz
+# Last Updated: April 19, 2026
+
+## Overview
+Twent is a personal agentic operating system for Android that combines AI assistance, automation, terminal access, and privacy-first architecture. It's designed for developers, power users, creators, and enterprises who want a powerful, private, and extensible AI assistant on their Android devices.
+
+## Site Structure
+
+### Main Pages
+
+#### Home Page (https://twent.xyz/)
+The main landing page showcases Twent's core features:
+- Hero section with "Your Personal Agentic OS" headline
+- Feature sections for developers, automation, privacy, and marketplace
+- Testimonials from users
+- Pricing overview
+- Download links
+
+#### Pricing (https://twent.xyz/pricing)
+Pricing plans and feature comparison:
+- Free tier with core features
+- Pro plan ($20 once) with additional benefits
+- Enterprise pricing for teams
+
+#### Documentation (https://twent.xyz/docs)
+Complete documentation including:
+- Installation guide
+- First setup and configuration
+- Chat features and customization
+- Tools reference (40+ tools)
+- Automation and workflows
+- Packages and marketplace
+- Memory and voice features
+- Settings and toolbox
+
+### Blog
+
+#### Blog (https://twent.xyz/blog)
+Articles and updates about Twent:
+- Product announcements
+- Feature deep dives
+- Tutorials and guides
+
+#### Marketplace Blog Post (https://twent.xyz/blog/marketplace)
+Detailed explanation of the marketplace feature:
+- What the marketplace is
+- What you can sell (skills, workflows, mini apps, etc.)
+- Pricing structure (pre-revenue vs post-revenue)
+- Creator benefits
+- Future roadmap
+
+### Use-Case Landing Pages
+
+#### AI Agent for Developers (https://twent.xyz/ai-agent-for-developers)
+Target audience: Software developers
+Key features:
+- Claude Code and OpenAI Codex integration
+- Full Ubuntu terminal with apt, Python, Node.js
+- Git and GitHub CLI
+- SSH client and server
+- Multi-model AI support
+Comparison with: ChatGPT Mobile, Termux, Cursor/Windsurf Mobile
+
+#### Android Automation Power User (https://twent.xyz/android-automation-power-user)
+Target audience: Power users and automators
+Key features:
+- UI automation (tap, swipe, scroll, type, screenshot)
+- Visual workflow builder
+- Full Ubuntu terminal
+- 1000+ app integrations
+- Tasker integration
+- Floating chat overlay
+Comparison with: Tasker, MacroDroid, Termux
+
+#### Privacy-First AI for Android (https://twent.xyz/privacy-first-ai-android)
+Target audience: Privacy-conscious users
+Key features:
+- BYOK (Bring Your Own Key)
+- Local AI models (MNN)
+- Zero telemetry
+- Encrypted local storage
+- Full data ownership
+- No account required
+Comparison with: ChatGPT, Claude, Gemini
+
+#### Terminal on Android (https://twent.xyz/terminal-on-android)
+Target audience: Developers and system administrators
+Key features:
+- Full Ubuntu 24.04 environment
+- apt package manager
+- Python, Node.js, Go, Rust support
+- Git and GitHub CLI
+- SSH client and server
+- No root required
+Comparison with: Termux, Android Terminal, other terminal apps
+
+#### AI Marketplace for Creators (https://twent.xyz/ai-marketplace-creators)
+Target audience: Content creators and developers
+What you can sell:
+- AI skills and behavior bundles
+- Workflow automation templates
+- Mini apps (HTML/CSS/JS)
+- Prompt templates
+- Custom skins and themes
+- MCP server configurations
+Comparison with: Gumroad, Notion Templates, GitHub Sponsors
+
+#### Enterprise AI Agent (https://twent.xyz/enterprise-ai-agent)
+Target audience: Teams and businesses
+Key features:
+- Team management and collaboration
+- Centralized admin dashboard
+- Compliance and audit controls
+- SSO and identity management
+- Custom workflow deployment
+- On-premise deployment options
+- 24/7 dedicated support
+Comparison with: ChatGPT Enterprise, Copilot for M365, custom solutions
+
+## Technical Details
+
+### System Requirements
+- Android 8.0+ (API 26)
+- arm64-v8a architecture
+- 3GB RAM recommended
+- 500MB+ free storage
+- No root required
+
+### Key Technologies
+- Ubuntu 24.04 chroot environment
+- MNN for local AI models
+- Composio for 1000+ app integrations
+- Accessibility Service for UI automation
+- AIDL for inter-process communication
+
+### Privacy Architecture
+- All data stored locally on device
+- API keys encrypted with Android KeyStore
+- No telemetry or analytics
+- No data collection
+- Open source and auditable
+
+### Marketplace Architecture
+- Skills: Reusable AI behavior bundles
+- Workflows: Multi-step automation templates
+- Mini Apps: Interactive HTML/CSS/JS applications
+- Prompt Templates: Battle-tested prompts
+- Custom Skins: Themes and cosmetic badges
+- MCP Servers: External tool integrations
+
+## Use Cases
+
+### For Developers
+- Code review on commute
+- Quick bug fixes from anywhere
+- AI pair programming in bed
+- Git operations on the go
+- Terminal access everywhere
+
+### For Power Users
+- Morning routine automation
+- Social media management
+- File organization
+- App testing automation
+- Data entry automation
+
+### For Privacy-Conscious Users
+- Local AI processing
+- BYOK for API access
+- No cloud dependency
+- Encrypted storage
+- Full data ownership
+
+### For Creators
+- Sell AI skills
+- Sell workflow templates
+- Sell mini apps
+- Sell prompt templates
+- Monetize expertise
+
+### For Enterprises
+- Customer support automation
+- Sales enablement
+- Development productivity
+- HR and recruiting
+- Legal and compliance
+
+## Comparison Tables
+
+### AI Agent for Developers
+| Feature | Twent | ChatGPT Mobile | Termux | Cursor/Windsurf Mobile |
+|---------|-------|----------------|--------|------------------------|
+| Claude Code & Codex | ✓ | ✗ | ✗ | Limited |
+| Full Ubuntu Terminal | ✓ | ✗ | ✓ | ✗ |
+| Git Integration | ✓ | ✗ | ✓ | ✓ |
+| 1000+ App Automations | ✓ | ✗ | ✗ | ✗ |
+| Multi-Model Support | ✓ | GPT Only | ✗ | Claude Only |
+| Privacy (BYOK) | ✓ | ✗ | ✓ | ✗ |
+| Free Tier | ✓ | Limited | ✓ | Paid Only |
+| Offline Mode | ✓ | ✗ | ✓ | ✗ |
+
+### Android Automation Power User
+| Feature | Twent | Tasker | MacroDroid | Termux |
+|---------|-------|--------|------------|--------|
+| UI Automation | ✓ | Limited | ✓ | ✗ |
+| Visual Workflow Builder | ✓ | ✗ | ✓ | ✗ |
+| Full Ubuntu Terminal | ✓ | ✗ | ✗ | ✓ |
+| 1000+ App Integrations | ✓ | ✗ | ✗ | ✗ |
+| AI-Powered Decisions | ✓ | ✗ | ✗ | ✗ |
+| Floating Chat Control | ✓ | ✗ | ✗ | ✗ |
+| Tasker Integration | ✓ | N/A | ✗ | ✗ |
+| Free Tier | ✓ | Paid | Freemium | ✓ |
+| Memory & Context | ✓ | ✗ | ✗ | ✗ |
+
+### Privacy-First AI for Android
+| Feature | Twent | ChatGPT | Claude | Gemini |
+|---------|-------|---------|--------|--------|
+| BYOK (Your API Keys) | ✓ | ✗ | ✗ | ✗ |
+| Local AI Models | ✓ | ✗ | ✗ | ✗ |
+| Zero Telemetry | ✓ | ✗ | ✗ | ✗ |
+| No Account Required | ✓ | ✗ | ✗ | ✗ |
+| Encrypted Local Storage | ✓ | N/A | N/A | N/A |
+| Data Export/Import | ✓ | Limited | Limited | Limited |
+| Offline Mode | ✓ | ✗ | ✗ | ✗ |
+| Open Source | ✓ | ✗ | ✗ | ✗ |
+| GDPR Compliant by Design | ✓ | ✓ | ✓ | ✓ |
+
+### Terminal on Android
+| Feature | Twent | Termux | Android Terminal | Other Terminals |
+|---------|-------|--------|------------------|-----------------|
+| Full Ubuntu Environment | ✓ | ✓ | ✗ | ✗ |
+| apt Package Manager | ✓ | ✓ | ✗ | ✗ |
+| Python/Node.js/Go/Rust | ✓ | Partial | ✗ | ✗ |
+| Git & GitHub CLI | ✓ | ✓ | ✗ | Limited |
+| SSH Client & Server | ✓ | ✓ | ✗ | Limited |
+| No Root Required | ✓ | ✓ | ✓ | ✓ |
+| Multiple Sessions | ✓ | ✓ | Limited | Limited |
+| Nerd Font Support | ✓ | ✓ | ✗ | ✗ |
+| Background Processes | ✓ | ✓ | Limited | Limited |
+
+### AI Marketplace for Creators
+| Feature | Twent | Gumroad | Notion Templates | GitHub Sponsors |
+|---------|-------|---------|------------------|-----------------|
+| AI Skills Marketplace | ✓ | ✗ | ✗ | ✗ |
+| Workflow Templates | ✓ | ✗ | Limited | ✗ |
+| Mini Apps | ✓ | ✗ | ✗ | ✗ |
+| Built-in Distribution | ✓ | ✓ | ✓ | Limited |
+| Automatic Updates | ✓ | ✗ | ✗ | ✗ |
+| Zero Commission (Pro) | ✓ | 10% | ✗ | ✗ |
+| AI Integration | ✓ | ✗ | ✗ | ✗ |
+| Community Ratings | ✓ | ✓ | ✓ | Limited |
+| No Platform Lock-in | ✓ | ✓ | ✓ | ✓ |
+
+### Enterprise AI Agent
+| Feature | Twent Enterprise | ChatGPT Enterprise | Copilot for M365 | Custom Solutions |
+|---------|------------------|-------------------|------------------|------------------|
+| Team Management | ✓ | ✓ | ✓ | Custom |
+| Compliance Controls | ✓ | ✓ | ✓ | Custom |
+| Custom Workflows | ✓ | Limited | Limited | ✓ |
+| On-Premise Deployment | ✓ | ✗ | ✗ | ✓ |
+| SSO Integration | ✓ | ✓ | ✓ | ✓ |
+| 24/7 Support | ✓ | ✓ | ✓ | Custom |
+| Mobile-First | ✓ | Limited | Limited | Custom |
+| Privacy-First (BYOK) | ✓ | ✗ | ✗ | Custom |
+| Automation Capabilities | ✓ | Limited | Limited | Custom |
+
+## Pricing Structure
+
+### Pre-Revenue (Current)
+- Website APK distribution
+- Everything is free
+- AI ads (using koahlabs.com)
+- No marketplace
+- No cosmetic badges
+
+### Post-Revenue (Future)
+- Play Store distribution
+- Everything still free
+- AI ads (with removal option in Pro)
+- Marketplace with commissions
+- Pro plan ($20 once) includes:
+  - Ads removal
+  - Cosmetic badges
+  - Early access to features
+  - No commissions on marketplace
+
+## Contact Information
+- Website: https://twent.xyz
+- Documentation: https://twent.xyz/docs
+- GitHub: https://github.com/user/operit
+- Email: sales@twent.xyz (for enterprise inquiries)
+
+## License
+Twent is open source. Check the GitHub repository for license details.
+
+## Version Information
+- Current Version: Check GitHub releases
+- Android Compatibility: 8.0+ (API 26)
+- Architecture: arm64-v8a
+- Last Updated: April 19, 2026

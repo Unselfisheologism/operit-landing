@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Twent</title>
+  <script>
+    // GitHub Pages SPA fallback: redirect to index.html with the real path
+    // index.html will restore the correct URL via replaceState
+    var path = encodeURIComponent(location.pathname);
+    location.replace('/?path=' + path + location.search.replace(/^\?/, '&').replace(/&$/, '') + location.hash);
+  </script>
+</head>
+<body>
+</body>
+</html>
