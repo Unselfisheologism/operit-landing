@@ -322,18 +322,6 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
   const featured = filteredPosts.find((p) => p.featured);
   const regularPosts = filteredPosts.filter((p) => !p.featured);
 
-  // Count per category
-  const _categoryCounts = categories.reduce(
-    (acc, cat) => {
-      acc[cat] =
-        cat === "All"
-          ? posts.length
-          : posts.filter((p) => p.category === cat).length;
-      return acc;
-    },
-    {} as Record<string, number>
-  );
-
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <GrainOverlay />
