@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Databuddy } from '@databuddy/sdk/react'
 
 // Font imports
 import '@fontsource-variable/inter'
@@ -12,6 +13,12 @@ import App from './App'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Databuddy
+      clientId={import.meta.env.VITE_DATABUDDY_CLIENT_ID}
+      trackWebVitals
+      trackErrors
+      trackHashChanges
+    />
     <App />
   </StrictMode>,
 )
