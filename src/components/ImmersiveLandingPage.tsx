@@ -262,7 +262,7 @@ function PinnedScrollytelling() {
 
   return (
     <div ref={containerRef} className="relative" style={{ height: `${STORIES.length * 100}vh` }}>
-      <div className="sticky top-0 h-screen flex items-center px-6 overflow-hidden">
+      <div className="sticky top-0 h-screen flex items-center px-6 pt-24 md:pt-0 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Text content */}
           <div className="relative">
@@ -363,7 +363,7 @@ export function ImmersiveLandingPage({
         {/* Hero Section */}
         <section
           ref={setHeroRef}
-          className="relative min-h-screen flex items-center justify-center px-6"
+          className="relative min-h-screen flex items-center justify-center px-6 pt-24 md:pt-6"
         >
           <div className="max-w-4xl mx-auto text-center">
             <div
