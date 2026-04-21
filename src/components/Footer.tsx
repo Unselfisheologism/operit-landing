@@ -1,26 +1,26 @@
 export function Footer() {
   const links = {
     Product: [
-      { label: "Features", href: "#features" },
-
-      { label: "Marketplace", href: "#marketplace" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "FAQ", href: "#faq" },
-      { label: "UI Automation", href: "#ui-automation" },
+      { label: "Features", href: "#features", external: false, icon: null },
+      { label: "Marketplace", href: "#marketplace", external: false, icon: null },
+      { label: "Pricing", href: "#pricing", external: false, icon: null },
+      { label: "FAQ", href: "#faq", external: false, icon: null },
+      { label: "UI Automation", href: "#ui-automation", external: false, icon: null },
     ],
     Company: [
-      { label: "About", href: "https://x.com/Jeff9James", external: true },
-      { label: "Blog", href: "/blog" },
-      { label: "Contact", href: "mailto:jeffrin@twent.xyz" },
+      { label: "About", href: "https://x.com/Jeff9James", external: true, icon: null },
+      { label: "Blog", href: "/blog", external: false, icon: null },
+      { label: "Contact", href: "mailto:jeffrin@twent.xyz", external: false, icon: null },
     ],
     Resources: [
-      { label: "Documentation", href: "/docs" },
+      { label: "Documentation", href: "/docs", external: false, icon: null },
       {
         label: "Changelog",
         href: "https://github.com/AAswordman/Operit/releases",
         external: true,
+        icon: null,
       },
-      { label: "Discord", href: "https://discord.gg/dUFrWm4w", external: true },
+      { label: "Discord", href: "https://discord.gg/dUFrWm4w", external: true, icon: null },
     ],
     Connect: [
       {

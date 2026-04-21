@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
@@ -94,7 +93,7 @@ export function AiMarketplaceCreators({
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
-  const [ctaRef, ctaInView] = useInView();
+  const [ctaRef, _ctaInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">

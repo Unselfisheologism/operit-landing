@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
@@ -58,7 +57,7 @@ function FeatureCard({
 export function SimplifiedLandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
-  const [ctaRef, ctaInView] = useInView();
+  const [ctaRef, _ctaInView] = useInView();
 
   const features = [
     {

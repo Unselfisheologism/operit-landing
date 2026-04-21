@@ -237,7 +237,6 @@ const COLOR_MAP = {
 function PinnedScrollytelling() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -248,7 +247,6 @@ function PinnedScrollytelling() {
       const totalScroll = container.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
       const pct = Math.max(0, Math.min(1, scrolled / totalScroll));
-      setProgress(pct);
       const idx = Math.min(STORIES.length - 1, Math.floor(pct * STORIES.length));
       setActive(idx);
     };
@@ -339,7 +337,7 @@ export function ImmersiveLandingPage({
   dark: boolean;
   toggle: () => void;
 }) {
-  const [heroRef, setHeroRef] = useState<HTMLDivElement | null>(null);
+  const [heroRef, setHeroRef] = useState<HTMLElement | null>(null);
   const [heroInView, setHeroInView] = useState(false);
 
   useEffect(() => {

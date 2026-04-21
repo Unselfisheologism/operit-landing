@@ -98,16 +98,6 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
     </h2>
   );
 }
-function H3({ id, children }: { id: string; children: React.ReactNode }) {
-  return (
-    <h3
-      id={id}
-      className="text-lg font-medium mt-6 mb-2 text-zinc-700 dark:text-zinc-300 scroll-mt-24"
-    >
-      {children}
-    </h3>
-  );
-}
 function P({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 mb-4 tracking-wide">

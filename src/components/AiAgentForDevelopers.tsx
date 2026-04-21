@@ -135,7 +135,7 @@ export function AiAgentForDevelopers({
   const [featuresRef, featuresInView] = useInView();
   const [useCasesRef, useCasesInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
-  const [ctaRef, ctaInView] = useInView();
+  const [ctaRef, _ctaInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">

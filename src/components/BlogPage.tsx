@@ -323,7 +323,7 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
   const regularPosts = filteredPosts.filter((p) => !p.featured);
 
   // Count per category
-  const categoryCounts = categories.reduce(
+  const _categoryCounts = categories.reduce(
     (acc, cat) => {
       acc[cat] =
         cat === "All"
