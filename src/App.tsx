@@ -91,6 +91,11 @@ function useSpaNavigation() {
           href.endsWith(".jpg") || href.endsWith(".svg")) {
         return;
       }
+
+      // Don't intercept hash links — let the browser handle them natively
+      if (href.startsWith("#")) {
+        return;
+      }
       
       // Internal link
       e.preventDefault();
