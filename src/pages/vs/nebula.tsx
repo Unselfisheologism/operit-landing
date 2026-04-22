@@ -1,0 +1,15 @@
+import React from 'react'
+import { ComparisonPage } from '../../components/ComparisonPage'
+
+export default function NebulaComparisonPage() {
+  return (
+    <ComparisonPage
+      competitorName="Nebula.gg"
+      pageTitle="Operit AI vs Nebula.gg: Full Comparison (2026)"
+      metaDescription="Compare Operit AI vs Nebula.gg Android AI assistant. Features, terminal access, local models, automation capabilities."
+      lastUpdated="April 22, 2026"
+      verdict="Nebula.gg is a great new mobile AI assistant with good UI. Operit AI provides full Ubuntu terminal, local GGUF model support, MCP plugins and root automation that Nebula does not offer. Operit is also fully open source."
+      features=[{'name': 'Native Android App', 'operit': True, 'competitor': True}, {'name': 'Built-in Ubuntu Terminal', 'operit': True, 'competitor': False}, {'name': 'Local GGUF Inference', 'operit': True, 'competitor': False}, {'name': 'MCP / Skill Plugins', 'operit': True, 'competitor': False}, {'name': 'Android UI Automation', 'operit': True, 'competitor': False}, {'name': 'Persistent Memory', 'operit': True, 'competitor': True}, {'name': 'Floating Bubble Overlay', 'operit': True, 'competitor': True}, {'name': 'Offline Operation', 'operit': True, 'competitor': False}, {'name': 'Open Source', 'operit': True, 'competitor': False}, {'name': 'ADB / Root Integration', 'operit': True, 'competitor': False}, {'name': 'Free Tier Available', 'operit': True, 'competitor': False}]
+    />
+  )
+}
