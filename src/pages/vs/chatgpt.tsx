@@ -1,4 +1,3 @@
-import React from 'react'
 import { ComparisonPage } from '../../components/ComparisonPage'
 
 export default function ChatgptComparisonPage() {
