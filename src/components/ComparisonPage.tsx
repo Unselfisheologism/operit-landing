@@ -12,16 +12,14 @@ interface ComparisonPageProps {
   competitorName: string
   competitorSlug: string
   pageTitle: string
-  metaDescription: string
-  features: Feature[]
-  verdict: string
   lastUpdated: string
+  verdict: string
+  features: Feature[]
 }
 
 export function ComparisonPage({
   competitorName,
   pageTitle,
-  metaDescription,
   features,
   verdict,
   lastUpdated
