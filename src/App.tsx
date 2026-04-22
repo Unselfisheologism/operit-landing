@@ -17,6 +17,8 @@ import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
 import { BlogPage } from "./components/BlogPage";
 import { ChangelogPage } from "./components/ChangelogPage";
+import { TermsOfService } from "./components/TermsOfService";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { MarketplaceBlogPost } from "./components/MarketplaceBlogPost";
 import { AiAgentForDevelopers } from "./components/AiAgentForDevelopers";
 import { AndroidAutomationPowerUser } from "./components/AndroidAutomationPowerUser";
@@ -198,6 +200,14 @@ export default function App() {
 
   if (path.startsWith("/changelog")) {
     return <ChangelogPage dark={dark} onToggle={toggle} />;
+  }
+
+  if (path === "/terms") {
+    return <TermsOfService dark={dark} onToggle={toggle} />;
+  }
+
+  if (path === "/privacy") {
+    return <PrivacyPolicy dark={dark} onToggle={toggle} />;
   }
 
   if (path.startsWith("/pricing")) {

@@ -71,6 +71,10 @@ export function Footer() {
         ),
       },
     ],
+    Legal: [
+      { label: "Privacy Policy", href: "/privacy", external: false, icon: null },
+      { label: "Terms of Service", href: "/terms", external: false, icon: null },
+    ],
   };
 
   return (
@@ -92,7 +96,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {Object.entries(links).map(([category, items]) => (
             <div key={category}>
               <h4 className="text-xs font-secondary text-orange-500 uppercase tracking-[0.2em] mb-4">
@@ -130,22 +134,8 @@ export function Footer() {
               className="w-8 h-8 object-contain"
             />
             <span className="text-xs text-zinc-400 dark:text-zinc-600 font-mono">
-              © 2026 Twent AI. All rights reserved.
+              &copy; 2026 Twent AI. All rights reserved.
             </span>
-          </div>
-          <div className="flex items-center gap-6 text-xs text-zinc-400 dark:text-zinc-600">
-            <a
-              href="#"
-              className="hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors tracking-wide"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="hover:text-zinc-700 dark:hover:text-zinc-400 transition-colors tracking-wide"
-            >
-              Terms of Service
-            </a>
           </div>
         </div>
       </div>

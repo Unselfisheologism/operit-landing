@@ -64,7 +64,7 @@ export function ChangelogPage({
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 py-20">
-        <h1 className="text-4xl font-bold tracking-tight mb-2">Changelog</h1>
+        <h1 className="font-display text-4xl tracking-tight mb-2">Changelog</h1>
         <p className="text-zinc-500 dark:text-zinc-400 mb-16 text-sm tracking-wide">
           What's new in Twent — weekly updates.
         </p>
@@ -74,7 +74,7 @@ export function ChangelogPage({
             <div key={entry.date}>
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-2 h-2 rounded-full bg-orange-500" />
-                <h2 className="text-sm font-secondary uppercase tracking-[0.15em] text-orange-500">
+                <h2 className="font-display text-sm uppercase tracking-[0.15em] text-orange-500">
                   {entry.date}
                 </h2>
               </div>
