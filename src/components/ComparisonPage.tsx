@@ -53,8 +53,8 @@ export function ComparisonPage({
             {features.map((feat, i) => (
               <tr key={i} className="border-b border-zinc-200 dark:border-zinc-800">
                 <td className="p-4">{feat.name}</td>
-                <td className="p-4 text-center">{feat.operit ? '✅' : '❌'}</td>
-                <td className="p-4 text-center">{feat.competitor ? '✅' : '❌'}</td>
+                <td className="p-4 text-center">{feat.operit ? '✓' : '✗'}</td>
+                <td className="p-4 text-center">{feat.competitor ? '✓' : '✗'}</td>
               </tr>
             ))}
           </tbody>
