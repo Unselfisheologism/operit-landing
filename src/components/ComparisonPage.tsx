@@ -29,11 +29,11 @@ export function ComparisonPage({
       {/* Helmet removed for build compatibility */}
 
       <header className="mb-10">
-        <h1 className="text-4xl font-bold mb-4">{pageTitle}</h1>
+        <h1 className="text-4xl font-display font-bold mb-4">{pageTitle}</h1>
         <p className="text-gray-500 text-sm">Last updated: {lastUpdated}</p>
       </header>
 
-      <div className="bg-blue-50 dark:bg-blue-950 rounded-xl p-6 mb-10">
+      <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-6 mb-10">
         <h3 className="font-semibold mb-2">Quick Verdict</h3>
         <p className="text-lg">{verdict}</p>
       </div>
@@ -43,7 +43,7 @@ export function ComparisonPage({
       <div className="overflow-x-auto mb-12">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-gray-100 dark:bg-gray-800">
+            <tr className="bg-zinc-100 dark:bg-zinc-900">
               <th className="text-left p-4 border-b">Feature</th>
               <th className="text-center p-4 border-b">Operit AI</th>
               <th className="text-center p-4 border-b">{competitorName}</th>
@@ -51,7 +51,7 @@ export function ComparisonPage({
           </thead>
           <tbody>
             {features.map((feat, i) => (
-              <tr key={i} className="border-b border-gray-200 dark:border-gray-700">
+              <tr key={i} className="border-b border-zinc-200 dark:border-zinc-800">
                 <td className="p-4">{feat.name}</td>
                 <td className="p-4 text-center">{feat.operit ? '✅' : '❌'}</td>
                 <td className="p-4 text-center">{feat.competitor ? '✅' : '❌'}</td>

@@ -2,7 +2,8 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 
 export default function ChatgptComparisonPage() {
   return (
-    <ComparisonPage
+    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <ComparisonPage
       competitorSlug="chatgpt" competitorName="ChatGPT Android App"
       pageTitle="Operit AI vs ChatGPT Android: Full Comparison (2026)"
 
@@ -25,5 +26,6 @@ export default function ChatgptComparisonPage() {
         { name: "Open source", operit: true, competitor: false }
       ]}
     />
+    </div>
   )
 }
