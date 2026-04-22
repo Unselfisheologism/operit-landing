@@ -29,6 +29,14 @@ import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
 import { SimplifiedLandingPage } from "./components/SimplifiedLandingPage";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 
+// Competitor comparison pages
+import ChatgptComparisonPage from "./pages/vs/chatgpt";
+import ClaudeComparisonPage from "./pages/vs/claude";
+import GeminiComparisonPage from "./pages/vs/gemini";
+import PerplexityComparisonPage from "./pages/vs/perplexity";
+import DevinComparisonPage from "./pages/vs/devin";
+import AlternativesPage from "./pages/alternatives";
+
 export function useTheme() {
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
@@ -213,6 +221,14 @@ export default function App() {
   if (path.startsWith("/pricing")) {
     return <PricingPage />;
   }
+
+  // Competitor comparison pages
+  if (path.startsWith("/vs/chatgpt")) return <ChatgptComparisonPage />;
+  if (path.startsWith("/vs/claude")) return <ClaudeComparisonPage />;
+  if (path.startsWith("/vs/gemini")) return <GeminiComparisonPage />;
+  if (path.startsWith("/vs/perplexity")) return <PerplexityComparisonPage />;
+  if (path.startsWith("/vs/devin")) return <DevinComparisonPage />;
+  if (path.startsWith("/alternatives")) return <AlternativesPage />;
 
   // Detailed landing page (old version with all features)
   if (path.startsWith("/details")) {
