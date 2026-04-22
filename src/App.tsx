@@ -31,16 +31,11 @@ import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 
 // Competitor comparison pages
 import ChatgptComparisonPage from "./pages/vs/chatgpt";
-import ClaudeComparisonPage from "./pages/vs/claude";
-import GeminiComparisonPage from "./pages/vs/gemini";
-import PerplexityComparisonPage from "./pages/vs/perplexity";
-import DevinComparisonPage from "./pages/vs/devin";
 import NebulaComparisonPage from "./pages/vs/nebula";
 import OpenclawComparisonPage from "./pages/vs/openclaw";
 import HermesAgentComparisonPage from "./pages/vs/hermes-agent";
 import N8nComparisonPage from "./pages/vs/n8n";
 import AnythingLlmComparisonPage from "./pages/vs/anything-llm";
-import AlternativesPage from "./pages/alternatives";
 
 export function useTheme() {
   const [dark, setDark] = useState(() => {
@@ -229,16 +224,11 @@ export default function App() {
 
   // Competitor comparison pages
   if (path.startsWith("/vs/chatgpt")) return <ChatgptComparisonPage />;
-  if (path.startsWith("/vs/claude")) return <ClaudeComparisonPage />;
-  if (path.startsWith("/vs/gemini")) return <GeminiComparisonPage />;
-  if (path.startsWith("/vs/perplexity")) return <PerplexityComparisonPage />;
-  if (path.startsWith("/vs/devin")) return <DevinComparisonPage />;
   if (path.startsWith("/vs/nebula")) return <NebulaComparisonPage />;
   if (path.startsWith("/vs/openclaw")) return <OpenclawComparisonPage />;
   if (path.startsWith("/vs/hermes-agent")) return <HermesAgentComparisonPage />;
   if (path.startsWith("/vs/n8n")) return <N8nComparisonPage />;
   if (path.startsWith("/vs/anything-llm")) return <AnythingLlmComparisonPage />;
-  if (path.startsWith("/alternatives")) return <AlternativesPage />;
 
   // Detailed landing page (old version with all features)
   if (path.startsWith("/details")) {

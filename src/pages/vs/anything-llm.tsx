@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function AnythingllmComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="Anything LLM"
+      competitorSlug="anything-llm" competitorName="Anything LLM"
       pageTitle="Operit AI vs Anything LLM: Comparison 2026"
       metaDescription="Compare Operit AI vs Anything LLM for Android. RAG, local models, privacy and AI assistant capabilities."
       lastUpdated="April 22, 2026"

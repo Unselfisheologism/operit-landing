@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function N8nComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="n8n"
+      competitorSlug="n8n" competitorName="n8n"
       pageTitle="Operit AI vs n8n: Automation Comparison 2026"
       metaDescription="Operit AI vs n8n workflow automation comparison. Compare AI agents, automation capabilities, terminal access and mobile support."
       lastUpdated="April 22, 2026"

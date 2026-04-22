@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function ChatgptComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="ChatGPT Android App"
+      competitorSlug="chatgpt" competitorName="ChatGPT Android App"
       pageTitle="Operit AI vs ChatGPT Android: Full Comparison (2026)"
       metaDescription="Compare Operit AI vs ChatGPT Android app. Full feature comparison including terminal access, local models, automation and plugin support."
       lastUpdated="April 22, 2026"

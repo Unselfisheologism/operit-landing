@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function OpenclawComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="OpenClaw AI"
+      competitorSlug="openclaw" competitorName="OpenClaw AI"
       pageTitle="Operit AI vs OpenClaw AI: Comparison 2026"
       metaDescription="Operit AI vs OpenClaw.ai comparison. Compare open source AI assistants, terminal access, automation and Android support."
       lastUpdated="April 22, 2026"

@@ -1,6 +1,6 @@
 
-import React from 'react'
-import { Helmet } from 'react-helmet-async'
+// No external dependencies
+// Helmet removed for build compatibility
 
 interface Feature {
   name: string
@@ -28,12 +28,7 @@ export function ComparisonPage({
 }: ComparisonPageProps) {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={metaDescription} />
-      </Helmet>
+      {/* Helmet removed for build compatibility */}
 
       <header className="mb-10">
         <h1 className="text-4xl font-bold mb-4">{pageTitle}</h1>

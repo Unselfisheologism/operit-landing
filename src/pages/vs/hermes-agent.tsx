@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function HermesagentComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="Hermes Agent (Nous Research)"
+      competitorSlug="hermes-agent" competitorName="Hermes Agent (Nous Research)"
       pageTitle="Operit AI vs Hermes Agent: Open Source AI Comparison"
       metaDescription="Compare Operit AI vs Hermes Agent by Nous Research. Open source AI assistants, automation, terminal access and MCP support."
       lastUpdated="April 22, 2026"

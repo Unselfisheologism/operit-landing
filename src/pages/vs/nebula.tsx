@@ -3,7 +3,7 @@ import { ComparisonPage } from '../../components/ComparisonPage'
 export default function NebulaComparisonPage() {
   return (
     <ComparisonPage
-      competitorName="Nebula.gg"
+      competitorSlug="nebula" competitorName="Nebula.gg"
       pageTitle="Operit AI vs Nebula.gg: Full Comparison (2026)"
       metaDescription="Compare Operit AI vs Nebula.gg Android AI assistant. Features, terminal access, local models, automation capabilities."
       lastUpdated="April 22, 2026"
