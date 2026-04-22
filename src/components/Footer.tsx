@@ -22,6 +22,14 @@ export function Footer() {
       },
       { label: "Discord", href: "https://discord.gg/dUFrWm4w", external: true, icon: null },
     ],
+    Comparisons: [
+      { label: "vs ChatGPT", href: "/vs/chatgpt", external: false, icon: null },
+      { label: "vs Nebula.gg", href: "/vs/nebula", external: false, icon: null },
+      { label: "vs OpenClaw", href: "/vs/openclaw", external: false, icon: null },
+      { label: "vs Hermes Agent", href: "/vs/hermes-agent", external: false, icon: null },
+      { label: "vs n8n", href: "/vs/n8n", external: false, icon: null },
+      { label: "vs Anything LLM", href: "/vs/anything-llm", external: false, icon: null },
+    ],
     Connect: [
       {
         label: "Twitter / X",
