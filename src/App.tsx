@@ -16,6 +16,7 @@ import { Footer } from "./components/Footer";
 import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
 import { BlogPage } from "./components/BlogPage";
+import { ChangelogPage } from "./components/ChangelogPage";
 import { MarketplaceBlogPost } from "./components/MarketplaceBlogPost";
 import { AiAgentForDevelopers } from "./components/AiAgentForDevelopers";
 import { AndroidAutomationPowerUser } from "./components/AndroidAutomationPowerUser";
@@ -193,6 +194,10 @@ export default function App() {
 
   if (path.startsWith("/blog")) {
     return <BlogPage dark={dark} onToggle={toggle} />;
+  }
+
+  if (path.startsWith("/changelog")) {
+    return <ChangelogPage dark={dark} onToggle={toggle} />;
   }
 
   if (path.startsWith("/pricing")) {

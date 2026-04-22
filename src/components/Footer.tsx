@@ -16,8 +16,8 @@ export function Footer() {
       { label: "Documentation", href: "/docs", external: false, icon: null },
       {
         label: "Changelog",
-        href: "https://github.com/AAswordman/Operit/releases",
-        external: true,
+        href: "/changelog",
+        external: false,
         icon: null,
       },
       { label: "Discord", href: "https://discord.gg/dUFrWm4w", external: true, icon: null },
