@@ -36,6 +36,7 @@ import OpenclawComparisonPage from "./pages/vs/openclaw";
 import HermesAgentComparisonPage from "./pages/vs/hermes-agent";
 import N8nComparisonPage from "./pages/vs/n8n";
 import AnythingLlmComparisonPage from "./pages/vs/anything-llm";
+import { NotFoundPage } from "./components/NotFoundPage";
 
 export function useTheme() {
   const [dark, setDark] = useState(() => {
@@ -241,5 +242,10 @@ export default function App() {
   }
 
   // Main immersive landing page
-  return <ImmersiveLandingPage dark={dark} toggle={toggle} />;
+  if (path === "/" || path === "" || path === "/index.html") {
+    return <ImmersiveLandingPage dark={dark} toggle={toggle} />;
+  }
+
+  // Catch-all 404 page for any other path
+  return <NotFoundPage dark={dark} toggle={toggle} />;
 }
