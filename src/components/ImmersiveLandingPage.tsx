@@ -30,10 +30,22 @@ const STORIES = [
     color: "blue" as const,
     visual: () => (
       <div className="space-y-3">
-        {["Can write a poem", "Can answer trivia", "Can't open Settings", "Can't run a script"].map((item, i) => (
-          <div key={i} className={`flex items-center gap-3 p-3 rounded border ${i < 2 ? "bg-zinc-50 dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700" : "bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-800/30"}`}>
-            <span className={i < 2 ? "text-green-500" : "text-red-400"}>{i < 2 ? "✓" : "✗"}</span>
-            <span className="text-sm font-mono text-zinc-700 dark:text-zinc-300">{item}</span>
+        {[
+          "Can write a poem",
+          "Can answer trivia",
+          "Can't open Settings",
+          "Can't run a script",
+        ].map((item, i) => (
+          <div
+            key={i}
+            className={`flex items-center gap-3 p-3 rounded border ${i < 2 ? "bg-zinc-50 dark:bg-zinc-800/50 border-zinc-200 dark:border-zinc-700" : "bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-800/30"}`}
+          >
+            <span className={i < 2 ? "text-green-500" : "text-red-400"}>
+              {i < 2 ? "✓" : "✗"}
+            </span>
+            <span className="text-sm font-mono text-zinc-700 dark:text-zinc-300">
+              {item}
+            </span>
           </div>
         ))}
       </div>
@@ -50,15 +62,28 @@ const STORIES = [
         {[
           { name: "code-review", desc: "Analyze PRs, find bugs", icon: "🔍" },
           { name: "data-analysis", desc: "CSV, JSON, statistics", icon: "📊" },
-          { name: "writing-assistant", desc: "Edit, rephrase, translate", icon: "✍️" },
+          {
+            name: "writing-assistant",
+            desc: "Edit, rephrase, translate",
+            icon: "✍️",
+          },
         ].map((skill) => (
-          <div key={skill.name} className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
-            <div className="w-8 h-8 bg-blue-500/10 rounded flex items-center justify-center text-sm">{skill.icon}</div>
+          <div
+            key={skill.name}
+            className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800"
+          >
+            <div className="w-8 h-8 bg-blue-500/10 rounded flex items-center justify-center text-sm">
+              {skill.icon}
+            </div>
             <div>
-              <div className="font-mono text-sm text-zinc-900 dark:text-zinc-100">{skill.name}</div>
+              <div className="font-mono text-sm text-zinc-900 dark:text-zinc-100">
+                {skill.name}
+              </div>
               <div className="text-xs text-zinc-500">{skill.desc}</div>
             </div>
-            <div className="ml-auto text-xs text-blue-500 font-mono">installed</div>
+            <div className="ml-auto text-xs text-blue-500 font-mono">
+              installed
+            </div>
           </div>
         ))}
       </div>
@@ -73,14 +98,23 @@ const STORIES = [
     visual: () => (
       <div className="space-y-3">
         {[
-          { name: "MCP Server", apps: "GitHub, Slack, Notion...", color: "blue" },
+          {
+            name: "MCP Server",
+            apps: "GitHub, Slack, Notion...",
+            color: "blue",
+          },
           { name: "Composio", apps: "1000+ app integrations", color: "orange" },
           { name: "Skills", apps: "Reusable AI behaviors", color: "green" },
         ].map((item) => (
-          <div key={item.name} className={`flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800`}>
+          <div
+            key={item.name}
+            className={`flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800`}
+          >
             <div className={`w-2 h-2 rounded-full bg-${item.color}-500`} />
             <div>
-              <div className="font-mono text-sm text-zinc-900 dark:text-zinc-100">{item.name}</div>
+              <div className="font-mono text-sm text-zinc-900 dark:text-zinc-100">
+                {item.name}
+              </div>
               <div className="text-xs text-zinc-500">{item.apps}</div>
             </div>
           </div>
@@ -101,7 +135,9 @@ const STORIES = [
             <div className="w-2 h-2 rounded-full bg-red-500" />
             <div className="w-2 h-2 rounded-full bg-yellow-500" />
             <div className="w-2 h-2 rounded-full bg-green-500" />
-            <span className="ml-2 text-xs text-zinc-500 font-mono">twent terminal</span>
+            <span className="ml-2 text-xs text-zinc-500 font-mono">
+              twent terminal
+            </span>
           </div>
           <pre className="text-xs text-green-400 font-mono">
             <code>{`$ claude-code "fix the login bug"\nAnalyzing codebase...\nFound 3 issues in auth.ts\nApplying fixes...\n✓ Bug fixed in 2.3s`}</code>
@@ -109,8 +145,13 @@ const STORIES = [
         </div>
         <div className="grid grid-cols-3 gap-2">
           {["Claude Code", "Codex", "Hermes"].map((agent) => (
-            <div key={agent} className="p-2 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800 text-center">
-              <div className="text-xs font-mono text-zinc-900 dark:text-zinc-100">{agent}</div>
+            <div
+              key={agent}
+              className="p-2 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800 text-center"
+            >
+              <div className="text-xs font-mono text-zinc-900 dark:text-zinc-100">
+                {agent}
+              </div>
             </div>
           ))}
         </div>
@@ -128,21 +169,31 @@ const STORIES = [
         <div className="p-4 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
           <div className="text-xs text-zinc-500 mb-2">Memory Graph</div>
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-xs">👤</div>
+            <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-xs">
+              👤
+            </div>
             <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
-            <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-xs">📄</div>
+            <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-xs">
+              📄
+            </div>
             <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
-            <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center text-xs">💬</div>
+            <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center text-xs">
+              💬
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded text-xs">
             <div className="text-zinc-500">Remembers</div>
-            <div className="font-mono text-zinc-900 dark:text-zinc-100">Your preferences</div>
+            <div className="font-mono text-zinc-900 dark:text-zinc-100">
+              Your preferences
+            </div>
           </div>
           <div className="p-3 bg-zinc-50 dark:bg-zinc-800/50 rounded text-xs">
             <div className="text-zinc-500">Persists</div>
-            <div className="font-mono text-zinc-900 dark:text-zinc-100">Across sessions</div>
+            <div className="font-mono text-zinc-900 dark:text-zinc-100">
+              Across sessions
+            </div>
           </div>
         </div>
       </div>
@@ -157,10 +208,16 @@ const STORIES = [
     visual: () => (
       <div className="space-y-3">
         <div className="p-4 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
-          {["All data stays on your device", "API keys encrypted locally", "Local AI models (MNN)"].map((item) => (
+          {[
+            "All data stays on your device",
+            "API keys encrypted locally",
+            "Local AI models (MNN)",
+          ].map((item) => (
             <div key={item} className="flex items-center gap-2 mb-2 last:mb-0">
               <span className="text-green-500">✓</span>
-              <span className="text-sm text-zinc-900 dark:text-zinc-100">{item}</span>
+              <span className="text-sm text-zinc-900 dark:text-zinc-100">
+                {item}
+              </span>
             </div>
           ))}
         </div>
@@ -187,9 +244,14 @@ const STORIES = [
             { icon: "📱", label: "Any App", desc: "Works everywhere" },
             { icon: "⚡", label: "On Demand", desc: "Run anytime" },
           ].map((item) => (
-            <div key={item.label} className="p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
+            <div
+              key={item.label}
+              className="p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800"
+            >
               <div className="text-xl mb-1">{item.icon}</div>
-              <div className="text-xs font-mono text-zinc-900 dark:text-zinc-100">{item.label}</div>
+              <div className="text-xs font-mono text-zinc-900 dark:text-zinc-100">
+                {item.label}
+              </div>
               <div className="text-xs text-zinc-500">{item.desc}</div>
             </div>
           ))}
@@ -206,18 +268,30 @@ const STORIES = [
     visual: () => (
       <div className="space-y-3">
         <div className="p-4 bg-zinc-950 rounded border border-zinc-800">
-          <div className="text-xs text-zinc-400 mb-2 font-mono">Generated app:</div>
+          <div className="text-xs text-zinc-400 mb-2 font-mono">
+            Generated app:
+          </div>
           <div className="p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
             <div className="text-xs font-mono text-zinc-500 mb-1">todo-app</div>
             <div className="space-y-1">
-              {["Buy groceries", "Ship the feature", "Touch grass"].map((item, i) => (
-                <div key={item} className="flex items-center gap-2 text-xs">
-                  <div className={`w-3 h-3 border ${i === 2 ? "border-zinc-300 dark:border-zinc-600" : "border-blue-500 bg-blue-500/10"} rounded-sm flex items-center justify-center`}>
-                    {i < 2 && <span className="text-[8px] text-blue-500">✓</span>}
+              {["Buy groceries", "Ship the feature", "Touch grass"].map(
+                (item, i) => (
+                  <div key={item} className="flex items-center gap-2 text-xs">
+                    <div
+                      className={`w-3 h-3 border ${i === 2 ? "border-zinc-300 dark:border-zinc-600" : "border-blue-500 bg-blue-500/10"} rounded-sm flex items-center justify-center`}
+                    >
+                      {i < 2 && (
+                        <span className="text-[8px] text-blue-500">✓</span>
+                      )}
+                    </div>
+                    <span
+                      className={`text-zinc-700 dark:text-zinc-300 ${i === 2 ? "" : "line-through text-zinc-400"}`}
+                    >
+                      {item}
+                    </span>
                   </div>
-                  <span className={`text-zinc-700 dark:text-zinc-300 ${i === 2 ? "" : "line-through text-zinc-400"}`}>{item}</span>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -227,11 +301,41 @@ const STORIES = [
 ];
 
 const COLOR_MAP = {
-  blue: { tag: "text-blue-500", bar: "bg-blue-500", dot: "bg-blue-500", light: "bg-blue-500/10", border: "border-blue-500/20" },
-  orange: { tag: "text-orange-500", bar: "bg-orange-500", dot: "bg-orange-500", light: "bg-orange-500/10", border: "border-orange-500/20" },
-  green: { tag: "text-green-500", bar: "bg-green-500", dot: "bg-green-500", light: "bg-green-500/10", border: "border-green-500/20" },
-  purple: { tag: "text-purple-500", bar: "bg-purple-500", dot: "bg-purple-500", light: "bg-purple-500/10", border: "border-purple-500/20" },
-  indigo: { tag: "text-indigo-500", bar: "bg-indigo-500", dot: "bg-indigo-500", light: "bg-indigo-500/10", border: "border-indigo-500/20" },
+  blue: {
+    tag: "text-blue-500",
+    bar: "bg-blue-500",
+    dot: "bg-blue-500",
+    light: "bg-blue-500/10",
+    border: "border-blue-500/20",
+  },
+  orange: {
+    tag: "text-orange-500",
+    bar: "bg-orange-500",
+    dot: "bg-orange-500",
+    light: "bg-orange-500/10",
+    border: "border-orange-500/20",
+  },
+  green: {
+    tag: "text-green-500",
+    bar: "bg-green-500",
+    dot: "bg-green-500",
+    light: "bg-green-500/10",
+    border: "border-green-500/20",
+  },
+  purple: {
+    tag: "text-purple-500",
+    bar: "bg-purple-500",
+    dot: "bg-purple-500",
+    light: "bg-purple-500/10",
+    border: "border-purple-500/20",
+  },
+  indigo: {
+    tag: "text-indigo-500",
+    bar: "bg-indigo-500",
+    dot: "bg-indigo-500",
+    light: "bg-indigo-500/10",
+    border: "border-indigo-500/20",
+  },
 };
 
 function PinnedScrollytelling() {
@@ -247,7 +351,10 @@ function PinnedScrollytelling() {
       const totalScroll = container.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
       const pct = Math.max(0, Math.min(1, scrolled / totalScroll));
-      const idx = Math.min(STORIES.length - 1, Math.floor(pct * STORIES.length));
+      const idx = Math.min(
+        STORIES.length - 1,
+        Math.floor(pct * STORIES.length),
+      );
       setActive(idx);
     };
 
@@ -261,13 +368,19 @@ function PinnedScrollytelling() {
   const Visual = story.visual;
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: `${STORIES.length * 100}vh` }}>
+    <div
+      ref={containerRef}
+      className="relative"
+      style={{ height: `${STORIES.length * 100}vh` }}
+    >
       <div className="sticky top-0 h-screen flex items-center px-6 pt-24 md:pt-0 overflow-hidden">
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Text content */}
           <div className="relative">
             <div key={active} className="animate-fadeIn">
-              <div className={`inline-flex items-center gap-2 mb-4 ${colors.tag}`}>
+              <div
+                className={`inline-flex items-center gap-2 mb-4 ${colors.tag}`}
+              >
                 <span className="font-mono text-sm">
                   {String(active + 1).padStart(2, "0")}
                 </span>
@@ -287,7 +400,9 @@ function PinnedScrollytelling() {
 
           {/* Right: Visual */}
           <div key={`vis-${active}`} className="animate-fadeIn">
-            <div className={`p-6 md:p-8 ${colors.light} border ${colors.border} rounded-lg`}>
+            <div
+              className={`p-6 md:p-8 ${colors.light} border ${colors.border} rounded-lg`}
+            >
               <Visual />
             </div>
           </div>
@@ -302,11 +417,14 @@ function PinnedScrollytelling() {
                 const container = containerRef.current;
                 if (!container) return;
                 const totalScroll = container.offsetHeight - window.innerHeight;
-                const target = container.offsetTop + (i / STORIES.length) * totalScroll;
+                const target =
+                  container.offsetTop + (i / STORIES.length) * totalScroll;
                 window.scrollTo({ top: target, behavior: "smooth" });
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === active ? `${COLOR_MAP[s.color].dot} scale-150` : "bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600"
+                i === active
+                  ? `${COLOR_MAP[s.color].dot} scale-150`
+                  : "bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600"
               }`}
               title={s.tag}
             />
@@ -316,7 +434,8 @@ function PinnedScrollytelling() {
         {/* Progress bar — bottom */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
           <span className="text-xs font-mono text-zinc-400 tabular-nums">
-            {String(active + 1).padStart(2, "0")}/{String(STORIES.length).padStart(2, "0")}
+            {String(active + 1).padStart(2, "0")}/
+            {String(STORIES.length).padStart(2, "0")}
           </span>
           <div className="w-24 h-px bg-zinc-200 dark:bg-zinc-800 relative">
             <div
@@ -347,7 +466,7 @@ export function ImmersiveLandingPage({
       ([entry]) => {
         setHeroInView(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(heroRef);
@@ -387,8 +506,8 @@ export function ImmersiveLandingPage({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
-                The AI assistant that connects, remembers, and automates. 
-                Run Claude Code, control any app, and keep your data private.
+                The AI assistant that connects, remembers, and automates. Run
+                Claude Code, control any app, and keep your data private.
               </p>
             </div>
 
@@ -503,7 +622,7 @@ export function ImmersiveLandingPage({
               Download Twent and see what your phone can really do.
             </p>
             <a
-              href="https://github.com/user/operit/releases"
+              href="https://github.com/user/twent/releases"
               className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
             >
               Download Free APK

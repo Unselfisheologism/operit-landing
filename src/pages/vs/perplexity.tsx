@@ -1,4 +1,4 @@
-import { ComparisonPage } from '../../components/ComparisonPage'
+import { ComparisonPage } from "../../components/ComparisonPage";
 
 export default function PerplexityComparisonPage() {
   return (
@@ -6,26 +6,42 @@ export default function PerplexityComparisonPage() {
       <ComparisonPage
         competitorSlug="perplexity"
         competitorName="Perplexity"
-        pageTitle="Operit AI vs Perplexity Mobile: Full Comparison (2026)"
+        pageTitle="twent AI vs Perplexity Mobile: Full Comparison (2026)"
         lastUpdated="April 22, 2026"
-        verdict="Perplexity excels at web-powered answers, yet it's a cloud service without offline mode or Android integration. Operit AI works entirely on your device, keeping your data private and your automation local."
+        verdict="Perplexity excels at web-powered answers, yet it's a cloud service without offline mode or Android integration. twent AI works entirely on your device, keeping your data private and your automation local."
         features={[
-          { name: 'Built-in Ubuntu 24 Terminal', operit: true, competitor: false },
-          { name: 'Local GGUF model inference', operit: true, competitor: false },
-          { name: 'MCP / Skill plugin ecosystem', operit: true, competitor: false },
-          { name: 'Android UI automation', operit: true, competitor: false },
-          { name: 'Persistent memory system', operit: true, competitor: false },
-          { name: 'Voice wake word', operit: true, competitor: false },
-          { name: 'Floating bubble overlay', operit: true, competitor: false },
-          { name: 'Character cards / personas', operit: true, competitor: false },
-          { name: 'Parallel tool execution', operit: true, competitor: false },
-          { name: 'ADB / Root integration', operit: true, competitor: false },
-          { name: 'Offline operation', operit: true, competitor: false },
-          { name: 'File system access', operit: true, competitor: false },
-          { name: 'Free tier available', operit: true, competitor: true },
-          { name: 'Open source', operit: true, competitor: false }
+          {
+            name: "Built-in Ubuntu 24 Terminal",
+            twent: true,
+            competitor: false,
+          },
+          {
+            name: "Local GGUF model inference",
+            twent: true,
+            competitor: false,
+          },
+          {
+            name: "MCP / Skill plugin ecosystem",
+            twent: true,
+            competitor: false,
+          },
+          { name: "Android UI automation", twent: true, competitor: false },
+          { name: "Persistent memory system", twent: true, competitor: false },
+          { name: "Voice wake word", twent: true, competitor: false },
+          { name: "Floating bubble overlay", twent: true, competitor: false },
+          {
+            name: "Character cards / personas",
+            twent: true,
+            competitor: false,
+          },
+          { name: "Parallel tool execution", twent: true, competitor: false },
+          { name: "ADB / Root integration", twent: true, competitor: false },
+          { name: "Offline operation", twent: true, competitor: false },
+          { name: "File system access", twent: true, competitor: false },
+          { name: "Free tier available", twent: true, competitor: true },
+          { name: "Open source", twent: true, competitor: false },
         ]}
       />
     </div>
-  )
+  );
 }

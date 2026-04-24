@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://operit.ai/</loc>
+    <loc>https://twent.ai/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://operit.ai/pricing</loc>
+    <loc>https://twent.ai/pricing</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://operit.ai/docs</loc>
+    <loc>https://twent.ai/docs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/chatgpt</loc>
+    <loc>https://twent.ai/vs/chatgpt</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/nebula</loc>
+    <loc>https://twent.ai/vs/nebula</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/openclaw</loc>
+    <loc>https://twent.ai/vs/openclaw</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/hermes-agent</loc>
+    <loc>https://twent.ai/vs/hermes-agent</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/n8n</loc>
+    <loc>https://twent.ai/vs/n8n</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/anything-llm</loc>
+    <loc>https://twent.ai/vs/anything-llm</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/gemini</loc>
+    <loc>https://twent.ai/vs/gemini</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/claude</loc>
+    <loc>https://twent.ai/vs/claude</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/perplexity</loc>
+    <loc>https://twent.ai/vs/perplexity</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/make</loc>
+    <loc>https://twent.ai/vs/make</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/zapier</loc>
+    <loc>https://twent.ai/vs/zapier</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/qordinate</loc>
+    <loc>https://twent.ai/vs/qordinate</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/omnara</loc>
+    <loc>https://twent.ai/vs/omnara</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/manus</loc>
+    <loc>https://twent.ai/vs/manus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/genspark</loc>
+    <loc>https://twent.ai/vs/genspark</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://operit.ai/vs/onspace</loc>
+    <loc>https://twent.ai/vs/onspace</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

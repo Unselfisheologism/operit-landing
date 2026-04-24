@@ -1,16 +1,31 @@
-import { ComparisonPage } from '../../components/ComparisonPage'
+import { ComparisonPage } from "../../components/ComparisonPage";
 
 export default function N8nComparisonPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <ComparisonPage
-      competitorSlug="n8n" competitorName="n8n"
-      pageTitle="Operit AI vs n8n: Automation Comparison 2026"
-
-      lastUpdated="April 22, 2026"
-      verdict="n8n is the industry standard for node based workflow automation. Operit AI is an AI native assistant with LLM driven automation, natural language scheduling, full terminal access and runs locally on your Android phone. n8n requires a server, Operit runs in your pocket."
-      features={[{name: 'Workflow Automation', operit: true, competitor: true}, {name: 'Scheduled Jobs', operit: true, competitor: true}, {name: 'Native Android App', operit: true, competitor: false}, {name: 'Natural Language Configuration', operit: true, competitor: false}, {name: 'Full Terminal Access', operit: true, competitor: false}, {name: 'Local Execution', operit: true, competitor: true}, {name: 'LLM Agent Capabilities', operit: true, competitor: true}, {name: 'Open Source', operit: true, competitor: true}, {name: '500+ Integrations', operit: false, competitor: true}, {name: 'Visual Node Editor', operit: false, competitor: true }]}
-    />
+        competitorSlug="n8n"
+        competitorName="n8n"
+        pageTitle="twent AI vs n8n: Automation Comparison 2026"
+        lastUpdated="April 22, 2026"
+        verdict="n8n is the industry standard for node based workflow automation. twent AI is an AI native assistant with LLM driven automation, natural language scheduling, full terminal access and runs locally on your Android phone. n8n requires a server, twent runs in your pocket."
+        features={[
+          { name: "Workflow Automation", twent: true, competitor: true },
+          { name: "Scheduled Jobs", twent: true, competitor: true },
+          { name: "Native Android App", twent: true, competitor: false },
+          {
+            name: "Natural Language Configuration",
+            twent: true,
+            competitor: false,
+          },
+          { name: "Full Terminal Access", twent: true, competitor: false },
+          { name: "Local Execution", twent: true, competitor: true },
+          { name: "LLM Agent Capabilities", twent: true, competitor: true },
+          { name: "Open Source", twent: true, competitor: true },
+          { name: "500+ Integrations", twent: false, competitor: true },
+          { name: "Visual Node Editor", twent: false, competitor: true },
+        ]}
+      />
     </div>
-  )
+  );
 }

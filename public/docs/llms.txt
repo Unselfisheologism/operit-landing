@@ -89,5 +89,5 @@ Twent is privacy-first:
 ## Links
 - Main Website: https://twent.xyz
 - Documentation: https://twent.xyz/docs
-- GitHub: https://github.com/user/operit
+- GitHub: https://github.com/user/twent
 - Download: https://twent.xyz (or GitHub releases)

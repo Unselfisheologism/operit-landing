@@ -63,4 +63,4 @@
 ## Contact
 - Website: https://twent.xyz
 - Documentation: https://twent.xyz/docs
-- GitHub: https://github.com/user/operit
+- GitHub: https://github.com/user/twent

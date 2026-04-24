@@ -135,7 +135,7 @@ Available Tools:
 - compress/decompress: ZIP, TAR, GZ operations
 
 File Locations:
-- App data: /data/data/com.ai.assistance.operit/
+- App data: /data/data/com.ai.assistance.twent/
 - Internal storage: /sdcard/ or /storage/emulated/0/
 - Ubuntu environment: ~/ (inside built-in Linux)
 
@@ -214,7 +214,7 @@ Available Tools:
 
 Install npm packages via the shell, then import them in scripts:
 ```
-cd /data/data/com.ai.assistance.operit/files/js
+cd /data/data/com.ai.assistance.twent/files/js
 npm install axios lodash
 ```
 
@@ -428,7 +428,7 @@ Key Tools:
 ## Links
 - Main Website: https://twent.xyz
 - Documentation: https://twent.xyz/docs
-- GitHub: https://github.com/user/operit
+- GitHub: https://github.com/user/twent
 - Download: https://twent.xyz (or GitHub releases)
 - Pricing: https://twent.xyz/pricing
 - Blog: https://twent.xyz/blog

@@ -288,7 +288,7 @@ Comparison with: ChatGPT Enterprise, Copilot for M365, custom solutions
 ## Contact Information
 - Website: https://twent.xyz
 - Documentation: https://twent.xyz/docs
-- GitHub: https://github.com/user/operit
+- GitHub: https://github.com/user/twent
 - Email: sales@twent.xyz (for enterprise inquiries)
 
 ## License

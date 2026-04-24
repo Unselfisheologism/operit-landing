@@ -470,7 +470,7 @@ function DocFileSystem() {
       <Table
         headers={["Location", "Path"]}
         rows={[
-          ["App data", "/data/data/com.ai.assistance.operit/"],
+          ["App data", "/data/data/com.ai.assistance.twent/"],
           ["Internal storage", "/sdcard/ or /storage/emulated/0/"],
           ["Ubuntu environment", "~/ (inside built-in Linux)"],
         ]}
@@ -618,7 +618,7 @@ function DocJavaScript() {
         rows={[["execute_code", "Run Python code"]]}
       />
       <P>Install npm packages via the shell, then import them in scripts:</P>
-      <Pre>{`cd /data/data/com.ai.assistance.operit/files/js
+      <Pre>{`cd /data/data/com.ai.assistance.twent/files/js
 npm install axios lodash`}</Pre>
     </section>
   );
@@ -1172,7 +1172,11 @@ export function DocsPage({
               </svg>
             </button>
             <a href="/" className="flex items-center gap-2">
-              <img src="/OKFINALTWENTLOGO-removebg.png" alt="Twent" className="w-12 h-12 object-contain" />
+              <img
+                src="/OKFINALTWENTLOGO-removebg.png"
+                alt="Twent"
+                className="w-12 h-12 object-contain"
+              />
               <span className="font-bold text-sm">Twent Docs</span>
             </a>
           </div>

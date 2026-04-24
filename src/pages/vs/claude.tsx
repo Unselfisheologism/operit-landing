@@ -1,4 +1,4 @@
-import { ComparisonPage } from '../../components/ComparisonPage'
+import { ComparisonPage } from "../../components/ComparisonPage";
 
 export default function ClaudeComparisonPage() {
   return (
@@ -6,26 +6,42 @@ export default function ClaudeComparisonPage() {
       <ComparisonPage
         competitorSlug="claude"
         competitorName="Claude"
-        pageTitle="Operit AI vs Claude Mobile: Which Is Better For Android?"
+        pageTitle="twent AI vs Claude Mobile: Which Is Better For Android?"
         lastUpdated="April 22, 2026"
-        verdict="Claude is a powerful AI assistant with strong reasoning, but it's cloud-only and lacks Android integration. Operit AI brings a full terminal, local model support, and deep Android automation to your device."
+        verdict="Claude is a powerful AI assistant with strong reasoning, but it's cloud-only and lacks Android integration. twent AI brings a full terminal, local model support, and deep Android automation to your device."
         features={[
-          { name: 'Built-in Ubuntu 24 Terminal', operit: true, competitor: false },
-          { name: 'Local GGUF model inference', operit: true, competitor: false },
-          { name: 'MCP / Skill plugin ecosystem', operit: true, competitor: false },
-          { name: 'Android UI automation', operit: true, competitor: false },
-          { name: 'Persistent memory system', operit: true, competitor: true },
-          { name: 'Voice wake word', operit: true, competitor: true },
-          { name: 'Floating bubble overlay', operit: true, competitor: false },
-          { name: 'Character cards / personas', operit: true, competitor: false },
-          { name: 'Parallel tool execution', operit: true, competitor: false },
-          { name: 'ADB / Root integration', operit: true, competitor: false },
-          { name: 'Offline operation', operit: true, competitor: false },
-          { name: 'File system access', operit: true, competitor: true },
-          { name: 'Free tier available', operit: true, competitor: true },
-          { name: 'Open source', operit: true, competitor: false }
+          {
+            name: "Built-in Ubuntu 24 Terminal",
+            twent: true,
+            competitor: false,
+          },
+          {
+            name: "Local GGUF model inference",
+            twent: true,
+            competitor: false,
+          },
+          {
+            name: "MCP / Skill plugin ecosystem",
+            twent: true,
+            competitor: false,
+          },
+          { name: "Android UI automation", twent: true, competitor: false },
+          { name: "Persistent memory system", twent: true, competitor: true },
+          { name: "Voice wake word", twent: true, competitor: true },
+          { name: "Floating bubble overlay", twent: true, competitor: false },
+          {
+            name: "Character cards / personas",
+            twent: true,
+            competitor: false,
+          },
+          { name: "Parallel tool execution", twent: true, competitor: false },
+          { name: "ADB / Root integration", twent: true, competitor: false },
+          { name: "Offline operation", twent: true, competitor: false },
+          { name: "File system access", twent: true, competitor: true },
+          { name: "Free tier available", twent: true, competitor: true },
+          { name: "Open source", twent: true, competitor: false },
         ]}
       />
     </div>
-  )
+  );
 }
