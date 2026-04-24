@@ -12,7 +12,9 @@ export function TermsOfService({
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
-        <h1 className="font-display text-3xl md:text-4xl mb-2">Terms of Service</h1>
+        <h1 className="font-display text-3xl md:text-4xl mb-2">
+          Terms of Service
+        </h1>
         <p className="text-sm text-zinc-500 mb-10">
           Last updated: April 22, 2026
         </p>
@@ -164,8 +166,8 @@ export function TermsOfService({
             <p>
               To the maximum extent permitted by law, Twent AI shall not be
               liable for any indirect, incidental, special, or consequential
-              damages arising from your use of the App, including but not limited
-              to data loss, device damage, or financial loss.
+              damages arising from your use of the App, including but not
+              limited to data loss, device damage, or financial loss.
             </p>
           </section>
 
@@ -188,10 +190,10 @@ export function TermsOfService({
             <p>
               Questions about these terms? Reach out at{" "}
               <a
-                href="mailto:jeffrin@twent.xyz"
+                href="mailto:jeffrinjames@twent.xyz"
                 className="text-blue-500 hover:underline"
               >
-                jeffrin@twent.xyz
+                jeffrinjames@twent.xyz
               </a>{" "}
               or join our{" "}
               <a

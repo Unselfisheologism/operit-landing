@@ -12,7 +12,9 @@ export function PrivacyPolicy({
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
-        <h1 className="font-display text-3xl md:text-4xl mb-2">Privacy Policy</h1>
+        <h1 className="font-display text-3xl md:text-4xl mb-2">
+          Privacy Policy
+        </h1>
         <p className="text-sm text-zinc-500 mb-10">
           Last updated: April 22, 2026
         </p>
@@ -74,9 +76,10 @@ export function PrivacyPolicy({
             </h2>
             <p>
               When you use cloud-based AI providers, your messages and context
-              are sent directly to the provider's API (OpenAI, Anthropic, Google,
-              etc.) using your API key. Twent does not proxy, log, or store these
-              requests on our servers. Each provider has its own privacy policy:
+              are sent directly to the provider's API (OpenAI, Anthropic,
+              Google, etc.) using your API key. Twent does not proxy, log, or
+              store these requests on our servers. Each provider has its own
+              privacy policy:
             </p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>
@@ -264,9 +267,7 @@ export function PrivacyPolicy({
               <li>
                 We do not track your location, contacts, or browsing history.
               </li>
-              <li>
-                We do not sell user data to any third party.
-              </li>
+              <li>We do not sell user data to any third party.</li>
               <li>
                 We do not use Firebase, Crashlytics, Sentry, or any
                 crash-reporting SDK in the app.
@@ -281,8 +282,8 @@ export function PrivacyPolicy({
             <p>
               Twent supports fully local AI inference via MNN and llama.cpp
               (GGUF models). When using local models, no data leaves your device
-              at all. You can use Twent entirely offline for AI chat,
-              file management, terminal access, and local tools.
+              at all. You can use Twent entirely offline for AI chat, file
+              management, terminal access, and local tools.
             </p>
           </section>
 
@@ -290,9 +291,7 @@ export function PrivacyPolicy({
             <h2 className="font-secondary text-lg text-zinc-900 dark:text-zinc-100 mb-3">
               9. Data Deletion
             </h2>
-            <p>
-              You can delete any data stored by Twent at any time:
-            </p>
+            <p>You can delete any data stored by Twent at any time:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Clear chat history from within the app</li>
               <li>Remove API keys from settings</li>
@@ -336,10 +335,10 @@ export function PrivacyPolicy({
             <p>
               Privacy questions or concerns? Reach out at{" "}
               <a
-                href="mailto:jeffrin@twent.xyz"
+                href="mailto:jeffrinjames@twent.xyz"
                 className="text-blue-500 hover:underline"
               >
-                jeffrin@twent.xyz
+                jeffrinjames@twent.xyz
               </a>{" "}
               or join our{" "}
               <a

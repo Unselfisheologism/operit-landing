@@ -2,15 +2,35 @@ export function Footer() {
   const links = {
     Product: [
       { label: "Features", href: "#features", external: false, icon: null },
-      { label: "Marketplace", href: "#marketplace", external: false, icon: null },
+      {
+        label: "Marketplace",
+        href: "#marketplace",
+        external: false,
+        icon: null,
+      },
       { label: "Pricing", href: "#pricing", external: false, icon: null },
       { label: "FAQ", href: "#faq", external: false, icon: null },
-      { label: "UI Automation", href: "#ui-automation", external: false, icon: null },
+      {
+        label: "UI Automation",
+        href: "#ui-automation",
+        external: false,
+        icon: null,
+      },
     ],
     Company: [
-      { label: "About", href: "https://x.com/Jeff9James", external: true, icon: null },
+      {
+        label: "About",
+        href: "https://x.com/Jeff9James",
+        external: true,
+        icon: null,
+      },
       { label: "Blog", href: "/blog", external: false, icon: null },
-      { label: "Contact", href: "mailto:jeffrin@twent.xyz", external: false, icon: null },
+      {
+        label: "Contact",
+        href: "mailto:jeffrinjames@twent.xyz",
+        external: false,
+        icon: null,
+      },
     ],
     Resources: [
       { label: "Documentation", href: "/docs", external: false, icon: null },
@@ -20,15 +40,40 @@ export function Footer() {
         external: false,
         icon: null,
       },
-      { label: "Discord", href: "https://discord.gg/dUFrWm4w", external: true, icon: null },
+      {
+        label: "Discord",
+        href: "https://discord.gg/dUFrWm4w",
+        external: true,
+        icon: null,
+      },
     ],
     Comparisons: [
       { label: "vs ChatGPT", href: "/vs/chatgpt", external: false, icon: null },
-      { label: "vs Nebula.gg", href: "/vs/nebula", external: false, icon: null },
-      { label: "vs OpenClaw", href: "/vs/openclaw", external: false, icon: null },
-      { label: "vs Hermes Agent", href: "/vs/hermes-agent", external: false, icon: null },
+      {
+        label: "vs Nebula.gg",
+        href: "/vs/nebula",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "vs OpenClaw",
+        href: "/vs/openclaw",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "vs Hermes Agent",
+        href: "/vs/hermes-agent",
+        external: false,
+        icon: null,
+      },
       { label: "vs n8n", href: "/vs/n8n", external: false, icon: null },
-      { label: "vs Anything LLM", href: "/vs/anything-llm", external: false, icon: null },
+      {
+        label: "vs Anything LLM",
+        href: "/vs/anything-llm",
+        external: false,
+        icon: null,
+      },
     ],
     Connect: [
       {
@@ -65,7 +110,7 @@ export function Footer() {
       },
       {
         label: "Email",
-        href: "mailto:jeffrin@twent.xyz",
+        href: "mailto:jeffrinjames@twent.xyz",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +125,18 @@ export function Footer() {
       },
     ],
     Legal: [
-      { label: "Privacy Policy", href: "/privacy", external: false, icon: null },
-      { label: "Terms of Service", href: "/terms", external: false, icon: null },
+      {
+        label: "Privacy Policy",
+        href: "/privacy",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "Terms of Service",
+        href: "/terms",
+        external: false,
+        icon: null,
+      },
     ],
   };
 
