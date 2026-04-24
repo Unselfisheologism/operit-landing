@@ -63,7 +63,7 @@ export function ComparisonPage({
 
       <div className="text-center py-10 border-t border-gray-200">
         <h3 className="text-xl font-bold mb-4">Try Operit AI For Free</h3>
-        <a href="/download" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+        <a href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition">
           Download App
         </a>
       </div>

@@ -191,7 +191,7 @@ export function TerminalOnAndroid({
               }`}
             >
               <a
-                href="https://github.com/user/operit/releases"
+                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
@@ -576,7 +576,7 @@ export function TerminalOnAndroid({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://github.com/user/operit/releases"
+                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK

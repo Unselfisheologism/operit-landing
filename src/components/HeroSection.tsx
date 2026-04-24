@@ -42,7 +42,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-300">
           {/* PRIMARY CTA — only one visually dominant button */}
           <a
-            href="https://github.com/AAswordman/Operit/releases/latest"
+            href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-600 text-white font-secondary font-medium text-lg uppercase tracking-wider hover:bg-blue-500 transition-colors"

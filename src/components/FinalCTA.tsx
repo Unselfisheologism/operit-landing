@@ -31,7 +31,7 @@ export function FinalCTA() {
 
         {/* Single primary CTA — Principle 9: choice reduction */}
         <div className="flex justify-center">
-          <a href="https://github.com/AAswordman/Operit/releases/latest" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-blue-600 text-white font-secondary text-xl uppercase tracking-wider hover:bg-blue-500 transition-colors">
+          <a href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-blue-600 text-white font-secondary text-xl uppercase tracking-wider hover:bg-blue-500 transition-colors">
             Download Twent
           </a>
         </div>
