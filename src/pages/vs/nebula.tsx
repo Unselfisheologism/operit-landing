@@ -9,6 +9,7 @@ export default function NebulaComparisonPage() {
         pageTitle="twent AI vs Nebula.gg: Full Comparison (2026)"
         lastUpdated="April 22, 2026"
         verdict="Nebula.gg is a great new mobile AI assistant with good UI. twent AI provides full Ubuntu terminal, local GGUF model support, MCP plugins and root automation that Nebula does not offer. twent is also fully open source."
+        metaKeywords="replika app, replika ai android, ai friend app for android, best ai friend apps for android, personal assistant ai, ai assistant for android"
         features={[
           { name: "Native Android App", twent: true, competitor: true },
           { name: "Built-in Ubuntu Terminal", twent: true, competitor: false },

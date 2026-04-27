@@ -9,6 +9,7 @@ export default function OmnaraComparisonPage() {
         pageTitle="twent AI vs Omnara: AI Agent Orchestration Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Omnara is a powerful cross‑platform orchestration platform for coding agents, focusing on desktop and cloud workflows. twent AI is an Android‑first AI assistant with a full terminal, local models, and deep device integration. twent keeps your data on‑device and offers advanced automation without relying on cloud sessions."
+        metaKeywords="ai assistant for android, personal assistant ai, ai android, best ai app for android, ai apps for android, best ai android"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",

@@ -8,7 +8,8 @@ export default function N8nComparisonPage() {
         competitorName="n8n"
         pageTitle="twent AI vs n8n: Automation Comparison 2026"
         lastUpdated="April 22, 2026"
-        verdict="n8n is the industry standard for node based workflow automation. twent AI is an AI native assistant with LLM driven automation, natural language scheduling, full terminal access and runs locally on your Android phone. n8n requires a server, twent runs in your pocket."
+verdict="n8n is the industry standard for node based workflow automation. twent AI is an AI native assistant with LLM driven automation, natural language scheduling, full terminal access and runs locally on your Android phone. n8n requires a server, twent runs in your pocket."
+        metaKeywords="ai automation, workflow automation, best ai for android, ai android, personal assistant ai, ai assistant for android, best ai app for android"
         features={[
           { name: "Workflow Automation", twent: true, competitor: true },
           { name: "Scheduled Jobs", twent: true, competitor: true },

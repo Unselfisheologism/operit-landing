@@ -8,7 +8,8 @@ export default function AnythingllmComparisonPage() {
         competitorName="Anything LLM"
         pageTitle="twent AI vs Anything LLM: Comparison 2026"
         lastUpdated="April 22, 2026"
-        verdict="Anything LLM is the best open source RAG system for desktops/servers. twent AI is built for Android, includes full terminal, automation, MCP plugins and device integration in addition to all the RAG capabilities of Anything LLM."
+verdict="Anything LLM is the best open source RAG system for desktops/servers. twent AI is built for Android, includes full terminal, automation, MCP plugins and device integration in addition to all the RAG capabilities of Anything LLM."
+        metaKeywords="local llm, llm android, ai for android, ai apps for android, personal assistant ai, ai assistant for android"
         features={[
           { name: "Local Model Support", twent: true, competitor: true },
           { name: "RAG Knowledge Base", twent: true, competitor: true },

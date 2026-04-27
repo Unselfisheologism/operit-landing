@@ -9,6 +9,7 @@ export default function ZapierComparisonPage() {
         pageTitle="twent AI vs Zapier: Automation Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Zapier connects thousands of apps with an easy visual builder, but it's a cloud-only service with no native Android automation or local control. twent AI puts the power of AI and terminal automation directly on your device."
+        metaKeywords="zapier alternative, ai automation, workflow automation, best ai for android, ai android, personal assistant ai, ai assistant for android"
         features={[
           { name: "Workflow Automation", twent: true, competitor: true },
           { name: "Scheduled Jobs", twent: true, competitor: true },

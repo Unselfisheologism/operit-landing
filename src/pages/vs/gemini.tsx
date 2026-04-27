@@ -8,7 +8,8 @@ export default function GeminiComparisonPage() {
         competitorName="Gemini"
         pageTitle="twent AI vs Gemini App: Feature Comparison 2026"
         lastUpdated="April 22, 2026"
-        verdict="Gemini offers deep Google integration and voice capabilities, but it's limited to cloud usage and doesn't support local inference or Android system automation. twent AI gives you full control on your device with a built-in terminal and offline operation."
+verdict="Gemini offers deep Google integration and voice capabilities, but it's limited to cloud usage and doesn't support local inference or Android system automation. twent AI gives you full control on your device with a built-in terminal and offline operation."
+        metaKeywords="google gemini android, ai assistant for android, best ai app for android, ai android, personal assistant ai, ai apps for android"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",

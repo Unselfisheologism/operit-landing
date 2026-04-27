@@ -9,6 +9,7 @@ export default function MakeComparisonPage() {
         pageTitle="twent AI vs Make: Automation Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Make is a powerful cloud-based workflow automation platform with thousands of integrations. twent AI runs natively on Android, offering local AI execution, natural language scheduling, and deep system access without relying on cloud infrastructure."
+        metaKeywords="make automation, workflow automation, ai automation android, ai for android, ai assistant for android, best ai app for android"
         features={[
           { name: "Workflow Automation", twent: true, competitor: true },
           { name: "Scheduled Jobs", twent: true, competitor: true },

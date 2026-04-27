@@ -9,6 +9,7 @@ export default function QordinateComparisonPage() {
         pageTitle="twent AI vs Qordinate: Automation Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Qordinate is an emerging workflow automation platform with visual editing and integration support. twent AI offers native Android automation with local AI, full terminal access, and offline execution, keeping your data on-device."
+        metaKeywords="ai automation, workflow automation, ai assistant for android, best ai android, personal assistant ai, ai apps for android"
         features={[
           { name: "Workflow Automation", twent: true, competitor: true },
           { name: "Scheduled Jobs", twent: true, competitor: true },

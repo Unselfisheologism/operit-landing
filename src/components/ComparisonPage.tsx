@@ -16,6 +16,7 @@ interface ComparisonPageProps {
   verdict: string;
   features: Feature[];
   metaDescription?: string;
+  metaKeywords?: string;
 }
 
 export function ComparisonPage({
@@ -26,9 +27,11 @@ export function ComparisonPage({
   verdict,
   features,
   metaDescription,
+  metaKeywords,
 }: ComparisonPageProps) {
   const fullUrl = `https://twent.ai/vs/${competitorSlug}`;
   const description = metaDescription || verdict.slice(0, 155) + "…";
+  const keywords = metaKeywords || "twent AI vs " + competitorName + ", AI assistant Android comparison, best AI app android";
 
   // Inject head tags on mount
   useEffect(() => {
@@ -61,8 +64,9 @@ export function ComparisonPage({
       link.href = href;
     };
 
-    // Basic meta
+// Basic meta
     setMeta("description", description);
+    setMeta("keywords", keywords);
     setLink("canonical", fullUrl);
 
     // Open Graph

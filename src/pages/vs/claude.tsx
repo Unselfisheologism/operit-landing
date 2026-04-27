@@ -9,6 +9,7 @@ export default function ClaudeComparisonPage() {
         pageTitle="twent AI vs Claude Mobile: Which Is Better For Android?"
         lastUpdated="April 22, 2026"
         verdict="Claude is a powerful AI assistant with strong reasoning, but it's cloud-only and lacks Android integration. twent AI brings a full terminal, local model support, and deep Android automation to your device."
+        metaKeywords="ai assistant for android, best ai app for android, personal assistant ai, ai apps for android, ai android, android ai assistant, best ai android"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",

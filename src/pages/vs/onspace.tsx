@@ -9,6 +9,7 @@ export default function OnspaceComparisonPage() {
         pageTitle="twent AI vs Onspace: Workspace Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Onspace is an AI‑powered workspace for team collaboration. twent AI is built for power users who need a full terminal, local AI inference, and deep Android automation—all without cloud dependency."
+        metaKeywords="ai for android, ai apps for android, personal assistant ai, ai assistant for android, ai android, best ai app for android"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",

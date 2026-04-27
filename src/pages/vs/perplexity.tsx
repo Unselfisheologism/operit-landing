@@ -9,6 +9,7 @@ export default function PerplexityComparisonPage() {
         pageTitle="twent AI vs Perplexity Mobile: Full Comparison (2026)"
         lastUpdated="April 22, 2026"
         verdict="Perplexity excels at web-powered answers, yet it's a cloud service without offline mode or Android integration. twent AI works entirely on your device, keeping your data private and your automation local."
+        metaKeywords="best ai android, best ai for android, best ai app for android, ai android, personal assistant ai, ai assistant for android, ai apps for android"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",
