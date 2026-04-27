@@ -5,7 +5,7 @@ export default function ReplikaComparisonPage() {
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <ComparisonPage
         competitorSlug="replika"
-        competitorName="Replika AI Companion"
+        competitorName="Replika"
         pageTitle="twent AI vs Replika: Which AI App is Best for Android? (2026)"
         lastUpdated="April 27, 2026"
         verdict="Replika excels at conversation and emotional companionship. twent AI excels at getting actual tasks done on your Android device. Choose Replika for chat, choose twent for action."
@@ -63,28 +63,28 @@ export default function ReplikaComparisonPage() {
             competitor: false,
           },
           {
-            name: "Companionship & roleplay",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Emotional support AI",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Avatar system",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Voice conversations",
+            name: "Free forever",
             twent: true,
+            competitor: false,
+          },
+          {
+            name: "Voice calls",
+            twent: false,
             competitor: true,
           },
           {
-            name: "Free tier available",
-            twent: true,
+            name: "AR mode",
+            twent: false,
+            competitor: true,
+          },
+          {
+            name: "Avatar customization",
+            twent: false,
+            competitor: true,
+          },
+          {
+            name: "Image generation",
+            twent: false,
             competitor: true,
           },
         ]}

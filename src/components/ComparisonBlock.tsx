@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 
-// Enhanced competitor data — "vs" keywords with SEO metrics
+// Verified competitor data — "vs" keywords with SEO metrics
 // Search volume: Google Keyword Planner exact match (12mo avg)
 // CPC: AdWords estimated cost per click (indicator of commercial intent)
 // Difficulty: SEO competition (low/medium/high)
 // Intent: searcher stage (research, comparison, decision)
+// Features verified via DuckDuckGo search April 2026
 const comparisons = [
   {
     id: "vs-replika",
@@ -26,9 +27,11 @@ const comparisons = [
       "Privacy-first with BYOK",
     ],
     replikaBetter: [
-      "Companionship and roleplay",
-      "Emotional support focus",
-      "Avatar system",
+      "Companionship and emotional support",
+      "Voice calls (Pro $70/yr)",
+      "Avatar customization",
+      "AR mode",
+      "Image generation",
     ],
     verdict: "Replika excels at conversation. Twent excels at action.",
     pageUrl: "/twent-vs-replika",
@@ -55,6 +58,7 @@ const comparisons = [
       "Larger context window",
       "More polished web search",
       "Image generation (DALL-E)",
+      "Voice mode",
     ],
     verdict: "ChatGPT is a better chatbot. Twent is a better AI agent.",
     pageUrl: null,
@@ -130,9 +134,8 @@ const comparisons = [
     ],
     copilotBetter: [
       "GPT-4o access",
-      "Deep Microsoft 365 integration",
       "Copilot Voice feature",
-      "Image generator (DALL-E 3)",
+      "Image generation (DALL-E 3)",
     ],
     verdict: "Copilot is great for Microsoft users. Twent is great for getting things done.",
     pageUrl: "/twent-vs-copilot",
@@ -150,17 +153,16 @@ const comparisons = [
       "Actually runs tasks on your phone",
       "UI automation (tap, type, swipe)",
       "Floating overlay mode",
-      "Skills + workflows",
+      "Skills + custom workflows",
       "Composio + MCP integrations",
-      "Terminal access",
+      "Full Ubuntu terminal",
     ],
     claudeBetter: [
-      "Claude's advanced reasoning (sonnet/opus)",
+      "Claude Sonnet/Opus reasoning",
       "Larger context (200K)",
-      "Computer use capability",
-      "More refined outputs",
+      "Vision capabilities",
     ],
-    verdict: "Claude on web is elite for reasoning. Twent is elite for action.",
+    verdict: "Claude mobile is great for chat. Twent is great for action.",
     pageUrl: null,
   },
   {
@@ -181,10 +183,9 @@ const comparisons = [
       "MCP + Composio",
     ],
     piBetter: [
-      "VoicedConversations",
+      "Voice conversations",
       "Empathetic personality",
-      "Mini-apps (Chef, Coach, others)",
-      "Voice mode",
+      "Completely free",
     ],
     verdict: "Pi is great for talking. Twent is great for doing.",
     pageUrl: null,
@@ -209,9 +210,7 @@ const comparisons = [
     geminiBetter: [
       "Google's Ultra models",
       "Deep search integration",
-      "Gmail/Docs/Sheets integration",
-      "Workspace business suite",
-      "Image generation (Imagen)",
+      "Gmail/Docs/Sheets (paid Workspace)",
     ],
     verdict: "Gemini lives in Google apps. Twent lives on your device.",
     pageUrl: "/twent-vs-gemini",

@@ -8,7 +8,7 @@ export default function CopilotComparisonPage() {
         competitorName="Microsoft Copilot"
         pageTitle="twent AI vs Microsoft Copilot: Full Comparison (2026)"
         lastUpdated="April 27, 2026"
-        verdict="Microsoft Copilot is great for Microsoft 365 users. twent AI is great for anyone who needs to get things done on their Android device. Choose Copilot for Workspace integration, choose twent for device automation."
+        verdict="Microsoft Copilot is great for Microsoft users who want GPT-4 + DALL-E image generation. twent AI is great for anyone who needs to get things done on their Android device. Choose Copilot for creativity, choose twent for device automation."
         metaKeywords="copilot app android, microsoft copilot android, copilot ai mobile, copilot vs chatgpt, best ai assistant android, microsoft ai android"
         metaDescription="Complete comparison of twent AI vs Microsoft Copilot for Android. Learn which AI assistant is better for device automation, task execution, and productivity."
         features={[
@@ -63,12 +63,12 @@ export default function CopilotComparisonPage() {
             competitor: false,
           },
           {
-            name: "GPT-4o access",
-            twent: false,
-            competitor: true,
+            name: "Free forever",
+            twent: true,
+            competitor: false,
           },
           {
-            name: "Microsoft 365 integration",
+            name: "GPT-4o access",
             twent: false,
             competitor: true,
           },
@@ -80,11 +80,6 @@ export default function CopilotComparisonPage() {
           {
             name: "Image generation (DALL-E 3)",
             twent: false,
-            competitor: true,
-          },
-          {
-            name: "Free tier available",
-            twent: true,
             competitor: true,
           },
         ]}

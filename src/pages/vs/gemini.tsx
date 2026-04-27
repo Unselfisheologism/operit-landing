@@ -8,7 +8,7 @@ export default function GeminiComparisonPage() {
         competitorName="Google Gemini"
         pageTitle="twent AI vs Google Gemini: Full Comparison (2026)"
         lastUpdated="April 27, 2026"
-        verdict="Gemini lives inside Google apps. twent AI lives on your device. Choose Gemini for Workspace users, choose twent for actual device automation and privacy."
+        verdict="Gemini lives inside Google apps (with paid Workspace). twent AI lives on your device. Choose Gemini for Workspace users who need Gmail/Docs integration, choose twent for device automation and privacy."
         metaKeywords="gemini app android, google gemini mobile, gemini pro android, gemini vs chatgpt, google ai android, best google ai app"
         metaDescription="Complete comparison of twent AI vs Google Gemini for Android. Learn which AI assistant is better for device automation, privacy, and getting things done."
         features={[
@@ -63,6 +63,11 @@ export default function GeminiComparisonPage() {
             competitor: false,
           },
           {
+            name: "Free tier",
+            twent: true,
+            competitor: true,
+          },
+          {
             name: "Google Ultra models",
             twent: false,
             competitor: true,
@@ -73,23 +78,8 @@ export default function GeminiComparisonPage() {
             competitor: true,
           },
           {
-            name: "Gmail/Docs/Sheets integration",
+            name: "Gmail/Docs integration",
             twent: false,
-            competitor: true,
-          },
-          {
-            name: "Workspace business suite",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Image generation (Imagen)",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Free tier available",
-            twent: true,
             competitor: true,
           },
         ]}
