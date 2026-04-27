@@ -123,42 +123,6 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     title: 'Twent vs SoundHound AI - Voice AI Comparison for Android (2026)',
     description: 'Compare Twent AI vs SoundHound AI for Android. SoundHound excels at voice AI and music recognition. Twent is better for device automation, tasks, and productivity.',
   },
-  '/vs/claude': {
-    title: 'Twent vs Claude - AI Assistant for Android',
-    description: 'Compare Twent and Claude AI assistants for Android.',
-  },
-  '/vs/perplexity': {
-    title: 'Twent vs Perplexity - AI Search Comparison',
-    description: 'Twent vs Perplexity: AI that searches vs AI that actually does things.',
-  },
-  '/vs/make': {
-    title: 'Twent vs Make (Integromat) - Automation Comparison',
-    description: 'Compare Twent and Make for AI-powered Android automation.',
-  },
-  '/vs/zapier': {
-    title: 'Twent vs Zapier - AI Automation Comparison',
-    description: 'Twent vs Zapier: Mobile AI automation that actually works on Android.',
-  },
-  '/vs/qordinate': {
-    title: 'Twent vs Qordinate - AI Agent Comparison',
-    description: 'Compare Twent and Qordinate AI agents for Android.',
-  },
-  '/vs/omnara': {
-    title: 'Twent vs Omnara - AI Agent Comparison',
-    description: 'Twent vs Omnara: Which AI agent is better for Android?',
-  },
-  '/vs/manus': {
-    title: 'Twent vs Manus - AI Agent Comparison',
-    description: 'Compare Twent and Manus AI agents for Android automation.',
-  },
-  '/vs/genspark': {
-    title: 'Twent vs Genspark - AI Agent Comparison',
-    description: 'Twent vs Genspark: Mobile AI agents for Android compared.',
-  },
-  '/vs/onspace': {
-    title: 'Twent vs Onspace - AI Agent Comparison',
-    description: 'Compare Twent and Onspace AI agents for Android.',
-  },
 };
 
 // Get localized meta title
