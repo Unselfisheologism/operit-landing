@@ -1,14 +1,17 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { TableOfContents } from "./ui/TableOfContents";
 
 interface ChangelogEntry {
   date: string;
+  version: string;
   items: string[];
 }
 
 const entries: ChangelogEntry[] = [
   {
     date: "April 19, 2026",
+    version: "v0.6.0",
     items: [
       "System prompt enhancement",
       "ClawHub integration",
@@ -17,6 +20,7 @@ const entries: ChangelogEntry[] = [
   },
   {
     date: "April 12, 2026",
+    version: "v0.5.0",
     items: [
       "Agent CLIs",
       "Mini-apps",
@@ -25,6 +29,7 @@ const entries: ChangelogEntry[] = [
   },
   {
     date: "April 3, 2026",
+    version: "v0.4.0",
     items: [
       "Workflows",
       "Composio integration",
@@ -35,6 +40,7 @@ const entries: ChangelogEntry[] = [
   },
   {
     date: "March 27, 2026",
+    version: "v0.3.0",
     items: [
       "UI automation",
       "Overlay Assistant",
@@ -44,6 +50,7 @@ const entries: ChangelogEntry[] = [
   },
   {
     date: "March 20, 2026",
+    version: "v0.2.0",
     items: [
       "AI Chat",
       "API Provider support",
@@ -52,6 +59,13 @@ const entries: ChangelogEntry[] = [
     ],
   },
 ];
+
+// Build TOC items from changelog entries
+const tocItems = entries.map((entry) => ({
+  id: entry.version.replace(".", "-"),
+  text: `${entry.version} - ${entry.date}`,
+  level: 2,
+}));
 
 export function ChangelogPage({
   dark,
@@ -69,13 +83,15 @@ export function ChangelogPage({
           What's new in Twent — weekly updates.
         </p>
 
+        <TableOfContents items={tocItems} />
+
         <div className="space-y-16">
           {entries.map((entry) => (
-            <div key={entry.date}>
+            <div key={entry.date} id={entry.version.replace(".", "-")}>
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-2 h-2 rounded-full bg-orange-500" />
                 <h2 className="font-display text-sm uppercase tracking-[0.15em] text-orange-500">
-                  {entry.date}
+                  {entry.date} — {entry.version}
                 </h2>
               </div>
               <ul className="space-y-2 pl-5">

@@ -2,6 +2,16 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
+import { TableOfContents } from "./ui/TableOfContents";
+
+// TOC items for this blog post
+const tocItems = [
+  { id: "what-even-is-the-marketplace", text: "What even is the marketplace?", level: 2 },
+  { id: "how-does-pricing-work", text: "How does pricing work?", level: 2 },
+  { id: "why-this-matters", text: "Why this matters", level: 2 },
+  { id: "whats-next", text: "What's next?", level: 2 },
+  { id: "tldr", text: "TL;DR for the impatient", level: 2 },
+];
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -145,11 +155,14 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
 
         {/* Content area */}
         <section ref={contentRef} className="max-w-4xl mx-auto px-6 pb-24">
-          <div
+<div
             className={`transition-all duration-700 ${
               contentInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
+            {/* Table of Contents */}
+            <TableOfContents items={tocItems} />
+
             <div className="prose prose-zinc dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed mb-8">
                 ok so here's the thing (￣_,￣ ) we're building something wild with twent. 
@@ -157,8 +170,8 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 and the marketplace? that's where the magic happens.
               </p>
 
-              <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-                what even is the marketplace?
+              <h2 id="what-even-is-the-marketplace" className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6 scroll-mt-32">
+                What even is the marketplace?
               </h2>
               
               <p className="text-base leading-relaxed mb-6">
@@ -216,8 +229,8 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 ))}
               </div>
 
-              <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-                how does pricing work?
+<h2 id="how-does-pricing-work" className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6 scroll-mt-32">
+                How does pricing work?
               </h2>
 
               <p className="text-base leading-relaxed mb-6">
@@ -286,8 +299,8 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 </ul>
               </div>
 
-              <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-                why this matters
+<h2 id="why-this-matters" className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6 scroll-mt-32">
+                Why this matters
               </h2>
 
               <p className="text-base leading-relaxed mb-6">
@@ -307,8 +320,8 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 you get zero commissions on your sales. that's right, keep 100% of what you make.
               </p>
 
-              <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-                what's next?
+<h2 id="whats-next" className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6 scroll-mt-32">
+                What's next?
               </h2>
 
               <p className="text-base leading-relaxed mb-6">
@@ -324,9 +337,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 and the pro plan will give power users everything they need without any recurring costs.
               </p>
 
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-6">
-                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
-                  tldr for the impatient (￣_,￣ )
+<div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:bg-blue-900/20 p-6">
+                <h3 id="tldr" className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4 scroll-mt-32">
+                  TL;DR for the impatient (￣_,￣ )
                 </h3>
                 <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                   <li>• marketplace = agentic app store for twent</li>
