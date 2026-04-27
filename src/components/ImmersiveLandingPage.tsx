@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { Pricing } from "./Pricing";
+import { ComparisonBlock } from "./ComparisonBlock";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -609,8 +610,11 @@ export function ImmersiveLandingPage({
           </div>
         </section>
 
-        {/* Pricing & FAQ */}
+{/* Pricing & FAQ */}
         <Pricing />
+
+        {/* VS Comparisons — capture [product] vs [competitor] search traffic */}
+        <ComparisonBlock />
 
         {/* Final CTA */}
         <section className="py-20 md:py-28 px-6 bg-zinc-900 dark:bg-zinc-950">

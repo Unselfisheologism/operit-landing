@@ -1,5 +1,6 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { ComparisonBlock } from "./ComparisonBlock";
 import { useInView } from "../hooks/useInView";
 
 // Grain overlay for editorial print feel
@@ -399,7 +400,10 @@ export function SimplifiedLandingPage({
               </div>
             </div>
           </div>
-        </section>
+</section>
+
+        {/* VS Comparisons */}
+        <ComparisonBlock />
 
         {/* Final CTA */}
         <section ref={ctaRef} className="py-20 md:py-28 px-6">

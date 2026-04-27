@@ -1,19 +1,24 @@
 import { ComparisonPage } from "../../components/ComparisonPage";
 
-export default function GeminiComparisonPage() {
+export default function CopilotComparisonPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <ComparisonPage
-        competitorSlug="gemini"
-        competitorName="Google Gemini"
-        pageTitle="twent AI vs Google Gemini: Full Comparison (2026)"
+        competitorSlug="copilot"
+        competitorName="Microsoft Copilot"
+        pageTitle="twent AI vs Microsoft Copilot: Full Comparison (2026)"
         lastUpdated="April 27, 2026"
-        verdict="Gemini lives inside Google apps. twent AI lives on your device. Choose Gemini for Workspace users, choose twent for actual device automation and privacy."
-        metaKeywords="gemini app android, google gemini mobile, gemini pro android, gemini vs chatgpt, google ai android, best google ai app"
-        metaDescription="Complete comparison of twent AI vs Google Gemini for Android. Learn which AI assistant is better for device automation, privacy, and getting things done."
+        verdict="Microsoft Copilot is great for Microsoft 365 users. twent AI is great for anyone who needs to get things done on their Android device. Choose Copilot for Workspace integration, choose twent for device automation."
+        metaKeywords="copilot app android, microsoft copilot android, copilot ai mobile, copilot vs chatgpt, best ai assistant android, microsoft ai android"
+        metaDescription="Complete comparison of twent AI vs Microsoft Copilot for Android. Learn which AI assistant is better for device automation, task execution, and productivity."
         features={[
           {
-            name: "Runs tasks on device",
+            name: "Runs tasks on your phone",
+            twent: true,
+            competitor: false,
+          },
+          {
+            name: "Claude Code + tools",
             twent: true,
             competitor: false,
           },
@@ -23,27 +28,22 @@ export default function GeminiComparisonPage() {
             competitor: false,
           },
           {
-            name: "Skills + custom workflows",
+            name: "Skills + workflows",
             twent: true,
             competitor: false,
           },
           {
-            name: "Floating overlay",
+            name: "Floating overlay mode",
             twent: true,
             competitor: false,
           },
           {
-            name: "Local model deployment",
+            name: "Local AI models (GGUF)",
             twent: true,
             competitor: false,
           },
           {
-            name: "Privacy BYOK model",
-            twent: true,
-            competitor: false,
-          },
-          {
-            name: "Claude Code tools",
+            name: "Privacy-first architecture",
             twent: true,
             competitor: false,
           },
@@ -63,27 +63,22 @@ export default function GeminiComparisonPage() {
             competitor: false,
           },
           {
-            name: "Google Ultra models",
+            name: "GPT-4o access",
             twent: false,
             competitor: true,
           },
           {
-            name: "Deep search integration",
+            name: "Microsoft 365 integration",
             twent: false,
             competitor: true,
           },
           {
-            name: "Gmail/Docs/Sheets integration",
+            name: "Copilot Voice",
             twent: false,
             competitor: true,
           },
           {
-            name: "Workspace business suite",
-            twent: false,
-            competitor: true,
-          },
-          {
-            name: "Image generation (Imagen)",
+            name: "Image generation (DALL-E 3)",
             twent: false,
             competitor: true,
           },

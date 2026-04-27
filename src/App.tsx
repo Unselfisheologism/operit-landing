@@ -36,6 +36,9 @@ import OpenclawComparisonPage from "./pages/vs/openclaw";
 import HermesAgentComparisonPage from "./pages/vs/hermes-agent";
 import N8nComparisonPage from "./pages/vs/n8n";
 import AnythingLlmComparisonPage from "./pages/vs/anything-llm";
+import ReplikaComparisonPage from "./pages/vs/replika";
+import CopilotComparisonPage from "./pages/vs/copilot";
+import GeminiComparisonPage from "./pages/vs/gemini";
 import { NotFoundPage } from "./components/NotFoundPage";
 
 export function useTheme() {
@@ -223,13 +226,18 @@ export default function App() {
     return <PricingPage />;
   }
 
-  // Competitor comparison pages
+// Competitor comparison pages
   if (path.startsWith("/vs/chatgpt")) return <ChatgptComparisonPage />;
   if (path.startsWith("/vs/nebula")) return <NebulaComparisonPage />;
   if (path.startsWith("/vs/openclaw")) return <OpenclawComparisonPage />;
   if (path.startsWith("/vs/hermes-agent")) return <HermesAgentComparisonPage />;
   if (path.startsWith("/vs/n8n")) return <N8nComparisonPage />;
   if (path.startsWith("/vs/anything-llm")) return <AnythingLlmComparisonPage />;
+
+  // New comparison pages (April 2026 SEO expansion)
+  if (path.startsWith("/twent-vs-replika")) return <ReplikaComparisonPage />;
+  if (path.startsWith("/twent-vs-copilot")) return <CopilotComparisonPage />;
+  if (path.startsWith("/twent-vs-gemini")) return <GeminiComparisonPage />;
 
   // Detailed landing page (old version with all features)
   if (path.startsWith("/details")) {
