@@ -8,6 +8,9 @@ import '@fontsource/saira-condensed/500.css'
 import '@fontsource/special-elite'
 import '@fontsource/swanky-and-moo-moo'
 
+// i18n imports
+import './i18n'
+
 import './index.css'
 import App from './App'
 

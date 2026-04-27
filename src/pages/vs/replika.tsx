@@ -9,7 +9,7 @@ export default function ReplikaComparisonPage() {
         pageTitle="twent AI vs Replika: Which AI App is Best for Android? (2026)"
         lastUpdated="April 27, 2026"
         verdict="Replika excels at conversation and emotional companionship. twent AI excels at getting actual tasks done on your Android device. Choose Replika for chat, choose twent for action."
-        metaKeywords="replika app, replika ai, replika android, replika vs chatgpt, ai companion app, best ai companion android, replika alternative android"
+        metaKeywords="replika app, replika ai, replika android, replika vs chatgpt, ai companion app, best ai companion android, replika alternative android, download replika, replika app download, replika modyolo, replika apkpure"
         metaDescription="Complete comparison of twent AI vs Replika for Android. Learn which AI assistant is better for productivity, automation, and getting things done vs emotional conversation."
         features={[
           {

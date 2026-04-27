@@ -1,97 +1,558 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- ROOT PAGE - All language variants                         -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/"/>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- PRICING PAGE                                             -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/pricing"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/pricing"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/pricing"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/pricing"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/pricing"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/pricing"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/pricing"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/pricing"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/pricing"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/pricing"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- DOCS PAGE                                                -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/docs</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/docs"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/docs"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/docs"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/docs"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/docs"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/docs"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/docs"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/docs"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/docs"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/docs"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/docs"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/docs"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/docs"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/docs"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/docs"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/docs"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/docs"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/docs"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/docs"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/docs"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/docs"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/docs"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/docs"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- BLOG PAGE                                                -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/blog</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/blog"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/blog"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/blog"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/blog"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/blog"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/blog"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/blog"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/blog"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/blog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/blog"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/blog"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/blog"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/blog"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/blog"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/blog"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/blog"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/blog"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/blog"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/blog"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/blog"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/blog"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/blog"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/blog"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- MARKETPLACE BLOG POST                                    -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/blog/marketplace</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/blog/marketplace"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/blog/marketplace"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- AI AGENT FOR DEVELOPERS                                   -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/blog/ai-agent-for-developers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/blog/ai-agent-for-developers"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/blog/ai-agent-for-developers"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS CHATGPT PAGE                                          -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/vs/chatgpt</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/chatgpt"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/chatgpt"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://twent.ai/vs/nebula</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/openclaw</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/hermes-agent</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/n8n</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/anything-llm</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS GEMINI PAGE                                           -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/vs/gemini</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/gemini"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/gemini"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS NEBULA PAGE                                           -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/vs/nebula</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/nebula"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/nebula"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS N8N PAGE                                             -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/vs/n8n</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/n8n"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/n8n"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS OPENCLAW PAGE                                        -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/vs/openclaw</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/openclaw"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/openclaw"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS HERMES-AGENT PAGE                                    -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/vs/hermes-agent</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/hermes-agent"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/hermes-agent"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS ANYTHING-LLM PAGE                                     -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <url>
+    <loc>https://twent.ai/vs/anything-llm</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/anything-llm"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/anything-llm"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS CLAUDE PAGE                                          -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/vs/claude</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/claude"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/claude"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- ═══════════════════════════════════════════════════════════ -->
+  <!-- VS PERPLEXITY PAGE                                       -->
+  <!-- ═══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://twent.ai/vs/perplexity</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/make</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/zapier</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/qordinate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/omnara</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/manus</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/genspark</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.ai/vs/onspace</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.ai/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.ai/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.ai/zh/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.ai/zh-TW/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.ai/hi/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.ai/es/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.ai/es-419/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.ai/es-AR/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.ai/es-CO/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.ai/pt/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.ai/pt-BR/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.ai/fr/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.ai/fr-CA/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.ai/ja/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.ai/ko/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.ai/de/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.ai/de-AT/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.ai/de-CH/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.ai/it/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.ai/tr/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.ai/id/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.ai/vi/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.ai/ar/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.ai/ar-AE/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.ai/ar-EG/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.ai/ru/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.ai/pl/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.ai/nl/vs/perplexity"/>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.ai/nl-BE/vs/perplexity"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

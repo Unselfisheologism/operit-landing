@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavProps {
   dark: boolean;
@@ -136,6 +137,13 @@ function MobileOverlay({
 
           <div className="section-divider mb-6" />
 
+          {/* Language Switcher - Mobile */}
+          <div className="mb-6">
+            <LanguageSwitcher />
+          </div>
+
+          <div className="section-divider mb-6" />
+
           {/* Download inside overlay */}
           <DownloadButton className="w-full justify-center" />
         </div>
@@ -170,7 +178,7 @@ function DesktopHeader({
               boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
               padding: "6px 8px",
               gap: "4px",
-              maxWidth: "900px",
+              maxWidth: "960px",
             }
           : {
               background: dark ? "rgba(0,0,0,0.8)" : "rgba(255,255,255,0.8)",
@@ -219,7 +227,7 @@ function DesktopHeader({
         ))}
       </div>
 
-      {/* RIGHT: Download + Toggle — fades in when scrolled */}
+      {/* RIGHT: Download + Toggle + Language — fades in when scrolled */}
       <div
         className={`flex items-center transition-all duration-500 overflow-hidden ${
           scrolled
@@ -228,6 +236,8 @@ function DesktopHeader({
         }`}
       >
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
+        {/* Language Switcher */}
+        <LanguageSwitcher variant="minimal" className="text-black dark:text-white" />
         <DownloadButton iconOnly className="!w-8 !h-8" />
         <ThemeToggle dark={dark} onToggle={onToggle} />
       </div>
@@ -263,8 +273,9 @@ function MobileHeader({
         </span>
       </a>
 
-      {/* Right: download icon + toggle + hamburger */}
+      {/* Right: language + download icon + toggle + hamburger */}
       <div className="flex items-center gap-1">
+        <LanguageSwitcher variant="minimal" className="text-black dark:text-white" />
         <DownloadButton iconOnly className="!w-8 !h-8" />
         <ThemeToggle dark={dark} onToggle={onToggle} />
         <HamburgerIcon

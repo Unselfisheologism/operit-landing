@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Nav } from "./components/Nav";
 import { HeroSection } from "./components/HeroSection";
 import { Part1What, Part2ForDevs, Part3ForEveryone } from "./components/StoryParts123";
@@ -28,6 +29,8 @@ import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
 import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
 import { SimplifiedLandingPage } from "./components/SimplifiedLandingPage";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
+import { HreflangTags } from "./components/HreflangTags";
+import { MetaUpdater } from "./components/MetaUpdater";
 
 // Competitor comparison pages
 import ChatgptComparisonPage from "./pages/vs/chatgpt";
@@ -39,7 +42,18 @@ import AnythingLlmComparisonPage from "./pages/vs/anything-llm";
 import ReplikaComparisonPage from "./pages/vs/replika";
 import CopilotComparisonPage from "./pages/vs/copilot";
 import GeminiComparisonPage from "./pages/vs/gemini";
+import ClaudeComparisonPage from "./pages/vs/claude";
+import PerplexityComparisonPage from "./pages/vs/perplexity";
+import MakeComparisonPage from "./pages/vs/make";
+import ZapierComparisonPage from "./pages/vs/zapier";
+import QordinateComparisonPage from "./pages/vs/qordinate";
+import OmnaraComparisonPage from "./pages/vs/omnara";
+import ManusComparisonPage from "./pages/vs/manus";
+import OnspaceComparisonPage from "./pages/vs/onspace";
+import SoundhoundComparisonPage from "./pages/vs/soundhound";
 import { NotFoundPage } from "./components/NotFoundPage";
+
+import { languages, changeLanguage, getDirection } from "./i18n";
 
 export function useTheme() {
   const [dark, setDark] = useState(() => {
@@ -67,7 +81,9 @@ export function useTheme() {
 }
 
 // SPA navigation: intercept internal <a> clicks and use pushState
+// Also handles language prefix in URL
 function useSpaNavigation() {
+  const { i18n } = useTranslation();
   const [path, setPath] = useState(() => {
     if (typeof window === "undefined") return "/";
     // Handle GitHub Pages 404.html redirect: ?path=%2Fdocs
@@ -82,14 +98,50 @@ function useSpaNavigation() {
     return window.location.pathname;
   });
 
+  // Detect language from URL on mount
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 0) {
+      const potentialLang = pathParts[0];
+      const matchedLang = languages.find(l => l.code === potentialLang);
+      
+      if (matchedLang && matchedLang.code !== i18n.language) {
+        changeLanguage(matchedLang.code);
+      }
+    }
+  }, []);
+
   const navigate = useCallback((to: string) => {
     window.history.pushState({}, "", to);
     setPath(to);
     window.scrollTo(0, 0);
   }, []);
 
+  // Update direction based on current language
   useEffect(() => {
-    const onPopState = () => setPath(window.location.pathname);
+    if (typeof document === "undefined") return;
+    const dir = getDirection(i18n.language);
+    document.documentElement.dir = dir;
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      const newPath = window.location.pathname;
+      setPath(newPath);
+      
+      // Check if language changed
+      const pathParts = newPath.split('/').filter(Boolean);
+      if (pathParts.length > 0) {
+        const potentialLang = pathParts[0];
+        const matchedLang = languages.find(l => l.code === potentialLang);
+        if (matchedLang && matchedLang.code !== i18n.language) {
+          changeLanguage(matchedLang.code);
+        }
+      }
+    };
     window.addEventListener("popstate", onPopState);
 
     // Global click handler: intercept internal <a> links
@@ -122,7 +174,7 @@ function useSpaNavigation() {
       window.removeEventListener("popstate", onPopState);
       document.removeEventListener("click", onClick);
     };
-  }, [navigate]);
+  }, [navigate, i18n.language]);
 
   return { path, navigate };
 }
@@ -169,91 +221,358 @@ export default function App() {
       (path.endsWith(".txt") || path.endsWith(".xml") || 
        path.endsWith(".json") || path.endsWith(".png") || 
        path.endsWith(".jpg") || path.endsWith(".svg"))) {
-    // This should not happen because static files are served directly by Vite
-    // But if it does, let the browser handle it
     return null;
   }
 
-  if (path.startsWith("/docs")) {
-    return <DocsPage dark={dark} onToggle={toggle} />;
+  // Remove language prefix from path for routing
+  const routePath = (() => {
+    const parts = path.split('/').filter(Boolean);
+    const firstPart = parts[0];
+    const isLangPrefix = languages.some(l => l.code === firstPart);
+    if (isLangPrefix) {
+      return '/' + parts.slice(1).join('/');
+    }
+    return path;
+  })();
+
+  // Route based on routePath (without language prefix)
+  if (routePath.startsWith("/docs")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <DocsPage dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/ai-agent-for-developers")) {
-    return <AiAgentForDevelopers dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/ai-agent-for-developers")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <AiAgentForDevelopers dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/android-automation-power-user")) {
-    return <AndroidAutomationPowerUser dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/android-automation-power-user")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <AndroidAutomationPowerUser dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/privacy-first-ai-android")) {
-    return <PrivacyFirstAiAndroid dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/privacy-first-ai-android")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PrivacyFirstAiAndroid dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/terminal-on-android")) {
-    return <TerminalOnAndroid dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/terminal-on-android")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <TerminalOnAndroid dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/ai-marketplace-creators")) {
-    return <AiMarketplaceCreators dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/ai-marketplace-creators")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <AiMarketplaceCreators dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/enterprise-ai-agent")) {
-    return <EnterpriseAiAgent dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/enterprise-ai-agent")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <EnterpriseAiAgent dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/blog/marketplace")) {
-    return <MarketplaceBlogPost dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/blog/marketplace")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <MarketplaceBlogPost dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/blog")) {
-    return <BlogPage dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/blog")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <BlogPage dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/changelog")) {
-    return <ChangelogPage dark={dark} onToggle={toggle} />;
+  if (routePath.startsWith("/changelog")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ChangelogPage dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path === "/terms") {
-    return <TermsOfService dark={dark} onToggle={toggle} />;
+  if (routePath === "/terms") {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <TermsOfService dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path === "/privacy") {
-    return <PrivacyPolicy dark={dark} onToggle={toggle} />;
+  if (routePath === "/privacy") {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PrivacyPolicy dark={dark} onToggle={toggle} />
+      </>
+    );
   }
 
-  if (path.startsWith("/pricing")) {
-    return <PricingPage />;
+  if (routePath.startsWith("/pricing")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PricingPage />
+      </>
+    );
   }
 
-// Competitor comparison pages
-  if (path.startsWith("/vs/chatgpt")) return <ChatgptComparisonPage />;
-  if (path.startsWith("/vs/nebula")) return <NebulaComparisonPage />;
-  if (path.startsWith("/vs/openclaw")) return <OpenclawComparisonPage />;
-  if (path.startsWith("/vs/hermes-agent")) return <HermesAgentComparisonPage />;
-  if (path.startsWith("/vs/n8n")) return <N8nComparisonPage />;
-  if (path.startsWith("/vs/anything-llm")) return <AnythingLlmComparisonPage />;
+  // Competitor comparison pages
+  if (routePath.startsWith("/vs/chatgpt")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ChatgptComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/nebula")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <NebulaComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/openclaw")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <OpenclawComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/hermes-agent")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <HermesAgentComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/n8n")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <N8nComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/anything-llm")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <AnythingLlmComparisonPage />
+      </>
+    );
+  }
 
-  // New comparison pages (April 2026 SEO expansion)
-  if (path.startsWith("/twent-vs-replika")) return <ReplikaComparisonPage />;
-  if (path.startsWith("/twent-vs-copilot")) return <CopilotComparisonPage />;
-  if (path.startsWith("/twent-vs-gemini")) return <GeminiComparisonPage />;
+  // Competitor comparison pages - /vs/ route (canonical)
+  if (routePath.startsWith("/vs/replika")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ReplikaComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/copilot")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <CopilotComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/gemini")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <GeminiComparisonPage />
+      </>
+    );
+  }
+
+  // Additional competitor comparison pages
+  if (routePath.startsWith("/vs/claude")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ClaudeComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/perplexity")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PerplexityComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/make")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <MakeComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/zapier")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ZapierComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/qordinate")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <QordinateComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/omnara")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <OmnaraComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/manus")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ManusComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/onspace")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <OnspaceComparisonPage />
+      </>
+    );
+  }
+  if (routePath.startsWith("/vs/soundhound")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <SoundhoundComparisonPage />
+      </>
+    );
+  }
 
   // Detailed landing page (old version with all features)
-  if (path.startsWith("/details")) {
-    return <LandingPage dark={dark} toggle={toggle} />;
+  if (routePath.startsWith("/details")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <LandingPage dark={dark} toggle={toggle} />
+      </>
+    );
   }
 
   // Simple landing page
-  if (path.startsWith("/simple")) {
-    return <SimplifiedLandingPage dark={dark} toggle={toggle} />;
+  if (routePath.startsWith("/simple")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <SimplifiedLandingPage dark={dark} toggle={toggle} />
+      </>
+    );
   }
 
   // Main immersive landing page
-  if (path === "/" || path === "" || path === "/index.html") {
-    return <ImmersiveLandingPage dark={dark} toggle={toggle} />;
+  if (routePath === "/" || routePath === "" || routePath === "/index.html") {
+    return (
+      <>
+        <HreflangTags currentPath={routePath || '/'} />
+        <MetaUpdater currentPath={routePath || '/'} />
+        <ImmersiveLandingPage dark={dark} toggle={toggle} />
+      </>
+    );
   }
 
   // Catch-all 404 page for any other path
-  return <NotFoundPage dark={dark} toggle={toggle} />;
+  return (
+    <>
+      <HreflangTags currentPath={routePath} />
+      <MetaUpdater currentPath={routePath} />
+      <NotFoundPage dark={dark} toggle={toggle} />
+    </>
+  );
 }
