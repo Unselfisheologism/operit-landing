@@ -17,6 +17,7 @@ interface ComparisonPageProps {
   features: Feature[];
   metaDescription?: string;
   metaKeywords?: string;
+  faq?: { question: string; answer: string }[];
 }
 
 export function ComparisonPage({
@@ -28,10 +29,15 @@ export function ComparisonPage({
   features,
   metaDescription,
   metaKeywords,
+  faq,
 }: ComparisonPageProps) {
-  const fullUrl = `https://twent.ai/vs/${competitorSlug}`;
+  const fullUrl = `https://twent.xyz/vs/${competitorSlug}`;
   const description = metaDescription || verdict.slice(0, 155) + "…";
-  const keywords = metaKeywords || "twent AI vs " + competitorName + ", AI assistant Android comparison, best AI app android";
+  const keywords =
+    metaKeywords ||
+    "twent AI vs " +
+      competitorName +
+      ", AI assistant Android comparison, best AI app android";
 
   // Inject head tags on mount
   useEffect(() => {
@@ -64,7 +70,7 @@ export function ComparisonPage({
       link.href = href;
     };
 
-// Basic meta
+    // Basic meta
     setMeta("description", description);
     setMeta("keywords", keywords);
     setLink("canonical", fullUrl);
@@ -72,7 +78,7 @@ export function ComparisonPage({
     // Open Graph
     setMeta("og:title", pageTitle, true);
     setMeta("og:description", description, true);
-    setMeta("og:image", "https://twent.ai/og-image.png", true);
+    setMeta("og:image", "https://twent.xyz/og-image.png", true);
     setMeta("og:url", fullUrl, true);
     setMeta("og:type", "website", true);
 
@@ -80,7 +86,7 @@ export function ComparisonPage({
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", pageTitle);
     setMeta("twitter:description", description);
-    setMeta("twitter:image", "https://twent.ai/og-image.png");
+    setMeta("twitter:image", "https://twent.xyz/og-image.png");
 
     // JSON‑LD structured data (SoftwareApplication + WebSite)
     const script = document.createElement("script");
@@ -108,14 +114,33 @@ export function ComparisonPage({
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "twent AI",
-      url: "https://twent.ai",
+      url: "https://twent.xyz",
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://twent.ai/search?q={search_term_string}",
+        target: "https://twent.xyz/search?q={search_term_string}",
         "query-input": "required name=search_term_string",
       },
     });
     document.head.appendChild(websiteScript);
+
+    // FAQ schema for AI answers
+    if (faq && faq.length > 0) {
+      const faqScript = document.createElement("script");
+      faqScript.type = "application/ld+json";
+      faqScript.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      });
+      document.head.appendChild(faqScript);
+    }
 
     // Set html lang if missing
     if (!document.documentElement.lang) {
@@ -123,7 +148,7 @@ export function ComparisonPage({
     }
 
     // Cleanup on unmount would be ideal but omitted for brevity
-  }, []);
+  }, [faq]);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
@@ -174,6 +199,27 @@ export function ComparisonPage({
           Download App
         </a>
       </div>
+
+      {faq && faq.length > 0 && (
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-6">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faq.map((item, i) => (
+              <div
+                key={i}
+                className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6"
+              >
+                <h3 className="font-semibold text-lg mb-2">{item.question}</h3>
+                <p className="text-zinc-600 dark:text-zinc-400">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <footer className="mt-12 pt-6 border-t text-gray-500 text-sm">
         <p>

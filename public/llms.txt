@@ -1,66 +1,108 @@
-# Twent - Personal Agentic OS for Android
-# https://twent.xyz
+# Twent - Personal Agentic AI for Android
 
-## Site Structure
+## What is Twent?
 
-### Main Pages
-- [Home](https://twent.xyz/) - Main landing page for Twent, the personal agentic OS for Android
-- [Pricing](https://twent.xyz/pricing) - Pricing plans and features
-- [Documentation](https://twent.xyz/docs) - Full documentation and guides
+Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
 
-### Blog
-- [Blog](https://twent.xyz/blog) - Articles and updates
-- [Marketplace Blog Post](https://twent.xyz/blog/marketplace) - Detailed explanation of the marketplace feature
+## Core Features
 
-### Use-Case Landing Pages
-- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers) - Claude Code and Codex integration on Android
-- [Android Automation Power User](https://twent.xyz/android-automation-power-user) - UI automation, workflows, and shell scripting
-- [Privacy-First AI for Android](https://twent.xyz/privacy-first-ai-android) - BYOK, local models, and zero telemetry
-- [Terminal on Android](https://twent.xyz/terminal-on-android) - Full Ubuntu 24.04 terminal environment
-- [AI Marketplace for Creators](https://twent.xyz/ai-marketplace-creators) - Sell skills, workflows, and mini apps
-- [Enterprise AI Agent](https://twent.xyz/enterprise-ai-agent) - AI for teams and businesses
+### 1. Full Ubuntu Terminal on Android
+- Runs Ubuntu 24.04 (Noble) on Android without root
+- Full CLI with bash, zsh, fish shells
+- Package manager (apt, npm, pip, cargo)
+- Git, SSH, and development tools
+- Compiler support: Python, Node.js, Go, Rust, C/C++
 
-## Key Features
+### 2. Local AI with Privacy
+- Runs GGUF models locally on device
+- BYOK - Bring Your Own Key for API access
+- MNN (Mobile Neural Networks) for efficient inference
+- Zero telemetry - no data leaves your device
+- On-device embedding generation
 
-### Core Capabilities
-- AI agent with tool use (tap, swipe, type, read screen)
-- Full Ubuntu 24.04 terminal on Android
-- 1000+ app integrations via Composio
+### 3. AI Agent Capabilities
+- Screen reading and UI automation
+- Tap, swipe, scroll, type actions
+- Floating chat bubble overlay
+- Voice wake word activation
+- Persistent memory system
+- MCP (Model Context Protocol) plugins
+
+### 4. Automation & Workflows
 - Visual workflow builder
-- Privacy-first architecture (BYOK, local models)
+- Tasker integration
+- Scheduled triggers
+- Conditional logic (if/then/else)
+- 1000+ app integrations via Composio
 
-### Developer Features
-- Claude Code and OpenAI Codex integration
+### 5. Developer Tools
+- Claude Code integration
+- OpenAI Codex support
 - Git and GitHub CLI
-- Full development environment (Python, Node.js, Go, Rust)
+- VS Code Server
 - SSH client and server
 
-### Automation Features
-- UI automation (tap, swipe, scroll, type)
-- Workflow triggers and conditions
-- Tasker integration
-- Floating chat overlay
+## Use Cases
 
-### Privacy Features
-- BYOK (Bring Your Own Key)
-- Local AI models (MNN)
-- Zero telemetry
-- Encrypted local storage
+### For Developers
+- Build and test Android apps on your phone
+- Run Python/Node.js scripts locally
+- Access Git repositories on the go
+- SSH into servers from mobile
 
-### Marketplace Features
-- Sell AI skills and behavior bundles
-- Sell workflow automation templates
-- Sell mini apps (HTML/CSS/JS)
-- Sell prompt templates and custom skins
+### For Automation Power Users
+- Automate repetitive Android tasks
+- Create custom workflows
+- Integrate with 1000+ apps
+- Build AI-powered automation
 
-## Technical Specifications
+### For Privacy-Conscious Users
+- Run AI without internet
+- Keep data on device
+- BYOK for API models
+- Zero telemetry, zero tracking
+
+### For Terminal Enthusiasts
+- Full Linux terminal on Android
+- Run服务器 scripts on the go
+- SSH into remote machines
+- Use vim, emacs, tmux
+
+## Pricing
+
+- **Free Tier**: Ubuntu terminal, basic AI, no cloud
+- **Pro ($9.99/mo)**: All features, priority support
+- **Enterprise**: Custom deployments, team management
+
+## Technical Requirements
+
 - Android 8.0+ (API 26)
-- arm64-v8a architecture
-- 3GB RAM recommended
+- 3GB+ RAM recommended
 - 500MB+ storage
+- arm64-v8a architecture
 - No root required
 
+## Comparison with Alternatives
+
+| Feature | Twent | ChatGPT | Claude | Gemini |
+|---------|-------|---------|--------|--------|
+| Local AI | ✓ | ✗ | ✗ | ✗ |
+| Ubuntu Terminal | ✓ | ✗ | ✗ | ✗ |
+| No Internet Required | ✓ | ✗ | ✗ | ✗ |
+| Android Automation | ✓ | ✗ | ✗ | ✗ |
+| MCP Plugins | ✓ | ✗ | ✗ | ✗ |
+
+## Related Pages
+
+- [vs/ChatGPT](/vs/chatgpt) - Detailed comparison
+- [vs/Claude](/vs/claude) - Claude vs Twent
+- [vs/Gemini](/vs/gemini) - Gemini vs Twent
+- [Pricing](/pricing) - Plans and features
+- [Documentation](/docs) - Full docs
+
 ## Contact
+
 - Website: https://twent.xyz
+- Download: https://twent.xyz (APK)
 - Documentation: https://twent.xyz/docs
-- GitHub: https://github.com/user/twent
+- Support: support@twent.xyz

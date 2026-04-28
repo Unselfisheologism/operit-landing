@@ -62,4 +62,4 @@ Allow: /terms
 Allow: /privacy
 Allow: /simple
 Allow: /details
-Sitemap: https://twent.ai/sitemap.xml
+Sitemap: https://twent.xyz/sitemap.xml

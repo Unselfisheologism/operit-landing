@@ -11,6 +11,24 @@ export default function GeminiComparisonPage() {
         verdict="Gemini lives inside Google apps (with paid Workspace). twent AI lives on your device. Choose Gemini for Workspace users who need Gmail/Docs integration, choose twent for device automation and privacy."
         metaKeywords="gemini app android, google gemini mobile, gemini pro android, gemini vs chatgpt, google ai android, best google ai app"
         metaDescription="Complete comparison of twent AI vs Google Gemini for Android. Learn which AI assistant is better for device automation, privacy, and getting things done."
+        faq={[
+          {
+            question: "Can Google Gemini automate my Android phone?",
+            answer: "No, Gemini lives inside Google apps but cannot interact with Android UI elements, tap buttons, or automate tasks. Twent is specifically designed for Android automation.",
+          },
+          {
+            question: "Does Gemini work offline?",
+            answer: "No, Gemini requires constant internet. Twent runs local GGUF models fully offline while still offering cloud API options when needed.",
+          },
+          {
+            question: "Is Gemini free to use?",
+            answer: "Gemini is free in basic Google apps but advanced Ultra models require a $20+/month Workspace subscription. Twent has a free tier with Ubuntu + basic AI, then $9.99/month for all features.",
+          },
+          {
+            question: "Which is better for privacy?",
+            answer: "Twent. Zero telemetry - your data never leaves your device with local models. Gemini sends everything to Google's servers with their privacy policies.",
+          },
+        ]}
         features={[
           {
             name: "Runs tasks on device",
