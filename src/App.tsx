@@ -21,6 +21,7 @@ import { ChangelogPage } from "./components/ChangelogPage";
 import { TermsOfService } from "./components/TermsOfService";
 import { PrivacyPolicy } from "./components/PrivacyPolicy";
 import { MarketplaceBlogPost } from "./components/MarketplaceBlogPost";
+import { BestAiAppsAndroid } from "./components/BestAiAppsAndroid";
 import { AiAgentForDevelopers } from "./components/AiAgentForDevelopers";
 import { AndroidAutomationPowerUser } from "./components/AndroidAutomationPowerUser";
 import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
@@ -314,6 +315,16 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <MarketplaceBlogPost dark={dark} onToggle={toggle} />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/blog/best-ai-apps-android")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <BestAiAppsAndroid dark={dark} onToggle={toggle} />
       </>
     );
   }

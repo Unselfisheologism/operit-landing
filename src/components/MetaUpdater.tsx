@@ -37,6 +37,11 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     description:
       "Create and sell AI skills for the Twent marketplace. Reach millions of Android users.",
   },
+  "/blog/best-ai-apps-android": {
+    title: "25 Best AI Apps for Android - Turn Your Phone Into a Supercomputer | Twent",
+    description:
+      "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Claude to Twent — discover 25 apps that unlock your phone's true potential.",
+  },
   "/blog/android-automation-power-user": {
     title: "Android Automation App - Auto-Tap, Swipe & Run Scripts with AI | Twent",
     description:

@@ -307,6 +307,16 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
       category: "Product",
       featured: true,
       image: "/marketplace-hero.png",
+    },
+    {
+      slug: "best-ai-apps-android",
+      title: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
+      excerpt: "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Twent — the 25 apps that unlock your phone's true potential.",
+      date: "April 29, 2026",
+      readTime: "12 min read",
+      category: "Roundup",
+      featured: false,
+      image: "/best-ai-apps-android-hero.png",
     }
   ];
 
