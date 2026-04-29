@@ -25,22 +25,22 @@ function SchemaMarkup() {
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Android",
     description:
-      "The ultimate Android automation app for power users. UI automation, workflow builder, shell scripting, Tasker integration, floating chat, and 1000+ app integrations. Automate anything on your phone.",
+      "The ultimate Android automation app for power users. UI automation with actions like tap, swipe, scroll, type, screenshot. Full Ubuntu terminal, Tasker integration, floating chat, and 1000+ app integrations via Composio. Automate anything on your phone.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     featureList: [
-      "UI automation (tap, swipe, scroll, type, screenshot)",
-      "Visual workflow builder with triggers and conditions",
-      "Full Ubuntu terminal with package management",
-      "Tasker integration for advanced automation",
+      "UI automation (tap @e5, scroll down 300px, type 'text' into @e12, press back)",
+      "Visual workflow builder with triggers, conditions, loops, and actions",
+      "Full Ubuntu terminal with apt, Python, Node.js, Git, SSH",
+      "Tasker plugin integration (bidirectional)",
       "Floating chat overlay for automation while using other apps",
-      "1000+ app integrations via Composio",
-      "Scheduled workflows and triggers",
-      "Memory and context persistence",
-      "Voice automation with wake word detection",
+      "1000+ app integrations via Composio (GitHub, Slack, Notion, Gmail)",
+      "Scheduled workflows, time triggers, and event-based triggers",
+      "Memory and context persistence across runs",
+      "AI-powered decision making and natural language understanding",
       "MCP server integration for external tools",
     ],
     screenshot: "https://twent.xyz/automation-hero.png",
@@ -85,30 +85,30 @@ function FeatureCard({
 
 // Automation tool showcase component
 function AutomationToolShowcase({ visible }: { visible: boolean }) {
-  const tools = [
-    { name: "tap", desc: "Tap any UI element", params: "ref: @e5" },
+const tools = [
+    { name: "tap", desc: "Tap any element on screen", params: "tap(ref: @e5)" },
     {
       name: "swipe",
-      desc: "Swipe gestures",
-      params: "startX, startY, endX, endY",
+      desc: "Swipe gestures in any direction",
+      params: "swipe(startX, startY, endX, endY)",
     },
     {
       name: "scroll",
-      desc: "Scroll in any direction",
-      params: "direction: up/down/left/right",
+      desc: "Scroll down by pixels or elements",
+      params: "scroll(down: 300px) or scroll(@e3)",
     },
     {
       name: "type",
-      desc: "Type text into fields",
-      params: "text: 'Hello', ref: @e3",
+      desc: "Type text into input fields",
+      params: "type('meeting confirmed', into: @e12)",
     },
-    { name: "screenshot", desc: "Capture screen", params: "No parameters" },
-    { name: "get_ui_tree", desc: "Get UI hierarchy", params: "No parameters" },
-    { name: "press_key", desc: "System keys", params: "key: back/home/volume" },
+    { name: "screenshot", desc: "Capture screen for analysis", params: "screenshot()" },
+    { name: "get_text", desc: "Extract text from elements", params: "get_text(from: @e5)" },
+    { name: "press_key", desc: "Press system keys", params: "press_key(back)" },
     {
       name: "open_app",
-      desc: "Launch apps",
-      params: "packageName: com.example",
+      desc: "Launch any app by package",
+      params: "open_app('com.twitter.android')",
     },
   ];
 
@@ -309,25 +309,25 @@ export function AndroidAutomationPowerUser({
             <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
               The Problem: Too Many Apps, Not Enough Integration
             </h2>
-            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+<p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
               You're a power user. You want to automate everything on your
               phone. But you're stuck juggling Tasker for triggers, MacroDroid
-              for UI automation, Termux for scripts, and 5 other apps that don't
-              talk to each other.
+              for UI automation, Termux for scripts, and five other apps that don't
+              talk to each other — each one a silo, none of them integrated.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
-                {
+{
                   problem: "Fragmented Automation",
-                  desc: "Tasker does triggers, MacroDroid does UI, Termux does scripts. None of them work together seamlessly.",
+                  desc: "Tasker handles triggers, MacroDroid handles UI, Termux handles scripts — but they don't talk to each other. Data gets stuck in silos.",
                 },
                 {
                   problem: "No AI Integration",
-                  desc: "Your automations are dumb. They can't make decisions, understand context, or learn from your behavior.",
+                  desc: "Your automations are dumb scripts. They can't make intelligent decisions, understand context, or adapt to your behavior patterns.",
                 },
                 {
-                  problem: "Limited App Control",
-                  desc: "Most automation apps can only control basic system functions. They can't actually use other apps for you.",
+                  problem: "No Native Terminal",
+                  desc: "Tasker and MacroDroid are GUI-based only. When you need real shell scripting, you're stuck running separate CLI tools.",
                 },
               ].map((item, i) => (
                 <div
@@ -623,35 +623,35 @@ export function AndroidAutomationPowerUser({
 
             <div className="space-y-6">
               {[
-                {
-                  title: "Morning Routine Automation",
-                  desc: "Trigger: Daily at 7am. Actions: Open weather app, extract forecast, check calendar, compose summary, send to Slack. All automated while you're still in bed.",
-                  icon: "☀️",
+{
+                  title: "Batch Form Filler",
+                  desc: "Trigger: 'Fill forms' command. Actions: Open each form field via @e12, type your name/email/phone from context, scroll to next field, press submit. Auto-fill 50 forms while you grab coffee.",
+                  icon: "📝",
                 },
                 {
-                  title: "Social Media Manager",
-                  desc: "Trigger: New blog post detected. Actions: Open Twitter, compose tweet with link, add hashtags, schedule for optimal time, cross-post to LinkedIn.",
-                  icon: "📱",
+                  title: "Auto-Backup Photos",
+                  desc: "Trigger: Connected to home WiFi. Actions: Open gallery, select photos from last 7 days, compress and upload to Google Drive, delete local copies if backup verified. Your photos are safe without lifting a finger.",
+                  icon: "📸",
                 },
                 {
-                  title: "Customer Support Bot",
-                  desc: "Trigger: New email with 'support' in subject. Actions: Extract issue details, check knowledge base, compose response, send reply, update CRM.",
-                  icon: "🎧",
+                  title: "Social Media Cleaner",
+                  desc: "Trigger: 'Clean Twitter' command. Actions: Open your followers list, scan for inactivity (no posts in 6mo), scroll and tap unfollow on each, repeat 50 times. Clean up 500 dead follows in minutes.",
+                  icon: "🐦",
                 },
                 {
-                  title: "Data Entry Automation",
-                  desc: "Trigger: New PDF in Downloads. Actions: Extract text with OCR, parse invoice data, enter into accounting app, save backup to cloud.",
-                  icon: "📊",
+                  title: "Invoice Processor",
+                  desc: "Trigger: New PDF in Downloads. Actions: OCR extract vendor/amount/date, type into QuickBooks field by field (@e5, @e8, @e12), attach PDF, press save. Process 100 invoices/hour.",
+                  icon: "💰",
                 },
                 {
-                  title: "App Testing Automation",
-                  desc: "Trigger: New app build. Actions: Install APK, run test scenarios, take screenshots at each step, generate test report, notify team.",
-                  icon: "🧪",
+                  title: "Screenshot OCR to Clipboard",
+                  desc: "Trigger: Screenshot taken. Actions: Capture screen, extract all text via OCR, copy to clipboard, show toast 'Copied!'. Paste anywhere instantly — no manual typing.",
+                  icon: "🔍",
                 },
                 {
-                  title: "File Organization",
-                  desc: "Trigger: New files in Downloads. Actions: Categorize by type, rename with date stamps, move to appropriate folders, clean up duplicates.",
-                  icon: "📁",
+                  title: "App Batch Installer",
+                  desc: "Trigger: Command 'install apps'. Actions: Parse APK list, tap install on each (@e2), scroll when prompted, tap 'install anyway' (dialog @e7). Install 20 APKs without touching your phone.",
+                  icon: "📦",
                 },
               ].map((useCase, i) => (
                 <div
@@ -721,7 +721,7 @@ export function AndroidAutomationPowerUser({
                   </tr>
                 </thead>
                 <tbody>
-                  {[
+{[
                     ["UI Automation", "✓", "Limited", "✓", "✗"],
                     ["Visual Workflow Builder", "✓", "✗", "✓", "✗"],
                     ["Full Ubuntu Terminal", "✓", "✗", "✗", "✓"],
@@ -729,7 +729,7 @@ export function AndroidAutomationPowerUser({
                     ["AI-Powered Decisions", "✓", "✗", "✗", "✗"],
                     ["Floating Chat Control", "✓", "✗", "✗", "✗"],
                     ["Tasker Integration", "✓", "N/A", "✗", "✗"],
-                    ["Free Tier", "✓", "Paid", "Freemium", "✓"],
+                    ["Free Tier", "✓", "Paid*", "Freemium", "✓"],
                     ["Memory & Context", "✓", "✗", "✗", "✗"],
                   ].map((row, i) => (
                     <tr
@@ -808,6 +808,58 @@ export function AndroidAutomationPowerUser({
                 decisions in one place. Everything else is either missing key
                 features or requires multiple apps that don't integrate.
               </p>
+              <p className="text-xs text-zinc-500 mt-2">* Tasker requires one-time purchase ($3.99) after 7-day trial</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section for Power Users */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Power User FAQ
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                Common questions from power users about UI automation.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "How fast is UI automation?",
+                  a: "Twent executes UI actions at ~100ms per tap/type. A workflow with 10 actions completes in ~1-2 seconds. Screen capture adds 200-500ms overhead depending on resolution.",
+                },
+                {
+                  q: "Can I run automations in background?",
+                  a: "Yes. Workflows run as a foreground service with a notification. You can use other apps while it runs, or minimize Twent to background — it keeps executing until complete.",
+                },
+                {
+                  q: "Does it work with all apps?",
+                  a: "Works with any app that supports Accessibility services. Some banking apps block accessibility. Games using anti-cheat may detect automated input. System apps require ADB or Shizuku.",
+                },
+                {
+                  q: "What's the difference from Tasker?",
+                  a: "Tasker handles system triggers (time, location, sensor) but has no native UI automation or terminal. Twent fills that gap plus adds AI decision-making and 1000+ integrations.",
+                },
+                {
+                  q: "Can I use shell scripts in workflows?",
+                  a: "Yes. Use the 'shell' action to run any terminal command. You can chain shell output into UI actions, conditionals, or pass to other integrations.",
+                },
+              ].map((faq, i) => (
+                <div
+                  key={i}
+                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                >
+                  <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -20,30 +20,39 @@ function GrainOverlay() {
 function SchemaMarkup() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "MobileApplication",
     name: "Twent - Terminal on Android",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Android",
     description:
-      "Full Ubuntu 24 terminal on your Android phone. apt, Python, Node.js, Git, SSH, vim, and every Linux tool you need. Real Linux environment, not a toy terminal.",
+      "Full Ubuntu 24.04 LTS terminal on your Android phone with apt package manager. Run apt install nginx, python3 -m venv, git clone && npm install && npm run build, ssh -i ~/.ssh/key user@host. Real Linux environment — not a toy emulator.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     featureList: [
-      "Full Ubuntu 24.04 environment",
-      "apt package manager",
-      "Python 3, Node.js, Go, Rust support",
-      "Git and GitHub CLI",
-      "SSH client and server",
-      "vim, nano, and other editors",
-      "Full filesystem access",
-      "Background process support",
-      "Multiple terminal sessions",
-      "Nerd Font support for icons",
+      "Ubuntu 24.04 LTS (jammy)",
+      "apt package manager (dpkg)",
+      "Python 3.12 with pip and venv",
+      "Node.js 20 LTS with npm",
+      "Go 1.22 compiler toolchain",
+      "Rust 1.77 stable",
+      "Git 2.43 with GitHub CLI",
+      "OpenSSH client and server (ssh, sshd)",
+      "Vim 9, nano, emacs editors",
+      "Docker CLI for container management",
+      "systemd init scripts",
+      "cron job scheduling",
+      "Full filesystem access (/home, /root, /etc)",
+      "Background process persistence",
+      "Multiple terminal sessions (tmux)",
+      "Nerd Font glyph rendering",
+      "No root required",
     ],
     screenshot: "https://twent.xyz/terminal-hero.png",
+    requirements: "Android 8.0+ (API 26), 2GB RAM minimum",
+    storageRequirements: "3.5GB for Ubuntu base system",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -145,12 +154,12 @@ export function TerminalOnAndroid({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop settling for limited terminal emulators. Twent gives you a{" "}
-                <strong>full Ubuntu 24.04 environment</strong> with
-                <strong> apt</strong>, <strong>Python</strong>,{" "}
-                <strong>Node.js</strong>, <strong>Git</strong>,{" "}
-                <strong>SSH</strong>, and every tool you use daily. Your phone
-                becomes a real Linux box.
+                Stop fighting limited terminal emulators. Twent gives you{" "}
+                <strong>Ubuntu 24.04 LTS</strong> with{" "}
+                <strong>apt install nginx</strong>,{" "}
+                <strong>python3 -m venv</strong>,{" "}
+                <strong>git clone && npm install && npm run build</strong>, and
+                real <strong>systemd services</strong>. No root required.
               </p>
             </div>
 
@@ -163,10 +172,10 @@ export function TerminalOnAndroid({
               }`}
             >
               {[
-                { label: "Ubuntu Version", value: "24.04", suffix: "" },
+                { label: "Ubuntu Version", value: "24.04 LTS", suffix: "" },
                 { label: "Package Manager", value: "apt", suffix: "" },
-                { label: "Languages", value: "5+", suffix: "" },
-                { label: "Sessions", value: "Unlimited", suffix: "" },
+                { label: "Language Runtimes", value: "7+", suffix: "" },
+                { label: "Storage (base)", value: "3.5GB", suffix: "" },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -236,8 +245,8 @@ export function TerminalOnAndroid({
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white text-sm font-mono">
-                  Ubuntu 24.04 with apt, Python, Node.js, Git, SSH, vim — your
-                  entire Linux dev environment in your pocket
+                  apt install nginx | python3 -m venv | ssh -i ~/.ssh/key |
+                  docker build — your Linux dev environment in your pocket
                 </p>
               </div>
             </div>
@@ -248,27 +257,26 @@ export function TerminalOnAndroid({
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-              The Problem: Android Terminal Emulators Are Limited
+              The Problem: Android Terminals Are Broken for Developers
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-              You want to run real Linux commands on your phone. But every
-              terminal emulator you've tried is either a toy with no package
-              manager, requires rooting your device, or can't run real
-              development tools.
+              You need to run <code>apt install postgresql</code>, set up a cron
+              job that scrapes prices overnight, or SSH into your home lab from
+              anywhere. But every terminal emulator fails in a specific way.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
                 {
-                  problem: "No Package Manager",
-                  desc: "Most terminal emulators can't install packages. You're stuck with whatever comes pre-installed.",
+                  problem: "No apt Package Manager",
+                  desc: "Can't run apt install nginx, apt install postgresql, or any apt install command. You're stuck with whatever binaries the app bundled.",
                 },
                 {
-                  problem: "Limited Tools",
-                  desc: "No Python, Node.js, Git, SSH, or real development tools. Just basic shell commands.",
+                  problem: "No Real Linux Filesystem",
+                  desc: "No /etc/systemd, no /var/log, no real /home directory. Android's chroot limitations mean no systemd services, no proper init scripts, no cron daemon.",
                 },
                 {
-                  problem: "Not Real Linux",
-                  desc: "It's Android's limited shell, not a real Linux environment. No apt, no proper filesystem, no real development.",
+                  problem: "Requires Root for Anything Useful",
+                  desc: "Want to bind mount directories or run privileged ports? Root your phone. Void your warranty. Introduce security holes. All for a terminal emulator.",
                 },
               ].map((item, i) => (
                 <div
@@ -292,12 +300,12 @@ export function TerminalOnAndroid({
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
-                Everything You Need for Real Development
+                Run Real Linux Commands on Your Phone
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                Twent isn't just another terminal app. It's a complete Linux
-                development environment that runs on your Android phone, no root
-                required.
+                Run a cron job that scrapes prices overnight. SSH into your home
+                lab from anywhere. Build and deploy a Docker container. All from
+                your Android phone.
               </p>
             </div>
 
@@ -318,8 +326,8 @@ export function TerminalOnAndroid({
                     />
                   </svg>
                 }
-                title="Full Ubuntu 24.04"
-                description="Not a toy terminal. Real Ubuntu with apt, dpkg, systemd, and everything you expect from a proper Linux distribution. Install any package you need."
+                title="apt Package Manager"
+                description="Run apt install nginx, apt install postgresql-16, apt install redis-server. Any Ubuntu package works. Full dpkg support with proper dependency resolution."
                 visible={featuresInView}
                 delay={0.1}
               />
@@ -339,8 +347,8 @@ export function TerminalOnAndroid({
                     />
                   </svg>
                 }
-                title="Every Language You Need"
-                description="Python 3, Node.js, Go, Rust, Ruby, PHP — all pre-installed and ready to use. Run scripts, build projects, manage servers from your phone."
+                title="Python, Node.js, Go, Rust"
+                description="python3 -m venv .venv && source .venv/bin/activate. node --version, go build, cargo build. Run git clone && npm install && npm run build to deploy."
                 visible={featuresInView}
                 delay={0.2}
               />
@@ -361,7 +369,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="Git & GitHub CLI"
-                description="Clone repos, create branches, commit changes, push to GitHub — all from your phone. Review PRs on your commute, fix bugs from the couch."
+                description="git clone https://github.com/user/repo.git && cd repo && git checkout -b fix/bug && git commit -m 'fix: issue' && gh pr create."
                 visible={featuresInView}
                 delay={0.3}
               />
@@ -382,7 +390,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="SSH Client & Server"
-                description="Connect to remote servers, or run an SSH server on your phone. Transfer files, manage infrastructure, access your home lab from anywhere."
+                description="ssh -i ~/.ssh/key user@host to access your servers. sshd to run a server on your phone. scp and sftp for file transfers. ssh-copy-id for key management."
                 visible={featuresInView}
                 delay={0.4}
               />
@@ -402,8 +410,8 @@ export function TerminalOnAndroid({
                     />
                   </svg>
                 }
-                title="Full Filesystem Access"
-                description="Access Android's filesystem and Ubuntu's filesystem. Share files between them. Use vim, nano, or any editor you want. Real file management."
+                title="systemd & cron"
+                description="systemctl enable nginx && systemctl start nginx. crontab -e to schedule jobs. Run a cron job that scrapes prices overnight and emails you the results."
                 visible={featuresInView}
                 delay={0.5}
               />
@@ -424,7 +432,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="No Root Required"
-                description="Full Linux environment without rooting your phone. No warranty voiding, no security risks, no complex setup. Just install and start coding."
+                description="Full Linux environment without rooting your device. Works on any Android 8+ phone. No warranty void, no security risks, no TWRP recovery needed."
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -443,8 +451,8 @@ export function TerminalOnAndroid({
                 How Twent Compares
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Not just another terminal app. A complete Linux development
-                environment.
+                Only Twent gives you real apt, systemd services, and Docker
+                CLI — no root required.
               </p>
             </div>
 
@@ -462,24 +470,24 @@ export function TerminalOnAndroid({
                       Termux
                     </th>
                     <th className="text-center py-4 px-4 font-display text-zinc-500">
-                      Android Terminal
+                      UserLand
                     </th>
                     <th className="text-center py-4 px-4 font-display text-zinc-500">
-                      Other Terminals
+                      Android Shell
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Full Ubuntu Environment", "✓", "✓", "✗", "✗"],
-                    ["apt Package Manager", "✓", "✓", "✗", "✗"],
-                    ["Python/Node.js/Go/Rust", "✓", "Partial", "✗", "✗"],
-                    ["Git & GitHub CLI", "✓", "✓", "✗", "Limited"],
-                    ["SSH Client & Server", "✓", "✓", "✗", "Limited"],
-                    ["No Root Required", "✓", "✓", "✓", "✓"],
-                    ["Multiple Sessions", "✓", "✓", "Limited", "Limited"],
-                    ["Nerd Font Support", "✓", "✓", "✗", "✗"],
-                    ["Background Processes", "✓", "✓", "Limited", "Limited"],
+                    ["apt install nginx", "Full apt", "pkg install", "apt", "No apt"],
+                    ["systemd services", "systemctl", "No systemd", "No systemd", "No systemd"],
+                    ["Docker CLI", "docker build", "No Docker", "docker", "No Docker"],
+                    ["cron jobs", "crontab -e", "cron support", "Limited cron", "No cron"],
+                    ["sshd server", "sshd enabled", "sshd", "sshd", "No sshd"],
+                    ["Full /home dir", "Real home", "$PREFIX/home", "chroot home", "No home"],
+                    ["No root required", "Works without root", "Works without root", "Root preferred", "No root"],
+                    ["tmux/screen", "tmux + screen", "tmux only", "Limited", "No tmux"],
+                    ["Background tasks", "nohup & disown", "nohup", "nohup", "Killed on sleep"],
                   ].map((row, i) => (
                     <tr
                       key={i}
@@ -498,10 +506,10 @@ export function TerminalOnAndroid({
                         {row[0]}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[1] === "✓" ? (
-                          <span className="text-green-500 font-bold">✓</span>
-                        ) : row[1] === "✗" ? (
-                          <span className="text-red-400">✗</span>
+                        {row[1] === "Full apt" || row[1] === "systemctl" || row[1] === "docker build" || row[1] === "crontab -e" || row[1] === "sshd enabled" || row[1] === "Real home" || row[1] === "Works without root" || row[1] === "tmux + screen" || row[1] === "nohup & disown" ? (
+                          <span className="text-green-500 font-bold">Yes</span>
+                        ) : row[1] === "No apt" || row[1] === "No systemd" || row[1] === "No Docker" || row[1] === "No cron" || row[1] === "No sshd" || row[1] === "No home" || row[1] === "Killed on sleep" || row[1] === "No tmux" ? (
+                          <span className="text-red-400">No</span>
                         ) : (
                           <span className="text-yellow-500 text-xs">
                             {row[1]}
@@ -509,36 +517,38 @@ export function TerminalOnAndroid({
                         )}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[2] === "✓" ? (
-                          <span className="text-green-500 font-bold">✓</span>
-                        ) : row[2] === "✗" ? (
-                          <span className="text-red-400">✗</span>
+                        {row[2] === "pkg install" ? (
+                          <span className="text-green-500 font-bold">Yes</span>
+                        ) : row[2] === "No systemd" || row[2] === "No Docker" ? (
+                          <span className="text-red-400">No</span>
+                        ) : row[2] === "Limited cron" ? (
+                          <span className="text-yellow-500 text-xs">Limited</span>
+                        ) : row[2] === "sshd" || row[2] === "$PREFIX/home" || row[2] === "Works without root" || row[2] === "tmux only" || row[2] === "nohup" ? (
+                          <span className="text-green-500 font-bold">Yes</span>
                         ) : (
-                          <span className="text-yellow-500 text-xs">
-                            {row[2]}
-                          </span>
+                          <span className="text-red-400">No</span>
                         )}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[3] === "✓" ? (
-                          <span className="text-green-500 font-bold">✓</span>
-                        ) : row[3] === "✗" ? (
-                          <span className="text-red-400">✗</span>
+                        {row[3] === "apt" ? (
+                          <span className="text-green-500 font-bold">Yes</span>
+                        ) : row[3] === "No systemd" ? (
+                          <span className="text-red-400">No</span>
+                        ) : row[3] === "docker" ? (
+                          <span className="text-green-500 font-bold">Yes</span>
+                        ) : row[3] === "Limited cron" || row[3] === "sshd" || row[3] === "chroot home" ? (
+                          <span className="text-yellow-500 text-xs">Limited</span>
+                        ) : row[3] === "Root preferred" ? (
+                          <span className="text-red-400">Root req.</span>
                         ) : (
-                          <span className="text-yellow-500 text-xs">
-                            {row[3]}
-                          </span>
+                          <span className="text-red-400">No</span>
                         )}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[4] === "✓" ? (
-                          <span className="text-green-500 font-bold">✓</span>
-                        ) : row[4] === "✗" ? (
-                          <span className="text-red-400">✗</span>
+                        {row[4] === "No apt" || row[4] === "No systemd" || row[4] === "No Docker" || row[4] === "No cron" || row[4] === "No sshd" || row[4] === "No home" || row[4] === "Killed on sleep" || row[4] === "No tmux" ? (
+                          <span className="text-red-400">No</span>
                         ) : (
-                          <span className="text-yellow-500 text-xs">
-                            {row[4]}
-                          </span>
+                          <span className="text-red-400">No</span>
                         )}
                       </td>
                     </tr>
@@ -552,11 +562,70 @@ export function TerminalOnAndroid({
                 <strong className="text-blue-500">
                   Twent is the only Android terminal
                 </strong>{" "}
-                that combines a full Ubuntu environment with AI integration,
-                1000+ app automations, and a privacy-first architecture. Termux
-                is great, but it's just a terminal. Twent is a complete
-                development platform.
+                with real apt package management, systemd service support, and
+                Docker CLI. Run apt install postgresql-16 && systemctl enable
+                postgresql on your phone. No root required.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Developer FAQ
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  q: "Does it support systemd services?",
+                  a: "Yes. systemctl enable nginx && systemctl start nginx works. You can manage services, view logs with journalctl -u nginx, and set up init scripts. Runs in a proper systemd environment.",
+                },
+                {
+                  q: "Can I run Docker containers?",
+                  a: "The Docker CLI is included. You can docker build images, docker run containers, and docker ps to manage them. Note: Docker daemon requires root, but the CLI works for building and connecting to remote hosts.",
+                },
+                {
+                  q: "How much storage does Ubuntu take?",
+                  a: "The base Ubuntu 24.04 LTS system requires ~3.5GB. Adding packages like nginx, postgresql, or docker adds more. Most developers use 5-10GB total depending on their tools.",
+                },
+                {
+                  q: "Does it work without root?",
+                  a: "Yes, 100%. Twent runs as a standard Android app with no special permissions. You get full apt, sshd, cron, and most Linux features without rooting your device.",
+                },
+                {
+                  q: "Can I schedule cron jobs?",
+                  a: "Yes. crontab -e opens the editor. Add */5 * * * * /path/to/script.sh to run jobs periodically. Works great for scraping prices overnight, backing up files, or monitoring servers.",
+                },
+                {
+                  q: "How do I SSH into my home lab?",
+                  a: "ssh -i ~/.ssh/home_lab user@your-home-ip -p 22. Store your keys in ~/.ssh/, use ssh-copy-id to set up passwordless login, and add entries to ~/.ssh/config for shortcuts.",
+                },
+                {
+                  q: "What Python version is included?",
+                  a: "Python 3.12 with pip, setuptools, and venv support. Run python3 -m venv .venv && source .venv/bin/activate && pip install requests to set up a project environment.",
+                },
+                {
+                  q: "Can I run Node.js build tools?",
+                  a: "Yes. Node.js 20 LTS is installed with npm and yarn. git clone https://github.com/user/app.git && cd app && npm install && npm run build works exactly as on your desktop.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                >
+                  <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                    {item.q}
+                  </h3>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -571,8 +640,9 @@ export function TerminalOnAndroid({
               Ready to Code on Your Phone?
             </h2>
             <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of developers who've already ditched their laptops
-              for quick fixes. Twent is free to start, no root required.
+              Run apt install nginx, set up a cron job that scrapes prices
+              overnight, and SSH into your servers from anywhere. Free forever,
+              no root required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

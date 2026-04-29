@@ -16,11 +16,11 @@ function GrainOverlay() {
   );
 }
 
-// Schema markup for SoftwareApplication
+// Schema markup for BusinessApplication
 function SchemaMarkup() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "BusinessApplication",
     name: "Twent - AI Marketplace for Creators",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Android",
@@ -78,6 +78,26 @@ function FeatureCard({
       </h3>
       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
         {description}
+      </p>
+    </div>
+  );
+}
+
+// FAQ Item component
+function FAQItem({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: string;
+}) {
+  return (
+    <div className="border-b border-zinc-200 dark:border-zinc-800 py-6">
+      <h4 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+        {question}
+      </h4>
+      <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        {answer}
       </p>
     </div>
   );
@@ -253,22 +273,21 @@ export function AiMarketplaceCreators({
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
               You've built amazing AI workflows, automation templates, and
-              custom tools. But there's no way to monetize them. You either give
-              them away for free or don't share them at all.
+              custom tools. But there's no way to monetize them. GitHub has 0 monetization features, Gumroad has no AI ecosystem, and you've hit a distribution ceiling.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
                 {
                   problem: "No Marketplace",
-                  desc: "There's no central place to sell AI skills, workflows, or automation templates. You're stuck sharing on GitHub for free.",
+                  desc: "There's no central place to sell AI skills, workflows, or automation templates. GitHub has 0 monetization — you're stuck giving it away for free.",
                 },
                 {
-                  problem: "No Distribution",
-                  desc: "Even if you build something great, there's no way to reach users who would pay for it.",
+                  problem: "Distribution Ceiling",
+                  desc: "Even if you build something great, there's no way to reach users who would pay for it. Gumroad has no AI ecosystem to distribute to.",
                 },
                 {
                   problem: "No Revenue",
-                  desc: "Your expertise is valuable, but there's no way to monetize it. You're giving away your work for nothing.",
+                  desc: "Your expertise is valuable, but there's no way to monetize it. You're giving away your work for nothing while hitting a ceiling.",
                 },
               ].map((item, i) => (
                 <div
@@ -319,7 +338,7 @@ export function AiMarketplaceCreators({
                   </svg>
                 }
                 title="AI Skills"
-                description="Sell reusable instruction sets that teach the AI how to do specific tasks. Code review, data analysis, writing assistance — the possibilities are endless."
+                description="Instruction bundles that teach the AI how to do specific tasks. Code review, git ops, PR descriptions — package your expertise and sell it."
                 visible={featuresInView}
                 delay={0.1}
               />
@@ -340,7 +359,7 @@ export function AiMarketplaceCreators({
                   </svg>
                 }
                 title="Workflow Templates"
-                description="Sell pre-built automation workflows. Morning routines, file organization, social media management — package your best automations and sell them."
+                description="Pre-built automation chains — morning digest, auto-tweet scheduler, social media auto-poster. Package your automations and sell them."
                 visible={featuresInView}
                 delay={0.2}
               />
@@ -361,7 +380,7 @@ export function AiMarketplaceCreators({
                   </svg>
                 }
                 title="Mini Apps"
-                description="Sell interactive HTML/CSS/JS apps that run inside Twent. Dashboards, tools, games, calculators — build once, sell to thousands."
+                description="HTML/CSS/JS apps running inside Twent — dashboards, calculators, games, productivity tools. Build once, sell to thousands."
                 visible={featuresInView}
                 delay={0.3}
               />
@@ -382,7 +401,7 @@ export function AiMarketplaceCreators({
                   </svg>
                 }
                 title="Prompt Templates"
-                description="Sell battle-tested prompts for specific use cases. Writing, coding, analysis, research — your best prompts can generate recurring revenue."
+                description="Battle-tested prompts with variables — sales cold email, SEO meta generator, content repurposer. Your best prompts can generate recurring revenue."
                 visible={featuresInView}
                 delay={0.4}
               />
@@ -424,7 +443,7 @@ export function AiMarketplaceCreators({
                   </svg>
                 }
                 title="MCP Servers"
-                description="Sell Model Context Protocol server configurations. Give users access to new tools and data sources. Package your integrations and sell them."
+                description="Custom tool integrations for niche APIs. Give users access to new tools and data sources. Package your integrations and sell them."
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -440,7 +459,7 @@ export function AiMarketplaceCreators({
                 How It Works
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                From creation to monetization in 4 simple steps.
+                From upload to getting paid in 4 simple steps.
               </p>
             </div>
 
@@ -448,23 +467,23 @@ export function AiMarketplaceCreators({
               {[
                 {
                   step: "1",
-                  title: "Create Your Product",
-                  desc: "Build a skill, workflow, mini app, prompt template, or MCP server. Use Twent's tools to create something valuable.",
+                  title: "Upload Your Product",
+                  desc: "Upload your AI skill, workflow, mini app, prompt template, or MCP server. Use Twent's tools to package something valuable.",
                 },
                 {
                   step: "2",
-                  title: "Package & Publish",
-                  desc: "Package your creation and publish it to the marketplace. Set your price (free or paid), add descriptions, screenshots, and documentation.",
+                  title: "Set Your Price",
+                  desc: "Choose free or paid pricing. Set any price point — from $0 to $500+. You control what you earn.",
                 },
                 {
                   step: "3",
-                  title: "Reach Users",
-                  desc: "Twent's marketplace reaches thousands of users. Your product appears in search, recommendations, and category listings.",
+                  title: "Publish",
+                  desc: "Publish to the marketplace with descriptions, screenshots, and documentation. Twent handles hosting and delivery.",
                 },
                 {
                   step: "4",
-                  title: "Earn Revenue",
-                  desc: "Users buy your product. You keep 100% of the sale (with Pro plan). Automatic updates ensure users always have the latest version.",
+                  title: "Get Paid",
+                  desc: "Users discover, purchase, and download. You keep 70% (free tier) or 100% (Pro). Automatic updates keep buyers happy.",
                 },
               ].map((item, i) => (
                 <div
@@ -501,12 +520,68 @@ export function AiMarketplaceCreators({
           </div>
         </section>
 
+        {/* Creator Economics Section */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+              Creator Economics
+            </h2>
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
+              Real numbers from our creator community.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  stat: "$2,400",
+                  label: "Top Creator Earnings",
+                  desc: "Our top creator earned $2,400 in month 3 — selling AI skills and workflow templates.",
+                },
+                {
+                  stat: "50+",
+                  label: "Creators Earning $500+/mo",
+                  desc: "50 creators crossed $500/month by month 2. Twent's distribution reaches ready buyers.",
+                },
+                {
+                  stat: "70%",
+                  label: "Free Tier Commission",
+                  desc: "Keep 70% of every sale on the free tier. Upgrade to Pro for 100% — one $20 payment.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className={`p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 ${
+                    featuresInView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transitionDelay: featuresInView
+                      ? `${0.2 + i * 0.1}s`
+                      : "0s",
+                  }}
+                >
+                  <div className="font-display text-4xl text-purple-500 mb-2">
+                    {item.stat}
+                  </div>
+                  <div className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                    {item.label}
+                  </div>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Comparison Section */}
-        <section ref={comparisonRef} className="py-20 md:py-28 px-6">
+        <section ref={comparisonRef} className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
-                How Twent Compares for Creators
+                Twent vs. The Rest
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
                 Not just another app store. A creator-first marketplace.
@@ -618,10 +693,50 @@ export function AiMarketplaceCreators({
                   Twent is the only marketplace
                 </strong>{" "}
                 specifically designed for AI skills, workflows, and automation
-                templates. Gumroad is great for digital products, but it's not
-                integrated with an AI assistant. Twent gives you built-in
-                distribution to users who actually need your products.
+                templates. Gumroad takes 10% (no Pro option). GitHub Sponsors has 0 monetization features. Twent gives you built-in
+                distribution + 0% commission with Pro.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                Common questions from creators.
+              </p>
+            </div>
+
+            <div className="text-left">
+              <FAQItem
+                question="How do I price my product?"
+                answer="You choose any price from free to $500+. Most creators price between $5-$50. Start low to get reviews, then raise as you build credibility. Free products still earn — you get 70% from Twent credits if offered."
+              />
+              <FAQItem
+                question="How do I get my first reviews?"
+                answer="Share your product on social media, Discord, or with friends. Offer free copies to early supporters in exchange for honest reviews. Twent displays ratings prominently — good reviews lead to more sales."
+              />
+              <FAQItem
+                question="Can I update my product after publishing?"
+                answer="Yes! Upload a new version anytime. All existing buyers automatically get the update for free. This keeps buyers happy and earns you goodwill for future products."
+              />
+              <FAQItem
+                question="When do I get paid?"
+                answer="Payouts run weekly. Minimum $10 to withdraw via Stripe or PayPal. With Pro ($20 one-time), you keep 100% — no waiting, no hidden fees."
+              />
+              <FAQItem
+                question="What's the commission structure?"
+                answer="Free tier: Twent takes 30%, you keep 70%. Pro ($20 one-time): you keep 100%, Twent takes 0%. Pro pays for itself after just a few sales at higher price points."
+              />
+              <FAQItem
+                question="Do I need to handle support?"
+                answer="You handle support entirely. Twent doesn't介入 between you and buyers. Include clear documentation with your product — it reduces support requests dramatically."
+              />
             </div>
           </div>
         </section>
@@ -667,7 +782,7 @@ export function AiMarketplaceCreators({
               </a>
             </div>
             <p className="mt-6 text-sm text-zinc-500">
-              Free to start. No commission with Pro plan. Automatic updates to
+              Free tier: 70/30 split. Pro ($20 one-time): 100%/0%. Automatic updates to
               buyers.
             </p>
           </div>

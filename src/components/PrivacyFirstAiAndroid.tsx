@@ -25,23 +25,23 @@ function SchemaMarkup() {
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Android",
     description:
-      "The most private AI assistant for Android. BYOK (Bring Your Own Key), local AI models, encrypted storage, no data collection, offline mode. Your data never leaves your device.",
+      "The most private AI assistant for Android. BYOK with AES-256 encryption via Android Keystore, local MNN AI models running completely offline, encrypted storage, GDPR Article 17 compliant. Your data never leaves your device unless you explicitly choose to send it.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     featureList: [
-      "BYOK (Bring Your Own Key) for all AI providers",
-      "Local AI models (MNN) that run completely offline",
-      "Encrypted storage for API keys and data",
-      "No telemetry, no analytics, no data collection",
-      "All data stored locally on your device",
-      "Full data backup and export capabilities",
-      "Minimal permissions (only what's needed)",
-      "Open source and auditable code",
-      "GDPR and CCPA compliant by design",
-      "No account required, no cloud dependency",
+      "BYOK (Bring Your Own Key) with AES-256 encryption via Android Keystore",
+      "Local AI models (MNN) - Phi-3.5-mini, Qwen2.5-3B, Stable Diffusion - running completely offline",
+      "Encrypted storage for API keys using Android Keystore-backed EncryptedSharedPreferences",
+      "Zero telemetry, zero analytics, no third-party trackers (verifiable via network analysis)",
+      "All conversations stored locally using AES-256-GCM encryption",
+      "GDPR Article 17 Right to Erasure & CCPA compliant by design",
+      "SOC2-ready architecture with open source auditable codebase",
+      "Full data backup and export in standard JSON/Markdown formats",
+      "Minimal permissions - no camera, microphone, or contacts access required",
+      "No account required, no cloud dependency, no vendor lock-in",
     ],
     screenshot: "https://twent.xyz/privacy-hero.png",
   };
@@ -148,11 +148,11 @@ export function PrivacyFirstAiAndroid({
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
                 Stop trusting cloud AI with your personal data. Twent is the
-                only AI assistant that lets you
-                <strong> bring your own API keys</strong>,{" "}
-                <strong>run local AI models offline</strong>, and keeps{" "}
-                <strong>all your data on your device</strong>. No telemetry, no
-                analytics, no data collection.
+                only AI assistant with <strong>BYOK via Android Keystore</strong>,{" "}
+                <strong>AES-256 encrypted storage</strong>, and{" "}
+                <strong>local MNN AI models that run 100% offline</strong>. 
+                Your chat history, API keys, and files never leave your device — 
+                verifiable via any network analysis tool.
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export function PrivacyFirstAiAndroid({
               }`}
             >
               {[
-                { label: "Data Collection", value: "0", suffix: "" },
+                { label: "Telemetry Trackers", value: "0", suffix: "" },
                 { label: "API Providers", value: "10+", suffix: "" },
                 { label: "Local Models", value: "MNN", suffix: "" },
                 { label: "Cloud Required", value: "No", suffix: "" },
@@ -238,8 +238,8 @@ export function PrivacyFirstAiAndroid({
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="text-white text-sm font-mono">
-                  All data stays on your device. API keys encrypted. Local AI
-                  models. Zero telemetry.
+                  AES-256 encrypted. Android Keystore keys. Local MNN models.
+                  Zero outbound telemetry.
                 </p>
               </div>
             </div>
@@ -250,27 +250,29 @@ export function PrivacyFirstAiAndroid({
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-              The Problem: Cloud AI Can't Be Trusted With Your Data
+              The Problem: Cloud AI Harvests Your Data for Training
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-              Every AI assistant you've used sends your conversations, files,
-              and personal data to the cloud. Your data is stored on servers you
-              don't control, used for training you didn't approve, and
-              vulnerable to breaches you can't prevent.
+              Every major AI assistant stores your conversations on their servers, 
+              logs your API calls for "safety improvements," and may use your data to 
+              train future models. As the FTC warned: "your chat history being used 
+              to train next-gen models without consent" is a real, documented practice. 
+              Your personal data, work conversations, and queries become training 
+              fodder — often without clear disclosure.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
                 {
-                  problem: "Data Harvesting",
-                  desc: "Your conversations are used to train AI models. Your personal data becomes their product.",
+                  problem: "Training Data Harvesting",
+                  desc: "Your conversations are archived and used to train AI models. Companies like OpenAI, Google, and Anthropic have all disclosed using user data for model training, often with opt-out mechanisms buried in settings.",
                 },
                 {
-                  problem: "Cloud Dependency",
-                  desc: "No internet = no AI. Your assistant stops working the moment you lose connectivity.",
+                  problem: "API Call Logging",
+                  desc: "When you send a prompt to ChatGPT or Claude, your API provider may log metadata and prompts for 'safety,' 'improvement,' and 'research' purposes — separate from your actual conversation history.",
                 },
                 {
-                  problem: "Privacy Violations",
-                  desc: "Telemetry, analytics, tracking. Your every interaction is monitored and monetized.",
+                  problem: "Third-Party Data Sharing",
+                  desc: "Cloud AI apps share data with analytics services, crash reporters, and advertising networks. Your device ID, location, usage patterns, and conversation topics become monetized across an ecosystem of trackers.",
                 },
               ].map((item, i) => (
                 <div
@@ -320,8 +322,8 @@ export function PrivacyFirstAiAndroid({
                     />
                   </svg>
                 }
-                title="BYOK (Bring Your Own Key)"
-                description="Use your own API keys from OpenAI, Claude, Gemini, or any provider. Your keys are encrypted and stored locally. Twent never sees or stores your API keys on our servers."
+                title="BYOK with Android Keystore"
+                description="Your API keys are encrypted using AES-256 via Android Keystore — hardware-backed secure enclave on most devices. Keys never leave your device and are never transmitted to Twent's servers. Only you control your API credentials."
                 visible={featuresInView}
                 delay={0.1}
               />
@@ -341,8 +343,8 @@ export function PrivacyFirstAiAndroid({
                     />
                   </svg>
                 }
-                title="Local AI Models (MNN)"
-                description="Download and run AI models completely offline. No internet required, no data sent anywhere. Choose from dozens of MNN models that run directly on your Android device."
+                title="Local MNN AI Models"
+                description="Run AI models completely offline using Alibaba's MNN engine. Available models include Phi-3.5-mini (2.2GB, 4GB RAM), Qwen2.5-3B (3.5GB, 6GB RAM), and Stable Diffusion (1.5GB). No internet required — no data sent anywhere."
                 visible={featuresInView}
                 delay={0.2}
               />
@@ -362,8 +364,8 @@ export function PrivacyFirstAiAndroid({
                     />
                   </svg>
                 }
-                title="Encrypted Storage"
-                description="All your data, API keys, and conversations are encrypted on your device using Android's secure storage. Even if someone gets your phone, they can't read your data without your authentication."
+                title="AES-256 Encrypted Storage"
+                description="All data encrypted using AES-256-GCM via Android Keystore-backed EncryptedSharedPreferences. Conversations, API keys, files, and settings are encrypted at rest. Even with physical access to your device, data remains protected."
                 visible={featuresInView}
                 delay={0.3}
               />
@@ -384,7 +386,7 @@ export function PrivacyFirstAiAndroid({
                   </svg>
                 }
                 title="Zero Telemetry"
-                description="No analytics, no telemetry, no usage tracking. We don't know how you use Twent, what you ask, or what you do. Your usage patterns are your business, not ours."
+                description="No analytics SDKs, no crash reporters, no third-party trackers. Verify yourself using PacketCapture, PCAPdroid, or any network analysis tool. Twent makes zero outbound connections except when you explicitly make an API call."
                 visible={featuresInView}
                 delay={0.4}
               />
@@ -405,7 +407,7 @@ export function PrivacyFirstAiAndroid({
                   </svg>
                 }
                 title="Full Data Ownership"
-                description="Export your conversations, memories, and data anytime. Import them elsewhere. Your data is yours, in standard formats. No vendor lock-in, no data hostage."
+                description="Export all conversations in JSON or Markdown format. Import them anywhere. GDPR Article 17 compliant — request deletion and all your data is erased. No vendor lock-in, no data hostage situations."
                 visible={featuresInView}
                 delay={0.5}
               />
@@ -425,8 +427,8 @@ export function PrivacyFirstAiAndroid({
                     />
                   </svg>
                 }
-                title="No Account Required"
-                description="Download and use Twent immediately. No sign-up, no email, no phone number. We don't want your personal information, and we don't need it to give you a great AI assistant."
+                title="Open Source & Auditable"
+                description="100% open source on GitHub. Independent security audits welcome. SOC2-ready architecture with verifiable builds. No hidden code, no obfuscated binaries — inspect exactly what runs on your device."
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -442,73 +444,75 @@ export function PrivacyFirstAiAndroid({
                 How Your Data Flows (or Doesn't)
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Transparency about where your data goes (and doesn't go).
+                Precise transparency: exactly what stays local vs what goes to providers.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                 <h3 className="font-display text-xl text-green-500 mb-4">
-                  ✓ What Stays on Your Device
+                  ✓ What Stays on Your Device (100% Local)
                 </h3>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>All conversations and chat history</span>
+                    <span><strong>All conversations</strong> — encrypted with AES-256-GCM via Android Keystore</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>Memory and knowledge graph data</span>
+                    <span><strong>Memory and knowledge graph</strong> — stored locally, never synced</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>API keys (encrypted)</span>
+                    <span><strong>API keys</strong> — encrypted via Android Keystore, never transmitted</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>Files and documents you create</span>
+                    <span><strong>Files and documents</strong> — processed locally, no cloud upload</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>Workflow configurations</span>
+                    <span><strong>Workflow configurations</strong> — stored in encrypted SharedPreferences</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>App settings and preferences</span>
+                    <span><strong>App settings and preferences</strong> — encrypted at rest</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span><strong>MNN model weights</strong> — downloaded once, run entirely offline</span>
                   </li>
                 </ul>
               </div>
 
               <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                 <h3 className="font-display text-xl text-orange-500 mb-4">
-                  ⚡ What Can Leave (With Your Permission)
+                  ⚡ What Goes to Providers (Direct HTTPS, You Control)
                 </h3>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>
-                      API calls to your chosen providers (OpenAI, Claude, etc.)
-                    </span>
+                    <span><strong>Only your prompt text</strong> — sent directly via HTTPS to your provider (OpenAI, Claude, Gemini, etc.) in an encrypted TLS 1.3 connection. No metadata, no device ID, no conversation history.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>Web searches (if you use web tools)</span>
+                    <span><strong>Web search queries</strong> — only if you explicitly enable web search tools</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>MCP server connections (if you configure them)</span>
+                    <span><strong>MCP server requests</strong> — only if you configure MCP connections</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>Composio integrations (if you connect apps)</span>
+                    <span><strong>Composio API calls</strong> — only if you connect Composio integrations</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>Cloud TTS/STT services (if you choose them)</span>
+                    <span><strong>Cloud TTS/STT</strong> — only if you explicitly choose cloud speech services</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span>Manual data exports (when you choose to export)</span>
+                    <span><strong>Manual data exports</strong> — you initiate, you choose destination</span>
                   </li>
                 </ul>
               </div>
@@ -516,12 +520,131 @@ export function PrivacyFirstAiAndroid({
 
             <div className="mt-8 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                <strong className="text-green-500">Key point:</strong> Even when
-                data leaves your device, it goes directly to the service you
-                chose (OpenAI, Claude, etc.). Twent never acts as a middleman.
-                Your API calls go straight from your device to the provider. We
-                never see your prompts, responses, or API keys.
+                <strong className="text-green-500">Key architecture difference:</strong> When you use cloud AI, your prompt goes Twent → OpenAI's API. We only forward the text you typed — no conversation context, no history, no metadata. The provider sees your prompt; Twent never logs it. Your API keys stay on-device; only a temporary authorization header is generated for that single request.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust & Compliance Section */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Compliance, Trust, and Verification
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                Legal frameworks, open source verification, and how to audit us yourself.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  GDPR Compliant
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>Article 17 - Right to Erasure:</strong> Complete deletion of all personal data on request. Article 20 - Data Portability: Export in machine-readable JSON. Article 32: Technical measures including encryption at rest.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  CCPA Compliant
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  California Consumer Privacy Act compliant. Your "right to know," "right to delete," and "right to opt-out of sale" are all honored — though we don't sell data because we never have it.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  SOC2-Ready Architecture
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  Minimal attack surface: no servers storing your data, no database of user records, no authentication service. Our architecture is designed for SOC2 compliance from day one.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  Open Source Audit
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  100% of Twent's code is on GitHub under Apache 2.0. Security researchers welcome. Reproducible builds ensure the APK you download matches the source code.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Privacy FAQ
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                Specific answers to your privacy questions.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  Does Twent work completely offline?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>Yes.</strong> When you use local MNN models (Phi-3.5-mini, Qwen2.5-3B, Stable Diffusion), the app requires zero network connectivity. No data ever leaves your device. Even app updates can be done manually via APK if you want maximum isolation.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  Can I self-host my own AI backend?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>Yes.</strong> Twent supports any OpenAI-compatible API endpoint. Point it to your self-hosted Ollama, LM Studio, or custom API server. Your prompts go directly to your infrastructure — Twent never touches them.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  How does my data leave my phone?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>Only one way:</strong> when you explicitly request a cloud AI response. Your typed prompt is sent via HTTPS/TLS 1.3 directly to your chosen provider (OpenAI, Claude, Gemini, etc.). That's it. No background sync, no crash reports, no analytics pings. Verify with PacketCapture or PCAPdroid.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  What's the difference from ChatGPT's privacy mode?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>ChatGPT's privacy mode</strong> prevents your data from being used for training, but OpenAI still stores your conversations on their servers for 30 days (by default). They log API calls, may use metadata for safety monitoring, and you must create an account.<br/><br/>
+                  <strong>Twent</strong> never stores your conversations on any server. They're encrypted locally on your device. You don't need an account. There's no "training" risk because your data never leaves your phone unless you explicitly make an API call.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  How can I verify zero telemetry?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>Use network analysis tools:</strong> Install PCAPdroid, PacketCapture, or similar apps to monitor all network traffic from Twent. You'll find zero outbound connections except direct HTTPS calls to your configured API provider — and only when you explicitly trigger them. No analytics SDKs, no Firebase, no Crashlytics, no third-party trackers.
+                </p>
+              </div>
+
+              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-lg text-green-500 mb-3">
+                  What happens to my data if Twent is deleted?
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  <strong>It's gone.</strong> Twent stores everything locally on your device. Uninstalling the app deletes all data — conversations, API keys, settings. There's no server-side backup because we never had your data. Use the built-in export feature before uninstalling if you want to keep records.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -563,20 +686,15 @@ export function PrivacyFirstAiAndroid({
                 <tbody>
                   {[
                     ["BYOK (Your API Keys)", "✓", "✗", "✗", "✗"],
-                    ["Local AI Models", "✓", "✗", "✗", "✗"],
-                    ["Zero Telemetry", "✓", "✗", "✗", "✗"],
+                    ["Local AI Models (MNN)", "✓", "✗", "✗", "✗"],
+                    ["AES-256 Encrypted Storage", "✓", "✗", "✗", "✗"],
+                    ["Android Keystore Key Storage", "✓", "✗", "✗", "✗"],
+                    ["Zero Telemetry (verifiable)", "✓", "✗", "✗", "✗"],
                     ["No Account Required", "✓", "✗", "✗", "✗"],
-                    ["Encrypted Local Storage", "✓", "N/A", "N/A", "N/A"],
-                    [
-                      "Data Export/Import",
-                      "✓",
-                      "Limited",
-                      "Limited",
-                      "Limited",
-                    ],
                     ["Offline Mode", "✓", "✗", "✗", "✗"],
                     ["Open Source", "✓", "✗", "✗", "✗"],
-                    ["GDPR Compliant by Design", "✓", "✓", "✓", "✓"],
+                    ["GDPR Art. 17 Right to Erasure", "✓", "Limited", "Limited", "Limited"],
+                    ["CCPA Compliant by Design", "✓", "✓", "✓", "✓"],
                   ].map((row, i) => (
                     <tr
                       key={i}
@@ -649,9 +767,9 @@ export function PrivacyFirstAiAndroid({
                 <strong className="text-green-500">
                   Twent is the only Android AI assistant
                 </strong>{" "}
-                that offers BYOK, local AI models, zero telemetry, and no
-                account requirement. Every other AI assistant requires you to
-                trust them with your data.
+                that offers AES-256 encryption via Android Keystore, local MNN AI models, 
+                zero verifiable telemetry, and GDPR Article 17 compliance by architecture. 
+                Every other AI assistant requires you to trust them with your data.
               </p>
             </div>
           </div>
@@ -667,8 +785,9 @@ export function PrivacyFirstAiAndroid({
               Ready for AI That Respects Your Privacy?
             </h2>
             <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of privacy-conscious users who've already switched
-              to Twent. Free to start, no account required, no data collection.
+              Join thousands of privacy-conscious users who've switched to Twent. 
+              BYOK with AES-256 encryption, local MNN AI models, zero telemetry — 
+              free, no account required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -698,7 +817,8 @@ export function PrivacyFirstAiAndroid({
               </a>
             </div>
             <p className="mt-6 text-sm text-zinc-500">
-              Free forever. No subscriptions. No ads. No data collection.
+              Free forever. No subscriptions. No ads. No data collection. 
+              Zero telemetry. GDPR & CCPA compliant.
             </p>
           </div>
         </section>

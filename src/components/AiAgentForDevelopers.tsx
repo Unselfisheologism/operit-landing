@@ -66,23 +66,26 @@ function SchemaMarkup() {
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Android",
     description:
-      "Run ANY Agent CLI (like Claude Code, OpenAI Codex, and Hermes-Agent) on your Android phone. Full Ubuntu terminal, Git integration, 1000+ app automations. The ultimate AI coding assistant for mobile developers.",
+      "Run ANY Agent CLI (Claude Code, OpenAI Codex, Hermes-Agent) on your Android phone. Full Ubuntu terminal with git, npm, docker. SSH, MCP tools, code review, hotfixes — ship code from anywhere.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
     },
     featureList: [
-      "Claude Code integration on Android",
-      "OpenAI Codex mobile access",
-      "Hermes-Agent terminal CLI",
-      "Full Ubuntu terminal environment",
-      "Git and GitHub integration",
+      "Claude Code with full tool use on Android",
+      "OpenAI Codex CLI integration",
+      "Hermes-Agent terminal for developers",
+      "Full Ubuntu 24.04 with apt, pip, npm",
+      "Git operations: commit, rebase, merge, push",
+      "SSH into production servers",
+      "MCP tools support (GitHub, Jira, Slack)",
       "1000+ app automations via Composio",
-      "Workflow automation builder",
-      "Multi-model AI support",
+      "Multi-model AI: Claude, GPT-4, Gemini, Llama",
       "BYOK (Bring Your Own Key) privacy",
-      "Local AI model support",
+      "Local AI model support (Ollama)",
+      "Code review on mobile",
+      "PR creation and merging from phone",
     ],
     screenshot: "https://twent.xyz/developer-hero.png",
   };
@@ -135,6 +138,7 @@ export function AiAgentForDevelopers({
   const [featuresRef, featuresInView] = useInView();
   const [useCasesRef, useCasesInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
+  const [faqRef, faqInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
 
   return (
@@ -175,7 +179,7 @@ export function AiAgentForDevelopers({
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter mb-6">
                 AI Agent for Developers:{" "}
                 <span className="text-blue-500">
-                  Claude Code & Codex on Android
+                  Ship Code From Anywhere
                 </span>
               </h1>
             </div>
@@ -189,11 +193,9 @@ export function AiAgentForDevelopers({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop waiting until you're at your desk. Run{" "}
-                <strong>Claude Code</strong>, <strong>OpenAI Codex</strong>, and{" "}
-                <strong>Hermes-Agent</strong> directly on your Android phone.
-                Full Ubuntu terminal, Git integration, and 1000+ app automations
-                — your entire dev workflow in your pocket.
+                Run <strong>Claude Code</strong> with full tool use directly on your
+                Android. SSH into production, run <strong>git rebase -i</strong>,
+                review PRs, push hotfixes — your entire dev workflow in your pocket.
               </p>
             </div>
 
@@ -241,7 +243,7 @@ export function AiAgentForDevelopers({
                 href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
               >
-                Download Free APK
+                Ship Code from Anywhere
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"
@@ -295,27 +297,25 @@ export function AiAgentForDevelopers({
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
-              The Problem: Your Phone Can't Keep Up With Your Brain
+              The Problem: Getting Paged at 2am With No Laptop
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-              You're a developer. Ideas hit you on the train, in coffee shops,
-              waiting in line. But your phone? It's useless for real coding. You
-              can't run Claude Code, access a proper terminal, or push a quick
-              fix from your Android.
+              You wrote the code. You're on-call. But you're not at your desk. Your
+              phone can't SSH into production, run git rebase -i, or review a PR from the train.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
                 {
-                  problem: "No AI Coding Tools",
-                  desc: "Claude Code and Codex are desktop-only. Your phone is just a notification machine.",
+                  problem: "On-Call at 2am",
+                  desc: "PagerDuty wakes you up. Production is down. You can see the error but can't git log from your phone to find the bad commit.",
                 },
                 {
-                  problem: "Terminal? What Terminal?",
-                  desc: "Android's terminal emulators are limited. No package manager, no Git, no real development.",
+                  problem: "Code Review on the Train",
+                  desc: "PR sits waiting while you commute. Can't pull up the diff, run git diff --stat, or comment from your phone.",
                 },
                 {
-                  problem: "Disconnected Workflow",
-                  desc: "Your phone and computer are separate worlds. No automation, no integration, no continuity.",
+                  problem: "Hotfix from a Cafe",
+                  desc: "You spot a bug at a coffee shop. Can write the fix but can't git add, git commit, git push from Android.",
                 },
               ].map((item, i) => (
                 <div
@@ -339,11 +339,11 @@ export function AiAgentForDevelopers({
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
-                Everything You Need to Code Anywhere
+                Real Terminal. Real Git. Real Code.
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                Twent isn't just another chat app. It's a full development
-                environment that runs on your Android phone.
+                Not a web terminal emulator. Full Ubuntu with real git, SSH, docker, npm —
+                everything you need to ship from anywhere.
               </p>
             </div>
 
@@ -364,8 +364,8 @@ export function AiAgentForDevelopers({
                     />
                   </svg>
                 }
-                title="Claude Code & Codex Integration"
-                description="Run Claude Code and OpenAI Codex directly on your Android. Full AI pair programming with context awareness, code generation, and debugging — anywhere you go."
+                title="Claude Code with Tool Use"
+                description="Full tool use: run git operations (rebase -i, merge, commit), execute shell commands, edit files, browse git history — anywhere."
                 visible={featuresInView}
                 delay={0.1}
               />
@@ -385,8 +385,8 @@ export function AiAgentForDevelopers({
                     />
                   </svg>
                 }
-                title="Full Ubuntu Terminal"
-                description="Not a toy terminal. Real Ubuntu with apt, pip, npm, Git, SSH, and every tool you use daily. Your entire Linux dev environment in your pocket."
+                title="Full Ubuntu 24.04 Terminal"
+                description="Real Ubuntu with apt, pip, npm, docker, build-essential. Run make, cargo, go build — same commands as your laptop."
                 visible={featuresInView}
                 delay={0.2}
               />
@@ -406,10 +406,31 @@ export function AiAgentForDevelopers({
                     />
                   </svg>
                 }
-                title="Git & GitHub Integration"
-                description="Clone repos, create branches, commit changes, push to GitHub — all from your phone. Review PRs on your commute, fix bugs from the couch."
+                title="Git & GitHub CLI"
+                description="git commit, push, pull, rebase -i, merge, cherry-pick. gh pr view, gh pr comment, gh pr merge — all from your phone."
                 visible={featuresInView}
                 delay={0.3}
+              />
+              <FeatureCard
+                icon={
+                  <svg
+                    className="w-6 h-6 text-blue-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+                    />
+                  </svg>
+                }
+                title="SSH Into Production"
+                description="SSH and SCP to any server. Check logs,restart services, run kubectl exec — fix production issues from your phone."
+                visible={featuresInView}
+                delay={0.4}
               />
               <FeatureCard
                 icon={
@@ -427,10 +448,10 @@ export function AiAgentForDevelopers({
                     />
                   </svg>
                 }
-                title="1000+ App Automations"
-                description="Connect to GitHub, Slack, Jira, Notion, Gmail, and hundreds more. Automate your entire workflow: auto-assign issues, sync docs, notify on deploy."
+                title="MCP Tools Support"
+                description="Model Context Protocol tools: GitHub, Jira, Slack, Notion, Linear. Automate PR reviews, sync issues, post standups."
                 visible={featuresInView}
-                delay={0.4}
+                delay={0.5}
               />
               <FeatureCard
                 icon={
@@ -449,28 +470,7 @@ export function AiAgentForDevelopers({
                   </svg>
                 }
                 title="Privacy-First BYOK"
-                description="Bring Your Own API keys. Your code, your data, your keys — never stored on our servers. Run local models if you want complete offline privacy."
-                visible={featuresInView}
-                delay={0.5}
-              />
-              <FeatureCard
-                icon={
-                  <svg
-                    className="w-6 h-6 text-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                }
-                title="Multi-Model Support"
-                description="Claude, GPT-4, Gemini, Llama, Mistral, local models — switch between them instantly. Use the best model for each task without changing apps."
+                description="Bring Your Own API keys. Your keys never touch our servers. Run Ollama locally for completely offline coding."
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -486,39 +486,39 @@ export function AiAgentForDevelopers({
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
-                Real Developer Use Cases
+                Real Developer Scenarios
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                See how developers are using Twent to code anywhere, anytime.
+                Specific actions you can actually do from your phone.
               </p>
             </div>
 
             <div className="space-y-6">
               {[
                 {
-                  title: "Code Review on Your Commute",
-                  desc: "Pull up a PR, ask Claude Code to review it, leave comments, and approve — all from the train. No laptop needed.",
+                  title: "Open a PR, Ask Claude to Explain the Diff, Approve and Merge",
+                  desc: "gh pr view 123, paste to Claude Code, ask for review, comment, approve, merge — all from your phone on the train.",
                   icon: "🚂",
                 },
                 {
-                  title: "Quick Bug Fixes from Anywhere",
-                  desc: "Get a Slack alert about a production bug. Open Twent, SSH into your server, check logs, push a fix. 5 minutes, zero laptop.",
+                  title: "SSH Into Production, Check Logs, Push a Fix",
+                  desc: "ssh prod-server 'tail -f /var/log/app.log', identify the bug, vim fix.ts, git add -A && git commit -m \"fix: ...\" && git push.",
                   icon: "🐛",
                 },
                 {
-                  title: "AI Pair Programming in Bed",
-                  desc: "Late-night inspiration? Open Twent, describe your idea to Claude Code, get working code, test it in the terminal. Ship it before you sleep.",
-                  icon: "🛏️",
+                  title: "git rebase -i From the Commuter Train",
+                  desc: "git rebase -i HEAD~5, squash fixups, force push — clean git history without opening your laptop.",
+                  icon: "🚇",
+                },
+                {
+                  title: "Run kubectl exec and Debug in Production",
+                  desc: "kubectl exec -it pod-name — sh, ps aux, curl localhost:8080/health — debug production issues from the couch.",
+                  icon: "☕",
                 },
                 {
                   title: "Automate Your Morning Standup",
-                  desc: "Twent pulls your yesterday's commits, today's Jira tickets, and generates a standup summary. Auto-posts to Slack at 9 AM.",
-                  icon: "☀️",
-                },
-                {
-                  title: "Learn New Frameworks Faster",
-                  desc: "Trying Rust? Ask Claude Code to explain concepts, generate examples, and debug your code — all with a real terminal to test in.",
-                  icon: "📚",
+                  desc: "gh pr list --state merged --since yesterday, gh issue assign |, generate standup, post to Slack — zero manual work.",
+                  icon: "🤖",
                 },
               ].map((useCase, i) => (
                 <div
@@ -556,11 +556,10 @@ export function AiAgentForDevelopers({
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
-                How Twent Compares
+                Why Twent is Different
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Not just another AI chat app. A complete development
-                environment.
+                Only Twent has AI agent integration with full Linux terminal and git.
               </p>
             </div>
 
@@ -581,16 +580,17 @@ export function AiAgentForDevelopers({
                       Termux
                     </th>
                     <th className="text-center py-4 px-4 font-display text-zinc-500">
-                      Cursor/Windsurf Mobile
+                      Claude/Cursor Mobile
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ["Claude Code & Codex", "✓", "✗", "✗", "Limited"],
+                    ["Claude Code CLI", "✓", "✗", "✗", "✗"],
                     ["Full Ubuntu Terminal", "✓", "✗", "✓", "✗"],
-                    ["Git Integration", "✓", "✗", "✓", "✓"],
-                    ["1000+ App Automations", "✓", "✗", "✗", "✗"],
+                    ["Git Tool Use (rebase, merge)", "✓", "✗", "✓", "✗"],
+                    ["SSH into Servers", "✓", "✗", "✓", "✗"],
+                    ["MCP Tools Integration", "✓", "✗", "✗", "✗"],
                     [
                       "Multi-Model Support",
                       "✓",
@@ -600,7 +600,6 @@ export function AiAgentForDevelopers({
                     ],
                     ["Privacy (BYOK)", "✓", "✗", "✓", "✗"],
                     ["Free Tier", "✓", "Limited", "✓", "Paid Only"],
-                    ["Offline Mode", "✓", "✗", "✓", "✗"],
                   ].map((row, i) => (
                     <tr
                       key={i}
@@ -673,11 +672,75 @@ export function AiAgentForDevelopers({
                 <strong className="text-blue-500">
                   Twent is the only Android app
                 </strong>{" "}
-                that combines Claude Code, Codex, a full Ubuntu terminal, Git
-                integration, and 1000+ app automations in one place. Everything
-                else is either missing key features or locked behind expensive
-                subscriptions.
+                that runs Claude Code CLI with full tool use, real Ubuntu, git
+                operations, SSH, and MCP tools. Everything else is either a chat
+                wrapper or a basic terminal without AI agent integration.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section
+          ref={faqRef}
+          className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50"
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+                Developer FAQ
+              </h2>
+              <p className="text-lg text-zinc-600 dark:text-zinc-400">
+                Common questions from developers.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Can I run full Claude Code on Twent?",
+                  a: "Yes. Twent runs the full Claude Code CLI with Execute Tool, Read Tool, Write Tool, Bash Tool, and Edit Tool — exactly as you'd use on desktop.",
+                },
+                {
+                  q: "Does it support MCP tools?",
+                  a: "Yes. Twent supports Model Context Protocol tools including GitHub, Jira, Slack, Linear, Notion, and 1000+ Composio integrations.",
+                },
+                {
+                  q: "How does BYOK (Bring Your Own Key) work?",
+                  a: "You add your own OpenAI/Anthropic API keys directly in the app. They never leave your device. Optionally run Ollama locally for complete offline privacy.",
+                },
+                {
+                  q: "Can I SSH into production servers?",
+                  a: "Yes. Full SSH and SCP support. ssh user@server, then run any commands. Also supports kubectl exec for Kubernetes debugging.",
+                },
+                {
+                  q: "Does it work offline?",
+                  a: "Yes. With local Ollama models, you can code completely offline. Internet only needed for cloud API calls if you use external keys.",
+                },
+                {
+                  q: "Can I run git rebase -i on mobile?",
+                  a: "Yes. Full git operations: rebase -i, merge, cherry-pick, bisect — all work exactly like on desktop. Combined with gh CLI for PR workflow.",
+                },
+              ].map((faq, i) => (
+                <div
+                  key={i}
+                  className={`p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 transition-all duration-500 ${
+                    faqInView
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
+                  }`}
+                  style={{
+                    transitionDelay: faqInView ? `${0.1 + i * 0.08}s` : "0s",
+                  }}
+                >
+                  <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -689,19 +752,19 @@ export function AiAgentForDevelopers({
         >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight mb-6">
-              Ready to Code Anywhere?
+              Ready to Ship Code from Anywhere?
             </h2>
             <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of developers who've already ditched their laptops
-              for quick fixes. Twent is free to start, with no credit card
-              required.
+              Join thousands of developers who've ditched their laptops for quick
+              fixes. On-call at 2am? SSH in and fix it. Code review on the train? Merge
+              it from your phone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
               >
-                Download Free APK
+                Ship Code from Anywhere
                 <svg
                   className="w-4 h-4 ml-2"
                   fill="none"
