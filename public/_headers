@@ -23,8 +23,22 @@
   Content-Type: font/woff
   Cache-Control: public, max-age=31536000, immutable
 
-/*.js
-  Content-Type: application/javascript; charset=utf-8
+/*.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=31536000, immutable
 
-/*.css
-  Content-Type: text/css; charset=utf-8
+/*.svg
+  Content-Type: image/svg+xml
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.otf
+  Content-Type: font/otf
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Content-Type: image/webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=31536000, immutable

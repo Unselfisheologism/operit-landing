@@ -8,14 +8,14 @@ import { getOgLocale } from "./HreflangTags";
 // Page meta data per route (used for title/description updates)
 const pageMeta: Record<string, { title: string; description: string }> = {
   "/": {
-    title: "Twent - Best Personal Assistant AI for Android (2026)",
+    title: "Twent - Best AI Agent for Android (2026) | Runs on Your Phone, Automates Everything",
     description:
-      "Twent is the best personal assistant AI app for Android. Connect 1000+ apps, run terminals, automate workflows, and use AI that actually does things. Free download.",
+      "Twent is an agentic AI agent for Android that automates apps, runs a full Ubuntu terminal, and connects 1000+ services. Free download.",
   },
   "/pricing": {
-    title: "Twent Pricing - Free AI Assistant for Android",
+    title: "Twent Pricing - Free AI Agent for Android",
     description:
-      "Twent is free to download. Connect 1000+ apps, run terminals, and automate workflows with AI that actually does things.",
+      "Twent is free to download. Connect 1000+ apps, run a full Ubuntu terminal, and automate workflows with an AI agent that actually does things on your phone.",
   },
   "/docs": {
     title: "Twent Documentation - Getting Started with AI on Android",
@@ -38,19 +38,19 @@ const pageMeta: Record<string, { title: string; description: string }> = {
       "Create and sell AI skills for the Twent marketplace. Reach millions of Android users.",
   },
   "/blog/android-automation-power-user": {
-    title: "Twent for Power Users - Android Automation with AI",
+    title: "Android Automation App - Auto-Tap, Swipe & Run Scripts with AI | Twent",
     description:
-      "Automate any Android task with Twent AI. Terminal access, script running, and more.",
+      "Twent is the Android automation app that lets you auto-tap, swipe, type, and run scripts with AI. Automate any phone task without root. Features terminal access, local AI, and skill marketplace. Free download.",
   },
   "/blog/privacy-first-ai": {
-    title: "Privacy-First AI on Android - Twent",
+    title: "Privacy-First AI on Android - Private AI Assistant with BYOK & Local Models",
     description:
-      "Your data stays on your phone. Twent is the privacy-first AI agent for Android.",
+      "Keep your data on your device with Twent's privacy-first AI agent. Features BYOK, local AI models, offline operation, and open-source transparency. Free download.",
   },
   "/blog/terminal-on-android": {
-    title: "Terminal on Android with AI - Twent",
+    title: "Ubuntu on Android - Full Linux Terminal with AI Assistance (No Root Required)",
     description:
-      "Run Linux terminals on your Android phone with AI assistance. Full shell access powered by AI.",
+      "Run a real Ubuntu 24.04 LTS terminal on your Android phone with AI assistance. Access apt, run Linux commands, and automate your terminal with AI. No root required - works on any Android 8.0+ device.",
   },
   "/blog/enterprise-ai-agent": {
     title: "Enterprise AI Agent for Android - Twent",
@@ -73,8 +73,9 @@ const pageMeta: Record<string, { title: string; description: string }> = {
       "Twent vs Nebula: See why Twent is the best AI agent for Android devices.",
   },
   "/vs/openclaw": {
-    title: "Twent vs OpenClaw - AI Agent Comparison",
-    description: "Compare Twent and OpenClaw AI agents for Android automation.",
+    title: "Twent vs OpenClaw for Android - AI Agent Comparison",
+    description:
+      "Compare Twent and OpenClaw for Android AI automation. See why Twent is the better AI agent for device-level automation.",
   },
   "/vs/hermes-agent": {
     title: "Twent vs Hermes Agent - Android AI Comparison",

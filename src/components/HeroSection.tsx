@@ -26,7 +26,7 @@ export function HeroSection() {
 
         {/* Main headline — Loss Aversion Framing (Principle 7) */}
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.08] mb-6 animate-fade-in-up animate-delay-100">
-          <span className="text-zinc-900 dark:text-zinc-100">Your AI can chat all day.</span>
+          <span className="text-zinc-900 dark:text-zinc-100">Twent: Your AI agent can chat all day.</span>
           <br />
           <span className="text-orange-500">But it can&apos;t do a single thing on your phone.</span>
         </h1>
