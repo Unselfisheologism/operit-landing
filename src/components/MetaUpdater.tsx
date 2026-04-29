@@ -145,11 +145,6 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     description:
       "Compare Twent AI vs Onspace for Android. Twent is the privacy-first AI agent with BYOK model support and local AI execution.",
   },
-  "/vs/soundhound": {
-    title: "Twent vs SoundHound AI - Voice AI Comparison for Android (2026)",
-    description:
-      "Compare Twent AI vs SoundHound AI for Android. SoundHound excels at voice AI and music recognition. Twent is better for device automation, tasks, and productivity.",
-  },
 };
 
 // Get localized meta title

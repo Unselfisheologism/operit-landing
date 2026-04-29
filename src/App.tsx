@@ -50,7 +50,6 @@ import QordinateComparisonPage from "./pages/vs/qordinate";
 import OmnaraComparisonPage from "./pages/vs/omnara";
 import ManusComparisonPage from "./pages/vs/manus";
 import OnspaceComparisonPage from "./pages/vs/onspace";
-import SoundhoundComparisonPage from "./pages/vs/soundhound";
 import { NotFoundPage } from "./components/NotFoundPage";
 
 import { languages, changeLanguage, getDirection } from "./i18n";
@@ -521,15 +520,6 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <OnspaceComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/soundhound")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <SoundhoundComparisonPage />
       </>
     );
   }

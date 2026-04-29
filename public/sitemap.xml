@@ -792,39 +792,6 @@
     <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/vs/onspace"/>
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/vs/onspace"/>
   </url>
-  <!-- VS SOUNDHOUND PAGE -->
-  <url>
-    <loc>https://twent.xyz/vs/soundhound</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/vs/soundhound"/>
-    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/vs/soundhound"/>
-  </url>
   <!-- VS GEMINI PAGE -->
   <url>
     <loc>https://twent.xyz/vs/gemini</loc>

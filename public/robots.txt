@@ -42,7 +42,6 @@ Allow: /vs/openclaw
 Allow: /vs/hermes-agent
 Allow: /vs/anything-llm
 Allow: /vs/claude
-Allow: /vs/soundhound
 Allow: /vs/replika
 Allow: /vs/copilot
 Allow: /vs/make
