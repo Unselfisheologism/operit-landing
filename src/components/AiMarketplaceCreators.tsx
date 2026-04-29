@@ -49,6 +49,20 @@ function SchemaMarkup() {
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
 }
 
+function BreadcrumbSchema() {
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+      { "@type": "ListItem", position: 3, name: "AI Marketplace for Creators", item: "https://twent.xyz/blog/marketplace" },
+    ],
+  };
+  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+}
+
+
 // Feature card component
 function FeatureCard({
   icon,
@@ -118,6 +132,7 @@ export function AiMarketplaceCreators({
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SchemaMarkup />
+      <BreadcrumbSchema />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />
 

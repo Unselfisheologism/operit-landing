@@ -51,12 +51,24 @@ function SchemaMarkup() {
       "No root required",
     ],
     screenshot: "https://twent.xyz/terminal-hero.png",
-    requirements: "Android 8.0+ (API 26), 2GB RAM minimum",
-    storageRequirements: "3.5GB for Ubuntu base system",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
 }
+
+function BreadcrumbSchema() {
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+      { "@type": "ListItem", position: 3, name: "Terminal on Android", item: "https://twent.xyz/blog/terminal-on-android" },
+    ],
+  };
+  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+}
+
 
 // Feature card component
 function FeatureCard({
@@ -107,6 +119,7 @@ export function TerminalOnAndroid({
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SchemaMarkup />
+      <BreadcrumbSchema />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />
 

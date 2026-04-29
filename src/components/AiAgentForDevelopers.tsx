@@ -47,6 +47,7 @@ function AnimatedCounter({
     }, duration / steps);
 
     return () => clearInterval(timer);
+    return () => clearInterval(timer);
   }, [visible, target]);
 
   return (
@@ -92,6 +93,20 @@ function SchemaMarkup() {
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
 }
+
+function BreadcrumbSchema() {
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+      { "@type": "ListItem", position: 3, name: "AI Agent for Developers", item: "https://twent.xyz/blog/ai-agent-for-developers" },
+    ],
+  };
+  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+}
+
 
 // Feature card component
 function FeatureCard({
@@ -144,6 +159,7 @@ export function AiAgentForDevelopers({
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SchemaMarkup />
+      <BreadcrumbSchema />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />
 

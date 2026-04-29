@@ -1,3 +1,15 @@
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: o3-bot
+Allow: /
+
+User-agent: o4-mini
+Allow: /
+
 User-agent: *
 Allow: /
 # Language subdirectories

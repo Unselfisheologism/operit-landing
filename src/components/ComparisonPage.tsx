@@ -78,7 +78,7 @@ export function ComparisonPage({
     // Open Graph
     setMeta("og:title", pageTitle, true);
     setMeta("og:description", description, true);
-    setMeta("og:image", "https://twent.xyz/og-image.png", true);
+    setMeta("og:image", `https://twent.xyz/og-${competitorSlug}.png`, true);
     setMeta("og:url", fullUrl, true);
     setMeta("og:type", "website", true);
 
@@ -86,7 +86,12 @@ export function ComparisonPage({
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", pageTitle);
     setMeta("twitter:description", description);
-    setMeta("twitter:image", "https://twent.xyz/og-image.png");
+    setMeta("twitter:image", `https://twent.xyz/og-${competitorSlug}.png`, true);
+
+    // Article timestamps (Google Discover / News)
+    setMeta("article:published_time", "2026-04-19T00:00:00Z");
+    setMeta("article:modified_time", "2026-04-29T00:00:00Z");
+    setMeta("article:section", "Technology");
 
     // JSON‑LD structured data (SoftwareApplication + WebSite)
     const script = document.createElement("script");
@@ -123,6 +128,29 @@ export function ComparisonPage({
     });
     document.head.appendChild(websiteScript);
 
+    // BreadcrumbList structured data
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://twent.xyz",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: `vs ${competitorName.replace("ChatGPT Android App", "ChatGPT").replace("Android App", "").trim()}`,
+          item: fullUrl,
+        },
+      ],
+    });
+    document.head.appendChild(breadcrumbScript);
+
     // FAQ schema for AI answers
     if (faq && faq.length > 0) {
       const faqScript = document.createElement("script");
@@ -148,7 +176,7 @@ export function ComparisonPage({
     }
 
     // Cleanup on unmount would be ideal but omitted for brevity
-  }, [faq]);
+  }, [faq, pageTitle, description, keywords, fullUrl, competitorSlug, competitorName]);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
