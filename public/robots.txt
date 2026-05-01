@@ -45,7 +45,7 @@ Allow: /pricing
 Allow: /docs
 Allow: /blog
 Allow: /blog/marketplace
-Allow: /blog/ai-agent-for-developers
+Allow: /blog/best-ai-apps-android
 Allow: /vs/chatgpt
 Allow: /vs/gemini
 Allow: /vs/nebula
@@ -62,6 +62,7 @@ Allow: /vs/qordinate
 Allow: /vs/omnara
 Allow: /vs/manus
 Allow: /vs/onspace
+Allow: /vs/perplexity
 Allow: /ai-agent-for-developers
 Allow: /android-automation-power-user
 Allow: /privacy-first-ai-android
