@@ -1,19 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Nav } from "./components/Nav";
-import { HeroSection } from "./components/HeroSection";
-import { Part1What, Part2ForDevs, Part2DevWorkflows, Part3ForEveryone } from "./components/StoryParts123";
-import {
-  Part4UnderTheHood,
-  Part5UIAutomation,
-  Part6DX,
-  Part7EndUser,
-  Part8Marketplace,
-} from "./components/StoryParts4to8";
-import { Testimonials } from "./components/Testimonials";
-import { Pricing } from "./components/Pricing";
-import { FinalCTA } from "./components/FinalCTA";
-import { Footer } from "./components/Footer";
 import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
 import { BlogPage } from "./components/BlogPage";
@@ -28,7 +14,7 @@ import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
 import { TerminalOnAndroid } from "./components/TerminalOnAndroid";
 import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
 import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
-import { SimplifiedLandingPage } from "./components/SimplifiedLandingPage";
+
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
@@ -180,40 +166,6 @@ function useSpaNavigation() {
   }, [navigate, i18n.language]);
 
   return { path, navigate };
-}
-
-function LandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
-  return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
-      <Nav dark={dark} onToggle={toggle} />
-      <main>
-        <HeroSection />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part1What />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part2ForDevs />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part2DevWorkflows />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part3ForEveryone />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part4UnderTheHood />
-        <Part5UIAutomation />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part6DX />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part7EndUser />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Part8Marketplace />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Testimonials />
-        <div className="section-divider max-w-6xl mx-auto" />
-        <Pricing />
-        <FinalCTA />
-        <Footer />
-      </main>
-    </div>
-  );
 }
 
 export default function App() {
@@ -384,62 +336,6 @@ export default function App() {
   // Competitor comparison pages
   if (routePath.startsWith("/vs/chatgpt")) {
     return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <ChatgptComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/nebula")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <NebulaComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/openclaw")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <OpenclawComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/hermes-agent")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <HermesAgentComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/n8n")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <N8nComparisonPage />
-      </>
-    );
-  }
-  if (routePath.startsWith("/vs/anything-llm")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <AnythingLlmComparisonPage />
-      </>
-    );
-  }
-
-  // Competitor comparison pages
-  if (routePath.startsWith("/vs/chatgpt")) {
-    return (
       <Suspense fallback={<LoadingSpinner />}>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
@@ -592,24 +488,24 @@ export default function App() {
     );
   }
 
-  // Detailed landing page (old version with all features)
+  // Detailed landing page — canonicalized to / to prevent duplicate content
   if (routePath.startsWith("/details")) {
     return (
       <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <LandingPage dark={dark} toggle={toggle} />
+        <HreflangTags currentPath="/" />
+        <MetaUpdater currentPath="/" canonicalPath="/" />
+        <ImmersiveLandingPage dark={dark} toggle={toggle} />
       </>
     );
   }
 
-  // Simple landing page
+  // Simple landing page — canonicalized to / to prevent duplicate content
   if (routePath.startsWith("/simple")) {
     return (
       <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <SimplifiedLandingPage dark={dark} toggle={toggle} />
+        <HreflangTags currentPath="/" />
+        <MetaUpdater currentPath="/" canonicalPath="/" />
+        <ImmersiveLandingPage dark={dark} toggle={toggle} />
       </>
     );
   }

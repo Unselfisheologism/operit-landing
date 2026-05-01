@@ -33,7 +33,7 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "Browse AI skills, MCP integrations & Composio connections for the Twent AI agent. Supercharge your Android AI. Try free.",
   },
-  "/blog/marketplace-creators": {
+  "/ai-marketplace-creators": {
     title: "Twent Marketplace for Creators - Build & Sell AI Skills",
     description:
       "Sell AI skills, workflows & mini apps to millions of Android users. Build once, earn forever. Join the Twent marketplace free.",
@@ -43,27 +43,27 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "25 best AI apps for Android in 2026 ranked — ChatGPT, Claude, Gemini, Twent & more. Find your perfect AI. Read the guide now.",
   },
-  "/blog/android-automation-power-user": {
+  "/android-automation-power-user": {
     title: "Android Automation App - Auto-Tap, Swipe & AI Scripts",
     description:
       "The ultimate Android automation app: auto-tap, swipe, type & run scripts with AI. No root needed. Automate any app. Download Twent free.",
   },
-  "/blog/privacy-first-ai": {
+  "/privacy-first-ai-android": {
     title: "Privacy-First AI on Android - BYOK & Local Models",
     description:
       "BYOK encryption, local AI models & offline mode. Your data never leaves your device. The most private AI for Android. Free.",
   },
-  "/blog/terminal-on-android": {
+  "/terminal-on-android": {
     title: "Ubuntu Terminal on Android - Full Linux with AI (No Root)",
     description:
       "Run a real Ubuntu 24.04 LTS terminal on Android. apt, Python, Node, SSH — Linux in your pocket. Download Twent free today.",
   },
-  "/blog/enterprise-ai-agent": {
+  "/enterprise-ai-agent": {
     title: "Enterprise AI Agent for Android - Twent Teams",
     description:
       "Deploy AI agents across your team. Admin dashboard, compliance controls & audit trails. Enterprise-grade AI on Android. Free trial.",
   },
-  "/blog/ai-agent-for-developers": {
+  "/ai-agent-for-developers": {
     title: "AI Agent for Android Developers - MCP, CLI & SDK",
     description:
       "Claude Code, Codex & CLI tools on your Android phone. Full Ubuntu terminal, git, MCP & SSH. Ship code from anywhere. Free.",
@@ -196,7 +196,7 @@ function getLocalizedTitle(path: string, langCode: string): string {
   return `${base} [${langName}]`;
 }
 
-export function MetaUpdater({ currentPath }: { currentPath: string }) {
+export function MetaUpdater({ currentPath, canonicalPath }: { currentPath: string; canonicalPath?: string }) {
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -238,14 +238,27 @@ export function MetaUpdater({ currentPath }: { currentPath: string }) {
       }
     }
 
+    // Update canonical tag — use explicit canonicalPath, or fall back to currentPath
+    // If they differ (e.g. /details → canonical=/), the duplicate page gets the canonical of the preferred version
+    const canonical = canonicalPath || currentPath;
+    const langPrefix = langCode === "en" ? "" : `/${langCode}`;
+    const canonicalUrl = `https://twent.xyz${langPrefix}${canonical}`;
+
+    // Update or create canonical link tag
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", canonicalUrl);
+
     // Update og:url to include language prefix
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) {
-      const basePath = currentPath;
-      const langPrefix = langCode === "en" ? "" : `/${langCode}`;
       ogUrl.setAttribute(
         "content",
-        `https://twent.xyz${langPrefix}${basePath}`,
+        `https://twent.xyz${langPrefix}${currentPath}`,
       );
     }
 

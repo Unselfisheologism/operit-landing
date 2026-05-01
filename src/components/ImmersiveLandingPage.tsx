@@ -3,62 +3,7 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
-
-// JSON-LD Schema for Immersive Landing Page
-function ImmersiveLandingSchemaMarkup() {
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      name: "Twent",
-      applicationCategory: "UtilitiesApplication",
-      operatingSystem: "Android",
-      url: "https://twent.xyz",
-      description: "The AI agent that runs ON your Android — automates apps, runs Ubuntu terminal & connects 1000+ services.",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.8",
-        reviewCount: "42",
-        bestRating: "5",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://twent.xyz/#website",
-      url: "https://twent.xyz",
-      name: "Twent AI",
-      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://twent.xyz/search?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Twent AI",
-      url: "https://twent.xyz",
-      logo: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png",
-      sameAs: ["https://twitter.com/twentxyz", "https://github.com/twent"],
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "support@twent.xyz",
-        contactType: "customer service",
-      },
-    },
-  ];
-
-  return (
-    <>
-      {schema.map((s, i) => (
-        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
-      ))}
-    </>
-  );
-}
+import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -532,7 +477,7 @@ export function ImmersiveLandingPage({
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
-      <ImmersiveLandingSchemaMarkup />
+      <SharedSchemaMarkup />
       <GrainOverlay />
       <Nav dark={dark} onToggle={toggle} />
 
