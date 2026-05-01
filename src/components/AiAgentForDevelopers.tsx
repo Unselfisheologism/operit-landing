@@ -142,6 +142,196 @@ function FeatureCard({
   );
 }
 
+// Day in the Life — developer scenarios
+function DayInTheLife({ visible }: { visible: boolean }) {
+  const scenarios = [
+    {
+      time: "8:47 AM — Standing on the train platform",
+      icon: "🚇",
+      setup: "20 minutes of dead zone between stations. No WiFi. Phone signal barely alive.",
+      task: "Review a GitHub PR from yesterday's sprint",
+      how: "Open the GitHub app → copy PR URL → paste into Twent → 'review this PR, comment on the auth refactor, check if the tests cover edge cases'",
+      result: "PR reviewed, commented on, and approved in 90 seconds before the tunnel.",
+      accent: "orange" as const,
+    },
+    {
+      time: "12:30 PM — Lunch break at a cafe",
+      icon: "☕",
+      setup: "Coffee shop WiFi. One hour. Laptop is closed.",
+      task: "Ship the feature I've been working on all morning",
+      how: "Twent → 'git commit the offline-sync feature, push to origin, create a PR with this description: [pastes from clipboard], assign to @senior-dev for review'",
+      result: "PR open and awaiting review before the coffee arrives.",
+      accent: "blue" as const,
+    },
+    {
+      time: "11:15 PM — Emergency prod alert",
+      icon: "🚨",
+      setup: "Phone on nightstand. Laptop across the room.",
+      task: "A payment service is returning 500s",
+      how: "Notification → Twent overlay → 'SSH into prod, check nginx logs for the past hour, find what's causing the 500s, roll back if needed'",
+      result: "Issue found, rolled back, alert resolved. From bed. In 4 minutes.",
+      accent: "orange" as const,
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            A Developer's Day, Reimagined
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            These aren't edge cases. This is how developers actually use Twent — 
+            in the gaps between laptops.
+          </p>
+        </div>
+        <div className="space-y-6">
+          {scenarios.map((s) => (
+            <div
+              key={s.time}
+              className={`p-6 border ${
+                s.accent === "orange"
+                  ? "border-orange-500/30 bg-orange-50/30 dark:bg-orange-950/10"
+                  : "border-blue-500/30 bg-blue-50/30 dark:bg-blue-950/10"
+              }`}
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <span className="text-3xl">{s.icon}</span>
+                <div>
+                  <p className="font-mono text-xs text-zinc-500 mb-1">{s.time}</p>
+                  <p className="text-sm text-zinc-500 mb-1"><strong className="text-zinc-700 dark:text-zinc-300">Setup:</strong> {s.setup}</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400"><strong className="text-zinc-900 dark:text-zinc-100">Task:</strong> {s.task}</p>
+                </div>
+              </div>
+              <div className="pl-12">
+                <p className="text-xs font-secondary text-zinc-500 uppercase tracking-[0.15em] mb-1">How it works</p>
+                <p className="text-sm font-mono text-zinc-600 dark:text-zinc-400 mb-3 leading-relaxed">{s.how}</p>
+                <p className="text-sm text-green-600 dark:text-green-400"><strong>Result:</strong> {s.result}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Terminal Command Deep Dive
+function TerminalDeepDive({ visible }: { visible: boolean }) {
+  const commands = [
+    {
+      category: "Git & GitHub",
+      items: [
+        { cmd: "git clone https://github.com/user/repo && cd repo && gh pr create --fill", desc: "Clone, enter, and create a PR with auto-filled description" },
+        { cmd: "gh issue list --state open --assignee @me --limit 20", desc: "See all your open issues across all repos" },
+        { cmd: "gh run view --web", desc: "Open the current repo's Actions in browser" },
+        { cmd: "git log --oneline -10 && git status", desc: "Quick sanity check before pushing" },
+      ],
+    },
+    {
+      category: "DevOps & Deployment",
+      items: [
+        { cmd: "docker build -t myapp . && docker run -d -p 3000:3000 --name myapp_container myapp", desc: "Build and run a Docker container" },
+        { cmd: "curl -s https://api.myapp.com/health | jq", desc: "Check API health with formatted JSON output" },
+        { cmd: "systemctl status nginx && journalctl -u nginx --since '1 hour ago'", desc: "Check nginx status and recent logs" },
+        { cmd: "ssh user@prod 'cd /opt/app && ./deploy.sh'", desc: "Deploy to production via SSH" },
+      ],
+    },
+    {
+      category: "Data & Analysis",
+      items: [
+        { cmd: "psql -h localhost -U app -d prod -c 'SELECT COUNT(*) FROM users'", desc: "Query production user count" },
+        { cmd: "tail -f /var/log/nginx/access.log | grep 500", desc: "Watch for 500 errors in real time" },
+        { cmd: "cat /proc/cpuinfo | grep 'model name' && free -h", desc: "Check server specs" },
+        { cmd: "du -sh /var/log/* | sort -h | tail -5", desc: "Find largest log files" },
+      ],
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Real Commands for Real Work
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Not toy examples. Commands you actually type every day.
+          </p>
+        </div>
+        <div className="space-y-8">
+          {commands.map((group) => (
+            <div key={group.category}>
+              <h3 className="font-secondary text-xs text-blue-500 uppercase tracking-[0.2em] mb-3">{group.category}</h3>
+              <div className="space-y-2">
+                {group.items.map((item) => (
+                  <div key={item.cmd} className="p-3 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+                    <code className="text-xs font-mono text-blue-600 dark:text-blue-400 block mb-1 break-all">{item.cmd}</code>
+                    <p className="text-xs text-zinc-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// LLM Use Cases Matrix
+function LLMUseCases({ visible }: { visible: boolean }) {
+  const matrix = [
+    { task: "Code generation", best: "Claude 3.5 Sonnet", note: "Highest quality, best reasoning", alternatives: "Gemini 2.0 Flash, GPT-4o" },
+    { task: "Code review", best: "Claude 3.5 Sonnet", note: "Constitutional AI catches edge cases", alternatives: "GPT-4o" },
+    { task: "Bug explanation", best: "Claude 3.5 Sonnet", note: "Most thorough technical explanations", alternatives: "Gemini 2.0 Flash" },
+    { task: "Quick questions", best: "Gemini 2.0 Flash", note: "Fastest, cheapest, good enough", alternatives: "DeepSeek V3" },
+    { task: "Architecture design", best: "Claude 3.5 Sonnet", note: "Deep reasoning, diagrams via text", alternatives: "GPT-4o" },
+    { task: "Writing documentation", best: "Claude 3.5 Sonnet", note: "Clearest technical writing", alternatives: "GPT-4o" },
+    { task: "Data analysis", best: "Gemini 2.0 Flash", note: "Google ecosystem integration", alternatives: "DeepSeek V3" },
+    { task: "Terminal commands", best: "DeepSeek V3", note: "Fast, accurate shell scripting", alternatives: "Gemini 2.0 Flash" },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            When to Use Which Model
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Not every task needs the most powerful model. Here's our recommendation matrix
+            based on real developer usage.
+          </p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">Task</th>
+                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">Best Model</th>
+                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">Why</th>
+                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">Also good</th>
+              </tr>
+            </thead>
+            <tbody>
+              {matrix.map((row) => (
+                <tr key={row.task} className="border-b border-zinc-100 dark:border-zinc-900">
+                  <td className="py-3 px-4 text-sm text-zinc-700 dark:text-zinc-300">{row.task}</td>
+                  <td className="py-3 px-4 text-sm font-mono text-blue-500">{row.best}</td>
+                  <td className="py-3 px-4 text-sm text-zinc-600 dark:text-zinc-400">{row.note}</td>
+                  <td className="py-3 px-4 text-sm text-zinc-500">{row.alternatives}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function AiAgentForDevelopers({
   dark,
   onToggle,
@@ -155,6 +345,9 @@ export function AiAgentForDevelopers({
   const [comparisonRef, comparisonInView] = useInView();
   const [faqRef, faqInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
+  const [_dayRef, dayInView] = useInView();
+  const [_deepDiveRef, deepDiveInView] = useInView();
+  const [_llmRef, llmInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
@@ -350,6 +543,9 @@ export function AiAgentForDevelopers({
           </div>
         </section>
 
+        {/* Day in the Life */}
+        <DayInTheLife visible={dayInView} />
+
         {/* Features Section */}
         <section ref={featuresRef} className="py-20 md:py-28 px-6">
           <div className="max-w-6xl mx-auto">
@@ -493,6 +689,9 @@ export function AiAgentForDevelopers({
             </div>
           </div>
         </section>
+
+        {/* Terminal Command Deep Dive */}
+        <TerminalDeepDive visible={deepDiveInView} />
 
         {/* Use Cases */}
         <section
@@ -695,6 +894,9 @@ export function AiAgentForDevelopers({
             </div>
           </div>
         </section>
+
+        {/* LLM Use Cases Matrix */}
+        <LLMUseCases visible={llmInView} />
 
         {/* FAQ Section */}
         <section

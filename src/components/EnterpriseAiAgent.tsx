@@ -97,6 +97,209 @@ function FeatureCard({
   );
 }
 
+// Compliance Architecture
+function ComplianceArchitecture({ visible }: { visible: boolean }) {
+  const specs = [
+    {
+      regulation: "SOC 2 Type II",
+      status: "Architecture ready",
+      desc: "Encryption at rest (AES-256), encryption in transit (TLS 1.3), audit logging, access controls, data residency options.",
+    },
+    {
+      regulation: "GDPR",
+      status: "Fully compliant",
+      desc: "Data processing agreement (DPA) available. Right to access, rectification, erasure (Article 17). Data portability in standard formats.",
+    },
+    {
+      regulation: "HIPAA",
+      status: "Business Associate Agreement available",
+      desc: "PHI-handling infrastructure. BAA required for healthcare customers. On-premise deployment option for maximum control.",
+    },
+    {
+      regulation: "CCPA",
+      status: "Fully compliant",
+      desc: "Right to know, delete, and opt-out. No sale of personal information. Privacy notice available.",
+    },
+    {
+      regulation: "ISO 27001",
+      status: "Controls mapped",
+      desc: "Information security management system controls. Risk assessment and treatment plan documentation available.",
+    },
+    {
+      regulation: "FedRAMP",
+      status: "In progress (Government tier)",
+      desc: "Moderate impact level controls implementation. FedRAMP marketplace listing planned for Q3 2026.",
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Compliance Built Into the Architecture
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Not bolted on after the fact. Privacy and compliance controls are
+            part of the core system design.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          {specs.map((spec) => (
+            <div key={spec.regulation} className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="font-display text-sm text-indigo-500">{spec.regulation}</span>
+                <span className="text-xs font-mono text-green-500 bg-green-500/10 px-2 py-0.5 rounded">{spec.status}</span>
+              </div>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{spec.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Case Studies
+function CaseStudies({ visible }: { visible: boolean }) {
+  const cases = [
+    {
+      company: "50-person SaaS startup",
+      industry: "B2B SaaS",
+      challenge: "Engineering team spending 8+ hours/week on manual code review, PR management, and deployment verification — no budget for dedicated DevOps.",
+      solution: "Deployed Twent Enterprise across the team. AI agent handles PR triage, code review first-pass, and deployment verification scripts.",
+      result: "4.5 hours/week saved per engineer. 15% faster PR merge time. Zero deployment incidents in first quarter.",
+      metrics: "8h → 3.5h/week",
+    },
+    {
+      company: "200-person law firm",
+      industry: "Legal",
+      challenge: "Partners manually reviewing contracts. NDA review takes 45 minutes per document. Too sensitive to use external AI services.",
+      solution: "On-premise Twent deployment with custom contract review skills. Local AI models for sensitive documents, cloud for general research.",
+      result: "NDA review down to 8 minutes. 94% accuracy on standard clause detection. Partners focus on judgment, not reading.",
+      metrics: "45min → 8min/doc",
+    },
+    {
+      company: "Marketing agency (30 people)",
+      industry: "Marketing",
+      challenge: "Managing 40+ client social media accounts. Content creation, scheduling, and reporting consuming 60% of junior staff time.",
+      solution: "Twent agents handle content drafting, image generation, scheduling, and weekly reporting. Staff focuses on strategy and client relationships.",
+      result: "60% reduction in content ops time. Consistent posting across all 40+ accounts. Weekly reports generated automatically.",
+      metrics: "60% time reduction",
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Real Teams, Real Results
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            From startups to enterprises, teams are using Twent Enterprise to
+            reclaim hours every week.
+          </p>
+        </div>
+        <div className="space-y-6">
+          {cases.map((c, i) => (
+            <div key={i} className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <span className="font-display text-lg text-zinc-900 dark:text-zinc-100">{c.company}</span>
+                    <span className="text-xs font-mono text-indigo-500 bg-indigo-500/10 px-2 py-0.5 rounded">{c.industry}</span>
+                  </div>
+                </div>
+                <span className="shrink-0 font-display text-2xl text-green-500">{c.metrics}</span>
+              </div>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div>
+                  <p className="text-xs font-secondary text-red-500 uppercase tracking-[0.15em] mb-1">Challenge</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">{c.challenge}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-secondary text-blue-500 uppercase tracking-[0.15em] mb-1">Solution</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">{c.solution}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-secondary text-green-500 uppercase tracking-[0.15em] mb-1">Result</p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">{c.result}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Deployment Options
+function DeploymentOptions({ visible }: { visible: boolean }) {
+  const options = [
+    {
+      title: "Cloud (Managed)",
+      desc: "Fully hosted by Twent. Zero infrastructure management. Automatic updates, scaling, and backups included. Best for teams under 50 users.",
+      setup: "Same day",
+      support: "24/7 email + chat",
+      price: "Per-seat / month",
+    },
+    {
+      title: "Private Cloud",
+      desc: "Your own AWS/GCP/Azure environment. Isolated tenant, dedicated resources. Full data residency control. Best for 50-500 users.",
+      setup: "1-2 weeks",
+      support: "Dedicated CSM",
+      price: "Annual contract",
+    },
+    {
+      title: "On-Premise",
+      desc: "Deploy in your own data center. Complete isolation, no external connections. Maximum security and compliance. Best for regulated industries.",
+      setup: "4-8 weeks",
+      support: "Professional services",
+      price: "Custom",
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Deployment That Fits Your Infrastructure
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            From instant cloud access to air-gapped on-premise deployments,
+            we meet you where your data lives.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {options.map((opt) => (
+            <div key={opt.title} className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-500/30 transition-colors">
+              <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-3">{opt.title}</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{opt.desc}</p>
+              <div className="space-y-2 pt-3 border-t border-zinc-200 dark:border-zinc-800">
+                <div className="flex justify-between text-xs">
+                  <span className="text-zinc-500">Setup</span>
+                  <span className="text-zinc-700 dark:text-zinc-300 font-mono">{opt.setup}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-zinc-500">Support</span>
+                  <span className="text-zinc-700 dark:text-zinc-300">{opt.support}</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-zinc-500">Pricing</span>
+                  <span className="text-indigo-500 font-mono">{opt.price}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function EnterpriseAiAgent({
   dark,
   onToggle,
@@ -108,6 +311,9 @@ export function EnterpriseAiAgent({
   const [featuresRef, featuresInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
+  const [_complianceRef, complianceInView] = useInView();
+  const [_casesRef, casesInView] = useInView();
+  const [_deployRef, deployInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
@@ -454,6 +660,8 @@ export function EnterpriseAiAgent({
           </div>
         </section>
 
+        <ComplianceArchitecture visible={complianceInView} />
+
         {/* Use Cases Section */}
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-4xl mx-auto">
@@ -524,6 +732,9 @@ export function EnterpriseAiAgent({
             </div>
           </div>
         </section>
+
+        <CaseStudies visible={casesInView} />
+        <DeploymentOptions visible={deployInView} />
 
         {/* Comparison Section */}
         <section ref={comparisonRef} className="py-20 md:py-28 px-6">

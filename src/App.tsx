@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Nav } from "./components/Nav";
 import { HeroSection } from "./components/HeroSection";
-import { Part1What, Part2ForDevs, Part3ForEveryone } from "./components/StoryParts123";
+import { Part1What, Part2ForDevs, Part2DevWorkflows, Part3ForEveryone } from "./components/StoryParts123";
 import {
   Part4UnderTheHood,
   Part5UIAutomation,
@@ -192,6 +192,8 @@ function LandingPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
         <Part1What />
         <div className="section-divider max-w-6xl mx-auto" />
         <Part2ForDevs />
+        <div className="section-divider max-w-6xl mx-auto" />
+        <Part2DevWorkflows />
         <div className="section-divider max-w-6xl mx-auto" />
         <Part3ForEveryone />
         <div className="section-divider max-w-6xl mx-auto" />

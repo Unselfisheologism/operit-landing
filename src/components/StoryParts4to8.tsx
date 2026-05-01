@@ -269,6 +269,51 @@ export function Part5UIAutomation() {
         </div>
       </div>
 
+      {/* Automation Examples — specific workflows */}
+      <div className="mt-16 max-w-6xl mx-auto">
+        <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
+          Watch it work on
+          <br />
+          <span className="text-blue-500">your actual apps.</span>
+        </h3>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-10 mx-auto text-center">
+          These aren&apos;t toy examples. Each prompt below triggers a real multi-app workflow on your device.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Email triage in 30 seconds",
+              desc: "Open Gmail, read the first 10 subjects, star urgent ones, archive promotional, draft quick replies to important ones — all while you&apos;re in a meeting.",
+              prompt: '"Check my unread emails, star anything from my manager or that mentions deadline, archive newsletters, and draft replies to anything needing a response"',
+            },
+            {
+              title: "Restaurant reservation",
+              desc: "Open Google Maps, find restaurants rated 4+ within 2km, check their booking link, fill in the OpenTable form with your saved details, pick a time, confirm.",
+              prompt: '"Book a table for 2 at a highly-rated Italian restaurant near me for tonight at 7pm"',
+            },
+            {
+              title: "Expense tracking",
+              desc: "Open your banking app, screenshot the transaction, open your expense sheet, create a new row with date, amount, category, and notes.",
+              prompt: '"Log my last 5 transactions to my expense sheet with categories: food, transport, groceries, entertainment"',
+            },
+            {
+              title: "Social media post",
+              desc: "Draft a tweet about an article, open the link, summarize the key insight, write 3 variations with different hooks, copy to clipboard.",
+              prompt: '"Post about this article on Twitter. Hook: shocking stat, body: key insight, hashtag: relevant ones"',
+            },
+          ].map((ex) => (
+            <div key={ex.title} className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500/30 transition-colors">
+              <h4 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">{ex.title}</h4>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{ex.desc}</p>
+              <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-3 rounded">
+                <p className="text-xs font-secondary text-orange-500 uppercase tracking-[0.15em] mb-1">Prompt</p>
+                <p className="text-xs font-mono text-zinc-600 dark:text-zinc-400 leading-relaxed">{ex.prompt}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* CTA Button */}
       <div className="mt-12 text-center">
         <a
@@ -428,6 +473,28 @@ export function Part6DX() {
             ))}
           </div>
         </div>
+
+        {/* Real Commands — actual terminal output */}
+        <div className="mt-8">
+          <h3 className="font-secondary text-sm text-orange-500 uppercase tracking-[0.2em] mb-4">
+            Real commands that actually work
+          </h3>
+          <div className="space-y-2">
+            {[
+              { label: "Clone and build a React project", cmd: "git clone https://github.com/user/project.git && cd project && npm install && npm run build" },
+              { label: "Deploy a Docker container", cmd: "docker build -t myapp . && docker run -d -p 3000:3000 myapp" },
+              { label: "Set up a cron job", cmd: "crontab -e\n0 9 * * 1-5 ~/scripts/daily-report.sh" },
+              { label: "Run pytest with coverage", cmd: "pip install pytest pytest-cov && pytest --cov=src --cov-report=html" },
+              { label: "SSH tunnel for database", cmd: "ssh -L 5432:localhost:5432 user@prod-server" },
+              { label: "Start a systemd service", cmd: "sudo systemctl enable myservice && sudo systemctl start myservice" },
+            ].map((c) => (
+              <div key={c.label} className="flex items-start gap-3 py-2 border-b border-zinc-100 dark:border-zinc-900 last:border-0">
+                <span className="text-xs font-mono text-zinc-500 w-48 shrink-0 pt-0.5">{c.label}</span>
+                <code className="text-xs font-mono text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-wrap">{c.cmd}</code>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </SectionWrapper>
   );
@@ -503,6 +570,40 @@ export function Part7EndUser() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* What you can create */}
+      <div className="mt-16">
+        <SectionLabel>File Generation</SectionLabel>
+        <h3 className="font-display text-2xl sm:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
+          Ask. It creates.
+          <br />
+          <span className="text-orange-500">In any format.</span>
+        </h3>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-10 mx-auto text-center">
+          Twent doesn&apos;t just chat — it generates real files you can open, share, and use. From spreadsheets to presentations to mini apps.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { type: "Spreadsheets", formats: "XLSX, CSV, ODS", example: "Weekly expense tracker with auto-categorization and charts", icon: "📊" },
+            { type: "Presentations", formats: "PPTX, Google Slides", example: "Q3 sales deck generated from CRM data with speaker notes", icon: "📽️" },
+            { type: "Documents", formats: "DOCX, PDF, Markdown", example: "Meeting notes converted to formatted reports with action items", icon: "📄" },
+            { type: "Mini Apps", formats: "HTML/CSS/JS", example: "Habit tracker, Pomodoro timer, budget calculator — all inside Twent", icon: "🧩" },
+            { type: "Images", formats: "PNG, SVG, WebP", example: "OG images for blog posts, app icons, diagrams from descriptions", icon: "🖼️" },
+            { type: "Code Files", formats: "Any language", example: "Python scripts, React components, SQL queries, shell scripts", icon: "💻" },
+          ].map((c) => (
+            <div key={c.type} className="p-5 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/30 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-2xl">{c.icon}</span>
+                <div>
+                  <p className="font-display text-base text-zinc-900 dark:text-zinc-100">{c.type}</p>
+                  <p className="text-xs text-zinc-500">{c.formats}</p>
+                </div>
+              </div>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">{c.example}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* CTA Button */}

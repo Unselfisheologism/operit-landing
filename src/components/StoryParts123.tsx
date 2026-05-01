@@ -166,6 +166,45 @@ export function Part1What() {
           </div>
         ))}
       </div>
+
+      {/* The Numbers — time savings proof */}
+      <div className="mt-16">
+        <SectionLabel>Real Impact</SectionLabel>
+        <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
+          What actually changes
+        </h3>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8 mx-auto text-center">
+          Real tasks. Real time. Multiply by your daily frequency and the ROI becomes obvious fast.
+        </p>
+        <div className="overflow-x-auto border border-zinc-200 dark:border-zinc-800">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
+                <th className="text-left py-3 px-4 font-display text-sm text-zinc-900 dark:text-zinc-100">Task</th>
+                <th className="text-center py-3 px-4 font-display text-sm text-zinc-500">Without Twent</th>
+                <th className="text-center py-3 px-4 font-display text-sm text-zinc-500">With Twent</th>
+                <th className="text-center py-3 px-4 font-display text-sm text-green-500">You Save</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { task: "Check 50 unread emails", before: "~20 min", after: "~2 min", saving: "18 min" },
+                { task: "Fill out a travel reimbursement form", before: "~15 min", after: "~3 min", saving: "12 min" },
+                { task: "Schedule a meeting across 5 calendars", before: "~10 min", after: "~1 min", saving: "9 min" },
+                { task: "Generate and send a weekly status report", before: "~30 min", after: "~5 min", saving: "25 min" },
+                { task: "Create a GitHub PR with description", before: "~8 min", after: "~1 min", saving: "7 min" },
+              ].map((row, i) => (
+                <tr key={i} className="border-b border-zinc-100 dark:border-zinc-900 last:border-0">
+                  <td className="py-3 px-4 text-sm text-zinc-700 dark:text-zinc-300">{row.task}</td>
+                  <td className="py-3 px-4 text-sm text-center text-red-400 font-mono">{row.before}</td>
+                  <td className="py-3 px-4 text-sm text-center text-blue-400 font-mono">{row.after}</td>
+                  <td className="py-3 px-4 text-sm text-center text-green-400 font-mono font-bold">{row.saving}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </SectionWrapper>
   );
 }
@@ -275,6 +314,72 @@ export function Part2ForDevs() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
+      </div>
+    </SectionWrapper>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PART 2: Developer Scenarios (after For Devs)
+   ═══════════════════════════════════════════════════════════ */
+export function Part2DevWorkflows() {
+  const workflows = [
+    {
+      scenario: "Emergency hotfix at 2am",
+      steps: ["SSH into production", "git log to find the bad commit", "git revert to undo", "git push --force-with-lease", "Verify with curl", "Close the incident"],
+      command: "ssh user@prod && git revert HEAD~1 && git push",
+      icon: "🚨",
+    },
+    {
+      scenario: "Review a PR on the train",
+      steps: ["Open GitHub in browser", "Read the diff", "Run tests locally", "Comment inline", "Approve or request changes"],
+      command: "gh pr view 123 --web && gh pr comment 123 -R owner/repo",
+      icon: "🚆",
+    },
+    {
+      scenario: "Ship a feature from a cafe",
+      steps: ["Open the repo", "Create a branch", "Write the code", "Commit and push", "Open a PR", "Request review"],
+      command: "git checkout -b feat/offline-mode && git add . && git commit -m 'feat: add offline mode' && gh pr create",
+      icon: "☕",
+    },
+  ];
+  return (
+    <SectionWrapper id="dev-workflows">
+      <SectionLabel color="orange">Developer Scenarios</SectionLabel>
+      <SectionTitle>
+        Three situations where your laptop wouldn&apos;t cut it.
+      </SectionTitle>
+      <SectionDesc>
+        These aren&apos;t hypothetical. Every developer has been in at least one of these situations.
+      </SectionDesc>
+      <div className="space-y-6">
+        {workflows.map((w) => (
+          <div key={w.scenario} className="p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">{w.icon}</span>
+              <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100">{w.scenario}</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-xs font-secondary text-orange-500 uppercase tracking-[0.15em] mb-2">Steps</p>
+                <ol className="space-y-1">
+                  {w.steps.map((step, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+                      <span className="text-orange-500 font-mono text-xs mt-0.5">{i + 1}.</span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div>
+                <p className="text-xs font-secondary text-blue-500 uppercase tracking-[0.15em] mb-2">One-liner</p>
+                <code className="block text-xs font-mono bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 p-3 rounded border border-zinc-200 dark:border-zinc-700 break-all">
+                  {w.command}
+                </code>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </SectionWrapper>
   );

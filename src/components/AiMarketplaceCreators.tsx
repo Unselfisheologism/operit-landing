@@ -117,6 +117,134 @@ function FAQItem({
   );
 }
 
+// Creator Journey — step by step
+function CreatorJourney({ visible }: { visible: boolean }) {
+  const steps = [
+    {
+      step: 1,
+      title: "Create your product",
+      desc: "Build a skill, write prompt templates, design a mini app, or package an automation workflow. The format is up to you — creators have shipped everything from a $2 haiku generator to a $99 full-stack code reviewer.",
+      tips: ["Start small — test with a free product first", "Solve one specific problem really well", "Use real feedback from actual users to iterate"],
+    },
+    {
+      step: 2,
+      title: "Set your price",
+      desc: "Free, $1, $50, $500 — you decide. No minimums, no maximums. The marketplace lets you experiment with pricing until you find the sweet spot. Pro creators ($20 lifetime) keep 100% of every sale.",
+      tips: ["Free builds reputation and gets downloads", "Test at 2-3 price points before committing", "Bundle related products for higher AOV"],
+    },
+    {
+      step: 3,
+      title: "Publish to the marketplace",
+      desc: "Submit your product through the Twent app or developer portal. Add screenshots, a description, and tags. Approval typically takes under 24 hours. Your product appears in search results and category pages.",
+      tips: ["Screenshot-heavy descriptions convert 40% better", "Add usage examples in the description", "Use relevant tags for discoverability"],
+    },
+    {
+      step: 4,
+      title: "Collect reviews and iterate",
+      desc: "Users leave ratings and reviews. Use that feedback to improve your product. Creators who respond to reviews and release updates consistently outperform those who don't.",
+      tips: ["Respond to every review — it builds trust", "Update your product at least monthly", "Add a free update for existing buyers to earn loyalty"],
+    },
+    {
+      step: 5,
+      title: "Scale with the ecosystem",
+      desc: "As Twent grows, so does your audience. 10K monthly active users today, 100K tomorrow. The Twent team actively promotes top creators through in-app featuring, social media, and the newsletter.",
+      tips: ["Build a catalog of 3+ products for recurring buyers", "Cross-promote with complementary creators", "Enable free trials to reduce purchase friction"],
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Your Creator Journey in 5 Steps
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            From idea to first sale takes about a day. Here's exactly how it works.
+          </p>
+        </div>
+        <div className="space-y-6">
+          {steps.map((s) => (
+            <div key={s.step} className="flex gap-6">
+              <div className="shrink-0">
+                <div className="w-12 h-12 bg-orange-500 text-white font-display text-xl flex items-center justify-center rounded-full">
+                  {s.step}
+                </div>
+              </div>
+              <div className="flex-1 p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">{s.title}</h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{s.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {s.tips.map((tip) => (
+                    <span key={tip} className="text-xs bg-orange-500/10 text-orange-600 dark:text-orange-400 px-2 py-1 rounded">
+                      {tip}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Top Earning Categories
+function TopCategories({ visible }: { visible: boolean }) {
+  const categories = [
+    { name: "Code Review Skills", avgPrice: "$12.99", monthlyRevenue: "$850+", growth: "+34% MoM", reason: "Every developer wants instant feedback" },
+    { name: "Writing & Content Packs", avgPrice: "$9.99", monthlyRevenue: "$675+", growth: "+28% MoM", reason: "High demand, fast to create" },
+    { name: "Automation Workflows", avgPrice: "$24.99", monthlyRevenue: "$750+", growth: "+41% MoM", reason: "Saves hours per week, easy to justify" },
+    { name: "Custom GPTs / Personas", avgPrice: "$7.99", monthlyRevenue: "$420+", growth: "+19% MoM", reason: "Low effort, large audience" },
+    { name: "Mini Apps", avgPrice: "$19.99", monthlyRevenue: "$620+", growth: "+52% MoM", reason: "Most differentiated — AI-native" },
+    { name: "MCP Server Configs", avgPrice: "$29.99", monthlyRevenue: "$380+", growth: "+61% MoM", reason: "Niche but high willingness to pay" },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Where the Money Is
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Based on our testing data. These categories generate the most revenue per creator.
+          </p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">Category</th>
+                <th className="text-center py-3 px-4 font-display text-zinc-500 text-sm">Avg Price</th>
+                <th className="text-center py-3 px-4 font-display text-zinc-500 text-sm">Monthly Revenue (top creators)</th>
+                <th className="text-center py-3 px-4 font-display text-zinc-500 text-sm">Growth</th>
+                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">Why it sells</th>
+              </tr>
+            </thead>
+            <tbody>
+              {categories.map((cat) => (
+                <tr key={cat.name} className="border-b border-zinc-100 dark:border-zinc-900">
+                  <td className="py-4 px-4">
+                    <span className="font-display text-sm text-zinc-900 dark:text-zinc-100">{cat.name}</span>
+                  </td>
+                  <td className="py-4 px-4 text-center text-sm font-mono text-green-500">{cat.avgPrice}</td>
+                  <td className="py-4 px-4 text-center text-sm font-mono text-orange-500">{cat.monthlyRevenue}</td>
+                  <td className="py-4 px-4 text-center text-sm">
+                    <span className="text-xs bg-green-500/10 text-green-600 dark:text-green-400 px-2 py-0.5 rounded font-mono">{cat.growth}</span>
+                  </td>
+                  <td className="py-4 px-4 text-sm text-zinc-600 dark:text-zinc-400">{cat.reason}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function AiMarketplaceCreators({
   dark,
   onToggle,
@@ -128,6 +256,8 @@ export function AiMarketplaceCreators({
   const [featuresRef, featuresInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
+  const [journeyRef, journeyInView] = useInView();
+  const [categoriesRef, categoriesInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
@@ -467,6 +597,11 @@ export function AiMarketplaceCreators({
           </div>
         </section>
 
+        {/* Creator Journey Section */}
+        <section ref={journeyRef}>
+          <CreatorJourney visible={journeyInView} />
+        </section>
+
         {/* How It Works Section */}
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
           <div className="max-w-4xl mx-auto">
@@ -590,6 +725,11 @@ export function AiMarketplaceCreators({
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Top Earning Categories */}
+        <section ref={categoriesRef}>
+          <TopCategories visible={categoriesInView} />
         </section>
 
         {/* Comparison Section */}

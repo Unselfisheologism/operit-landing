@@ -20,6 +20,169 @@ interface ComparisonPageProps {
   faq?: { question: string; answer: string }[];
 }
 
+// Detailed Analysis section — shows expanded info for each competitor
+function DetailedAnalysis({
+  competitorName,
+  verdict,
+  features,
+}: {
+  competitorName: string;
+  verdict: string;
+  features: Feature[];
+}) {
+  const twentStrengths = features.filter(
+    (f) => f.twent && !f.competitor
+  );
+  const twentWeaknesses = features.filter(
+    (f) => !f.twent && f.competitor
+  );
+
+  return (
+    <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Detailed Analysis
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            The full picture — what Twent does well, where it falls short, and
+            when you should pick {competitorName} over Twent.
+          </p>
+        </div>
+        <div className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+          <div className="flex items-center gap-3 mb-4">
+            <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100">
+              {competitorName}
+            </h3>
+            <span
+              className={`text-xs font-mono px-2 py-1 rounded ${
+                verdict === "Better"
+                  ? "bg-green-500/10 text-green-600 dark:text-green-400"
+                  : verdict === "Twent Wins"
+                  ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
+                  : "bg-zinc-200 dark:bg-zinc-800 text-zinc-500"
+              }`}
+            >
+              {verdict}
+            </span>
+          </div>
+          <p className="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+            {verdict}
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="p-4 bg-green-500/5 border border-green-500/20 rounded">
+              <p className="text-xs font-secondary text-green-500 uppercase tracking-[0.15em] mb-2">
+                Twent Strengths
+              </p>
+              {twentStrengths.length > 0 ? (
+                twentStrengths.slice(0, 4).map((f) => (
+                  <p
+                    key={f.name}
+                    className="text-sm text-zinc-600 dark:text-zinc-400 mb-1"
+                  >
+                    <span className="text-green-500 mr-1">✓</span> {f.name}
+                  </p>
+                ))
+              ) : (
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 italic">
+                  No clear advantages in this comparison
+                </p>
+              )}
+            </div>
+            <div className="p-4 bg-red-500/5 border border-red-500/20 rounded">
+              <p className="text-xs font-secondary text-red-500 uppercase tracking-[0.15em] mb-2">
+                Twent Weaknesses
+              </p>
+              {twentWeaknesses.length > 0 ? (
+                twentWeaknesses.slice(0, 4).map((f) => (
+                  <p
+                    key={f.name}
+                    className="text-sm text-zinc-600 dark:text-zinc-400 mb-1"
+                  >
+                    <span className="text-red-500 mr-1">✗</span> {f.name}
+                  </p>
+                ))
+              ) : (
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 italic">
+                  No significant weaknesses in this comparison
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Enhanced FAQ with more depth
+function EnhancedFAQ({
+  faq,
+  competitorName,
+}: {
+  faq?: { question: string; answer: string }[];
+  competitorName: string;
+}) {
+  const defaultFaqs = [
+    {
+      q: `Why does Twent win on device automation but ${competitorName} still exists?`,
+      a: `Different use cases. If you need a web chatbot for occasional questions, ${competitorName} is excellent. Twent's advantage is specifically in "does things for you" — acting on your device, running terminal commands, automating workflows. For pure chat, it's a different category.`,
+    },
+    {
+      q: `Is it fair to compare Twent's AI agents with web-based chatbots?`,
+      a: `Only partially. Web chatbots are stateless — they answer questions and forget. Twent is stateful — it remembers your context, accesses your files, and acts on your apps. The comparison table highlights capability gaps, but the best setup uses both: web AI for research, Twent for execution.`,
+    },
+    {
+      q: `What makes Twent's automation different from automation apps?`,
+      a: `Automation apps like Tasker are rule-based: "if X happens, do Y." They're powerful but require manual setup of every rule. Twent is AI-driven: "do X for me" and it figures out the steps. You describe what you want in plain English — the agent figures out the automation.`,
+    },
+    {
+      q: `Why doesn't every competitor add device automation?`,
+      a: `It's genuinely hard. Requires deep system integration, constant updates for app UI changes, higher battery consumption, and raises privacy concerns users are rightfully skeptical of. Twent solves this with transparent permission levels and BYOK encryption.`,
+    },
+  ];
+
+  // Handle both { question, answer } from props and { q, a } from defaults
+  const normalizeFaq = (item: Record<string, string>) => ({
+    q: item.question ?? item.q ?? "",
+    a: item.answer ?? item.a ?? "",
+  });
+  const displayFaqs = faq && faq.length > 0 ? faq : defaultFaqs;
+
+  return (
+    <section className="py-20 md:py-28 px-6">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Common Questions
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400">
+            The things people actually ask before choosing.
+          </p>
+        </div>
+        <div className="space-y-4">
+          {displayFaqs.map((item, i) => {
+            const f = normalizeFaq(item);
+            return (
+              <div
+                key={i}
+                className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+              >
+                <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                  {f.q}
+                </h3>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {f.a}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function ComparisonPage({
   competitorName,
   competitorSlug,
@@ -218,6 +381,16 @@ export function ComparisonPage({
         </table>
       </div>
 
+      {/* Detailed Analysis Section */}
+      <DetailedAnalysis
+        competitorName={competitorName}
+        verdict={verdict}
+        features={features}
+      />
+
+      {/* Enhanced FAQ Section */}
+      <EnhancedFAQ faq={faq} competitorName={competitorName} />
+
       <div className="text-center py-10 border-t border-gray-200">
         <h2 className="text-xl font-bold mb-4">Try twent AI For Free</h2>
         <a
@@ -227,27 +400,6 @@ export function ComparisonPage({
           Download App
         </a>
       </div>
-
-      {faq && faq.length > 0 && (
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-6">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {faq.map((item, i) => (
-              <div
-                key={i}
-                className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-6"
-              >
-                <h3 className="font-semibold text-lg mb-2">{item.question}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400">
-                  {item.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       <footer className="mt-12 pt-6 border-t text-gray-500 text-sm">
         <p>

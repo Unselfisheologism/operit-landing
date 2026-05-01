@@ -153,6 +153,172 @@ const tools = [
   );
 }
 
+// Real Automation Workflows
+function AutomationWorkflows({ visible }: { visible: boolean }) {
+  const workflows = [
+    {
+      title: "Morning Briefing (5 AM Automation)",
+      desc: "Your phone is on the charger. At 6 AM, Twent automatically opens your calendar, reads the day's meetings, drafts a briefing note, sends it to your note-taking app, and plays your morning playlist.",
+      triggers: "Time trigger (6:00 AM) + Calendar app + Notes app + Music app",
+      steps: 5,
+      time: "45 sec runtime",
+      accent: "orange" as const,
+    },
+    {
+      title: "Expense Logging",
+      desc: "Screenshot your bank notification. Twent reads the amount, vendor, and category. Opens your expense spreadsheet. Creates a new row with date, amount, vendor, and category. Marks it reviewed.",
+      triggers: "Notification trigger + Banking app + Spreadsheet",
+      steps: 4,
+      time: "12 sec runtime",
+      accent: "blue" as const,
+    },
+    {
+      title: "Meeting Prep",
+      desc: "From a LinkedIn profile URL, Twent opens the browser, loads the profile, summarizes the person's recent activity, opens your calendar invite, drafts talking points, and attaches them to the invite.",
+      triggers: "Text selection / Clipboard + Browser + Calendar",
+      steps: 6,
+      time: "30 sec runtime",
+      accent: "orange" as const,
+    },
+    {
+      title: "Social Media Scheduler",
+      desc: "Open a news article, tell Twent to post about it. It reads the headline, generates 3 tweet variations, opens Twitter, fills in each draft, schedules the best one for optimal engagement time.",
+      triggers: "Any app context + Twitter/X app",
+      steps: 5,
+      time: "25 sec runtime",
+      accent: "blue" as const,
+    },
+    {
+      title: "Code Review Request",
+      desc: "From a GitHub PR URL in Slack, Twent opens the PR, reviews the diff, runs the CI checks, comments with a code quality summary, and approves if all checks pass.",
+      triggers: "URL intent + GitHub app + CI dashboard",
+      steps: 4,
+      time: "20 sec runtime",
+      accent: "orange" as const,
+    },
+    {
+      title: "Travel Planning",
+      desc: "Text Twent your destination and dates. It searches flights, hotels, weather, and local events. Compiles everything into a structured itinerary in your notes app.",
+      triggers: "Text / Voice command",
+      steps: 5,
+      time: "60 sec runtime",
+      accent: "blue" as const,
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            What Automation Actually Looks Like
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            These aren't demos. Each workflow runs on your real apps, on your real phone,
+            while you drink your coffee.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {workflows.map((w) => (
+            <div
+              key={w.title}
+              className={`p-6 bg-zinc-50 dark:bg-zinc-900/50 border transition-all hover:-translate-y-1 ${
+                w.accent === "orange"
+                  ? "border-orange-500/30 hover:border-orange-500/50"
+                  : "border-blue-500/30 hover:border-blue-500/50"
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span
+                  className={`w-2 h-2 rounded-full ${w.accent === "orange" ? "bg-orange-500" : "bg-blue-500"}`}
+                />
+                <span className="text-xs font-secondary text-zinc-500 uppercase tracking-[0.15em]">
+                  {w.time}
+                </span>
+                <span className="text-xs font-mono text-zinc-500">· {w.steps} steps</span>
+              </div>
+              <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                {w.title}
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                {w.desc}
+              </p>
+              <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">
+                <p className="text-xs text-zinc-500">
+                  <span className="text-zinc-400">Triggers: </span>
+                  {w.triggers}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Permission Levels
+function PermissionLevels({ visible }: { visible: boolean }) {
+  const levels = [
+    {
+      level: "Basic",
+      icon: "👁️",
+      desc: "Screen reading only. Twent can see what's on screen but can't interact.",
+      useCase: "Information gathering, screen analysis",
+      color: "text-zinc-500",
+    },
+    {
+      level: "Standard",
+      icon: "👆",
+      desc: "Tap and type. Can click buttons and enter text into fields.",
+      useCase: "Form filling, app navigation, content posting",
+      color: "text-blue-500",
+    },
+    {
+      level: "Advanced",
+      icon: "🎯",
+      desc: "+ Scroll, swipe, screenshot. Can interact with gesture-based apps.",
+      useCase: "Complex workflows, social media, data extraction",
+      color: "text-orange-500",
+    },
+    {
+      level: "Full",
+      icon: "⚡",
+      desc: "+ System actions. Screen overlay, draw over apps, accessibility shortcuts.",
+      useCase: "Background automation, any-app-anywhere control",
+      color: "text-green-500",
+    },
+  ];
+
+  return (
+    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
+            Permission Levels That Match Your Needs
+          </h2>
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Not every automation needs full permissions. Twent lets you dial in exactly how much
+            control you want to give it — start restrictive, unlock more as you trust the system.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {levels.map((l) => (
+            <div key={l.level} className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+              <div className="text-2xl mb-2">{l.icon}</div>
+              <h3 className={`font-display text-lg mb-1 ${l.color}`}>{l.level}</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">{l.desc}</p>
+              <p className="text-xs text-zinc-500">
+                <span className="text-zinc-400">Best for: </span>{l.useCase}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function AndroidAutomationPowerUser({
   dark,
   onToggle,
@@ -166,6 +332,8 @@ export function AndroidAutomationPowerUser({
   const [useCasesRef, useCasesInView] = useInView();
   const [comparisonRef, comparisonInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
+  const [workflowsRef, workflowsInView] = useInView();
+  const [permissionsRef, permissionsInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
@@ -359,6 +527,11 @@ export function AndroidAutomationPowerUser({
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Real Automation Workflows */}
+        <section ref={workflowsRef}>
+          <AutomationWorkflows visible={workflowsInView} />
         </section>
 
         {/* Features Section */}
@@ -621,6 +794,11 @@ export function AndroidAutomationPowerUser({
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Permission Levels */}
+        <section ref={permissionsRef}>
+          <PermissionLevels visible={permissionsInView} />
         </section>
 
         {/* Use Cases */}
