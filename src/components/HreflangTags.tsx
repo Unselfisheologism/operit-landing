@@ -1,115 +1,131 @@
 // Hreflang SEO Component
-// Renders hreflang tags for multilingual SEO with country-specific targeting
-import { useEffect, useState } from "react";
+// Renders hreflang tags into document.head for multilingual SEO with country-specific targeting
+// Uses direct DOM manipulation (not React children) to ensure tags land in <head>
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-interface HreflangTagsProps {
-  currentPath: string;
-}
-
-// All SEO variants: each maps to a short URL code + hreflang
+// All SEO variants: short URL code → hreflang + og:locale
 const allSeoVariants = [
-  { short: "en", hreflang: "en-US", locale: "en_US" },
-  { short: "zh", hreflang: "zh-CN", locale: "zh_CN" },
-  { short: "zh-TW", hreflang: "zh-TW", locale: "zh_TW" },
-  { short: "hi", hreflang: "hi-IN", locale: "hi_IN" },
-  { short: "es", hreflang: "es-ES", locale: "es_ES" },
-  { short: "es-419", hreflang: "es-419", locale: "es_MX" },
-  { short: "es-AR", hreflang: "es-AR", locale: "es_AR" },
-  { short: "es-CO", hreflang: "es-CO", locale: "es_CO" },
-  { short: "pt", hreflang: "pt-PT", locale: "pt_PT" },
-  { short: "pt-BR", hreflang: "pt-BR", locale: "pt_BR" },
-  { short: "fr", hreflang: "fr-FR", locale: "fr_FR" },
-  { short: "fr-CA", hreflang: "fr-CA", locale: "fr_CA" },
-  { short: "ja", hreflang: "ja-JP", locale: "ja_JP" },
-  { short: "ko", hreflang: "ko-KR", locale: "ko_KR" },
-  { short: "de", hreflang: "de-DE", locale: "de_DE" },
-  { short: "de-AT", hreflang: "de-AT", locale: "de_AT" },
-  { short: "de-CH", hreflang: "de-CH", locale: "de_CH" },
-  { short: "it", hreflang: "it-IT", locale: "it_IT" },
-  { short: "tr", hreflang: "tr-TR", locale: "tr_TR" },
-  { short: "id", hreflang: "id-ID", locale: "id_ID" },
-  { short: "vi", hreflang: "vi-VN", locale: "vi_VN" },
-  { short: "ar", hreflang: "ar-SA", locale: "ar_SA" },
-  { short: "ar-AE", hreflang: "ar-AE", locale: "ar_AE" },
-  { short: "ar-EG", hreflang: "ar-EG", locale: "ar_EG" },
-  { short: "ru", hreflang: "ru-RU", locale: "ru_RU" },
-  { short: "pl", hreflang: "pl-PL", locale: "pl_PL" },
-  { short: "nl", hreflang: "nl-NL", locale: "nl_NL" },
-  { short: "nl-BE", hreflang: "nl-BE", locale: "nl_BE" },
+  { short: "en",   hreflang: "en-US", locale: "en_US" },
+  { short: "zh",   hreflang: "zh-CN", locale: "zh_CN" },
+  { short: "zh-TW",hreflang: "zh-TW", locale: "zh_TW" },
+  { short: "hi",   hreflang: "hi-IN", locale: "hi_IN" },
+  { short: "es",   hreflang: "es-ES", locale: "es_ES" },
+  { short: "es-419",hreflang:"es-419",locale: "es_MX" },
+  { short: "es-AR",hreflang: "es-AR", locale: "es_AR" },
+  { short: "es-CO",hreflang: "es-CO", locale: "es_CO" },
+  { short: "pt",   hreflang: "pt-PT", locale: "pt_PT" },
+  { short: "pt-BR",hreflang: "pt-BR", locale: "pt_BR" },
+  { short: "fr",   hreflang: "fr-FR", locale: "fr_FR" },
+  { short: "fr-CA",hreflang: "fr-CA", locale: "fr_CA" },
+  { short: "ja",   hreflang: "ja-JP", locale: "ja_JP" },
+  { short: "ko",   hreflang: "ko-KR", locale: "ko_KR" },
+  { short: "de",   hreflang: "de-DE", locale: "de_DE" },
+  { short: "de-AT",hreflang: "de-AT", locale: "de_AT" },
+  { short: "de-CH",hreflang: "de-CH", locale: "de_CH" },
+  { short: "it",   hreflang: "it-IT", locale: "it_IT" },
+  { short: "tr",   hreflang: "tr-TR", locale: "tr_TR" },
+  { short: "id",   hreflang: "id-ID", locale: "id_ID" },
+  { short: "vi",   hreflang: "vi-VN", locale: "vi_VN" },
+  { short: "ar",   hreflang: "ar-SA", locale: "ar_SA" },
+  { short: "ar-AE",hreflang: "ar-AE", locale: "ar_AE" },
+  { short: "ar-EG",hreflang: "ar-EG", locale: "ar_EG" },
+  { short: "ru",   hreflang: "ru-RU", locale: "ru_RU" },
+  { short: "pl",   hreflang: "pl-PL", locale: "pl_PL" },
+  { short: "nl",   hreflang: "nl-NL", locale: "nl_NL" },
+  { short: "nl-BE",hreflang: "nl-BE", locale: "nl_BE" },
 ];
 
-export function HreflangTags({ currentPath }: HreflangTagsProps) {
+export function HreflangTags({ currentPath }: { currentPath: string }) {
   const { i18n } = useTranslation();
-  const [tags, setTags] = useState<{ hreflang: string; href: string }[]>([]);
-
-  const baseUrl =
-    typeof window !== "undefined"
-      ? `${window.location.protocol}//${window.location.host}`
-      : "https://twent.xyz";
 
   useEffect(() => {
-    const newTags: { hreflang: string; href: string }[] = [];
+    if (typeof document === "undefined") return;
 
+    const baseUrl = `${window.location.protocol}//${window.location.host}`;
+
+    // Remove any existing dynamic hreflang links (added by this component)
     document
-      .querySelectorAll('link[rel="alternate"][hreflang]')
+      .querySelectorAll('link[data-hreflang-dynamic]')
       .forEach((el) => el.remove());
 
+    // Build variant URLs by swapping/prepending language prefix
+    const supportedShortCodes = allSeoVariants.map((v) => v.short);
+    const pathParts = currentPath.split("/").filter(Boolean);
+    const firstPart = pathParts[0];
+    const isLangPrefixed = supportedShortCodes.includes(firstPart);
+
+    const hreflangLinks: { hreflang: string; href: string }[] = [];
+
     // x-default: points to the URL without language prefix (English default)
-    newTags.push({
+    hreflangLinks.push({
       hreflang: "x-default",
       href: `${baseUrl}${currentPath}`,
     });
 
-    // Add all SEO variants
+    // All SEO variants
     allSeoVariants.forEach((variant) => {
-      const pathParts = currentPath.split("/").filter(Boolean);
+      let newParts: string[];
 
-      // Detect if URL already has a language prefix
-      const firstPart = pathParts[0];
-      const supportedShortCodes = allSeoVariants.map((v) => v.short);
-      const isLangPrefixed = supportedShortCodes.includes(firstPart);
-
-      // Replace or add the short code in URL (not the hreflang)
       if (isLangPrefixed && pathParts.length > 0) {
-        pathParts[0] = variant.short;
+        // Replace existing language prefix
+        newParts = [variant.short, ...pathParts.slice(1)];
       } else if (!isLangPrefixed) {
-        pathParts.unshift(variant.short);
+        // Prepend language prefix
+        newParts = [variant.short, ...pathParts];
+      } else {
+        return; // already handled
       }
 
-      const urlPath = "/" + pathParts.join("/");
-
-      newTags.push({
+      const urlPath = "/" + newParts.join("/");
+      hreflangLinks.push({
         hreflang: variant.hreflang,
         href: `${baseUrl}${urlPath}`,
       });
     });
 
-    setTags(newTags);
+    // Inject each hreflang link into <head>
+    hreflangLinks.forEach(({ hreflang, href }) => {
+      // Skip if static hreflang already in HTML (to avoid duplicates)
+      const existingStatic = document.querySelector(
+        `link[rel="alternate"][hreflang="${hreflang}"]:not([data-hreflang-dynamic])`
+      );
+      if (existingStatic) return;
+
+      // Skip if we already injected this one
+      const existing = document.querySelector(
+        `link[data-hreflang-dynamic][hreflang="${hreflang}"]`
+      );
+      if (existing) return;
+
+      const link = document.createElement("link");
+      link.setAttribute("rel", "alternate");
+      link.setAttribute("hreflang", hreflang);
+      link.setAttribute("href", href);
+      link.setAttribute("data-hreflang-dynamic", "true");
+      document.head.appendChild(link);
+    });
+
+    // Update og:locale to match current language
+    const currentShort = i18n.language?.split("-")[0] || "en";
+    const variant = allSeoVariants.find((v) => v.short === currentShort);
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale && variant) {
+      ogLocale.setAttribute("content", variant.locale);
+    }
   }, [currentPath, i18n.language]);
 
-  return (
-    <>
-      {tags.map((tag) => (
-        <link
-          key={tag.hreflang}
-          rel="alternate"
-          hrefLang={tag.hreflang}
-          href={tag.href}
-        />
-      ))}
-      <link rel="canonical" href={`${baseUrl}${currentPath}`} />
-    </>
-  );
+  // Renders nothing visible — tags go into document.head via useEffect
+  return null;
 }
 
-// Get the og:locale for the current language
+// Get the og:locale for a given short language code
 export function getOgLocale(shortCode: string): string {
   const variant = allSeoVariants.find((v) => v.short === shortCode);
   return variant?.locale || "en_US";
 }
 
-// JSON-LD structured data for multilingual content
+// JSON-LD structured data for multilingual page
 export function MultilingualSchema({
   pagePath,
   pageTitle,
@@ -151,26 +167,28 @@ export function MultilingualSchema({
   );
 }
 
-// Generate sitemap entries for all languages
+// Generate sitemap entries for all language variants of given paths
 export function generateSitemapUrls(baseUrls: string[]) {
   const sitemapUrls: {
     loc: string;
     languages: { hreflang: string; href: string }[];
   }[] = [];
 
+  const supportedShortCodes = allSeoVariants.map((v) => v.short);
+
   allSeoVariants.forEach((variant) => {
     baseUrls.forEach((basePath) => {
       const pathParts = basePath.split("/").filter(Boolean);
-      const supportedShortCodes = allSeoVariants.map((v) => v.short);
       const isLangPrefixed = supportedShortCodes.includes(pathParts[0]);
 
+      let fullParts: string[];
       if (isLangPrefixed && pathParts.length > 0) {
-        pathParts[0] = variant.short;
-      } else if (!isLangPrefixed) {
-        pathParts.unshift(variant.short);
+        fullParts = [variant.short, ...pathParts.slice(1)];
+      } else {
+        fullParts = [variant.short, ...pathParts];
       }
 
-      const fullPath = "/" + pathParts.join("/");
+      const fullPath = "/" + fullParts.join("/");
 
       sitemapUrls.push({
         loc: `https://twent.xyz${fullPath}`,
