@@ -7,7 +7,7 @@ import { getOgLocale } from "./HreflangTags";
 
 // Page meta data per route (used for title/description updates)
 // All descriptions optimized: 120-160 chars, compelling CTA
-const pageMeta: Record<string, { title: string; description: string }> = {
+const pageMeta: Record<string, { title: string; description: string; ogImage?: string }> = {
   "/": {
     title: "Twent - Best AI Agent for Android | Automates Everything",
     description:
@@ -67,26 +67,31 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     title: "AI Agent for Android Developers - MCP, CLI & SDK",
     description:
       "Claude Code, Codex & CLI tools on your Android phone. Full Ubuntu terminal, git, MCP & SSH. Ship code from anywhere. Free.",
+    ogImage: "/developer-hero.png",
   },
   "/changelog": {
     title: "Twent Changelog - Latest Updates & Features",
     description:
       "See every update, feature & fix for Twent AI agent — the Android app that actually ships. Stay up to date. Free download.",
+    ogImage: "/TWENT-OPENGRAPH-IMG.png",
   },
   "/privacy": {
     title: "Twent Privacy Policy - How We Handle Your Data",
     description:
       "How Twent handles your data — encryption, no data sales & transparency reports. Built privacy-first for Android. Free download.",
+    ogImage: "/privacy-hero.png",
   },
   "/terms": {
     title: "Twent Terms of Service - Legal Terms",
     description:
       "Legal terms for using Twent — the AI agent for Android. Clear, fair & human-readable. Everything you need to know. Free download.",
+    ogImage: "/TWENT-OPENGRAPH-IMG.png",
   },
   "/404": {
     title: "Page Not Found | Twent",
     description:
       "Page not found — but Twent AI can help you find what you need. The best AI agent for Android. Download the free app now.",
+    ogImage: "/TWENT-OPENGRAPH-IMG.png",
   },
   "/vs/chatgpt": {
     title: "Twent vs ChatGPT - AI Agent for Android",
@@ -249,6 +254,36 @@ export function MetaUpdater({ currentPath }: { currentPath: string }) {
     if (ogTitle) {
       ogTitle.setAttribute("content", localizedTitle);
     }
+
+    // Update og:image and twitter:image per-page
+    const pageData = pageMeta[currentPath];
+    const ogImagePath = pageData?.ogImage || "/TWENT-OPENGRAPH-IMG.png";
+    const ogImageUrl = `https://twent.xyz${ogImagePath}`;
+
+    const setImageMeta = (selector: string, content: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", content);
+    };
+
+    // OG image
+    setImageMeta('meta[property="og:image"]', ogImageUrl);
+    setImageMeta('meta[property="og:image:secure_url"]', ogImageUrl);
+    setImageMeta('meta[property="og:image:alt"]', localizedTitle);
+
+    // Twitter image
+    setImageMeta('meta[name="twitter:image"]', ogImageUrl);
+    setImageMeta('meta[name="twitter:image:alt"]', localizedTitle);
+
+    // OG image dimensions — vary by image type
+    const isHeroImage = ogImagePath.includes("-hero");
+    const ogImgWidth = document.querySelector('meta[property="og:image:width"]');
+    const ogImgHeight = document.querySelector('meta[property="og:image:height"]');
+    const twImgWidth = document.querySelector('meta[name="twitter:image:width"]');
+    const twImgHeight = document.querySelector('meta[name="twitter:image:height"]');
+    if (ogImgWidth) ogImgWidth.setAttribute("content", isHeroImage ? "1200" : "1200");
+    if (ogImgHeight) ogImgHeight.setAttribute("content", isHeroImage ? "630" : "630");
+    if (twImgWidth) twImgWidth.setAttribute("content", "1200");
+    if (twImgHeight) twImgHeight.setAttribute("content", "630");
   }, [i18n.language, currentPath]);
 
   // This component renders nothing visible
