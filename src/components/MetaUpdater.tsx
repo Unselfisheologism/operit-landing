@@ -6,150 +6,172 @@ import { languages } from "../i18n";
 import { getOgLocale } from "./HreflangTags";
 
 // Page meta data per route (used for title/description updates)
+// All descriptions optimized: 120-160 chars, compelling CTA
 const pageMeta: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Twent - Best AI Agent for Android | Automates Everything",
     description:
-      "Twent is an agentic AI agent for Android that automates apps, runs a full Ubuntu terminal, and connects 1000+ services. Free download.",
+      "The AI agent that runs ON your Android — automates apps, runs Ubuntu terminal & connects 1000+ services. Download Twent free.",
   },
   "/pricing": {
     title: "Twent Pricing - Free AI Agent for Android",
     description:
-      "Twent is free to download. Connect 1000+ apps, run a full Ubuntu terminal, and automate workflows with an AI agent that actually does things on your phone.",
+      "Twent is 100% free. Automate Android apps, run Ubuntu terminal & connect 1000+ services. No credit card. Get started now.",
   },
   "/docs": {
     title: "Twent Docs - Getting Started with AI on Android",
     description:
-      "Learn how to set up and use Twent, the AI agent that actually works on your Android phone.",
+      "Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal & connect 1000+ services. Start free.",
   },
   "/blog": {
     title: "Twent Blog - AI Agent News and Updates",
     description:
-      "Latest news, tutorials, and updates about Twent - the AI agent that actually works on Android.",
+      "Tutorials, feature deep-dives & AI agent news for Android users. Learn how to automate your phone step by step. Start free.",
   },
   "/blog/marketplace": {
     title: "Twent Marketplace - AI Skills & Integrations",
     description:
-      "Discover AI skills, MCP integrations, and Composio connections for the Twent AI agent.",
+      "Browse AI skills, MCP integrations & Composio connections for the Twent AI agent. Supercharge your Android AI. Try free.",
   },
   "/blog/marketplace-creators": {
     title: "Twent Marketplace for Creators - Build & Sell AI Skills",
     description:
-      "Create and sell AI skills for the Twent marketplace. Reach millions of Android users.",
+      "Sell AI skills, workflows & mini apps to millions of Android users. Build once, earn forever. Join the Twent marketplace free.",
   },
   "/blog/best-ai-apps-android": {
     title: "25 Best AI Apps for Android in 2026 | Twent",
     description:
-      "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Claude to Twent — discover 25 apps that unlock your phone's true potential.",
+      "25 best AI apps for Android in 2026 ranked — ChatGPT, Claude, Gemini, Twent & more. Find your perfect AI. Read the guide now.",
   },
   "/blog/android-automation-power-user": {
     title: "Android Automation App - Auto-Tap, Swipe & AI Scripts",
     description:
-      "Twent is the Android automation app that lets you auto-tap, swipe, type, and run scripts with AI. Automate any phone task without root. Features terminal access, local AI, and skill marketplace. Free download.",
+      "The ultimate Android automation app: auto-tap, swipe, type & run scripts with AI. No root needed. Automate any app. Download Twent free.",
   },
   "/blog/privacy-first-ai": {
     title: "Privacy-First AI on Android - BYOK & Local Models",
     description:
-      "Keep your data on your device with Twent's privacy-first AI agent. Features BYOK, local AI models, offline operation, and open-source transparency. Free download.",
+      "BYOK encryption, local AI models & offline mode. Your data never leaves your device. The most private AI for Android. Free.",
   },
   "/blog/terminal-on-android": {
     title: "Ubuntu Terminal on Android - Full Linux with AI (No Root)",
     description:
-      "Run a real Ubuntu 24.04 LTS terminal on your Android phone with AI assistance. Access apt, run Linux commands, and automate your terminal with AI. No root required - works on any Android 8.0+ device.",
+      "Run a real Ubuntu 24.04 LTS terminal on Android. apt, Python, Node, SSH — Linux in your pocket. Download Twent free today.",
   },
   "/blog/enterprise-ai-agent": {
     title: "Enterprise AI Agent for Android - Twent Teams",
     description:
-      "Deploy AI agents across your organization with Twent enterprise features.",
+      "Deploy AI agents across your team. Admin dashboard, compliance controls & audit trails. Enterprise-grade AI on Android. Free trial.",
   },
   "/blog/ai-agent-for-developers": {
     title: "AI Agent for Android Developers - MCP, CLI & SDK",
     description:
-      "Build Android automation with Twent AI. MCP support, Composio integrations, and terminal access.",
+      "Claude Code, Codex & CLI tools on your Android phone. Full Ubuntu terminal, git, MCP & SSH. Ship code from anywhere. Free.",
+  },
+  "/changelog": {
+    title: "Twent Changelog - Latest Updates & Features",
+    description:
+      "See every update, feature & fix for Twent AI agent — the Android app that actually ships. Stay up to date. Free download.",
+  },
+  "/privacy": {
+    title: "Twent Privacy Policy - How We Handle Your Data",
+    description:
+      "How Twent handles your data — encryption, no data sales & transparency reports. Built privacy-first for Android. Free download.",
+  },
+  "/terms": {
+    title: "Twent Terms of Service - Legal Terms",
+    description:
+      "Legal terms for using Twent — the AI agent for Android. Clear, fair & human-readable. Everything you need to know. Free download.",
+  },
+  "/404": {
+    title: "Page Not Found | Twent",
+    description:
+      "Page not found — but Twent AI can help you find what you need. The best AI agent for Android. Download the free app now.",
   },
   "/vs/chatgpt": {
     title: "Twent vs ChatGPT - AI Agent for Android",
     description:
-      "Compare Twent vs ChatGPT. Twent actually works on Android - not just a chatbot.",
+      "ChatGPT chats. Twent ACTS — taps apps, runs terminals & automates your Android device. The AI agent that does things. Download free.",
   },
   "/vs/nebula": {
     title: "Twent vs Nebula AI - Best Android Agent",
     description:
-      "Twent vs Nebula: See why Twent is the best AI agent for Android devices.",
+      "Twent vs Nebula: Twent wins with local AI models, UI automation & Ubuntu terminal. Full-featured AI agent for Android. Try free.",
   },
   "/vs/openclaw": {
     title: "Twent vs OpenClaw - AI Agent for Android",
     description:
-      "Compare Twent and OpenClaw for Android AI automation. See why Twent is the better AI agent for device-level automation.",
+      "Twent vs OpenClaw: more integrations, local AI & device-level automation. The better AI agent for Android. Download free.",
   },
   "/vs/hermes-agent": {
     title: "Twent vs Hermes Agent - AI Agent for Android",
     description:
-      "Twent vs Hermes Agent: Which AI agent works better on Android?",
+      "Twent runs Hermes Agent on your Android with full Ubuntu terminal & UI automation. The ultimate AI agent for Android. Download free.",
   },
   "/vs/n8n": {
     title: "Twent vs n8n - AI Workflow Automation for Android",
     description:
-      "Compare Twent and n8n for Android workflow automation with AI.",
+      "Twent runs AI agents ON your Android — not in the cloud. UI automation + Ubuntu terminal. The most powerful Android AI. Free.",
   },
   "/vs/anything-llm": {
     title: "Twent vs AnythingLLM - Best AI Agent for Android",
-    description: "Twent vs AnythingLLM: Mobile-first AI agent for Android.",
+    description:
+      "Twent brings AI agent execution to Android with local models, automation & skills marketplace. The best AI agent for Android. Try free.",
   },
   "/vs/gemini": {
     title: "Twent vs Google Gemini - AI for Android (2026)",
     description:
-      "Compare Twent AI vs Google Gemini for Android. Twent offers device automation, local AI models, and BYOK privacy. Gemini is better for Workspace users.",
+      "Twent vs Google Gemini: Twent offers device automation, local AI models & BYOK privacy. No Gemini Workspace required. Download free.",
   },
   "/vs/replika": {
     title: "Twent vs Replika - Best AI Companion for Android (2026)",
     description:
-      "Compare Twent AI vs Replika for Android. Twent is the best alternative to Replika for getting things done, with terminal access, UI automation, and skill workflows.",
+      "Twent vs Replika: Twent is the best Replika alternative for Android — automation, terminal & skills marketplace. Free download.",
   },
   "/vs/copilot": {
     title: "Twent vs Microsoft Copilot - AI Assistant for Android",
     description:
-      "Compare Twent AI vs Microsoft Copilot for Android. Twent offers full device automation, local models, and terminal access that Copilot cannot match.",
+      "Twent vs Microsoft Copilot: Twent runs ON your Android with full automation & local AI. No browser needed. Download free.",
   },
   "/vs/claude": {
     title: "Twent vs Claude Mobile - AI Agent for Android (2026)",
     description:
-      "Compare Twent AI vs Claude for Android. Twent brings Claude Code execution, UI automation, and floating overlay to your Android device.",
+      "Twent vs Claude Mobile: Twent brings Claude Code execution, UI automation & floating overlay to your Android device. Try free.",
   },
   "/vs/perplexity": {
     title: "Twent vs Perplexity - AI That Searches vs AI That Acts",
     description:
-      "Twent vs Perplexity: Perplexity searches the web. Twent acts on your device. The best AI for Android users who want to get things done.",
+      "Perplexity searches. Twent ACTS — automates apps, runs terminals & executes AI tasks on your phone. The action AI. Free.",
   },
   "/vs/make": {
     title: "Twent vs Make - Automation for Android (2026)",
     description:
-      "Compare Twent AI vs Make for Android automation. Twent runs AI agents directly on your phone with UI automation, terminals, and skill workflows.",
+      "Twent vs Make: Twent runs AI agents ON your Android phone, not in the cloud. The most powerful automation. Free download.",
   },
   "/vs/zapier": {
     title: "Twent vs Zapier - AI Automation for Android (2026)",
     description:
-      "Compare Twent AI vs Zapier for Android automation. Twent brings AI agents to your phone with full terminal access and UI automation.",
+      "Twent vs Zapier: AI agents on your Android with full terminal & UI automation. Powerful automation. Try Twent free today.",
   },
   "/vs/qordinate": {
     title: "Twent vs Qordinate - Best AI Agent for Android (2026)",
     description:
-      "Compare Twent AI vs Qordinate for Android. See why Twent is the better AI agent with more integrations, local models, and automation capabilities.",
+      "Twent vs Qordinate: more integrations, local AI models & automation features. The better AI agent for Android. Try free.",
   },
   "/vs/omnara": {
     title: "Twent vs Omnara - AI Agent for Android (2026)",
     description:
-      "Compare Twent AI vs Omnara for Android. Twent excels at device-level AI automation with MCP ecosystem and skill marketplace.",
+      "Twent vs Omnara: device-level AI automation, MCP ecosystem & skills marketplace. The best AI agent for Android. Try free today.",
   },
   "/vs/manus": {
     title: "Twent vs Manus - AI Agent for Android (2026)",
     description:
-      "Compare Twent AI vs Manus for Android automation. Twent runs on your device with full terminal access and AI agent execution.",
+      "Twent vs Manus: Twent runs ON your Android with full terminal access & AI agent execution. The future of mobile AI. Try Twent free.",
   },
   "/vs/onspace": {
     title: "Twent vs Onspace - Best AI Agent for Android (2026)",
     description:
-      "Compare Twent AI vs Onspace for Android. Twent is the privacy-first AI agent with BYOK model support and local AI execution.",
+      "Twent vs Onspace: BYOK privacy, local AI models & Ubuntu terminal. The best AI agent for Android. Download Twent free today.",
   },
 };
 
@@ -199,6 +221,15 @@ export function MetaUpdater({ currentPath }: { currentPath: string }) {
       const descEl = document.querySelector('meta[name="description"]');
       if (descEl) {
         descEl.setAttribute("content", metaDesc);
+      }
+      // Also update og:description and twitter:description for social
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) {
+        ogDesc.setAttribute("content", metaDesc);
+      }
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) {
+        twitterDesc.setAttribute("content", metaDesc);
       }
     }
 

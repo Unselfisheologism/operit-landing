@@ -58,7 +58,6 @@ function AnimatedDate({ visible }: { visible: boolean }) {
 
 // ─── TWENT GOLD CARD ───────────────────────────────────────────────────────
 function TwentGoldCard({ visible }: { visible: boolean }) {
-  const [flipped, setFlipped] = useState(false);
 
   const features = [
     { icon: "◈", label: "Overlay Agent", desc: "Sees your screen. Taps, swipes, types — acts like you." },
@@ -154,9 +153,9 @@ function TwentGoldCard({ visible }: { visible: boolean }) {
 }
 
 // ─── APP CARD ────────────────────────────────────────────────────────────────
-function AppCard({ num, name, developer, price, description, standout, dark }: {
+function AppCard({ num, name, developer, price, description, standout }: {
   num: number; name: string; developer: string; price: string;
-  description: string; standout: string; dark: boolean;
+  description: string; standout: string;
 }) {
   return (
     <div className="group relative border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 md:p-7 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
@@ -277,42 +276,42 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
                   <AppCard num={1} name="ChatGPT" developer="OpenAI" price="Free / $20/mo Plus"
                     description="The OG that started it all. GPT-4o, Advanced Voice Mode, vision, custom GPTs, web browsing. The most versatile AI assistant on the planet."
                     standout="Custom GPTs let you build mini-apps without code. Best general-purpose AI."
-                    dark={dark}
+                   
                   />
                   <AppCard num={2} name="Claude" developer="Anthropic" price="Free / $20/mo Pro"
                     description="Constitutional AI means Claude is unusually thoughtful and honest. 200K context window (enterprise). Computer use, Artifacts for docs/code, excellent deep analysis."
                     standout="Best for serious work — writing, analysis, research. The ethical backbone of the bunch."
-                    dark={dark}
+                   
                   />
                   <AppCard num={3} name="Google Gemini" developer="Google" price="Free / $20/mo Advanced"
                     description="Native Google integration — Search, Maps, Gmail, YouTube, Drive. Multimodal input. Gems for custom personalities. Deep research mode."
                     standout="Best for Google ecosystem users. Real-time info from Google's index."
-                    dark={dark}
+                   
                   />
                   <AppCard num={4} name="Microsoft Copilot" developer="Microsoft" price="Free / $10/mo Pro"
                     description="GPT-4 and DALL-E 3 built in. Swift Key keyboard integration means AI everywhere you type. Edge browser assistant. Daily AI image generation."
                     standout="Seamless if you live in Microsoft Office. PowerPoint and Word integration."
-                    dark={dark}
+                   
                   />
                   <AppCard num={5} name="Perplexity AI" developer="Perplexity AI" price="Free / $20/mo Pro"
                     description="AI-powered search with real citations. Every answer links to sources. Academic research mode, focus modes, image generation, thread sharing."
                     standout="Best for research — you always know where the information comes from."
-                    dark={dark}
+                   
                   />
                   <AppCard num={6} name="Meta AI" developer="Meta" price="Free"
                     description="Built into Instagram, Facebook, and WhatsApp. Real-time information, image generation, voice conversations. Suggested replies in DMs."
                     standout="Zero effort to use — it's already in apps you already open."
-                    dark={dark}
+                   
                   />
                   <AppCard num={7} name="Samsung Galaxy AI" developer="Samsung" price="Included (Galaxy)"
                     description="Circle to Search, Note Assist, Photo Assist (AI editing), Interpreter mode, real-time Chat Assist translation. On-device processing."
                     standout="On-device processing means privacy by default. Best-in-class photo AI."
-                    dark={dark}
+                   
                   />
                   <AppCard num={8} name="Poe" developer="Quora" price="Free / $20/mo Premium"
                     description="Access GPT-4, Claude Sonnet, GPT-4o, and dozens of other models in one app. Quick answers, community discussions, bot creation."
                     standout="Try multiple models side-by-side without switching apps."
-                    dark={dark}
+                   
                   />
                 </div>
               </div>
@@ -332,27 +331,27 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
                   <AppCard num={9} name="Notion AI" developer="Notion Labs" price="$10/mo / $20/mo Business"
                     description="AI writing inside your Notion workspace. Summarization, brainstorming, editing, proofreading, template generation."
                     standout="If you already use Notion, this is a no-brainer. AI where your work already lives."
-                    dark={dark}
+                   
                   />
                   <AppCard num={10} name="Grammarly" developer="Grammarly Inc." price="Free / $15/mo Premium"
                     description="Industry-standard writing assistant. Real-time correction, tone adjustments, clarity improvements, genre-specific suggestions."
                     standout="Every email, Slack, and doc — polished without effort."
-                    dark={dark}
+                   
                   />
                   <AppCard num={11} name="Otter.ai" developer="Otter.ai" price="Free / $20/mo Pro"
                     description="Real-time transcription for meetings. Automatic notes, summaries, speaker identification, collaboration."
                     standout="Join one meeting and you'll never take notes manually again."
-                    dark={dark}
+                   
                   />
                   <AppCard num={12} name="Canva AI (Magic Design)" developer="Canva" price="Free / $15/mo Pro"
                     description="AI design suggestions, Magic Edit, Magic Write, auto-resize for any format. Non-designers making professional-looking work."
                     standout="Magic Design generates complete presentations from a single text prompt."
-                    dark={dark}
+                   
                   />
                   <AppCard num={13} name="Motion" developer="Motion" price="$20/mo / $54/mo Business"
                     description="AI calendar and task management. Automatically optimizes your schedule based on meetings, deadlines, and energy levels."
                     standout="Your calendar schedules itself. Best AI scheduler on the market."
-                    dark={dark}
+                   
                   />
                 </div>
               </div>
@@ -372,22 +371,22 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
                   <AppCard num={14} name="Zapier" developer="Zapier Inc." price="Free / $20/mo / $600/mo"
                     description="Industry leader in workflow automation. 5,000+ app integrations. AI-powered parsing, multi-step Zaps, data routing between services."
                     standout="Connects almost any app to almost any other app. Automations without code."
-                    dark={dark}
+                   
                   />
                   <AppCard num={15} name="Bardeen AI" developer="Bardeen" price="Free / $19/mo Pro"
                     description="No-code workflow automation with AI. Scraping, data sync, custom automations, 100+ app integrations."
                     standout="AI builds automations from plain English descriptions. Fastest setup time."
-                    dark={dark}
+                   
                   />
                   <AppCard num={16} name="Tasker" developer="Joaoapps" price="$4.99 one-time"
                     description="The most powerful Android automation app ever made. Trigger-based automation for apps, location, time, state. Script execution, UI automation."
                     standout="If you can dream it, Tasker can automate it. $5 one-time is legendary in the Android community."
-                    dark={dark}
+                   
                   />
                   <AppCard num={17} name="MacroDroid" developer="Arlosoft" price="Free / $4.99/mo"
                     description="Powerful trigger-based automation for Android. Device triggers, action sequences, conditions, variables. Easier UI than Tasker."
                     standout="Tasker's friendly cousin. Great for beginners who want serious automation."
-                    dark={dark}
+                   
                   />
                 </div>
               </div>
@@ -407,27 +406,27 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
                   <AppCard num={18} name="Midjourney" developer="Midjourney" price="Free trial / $10/mo"
                     description="Gold standard for AI art quality. Exceptional artistic style, style references, image upscaling, version comparisons, massive community gallery."
                     standout="Highest quality AI images. The tool professional artists reach for first."
-                    dark={dark}
+                   
                   />
                   <AppCard num={19} name="DALL-E 3" developer="OpenAI" price="In ChatGPT Plus"
                     description="Integrated with ChatGPT for natural language understanding. Better text rendering than competitors, edit and regenerate."
                     standout="Inside ChatGPT, so no separate app. Best text-in-image of any AI art tool."
-                    dark={dark}
+                   
                   />
                   <AppCard num={20} name="Adobe Firefly" developer="Adobe" price="Free / $5.99/mo CC"
                     description="Generative fill, text-to-image, vector generation. Integrated with Photoshop and Creative Cloud. Commercially safe by default."
                     standout="Professional workflow integration. What you generate is safe for commercial use."
-                    dark={dark}
+                   
                   />
                   <AppCard num={21} name="Stability AI (DreamStudio)" developer="Stability AI" price="Free / $10/mo"
                     description="Open-source image generation. ControlNet, image-to-image, inpainting/outpainting, SDXL models."
                     standout="Most customizable. Open-source means you can even self-host if you want."
-                    dark={dark}
+                   
                   />
                   <AppCard num={22} name="Leonardo AI" developer="Leonardo Labs" price="Free 150/day / $12/mo"
                     description="Beginner-friendly interface with high-quality generation. Prompt assistance, model training, canvas editing, active community."
                     standout="Easiest path from idea to polished image. Community features make learning fun."
-                    dark={dark}
+                   
                   />
                 </div>
               </div>
@@ -447,17 +446,17 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
                   <AppCard num={23} name="Khanmigo" developer="Khan Academy" price="$20/mo (early access)"
                     description="AI-powered tutoring. Socratic guidance (teaches by asking questions, not giving answers), subject guidance, learning paths, practice problems."
                     standout="Revolutionary approach. The AI doesn't give answers — it teaches you to think."
-                    dark={dark}
+                   
                   />
                   <AppCard num={24} name="Duolingo" developer="Duolingo" price="Free / $13/mo Super"
                     description="AI-powered language lessons with personalized paths, speaking practice, story mode, grammar explanations. 500M+ users worldwide."
                     standout="Gamified language learning with AI personalizing every lesson to your pace."
-                    dark={dark}
+                   
                   />
                   <AppCard num={25} name="Photomath" developer="Google" price="Free / $9.99/mo Plus"
                     description="Point your camera at any math problem. Step-by-step solutions with multiple explanation methods and a graphing calculator."
                     standout="Math homework helper that actually teaches the concept, not just the answer."
-                    dark={dark}
+                   
                   />
                 </div>
               </div>
