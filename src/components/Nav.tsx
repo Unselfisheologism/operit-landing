@@ -238,8 +238,6 @@ function DesktopHeader({
         }`}
       >
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
-        {/* Language Switcher */}
-        <LanguageSwitcher variant="minimal" className="text-black dark:text-white" />
         <DownloadButton iconOnly className="!w-8 !h-8" />
         <ThemeToggle dark={dark} onToggle={onToggle} />
       </div>
@@ -275,9 +273,8 @@ function MobileHeader({
         </span>
       </a>
 
-      {/* Right: language + download icon + toggle + hamburger */}
+      {/* Right: download icon + toggle + hamburger */}
       <div className="flex items-center gap-1">
-        <LanguageSwitcher variant="minimal" className="text-black dark:text-white" />
         <DownloadButton iconOnly className="!w-8 !h-8" />
         <ThemeToggle dark={dark} onToggle={onToggle} />
         <HamburgerIcon
