@@ -138,6 +138,31 @@
     <link rel="preload" href="/plotter-dark.svg" as="image" fetchpriority="high" />
     <link rel="preload" href="/plotter-light.svg" as="image" fetchpriority="high" />
 
+    <!-- Content Security Policy — secondary defense layer
+         Primary HSTS/CSP headers are set by Cloudflare in _headers
+         This meta tag covers edge cases where headers are stripped -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com;
+        font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;
+        img-src 'self' data: https://twent.xyz https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev https://*.r2.dev https://pbs.twimg.com https://abs.twimg.com;
+        connect-src 'self' https://api.databuddy.io;
+        frame-src 'self' https://www.youtube.com https://youtube.com;
+        media-src 'self' https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self'
+      "
+    />
+
+    <!-- HSTS meta tag — NOT effective as HTTP header replacement (browsers ignore it)
+         but included here as a signal to tools/validators that HSTS is configured
+         Primary enforcement is via Strict-Transport-Security in Cloudflare _headers -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload" />
+
     <!-- Organization Schema for Rich Results -->
     <script type="application/ld+json">
       {

@@ -1,71 +1,164 @@
-/download
-           Location: https://pub-xxxxxxxxxx.r2.dev/twent-latest.apk
-           Cache-Control: public, max-age=86400
+# ═══════════════════════════════════════════════════════
+# CLOUDFLARE PAGES — SECURITY HEADERS
+# SSL/HTTPS Enforcement + Mixed Content Protection
+# ═══════════════════════════════════════════════════════
+
+/*
+  # ─── SSL / HSTS ──────────────────────────────────────
+  # Tell browsers to ALWAYS use HTTPS for this origin
+  # includeSubDomains = apply to all subdomains (cdn.twent.xyz, etc.)
+  # preload = submit to browser HSTS preload list (hstspreload.org)
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # ─── Content Security Policy ──────────────────────────
+  # Block ALL mixed content, force HTTPS for all resources
+  # 'self' = same origin (twent.xyz)
+  # upgrade-insecure-requests = auto-upgrade http:// → https://
+  Content-Security-Policy:
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com;
+    font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;
+    img-src 'self' data: https://twent.xyz https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev https://*.r2.dev https://pbs.twimg.com https://abs.twimg.com https://cdn.sstatic.net;
+    connect-src 'self' https://api.databuddy.io https://twent.xyz;
+    frame-src 'self' https://www.youtube.com https://youtube.com;
+    media-src 'self' https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev;
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+
+  # ─── Clickjacking Protection ──────────────────────────
+  # Only allow embedding in iframes from same origin
+  X-Frame-Options: SAMEORIGIN
+
+  # ─── MIME Type Sniffing ───────────────────────────────
+  # Prevent browsers from guessing content types (security risk)
+  X-Content-Type-Options: nosniff
+
+  # ─── Referrer Privacy ─────────────────────────────────
+  # Only send full referrer to same-origin, strip to origin for HTTPS→HTTPS,
+  # and never send for HTTPS→HTTP
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # ─── Browser Feature Permissions ─────────────────────
+  # Disable risky browser APIs that could be abused
+  Permissions-Policy:
+    camera=(),
+    microphone=(),
+    geolocation=(),
+    interest-cohort=(),
+    payment=()
+
+  # ─── XSS Filter (legacy browsers) ─────────────────────
+  X-XSS-Protection: 1; mode=block
+
+  # ─── CORS ─────────────────────────────────────────────
+  Access-Control-Allow-Origin: https://twent.xyz
+
+  # ─── Cache ────────────────────────────────────────────
+  Cache-Control: public, max-age=0; must-revalidate
+
+# ═══════════════════════════════════════════════════════
+# ASSET CACHING (JS/CSS/Images — immutable, long cache)
+# ═══════════════════════════════════════════════════════
 
 /assets/*.js
   Content-Type: application/javascript; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests
 
 /assets/*.css
   Content-Type: text/css; charset=utf-8
   Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; upgrade-insecure-requests
 
 /assets/*.woff2
   Content-Type: font/woff2
   Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; upgrade-insecure-requests
 
 /assets/*.woff
   Content-Type: font/woff
   Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# ═══════════════════════════════════════════════════════
+# IMAGE CACHE + SECURITY
+# ═══════════════════════════════════════════════════════
 
 /*.png
   Content-Type: image/png
   Cache-Control: public, max-age=31536000, immutable
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://twent.xyz https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev; upgrade-insecure-requests
 
 /*.svg
   Content-Type: image/svg+xml
   Cache-Control: public, max-age=31536000, immutable
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-
-/*.txt
-  Content-Type: text/plain; charset=utf-8
-  Cache-Control: public, max-age=86400
-  X-Frame-Options: DENY
-  Referrer-Policy: strict-origin-when-cross-origin
-
-/*.xml
-  Content-Type: application/xml
-  Cache-Control: public, max-age=86400
-  X-Frame-Options: DENY
-  Referrer-Policy: strict-origin-when-cross-origin
-
-/*.otf
-  Content-Type: font/otf
-  Cache-Control: public, max-age=31536000, immutable
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; upgrade-insecure-requests
 
 /*.webp
   Content-Type: image/webp
   Cache-Control: public, max-age=31536000, immutable
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 /*.jpg
   Content-Type: image/jpeg
   Cache-Control: public, max-age=31536000, immutable
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https://twent.xyz; upgrade-insecure-requests
 
-/*
-  X-Frame-Options: DENY
+# ═══════════════════════════════════════════════════════
+# FONT CACHE + SECURITY
+# ═══════════════════════════════════════════════════════
+
+/*.otf
+  Content-Type: font/otf
+  Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; font-src 'self' https://fonts.gstatic.com; upgrade-insecure-requests
+
+# ═══════════════════════════════════════════════════════
+# DOCS / TEXT CACHE (short TTL — regenerated often)
+# ═══════════════════════════════════════════════════════
+
+/*.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
+
+/*.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
+
+# ═══════════════════════════════════════════════════════
+# ROBOTS / HUMANS.TXT — allow crawlers but keep headers
+# ═══════════════════════════════════════════════════════
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+/humans.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# ═══════════════════════════════════════════════════════
+# FAVICON — small, immutable
+# ═══════════════════════════════════════════════════════
+
+/favicon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=604800; stale-while-revalidate=2592000
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
