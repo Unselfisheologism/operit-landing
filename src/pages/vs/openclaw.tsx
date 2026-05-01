@@ -9,7 +9,7 @@ export default function OpenclawComparisonPage() {
         pageTitle="twent AI vs OpenClaw AI: Comparison 2026"
         lastUpdated="April 22, 2026"
 verdict="OpenClaw is an excellent desktop AI assistant that runs on Mac/Windows. twent AI is the only one of the two that runs natively on Android, has full terminal access and device level automation. Both are fully open source."
-        metaKeywords="wombo ai download, womb oai app, personal assistant ai, ai assistant for android, ai apps for android, ai android"
+        metaKeywords="openclaw ai, desktop ai assistant, open source agent, mac windows ai tool, autonomous desktop assistant"
         features={[
           { name: "Open Source", twent: true, competitor: true },
           { name: "24/7 Persistent Runtime", twent: true, competitor: true },

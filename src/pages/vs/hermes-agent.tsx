@@ -9,7 +9,7 @@ export default function HermesagentComparisonPage() {
         pageTitle="twent AI vs Hermes Agent: Open Source AI Comparison"
         lastUpdated="April 22, 2026"
 verdict="Hermes Agent is an excellent open source agent backend for servers/desktops. twent AI is the Android port and implementation of Hermes, optimized for mobile, with native Android permissions, terminal, automation and UI. twent brings the full Hermes agent stack to your pocket."
-        metaKeywords="hermes ai, open source ai, ai agent android, ai assistant for android, personal assistant ai, best ai android, ai android"
+        metaKeywords="hermes agent nous, open source llm agent, nous research ai, autonomous mobile agent, self-hostable assistant"
         features={[
           { name: "Open Source", twent: true, competitor: true },
           { name: "MCP Protocol Support", twent: true, competitor: true },

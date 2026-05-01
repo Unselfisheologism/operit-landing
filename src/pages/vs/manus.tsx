@@ -9,7 +9,7 @@ export default function ManusComparisonPage() {
         pageTitle="twent AI vs Manus: AI Agent Comparison 2026"
         lastUpdated="April 22, 2026"
         verdict="Manus is an autonomous AI agent capable of executing complex development tasks. twent AI combines that level of autonomy with a full Android terminal, local model support, and deep system integration—all on your device."
-        metaKeywords="ai agent, autonomous ai, ai assistant for android, best ai app for android, personal assistant ai, ai android"
+        metaKeywords="manus ai, autonomous agent platform, task automation ai, browser-based agent, development workflow assistant"
         features={[
           {
             name: "Built-in Ubuntu 24 Terminal",
