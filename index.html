@@ -98,7 +98,23 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#09090b" />
 
-    <!-- Canonical URL -->
+    <!-- Canonical URL — dynamically set per page via inline script to prevent duplicate content -->
+    <script>
+      // Set canonical URL based on current pathname BEFORE React hydrates
+      // This prevents duplicate content issues for crawlers that don't run JS
+      (function() {
+        var path = window.location.pathname.replace(/\/$/, '') || '/';
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+          canonical.href = 'https://twent.xyz' + path;
+        } else {
+          var link = document.createElement('link');
+          link.rel = 'canonical';
+          link.href = 'https://twent.xyz' + path;
+          document.head.appendChild(link);
+        }
+      })();
+    </script>
     <link rel="canonical" href="https://twent.xyz/" />
 
     <!-- Preconnect to origins for faster connection -->
