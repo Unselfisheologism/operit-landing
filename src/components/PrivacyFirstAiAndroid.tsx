@@ -1,6 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
+import { SocialLinksInline } from "./SocialLinks";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -232,6 +233,10 @@ export function PrivacyFirstAiAndroid({
               >
                 View Privacy Docs
               </a>
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <span className="text-xs text-zinc-400 dark:text-zinc-600">Follow:</span>
+              <SocialLinksInline />
             </div>
           </div>
 
@@ -832,9 +837,13 @@ export function PrivacyFirstAiAndroid({
                 Read the Docs
               </a>
             </div>
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <span className="text-xs text-zinc-500">Follow:</span>
+              <SocialLinksInline />
+            </div>
             <p className="mt-6 text-sm text-zinc-500">
-              Free forever. No subscriptions. No ads. No data collection. 
-              Zero telemetry. GDPR & CCPA compliant.
+              Free forever. No subscriptions. No ads. No data collection.
+              Zero telemetry. GDPR &amp; CCPA compliant.
             </p>
           </div>
         </section>

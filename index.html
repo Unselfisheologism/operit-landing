@@ -159,32 +159,32 @@
     <!-- Spanish (Colombia) -->
     <link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/" />
 
-    <!-- Preconnect to origins for faster connection -->
-    <link rel="preconnect" href="https://twent.xyz" />
-    <link rel="preconnect" href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev" />
+    <!-- Preconnect to CDN origins for faster resource loading -->
+    <!-- fonts.gstatic.com: variable font CDN (Inter, Saira Condensed, etc.) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- fonts.googleapis.com: font stylesheet CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- R2 bucket: APK and hero image host -->
+    <link rel="preconnect" href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev" crossorigin />
 
-    <!-- Font Preloading with font-display swap for no blocking -->
+    <!-- Font Preloading: Critical Inter Variable from Google Fonts CDN -->
+    <!-- font-display: swap prevents FOIT (flash of invisible text) -->
+    <!-- NOTE: CalivePixel OTF removed — it was preloaded but never used (loaded via CSS @font-face) -->
+    <!-- Cross-Origin required for Google Fonts CDN font preload -->
     <link
       rel="preload"
-      href="/CalivepixelRegularDemo-OG8p8.otf"
+      href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2"
       as="font"
-      type="font/otf"
+      type="font/woff2"
       crossorigin
     />
-
-    <!-- Hero Image Preloading with fetchpriority for LCP -->
-    <link rel="preload" href="/developer-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/automation-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/privacy-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/marketplace-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/terminal-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/enterprise-hero.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/marketplace-creators-hero.png" as="image" fetchpriority="high" />
-
-    <!-- Critical Asset Preloading with priority -->
-    <link rel="preload" href="/OKFINALTWENTLOGO-removebg.png" as="image" fetchpriority="high" />
-    <link rel="preload" href="/plotter-dark.svg" as="image" fetchpriority="high" />
-    <link rel="preload" href="/plotter-light.svg" as="image" fetchpriority="high" />
+    <link
+      rel="preload"
+      href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAc.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
     <!-- Content Security Policy — secondary defense layer
          Primary HSTS/CSP headers are set by Cloudflare in _headers
@@ -205,6 +205,15 @@
         form-action 'self'
       "
     />
+
+    <!-- Critical Asset Preloading (after CSP — non-blocking) -->
+    <!-- Favicon/logo — critical for first visual paint -->
+    <link rel="preload" href="/OKFINALTWENTLOGO-removebg.png" as="image" fetchpriority="high" crossorigin />
+    <!-- OG image — loaded on every page via MetaUpdater, preload here to avoid JS-driven load delay -->
+    <link rel="preload" href="/TWENT-OPENGRAPH-IMG.png" as="image" fetchpriority="low" crossorigin />
+    <!-- SVG backgrounds used by HeroSection on homepage -->
+    <link rel="preload" href="/plotter-light.svg" as="image" crossorigin />
+    <link rel="preload" href="/plotter-dark.svg" as="image" crossorigin />
 
     <!-- HSTS meta tag — NOT effective as HTTP header replacement (browsers ignore it)
          but included here as a signal to tools/validators that HSTS is configured

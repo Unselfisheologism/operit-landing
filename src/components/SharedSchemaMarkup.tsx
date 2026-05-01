@@ -53,10 +53,15 @@ export function SharedSchemaMarkup() {
         name: "Twent AI",
         url: "https://twent.xyz",
         logo: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png",
-        sameAs: ["https://twitter.com/twentxyz", "https://github.com/twent"],
+        sameAs: [
+          "https://github.com/Unselfisheologism/Twent",
+          "https://x.com/Jeff9James",
+          "https://discord.gg/dUFrWm4w",
+          "mailto:jeffrinjames@twent.xyz",
+        ],
         contactPoint: {
           "@type": "ContactPoint",
-          email: "support@twent.xyz",
+          email: "jeffrinjames@twent.xyz",
           contactType: "customer service",
         },
       },

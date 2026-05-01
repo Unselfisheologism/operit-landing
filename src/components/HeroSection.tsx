@@ -1,4 +1,5 @@
 import { HeroToast } from "./HeroToast";
+import { SocialLinksInline } from "./SocialLinks";
 
 export function HeroSection() {
   return (
@@ -64,6 +65,12 @@ export function HeroSection() {
           </span>
           <span>BYOK — Your Keys, Your Privacy</span>
           <span>Local AI Support</span>
+        </div>
+
+        {/* Social links */}
+        <div className="mt-8 flex items-center justify-center gap-2 animate-fade-in-up animate-delay-500">
+          <span className="text-xs text-zinc-400 mr-1">Connect:</span>
+          <SocialLinksInline />
         </div>
       </div>
 
