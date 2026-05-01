@@ -23,23 +23,29 @@ function BestAiAppsSchemaMarkup() {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
-      description: "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Twent — the 25 apps that unlock your phone's true potential.",
+      description: "The definitive guide to the best AI apps for Android in 2026. From Twent (#0 Gold) to ChatGPT to Claude — 25 apps ranked by capability. Your phone is a supercomputer. These apps prove it.",
       url: "https://twent.xyz/blog/best-ai-apps-android",
       datePublished: "2026-04-29",
       dateModified: "2026-04-29",
-      author: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      author: { "@type": "Person", name: "Twent AI", url: "https://twent.xyz" },
       publisher: {
         "@type": "Organization",
         name: "Twent AI",
         url: "https://twent.xyz",
-        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" },
+        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" }
       },
       image: "https://twent.xyz/best-ai-apps-android-hero.png",
-      keywords: "best AI apps Android, AI assistant Android, ChatGPT Android, Claude Android, Gemini Android, Twent Android, AI tools 2026",
+      keywords: "best AI apps Android, AI assistant Android, ChatGPT Android, Claude Android, Gemini Android, Twent Android AI, AI apps 2026, Android AI tools, AI apps for Android phone",
       articleSection: "Roundup",
-      wordCount: 3000,
+      wordCount: 2100,
       inLanguage: "en-US",
       isPartOf: { "@type": "Blog", name: "The Twent Journal", url: "https://twent.xyz/blog" },
+      about: {
+        "@type": "SoftwareApplication",
+        name: "Twent",
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Android"
+      }
     },
     {
       "@context": "https://schema.org",
@@ -271,18 +277,23 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
   const [heroRef, heroInView] = useInView();
   const [contentRef, contentInView] = useInView();
   const [tmentRef, tmentInView] = useInView();
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
-    "description": "The definitive guide to the best AI apps for Android in 2025–2026. From Twent (#0 Gold) to ChatGPT to Khanmigo — discover the 25 apps that unlock your phone's true potential.",
-    "author": { "@type": "Organization", "name": "Twent" },
+    "description": "The definitive guide to the best AI apps for Android in 2026. From Twent (#0 Gold) to ChatGPT to Claude — 25 apps ranked by capability. Your phone is a supercomputer. These apps prove it.",
+    "author": { "@type": "Person", "name": "Twent AI", "url": "https://twent.xyz" },
     "datePublished": "2026-04-29",
     "dateModified": "2026-04-29",
     "url": "https://twent.xyz/blog/best-ai-apps-android",
-    "keywords": "best AI apps for Android, AI apps Android 2025, AI apps for Android phone, Android AI assistant, Twent AI Android, supercomputer Android",
-    "image": "/best-ai-apps-android-hero.png"
+    "keywords": "best AI apps for Android, AI apps Android 2026, AI apps for Android phone, Android AI assistant, Twent AI Android, supercomputer Android, ChatGPT Android, Claude Android",
+    "image": "/best-ai-apps-android-hero.png",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Twent",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android"
+    }
   };
 
   return (

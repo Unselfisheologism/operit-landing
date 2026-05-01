@@ -11,27 +11,33 @@ function MarketplaceSchemaMarkup() {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: "The Twent Marketplace: Your Agentic App Store",
-      description: "The Twent Marketplace is where creators sell anything from mini apps to custom skins, and everyone else gets to level up their agent for free.",
+      description: "The Twent Marketplace is an agentic app store for Android — creators sell mini apps, prompt templates, workflow automation, AI skills, custom skins, and MCP servers. Creators keep 70% revenue; users get free access to premium capabilities.",
       url: "https://twent.xyz/blog/marketplace",
       datePublished: "2026-04-19",
       dateModified: "2026-04-29",
       author: {
-        "@type": "Organization",
+        "@type": "Person",
         name: "Twent AI",
-        url: "https://twent.xyz",
+        url: "https://twent.xyz"
       },
       publisher: {
         "@type": "Organization",
         name: "Twent AI",
         url: "https://twent.xyz",
-        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" },
+        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" }
       },
       image: "https://twent.xyz/marketplace-hero.png",
-      keywords: "Twent marketplace, AI skills, Android agent, MCP, composio, AI app store",
+      keywords: "Twent marketplace, AI app store, AI skills, sell AI apps, MCP plugins, mini apps, prompt templates, Android AI agent",
       articleSection: "Product",
-      wordCount: 800,
+      wordCount: 680,
       inLanguage: "en-US",
       isPartOf: { "@type": "Blog", name: "The Twent Journal", url: "https://twent.xyz/blog" },
+      about: {
+        "@type": "SoftwareApplication",
+        name: "Twent",
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Android"
+      }
     },
     {
       "@context": "https://schema.org",
@@ -155,27 +161,12 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
   const [heroRef, heroInView] = useInView();
   const [contentRef, contentInView] = useInView();
 
-  // Schema.org BlogPosting markup
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "The Twent Marketplace: Your Agentic App Store",
-    "description": "Twent Marketplace is an agentic app store where creators sell mini apps, prompt templates, workflow automation, skills, custom skins, and MCP servers. Creators keep 70% revenue; payment via Gumroad or Stripe.",
-    "author": {
-      "@type": "Organization",
-      "name": "Twent"
-    },
-    "datePublished": "2026-04-19",
-    "dateModified": "2026-04-19",
-    "url": "https://twent.page/marketplace",
-    "keywords": "agentic app store, AI marketplace, Twent, mini apps, prompt templates, workflow automation, AI skills, MCP servers",
-    "image": "/marketplace-hero.png"
-  };
+  // Schema.org BlogPosting markup — now properly deduplicated.
+  // All structured data is rendered by <MarketplaceSchemaMarkup /> above.
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <MarketplaceSchemaMarkup />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />
 

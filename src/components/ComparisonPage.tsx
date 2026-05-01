@@ -291,7 +291,7 @@ export function ComparisonPage({
     });
     document.head.appendChild(websiteScript);
 
-    // BreadcrumbList structured data
+    // BreadcrumbList structured data — 3-level: Home → Compare → vs Competitor
     const breadcrumbScript = document.createElement("script");
     breadcrumbScript.type = "application/ld+json";
     breadcrumbScript.text = JSON.stringify({
@@ -307,6 +307,12 @@ export function ComparisonPage({
         {
           "@type": "ListItem",
           position: 2,
+          name: "Compare",
+          item: "https://twent.xyz/vs/chatgpt",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
           name: `vs ${competitorName.replace("ChatGPT Android App", "ChatGPT").replace("Android App", "").trim()}`,
           item: fullUrl,
         },
@@ -390,6 +396,24 @@ export function ComparisonPage({
 
       {/* Enhanced FAQ Section */}
       <EnhancedFAQ faq={faq} competitorName={competitorName} />
+
+      {/* ── Internal cross-links: blog & docs ── */}
+      <div className="my-10 p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+        <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-4">
+          Read more
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <a href="/blog/marketplace" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+            Twent Marketplace — AI Skills &amp; Integrations →
+          </a>
+          <a href="/blog/best-ai-apps-android" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+            25 Best AI Apps for Android →
+          </a>
+          <a href="/docs" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+            Read the Twent Docs →
+          </a>
+        </div>
+      </div>
 
       <div className="text-center py-10 border-t border-gray-200">
         <h2 className="text-xl font-bold mb-4">Try twent AI For Free</h2>

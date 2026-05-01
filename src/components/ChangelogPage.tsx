@@ -13,7 +13,8 @@ function ChangelogSchemaMarkup() {
       url: "https://twent.xyz/changelog",
       isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
       datePublished: "2024-01-01",
-      dateModified: "2026-04-29",
+      dateModified: "2026-05-01",
+      author: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
     },
     {
       "@context": "https://schema.org",
@@ -33,7 +34,46 @@ function ChangelogSchemaMarkup() {
       description: "Personal agentic OS for Android — AI agent that runs on your phone.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       softwareVersion: "0.6.0",
-      releaseNotes: "v0.6.0: System prompt enhancement, ClawHub integration, Tool-calling robustness. v0.5.0: Agent CLIs, Mini-apps, Toolset page. v0.4.0: Workflows, Composio integration, Skills, MCP, Linux terminal. v0.3.0: UI automation, Overlay Assistant, Voice activation, TTS.",
+      releaseNotes: "v0.6.0: System prompt enhancement, ClawHub integration, Tool-calling robustness. v0.5.0: Agent CLIs, Mini-apps, Toolset page. v0.4.0: Workflows, Composio integration, Skills, MCP, Linux terminal. v0.3.0: UI automation, Overlay Assistant, Voice activation, TTS. v0.2.0: AI Chat, API Provider support, Knowledge and Memory graph, Character Cards.",
+    },
+    // FAQ schema — "what's new in Twent" search intent
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the latest version of Twent?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The latest version is v0.6.0, released April 19, 2026. It includes system prompt enhancement, ClawHub integration, and tool-calling robustness improvements.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How often does Twent update?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Twent ships weekly updates. Version history goes back to v0.2.0 (March 20, 2026) with releases roughly every week.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is Twent free to download?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, Twent is completely free to download and use. You only pay for API usage if you connect a paid model provider like OpenAI or Anthropic.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What platforms does Twent support?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Twent is currently available for Android. iOS and web versions are on the roadmap.",
+          },
+        },
+      ],
     },
   ];
 

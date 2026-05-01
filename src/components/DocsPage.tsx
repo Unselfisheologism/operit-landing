@@ -47,6 +47,53 @@ function DocsSchemaMarkup() {
         { "@type": "ListItem", position: 2, name: "Docs", item: "https://twent.xyz/docs" },
       ],
     },
+    // FAQ schema — matches "how do I..." search intent
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Is Twent free to use?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Twent is free to download and use. It includes Ubuntu terminal, UI automation, and 40+ built-in tools at no cost. Paid model API usage is billed by your chosen provider (OpenAI, Anthropic, etc.).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Twent work offline?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Twent supports local GGUF and MNN models for fully offline AI. You can also use it without an internet connection for local automation tasks.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What Android permissions does Twent need?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Core permissions are Storage and Network. The most powerful optional permission is Accessibility, which enables UI automation (tap, swipe, read screen). See the Permissions section for the full breakdown.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do I connect MCP tools?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Go to Settings → MCP Tools and add your MCP server URL or select from the built-in registry. Twent supports 1000+ integrations via Composio and direct MCP connections.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I run Linux on Twent?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Twent ships with a built-in Ubuntu 24.04 terminal that runs without root. You can apt install packages, run Python scripts, SSH to servers, and use full Linux tooling on your phone.",
+          },
+        },
+      ],
+    },
   ];
 
   return (
@@ -1335,6 +1382,34 @@ export function DocsPage({
         <main className="flex-1 min-w-0 px-6 sm:px-10 py-10">
           <div className="max-w-3xl">
             <Section />
+          </div>
+
+          {/* ── Internal cross-links at bottom of every doc page ── */}
+          <div className="max-w-3xl mt-16 pt-10 border-t border-zinc-200 dark:border-zinc-800">
+            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-4">
+              Related pages
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { label: "Blog — The Twent Journal", href: "/blog" },
+                { label: "Twent Marketplace", href: "/blog/marketplace" },
+                { label: "vs ChatGPT — compare AI apps", href: "/vs/chatgpt" },
+                { label: "vs Claude — AI agent comparison", href: "/vs/claude" },
+                { label: "vs Gemini — Google AI vs Twent", href: "/vs/gemini" },
+                { label: "vs Zapier — automation comparison", href: "/vs/zapier" },
+              ].map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="flex items-center gap-2 px-4 py-2.5 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
+                >
+                  <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                  {label}
+                </a>
+              ))}
+            </div>
           </div>
         </main>
       </div>

@@ -52,6 +52,24 @@ function BlogPageSchemaMarkup() {
           name: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
           url: "https://twent.xyz/blog/best-ai-apps-android",
         },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "How to Build a Calorie Tracker with Twent",
+          url: "https://twent.xyz/blog/calorie-tracker",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Top 5 Android Automation Scripts",
+          url: "https://twent.xyz/blog/android-automation-scripts",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Local AI Models on Android: A Complete Guide",
+          url: "https://twent.xyz/blog/local-ai-android",
+        },
       ],
     },
     {
@@ -516,6 +534,33 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
                   </p>
                 </div>
               )}
+
+              {/* ── Internal cross-links: comparison pages ── */}
+              <div className="mt-20 pt-12 border-t border-zinc-200 dark:border-zinc-800">
+                <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-6 tracking-tight">
+                  Compare Twent to other AI apps
+                </h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  {[
+                    { label: "vs ChatGPT", href: "/vs/chatgpt" },
+                    { label: "vs Claude", href: "/vs/claude" },
+                    { label: "vs Gemini", href: "/vs/gemini" },
+                    { label: "vs Copilot", href: "/vs/copilot" },
+                    { label: "vs Perplexity", href: "/vs/perplexity" },
+                    { label: "vs Zapier", href: "/vs/zapier" },
+                    { label: "vs n8n", href: "/vs/n8n" },
+                    { label: "View all →", href: "/vs/chatgpt" },
+                  ].map(({ label, href }) => (
+                    <a
+                      key={href + label}
+                      href={href}
+                      className="px-4 py-2.5 border border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 text-center"
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </section>
