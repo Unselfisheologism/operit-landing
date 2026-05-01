@@ -147,7 +147,7 @@ export function Footer() {
           <div className="flex items-center gap-2 mb-3">
             <img
               src="/OKFINALTWENTLOGO-removebg.png"
-              alt="Twent"
+              alt="Twent logo - Personal AI agent for Android"
               className="w-12 h-12 object-contain"
             />
             <span className="font-display text-lg text-zinc-900 dark:text-zinc-100">
@@ -193,7 +193,7 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <img
               src="/OKFINALTWENTLOGO-removebg.png"
-              alt="Twent"
+              alt="Twent logo - Personal AI agent for Android"
               className="w-8 h-8 object-contain"
             />
             <span className="text-xs text-zinc-400 dark:text-zinc-600 font-mono">

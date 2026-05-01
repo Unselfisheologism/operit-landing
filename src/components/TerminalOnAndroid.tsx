@@ -251,7 +251,7 @@ export function TerminalOnAndroid({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/terminal-hero.png"
-                alt="Twent Terminal on Android - Full Ubuntu 24.04 environment"
+                alt="Twent Terminal on Android - Full Ubuntu 24.04 Linux terminal environment - SSH client, command line, mobile server management"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />

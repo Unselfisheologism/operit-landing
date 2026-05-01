@@ -265,7 +265,7 @@ export function AiMarketplaceCreators({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/marketplace-creators-hero.png"
-                alt="Twent AI Marketplace for Creators - Sell skills, workflows, mini apps"
+                alt="Twent AI Marketplace for Creators - Sell skills, workflows, mini apps - AI plugin store, agentic extensions, automation marketplace"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />

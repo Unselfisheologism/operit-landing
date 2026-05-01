@@ -294,7 +294,7 @@ export function AiAgentForDevelopers({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/developer-hero.png"
-                alt="Twent AI Agent for Developers - Claude Code and Codex on Android"
+                alt="Twent AI Agent for Developers - Claude Code and Codex on Android - AI coding assistant, mobile development environment, Ubuntu terminal on phone"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />

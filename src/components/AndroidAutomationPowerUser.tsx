@@ -303,7 +303,7 @@ export function AndroidAutomationPowerUser({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/automation-hero.png"
-                alt="Twent Android Automation - UI automation, workflow builder, shell scripting"
+                alt="Twent Android Automation - UI automation, workflow builder, shell scripting - task automation, Android app automation, macro recorder"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />

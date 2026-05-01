@@ -246,7 +246,7 @@ export function PrivacyFirstAiAndroid({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/privacy-hero.png"
-                alt="Twent Privacy-First AI - BYOK, local models, encrypted storage"
+                alt="Twent Privacy-First AI - BYOK, local models, encrypted storage - on-device AI, data privacy, self-hosted language models, llama.cpp"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />

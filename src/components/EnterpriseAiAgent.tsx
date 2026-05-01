@@ -246,7 +246,7 @@ export function EnterpriseAiAgent({
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
                 src="/enterprise-hero.png"
-                alt="Twent Enterprise AI Agent - Team management, compliance, custom workflows"
+                alt="Twent Enterprise AI Agent - Team management, compliance, custom workflows - business automation, corporate AI agents, team collaboration"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
               />
