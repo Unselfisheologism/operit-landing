@@ -187,6 +187,7 @@ export function Footer() {
               src="/OKFINALTWENTLOGO-removebg.png"
               alt="Twent logo - Personal AI agent for Android"
               className="w-12 h-12 object-contain"
+              loading="eager"
             />
             <span className="font-display text-lg text-zinc-900 dark:text-zinc-100">
               Twent
@@ -233,6 +234,7 @@ export function Footer() {
               src="/OKFINALTWENTLOGO-removebg.png"
               alt="Twent logo - Personal AI agent for Android"
               className="w-8 h-8 object-contain"
+              loading="eager"
             />
             <span className="text-xs text-zinc-400 dark:text-zinc-600 font-mono">
               &copy; 2026 Twent AI. All rights reserved.

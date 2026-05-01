@@ -232,10 +232,10 @@ const twentTabs: TabContent[] = [
 
 export function Part2ForDevs() {
   const clis = [
-    { name: "Claude Code", desc: "Anthropic's coding agent", icon: <img src="/claudecode-color.svg" alt="Claude Code" className="w-7 h-7" /> },
-    { name: "OpenAI Codex", desc: "OpenAI's terminal agent", icon: <img src="/codex-color.svg" alt="OpenAI Codex" className="w-7 h-7" /> },
-    { name: "OpenCode", desc: "Coding agent CLI", icon: <img src="/opencode.svg" alt="OpenCode" className="w-7 h-7" /> },
-    { name: "Hermes Agent", desc: "Nous Research's agent CLI", icon: <img src="/nousresearch.svg" alt="Hermes Agent" className="w-7 h-7" /> },
+    { name: "Claude Code", desc: "Anthropic's coding agent", icon: <img src="/claudecode-color.svg" alt="Claude Code" className="w-7 h-7" loading="lazy" /> },
+    { name: "OpenAI Codex", desc: "OpenAI's terminal agent", icon: <img src="/codex-color.svg" alt="OpenAI Codex" className="w-7 h-7" loading="lazy" /> },
+    { name: "OpenCode", desc: "Coding agent CLI", icon: <img src="/opencode.svg" alt="OpenCode" className="w-7 h-7" loading="lazy" /> },
+    { name: "Hermes Agent", desc: "Nous Research's agent CLI", icon: <img src="/nousresearch.svg" alt="Hermes Agent" className="w-7 h-7" loading="lazy" /> },
   ];
 
   return (

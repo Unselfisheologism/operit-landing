@@ -399,6 +399,7 @@ export function AiMarketplaceCreators({
                 alt="Twent AI Marketplace for Creators - Sell skills, workflows, mini apps - AI plugin store, agentic extensions, automation marketplace"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

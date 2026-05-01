@@ -456,6 +456,7 @@ export function EnterpriseAiAgent({
                 alt="Twent Enterprise AI Agent - Team management, compliance, custom workflows - business automation, corporate AI agents, team collaboration"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

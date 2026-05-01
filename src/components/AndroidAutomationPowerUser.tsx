@@ -474,6 +474,7 @@ export function AndroidAutomationPowerUser({
                 alt="Twent Android Automation - UI automation, workflow builder, shell scripting - task automation, Android app automation, macro recorder"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

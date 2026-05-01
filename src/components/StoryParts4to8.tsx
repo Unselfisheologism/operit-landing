@@ -387,6 +387,7 @@ export function Part6DX() {
                     src="/claudecode-color.svg"
                     alt="Claude Code"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 ),
               },
@@ -398,6 +399,7 @@ export function Part6DX() {
                     src="/codex-color.svg"
                     alt="OpenAI Codex"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 ),
               },
@@ -405,7 +407,7 @@ export function Part6DX() {
                 name: "OpenCode",
                 status: "✓ Tested",
                 icon: (
-                  <img src="/opencode.svg" alt="OpenCode" className="w-5 h-5" />
+                  <img src="/opencode.svg" alt="OpenCode" className="w-5 h-5" loading="lazy" />
                 ),
               },
               {
@@ -416,6 +418,7 @@ export function Part6DX() {
                     src="/nousresearch.svg"
                     alt="Hermes Agent"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 ),
               },
@@ -427,6 +430,7 @@ export function Part6DX() {
                     src="/geminicli-color.svg"
                     alt="Gemini CLI"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 ),
               },
@@ -438,6 +442,7 @@ export function Part6DX() {
                     src="/qwen-color.svg"
                     alt="Qwen Code CLI"
                     className="w-5 h-5"
+                    loading="lazy"
                   />
                 ),
               },
@@ -445,7 +450,7 @@ export function Part6DX() {
                 name: "Cursor Agent",
                 status: "✓ Compatible",
                 icon: (
-                  <img src="/cursor.svg" alt="Cursor" className="w-5 h-5" />
+                  <img src="/cursor.svg" alt="Cursor" className="w-5 h-5" loading="lazy" />
                 ),
               },
               {

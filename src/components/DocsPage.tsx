@@ -1231,6 +1231,7 @@ export function DocsPage({
                 src="/OKFINALTWENTLOGO-removebg.png"
                 alt="Twent logo - Personal AI agent for Android"
                 className="w-12 h-12 object-contain"
+                loading="eager"
               />
               <span className="font-bold text-sm">Twent Docs</span>
             </a>

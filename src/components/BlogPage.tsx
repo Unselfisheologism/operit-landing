@@ -193,6 +193,7 @@ function FeaturedPostCard({ post, visible }: { post: BlogPost; visible: boolean 
               src={post.image}
               alt={post.title}
               className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">

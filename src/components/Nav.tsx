@@ -207,6 +207,7 @@ function DesktopHeader({
           src="/OKFINALTWENTLOGO-removebg.png"
           alt="Twent logo - Personal AI agent for Android"
           className="w-14 h-14 object-contain"
+          loading="eager"
         />
       </a>
 
@@ -267,7 +268,7 @@ function MobileHeader({
     >
       {/* Left: icon + text logo */}
       <a href="#" className="flex items-center gap-2">
-        <img src="/OKFINALTWENTLOGO-removebg.png" alt="Twent logo - Personal AI agent for Android" className="w-12 h-12 object-contain" />
+        <img src="/OKFINALTWENTLOGO-removebg.png" alt="Twent logo - Personal AI agent for Android" className="w-12 h-12 object-contain" loading="eager" />
         <span className="font-display text-base text-black dark:text-white">
           Twent
         </span>

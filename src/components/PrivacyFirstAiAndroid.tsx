@@ -249,6 +249,7 @@ export function PrivacyFirstAiAndroid({
                 alt="Twent Privacy-First AI - BYOK, local models, encrypted storage - on-device AI, data privacy, self-hosted language models, llama.cpp"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

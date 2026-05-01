@@ -254,6 +254,7 @@ export function TerminalOnAndroid({
                 alt="Twent Terminal on Android - Full Ubuntu 24.04 Linux terminal environment - SSH client, command line, mobile server management"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
