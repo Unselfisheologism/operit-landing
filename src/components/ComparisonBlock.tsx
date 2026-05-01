@@ -382,9 +382,9 @@ export function ComparisonBlock() {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
             Twent vs the rest.
           </h2>
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">
-            See how Twent compares to the apps people search for most.
-          </p>
+        <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">
+          See how Twent vs the competition stacks up — compare AI assistants, automation tools, and productivity apps to find what actually works for you.
+        </p>
         </div>
 
         {/* Comparison cards */}

@@ -209,8 +209,8 @@ export function AiAgentForDevelopers({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Run <strong>Claude Code</strong> with full tool use directly on your
-                Android. SSH into production, run <strong>git rebase -i</strong>,
+                AI agent for developers: Run <strong>Claude Code</strong> with full tool use 
+                directly on your Android. SSH into production, run <strong>git rebase -i</strong>,
                 review PRs, push hotfixes — your entire dev workflow in your pocket.
               </p>
             </div>

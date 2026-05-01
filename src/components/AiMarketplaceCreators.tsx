@@ -182,11 +182,12 @@ export function AiMarketplaceCreators({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop giving away your expertise for free. Twent's marketplace
-                lets you <strong>sell AI skills</strong>,
-                <strong>workflow templates</strong>, <strong>mini apps</strong>,
-                and <strong>automation packages</strong>. Set your own pricing,
-                reach thousands of users, and build a passive income stream.
+                AI marketplace for creators: Twent's marketplace lets you{" "}
+                <strong>sell AI skills</strong>,{" "}
+                <strong>workflow templates</strong>, <strong>mini apps</strong>,{" "}
+                <strong>automation packages</strong>, and{" "}
+                <strong>MCP server configurations</strong>.{" "}
+                Stop giving away your expertise for free — set your own pricing and build a passive income stream.
               </p>
             </div>
 

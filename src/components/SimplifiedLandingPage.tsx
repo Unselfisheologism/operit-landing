@@ -199,8 +199,10 @@ export function SimplifiedLandingPage({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
-                The AI assistant that connects, remembers, and automates. Run
-                Claude Code, control any app, and keep your data private.
+                Twent is the AI assistant for Android that connects to every tool you use, 
+                remembers your context across sessions, and automates anything on your 
+                phone — including running Claude Code with full tool use, controlling any 
+                app, and keeping your data private.
               </p>
             </div>
 

@@ -75,7 +75,7 @@ export function Pricing() {
         </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-16 text-center mx-auto">
           Every feature. Every tool. Every capability. All included, all free.
-          We're not gatekeeping anything while we build the future of mobile AI.
+          Twent pricing starts at $0.00 — we're not gatekeeping anything while we build the future of mobile AI.
         </p>
 
         {/* Receipt */}

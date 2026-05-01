@@ -167,12 +167,12 @@ export function TerminalOnAndroid({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop fighting limited terminal emulators. Twent gives you{" "}
+                Terminal on Android, the real way: Twent gives you{" "}
                 <strong>Ubuntu 24.04 LTS</strong> with{" "}
                 <strong>apt install nginx</strong>,{" "}
                 <strong>python3 -m venv</strong>,{" "}
                 <strong>git clone && npm install && npm run build</strong>, and
-                real <strong>systemd services</strong>. No root required.
+                real <strong>systemd services</strong>. No root required — real Linux in your pocket.
               </p>
             </div>
 

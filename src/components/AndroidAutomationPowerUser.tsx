@@ -218,13 +218,13 @@ export function AndroidAutomationPowerUser({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop juggling 10 different automation apps. Twent combines{" "}
+                Android automation for power users: Twent combines{" "}
                 <strong>UI automation</strong>,{" "}
                 <strong>workflow builder</strong>,
                 <strong> shell scripting</strong>,{" "}
                 <strong>Tasker integration</strong>, and{" "}
                 <strong>1000+ app connections</strong>
-                into one powerful automation platform for your Android phone.
+                {" "}into one powerful platform. Stop juggling 10 different automation apps — automate everything on your Android phone.
               </p>
             </div>
 

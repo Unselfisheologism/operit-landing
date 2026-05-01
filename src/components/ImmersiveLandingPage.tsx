@@ -27,7 +27,7 @@ const STORIES = [
     tag: "The Problem",
     heading: "Your AI can chat. But it can't do anything.",
     description:
-      "Every AI assistant on Android is a fancy chatbot. It can write poems, answer questions, and hallucinate facts. But it can't open an app, tap a button, run a command, or actually do anything useful on your phone.",
+      "AI assistant for Android that can actually do things: Every AI assistant on Android is a fancy chatbot. It can write poems, answer questions, and hallucinate facts. But it can't open an app, tap a button, run a command, or actually do anything useful on your phone. Twent changes that.",
     color: "blue" as const,
     visual: () => (
       <div className="space-y-3">

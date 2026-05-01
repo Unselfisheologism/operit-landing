@@ -162,11 +162,11 @@ export function PrivacyFirstAiAndroid({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Stop trusting cloud AI with your personal data. Twent is the
-                only AI assistant with <strong>BYOK via Android Keystore</strong>,{" "}
+                Privacy-first AI for Android: Twent is the only AI assistant with{" "}
+                <strong>BYOK via Android Keystore</strong>,{" "}
                 <strong>AES-256 encrypted storage</strong>, and{" "}
                 <strong>local MNN AI models that run 100% offline</strong>. 
-                Your chat history, API keys, and files never leave your device — 
+                Stop trusting cloud AI with your personal data — your chat history, API keys, and files never leave your device, 
                 verifiable via any network analysis tool.
               </p>
             </div>

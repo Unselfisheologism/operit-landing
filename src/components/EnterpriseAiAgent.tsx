@@ -162,12 +162,13 @@ export function EnterpriseAiAgent({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Deploy AI agents across your team with{" "}
+                Enterprise AI agent deployment: Twent lets you{" "}
+                <strong>scale AI across your team</strong> with{" "}
                 <strong>centralized management</strong>,
                 <strong> compliance controls</strong>,{" "}
                 <strong>custom workflows</strong>, and{" "}
                 <strong>dedicated support</strong>. From startups to
-                enterprises, Twent scales with your organization.
+                enterprises — deploy AI agents that actually do work.
               </p>
             </div>
 
