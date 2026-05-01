@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { useInView } from "../hooks/useInView";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
+import { SocialLinksInline } from "./SocialLinks";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -242,6 +243,10 @@ export function SimplifiedLandingPage({
                 View Docs
               </a>
             </div>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <span className="text-xs text-zinc-400">Follow:</span>
+              <SocialLinksInline />
+            </div>
           </div>
         </section>
 
@@ -437,6 +442,10 @@ export function SimplifiedLandingPage({
                 />
               </svg>
             </a>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <span className="text-xs text-zinc-500">Follow:</span>
+              <SocialLinksInline />
+            </div>
           </div>
         </section>
       </main>

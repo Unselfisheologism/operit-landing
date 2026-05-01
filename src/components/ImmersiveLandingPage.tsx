@@ -3,6 +3,7 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
+import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 
 // Grain overlay for editorial print feel
@@ -548,6 +549,10 @@ export function ImmersiveLandingPage({
                   View Docs
                 </a>
               </div>
+              <div className="mt-6 flex items-center justify-center gap-4">
+                <span className="text-xs text-zinc-400">Follow:</span>
+                <SocialLinksInline />
+              </div>
             </div>
 
             {/* Scroll Indicator */}
@@ -646,6 +651,10 @@ export function ImmersiveLandingPage({
                 />
               </svg>
             </a>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <span className="text-xs text-zinc-500">Follow:</span>
+              <SocialLinksInline />
+            </div>
           </div>
         </section>
       </main>

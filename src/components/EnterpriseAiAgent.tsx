@@ -1,6 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
+import { SocialLinksInline } from "./SocialLinks";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -439,6 +440,10 @@ export function EnterpriseAiAgent({
               >
                 View Documentation
               </a>
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              <span className="text-xs text-zinc-400">Follow:</span>
+              <SocialLinksInline />
             </div>
           </div>
 
@@ -908,7 +913,11 @@ export function EnterpriseAiAgent({
                 Read the Docs
               </a>
             </div>
-            <p className="mt-6 text-sm text-zinc-500">
+            <div className="mt-8 flex items-center justify-center gap-4">
+              <span className="text-xs text-zinc-500">Follow:</span>
+              <SocialLinksInline />
+            </div>
+            <p className="mt-4 text-sm text-zinc-500">
               Custom pricing. Dedicated support. Flexible deployment options.
             </p>
           </div>
