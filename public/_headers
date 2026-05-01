@@ -87,6 +87,54 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 # ═══════════════════════════════════════════════════════
+# PRE-COMPRESSED ASSETS (GZIP + Brotli — served by Cloudflare directly)
+# Generated at build time via vite-plugin-compression2
+# Cloudflare detects Accept-Encoding and serves .br (Brotli) or .gz (GZIP)
+# ═══════════════════════════════════════════════════════
+
+/assets/*.js.gz
+  Content-Type: application/gzip
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; upgrade-insecure-requests
+
+/assets/*.js.br
+  Content-Type: application/brotli
+  Content-Encoding: br
+  Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; upgrade-insecure-requests
+
+/assets/*.css.gz
+  Content-Type: application/gzip
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests
+
+/assets/*.css.br
+  Content-Type: application/brotli
+  Content-Encoding: br
+  Cache-Control: public, max-age=31536000, immutable
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests
+
+/*.html.gz
+  Content-Type: application/gzip
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=0; must-revalidate
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
+
+/*.html.br
+  Content-Type: application/brotli
+  Content-Encoding: br
+  Cache-Control: public, max-age=0; must-revalidate
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
+
+# ═══════════════════════════════════════════════════════
 # IMAGE CACHE + SECURITY
 # ═══════════════════════════════════════════════════════
 
@@ -133,11 +181,35 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
 
+/*.txt.gz
+  Content-Type: application/gzip
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+/*.txt.br
+  Content-Type: application/brotli
+  Content-Encoding: br
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
 /*.xml
   Content-Type: application/xml
   Cache-Control: public, max-age=86400
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; upgrade-insecure-requests
+
+/*.xml.gz
+  Content-Type: application/gzip
+  Content-Encoding: gzip
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+/*.xml.br
+  Content-Type: application/brotli
+  Content-Encoding: br
+  Cache-Control: public, max-age=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
 # ═══════════════════════════════════════════════════════
 # ROBOTS / HUMANS.TXT — allow crawlers but keep headers

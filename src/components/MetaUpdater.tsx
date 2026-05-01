@@ -180,6 +180,233 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
   },
 };
 
+// Route-specific keywords for SEO
+// Each route maps to relevant search terms
+const routeKeywords: Record<string, string[]> = {
+  "/": [
+    "AI agent for Android",
+    "Android AI assistant",
+    "AI automation app",
+    "mobile AI agent",
+    "smartphone automation",
+    "Twent AI",
+  ],
+  "/pricing": [
+    "free AI app",
+    "Android AI free",
+    "no cost AI assistant",
+    "AI pricing",
+    "free automation app",
+  ],
+  "/docs": [
+    "AI documentation",
+    "Android guides",
+    "AI tutorials",
+    "setup guide",
+    "getting started AI",
+  ],
+  "/blog": [
+    "AI news",
+    "Android AI updates",
+    "AI tutorials",
+    "mobile AI news",
+    "AI agent articles",
+  ],
+  "/blog/marketplace": [
+    "AI marketplace",
+    "AI skills",
+    "MCP integrations",
+    "Composio connections",
+    "AI plugins",
+  ],
+  "/ai-marketplace-creators": [
+    "AI marketplace creators",
+    "sell AI skills",
+    "build AI apps",
+    "AI developer platform",
+    "monetize AI",
+  ],
+  "/blog/best-ai-apps-android": [
+    "best AI apps Android",
+    "top AI apps 2026",
+    "ChatGPT Android",
+    "Claude Android",
+    "Gemini Android",
+  ],
+  "/android-automation-power-user": [
+    "Android automation",
+    "auto tap Android",
+    "auto swipe",
+    "script automation",
+    "tasker alternative",
+    "UI automation",
+  ],
+  "/privacy-first-ai-android": [
+    "privacy AI",
+    "BYOK encryption",
+    "local AI models",
+    "offline AI",
+    "private AI assistant",
+  ],
+  "/terminal-on-android": [
+    "Ubuntu terminal Android",
+    "Linux on Android",
+    "mobile terminal",
+    "SSH on phone",
+    "command line Android",
+  ],
+  "/enterprise-ai-agent": [
+    "enterprise AI",
+    "team AI agent",
+    "business AI",
+    "AI deployment",
+    "AI admin dashboard",
+  ],
+  "/ai-agent-for-developers": [
+    "AI for developers",
+    "Claude Code Android",
+    "Codex mobile",
+    "MCP SDK",
+    "mobile development",
+    "code from phone",
+  ],
+  "/changelog": [
+    "Twent updates",
+    "AI features",
+    "new AI features",
+    "app changelog",
+    "latest updates",
+  ],
+  "/privacy": [
+    "privacy policy",
+    "data protection",
+    "AI privacy",
+    "data security",
+    "encryption",
+  ],
+  "/terms": [
+    "terms of service",
+    "legal terms",
+    "user agreement",
+    "AI terms",
+  ],
+  "/404": [
+    "page not found",
+    "404 error",
+    "lost page",
+    "broken link",
+  ],
+  "/vs/chatgpt": [
+    "vs ChatGPT",
+    "ChatGPT alternative",
+    "AI comparison",
+    "ChatGPT Android",
+    "OpenAI alternative",
+  ],
+  "/vs/nebula": [
+    "vs Nebula AI",
+    "Nebula alternative",
+    "AI comparison",
+    "Nebula vs Twent",
+  ],
+  "/vs/openclaw": [
+    "vs OpenClaw",
+    "OpenClaw alternative",
+    "AI comparison",
+    "mobile automation comparison",
+  ],
+  "/vs/hermes-agent": [
+    "vs Hermes Agent",
+    "Hermes alternative",
+    "AI agent comparison",
+    "Hermes Agent Android",
+  ],
+  "/vs/n8n": [
+    "vs n8n",
+    "n8n alternative",
+    "workflow automation",
+    "no-code automation",
+    "n8n mobile",
+  ],
+  "/vs/anything-llm": [
+    "vs AnythingLLM",
+    "AnythingLLM alternative",
+    "local LLM",
+    "AI comparison",
+  ],
+  "/vs/gemini": [
+    "vs Google Gemini",
+    "Gemini alternative",
+    "Bard alternative",
+    "Google AI comparison",
+  ],
+  "/vs/replika": [
+    "vs Replika",
+    "Replika alternative",
+    "AI companion",
+    "emotional AI",
+    "chatbot comparison",
+  ],
+  "/vs/copilot": [
+    "vs Microsoft Copilot",
+    "Copilot alternative",
+    "Windows Copilot",
+    "AI assistant comparison",
+  ],
+  "/vs/claude": [
+    "vs Claude",
+    "Claude alternative",
+    "Anthropic AI",
+    "Claude Mobile",
+    "AI comparison",
+  ],
+  "/vs/perplexity": [
+    "vs Perplexity",
+    "Perplexity alternative",
+    "AI search engine",
+    "answer engine",
+    "Perplexity vs Twent",
+  ],
+  "/vs/make": [
+    "vs Make",
+    "Make alternative",
+    "Integromat alternative",
+    "visual automation",
+    "workflow builder",
+  ],
+  "/vs/zapier": [
+    "vs Zapier",
+    "Zapier alternative",
+    "automation platform",
+    "no-code automation",
+    "workflow automation",
+  ],
+  "/vs/qordinate": [
+    "vs Qordinate",
+    "Qordinate alternative",
+    "AI agent comparison",
+    "productivity AI",
+  ],
+  "/vs/omnara": [
+    "vs Omnara",
+    "Omnara alternative",
+    "AI assistant comparison",
+    "mobile AI assistant",
+  ],
+  "/vs/manus": [
+    "vs Manus",
+    "Manus alternative",
+    "AI agent comparison",
+    "autonomous AI",
+  ],
+  "/vs/onspace": [
+    "vs Onspace",
+    "Onspace alternative",
+    "AI agent comparison",
+    "privacy AI comparison",
+  ],
+};
+
 // Get localized meta title
 function getLocalizedTitle(path: string, langCode: string): string {
   const base = pageMeta[path]?.title || pageMeta["/"].title;
@@ -238,7 +465,17 @@ export function MetaUpdater({ currentPath, canonicalPath }: { currentPath: strin
       }
     }
 
-    // Update canonical tag — use explicit canonicalPath, or fall back to currentPath
+    // Update meta keywords (if route has specific keywords)
+    const keywords = routeKeywords[currentPath];
+    if (keywords && keywords.length > 0) {
+      const keywordsStr = keywords.join(", ");
+      const keywordsEl = document.querySelector('meta[name="keywords"]');
+      if (keywordsEl) {
+        keywordsEl.setAttribute("content", keywordsStr);
+      }
+    }
+
+    // Update canonical tag
     // If they differ (e.g. /details → canonical=/), the duplicate page gets the canonical of the preferred version
     const canonical = canonicalPath || currentPath;
     const langPrefix = langCode === "en" ? "" : `/${langCode}`;

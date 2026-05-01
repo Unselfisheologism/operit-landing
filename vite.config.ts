@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import viteCompression from 'vite-plugin-compression'
+import compression from 'vite-plugin-compression2'
 
 export default defineConfig({
   plugins: [
@@ -11,27 +11,29 @@ export default defineConfig({
     // ─── GZIP + Brotli Pre-compression ───────────────────────────────────────
     // Generates .gz and .br files alongside originals.
     // Cloudflare Pages serves these directly — no on-the-fly recompression.
-    // Covers: JS, CSS, HTML, JSON, SVG (anything text-based).
+    // Covers: JS, CSS, HTML, JSON, SVG, XML, TXT (anything text-based).
     // ─────────────────────────────────────────────────────────────────────────
-
-    // GZIP: max compression, threshold 1KB (1024 bytes)
-    viteCompression({
-      algorithm: 'gzip',
-      ext: '.gz',
+    compression({
+      algorithms: [
+        'gzip',
+        'brotliCompress',
+      ],
+      // Compress text-based assets ≥ 1KB
       threshold: 1024,
-      verbose: true,
-      deleteOriginFile: false,
-      filter: /\.(js|mjs|json|css|html|svg|xml|txt)$/i,
-    }),
-
-    // Brotli: better ratio than gzip, same threshold
-    viteCompression({
-      algorithm: 'brotliCompress',
-      ext: '.br',
-      threshold: 1024,
-      verbose: true,
-      deleteOriginFile: false,
-      filter: /\.(js|mjs|json|css|html|svg|xml|txt)$/i,
+      // Keep originals so Cloudflare can choose best format per client
+      deleteOriginalAssets: false,
+      // Filter: JS bundles, CSS, HTML, SVGs, sitemaps, llms.txt
+      include: [
+        /\.js$/,
+        /\.mjs$/,
+        /\.css$/,
+        /\.html$/,
+        /\.svg$/,
+        /\.xml$/,
+        /\.txt$/,
+        /\.json$/,
+      ],
+      logLevel: 'info',
     }),
   ],
 })

@@ -171,6 +171,210 @@
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/changelog" />
   </url>
   <url>
+    <loc>https://twent.xyz/ai-agent-for-developers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/ai-agent-for-developers" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/ai-agent-for-developers" />
+  </url>
+  <url>
+    <loc>https://twent.xyz/android-automation-power-user</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/android-automation-power-user" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/android-automation-power-user" />
+  </url>
+  <url>
+    <loc>https://twent.xyz/privacy-first-ai-android</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/privacy-first-ai-android" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/privacy-first-ai-android" />
+  </url>
+  <url>
+    <loc>https://twent.xyz/terminal-on-android</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/terminal-on-android" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/terminal-on-android" />
+  </url>
+  <url>
+    <loc>https://twent.xyz/ai-marketplace-creators</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/ai-marketplace-creators" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/ai-marketplace-creators" />
+  </url>
+  <url>
+    <loc>https://twent.xyz/enterprise-ai-agent</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/enterprise-ai-agent" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/enterprise-ai-agent" />
+  </url>
+  <url>
     <loc>https://twent.xyz/terms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
