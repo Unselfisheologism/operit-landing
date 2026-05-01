@@ -17,6 +17,44 @@ export function Footer() {
         icon: null,
       },
     ],
+    "For You": [
+      {
+        label: "For Developers",
+        href: "/ai-agent-for-developers",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "For Power Users",
+        href: "/android-automation-power-user",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "Privacy First",
+        href: "/privacy-first-ai-android",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "Terminal on Android",
+        href: "/terminal-on-android",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "For Creators",
+        href: "/ai-marketplace-creators",
+        external: false,
+        icon: null,
+      },
+      {
+        label: "For Enterprises",
+        href: "/enterprise-ai-agent",
+        external: false,
+        icon: null,
+      },
+    ],
     Company: [
       {
         label: "About",

@@ -340,7 +340,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="apt Package Manager"
-                description="Run apt install nginx, apt install postgresql-16, apt install redis-server. Any Ubuntu package works. Full dpkg support with proper dependency resolution."
+                description="Run apt install nginx, apt install postgresql-16, apt install redis-server. Any Ubuntu package works. Full dpkg support with proper dependency resolution. <a href='/android-automation-power-user' className='text-blue-500 hover:underline'>Combine with UI automation &rarr;</a>"
                 visible={featuresInView}
                 delay={0.1}
               />
@@ -361,7 +361,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="Python, Node.js, Go, Rust"
-                description="python3 -m venv .venv && source .venv/bin/activate. node --version, go build, cargo build. Run git clone && npm install && npm run build to deploy."
+                description="python3 -m venv .venv && source .venv/bin/activate. node --version, go build, cargo build. Run git clone && npm install && npm run build to deploy. <a href='/ai-agent-for-developers' className='text-blue-500 hover:underline'>See full developer workflow &rarr;</a>"
                 visible={featuresInView}
                 delay={0.2}
               />
@@ -382,7 +382,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="Git & GitHub CLI"
-                description="git clone https://github.com/user/repo.git && cd repo && git checkout -b fix/bug && git commit -m 'fix: issue' && gh pr create."
+                description="git clone https://github.com/user/repo.git && cd repo && git checkout -b fix/bug && git commit -m 'fix: issue' && gh pr create. Full GitHub CLI with issue tracking, PR reviews, and workflow automation. <a href='/ai-agent-for-developers' className='text-blue-500 hover:underline'>See how developers use it &rarr;</a>"
                 visible={featuresInView}
                 delay={0.3}
               />
@@ -403,7 +403,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="SSH Client & Server"
-                description="ssh -i ~/.ssh/key user@host to access your servers. sshd to run a server on your phone. scp and sftp for file transfers. ssh-copy-id for key management."
+                description="ssh -i ~/.ssh/key user@host to access your servers. sshd to run a server on your phone. scp and sftp for file transfers. ssh-copy-id for key management. <a href='/ai-agent-for-developers' className='text-blue-500 hover:underline'>See developer use cases &rarr;</a>"
                 visible={featuresInView}
                 delay={0.4}
               />
@@ -424,7 +424,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="systemd & cron"
-                description="systemctl enable nginx && systemctl start nginx. crontab -e to schedule jobs. Run a cron job that scrapes prices overnight and emails you the results."
+                description="systemctl enable nginx && systemctl start nginx. crontab -e to schedule jobs. Run a cron job that scrapes prices overnight and emails you the results. <a href='/android-automation-power-user' className='text-blue-500 hover:underline'>See automation possibilities &rarr;</a>"
                 visible={featuresInView}
                 delay={0.5}
               />
@@ -445,7 +445,7 @@ export function TerminalOnAndroid({
                   </svg>
                 }
                 title="No Root Required"
-                description="Full Linux environment without rooting your device. Works on any Android 8+ phone. No warranty void, no security risks, no TWRP recovery needed."
+                description="Full Linux environment without rooting your device. Works on any Android 8+ phone. No warranty void, no security risks, no TWRP recovery needed. <a href='/privacy-first-ai-android' className='text-blue-500 hover:underline'>See our privacy-first approach &rarr;</a>"
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -687,6 +687,34 @@ export function TerminalOnAndroid({
             <p className="mt-6 text-sm text-zinc-500">
               Free forever. No subscriptions. No root required.
             </p>
+          </div>
+        </section>
+        {/* Related Pages */}
+        <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a href="/ai-agent-for-developers" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">AI Agent for Developers</div>
+                <div className="text-xs text-zinc-500">Claude Code, MCP tools, GitHub CLI, full IDE on mobile</div>
+              </a>
+              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
+                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              </a>
+              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
+                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              </a>
+              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
+                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              </a>
+              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
+                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              </a>
+            </div>
           </div>
         </section>
       </main>

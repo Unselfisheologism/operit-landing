@@ -382,7 +382,7 @@ export function EnterpriseAiAgent({
                   </svg>
                 }
                 title="Custom Workflows"
-                description="Deploy standardized workflows across your team. Create once, deploy everywhere. Ensure consistency and best practices across the organization."
+                description="Deploy standardized workflows across your team. Create once, deploy everywhere. Ensure consistency and best practices across the organization. <a href='/android-automation-power-user' className='text-indigo-500 hover:underline'>See automation workflow builder &rarr;</a>"
                 visible={featuresInView}
                 delay={0.3}
               />
@@ -424,7 +424,7 @@ export function EnterpriseAiAgent({
                   </svg>
                 }
                 title="On-Premise Deployment"
-                description="Deploy Twent on your own infrastructure. Keep all data within your network. Meet the strictest compliance requirements."
+                description="Deploy Twent on your own infrastructure. Keep all data within your network. Meet the strictest compliance requirements. <a href='/privacy-first-ai-android' className='text-indigo-500 hover:underline'>See privacy-first architecture &rarr;</a>"
                 visible={featuresInView}
                 delay={0.5}
               />
@@ -698,6 +698,34 @@ export function EnterpriseAiAgent({
             <p className="mt-6 text-sm text-zinc-500">
               Custom pricing. Dedicated support. Flexible deployment options.
             </p>
+          </div>
+        </section>
+        {/* Related Pages */}
+        <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a href="/ai-agent-for-developers" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">AI Agent for Developers</div>
+                <div className="text-xs text-zinc-500">Claude Code, MCP tools, GitHub CLI, full IDE on mobile</div>
+              </a>
+              <a href="/terminal-on-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">Terminal on Android</div>
+                <div className="text-xs text-zinc-500">Full Linux on your phone — SSH, apt, git, daemons</div>
+              </a>
+              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
+                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              </a>
+              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
+                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              </a>
+              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
+                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              </a>
+            </div>
           </div>
         </section>
       </main>

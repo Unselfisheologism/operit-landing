@@ -715,27 +715,27 @@ export function AiAgentForDevelopers({
               {[
                 {
                   q: "Can I run full Claude Code on Twent?",
-                  a: "Yes. Twent runs the full Claude Code CLI with Execute Tool, Read Tool, Write Tool, Bash Tool, and Edit Tool — exactly as you'd use on desktop.",
+                  a: "Yes. Twent runs the full Claude Code CLI with Execute Tool, Read Tool, Write Tool, Bash Tool, and Edit Tool — exactly as you'd use on desktop. <a href='/ai-agent-for-developers' className='text-blue-500 hover:underline'>See what you can do with it &rarr;</a>",
                 },
                 {
                   q: "Does it support MCP tools?",
-                  a: "Yes. Twent supports Model Context Protocol tools including GitHub, Jira, Slack, Linear, Notion, and 1000+ Composio integrations.",
+                  a: "Yes. Twent supports Model Context Protocol tools including GitHub, Jira, Slack, Linear, Notion, and 1000+ Composio integrations. <a href='/ai-marketplace-creators' className='text-blue-500 hover:underline'>Browse the MCP marketplace &rarr;</a>",
                 },
                 {
                   q: "How does BYOK (Bring Your Own Key) work?",
-                  a: "You add your own OpenAI/Anthropic API keys directly in the app. They never leave your device. Optionally run Ollama locally for complete offline privacy.",
+                  a: "You add your own OpenAI/Anthropic API keys directly in the app. They never leave your device. Optionally run Ollama locally for complete offline privacy. <a href='/privacy-first-ai-android' className='text-blue-500 hover:underline'>See our privacy architecture &rarr;</a>",
                 },
                 {
                   q: "Can I SSH into production servers?",
-                  a: "Yes. Full SSH and SCP support. ssh user@server, then run any commands. Also supports kubectl exec for Kubernetes debugging.",
+                  a: "Yes. Full SSH and SCP support. ssh user@server, then run any commands. Also supports kubectl exec for Kubernetes debugging. <a href='/terminal-on-android' className='text-blue-500 hover:underline'>See the full terminal &rarr;</a>",
                 },
                 {
                   q: "Does it work offline?",
-                  a: "Yes. With local Ollama models, you can code completely offline. Internet only needed for cloud API calls if you use external keys.",
+                  a: "Yes. With local Ollama models, you can code completely offline. Internet only needed for cloud API calls if you use external keys. <a href='/privacy-first-ai-android' className='text-blue-500 hover:underline'>See offline mode details &rarr;</a>",
                 },
                 {
                   q: "Can I run git rebase -i on mobile?",
-                  a: "Yes. Full git operations: rebase -i, merge, cherry-pick, bisect — all work exactly like on desktop. Combined with gh CLI for PR workflow.",
+                  a: "Yes. Full git operations: rebase -i, merge, cherry-pick, bisect — all work exactly like on desktop. Combined with gh CLI for PR workflow. <a href='/terminal-on-android' className='text-blue-500 hover:underline'>See the terminal capabilities &rarr;</a>",
                 },
               ].map((faq, i) => (
                 <div
@@ -805,6 +805,34 @@ export function AiAgentForDevelopers({
             <p className="mt-6 text-sm text-zinc-500">
               Free forever. No subscriptions. No ads in the core experience.
             </p>
+          </div>
+        </section>
+        {/* Related Pages */}
+        <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <a href="/terminal-on-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">Terminal on Android</div>
+                <div className="text-xs text-zinc-500">Full Linux on your phone — SSH, apt, git, daemons</div>
+              </a>
+              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
+                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              </a>
+              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
+                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              </a>
+              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
+                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              </a>
+              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
+                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              </a>
+            </div>
           </div>
         </section>
       </main>
