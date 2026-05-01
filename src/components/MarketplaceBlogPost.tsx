@@ -4,6 +4,95 @@ import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { TableOfContents } from "./ui/TableOfContents";
 
+// JSON-LD Schema for Marketplace Blog Post
+function MarketplaceSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: "The Twent Marketplace: Your Agentic App Store",
+      description: "The Twent Marketplace is where creators sell anything from mini apps to custom skins, and everyone else gets to level up their agent for free.",
+      url: "https://twent.xyz/blog/marketplace",
+      datePublished: "2026-04-19",
+      dateModified: "2026-04-29",
+      author: {
+        "@type": "Organization",
+        name: "Twent AI",
+        url: "https://twent.xyz",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Twent AI",
+        url: "https://twent.xyz",
+        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" },
+      },
+      image: "https://twent.xyz/marketplace-hero.png",
+      keywords: "Twent marketplace, AI skills, Android agent, MCP, composio, AI app store",
+      articleSection: "Product",
+      wordCount: 800,
+      inLanguage: "en-US",
+      isPartOf: { "@type": "Blog", name: "The Twent Journal", url: "https://twent.xyz/blog" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Twent",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Android",
+      url: "https://twent.xyz",
+      description: "Personal agentic OS for Android with skills marketplace, MCP plugins, and 1000+ integrations.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+        { "@type": "ListItem", position: 3, name: "Marketplace", item: "https://twent.xyz/blog/marketplace" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the Twent Marketplace?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The Twent Marketplace is a skills and integrations store for the Twent AI agent on Android. Creators can build and sell mini apps, custom skills, and automation workflows. Users can browse and install AI capabilities for free or purchase premium skills.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does pricing work for marketplace items?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Creators set their own prices. Some skills are free, others are paid. Twent takes a revenue share and creators keep the rest. There are no listing fees to get started.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I build my own marketplace item?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Any developer can build skills, MCP plugins, or mini apps for Twent. You can sell them on the marketplace or offer them for free.",
+          },
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 // TOC items for this blog post
 const tocItems = [
   { id: "what-even-is-the-marketplace", text: "What even is the marketplace?", level: 2 },
@@ -85,6 +174,7 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <MarketplaceSchemaMarkup />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />

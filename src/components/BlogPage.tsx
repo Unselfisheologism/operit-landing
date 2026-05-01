@@ -3,6 +3,76 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 
+// JSON-LD Schema for Blog Page
+function BlogPageSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "The Twent Journal",
+      description: "Deep dives on agentic AI, on-device intelligence, and building the future of human-computer interaction.",
+      url: "https://twent.xyz/blog",
+      publisher: {
+        "@type": "Organization",
+        name: "Twent AI",
+        url: "https://twent.xyz",
+        logo: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png",
+      },
+      inLanguage: "en-US",
+      isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://twent.xyz/#website",
+      url: "https://twent.xyz",
+      name: "Twent AI",
+      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://twent.xyz/search?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Twent Blog Articles",
+      description: "All blog posts on The Twent Journal — AI agent news, tutorials, and deep dives.",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "The Twent Marketplace: Your Agentic App Store",
+          url: "https://twent.xyz/blog/marketplace",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
+          url: "https://twent.xyz/blog/best-ai-apps-android",
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -334,6 +404,7 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <BlogPageSchemaMarkup />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />
 

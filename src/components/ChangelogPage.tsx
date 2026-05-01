@@ -2,6 +2,50 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { TableOfContents } from "./ui/TableOfContents";
 
+// JSON-LD Schema for Changelog Page
+function ChangelogSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Twent Changelog - Latest Updates & Features",
+      description: "See every update, feature & fix for Twent AI agent — the Android app that actually ships. Stay up to date.",
+      url: "https://twent.xyz/changelog",
+      isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Changelog", item: "https://twent.xyz/changelog" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: "Twent",
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Android",
+      url: "https://twent.xyz",
+      description: "Personal agentic OS for Android — AI agent that runs on your phone.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      softwareVersion: "0.6.0",
+      releaseNotes: "v0.6.0: System prompt enhancement, ClawHub integration, Tool-calling robustness. v0.5.0: Agent CLIs, Mini-apps, Toolset page. v0.4.0: Workflows, Composio integration, Skills, MCP, Linux terminal. v0.3.0: UI automation, Overlay Assistant, Voice activation, TTS.",
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 interface ChangelogEntry {
   date: string;
   version: string;
@@ -76,6 +120,7 @@ export function ChangelogPage({
 }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+      <ChangelogSchemaMarkup />
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 py-20">
         <h1 className="font-display text-4xl tracking-tight mb-2">Changelog</h1>

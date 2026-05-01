@@ -1,6 +1,51 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 
+// JSON-LD Schema for Privacy Policy Page
+function PrivacyPolicySchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Twent Privacy Policy - How We Handle Your Data",
+      description: "How Twent handles your data — encryption, no data sales & transparency reports. Built privacy-first for Android.",
+      url: "https://twent.xyz/privacy",
+      isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
+      about: { "@type": "SoftwareApplication", name: "Twent" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+      inLanguage: "en-US",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Privacy", item: "https://twent.xyz/privacy" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "PrivacyPolicy",
+      name: "Twent Privacy Policy",
+      url: "https://twent.xyz/privacy",
+      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+      effectiveDate: "2024-01-01",
+      jurisdiction: "Worldwide",
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 export function PrivacyPolicy({
   dark,
   onToggle,
@@ -10,6 +55,7 @@ export function PrivacyPolicy({
 }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <PrivacyPolicySchemaMarkup />
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
         <h1 className="font-display text-3xl md:text-4xl mb-2">

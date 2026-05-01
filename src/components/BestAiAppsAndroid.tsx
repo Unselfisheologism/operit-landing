@@ -16,6 +16,95 @@ const tocItems = [
   { id: "faq", text: "Frequently Asked Questions", level: 2 },
 ];
 
+// JSON-LD Schema for Best AI Apps Android Blog Post
+function BestAiAppsSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
+      description: "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Twent — the 25 apps that unlock your phone's true potential.",
+      url: "https://twent.xyz/blog/best-ai-apps-android",
+      datePublished: "2026-04-29",
+      dateModified: "2026-04-29",
+      author: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      publisher: {
+        "@type": "Organization",
+        name: "Twent AI",
+        url: "https://twent.xyz",
+        logo: { "@type": "ImageObject", url: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png" },
+      },
+      image: "https://twent.xyz/best-ai-apps-android-hero.png",
+      keywords: "best AI apps Android, AI assistant Android, ChatGPT Android, Claude Android, Gemini Android, Twent Android, AI tools 2026",
+      articleSection: "Roundup",
+      wordCount: 3000,
+      inLanguage: "en-US",
+      isPartOf: { "@type": "Blog", name: "The Twent Journal", url: "https://twent.xyz/blog" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "25 Best AI Apps for Android in 2026",
+      description: "A curated list of the top 25 AI applications for Android in 2026, ranked by capability, innovation, and utility.",
+      numberOfItems: 25,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Twent", url: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "ChatGPT", url: "https://openai.com/chatgpt" },
+        { "@type": "ListItem", position: 3, name: "Claude", url: "https://claude.ai" },
+        { "@type": "ListItem", position: 4, name: "Google Gemini", url: "https://gemini.google.com" },
+        { "@type": "ListItem", position: 5, name: "Microsoft Copilot", url: "https://copilot.microsoft.com" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
+        { "@type": "ListItem", position: 3, name: "Best AI Apps Android", item: "https://twent.xyz/blog/best-ai-apps-android" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the best AI app for Android?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Twent is the best AI app for Android because it runs ON your device — not just as a chatbot, but as an agent that automates apps, runs a full Ubuntu terminal, and connects to 1000+ services. For pure chat, ChatGPT and Claude are excellent alternatives.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is there a free AI app for Android?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Twent is 100% free. ChatGPT has a free tier. Google Gemini is free. Claude has a free tier. Most AI apps offer free tiers with paid upgrades for advanced features.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can AI apps work offline on Android?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Twent supports local AI models via Ollama for offline use. Most cloud AI apps require internet but offer increasingly offline-capable features.",
+          },
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 function GrainOverlay() {
   return (
     <div
@@ -198,6 +287,7 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <BestAiAppsSchemaMarkup />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <GrainOverlay />
       <Nav dark={dark} onToggle={onToggle} />

@@ -1,9 +1,40 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 
+// JSON-LD Schema for 404 Page
+function NotFoundSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Page Not Found | Twent",
+      description: "Page not found — but Twent AI can help you find what you need.",
+      url: "https://twent.xyz/404",
+      isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "404", item: "https://twent.xyz/404" },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 export function NotFoundPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased flex flex-col">
+      <NotFoundSchemaMarkup />
       <Nav dark={dark} onToggle={toggle} />
 
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-24 text-center">

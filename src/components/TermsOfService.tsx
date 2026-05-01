@@ -1,6 +1,48 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 
+// JSON-LD Schema for Terms of Service Page
+function TermsSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Twent Terms of Service - Legal Terms",
+      description: "Legal terms for using Twent — the AI agent for Android. Clear, fair & human-readable.",
+      url: "https://twent.xyz/terms",
+      isPartOf: { "@type": "WebSite", "@id": "https://twent.xyz/#website" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+      inLanguage: "en-US",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Terms", item: "https://twent.xyz/terms" },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "TermsOfService",
+      name: "Twent Terms of Service",
+      url: "https://twent.xyz/terms",
+      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 export function TermsOfService({
   dark,
   onToggle,
@@ -10,6 +52,7 @@ export function TermsOfService({
 }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
+      <TermsSchemaMarkup />
       <Nav dark={dark} onToggle={onToggle} />
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
         <h1 className="font-display text-3xl md:text-4xl mb-2">

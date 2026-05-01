@@ -4,6 +4,60 @@ import { useState, useEffect } from "react";
    Twent Docs — inline documentation page
    ────────────────────────────────────────────── */
 
+// JSON-LD Schema for Docs Page
+function DocsSchemaMarkup() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      name: "Twent Docs - Getting Started with AI on Android",
+      description: "Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal & connect 1000+ services.",
+      url: "https://twent.xyz/docs",
+      about: {
+        "@type": "SoftwareApplication",
+        name: "Twent",
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Android",
+      },
+      author: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      datePublished: "2024-01-01",
+      dateModified: "2026-04-29",
+      inLanguage: "en-US",
+      proficiencyLevel: "Beginner",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://twent.xyz/#website",
+      url: "https://twent.xyz",
+      name: "Twent AI",
+      publisher: { "@type": "Organization", name: "Twent AI", url: "https://twent.xyz" },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://twent.xyz/search?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
+        { "@type": "ListItem", position: 2, name: "Docs", item: "https://twent.xyz/docs" },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {schema.map((s, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }} />
+      ))}
+    </>
+  );
+}
+
 interface DocSection {
   id: string;
   label: string;
@@ -1149,6 +1203,7 @@ export function DocsPage({
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+      <DocsSchemaMarkup />
       {/* ── Docs header ── */}
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
