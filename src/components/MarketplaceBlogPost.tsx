@@ -239,9 +239,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
                 ].map((item) => (
                   <div key={item.title} className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
                     <div className="text-2xl mb-3">{item.icon}</div>
-                    <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+                    <p className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
                       {item.title}
-                    </h3>
+                    </p>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {item.desc}
                     </p>
@@ -264,9 +264,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
               </p>
 
               <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 mb-8">
-                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
+                <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   Revenue Split (post-revenue launch)
-                </h3>
+                </h2>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 mt-1">✓</span>
@@ -296,9 +296,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
               </div>
 
               <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 p-6 mb-8">
-                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
+                <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   Real-world examples from our testing
-                </h3>
+                </h2>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-3">
                     <span className="text-blue-500 mt-1">★</span>
@@ -320,9 +320,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
               </div>
 
               <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 mb-8">
-                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
+                <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   Pre-revenue (now): free everything
-                </h3>
+                </h2>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 mt-1">✓</span>
@@ -348,9 +348,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
               </div>
 
               <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 p-6 mb-8">
-                <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
+                <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   post-revenue: still mostly free (▀̿Ĺ̯▀̿ ̿)
-                </h3>
+                </h2>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 mt-1">✓</span>
@@ -415,9 +415,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
               </p>
 
               <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:bg-blue-900/20 p-6">
-                <h3 id="tldr" className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4 scroll-mt-32">
+                <h2 id="tldr" className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4 scroll-mt-32">
                   TL;DR for the impatient (￣_,￣ )
-                </h3>
+                </h2>
                 <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                   <li>• marketplace = agentic app store for Twent</li>
                   <li>• sell/buy mini apps, prompts, workflows, skills, skins, MCP servers</li>

@@ -186,7 +186,7 @@ export function ComparisonPage({
       </header>
 
       <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-6 mb-10">
-        <h3 className="font-semibold mb-2">Quick Verdict</h3>
+        <h2 className="font-semibold mb-2 text-xl">Quick Verdict</h2>
         <p className="text-lg">{verdict}</p>
       </div>
 
@@ -219,7 +219,7 @@ export function ComparisonPage({
       </div>
 
       <div className="text-center py-10 border-t border-gray-200">
-        <h3 className="text-xl font-bold mb-4">Try twent AI For Free</h3>
+        <h2 className="text-xl font-bold mb-4">Try twent AI For Free</h2>
         <a
           href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
           className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition"

@@ -87,9 +87,9 @@ function FeatureCard({
       <div className="w-12 h-12 bg-indigo-500/10 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
+      <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
         {title}
-      </h3>
+      </p>
       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
         {description}
       </p>
@@ -510,9 +510,9 @@ export function EnterpriseAiAgent({
                   <div className="flex items-start gap-4">
                     <span className="text-2xl">{useCase.icon}</span>
                     <div>
-                      <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
+                      <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
                         {useCase.title}
-                      </h3>
+                      </p>
                       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                         {useCase.desc}
                       </p>

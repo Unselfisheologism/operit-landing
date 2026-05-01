@@ -251,9 +251,9 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
             vs
           </div>
           <div>
-            <h3 className="font-display text-base text-zinc-900 dark:text-zinc-100">
+            <p className="font-display text-base text-zinc-900 dark:text-zinc-100 font-semibold">
               Twent vs {comp.competitor}
-            </h3>
+            </p>
             <div className="flex items-center gap-3 mt-1 flex-wrap">
               <span className="text-xs font-mono text-zinc-500">
                 {comp.keyword}

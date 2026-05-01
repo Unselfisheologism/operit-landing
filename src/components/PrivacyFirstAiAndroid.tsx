@@ -87,9 +87,9 @@ function FeatureCard({
       <div className="w-12 h-12 bg-green-500/10 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
+      <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2 font-semibold">
         {title}
-      </h3>
+      </p>
       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
         {description}
       </p>
@@ -465,9 +465,9 @@ export function PrivacyFirstAiAndroid({
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                <h3 className="font-display text-xl text-green-500 mb-4">
+                <p className="font-display text-xl text-green-500 mb-4">
                   ✓ What Stays on Your Device (100% Local)
-                </h3>
+                </p>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
@@ -501,9 +501,9 @@ export function PrivacyFirstAiAndroid({
               </div>
 
               <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                <h3 className="font-display text-xl text-orange-500 mb-4">
+                <p className="font-display text-xl text-orange-500 mb-4">
                   ⚡ What Goes to Providers (Direct HTTPS, You Control)
-                </h3>
+                </p>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>

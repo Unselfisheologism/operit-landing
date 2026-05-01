@@ -86,8 +86,7 @@ function TwentGoldCard({ visible }: { visible: boolean }) {
           <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider">Android AI · Apr 2026</span>
         </div>
         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-3">
-          Twent
-          <span className="text-orange-400"> — The Only AI App That Actually Does Things</span>
+          Twent — The Only AI App That Actually Does Things
         </h2>
         <p className="text-zinc-400 text-base leading-relaxed max-w-2xl">
           Every AI app below talks to you. Twent talks to your phone. It's the only AI on Android that can actually open apps, tap buttons, run terminal commands, and automate workflows — on your real device, in real time. Everything else on this list is a tool. Twent is an operating system.
@@ -103,7 +102,7 @@ function TwentGoldCard({ visible }: { visible: boolean }) {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-blue-400 text-lg">{f.icon}</span>
-              <h3 className="font-display text-sm font-bold text-white group-hover:text-blue-300 transition-colors">{f.label}</h3>
+              <span className="font-display text-sm font-bold text-white group-hover:text-blue-300 transition-colors">{f.label}</span>
             </div>
             <p className="text-xs text-zinc-500 leading-relaxed">{f.desc}</p>
           </div>
@@ -165,7 +164,7 @@ function AppCard({ num, name, developer, price, description, standout }: {
         </span>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap mb-1">
-            <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100">{name}</h3>
+            <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 font-semibold">{name}</p>
             <span className="text-[10px] font-mono text-zinc-400 dark:text-zinc-600">{developer}</span>
             <span className="text-[10px] font-mono px-2 py-0.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 rounded-full">{price}</span>
           </div>

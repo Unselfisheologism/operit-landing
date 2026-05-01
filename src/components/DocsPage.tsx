@@ -1237,9 +1237,9 @@ export function DocsPage({
           <nav className="p-4 space-y-6">
             {sidebar.map((cat) => (
               <div key={cat.title}>
-                <h4 className="text-[10px] font-secondary uppercase tracking-[0.2em] text-orange-500 mb-2">
+                <p className="text-[10px] font-secondary uppercase tracking-[0.2em] text-orange-500 mb-2">
                   {cat.title}
-                </h4>
+                </p>
                 <ul className="space-y-0.5">
                   {cat.sections.map((s) => (
                     <li key={s.id}>

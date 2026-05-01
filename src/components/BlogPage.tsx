@@ -86,9 +86,9 @@ function FeaturedPostCard({ post, visible }: { post: BlogPost; visible: boolean 
                 Featured
               </span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 leading-[1.1] mb-4 tracking-tight">
+            <p className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 leading-[1.1] mb-4 tracking-tight">
               {post.title}
-            </h2>
+            </p>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-md">
               {post.excerpt}
             </p>
@@ -178,9 +178,9 @@ function PostCard({
           {post.date}
         </span>
       </div>
-      <h3 className="font-display text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 leading-tight mb-3 tracking-tight group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
+      <p className="font-display text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 leading-tight mb-3 tracking-tight group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
         {post.title}
-      </h3>
+      </p>
       <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5 line-clamp-2">
         {post.excerpt}
       </p>

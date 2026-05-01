@@ -45,7 +45,7 @@ export function NotFoundPage({ dark, toggle }: { dark: boolean; toggle: () => vo
             </span>
           </div>
 
-          <h2 className="text-2xl font-semibold mb-2">Page not found</h2>
+          <h1 className="text-2xl font-semibold mb-2">Page not found</h1>
 
           <p className="text-zinc-500 dark:text-zinc-400 mb-8 max-w-md mx-auto">
             That page doesn't exist, got moved, or was deleted. Maybe it never existed at all.

@@ -87,9 +87,9 @@ function FeatureCard({
       <div className="w-12 h-12 bg-purple-500/10 flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
+      <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2 font-semibold">
         {title}
-      </h3>
+      </p>
       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
         {description}
       </p>
@@ -107,9 +107,9 @@ function FAQItem({
 }) {
   return (
     <div className="border-b border-zinc-200 dark:border-zinc-800 py-6">
-      <h4 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
+      <h2 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2 font-semibold">
         {question}
-      </h4>
+      </h2>
       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
         {answer}
       </p>
@@ -309,9 +309,9 @@ export function AiMarketplaceCreators({
                   key={i}
                   className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
                 >
-                  <h3 className="font-display text-lg text-red-500 mb-2">
+                  <p className="font-display text-lg text-red-500 mb-2">
                     {item.problem}
-                  </h3>
+                  </p>
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
                     {item.desc}
                   </p>
@@ -521,9 +521,9 @@ export function AiMarketplaceCreators({
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
+                      <p className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
                         {item.title}
-                      </h3>
+                      </p>
                       <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                         {item.desc}
                       </p>

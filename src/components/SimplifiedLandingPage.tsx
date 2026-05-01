@@ -43,9 +43,9 @@ function FeatureCard({
           {icon}
         </div>
         <div>
-          <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2">
+          <p className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2 font-semibold">
             {title}
-          </h3>
+          </p>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
             {subtitle}
           </p>
@@ -364,9 +364,9 @@ export function SimplifiedLandingPage({
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
-                <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2">
+                <p className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2">
                   Free
-                </h3>
+                </p>
                 <div className="text-4xl font-display text-blue-500 mb-4">
                   $0
                 </div>
@@ -383,9 +383,9 @@ export function SimplifiedLandingPage({
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-mono px-3 py-1">
                   RECOMMENDED
                 </div>
-                <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2">
+                <p className="font-display text-2xl text-zinc-900 dark:text-zinc-100 mb-2">
                   Pro
-                </h3>
+                </p>
                 <div className="text-4xl font-display text-blue-500 mb-4">
                   $20
                 </div>

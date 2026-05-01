@@ -390,9 +390,9 @@ function PinnedScrollytelling() {
                   {story.tag}
                 </span>
               </div>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4">
+              <p className="font-display text-3xl md:text-4xl lg:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4">
                 {story.heading}
-              </h2>
+              </p>
               <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-lg">
                 {story.description}
               </p>
