@@ -44,7 +44,7 @@ function SchemaMarkup() {
       "Minimal permissions - no camera, microphone, or contacts access required",
       "No account required, no cloud dependency, no vendor lock-in",
     ],
-    screenshot: "https://twent.xyz/privacy-hero.png",
+    screenshot: "https://twent.xyz/privacy-hero.webp",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -250,11 +250,13 @@ export function PrivacyFirstAiAndroid({
           >
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
-                src="/privacy-hero.png"
+                src="/privacy-hero.webp"
+                width="1200"
+                height="630"
+                fetchPriority="high"
                 alt="Twent Privacy-First AI - BYOK, local models, encrypted storage - on-device AI, data privacy, self-hosted language models, llama.cpp"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

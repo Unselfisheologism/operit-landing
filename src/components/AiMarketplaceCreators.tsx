@@ -44,7 +44,7 @@ function SchemaMarkup() {
       "Automatic updates to buyers",
       "Community ratings and reviews",
     ],
-    screenshot: "https://twent.xyz/marketplace-creators-hero.png",
+    screenshot: "https://twent.xyz/marketplace-creators-hero.webp",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -400,11 +400,13 @@ export function AiMarketplaceCreators({
           >
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
-                src="/marketplace-creators-hero.png"
+                src="/marketplace-creators-hero.webp"
+                width="1200"
+                height="600"
+                fetchPriority="high"
                 alt="Twent AI Marketplace for Creators - Sell skills, workflows, mini apps - AI plugin store, agentic extensions, automation marketplace"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

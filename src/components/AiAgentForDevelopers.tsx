@@ -89,7 +89,7 @@ function SchemaMarkup() {
       "Code review on mobile",
       "PR creation and merging from phone",
     ],
-    screenshot: "https://twent.xyz/developer-hero.png",
+    screenshot: "https://twent.xyz/developer-hero.webp",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -491,11 +491,13 @@ export function AiAgentForDevelopers({
           >
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
-                src="/developer-hero.png"
+                src="/developer-hero.webp"
+                width="1200"
+                height="630"
+                fetchPriority="high"
                 alt="Twent AI Agent for Developers - Claude Code and Codex on Android - AI coding assistant, mobile development environment, Ubuntu terminal on phone"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

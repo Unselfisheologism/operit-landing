@@ -512,7 +512,7 @@ export function MetaUpdater({ currentPath, canonicalPath }: { currentPath: strin
 
     // Update og:image and twitter:image per-page
     const pageData = pageMeta[currentPath];
-    const ogImagePath = pageData?.ogImage || "/TWENT-OPENGRAPH-IMG.png";
+    const ogImagePath = pageData?.ogImage || "/TWENT-OPENGRAPH-IMG.webp";
     const ogImageUrl = `https://twent.xyz${ogImagePath}`;
 
     const setImageMeta = (selector: string, content: string) => {

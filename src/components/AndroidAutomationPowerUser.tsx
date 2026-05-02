@@ -44,7 +44,7 @@ function SchemaMarkup() {
       "AI-powered decision making and natural language understanding",
       "MCP server integration for external tools",
     ],
-    screenshot: "https://twent.xyz/automation-hero.png",
+    screenshot: "https://twent.xyz/automation-hero.webp",
   };
 
   return <script type="application/ld+json">{JSON.stringify(schema)}</script>;
@@ -475,11 +475,13 @@ export function AndroidAutomationPowerUser({
           >
             <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
               <img
-                src="/automation-hero.png"
+                src="/automation-hero.webp"
+                width="1200"
+                height="630"
+                fetchPriority="high"
                 alt="Twent Android Automation - UI automation, workflow builder, shell scripting - task automation, Android app automation, macro recorder"
                 className="w-full h-auto object-cover"
                 style={{ maxHeight: "600px" }}
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">

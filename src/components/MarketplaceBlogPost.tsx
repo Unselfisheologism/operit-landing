@@ -233,11 +233,13 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
             >
               <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
                 <img
-                  src="/marketplace-hero.png"
+                  src="/marketplace-hero.webp"
+                  width="1200"
+                  height="630"
+                  fetchPriority="high"
                   alt="Twent Marketplace - Your Agentic App Store - AI agent ecosystem, automation skills, buy and sell AI workflows"
                   className="w-full h-auto object-cover"
                   style={{ maxHeight: "500px" }}
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
