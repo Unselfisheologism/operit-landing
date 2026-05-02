@@ -549,10 +549,7 @@ export function ImmersiveLandingPage({
                   View Docs
                 </a>
               </div>
-              <div className="mt-6 flex items-center justify-center gap-4">
-                <span className="text-xs text-zinc-400">Follow:</span>
-                <SocialLinksInline />
-              </div>
+
             </div>
 
             {/* Scroll Indicator */}
