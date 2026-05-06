@@ -141,7 +141,7 @@
 # IMAGE CACHE + SECURITY
 # ═══════════════════════════════════════════════════════
 
-/TWENT-OPENGRAPH-IMG.png
+/TWENT-OPENGRAPH-IMG.webp
   Content-Type: image/png
   Cache-Control: public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
