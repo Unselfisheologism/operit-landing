@@ -1,983 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xml="http://www.w3.org/1999/xml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Docs Main Page -->
   <url>
     <loc>https://twent.xyz/docs</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs" />
   </url>
+
+  <!-- Getting Started -->
   <url>
     <loc>https://twent.xyz/docs#installation</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#installation" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#installation" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#installation" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#installation" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#installation" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#installation" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#installation" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#installation" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#installation" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#installation" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#installation" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#installation" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#installation" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#installation" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#installation" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#installation" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#installation" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#installation" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#installation" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#installation" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#installation" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#installation" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#installation" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#installation" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#installation" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#installation" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#installation" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#installation" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#installation" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#first-setup</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#first-setup" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#first-setup" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#first-chat</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#first-chat" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#first-chat" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#permissions</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#permissions" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#permissions" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#permissions" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#permissions" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#permissions" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#permissions" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#permissions" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#permissions" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#permissions" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#permissions" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#permissions" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#permissions" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#permissions" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#permissions" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#permissions" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#permissions" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#permissions" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#permissions" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#permissions" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#permissions" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#permissions" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#permissions" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#permissions" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#permissions" />
   </url>
+
+  <!-- Chat -->
   <url>
     <loc>https://twent.xyz/docs#chat-overview</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#chat-overview" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#chat-overview" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#chat-styles</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#chat-styles" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#chat-styles" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#floating-chat</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#floating-chat" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#floating-chat" />
   </url>
+
+  <!-- Tools -->
   <url>
     <loc>https://twent.xyz/docs#tools-overview</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#tools-overview" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#tools-overview" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#file-system</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#file-system" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#file-system" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#file-system" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#file-system" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#file-system" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#file-system" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#file-system" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#file-system" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#file-system" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#file-system" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#file-system" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#file-system" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#file-system" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#file-system" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#file-system" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#file-system" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#file-system" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#file-system" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#file-system" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#file-system" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#file-system" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#file-system" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#file-system" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#file-system" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#shell</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#shell" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#shell" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#shell" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#shell" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#shell" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#shell" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#shell" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#shell" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#shell" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#shell" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#shell" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#shell" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#shell" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#shell" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#shell" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#shell" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#shell" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#shell" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#shell" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#shell" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#shell" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#shell" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#shell" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#shell" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#shell" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#shell" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#shell" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#shell" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#shell" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#web</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#web" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#web" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#web" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#web" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#web" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#web" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#web" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#web" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#web" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#web" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#web" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#web" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#web" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#web" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#web" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#web" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#web" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#web" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#web" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#web" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#web" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#web" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#web" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#web" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#web" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#web" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#web" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#web" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#web" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#media</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#media" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#media" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#media" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#media" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#media" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#media" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#media" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#media" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#media" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#media" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#media" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#media" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#media" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#media" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#media" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#media" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#media" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#media" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#media" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#media" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#media" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#media" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#media" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#media" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#media" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#media" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#media" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#media" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#media" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#ui-automation</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#ui-automation" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#ui-automation" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#javascript</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#javascript" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#javascript" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#javascript" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#javascript" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#javascript" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#javascript" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#javascript" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#javascript" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#javascript" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#javascript" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#javascript" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#javascript" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#javascript" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#javascript" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#javascript" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#javascript" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#javascript" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#javascript" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#javascript" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#javascript" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#javascript" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#javascript" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#javascript" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#javascript" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#mcp</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#mcp" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#mcp" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#mcp" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#mcp" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#mcp" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#mcp" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#mcp" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#mcp" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#mcp" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#mcp" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#mcp" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#mcp" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#mcp" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#mcp" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#mcp" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#mcp" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#mcp" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#mcp" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#mcp" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#mcp" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#mcp" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#mcp" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#mcp" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#mcp" />
   </url>
+
+  <!-- Automation -->
   <url>
     <loc>https://twent.xyz/docs#automation-overview</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#automation-overview" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#automation-overview" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#tasker</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#tasker" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#tasker" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#tasker" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#tasker" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#tasker" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#tasker" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#tasker" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#tasker" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#tasker" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#tasker" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#tasker" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#tasker" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#tasker" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#tasker" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#tasker" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#tasker" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#tasker" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#tasker" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#tasker" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#tasker" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#tasker" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#tasker" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#tasker" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#tasker" />
   </url>
+
+  <!-- Packages -->
   <url>
     <loc>https://twent.xyz/docs#packages-overview</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#packages-overview" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#packages-overview" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#skills</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#skills" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#skills" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#skills" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#skills" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#skills" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#skills" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#skills" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#skills" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#skills" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#skills" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#skills" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#skills" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#skills" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#skills" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#skills" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#skills" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#skills" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#skills" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#skills" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#skills" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#skills" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#skills" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#skills" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#skills" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#skills" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#skills" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#skills" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#skills" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#skills" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#marketplace</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#marketplace" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#marketplace" />
   </url>
+
+  <!-- Workflows -->
   <url>
     <loc>https://twent.xyz/docs#workflows-overview</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#workflows-overview" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#workflows-overview" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#workflow-examples</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#workflow-examples" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#workflow-examples" />
   </url>
+
+  <!-- More -->
   <url>
     <loc>https://twent.xyz/docs#memory</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#memory" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#memory" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#memory" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#memory" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#memory" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#memory" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#memory" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#memory" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#memory" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#memory" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#memory" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#memory" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#memory" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#memory" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#memory" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#memory" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#memory" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#memory" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#memory" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#memory" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#memory" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#memory" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#memory" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#memory" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#memory" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#memory" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#memory" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#memory" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#memory" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#voice</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#voice" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#voice" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#voice" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#voice" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#voice" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#voice" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#voice" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#voice" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#voice" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#voice" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#voice" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#voice" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#voice" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#voice" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#voice" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#voice" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#voice" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#voice" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#voice" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#voice" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#voice" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#voice" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#voice" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#voice" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#voice" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#voice" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#voice" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#voice" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#voice" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#settings</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#settings" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#settings" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#settings" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#settings" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#settings" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#settings" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#settings" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#settings" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#settings" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#settings" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#settings" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#settings" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#settings" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#settings" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#settings" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#settings" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#settings" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#settings" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#settings" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#settings" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#settings" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#settings" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#settings" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#settings" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#settings" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#settings" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#settings" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#settings" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#settings" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#toolbox</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#toolbox" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#toolbox" />
   </url>
+
   <url>
     <loc>https://twent.xyz/docs#tool-reference</loc>
     <lastmod>2026-04-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt-PT/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/docs#tool-reference" />
-    <xml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/docs#tool-reference" />
   </url>
 </urlset>
