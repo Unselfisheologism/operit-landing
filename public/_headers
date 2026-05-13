@@ -14,19 +14,7 @@
   # Block ALL mixed content, force HTTPS for all resources
   # 'self' = same origin (twent.xyz)
   # upgrade-insecure-requests = auto-upgrade http:// → https://
-  Content-Security-Policy:
-    default-src 'self';
-    script-src 'self';
-    style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com;
-    font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;
-    img-src 'self' data: https://twent.xyz https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev https://*.r2.dev https://pbs.twimg.com https://abs.twimg.com https://cdn.sstatic.net;
-    connect-src 'self' https://api.databuddy.io https://twent.xyz;
-    frame-src 'self' https://www.youtube.com https://youtube.com;
-    media-src 'self' https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self';
-    upgrade-insecure-requests;
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.tailwindcss.com https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com; img-src 'self' data: https://twent.xyz https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev https://*.r2.dev https://pbs.twimg.com https://abs.twimg.com https://cdn.sstatic.net; connect-src 'self' https://api.databuddy.io https://twent.xyz; frame-src 'self' https://www.youtube.com https://youtube.com; media-src 'self' https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 
   # ─── Clickjacking Protection ──────────────────────────
   # Only allow embedding in iframes from same origin
@@ -43,12 +31,7 @@
 
   # ─── Browser Feature Permissions ─────────────────────
   # Disable risky browser APIs that could be abused
-  Permissions-Policy:
-    camera=(),
-    microphone=(),
-    geolocation=(),
-    interest-cohort=(),
-    payment=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=()
 
   # ─── XSS Filter (legacy browsers) ─────────────────────
   X-XSS-Protection: 1; mode=block
