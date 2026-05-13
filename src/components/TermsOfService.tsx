@@ -251,6 +251,24 @@ export function TermsOfService({
             </p>
           </section>
         </div>
+
+        {/* ── Internal cross-links ── */}
+        <div className="my-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+          <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-4">
+            Explore Twent
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a href="/" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
+              Home — AI Agent for Android →
+            </a>
+            <a href="/blog/marketplace" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
+              Twent Marketplace →
+            </a>
+            <a href="/blog/best-ai-apps-android" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
+              Best AI Apps for Android →
+            </a>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>

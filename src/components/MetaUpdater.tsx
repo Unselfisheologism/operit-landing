@@ -8,8 +8,8 @@ import { getOgLocale } from "./HreflangTags";
 // Page meta data per route (used for title/description updates)
 // All descriptions optimized: 120-160 chars, compelling CTA
 const pageMeta: Record<string, { title: string; description: string; ogImage?: string }> = {
-  "/": {
-    title: "Twent — AI Agent for Android That Actually Acts",
+"/": {
+    title: "Twent - AI Agent for Android (2026) | Automates Everything",
     description:
       "Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.",
   },
@@ -69,20 +69,20 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
       "Run Claude Code, Codex & full CLI tools on your Android device. Git, SSH, MCP & VS Code Server in a mobile shell.",
     ogImage: "/developer-hero.png",
   },
-  "/changelog": {
-    title: "Twent Changelog — What's New",
+"/changelog": {
+    title: "Twent Changelog (2026) - What's New",
     description:
       "Every update, feature & bug fix. Stay up to date with the Android app that actually ships. Free download.",
     ogImage: "/TWENT-OPENGRAPH-IMG.png",
   },
-  "/privacy": {
-    title: "Twent Privacy Policy — Your Data, Your Control",
+"/privacy": {
+    title: "Twent Privacy Policy - Your Data, Your Control",
     description:
       "How your data is handled: encryption standards, what we never collect, and our transparency commitments.",
     ogImage: "/privacy-hero.png",
   },
-  "/terms": {
-    title: "Twent Terms of Service",
+"/terms": {
+    title: "Twent Terms of Service - Free AI Agent Android",
     description:
       "Clear, human-readable terms for using Twent. No fine print surprises — just fair terms for a free product.",
     ogImage: "/TWENT-OPENGRAPH-IMG.png",
@@ -93,88 +93,88 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
       "That page doesn't exist — but you can still download Twent and try the Android app that actually does things.",
     ogImage: "/TWENT-OPENGRAPH-IMG.png",
   },
-  "/vs/chatgpt": {
-    title: "Twent vs ChatGPT — Which AI for Android?",
+"/vs/chatgpt": {
+    title: "Twent vs ChatGPT - Android AI Comparison (2026)",
     description:
       "ChatGPT chats. Twent acts — controls apps, runs terminals & automates your workflow from your Android device.",
   },
-  "/vs/nebula": {
-    title: "Twent vs Nebula AI — Android Agent Comparison",
+"/vs/nebula": {
+    title: "Twent vs Nebula - Android AI Agent (2026)",
     description:
       "Device automation, local models & Ubuntu terminal — see how Twent compares to Nebula for Android power users.",
   },
   "/vs/openclaw": {
-    title: "Twent vs OpenClaw — Android AI Agent Comparison",
+    title: "Twent vs OpenClaw - Android AI Agent (2026)",
     description:
       "More integrations, offline models & UI automation. How Twent stacks up against OpenClaw for Android.",
   },
   "/vs/hermes-agent": {
-    title: "Twent vs Hermes Agent — Android Comparison",
+    title: "Twent vs Hermes Agent - Android Comparison (2026)",
     description:
       "Hermes Agent runs in Twent with full Ubuntu terminal & UI control. See how they compare on Android.",
   },
   "/vs/n8n": {
-    title: "Twent vs n8n — Automation on Android vs the Cloud",
+    title: "Twent vs n8n - Automation on Android vs Cloud (2026)",
     description:
       "n8n runs in the cloud. Twent runs on your Android device with full terminal access & app automation.",
   },
   "/vs/anything-llm": {
-    title: "Twent vs AnythingLLM — Mobile AI Agent Comparison",
+    title: "Twent vs AnythingLLM - Mobile AI Agent (2026)",
     description:
       "AnythingLLM is desktop-first. Twent brings agentic execution, automation & a skills marketplace to your phone.",
   },
   "/vs/gemini": {
-    title: "Twent vs Google Gemini — Android AI (2026)",
+    title: "Twent vs Gemini - Android AI Agent (2026)",
     description:
       "Gemini lives in a browser. Twent runs on your device with BYOK privacy, offline models & full automation.",
   },
   "/vs/replika": {
-    title: "Twent vs Replika — Productivity vs Companionship AI",
+    title: "Twent vs Replika - Productivity vs Companion AI (2026)",
     description:
       "Replika is for conversation. Twent is for getting things done — automation, terminal & integrations on Android.",
   },
   "/vs/copilot": {
-    title: "Twent vs Microsoft Copilot — Android AI Comparison",
+    title: "Twent vs Copilot - Android AI Comparison (2026)",
     description:
       "Copilot is browser-based. Twent gives you a floating AI overlay, automation & local models on your device.",
   },
   "/vs/claude": {
-    title: "Twent vs Claude — Mobile AI Agent Comparison",
+    title: "Twent vs Claude - Mobile AI Agent (2026)",
     description:
       "Claude on mobile is limited. Twent brings Claude Code execution, floating overlay & Android automation to the same device.",
   },
   "/vs/perplexity": {
-    title: "Twent vs Perplexity — Search AI vs Action AI",
+    title: "Twent vs Perplexity - Search AI vs Action AI (2026)",
     description:
       "Perplexity finds answers. Twent acts on them — automates tasks, runs terminals & executes workflows on your phone.",
   },
   "/vs/make": {
-    title: "Twent vs Make — Automation on Android vs Visual Workflows",
+    title: "Twent vs Make - Automation on Android vs Workflows (2026)",
     description:
       "Make builds cloud workflows. Twent runs agents locally on your Android — with full terminal access & no internet required.",
   },
   "/vs/zapier": {
-    title: "Twent vs Zapier — Automation That Lives on Your Phone",
+    title: "Twent vs Zapier - Automation That Lives on Your Phone (2026)",
     description:
       "Zapier connects cloud apps. Twent connects to everything on your Android device, including apps Zapier can't reach.",
   },
   "/vs/qordinate": {
-    title: "Twent vs Qordinate — Android AI Agent Comparison",
+    title: "Twent vs Qordinate - Android AI Agent Comparison (2026)",
     description:
       "More integrations, offline capability & automation depth. How Twent compares to Qordinate for Android power users.",
   },
   "/vs/omnara": {
-    title: "Twent vs Omnara — Android AI Agent Comparison",
+    title: "Twent vs Omnara - Android AI Agent Comparison (2026)",
     description:
       "Twent delivers device-level automation, MCP ecosystem & a skills marketplace. See the full comparison for Android.",
   },
   "/vs/manus": {
-    title: "Twent vs Manus — Mobile AI Agent Comparison",
+    title: "Twent vs Manus - Mobile AI Agent (2026)",
     description:
       "Manus runs in the cloud. Twent runs on your Android with terminal access, local AI & full app control.",
   },
   "/vs/onspace": {
-    title: "Twent vs Onspace — Android AI Agent Comparison",
+    title: "Twent vs Onspace - Android AI Agent Comparison (2026)",
     description:
       "Privacy-first, offline models & Ubuntu terminal. See how Twent and Onspace compare on Android in 2026.",
   },
