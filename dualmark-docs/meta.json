@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "index",
+    "---[Rocket]Get started---",
+    "quickstart",
+    "concepts",
+    "---[Plug]Integrate---",
+    "...integrations",
+    "---[Package]API reference---",
+    "...packages",
+    "---[ShieldCheck]Conformance---",
+    "...conformance",
+    "---[BookText]Spec---",
+    "...spec"
+  ]
+}

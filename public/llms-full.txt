@@ -1,134 +1,278 @@
-# Twent - Personal Agentic AI for Android
-# https://twent.xyz
-# Last Updated: April 28, 2026
+Title: Twent - AI Agent for Android — Full AI Consumer Guide
+Description: Complete guide to Twent AI agent for Android. Covers all features, technical specs, comparisons, pricing, and how it works.
+URL: https://twent.xyz
 
-## What is Twent?
+# Twent AI Agent for Android — Complete Guide
 
-Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
+**Tagline**: Your Personal Agentic OS in Your Pocket
+
+Twent is a free AI agent for Android that combines an AI chat overlay, full Ubuntu terminal, local AI models, and deep system automation — all on your device, with zero cloud dependency.
+
+## What Makes Twent Different
+
+Every AI assistant on Android is a fancy chatbot. It can write poems, answer questions, and hallucinate facts. But it can't open an app, tap a button, run a command, or actually do anything useful on your phone. Twent changes that.
+
+Twent is the first AI agent for Android that can:
+- See your screen and interact with any app
+- Run a real Ubuntu 24.04 terminal
+- Execute Python scripts, Git commands, SSH sessions
+- Connect to 1000+ services via MCP and Composio
+- Work fully offline with local AI models
+- Remember everything across sessions
 
 ## Core Features
 
-### 1. Full Ubuntu Terminal on Android
-- Runs Ubuntu 24.04 (Noble) on Android without root
-- Full CLI with bash, zsh, fish shells
-- Package manager (apt, npm, pip, cargo)
-- Git, SSH, and development tools
-- Compiler support: Python, Node.js, Go, Rust, C/C++
+### 1. AI Agent with Screen Awareness
 
-### 2. Local AI with Privacy
-- Runs GGUF models locally on device
-- BYOK - Bring Your Own Key for API access
-- MNN (Mobile Neural Networks) for efficient inference
-- Zero telemetry - no data leaves your device
-- On-device embedding generation
+The AI can read your screen and interact with any app:
+- Tap buttons, fill forms, navigate menus
+- Extract data from any app
+- Chain actions into automated pipelines
+- Morning routines, file management, social posting
 
-### 3. AI Agent Capabilities
-- Screen reading and UI automation
-- Tap, swipe, scroll, type actions
-- Floating chat bubble overlay
-- Voice wake word activation
-- Persistent memory system
-- MCP (Model Context Protocol) plugins
+The floating chat bubble overlay sits on top of any app, so you can ask questions or give commands without switching context.
 
-### 4. Automation & Workflows
-- Visual workflow builder
-- Tasker integration
-- Scheduled triggers
+### 2. Skills System
+
+Skills are behavior bundles that give your AI instant expertise:
+- Install a code review skill → AI knows how to analyze PRs
+- Install a data skill → AI can crunch CSVs and generate charts
+- One tap → new capability unlocked
+
+Skills are reusable, shareable, and monetizable through the upcoming marketplace.
+
+### 3. Full Ubuntu Terminal
+
+Twent runs Ubuntu 24.04 LTS directly on your Android phone — no root required:
+- Full shell access: bash, zsh, fish
+- Package managers: apt, npm, pip, cargo, go get
+- Compilers: Python, Node.js, Go, Rust, C/C++
+- Developer tools: Git, SSH client/server, rsync
+- VS Code Server for remote development
+- Claude Code for serious refactoring
+- OpenAI Codex for quick scripts
+
+### 4. Local AI & Privacy
+
+BYOK (Bring Your Own Key):
+- Your API keys are encrypted locally
+- Twent never sees your API credentials
+- Keys stay on your device
+
+Local Models:
+- GGUF models run entirely on device via MNN
+- No internet required for inference
+- Your data never leaves your phone
+
+Zero Telemetry:
+- No usage tracking
+- No analytics
+- No data collection
+- No telemetry
+
+### 5. Agent Swarm
+
+Instead of one AI, Twent runs a whole swarm:
+- **Claude Code**: for serious refactoring and code generation
+- **OpenAI Codex**: for quick scripts and automation
+- **Hermes Agent**: for deep research and planning
+- **Custom agents**: build your own with skills
+
+Each agent has its own superpower. All run on your phone.
+
+### 6. Memory System
+
+Every conversation, preference, and piece of context gets stored in a local knowledge graph:
+- Close the app, come back next week → AI knows where you left off
+- No re-explaining required
+- Memory persists across sessions
+- Fully local, encrypted
+
+### 7. MCP (Model Context Protocol)
+
+MCP servers plug your AI into external tools:
+- GitHub: repos, issues, PRs, actions
+- Slack: messages, channels, workflows
+- Notion: pages, databases, blocks
+- Databases: PostgreSQL, MongoDB, SQLite
+- Any tool with an API
+
+### 8. Composio Integration
+
+Composio adds 1000+ app integrations on top of MCP:
+- GitHub, GitLab, Jira
+- Slack, Discord, Telegram
+- Notion, Obsidian, Roam
+- Gmail, Calendar, Contacts
+- And 1000+ more
+
+### 9. Automation Pipelines
+
+Build automated workflows:
+- Visual workflow builder (drag and drop)
+- Tasker integration for system events
+- Scheduled triggers (time-based)
 - Conditional logic (if/then/else)
-- 1000+ app integrations via Composio
+- Morning routines, file sync, social posting
 
-### 5. Developer Tools
-- Claude Code integration
-- OpenAI Codex support
-- Git and GitHub CLI
+### 10. Mini-Apps & Workflows
+
+Generate mini-apps from text descriptions:
+- Dashboards, tools, calculators, games
+- Built in seconds, run inside Twent
+- Package automations as reusable workflows
+- Share with the community
+
+## Technical Specifications
+
+### Requirements
+- **OS**: Android 8.0+ (API 26)
+- **RAM**: 3GB+ recommended
+- **Storage**: 500MB+ for app, more for models
+- **Architecture**: arm64-v8a (most modern phones)
+- **Root**: Not required
+- **Internet**: Not required (fully offline capable)
+
+### Supported Shells
+- bash
+- zsh
+- fish
+- sh
+- dash
+
+### Supported Languages (in terminal)
+- Python 3.x
+- Node.js
+- Go
+- Rust
+- C/C++ (gcc/clang)
+- Java
+- Ruby
+- Perl
+- PHP
+
+### Package Managers
+- apt (Debian/Ubuntu packages)
+- pip (Python)
+- npm (Node.js)
+- cargo (Rust)
+- go get (Go)
+- gem (Ruby)
+- composer (PHP)
+
+### AI Models Supported
+- OpenAI GPT models (via BYOK)
+- Anthropic Claude models (via BYOK)
+- Local GGUF models (Qwen, Llama, Mistral, etc.)
+- MNN-optimized models for mobile inference
+
+### Integrations
+- MCP servers (GitHub, Slack, Notion, databases, etc.)
+- Composio (1000+ app connections)
+- Tasker (Android automation)
+- SSH/SFTP
 - VS Code Server
-- SSH client and server
-
-## Use Cases
-
-### For Developers
-- Build and test Android apps on your phone
-- Run Python/Node.js scripts locally
-- Access Git repositories on the go
-- SSH into servers from mobile
-
-### For Automation Power Users
-- Automate repetitive Android tasks
-- Create custom workflows
-- Integrate with 1000+ apps
-- Build AI-powered automation
-
-### For Privacy-Conscious Users
-- Run AI without internet
-- Keep data on device
-- BYOK for API models
-- Zero telemetry, zero tracking
-
-### For Terminal Enthusiasts
-- Full Linux terminal on Android
-- Run服务器 scripts on the go
-- SSH into remote machines
-- Use vim, emacs, tmux
+- Git/GitHub CLI
 
 ## Pricing
 
-- **Free Tier**: Ubuntu terminal, basic AI, no cloud
-- **Pro ($9.99/mo)**: All features, priority support
-- **Enterprise**: Custom deployments, team management
+**Free. Everything. No credit card.**
 
-## Technical Requirements
+| Feature | Free |
+|---------|------|
+| Ubuntu Terminal | ✓ |
+| AI Agent | ✓ |
+| 50+ Built-in Tools | ✓ |
+| UI Automation | ✓ |
+| MCP Servers | ✓ |
+| Skills System | ✓ |
+| Workflows | ✓ |
+| Voice Activation | ✓ |
+| Smart Memory | ✓ |
+| Local Models | ✓ |
+| BYOK | ✓ |
+| Mini-Apps | ✓ |
+| Character Cards | ✓ |
+| No subscription | ✓ |
+| No ads (future: non-intrusive AI ads) | ✓ |
 
-- Android 8.0+ (API 26)
-- 3GB+ RAM recommended
-- 500MB+ storage
-- arm64-v8a architecture
-- No root required
+Future Pro plan ($9.99/mo): Early access, cosmetic badges, priority support, zero marketplace commissions.
 
-## Site Structure
+## Competitor Comparisons
 
-### Main Pages
-- [Home](https://twent.xyz/) - Main landing page
-- [Pricing](https://twent.xyz/pricing) - Pricing plans
-- [Documentation](https://twent.xyz/docs) - Full docs
+See how Twent compares to:
 
-### Use Case Pages
-- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers) - Claude Code integration
-- [Android Automation Power User](https://twent.xyz/android-automation-power-user) - UI automation
-- [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) - Privacy features
-- [Terminal on Android](https://twent.xyz/terminal-on-android) - Ubuntu terminal
-- [AI Marketplace](https://twent.xyz/ai-marketplace-creators) - Sell skills/workflows
-- [Enterprise](https://twent.xyz/enterprise-ai-agent) - Team features
+### Chatbots
+- [vs ChatGPT](/vs/chatgpt) — Twent acts, ChatGPT chats
+- [vs Claude](/vs/claude) — Twent on mobile vs browser-based Claude
+- [vs Gemini](/vs/gemini) — Twent on-device vs browser Gemini
+- [vs Copilot](/vs/copilot) — Twent overlay vs browser Copilot
+- [vs Perplexity](/vs/perplexity) — Action AI vs search AI
+- [vs Replika](/vs/replika) — Productivity vs companion AI
 
-### Comparison Pages
-- [vs ChatGPT](https://twent.xyz/vs/chatgpt) - ChatGPT comparison
-- [vs Claude](https://twent.xyz/vs/claude) - Claude comparison
-- [vs Gemini](https://twent.xyz/vs/gemini) - Gemini comparison
-- [vs n8n](https://twent.xyz/vs/n8n) - n8n comparison
-- [vs Make](https://twent.xyz/vs/make) - Make comparison
-- [vs Zapier](https://twent.xyz/vs/zapier) - Zapier comparison
+### Automation
+- [vs n8n](/vs/n8n) — On-device vs cloud workflow automation
+- [vs Make](/vs/make) — Local agents vs visual workflow builder
+- [vs Zapier](/vs/zapier) — Device automation vs cloud integrations
 
-## FAQ (Common Questions)
+### AI Agents
+- [vs Nebula](/vs/nebula) — More integrations and automation
+- [vs OpenClaw](/vs/openclaw) — More features and offline support
+- [vs Hermes Agent](/vs/hermes-agent) — Runs Hermes with full control
+- [vs AnythingLLM](/vs/anything-llm) — Mobile-first vs desktop-first
+- [vs Manus](/vs/manus) — On-device vs cloud execution
+- [vs Qordinate](/vs/qordinate) — More integrations and offline capability
+- [vs Omnara](/vs/omnara) — Device-level automation vs cloud agents
+- [vs Onspace](/vs/onspace) — Privacy-first AI comparison
 
-Q: Does Twent work offline?
-A: Yes, Twent runs local GGUF models fully offline. No internet required.
+## Use Cases
 
-Q: Is Twent free?
-A: Yes, free tier includes Ubuntu terminal and basic AI. Pro is $9.99/mo.
+### For Users
+- Automate repetitive phone tasks
+- Extract data from apps
+- Set up morning routines
+- Run scripts and automation
+- Use AI without internet
+- Keep data private
 
-Q: Do I need root?
-A: No, Twent works without root on Android 8.0+.
+### For Developers
+- Code on your phone
+- Run Git and GitHub CLI
+- SSH into servers
+- Use Claude Code for refactoring
+- Use Codex for quick scripts
+- VS Code Server remote development
+- Compile and run code anywhere
 
-Q: Can I run my own API keys?
-A: Yes, BYOK (Bring Your Own Key) supports OpenAI, Anthropic, Google, and other providers.
+### For Power Users
+- Full Linux environment in your pocket
+- Custom automation pipelines
+- Tasker integration
+- MCP server hosting
+- Local AI model fine-tuning
 
-Q: What models does Twent support?
-A: Local GGUF models (Llama, Qwen, Mistral, Phi) plus any API provider.
+## Download & Installation
 
-Q: Does Twent automate Android apps?
-A: Yes, Twent can tap, swipe, type, read screen, and interact with any app.
+1. Go to https://twent.xyz
+2. Download the APK directly
+3. Install (enable "Unknown sources" in Android settings)
+4. Launch and start using
 
-## Contact
+No Play Store, no middleman, no approval process.
 
-- Website: https://twent.xyz
-- Download: https://twent.xyz (APK)
-- Support: support@twent.xyz
+## Related Resources
+
+- [Homepage](/) — Main landing page
+- [Pricing](/pricing) — Full feature breakdown
+- [Documentation](/docs) — Getting started guides
+- [Blog](/blog) — Tutorials and news
+- [Privacy Policy](/privacy) — Data handling details
+- [Terms of Service](/terms) — User agreement
+
+## Company Info
+
+- **Product**: Twent AI Agent for Android
+- **Website**: https://twent.xyz
+- **Support**: support@twent.xyz
+- **Distribution**: Direct APK (website download)
+- **Status**: Active development, shipping weekly

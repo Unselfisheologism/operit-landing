@@ -1,7 +1,35 @@
+# Twent.xyz - robots.txt
+# Dualmark: AI agents get structured markdown via content negotiation
+# AI agents: see llms.txt and llms-full.txt for full content
+# Sitemap: https://twent.xyz/sitemap.xml
+# AI Sitemap (markdown): https://twent.xyz/sitemap.md
+
+# ─── AI CRAWLER ALLOWANCE ───────────────────────────────────────────
+# All AI crawlers are allowed full access to all pages
+# Dualmark content negotiation serves markdown to AI agents automatically
+# ───────────────────────────────────────────────────────────────────
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude
+Allow: /
+
+User-agent: claude-bot
+Allow: /
+
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OpenAI
 Allow: /
 
 User-agent: o3-bot
@@ -10,8 +38,295 @@ Allow: /
 User-agent: o4-mini
 Allow: /
 
+# Google DeepMind / Gemini
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Google-CloudAI
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+# Meta / Facebook
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Common AI crawlers
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: CC Intelligence
+Allow: /
+
+User-agent: DataEnrichmentBot
+Allow: /
+
+User-agent: Datario
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: embedchain
+Allow: /
+
+User-agent: FriendlyCrawler
+Allow: /
+
+User-agent: iasksmartbot
+Allow: /
+
+User-agent: ICC-Crawler
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: InfoTigerBot
+Allow: /
+
+User-agent: ipfc-bot
+Allow: /
+
+User-agent: Kangaroo Bot
+Allow: /
+
+User-agent: Keen耀
+Allow: /
+
+User-agent: Magpie
+Allow: /
+
+User-agent: Mantra WebSpeed Tester
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Meltwater
+Allow: /
+
+User-agent: Mistral
+Allow: /
+
+User-agent: Mona
+Allow: /
+
+User-agent: MozScan
+Allow: /
+
+User-agent: nu-dev
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+User-agent: PanguBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Petal Bot
+Allow: /
+
+User-agent: PhantomJS
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: proudspectrebot
+Allow: /
+
+User-agent: RTG-Google-Free
+Allow: /
+
+User-agent: Saleswise
+Allow: /
+
+User-agent: Scrapy
+Allow: /
+
+User-agent: ScribbleReader
+Allow: /
+
+User-agent: SeekWriteAI
+Allow: /
+
+User-agent: SemiProxy
+Allow: /
+
+User-agent: SEOd.ai
+Allow: /
+
+User-agent: SerpAPIClient
+Allow: /
+
+User-agent: Sentify
+Allow: /
+
+User-agent: serpstatbot
+Allow: /
+
+User-agent: ShiftSecurityBot
+Allow: /
+
+User-agent: ShopGPT
+Allow: /
+
+User-agent: Sir-Travelo
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: SocialSearchBot
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: TheFindBot
+Allow: /
+
+User-agent: TinTin
+Allow: /
+
+User-agent: ToplistBot
+Allow: /
+
+User-agent: Trendictionbot
+Allow: /
+
+User-agent: TurnitinBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: UptimeRobot
+Allow: /
+
+User-agent: Waschatabot
+Allow: /
+
+User-agent: WebBot
+Allow: /
+
+User-agent: Xenu Link Sleuth
+Allow: /
+
+User-agent: XING-contenttab-receiver
+Allow: /
+
+User-agent: YaCy
+Allow: /
+
+User-agent: YouCodeBot
+Allow: /
+
+User-agent: ZooBot
+Allow: /
+
+# Additional AI agent and LLM crawlers
+User-agent: AI2B-Crawler
+Allow: /
+
+User-agent: AI-Crawler
+Allow: /
+
+User-agent: Aria
+Allow: /
+
+User-agent: Auto-GPT
+Allow: /
+
+User-agent: LangChain
+Allow: /
+
+User-agent: Llama
+Allow: /
+
+User-agent: cohere
+Allow: /
+
+User-agent: MetaAI
+Allow: /
+
+User-agent: Voyager
+Allow: /
+
+User-agent: Windsurf
+Allow: /
+
+User-agent: Cursor
+Allow: /
+
+User-agent: claude-code
+Allow: /
+
+User-agent: opencode
+Allow: /
+
+User-agent: Aider
+Allow: /
+
+User-agent: Augment
+Allow: /
+
+User-agent: devin
+Allow: /
+
+User-agent: SWE-agent
+Allow: /
+
+User-agent: jina
+Allow: /
+
+User-agent: Ai2Dev
+Allow: /
+
+User-agent: AiDevBot
+Allow: /
+
+# ─── DEFAULT CRAWLER (allow all) ───────────────────────────────────
 User-agent: *
 Allow: /
+
 # Language subdirectories
 Allow: /zh/
 Allow: /zh-TW/
@@ -40,6 +355,7 @@ Allow: /ru/
 Allow: /pl/
 Allow: /nl/
 Allow: /nl-BE/
+
 # SEO pages
 Allow: /pricing
 Allow: /docs
@@ -74,4 +390,15 @@ Allow: /terms
 Allow: /privacy
 Allow: /simple
 Allow: /details
+
+# ─── SITEMAPS ──────────────────────────────────────────────────────
+# XML sitemap for search engines
 Sitemap: https://twent.xyz/sitemap.xml
+
+# Markdown sitemap for AI agents (Dualmark)
+# AI agents: fetch https://twent.xyz/sitemap.md for structured site map
+Sitemap: https://twent.xyz/sitemap.md
+
+# LLM consumer guides (Dualmark llms.txt spec)
+Sitemap: https://twent.xyz/llms.txt
+Sitemap: https://twent.xyz/llms-full.txt

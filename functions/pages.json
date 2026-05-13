@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "index",
+    "url": "/",
+    "title": "Twent - AI Agent for Android (2026) | Automates Everything",
+    "description": "Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.",
+    "type": "landing"
+  },
+  {
+    "slug": "pricing",
+    "url": "/pricing",
+    "title": "Twent Pricing — Free AI Agent for Android",
+    "description": "No credit card needed. Get full access to Android automation, Ubuntu terminal & 1000+ integrations — completely free.",
+    "type": "pricing"
+  },
+  {
+    "slug": "docs",
+    "url": "/docs",
+    "title": "Twent Docs — Getting Started",
+    "description": "Step-by-step guides: automate apps, run Ubuntu terminal, connect MCP skills. Everything you need to get started.",
+    "type": "docs"
+  },
+  {
+    "slug": "blog",
+    "url": "/blog",
+    "title": "Twent Blog — News and Tutorials",
+    "description": "Tutorials, deep-dives & product news. Learn how to get the most from your Android device with AI assistance.",
+    "type": "blog"
+  },
+  {
+    "slug": "blog/marketplace",
+    "url": "/blog/marketplace",
+    "title": "Twent Marketplace — AI Skills & Integrations",
+    "description": "Browse AI skills, MCP tools & Composio connections. Supercharge your Android setup with curated extensions.",
+    "type": "blog"
+  },
+  {
+    "slug": "blog/best-ai-apps-android",
+    "url": "/blog/best-ai-apps-android",
+    "title": "25 Best AI Apps for Android in 2026",
+    "description": "A curated ranking of the top AI apps for Android in 2026 — from chatbots to agentic tools. Find the right one for you.",
+    "type": "blog"
+  },
+  {
+    "slug": "ai-agent-for-developers",
+    "url": "/ai-agent-for-developers",
+    "title": "Code on Your Phone — MCP, CLI & Ubuntu Terminal",
+    "description": "Run Claude Code, Codex & full CLI tools on your Android device. Git, SSH, MCP & VS Code Server in a mobile shell.",
+    "type": "landing"
+  },
+  {
+    "slug": "android-automation-power-user",
+    "url": "/android-automation-power-user",
+    "title": "Android Automation — Auto-Tap, Swipe & AI Scripts",
+    "description": "Auto-tap, swipe, type & run custom scripts on any Android app. No root needed. Your phone works for you.",
+    "type": "landing"
+  },
+  {
+    "slug": "privacy-first-ai-android",
+    "url": "/privacy-first-ai-android",
+    "title": "Privacy-First AI on Android — BYOK & Local Models",
+    "description": "Your data never leaves your device. Bring your own API keys (encrypted locally), run offline AI models. Zero telemetry.",
+    "type": "landing"
+  },
+  {
+    "slug": "terminal-on-android",
+    "url": "/terminal-on-android",
+    "title": "Ubuntu Terminal on Android — Full Linux (No Root)",
+    "description": "Run Ubuntu 24.04 LTS on your Android phone. apt, Python, Node, SSH — a real Linux environment in your pocket.",
+    "type": "landing"
+  },
+  {
+    "slug": "ai-marketplace-creators",
+    "url": "/ai-marketplace-creators",
+    "title": "Build & Sell AI Skills on Twent",
+    "description": "Turn your automations into products. Build skills once, reach millions of Android users. Simple publishing, fair revenue share.",
+    "type": "landing"
+  },
+  {
+    "slug": "enterprise-ai-agent",
+    "url": "/enterprise-ai-agent",
+    "title": "Twent Teams — AI Agents for Your Organization",
+    "description": "Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.",
+    "type": "landing"
+  },
+  {
+    "slug": "changelog",
+    "url": "/changelog",
+    "title": "Twent Changelog (2026) - What's New",
+    "description": "Every update, feature & bug fix. Stay up to date with the Android app that actually ships. Free download.",
+    "type": "changelog"
+  },
+  {
+    "slug": "privacy",
+    "url": "/privacy",
+    "title": "Twent Privacy Policy - Your Data, Your Control",
+    "description": "How your data is handled: encryption standards, what we never collect, and our transparency commitments.",
+    "type": "legal"
+  },
+  {
+    "slug": "terms",
+    "url": "/terms",
+    "title": "Twent Terms of Service - Free AI Agent Android",
+    "description": "Clear, human-readable terms for using Twent. No fine print surprises — just fair terms for a free product.",
+    "type": "legal"
+  },
+  {
+    "slug": "vs/chatgpt",
+    "url": "/vs/chatgpt",
+    "title": "Twent vs ChatGPT - Android AI Comparison (2026)",
+    "description": "ChatGPT chats. Twent acts — controls apps, runs terminals & automates your workflow from your Android device.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/claude",
+    "url": "/vs/claude",
+    "title": "Twent vs Claude - Mobile AI Agent (2026)",
+    "description": "Claude on mobile is limited. Twent brings Claude Code execution, floating overlay & Android automation to the same device.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/gemini",
+    "url": "/vs/gemini",
+    "title": "Twent vs Gemini - Android AI Agent (2026)",
+    "description": "Gemini lives in a browser. Twent runs on your device with BYOK privacy, offline models & full automation.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/nebula",
+    "url": "/vs/nebula",
+    "title": "Twent vs Nebula - Android AI Agent (2026)",
+    "description": "Device automation, local models & Ubuntu terminal — see how Twent compares to Nebula for Android power users.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/openclaw",
+    "url": "/vs/openclaw",
+    "title": "Twent vs OpenClaw - Android AI Agent (2026)",
+    "description": "More integrations, offline models & UI automation. How Twent stacks up against OpenClaw for Android.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/hermes-agent",
+    "url": "/vs/hermes-agent",
+    "title": "Twent vs Hermes Agent - Android Comparison (2026)",
+    "description": "Hermes Agent runs in Twent with full Ubuntu terminal & UI control. See how they compare on Android.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/n8n",
+    "url": "/vs/n8n",
+    "title": "Twent vs n8n - Automation on Android vs Cloud (2026)",
+    "description": "n8n runs in the cloud. Twent runs on your Android device with full terminal access & app automation.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/anything-llm",
+    "url": "/vs/anything-llm",
+    "title": "Twent vs AnythingLLM - Mobile AI Agent (2026)",
+    "description": "AnythingLLM is desktop-first. Twent brings agentic execution, automation & a skills marketplace to your phone.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/replika",
+    "url": "/vs/replika",
+    "title": "Twent vs Replika - Productivity vs Companion AI (2026)",
+    "description": "Replika is for conversation. Twent is for getting things done — automation, terminal & integrations on Android.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/copilot",
+    "url": "/vs/copilot",
+    "title": "Twent vs Copilot - Android AI Comparison (2026)",
+    "description": "Copilot is browser-based. Twent gives you a floating AI overlay, automation & local models on your device.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/perplexity",
+    "url": "/vs/perplexity",
+    "title": "Twent vs Perplexity - Search AI vs Action AI (2026)",
+    "description": "Perplexity finds answers. Twent acts on them — automates tasks, runs terminals & executes workflows on your phone.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/make",
+    "url": "/vs/make",
+    "title": "Twent vs Make - Automation on Android vs Workflows (2026)",
+    "description": "Make builds cloud workflows. Twent runs agents locally on your Android — with full terminal access & no internet required.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/zapier",
+    "url": "/vs/zapier",
+    "title": "Twent vs Zapier - Automation That Lives on Your Phone (2026)",
+    "description": "Zapier connects cloud apps. Twent connects to everything on your Android device, including apps Zapier can't reach.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/qordinate",
+    "url": "/vs/qordinate",
+    "title": "Twent vs Qordinate - Android AI Agent Comparison (2026)",
+    "description": "More integrations, offline capability & automation depth. How Twent compares to Qordinate for Android power users.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/omnara",
+    "url": "/vs/omnara",
+    "title": "Twent vs Omnara - Android AI Agent Comparison (2026)",
+    "description": "Twent delivers device-level automation, MCP ecosystem & a skills marketplace. See the full comparison for Android.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/manus",
+    "url": "/vs/manus",
+    "title": "Twent vs Manus - Mobile AI Agent (2026)",
+    "description": "Manus runs in the cloud. Twent runs on your Android with terminal access, local AI & full app control.",
+    "type": "compare"
+  },
+  {
+    "slug": "vs/onspace",
+    "url": "/vs/onspace",
+    "title": "Twent vs Onspace - Android AI Agent Comparison (2026)",
+    "description": "Privacy-first, offline models & Ubuntu terminal. See how Twent and Onspace compare on Android in 2026.",
+    "type": "compare"
+  }
+]

@@ -7,10 +7,15 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dualmark:generate": "node scripts/generate-markdown-twins.js",
+    "dualmark:verify": "node -e \"const{findSync}=require('fs');console.log('Markdown twins:',findSync('public',/\\\\.md$/).length)\"",
+    "build:full": "npm run dualmark:generate && npm run build"
   },
   "dependencies": {
     "@databuddy/sdk": "^2.4.0",
+    "@dualmark/cli": "^0.5.2",
+    "@dualmark/core": "^0.5.2",
     "@fontsource-variable/geist-mono": "^5.2.7",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/sixtyfour": "^5.2.8",

@@ -253,3 +253,42 @@
   Cache-Control: public, max-age=604800; stale-while-revalidate=2592000
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
+
+# ═══════════════════════════════════════════════════════
+# DUALMARK — AI Agent SEO Optimization
+# Markdown twins served at same URL as HTML (content negotiation via edge function)
+# Markdown files: AI agents get structured content
+# HTML responses: Link header points to markdown twin
+# ═══════════════════════════════════════════════════════
+
+# Markdown files (AI agent readable format)
+*.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  Vary: Accept, User-Agent
+  X-Generator: Twent-Dualmark/1.0
+
+# AI consumer guides
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  X-Generator: Twent-Dualmark/1.0
+
+/llms-full.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  X-Generator: Twent-Dualmark/1.0
+
+# Markdown sitemap for AI discovery
+/sitemap.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  X-Generator: Twent-Dualmark/1.0
