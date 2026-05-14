@@ -163,9 +163,13 @@
     <!-- Spanish (Colombia) -->
     <link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/" />
 
-<!-- Preconnect to CDN origins for faster resource loading -->
-    <!-- fonts.gstatic.com: variable font CDN (Inter, Saira Condensed, etc.) -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Self-hosted Inter variable font — no Google CDN preconnect needed
+         We self-host @fontsource-variable/inter in dist/assets/ -->
+    <!-- Preconnect to self-hosted font origin for ~150ms DNS+TLS savings -->
+    <link rel="preconnect" href="https://twent.xyz" crossorigin />
+    <!-- Preload Latin woff2 — the 49KB bottleneck on the critical path (1,781ms chain)
+         This is the only Inter file English speakers need; others are deferred. -->
+    <link rel="preload" href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- CSS non-blocking preload for potential ~330ms LCP improvement
      The blocking link below stays as safety net. onload only applies if browser
