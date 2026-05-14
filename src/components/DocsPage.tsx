@@ -1273,9 +1273,11 @@ export function DocsPage({
                 />
               </svg>
             </button>
-            <a href="/" className="flex items-center gap-2">
+<a href="/" className="flex items-center gap-2">
               <img
-                src="/OKFINALTWENTLOGO-removebg.png"
+                src="/twent-logo-48.webp"
+                srcset="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
+                sizes="48px"
                 alt="Twent logo - Personal AI agent for Android"
                 className="w-12 h-12 object-contain"
                 loading="eager"
