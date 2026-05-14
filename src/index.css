@@ -2,13 +2,9 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-@font-face {
-  font-family: "Calive Pixel";
-  src: url("/CalivepixelRegularDemo-OG8p8.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* CalivePixel — deferred load after first paint to unblock CSS parse
+   This was the critical path bottleneck at 1,146ms.
+   Using dynamic link injection so it doesn't block CSS parsing. */
 
 @theme {
   --font-mono: "Inter Variable", "JetBrains Mono", "Fira Code", sans-serif;

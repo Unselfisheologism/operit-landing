@@ -163,32 +163,9 @@
     <!-- Spanish (Colombia) -->
     <link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/" />
 
-    <!-- Preconnect to CDN origins for faster resource loading -->
+<!-- Preconnect to CDN origins for faster resource loading -->
     <!-- fonts.gstatic.com: variable font CDN (Inter, Saira Condensed, etc.) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- fonts.googleapis.com: font stylesheet CDN -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <!-- R2 bucket: APK and hero image host -->
-    <link rel="preconnect" href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev" crossorigin />
-
-    <!-- Font Preloading: Critical Inter Variable from Google Fonts CDN -->
-    <!-- font-display: swap prevents FOIT (flash of invisible text) -->
-    <!-- NOTE: CalivePixel OTF removed — it was preloaded but never used (loaded via CSS @font-face) -->
-    <!-- Cross-Origin required for Google Fonts CDN font preload -->
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAc.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
 
     <!-- CSS non-blocking preload for potential ~330ms LCP improvement
      The blocking link below stays as safety net. onload only applies if browser

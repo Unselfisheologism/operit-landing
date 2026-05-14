@@ -25,3 +25,25 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 )
+
+// Deferred CalivePixel font — unblocks CSS parse on critical path (was 1,146ms bottleneck)
+// Load after first paint so it doesn't block LCP
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(() => loadCalivePixel())
+} else {
+  setTimeout(loadCalivePixel, 200)
+}
+
+function loadCalivePixel() {
+  const style = document.createElement('style')
+  style.textContent = `
+    @font-face {
+      font-family: "Calive Pixel";
+      src: url("/CalivepixelRegularDemo-OG8p8.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  `
+  document.head.appendChild(style)
+}
