@@ -171,8 +171,28 @@
          This is the only Inter file English speakers need; others are deferred. -->
     <link rel="preload" href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- Preload CSS — critical for first paint -->
-    <link rel="preload" href="/assets/index-CHic6R8Y.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <!-- Critical CSS — inlined for instant first paint (unblocks LCP)
+         Non-critical styles loaded non-blocking below -->
+    <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{margin:0;font-family:"Inter Variable","JetBrains Mono","Fira Code",sans-serif;overflow-x:hidden;background:#f0ede8}
+    .dark body,.dark{background:#09090b}
+    section{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 1.5rem 4rem}
+    h1{font-size:clamp(2.5rem,8vw,4.5rem);line-height:1.08;letter-spacing:-0.02em;margin:0 0 1.5rem}
+    .font-display{font-family:"Calive Pixel","Inter Variable",sans-serif;letter-spacing:0.02em}
+    .font-mono{font-family:"Inter Variable","JetBrains Mono","Fira Code",sans-serif}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .animate-fade-in-up{animation:fadeInUp 0.6s ease-out forwards}
+    .animate-delay-100{animation-delay:0.1s}
+    .animate-delay-200{animation-delay:0.2s}
+    .animate-delay-300{animation-delay:0.3s}
+    ::selection{background:#3b82f6;color:#fff}
+    </style>
+
+    <!-- Defer non-critical CSS — browser paints immediately with inlined critical CSS,
+         then applies full stylesheet when it arrives. Eliminates render-blocking. -->
+    <link rel="preload" href="/assets/index-CHic6R8Y.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin />
     <noscript><link rel="stylesheet" href="/assets/index-CHic6R8Y.css" /></noscript>
 
     <!-- Content Security Policy — secondary defense layer

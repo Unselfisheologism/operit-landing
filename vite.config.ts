@@ -27,19 +27,25 @@ export default defineConfig({
         try {
           let html = readFileSync(htmlPath, 'utf-8')
 
+          // Remove the Rollup-injected blocking <link rel="stylesheet"> tag.
+          // Our non-blocking preload is already in <head> — this duplicate causes
+          // a render-blocking CSS request that delays LCP.
+          // It looks like:   <link rel="stylesheet" crossorigin href="/assets/index-XXXX.css">
+          html = html.replace(
+            /\n    <link rel="stylesheet" crossorigin href="\/assets\/index-[^"]+\.css">/,
+            '',
+          )
+
           // Skip if already patched
           if (html.includes('Critical path preloads')) return
 
           const entryJs = html.match(/src="(\/assets\/index-[^"]+\.js)"/)?.[1] ?? ''
-          const blockingCss = html.match(/rel="stylesheet"[^>]+href="(\/assets\/index-[^"]+\.css)"/)?.[1] ?? ''
 
           const criticalPreloads = [
             entryJs
               ? `    <link rel="modulepreload" crossorigin href="${entryJs}">`
               : '',
-            blockingCss
-              ? `    <link rel="preload" href="${blockingCss}" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>`
-              : '',
+            // CSS is now inlined as critical CSS in index.html — skip duplicate preload injection
           ]
             .filter(Boolean)
             .join('\n')
