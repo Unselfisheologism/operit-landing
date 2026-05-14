@@ -1,34 +1,28 @@
 /**
- * Dualmark Cloudflare Pages Function — Fully AEO Spec v1.0 Conformant
+ * Dualmark Cloudflare Pages Function — AEO Spec v1.0 Conformant
  *
  * Content negotiation per RFC 7231 §5.3.2
  * Implements: https://dualmark.dev/docs/spec/overview
  *
- * Run: npx wrangler pages dev dist --functions functions/
- * Deploy: npx wrangler pages deploy dist --project-name=twent
- *
- * Required: assets.run_worker_first = true (set in wrangler.toml or Pages dashboard)
+ * KEY: Uses context.env.ASSETS.fetch() for static assets to avoid
+ * recursive loops. NEVER use fetch(request) — it re-triggers this
+ * function and causes Error 1019.
  */
 
-// AI bot UA registry (19 known crawlers + common patterns)
+// AI bot UA registry
 const AI_BOT_PATTERNS = [
-  // Anthropic
   { pattern: /ClaudeBot/i, name: 'ClaudeBot', vendor: 'Anthropic' },
   { pattern: /anthropic-ai/i, name: 'Anthropic-AI', vendor: 'Anthropic' },
   { pattern: /Claude/i, name: 'Claude', vendor: 'Anthropic' },
-  // OpenAI
   { pattern: /GPTBot/i, name: 'GPTBot', vendor: 'OpenAI' },
   { pattern: /ChatGPT-User/i, name: 'ChatGPT-User', vendor: 'OpenAI' },
   { pattern: /OpenAI/i, name: 'OpenAI', vendor: 'OpenAI' },
-  // Google DeepMind
   { pattern: /Google-Extended/i, name: 'Google-Extended', vendor: 'Google' },
   { pattern: /Gemini/i, name: 'Gemini', vendor: 'Google' },
   { pattern: /Google-CloudAI/i, name: 'Google-CloudAI', vendor: 'Google' },
   { pattern: /GoogleOther/i, name: 'GoogleOther', vendor: 'Google' },
-  // Meta
   { pattern: /Meta-ExternalAgent/i, name: 'Meta-ExternalAgent', vendor: 'Meta' },
   { pattern: /FacebookBot/i, name: 'FacebookBot', vendor: 'Meta' },
-  // Common crawlers
   { pattern: /CCBot/i, name: 'CCBot', vendor: 'CommonCrawl' },
   { pattern: /Amazonbot/i, name: 'Amazonbot', vendor: 'Amazon' },
   { pattern: /Applebot/i, name: 'Applebot', vendor: 'Apple' },
@@ -38,7 +32,6 @@ const AI_BOT_PATTERNS = [
   { pattern: /PerplexityBot/i, name: 'PerplexityBot', vendor: 'Perplexity' },
   { pattern: /omgili/i, name: 'Omgili', vendor: 'Bing' },
   { pattern: /PanguBot/i, name: 'PanguBot', vendor: 'Pangu' },
-  // LLM / agent patterns
   { pattern: /Llama/i, name: 'Llama', vendor: 'Meta' },
   { pattern: /Mistral/i, name: 'Mistral', vendor: 'Mistral' },
   { pattern: /cohere/i, name: 'Cohere', vendor: 'Cohere' },
@@ -100,72 +93,49 @@ const AI_BOT_PATTERNS = [
   { pattern: /Agent[_-]?Bot/i, name: 'Agent-Bot', vendor: 'Agent' },
 ];
 
-/**
- * Parse Accept header per RFC 7231 §5.3.2
- * Returns sorted array of { type, subtype, q, specificity }
- */
 function parseAccept(header) {
   if (!header) return [];
-
   const parts = [];
   const ranges = header.split(',').map((r) => r.trim());
-
   for (const range of ranges) {
-    // Split on semicolon to get media range + q parameter
     const segments = range.split(';').map((s) => s.trim());
     const mediaRange = segments[0];
     let q = 1.0;
-
     for (const seg of segments.slice(1)) {
       if (seg.toLowerCase().startsWith('q=')) {
         q = parseFloat(seg.substring(2)) || 0;
       }
     }
-
     if (q <= 0) continue;
-
     const [type, subtype = '*'] = mediaRange.split('/').map((p) => p.trim().toLowerCase());
     const specificity = (type !== '*' ? 1 : 0) + (subtype !== '*' ? 1 : 0);
-
     parts.push({ type, subtype, q, specificity });
   }
-
-  // Sort descending by q, then by specificity (most specific first on ties)
   parts.sort((a, b) => {
     if (b.q !== a.q) return b.q - a.q;
     return b.specificity - a.specificity;
   });
-
   return parts;
 }
 
-/**
- * Check if media range matches a format
- */
 function matchesRange(range, format) {
   if (!range) return false;
   const { type, subtype } = range;
-  if (type === '*' && subtype === '*') return true; // */*
+  if (type === '*' && subtype === '*') return true;
   if (type === '*') return subtype === '*' || format.includes(subtype);
-  if (subtype === '*') return true; // type/*
+  if (subtype === '*') return true;
   if (format === 'markdown') {
     return type === 'text' && (subtype === 'markdown' || subtype === 'x-markdown');
   }
   return type === 'text' && subtype === format;
 }
 
-/**
- * Determine negotiated format (html | markdown | null)
- * null means 406 Not Acceptable
- */
 function negotiateFormat(acceptHeader) {
   const ranges = parseAccept(acceptHeader);
-  if (ranges.length === 0) return 'html'; // Default: no Accept = HTML
-
+  if (ranges.length === 0) return 'html';
   const formats = ['html', 'markdown'];
   let bestFormat = null;
   let bestQ = -1;
-
   for (const fmt of formats) {
     for (const range of ranges) {
       if (matchesRange(range, fmt) && range.q > bestQ) {
@@ -174,13 +144,9 @@ function negotiateFormat(acceptHeader) {
       }
     }
   }
-
-  return bestFormat; // null if no match (406)
+  return bestFormat;
 }
 
-/**
- * Detect AI bot from User-Agent
- */
 function detectAiBot(userAgent) {
   if (!userAgent) return null;
   for (const { pattern, name, vendor } of AI_BOT_PATTERNS) {
@@ -189,26 +155,17 @@ function detectAiBot(userAgent) {
   return null;
 }
 
-/**
- * Estimate token count (whitespace-split approximation)
- */
 function estimateTokens(text) {
-  return Math.ceil(text.trim().split(/\s+/).length * 1.3); // whitespace tokens × 1.3
+  return Math.ceil(text.trim().split(/\s+/).length * 1.3);
 }
 
-/**
- * Build the canonical markdown URL for a given HTML path
- */
 function getMarkdownTwin(pathname) {
-  if (pathname === '/' || pathname === '' || pathname === '/index.html') {
-    return '/index.md';
-  }
+  if (pathname === '/' || pathname === '' || pathname === '/index.html') return '/index.md';
   return pathname.replace(/\/$/, '') + '.md';
 }
 
-// Paths that should never be negotiated
 const SKIP_PREFIXES = ['/api/', '/_next/', '/functions/', '/admin/', '/assets/'];
-const SKIP_EXTENSIONS = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.mp4', '.webm', '.ogg', '.mp3', '.wav', '.zip', '.tar', '.gz', '.pdf', '.ico', '.avif'];
+const SKIP_EXTENSIONS = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.mp4', '.webm', '.ogg', '.mp3', '.wav', '.zip', '.tar', '.gz', '.pdf', '.avif'];
 
 export async function onRequest(context) {
   const { request, env } = context;
@@ -216,29 +173,24 @@ export async function onRequest(context) {
 
   // Only handle GET and HEAD
   if (!['GET', 'HEAD'].includes(request.method)) {
-    return fetch(request);
+    return env.ASSETS.fetch(request);
   }
 
   const pathname = url.pathname;
-
-  // Skip static assets and internal paths
   const ext = pathname.includes('.') ? '.' + pathname.split('.').pop().split('?')[0].toLowerCase() : '';
-  if (
-    SKIP_EXTENSIONS.includes(ext) ||
-    SKIP_PREFIXES.some((p) => pathname.startsWith(p))
-  ) {
-    return fetch(request);
+
+  if (SKIP_EXTENSIONS.includes(ext) || SKIP_PREFIXES.some((p) => pathname.startsWith(p))) {
+    return env.ASSETS.fetch(request);
   }
 
   const accept = request.headers.get('accept') || '';
   const userAgent = request.headers.get('user-agent') || '';
   const aiBot = detectAiBot(userAgent);
 
-  // ─── RFC 7231 Content Negotiation ────────────────────────────
+  // ─── RFC 7231 Content Negotiation ───
   const negotiated = negotiateFormat(accept);
 
   if (negotiated === null) {
-    // 406 Not Acceptable
     return new Response(
       `Not Acceptable\n\nSupported types: text/html, text/markdown\n`,
       {
@@ -253,93 +205,70 @@ export async function onRequest(context) {
     );
   }
 
-  // ─── AI Bot implicit markdown (optional spec extension) ────────
-  // Serve markdown to AI bots even if they Accept */* (browsers default)
-  // But respect explicit Accept: text/html from any UA
+  // ─── AI Bot implicit markdown (optional spec extension) ───
   let serveMarkdown = negotiated === 'markdown';
   if (aiBot && !accept.includes('text/html') && !accept.includes('application/xhtml')) {
     serveMarkdown = true;
   }
 
-  // ─── Markdown Twin ────────────────────────────────────────────
+  // ─── Markdown Twin ───
   if (serveMarkdown) {
     const mdPath = getMarkdownTwin(pathname);
     const mdUrl = new URL(request.url);
     mdUrl.pathname = mdPath;
 
-    try {
-      const mdResponse = await fetch(mdUrl.toString(), {
-        headers: {
-          'Accept': 'text/markdown, */*',
-          'User-Agent': userAgent,
-        },
-      });
+    // Fetch from ASSETS binding (static file, no loop)
+    const mdResponse = await env.ASSETS.fetch(mdUrl.toString());
 
-      if (mdResponse.ok) {
-        const mdContent = await mdResponse.text();
-        const tokens = estimateTokens(mdContent);
+    if (mdResponse.ok) {
+      const mdContent = await mdResponse.text();
+      const tokens = estimateTokens(mdContent);
 
-        // Determine Vary header
-        let varyHeader = 'Accept';
-        if (aiBot) varyHeader += ', User-Agent';
+      let varyHeader = 'Accept';
+      if (aiBot) varyHeader += ', User-Agent';
 
-        const headers = {
-          'Content-Type': 'text/markdown; charset=utf-8', // charset REQUIRED per spec
-          'Vary': varyHeader,
-          'X-Markdown-Tokens': String(tokens),             // REQUIRED per spec
-          'X-Robots-Tag': 'noindex, nofollow',           // REQUIRED per spec
-          'X-AEO-Version': '1.0',                         // recommended
-          'X-Content-Type-Options': 'nosniff',            // recommended
-          'X-Markdown-Twin': 'true',
-          'X-Source-URL': url.pathname,
-          'X-Generator': 'Twent-Dualmark/1.0',
-          'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
-          'X-Bot-Detected': aiBot ? `${aiBot.name} (${aiBot.vendor})` : 'none',
-        };
+      const htmlPath = pathname.replace(/\.md$/, '') || '/';
 
-        // Link header points back to HTML counterpart
-        const htmlPath = pathname === '/index.md' ? '/' : pathname.replace(/\.md$/, '');
-        headers['Link'] = `<${htmlPath}>; rel="alternate"; type="text/html"; title="HTML version"`;
+      const headers = {
+        'Content-Type': 'text/markdown; charset=utf-8',
+        'Vary': varyHeader,
+        'X-Markdown-Tokens': String(tokens),
+        'X-Robots-Tag': 'noindex, nofollow',
+        'X-AEO-Version': '1.0',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Markdown-Twin': 'true',
+        'X-Generator': 'Twent-Dualmark/1.0',
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'Link': `<${htmlPath}>; rel="alternate"; type="text/html"; title="HTML version"`,
+      };
 
-        // For HEAD requests, skip body
-        if (request.method === 'HEAD') {
-          return new Response(null, { status: 200, headers });
-        }
-
-        return new Response(mdContent, { status: 200, headers });
+      if (request.method === 'HEAD') {
+        return new Response(null, { status: 200, headers });
       }
-
-      // Markdown twin not found → serve HTML (markdown twin is optional for 200)
-      // But log it for observability
-      console.log(`Dualmark miss: ${pathname} → ${mdPath} not found`);
-    } catch (err) {
-      console.error(`Dualmark error: ${pathname}`, err.message);
+      return new Response(mdContent, { status: 200, headers });
     }
+
+    console.log(`Dualmark miss: ${pathname} → ${mdPath}`);
   }
 
-  // ─── HTML Response ───────────────────────────────────────────
-  const htmlResponse = await fetch(request);
+  // ─── HTML Response ───
+  // CRITICAL: use env.ASSETS.fetch() — never fetch(request) as it loops back into this function
+  const htmlResponse = await env.ASSETS.fetch(request);
 
   if (!htmlResponse.headers.get('content-type')?.includes('text/html')) {
     return htmlResponse;
   }
 
-  // Determine Vary
   let varyValue = 'Accept';
   if (aiBot) varyValue += ', User-Agent';
 
-  // Markdown twin URL for Link header
-  const mdTwin = getMarkdownTwin(pathname === '/index.html' ? '/' : pathname);
-
+  const mdTwin = getMarkdownTwin(pathname.replace('/index.html', ''));
   const newHeaders = new Headers(htmlResponse.headers);
   newHeaders.set('Vary', varyValue);
-  // Append Link header (don't overwrite existing)
   const existingLink = newHeaders.get('Link') || '';
   const newLink = `<${mdTwin}>; rel="alternate"; type="text/markdown"; title="AI-readable markdown twin"`;
   newHeaders.set('Link', existingLink ? `${existingLink}, ${newLink}` : newLink);
-  // Surrogate-Key for cache purging
   newHeaders.set('Surrogate-Key', 'dualmark markdown-twin');
-  // Recommended: AEO version
   newHeaders.set('X-AEO-Version', '1.0');
 
   return new Response(htmlResponse.body, {
