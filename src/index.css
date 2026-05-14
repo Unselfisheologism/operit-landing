@@ -11,8 +11,9 @@
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-display: "Calive Pixel", "Inter Variable", sans-serif;
   --font-secondary: "Inter Variable", sans-serif;
-  --font-retro: "Special Elite", "Courier New", monospace;
-  --font-playful: "Swanky and Moo Moo", cursive;
+
+  --font-retro: "Courier New", monospace;
+  --font-playful: cursive;
   
   --color-offwhite: #f0ede8;
   --color-offwhite-warm: #e8e4de;
