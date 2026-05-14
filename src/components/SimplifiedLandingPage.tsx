@@ -217,9 +217,10 @@ export function SimplifiedLandingPage({
                   : "opacity-0 translate-y-6"
               }`}
             >
-              <a
+<a
                 href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
+                aria-label="Download Twent APK"
+                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
                 <svg
@@ -423,9 +424,10 @@ export function SimplifiedLandingPage({
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
               Download Twent and see what your phone can really do.
             </p>
-            <a
+<a
               href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium transition-colors duration-200"
+              aria-label="Download Twent APK"
+              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
             >
               Download Free APK
               <svg

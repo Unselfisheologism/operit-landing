@@ -388,9 +388,10 @@ export function PrivacyPolicy({
               </a>{" "}
               or join our{" "}
               <a
-                href="https://discord.gg/dUFrWm4w"
+href="https://discord.gg/dUFrWm4w"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Join Twent Discord (opens in new tab)"
                 className="text-blue-500 hover:underline"
               >
                 Discord

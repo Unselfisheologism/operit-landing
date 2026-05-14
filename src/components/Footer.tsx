@@ -220,12 +220,12 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+<div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {Object.entries(links).map(([category, items]) => (
             <div key={category}>
-              <h4 className="text-xs font-secondary text-orange-500 uppercase tracking-[0.2em] mb-4">
+<h2 className="text-xs font-secondary text-orange-500 uppercase tracking-[0.2em] mb-4">
                 {category}
-              </h4>
+              </h2>
               <ul
                 className={
                   category === "Connect"
@@ -239,6 +239,7 @@ export function Footer() {
                       href={item.href}
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noopener noreferrer" : undefined}
+                      aria-label={item.external ? `${item.label} (opens in new tab)` : undefined}
                       className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors tracking-wide flex items-center gap-2"
                     >
                       {item.icon ? item.icon : item.label}
