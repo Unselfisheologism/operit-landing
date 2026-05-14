@@ -17,8 +17,9 @@ const NAV_LINKS = [
 // Minecraft-style pixel toggle
 function ThemeToggle({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
   return (
-    <label className="relative inline-block w-[4em] h-[2em] cursor-pointer shrink-0">
+    <label htmlFor="theme-toggle" className="relative inline-block w-[4em] h-[2em] cursor-pointer shrink-0">
       <input
+        id="theme-toggle"
         type="checkbox"
         checked={dark}
         onChange={onToggle}
