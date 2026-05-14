@@ -205,7 +205,7 @@ function DesktopHeader({
 >
         <img
           src="/twent-logo-48.webp"
-          srcset="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
+          srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
           sizes="56px"
           alt="Twent logo - Personal AI agent for Android"
           className="w-14 h-14 object-contain"
@@ -275,7 +275,7 @@ function MobileHeader({
       <a href="#" className="flex items-center gap-2">
         <img
           src="/twent-logo-48.webp"
-          srcset="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
+          srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
           sizes="48px"
           alt="Twent logo - Personal AI agent for Android"
           className="w-12 h-12 object-contain"
