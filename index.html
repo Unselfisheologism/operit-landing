@@ -171,11 +171,9 @@
          This is the only Inter file English speakers need; others are deferred. -->
     <link rel="preload" href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- CSS non-blocking preload for potential ~330ms LCP improvement
-     The blocking link below stays as safety net. onload only applies if browser
-     fires the event before HTML parsing completes the body — unreliable alone. -->
-    <link rel="preload" href="/assets/index-CHHrO8uO.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/assets/index-CHHrO8uO.css" /></noscript>
+    <!-- Preload CSS — critical for first paint -->
+    <link rel="preload" href="/assets/index-CHic6R8Y.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/assets/index-CHic6R8Y.css" /></noscript>
 
     <!-- Content Security Policy — secondary defense layer
          Primary HSTS/CSP headers are set by Cloudflare in _headers
