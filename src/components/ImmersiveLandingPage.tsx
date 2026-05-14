@@ -345,11 +345,14 @@ function PinnedScrollytelling() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
-  useEffect(() => {
+useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    const onScroll = () => {
+    let rafId: number;
+    let ticking = false;
+
+    const update = () => {
       const rect = container.getBoundingClientRect();
       const totalScroll = container.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
@@ -359,11 +362,22 @@ function PinnedScrollytelling() {
         Math.floor(pct * STORIES.length),
       );
       setActive(idx);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(update);
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    update();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const story = STORIES[active];

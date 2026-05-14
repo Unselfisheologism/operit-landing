@@ -49,7 +49,10 @@ export function TableOfContents({ items, className = "" }: TableOfContentsProps)
 
   // Track scroll position to highlight active section
   useEffect(() => {
-    const handleScroll = () => {
+    let rafId: number;
+    let ticking = false;
+
+    const update = () => {
       const headings = items.map((item) => document.getElementById(item.id));
 
       // Find the heading that's currently in view
@@ -63,14 +66,23 @@ export function TableOfContents({ items, className = "" }: TableOfContentsProps)
         }
       }
 
-      if (currentId !== activeId) {
-        setActiveId(currentId);
+      setActiveId(currentId);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(update);
+        ticking = true;
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [items, activeId]);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [items]);
 
   if (items.length === 0) return null;
 
