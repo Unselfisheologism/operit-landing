@@ -266,19 +266,26 @@ export function ParticleField() {
 
     let animId: number;
     const particles: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = [];
+    let canvasW = 0;
+    let canvasH = 0;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      canvasW = canvas.offsetWidth * window.devicePixelRatio;
+      canvasH = canvas.offsetHeight * window.devicePixelRatio;
+      canvas.width = canvasW;
+      canvas.height = canvasH;
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      // Update display dimensions
+      canvasW = canvas.offsetWidth;
+      canvasH = canvas.offsetHeight;
     };
     resize();
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", resize, { passive: true });
 
     for (let i = 0; i < 60; i++) {
       particles.push({
-        x: Math.random() * canvas.offsetWidth,
-        y: Math.random() * canvas.offsetHeight,
+        x: Math.random() * canvasW,
+        y: Math.random() * canvasH,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
         r: Math.random() * 1.5 + 0.5,
@@ -287,9 +294,9 @@ export function ParticleField() {
     }
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
-      const w = canvas.offsetWidth;
-      const h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, canvasW, canvasH);
+      const w = canvasW;
+      const h = canvasH;
 
       particles.forEach((p) => {
         p.x += p.vx;
