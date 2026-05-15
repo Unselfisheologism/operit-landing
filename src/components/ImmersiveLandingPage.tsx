@@ -406,10 +406,10 @@ useEffect(() => {
                   {story.tag}
                 </span>
               </div>
-              <p className="font-display text-3xl md:text-4xl lg:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4">
+<p className="font-display text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-4">
                 {story.heading}
               </p>
-              <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-zinc-600 leading-relaxed max-w-lg">
                 {story.description}
               </p>
             </div>
@@ -490,7 +490,7 @@ export function ImmersiveLandingPage({
     return () => observer.disconnect();
   }, [heroRef]);
 
-  return (
+return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SharedSchemaMarkup />
       <GrainOverlay />
@@ -510,7 +510,7 @@ export function ImmersiveLandingPage({
                   : "opacity-0 translate-y-12"
               }`}
             >
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter mb-6">
+<h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-zinc-100 leading-[1.1] tracking-tighter mb-6">
                 Your Personal Agentic OS{" "}
                 <span className="text-blue-500">for Android</span>
               </h1>
@@ -523,7 +523,7 @@ export function ImmersiveLandingPage({
                   : "opacity-0 translate-y-12"
               }`}
             >
-              <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
+              <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
                 The AI assistant that connects, remembers, and automates. Run
                 Claude Code, control any app, and keep your data private.
               </p>
@@ -559,7 +559,7 @@ export function ImmersiveLandingPage({
                 </a>
                 <a
                   href="/docs"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors duration-200"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-500 text-zinc-100 font-medium transition-colors duration-200"
                 >
                   View Docs
                 </a>
@@ -576,10 +576,10 @@ export function ImmersiveLandingPage({
               }`}
             >
               <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-zinc-500 font-mono">
+<span className="text-xs text-zinc-500 font-mono">
                   Scroll to explore
                 </span>
-                <div className="w-px h-12 bg-gradient-to-b from-zinc-400 to-transparent" />
+                <div className="w-px h-12 bg-gradient-to-b from-zinc-600 to-transparent" />
               </div>
             </div>
           </div>

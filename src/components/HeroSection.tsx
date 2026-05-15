@@ -2,7 +2,7 @@ import { HeroToast } from "./HeroToast";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden bg-offwhite dark:bg-zinc-950">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden bg-zinc-950">
       {/* Plotter SVG pattern background */}
       <div
         className="absolute inset-0 opacity-[0.06] hidden dark:block"
@@ -25,14 +25,14 @@ export function HeroSection() {
         <HeroToast />
 
         {/* Main headline — Loss Aversion Framing (Principle 7) */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.08] mb-6 animate-fade-in-up animate-delay-100">
-          <span className="text-zinc-900 dark:text-zinc-100">Twent: Your AI agent can chat all day.</span>
+<h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.08] mb-6 animate-fade-in-up animate-delay-100 text-zinc-100">
+          <span className="text-zinc-100">Twent: Your AI agent can chat all day.</span>
           <br />
           <span className="text-orange-500">But it can&apos;t do a single thing on your phone.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mb-10 leading-relaxed animate-fade-in-up animate-delay-200 text-center mx-auto">
+        <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl mb-10 leading-relaxed animate-fade-in-up animate-delay-200 text-center mx-auto">
           Twent is a personal agentic OS that lives in your pocket. It sees your
           screen, taps buttons, runs terminals, connects 1000+ apps, and
           automates entire workflows — activated by a long-press or your voice.
@@ -57,7 +57,7 @@ export function HeroSection() {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-500 animate-fade-in-up animate-delay-400">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-600 animate-fade-in-up animate-delay-400">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-orange-500" />
             Android 8.0+
