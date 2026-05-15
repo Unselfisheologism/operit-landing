@@ -440,6 +440,9 @@ Allow: /vs/omnara
 Allow: /vs/manus
 Allow: /vs/onspace
 Allow: /vs/perplexity
+Allow: /vs/pi
+Allow: /vs/siri-bixby
+Allow: /vs/google-ai-test-kitchen
 Allow: /ai-agent-for-developers
 Allow: /android-automation-power-user
 Allow: /privacy-first-ai-android

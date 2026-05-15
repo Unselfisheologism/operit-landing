@@ -88,7 +88,7 @@ const comparisons = [
       "App-specific contexts",
     ],
     verdict: "Siri/Bixby automate the OS. Twent automates everything.",
-    pageUrl: null,
+    pageUrl: "/vs/siri-bixby",
   },
   {
     id: "vs-google-ai-test-kitchen",
@@ -113,7 +113,7 @@ const comparisons = [
       "Whisper integration",
     ],
     verdict: "Test Kitchen shows demos. Twent runs production.",
-    pageUrl: null,
+    pageUrl: "/vs/google-ai-test-kitchen",
   },
   {
     id: "vs-copilot",
@@ -188,7 +188,7 @@ const comparisons = [
       "Completely free",
     ],
     verdict: "Pi is great for talking. Twent is great for doing.",
-    pageUrl: null,
+    pageUrl: "/vs/pi",
   },
   {
     id: "vs-gemini",

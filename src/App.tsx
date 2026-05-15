@@ -40,6 +40,9 @@ const QordinateComparisonPage = lazy(() => import("./pages/vs/qordinate"));
 const OmnaraComparisonPage = lazy(() => import("./pages/vs/omnara"));
 const ManusComparisonPage = lazy(() => import("./pages/vs/manus"));
 const OnspaceComparisonPage = lazy(() => import("./pages/vs/onspace"));
+const PiComparisonPage = lazy(() => import("./pages/vs/pi"));
+const SiriBixbyComparisonPage = lazy(() => import("./pages/vs/siri-bixby"));
+const GoogleAiTestKitchenComparisonPage = lazy(() => import("./pages/vs/google-ai-test-kitchen"));
 
 import { languages, changeLanguage, getDirection } from "./i18n";
 
@@ -483,6 +486,34 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <OnspaceComparisonPage />
+      </Suspense>
+    );
+  }
+
+  if (routePath.startsWith("/vs/pi")) {
+    return (
+      <Suspense fallback={<LoadingSpinner />}>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PiComparisonPage />
+      </Suspense>
+    );
+  }
+  if (routePath.startsWith("/vs/siri-bixby")) {
+    return (
+      <Suspense fallback={<LoadingSpinner />}>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <SiriBixbyComparisonPage />
+      </Suspense>
+    );
+  }
+  if (routePath.startsWith("/vs/google-ai-test-kitchen")) {
+    return (
+      <Suspense fallback={<LoadingSpinner />}>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <GoogleAiTestKitchenComparisonPage />
       </Suspense>
     );
   }
