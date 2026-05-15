@@ -5,6 +5,7 @@ import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
+import { ChatAnimation } from "./ChatAnimation";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -581,7 +582,12 @@ return (
                 <div className="w-px h-12 bg-gradient-to-b from-zinc-600 to-transparent" />
               </div>
             </div>
-          </div>
+</div>
+        </section>
+
+        {/* AI Chat Animation Demo */}
+        <section className="w-full flex items-center justify-center py-16 px-4 bg-zinc-950">
+          <ChatAnimation />
         </section>
 
         {/* Pinned Scrollytelling — 8 stories */}

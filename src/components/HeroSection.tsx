@@ -1,4 +1,5 @@
 import { HeroToast } from "./HeroToast";
+import { ChatAnimation } from "./ChatAnimation";
 
 export function HeroSection() {
   return (
@@ -56,7 +57,7 @@ export function HeroSection() {
           </a>
         </div>
 
-        {/* Trust indicators */}
+{/* Trust indicators */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-600 animate-fade-in-up animate-delay-400">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-orange-500" />
@@ -66,10 +67,12 @@ export function HeroSection() {
           <span>Local AI Support</span>
         </div>
 
-
       </div>
 
-      {/* Scroll indicator */}
+      {/* Chat Animation - AI Chat Demo */}
+      <div className="w-full flex justify-center py-12 px-4">
+        <ChatAnimation />
+      </div>
     </section>
   );
 }
