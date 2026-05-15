@@ -26,7 +26,8 @@
 # BEGIN Cloudflare Managed content
 
 User-agent: *
-Content-Signal: search=yes,ai-train=no
+# Content-Signal: search=yes,ai-train=no
+# (Cloudflare-specific: not standard robots.txt. Commented so Google respects Allow: /)
 Allow: /
 
 User-agent: Amazonbot
