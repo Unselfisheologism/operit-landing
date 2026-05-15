@@ -34,7 +34,7 @@ const comparisons = [
       "Image generation",
     ],
     verdict: "Replika excels at conversation. Twent excels at action.",
-    pageUrl: "/twent-vs-replika",
+    pageUrl: "/vs/replika",
   },
   {
     id: "vs-chatgpt",
@@ -61,7 +61,7 @@ const comparisons = [
       "Voice mode",
     ],
     verdict: "ChatGPT is a better chatbot. Twent is a better AI agent.",
-    pageUrl: null,
+    pageUrl: "/vs/chatgpt",
   },
   {
     id: "vs-native-assistants",
@@ -138,7 +138,7 @@ const comparisons = [
       "Image generation (DALL-E 3)",
     ],
     verdict: "Copilot is great for Microsoft users. Twent is great for getting things done.",
-    pageUrl: "/twent-vs-copilot",
+    pageUrl: "/vs/copilot",
   },
   {
     id: "vs-claude",
@@ -163,7 +163,7 @@ const comparisons = [
       "Vision capabilities",
     ],
     verdict: "Claude mobile is great for chat. Twent is great for action.",
-    pageUrl: null,
+    pageUrl: "/vs/claude",
   },
   {
     id: "vs-pi",
@@ -213,7 +213,7 @@ const comparisons = [
       "Gmail/Docs/Sheets (paid Workspace)",
     ],
     verdict: "Gemini lives in Google apps. Twent lives on your device.",
-    pageUrl: "/twent-vs-gemini",
+    pageUrl: "/vs/gemini",
   },
 ];
 
@@ -225,12 +225,6 @@ interface ComparisonCardProps {
 function ComparisonCard({ comp, index }: ComparisonCardProps) {
   const [ref, inView] = useInView();
   const [expanded, setExpanded] = useState(false);
-
-  const difficultyColor = {
-    low: "text-green-600 bg-green-50",
-    medium: "text-yellow-600 bg-yellow-50",
-    high: "text-red-600 bg-red-50",
-  }[comp.difficulty];
 
   return (
     <div
@@ -257,16 +251,6 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
             <div className="flex items-center gap-3 mt-1 flex-wrap">
               <span className="text-xs font-mono text-zinc-500">
                 {comp.keyword}
-              </span>
-              <span className="w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-              <span className="text-xs text-zinc-400">
-                {comp.searchVolume}
-              </span>
-              <span className="text-xs text-zinc-400">
-                CPC: {comp.cpc}
-              </span>
-              <span className={`text-xs px-1.5 py-0.5 rounded ${difficultyColor}`}>
-                {comp.difficulty}
               </span>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import { HeroToast } from "./HeroToast";
-import { ChatAnimation } from "./ChatAnimation";
 
 export function HeroSection() {
   return (
@@ -67,11 +66,6 @@ export function HeroSection() {
           <span>Local AI Support</span>
         </div>
 
-      </div>
-
-      {/* Chat Animation - AI Chat Demo */}
-      <div className="w-full flex justify-center py-12 px-4">
-        <ChatAnimation />
       </div>
     </section>
   );
