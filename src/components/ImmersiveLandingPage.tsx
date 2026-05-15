@@ -394,9 +394,9 @@ useEffect(() => {
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Text content */}
           <div className="relative">
-            <div key={active} className="animate-fadeIn">
+<div key={active} className="animate-fadeIn">
               <div
-                className={`inline-flex items-center gap-2 mb-4 ${colors.tag}`}
+                className="inline-flex items-center gap-2 mb-4 text-blue-500"
               >
                 <span className="font-mono text-sm">
                   {String(active + 1).padStart(2, "0")}
@@ -406,10 +406,10 @@ useEffect(() => {
                   {story.tag}
                 </span>
               </div>
-<p className="font-display text-3xl md:text-4xl lg:text-5xl text-zinc-900 tracking-tight leading-tight mb-4">
+              <p className="font-display text-3xl md:text-4xl lg:text-5xl text-orange-500 tracking-tight leading-tight mb-4">
                 {story.heading}
               </p>
-              <p className="text-base md:text-lg text-zinc-600 leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-blue-500 leading-relaxed max-w-lg">
                 {story.description}
               </p>
             </div>
