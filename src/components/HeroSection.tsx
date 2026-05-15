@@ -5,17 +5,17 @@ export function HeroSection() {
     <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 overflow-hidden bg-offwhite dark:bg-zinc-950">
       {/* Plotter SVG pattern background */}
       <div
-        className="absolute inset-0 opacity-[0.06] dark:opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.06] hidden dark:block"
         style={{
-          backgroundImage: "url(/plotter-light.svg)",
+          backgroundImage: "url(/plotter-dark.svg)",
           backgroundSize: "600px",
           backgroundRepeat: "repeat",
         }}
       />
       <div
-        className="absolute inset-0 hidden dark:block opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.06] dark:opacity-0"
         style={{
-          backgroundImage: "url(/plotter-dark.svg)",
+          backgroundImage: "url(/plotter-light.svg)",
           backgroundSize: "600px",
           backgroundRepeat: "repeat",
         }}

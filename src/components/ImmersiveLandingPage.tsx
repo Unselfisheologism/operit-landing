@@ -635,19 +635,19 @@ export function ImmersiveLandingPage({
         {/* VS Comparisons — capture [product] vs [competitor] search traffic */}
         <ComparisonBlock />
 
-        {/* Final CTA */}
-        <section className="py-20 md:py-28 px-6 bg-zinc-900 dark:bg-zinc-950">
+{/* Final CTA */}
+        <section className="py-20 md:py-28 px-6 dark:bg-zinc-950">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-white tracking-tight mb-6">
+            <h2 className="font-display text-3xl md:text-4xl dark:text-zinc-100 text-zinc-900 tracking-tight mb-6">
               Ready to try it?
             </h2>
-            <p className="text-lg text-zinc-400 mb-8">
+            <p className="text-lg dark:text-zinc-400 text-zinc-600 mb-8">
               Download Twent and see what your phone can really do.
             </p>
 <a
               href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
               aria-label="Download Twent APK"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
+              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:text-white text-white font-medium transition-colors duration-200"
             >
               Download Free APK
               <svg
