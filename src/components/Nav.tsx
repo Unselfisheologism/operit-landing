@@ -126,8 +126,8 @@ function MobileOverlay({
 // Always centered, never full-width.
 function DesktopHeader({
   dark,
-  onToggle,
   scrolled,
+  onToggle: _onToggle,
 }: {
   dark: boolean;
   onToggle: () => void;
@@ -222,9 +222,9 @@ function DesktopHeader({
 // Hamburger opens overlay with all nav links + download button.
 function MobileHeader({
   dark,
-  onToggle,
   menuOpen,
   setMenuOpen,
+  onToggle: _onToggle,
 }: {
   dark: boolean;
   onToggle: () => void;
