@@ -510,9 +510,8 @@ return (
                   : "opacity-0 translate-y-12"
               }`}
             >
-<h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-zinc-100 leading-[1.1] tracking-tighter mb-6">
-                Your Personal Agentic OS{" "}
-                <span className="text-blue-500">for Android</span>
+<h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter mb-6">
+                Your Personal Agentic OS for Android
               </h1>
             </div>
 
@@ -523,7 +522,7 @@ return (
                   : "opacity-0 translate-y-12"
               }`}
             >
-              <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-12">
+<p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
                 The AI assistant that connects, remembers, and automates. Run
                 Claude Code, control any app, and keep your data private.
               </p>
