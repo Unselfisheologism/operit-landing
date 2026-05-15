@@ -1,389 +1,583 @@
 import { useEffect, useRef } from "react";
 
-// Color palette matching the Android AI Chat page
+// ═══════════════════════════════════════════════════════════════════════
+// TWENT ANDROID APP — EXACT COLOR PALETTE FROM Color.kt + Theme.kt
+// ═══════════════════════════════════════════════════════════════════════
 const COLORS = {
-  bg: "#09090b",           // zinc-950 (dark background)
-  surface: "#18181b",      // zinc-900 (AI message bg)
-  surfaceVariant: "#27272a",// zinc-800 (tool result bg)
-  primaryContainer: "#3b82f6", // blue primaryContainer (user message bg)
-  onPrimaryContainer: "#ffffff", // white text on user messages
-  onSurface: "#f4f4f5",     // zinc-100 (AI text)
-  onSurfaceVariant: "#a1a1aa", // zinc-400 (secondary text)
-  border: "#3f3f46",        // zinc-700
-  success: "#22c55e",       // green
-  warning: "#f97316",       // orange
-  toolBg: "#18181b",
-  toolText: "#a1a1aa",
-  toolAccent: "#3b82f6",
-  thinkingBg: "#27272a",
-  thinkingText: "#a1a1aa",
+  // Core background colors from Twent's DarkColorScheme
+  bg: "#1E1E1E",               // DarkBg — main background
+  surface: "#141414",          // DarkSurface — message bubbles
+  surfaceVariant: "#282828",    // DarkSurfaceHigh — tool results
+  surfaceHighest: "#3C3C3C",   // DarkSurfaceHighest — borders
+
+  // Brand colors
+  primary: "#F09020",          // OrangePrimary — main accent (orange)
+  secondary: "#80C0F0",        // CyanPrimary — secondary accent (cyan)
+  tertiary: "#809090",          // SteelPrimary — tertiary
+
+  // Text colors
+  onBg: "#B0B0B0",             // OnDarkBg — primary text on dark
+  onSurfaceVariant: "#909090",  // muted text
+  onPrimaryContainer: "#ffffff", // white on user bubble
+
+  // Status colors
+  success: "#4CAF50",          // green for tool results
+  warning: "#F09020",          // orange for thinking/process
+  error: "#FF4444",
+
+  // Transparent variants
+  primaryAlpha15: "rgba(240,144,32,0.15)",
+  secondaryAlpha15: "rgba(128,192,240,0.15)",
+  borderAlpha30: "rgba(128,128,128,0.3)",
 };
 
-interface ToolCall {
-  id: string;
-  name: string;
-  params?: Record<string, string>;
-  result?: string;
-  status?: "loading" | "success" | "done";
+// Tool icon map (from ToolDisplayComponents.kt getToolIcon function)
+const TOOL_ICONS: Record<string, string> = {
+  composio_get_toolkit_docs: "📦",
+  composio_list_connections: "🔗",
+  create_workflow: "⚙️",
+  send_notification: "🔔",
+  gmail_search: "📧",
+  gmail_get_email: "📬",
+  default: "⬡",
+};
+
+function getToolIcon(toolName: string): string {
+  for (const [key, icon] of Object.entries(TOOL_ICONS)) {
+    if (toolName.toLowerCase().includes(key)) return icon;
+  }
+  return TOOL_ICONS.default;
 }
 
-const SCENARIO: {
-  messages: Array<{
-    sender: "user" | "ai" | "thinking" | "tool-call" | "tool-result";
-    content: string;
-    timestamp?: number;
-    toolCalls?: ToolCall[];
-  }>;
-  duration: number;
-} = {
-  duration: 10500,
-  messages: [
-    {
-      sender: "user",
-      content: "everyday at 9AM, report to me with all the actionable insights from all my newsletters.",
-      timestamp: 0,
+// ═══════════════════════════════════════════════════════════════════════
+// ANIMATION SEQUENCE — 10.5 seconds total
+// ═══════════════════════════════════════════════════════════════════════
+const SCENARIO_MSGS = [
+  // 0ms — User sends message
+  {
+    t: 0,
+    sender: "user",
+    content: "everyday at 9AM, report to me with all the actionable insights from all my newsletters.",
+  },
+  // 350ms — AI starts responding (empty bubble + "Response" header appears)
+  {
+    t: 350,
+    sender: "ai-start",
+    content: "",
+  },
+  // 600ms — Thinking bubble appears
+  {
+    t: 600,
+    sender: "thinking",
+    content: "Setting up a daily newsletter digest workflow. First I'll check the Gmail toolkit, then create a scheduled automation.",
+  },
+  // 1400ms — Tool call: composio_get_toolkit_docs
+  {
+    t: 1400,
+    sender: "tool-call",
+    tool: "composio_get_toolkit_docs",
+    params: { toolkit_slug: "gmail" },
+  },
+  // 2000ms — Tool result
+  {
+    t: 2000,
+    sender: "tool-result",
+    content: "Gmail toolkit loaded — 47 tools: GMAIL_SEARCH_EMAILS, GMAIL_GET_EMAIL, GMAIL_LIST_LABELS, GMAIL_SEND_EMAIL...",
+  },
+  // 2700ms — Tool call: composio_list_connections
+  {
+    t: 2700,
+    sender: "tool-call",
+    tool: "composio_list_connections",
+    params: {},
+  },
+  // 3200ms — Tool result
+  {
+    t: 3200,
+    sender: "tool-result",
+    content: "Connected: gmail_primary (OAuth, last sync: 5 min ago)",
+  },
+  // 3900ms — Tool call: create_workflow
+  {
+    t: 3900,
+    sender: "tool-call",
+    tool: "create_workflow",
+    params: {
+      trigger: "schedule",
+      cron: "0 9 * * *",
+      name: "Daily Newsletter Digest",
+      steps: "GMAIL_SEARCH_EMAILS → AI Extract Insights → Send Notification",
     },
-    {
-      sender: "ai",
-      content: "",
-      timestamp: 300,
+  },
+  // 4700ms — Tool result
+  {
+    t: 4700,
+    sender: "tool-result",
+    content: "Workflow created ✓ wf_newsletter_daily — triggers at 09:00 AM daily",
+  },
+  // 5400ms — Tool call: send_notification
+  {
+    t: 5400,
+    sender: "tool-call",
+    tool: "send_notification",
+    params: {
+      title: "Newsletter Agent Active",
+      body: "Daily digest scheduled. First report in 24h.",
     },
-    {
-      sender: "thinking",
-      content: "The user wants a daily automated newsletter summary. I'll set up a scheduled workflow using Composio's Gmail toolkit to fetch newsletter emails and deliver insights.",
-      timestamp: 600,
-    },
-    {
-      sender: "tool-call",
-      content: "composio_get_toolkit_docs",
-      timestamp: 1400,
-      toolCalls: [
-        {
-          id: "1",
-          name: "composio_get_toolkit_docs",
-          params: { toolkit_slug: "gmail" },
-          status: "loading",
-        },
-      ],
-    },
-    {
-      sender: "tool-result",
-      content: "Gmail toolkit loaded — found 47 tools including GMAIL_SEARCH_EMAILS, GMAIL_GET_EMAIL, GMAIL_LIST_LABELS",
-      timestamp: 2200,
-    },
-    {
-      sender: "tool-call",
-      content: "composio_list_connections",
-      timestamp: 2900,
-      toolCalls: [
-        {
-          id: "2",
-          name: "composio_list_connections",
-          status: "loading",
-        },
-      ],
-    },
-    {
-      sender: "tool-result",
-      content: "Found 1 Gmail connection: account_id=gmail_primary (oauth: true, last_sync: 2026-05-15T07:30:00Z)",
-      timestamp: 3700,
-    },
-    {
-      sender: "tool-call",
-      content: "create_workflow",
-      timestamp: 4500,
-      toolCalls: [
-        {
-          id: "3",
-          name: "create_workflow",
-          params: {
-            trigger: "schedule",
-            schedule: "0 9 * * *",
-            name: "Daily Newsletter Insights",
-            steps: '1. GMAIL_SEARCH_EMAILS (label:Newsletter, from:last-week)\n2. AI process & extract insights\n3. send_notification with summary',
-          },
-          status: "loading",
-        },
-      ],
-    },
-    {
-      sender: "tool-result",
-      content: "Workflow created: workflow_id=wf_newsletter_daily — triggers every day at 09:00 AM",
-      timestamp: 5700,
-    },
-    {
-      sender: "tool-call",
-      content: "send_notification",
-      timestamp: 6500,
-      toolCalls: [
-        {
-          id: "4",
-          name: "send_notification",
-          params: {
-            title: "Newsletter Agent Active",
-            body: "Daily newsletter insights workflow scheduled. First report at 9:00 AM tomorrow.",
-          },
-          status: "loading",
-        },
-      ],
-    },
-    {
-      sender: "tool-result",
-      content: "Notification sent ✓",
-      timestamp: 7300,
-    },
-    {
-      sender: "ai",
-      content: "Done! I've set up a daily scheduled workflow that will:\n\n• Search your Gmail for newsletter emails each morning\n• Extract actionable insights using AI analysis\n• Send you a notification at 9:00 AM with the digest\n\nFirst report arrives tomorrow at 9 AM. Your connected Gmail account (gmail_primary) is already authorized.",
-      timestamp: 8100,
-    },
-  ],
-};
+  },
+  // 6000ms — Tool result
+  {
+    t: 6000,
+    sender: "tool-result",
+    content: "Notification delivered ✓",
+  },
+  // 6800ms — Final AI response
+  {
+    t: 6800,
+    sender: "ai-complete",
+    content: `Done! Your **Daily Newsletter Digest** workflow is now active.\n\n• Searches your Gmail for newsletter emails every morning\n• Extracts actionable insights using AI analysis\n• Sends you a notification at **9:00 AM** with a digest\n\n**Workflow:** wf_newsletter_daily | **Connection:** gmail_primary | **Next run:** Tomorrow 9:00 AM`,
+  },
+];
 
+// ═══════════════════════════════════════════════════════════════════════
+// ESCAPE HTML
+// ═══════════════════════════════════════════════════════════════════════
+function escHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// BUILD MESSAGE ELEMENTS
+// ═══════════════════════════════════════════════════════════════════════
+
+function buildUserMsg(content: string, ts: string): string {
+  return `
+  <div class="msg-user-wrap" style="
+    width: 100%;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  ">
+    <div style="
+      max-width: 88%;
+      background: ${COLORS.surfaceVariant};
+      border: 1px solid ${COLORS.borderAlpha30};
+      border-radius: 8px;
+      overflow: hidden;
+    ">
+      <div style="
+        padding: 8px 14px 0;
+        font-size: 10px;
+        color: ${COLORS.onSurfaceVariant};
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      ">Prompt</div>
+      <div style="
+        padding: 6px 14px 10px;
+        color: ${COLORS.onBg};
+        font-size: 13.5px;
+        line-height: 1.55;
+        word-break: break-word;
+      ">${escHtml(content)}</div>
+    </div>
+    <div style="
+      font-size: 10px;
+      color: ${COLORS.onSurfaceVariant};
+      margin-top: 3px;
+      padding: 0 4px;
+    ">${ts}</div>
+  </div>`;
+}
+
+function buildAiHeader(_provider: string = "Twen AI", model: string = "Deepseek v3"): string {
+  return `<div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px 6px;
+    margin-bottom: 4px;
+  ">
+    <span style="font-size: 10px; color: ${COLORS.onSurfaceVariant}; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Response</span>
+    <span style="font-size: 10px; color: ${COLORS.tertiary};">${model}</span>
+  </div>`;
+}
+
+function buildAiStart(): string {
+  return `
+  <div class="msg-ai-wrap" style="
+    width: 100%;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+  ">
+    ${buildAiHeader()}
+    <div class="ai-bubble-typing" style="
+      align-self: flex-start;
+      padding: 4px 16px;
+    ">
+      <span style="
+        display: inline-block;
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: ${COLORS.tertiary};
+        margin-right: 4px;
+        animation: typingBounce 1.2s infinite;
+      "></span>
+      <span style="
+        display: inline-block;
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: ${COLORS.tertiary};
+        margin-right: 4px;
+        animation: typingBounce 1.2s infinite 0.2s;
+      "></span>
+      <span style="
+        display: inline-block;
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: ${COLORS.tertiary};
+        animation: typingBounce 1.2s infinite 0.4s;
+      "></span>
+    </div>
+  </div>`;
+}
+
+function buildThinking(content: string): string {
+  return `
+  <div class="msg-thinking-wrap" style="
+    width: 100%;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  ">
+    <div style="
+      max-width: 90%;
+      background: ${COLORS.surface};
+      border: 1px solid ${COLORS.borderAlpha30};
+      border-left: 2px solid ${COLORS.warning};
+      border-radius: 4px;
+      padding: 8px 12px;
+    ">
+      <div style="
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 5px;
+      ">
+        <span style="color: ${COLORS.warning}; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">Thinking</span>
+        <span style="
+          display: inline-block;
+          width: 5px; height: 5px;
+          border-radius: 50%;
+          background: ${COLORS.warning};
+          animation: pulse 1s infinite;
+        "></span>
+      </div>
+      <div style="
+        color: ${COLORS.onSurfaceVariant};
+        font-size: 11.5px;
+        line-height: 1.55;
+        font-style: italic;
+        opacity: 0.85;
+      ">${escHtml(content)}</div>
+    </div>
+  </div>`;
+}
+
+function buildToolCall(toolName: string, params: Record<string, string>, resultDone: boolean): string {
+  const icon = getToolIcon(toolName);
+  const paramsHtml = Object.keys(params).length > 0
+    ? `<div style="
+        margin-top: 8px;
+        padding: 8px 10px;
+        background: rgba(0,0,0,0.25);
+        border-top: 1px solid ${COLORS.borderAlpha30};
+        font-size: 11px;
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+      ">
+        ${Object.entries(params).map(([k, v]) => `
+          <div style="margin-top: 3px;">
+            <span style="color: ${COLORS.secondary}; font-weight: 500;">${escHtml(k)}:</span>
+            <span style="color: ${COLORS.onSurfaceVariant};"> ${escHtml(v)}</span>
+          </div>
+        `).join("")}
+      </div>`
+    : "";
+
+  return `
+  <div class="tool-call-card" style="
+    width: 100%;
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    background: ${COLORS.surface};
+    border: 1px solid ${COLORS.borderAlpha30};
+    border-radius: 8px;
+    overflow: hidden;
+  ">
+    <div style="
+      display: flex;
+      align-items: center;
+      padding: 7px 12px;
+      gap: 8px;
+    ">
+      <span style="
+        color: ${COLORS.onSurfaceVariant};
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      ">
+        <span class="tool-status-dot" style="
+          display: inline-block;
+          width: 6px; height: 6px;
+          border-radius: 50%;
+          background: ${resultDone ? COLORS.success : COLORS.warning};
+          ${!resultDone ? "animation: pulse 1s infinite;" : ""}
+        "></span>
+        <span>${icon}</span>
+      </span>
+      <span style="
+        font-size: 12px;
+        font-weight: 500;
+        color: ${COLORS.primary};
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+      ">${escHtml(toolName)}</span>
+      ${paramsHtml ? `<div style="flex: 1; display: none;"></div>` : ""}
+    </div>
+    ${paramsHtml}
+  </div>`;
+}
+
+function buildToolResult(content: string): string {
+  return `
+  <div class="msg-tool-result-wrap" style="
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  ">
+    <div style="
+      max-width: 90%;
+      background: ${COLORS.surface};
+      border: 1px solid ${COLORS.borderAlpha30};
+      border-left: 2px solid ${COLORS.success};
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 11.5px;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      color: ${COLORS.onSurfaceVariant};
+      line-height: 1.55;
+    ">
+      <span style="color: ${COLORS.success}; font-weight: 600;">✓</span>
+      <span style="margin-left: 6px;">${escHtml(content)}</span>
+    </div>
+  </div>`;
+}
+
+function buildAiComplete(content: string): string {
+  // Simple markdown-ish rendering: **bold**, line breaks
+  const rendered = content
+    .split("\n")
+    .map(line => {
+      // Bold: **text**
+      line = line.replace(/\*\*(.+?)\*\*/g, `<strong style="color:${COLORS.onBg};font-weight:600;">$1</strong>`);
+      return line;
+    })
+    .join("<br>");
+
+  return `
+  <div class="msg-ai-complete-wrap" style="
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  ">
+    ${buildAiHeader()}
+    <div style="
+      align-self: flex-start;
+      max-width: 92%;
+      background: ${COLORS.surface};
+      border: 1px solid ${COLORS.borderAlpha30};
+      border-radius: 8px;
+      padding: 10px 16px 12px;
+    ">
+      <div style="
+        color: ${COLORS.onBg};
+        font-size: 13px;
+        line-height: 1.65;
+        word-break: break-word;
+      ">${rendered}</div>
+    </div>
+  </div>`;
+}
+
+function buildTimestamp(): string {
+  const now = new Date();
+  return `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
+}
+
+// ═══════════════════════════════════════════════════════════════════════
+// MAIN COMPONENT
+// ═══════════════════════════════════════════════════════════════════════
 export function ChatAnimation() {
   const chatRef = useRef<HTMLDivElement>(null);
+  const startedRef = useRef(false);
 
   useEffect(() => {
-    if (!chatRef.current) return;
+    if (!chatRef.current || startedRef.current) return;
+    startedRef.current = true;
 
     const chat = chatRef.current;
+    const ts = buildTimestamp();
 
-    function createTimestamp(date: Date = new Date()) {
-      const h = date.getHours().toString().padStart(2, "0");
-      const m = date.getMinutes().toString().padStart(2, "0");
-      return h + ":" + m;
-    }
-
-    function createMessageEl(
-      sender: string,
-      content: string,
-      time: string,
-      extraClasses: string = ""
-    ) {
-      const div = document.createElement("div");
-      div.className = `msg-wrap ${sender === "user" ? "msg-user" : "msg-ai"} ${extraClasses}`;
-      div.style.cssText = `
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 6px;
-        opacity: 0;
-        transform: translateY(8px);
-      `;
-
-      if (sender === "user") {
-        div.innerHTML = `
-          <div class="msg-content user-bubble" style="
-            align-self: flex-end;
-            max-width: 88%;
-            background: ${COLORS.primaryContainer};
-            color: ${COLORS.onPrimaryContainer};
-            padding: 10px 14px;
-            border-radius: 12px 12px 4px 12px;
-            font-size: 13.5px;
-            line-height: 1.5;
-            font-family: inherit;
-            word-break: break-word;
-          ">${escapeHtml(content)}</div>
-          <span style="
-            align-self: flex-end;
-            font-size: 10px;
-            color: ${COLORS.onSurfaceVariant};
-            margin-top: 3px;
-            padding: 0 4px;
-          ">${time}</span>
-        `;
-      } else if (sender === "ai") {
-        div.innerHTML = `
-          <div class="msg-content ai-bubble" style="
-            align-self: flex-start;
-            max-width: 88%;
-            background: ${COLORS.surface};
-            color: ${COLORS.onSurface};
-            padding: 10px 14px;
-            border-radius: 4px 12px 12px 4px;
-            border-left: 2px solid ${COLORS.toolAccent};
-            font-size: 13.5px;
-            line-height: 1.55;
-            font-family: inherit;
-            word-break: break-word;
-            white-space: pre-wrap;
-          ">${content}</div>
-          <span style="
-            align-self: flex-start;
-            font-size: 10px;
-            color: ${COLORS.onSurfaceVariant};
-            margin-top: 3px;
-            padding: 0 4px;
-          ">${time}</span>
-        `;
-      } else if (sender === "thinking") {
-        div.innerHTML = `
-          <div style="
-            align-self: flex-start;
-            max-width: 88%;
-            background: ${COLORS.thinkingBg};
-            color: ${COLORS.thinkingText};
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 1.5;
-            font-family: 'JetBrains Mono', monospace;
-            border-left: 2px solid ${COLORS.warning};
-            opacity: 0.85;
-          ">
-            <span style="color: ${COLORS.warning}; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em;">Thinking</span>
-            <div style="margin-top: 4px; font-style: italic; opacity: 0.8;">${escapeHtml(content)}</div>
-          </div>
-        `;
-      } else if (sender === "tool-call") {
-        // Tool call display
-        div.innerHTML = `
-          <div style="
-            align-self: flex-start;
-            width: 100%;
-            margin: 4px 0;
-          ">
-            ${content}
-          </div>
-        `;
-      } else if (sender === "tool-result") {
-        div.innerHTML = `
-          <div style="
-            align-self: flex-start;
-            max-width: 88%;
-            background: ${COLORS.surfaceVariant};
-            color: ${COLORS.onSurfaceVariant};
-            padding: 8px 12px;
-            border-radius: 4px 12px 12px 4px;
-            border-left: 2px solid ${COLORS.success};
-            font-size: 12px;
-            line-height: 1.5;
-            font-family: 'JetBrains Mono', monospace;
-          ">✓ ${escapeHtml(content)}</div>
-        `;
+    // Inject keyframes once
+    const styleEl = document.createElement("style");
+    styleEl.textContent = `
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.85); }
       }
-
-      return div;
-    }
-
-    function createToolCallCard(tool: ToolCall, delay: number) {
-      const card = document.createElement("div");
-      card.className = "tool-call-card";
-      card.style.cssText = `
-        align-self: flex-start;
-        width: 100%;
-        margin: 3px 0;
-        opacity: 0;
-        transform: translateX(-6px);
-        background: ${COLORS.toolBg};
-        border: 1px solid ${COLORS.border};
-        border-radius: 8px;
-        overflow: hidden;
-      `;
-
-      const headerBg = tool.status === "loading" ? "transparent" : COLORS.toolBg;
-      const statusDot = tool.status === "loading"
-        ? `<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${COLORS.warning};margin-right:6px;animation:pulse 1s infinite"></span>`
-        : `<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${COLORS.success};margin-right:6px"></span>`;
-
-      const paramsHtml = tool.params
-        ? `<div style="padding:6px 12px 8px;font-size:11px;font-family:'JetBrains Mono',monospace;color:${COLORS.toolText};border-top:1px solid ${COLORS.border};margin-top:4px;">
-            ${Object.entries(tool.params).map(([k, v]) =>
-              `<div style="margin-top:2px;"><span style="color:${COLORS.toolAccent}">${k}:</span> ${escapeHtml(v)}</div>`
-            ).join("")}
-           </div>`
-        : "";
-
-      card.innerHTML = `
-        <div style="display:flex;align-items:center;padding:7px 12px;background:${headerBg};">
-          <span style="color:${COLORS.toolText};font-size:11px;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;">
-            ${statusDot}⬡ <span style="color:${COLORS.toolAccent};margin-left:6px;">${escapeHtml(tool.name)}</span>
-          </span>
-        </div>
-        ${paramsHtml}
-      `;
-
-      chat.appendChild(card);
-
-      // Animate in
-      requestAnimationFrame(() => {
-        card.style.transition = "opacity 0.25s ease, transform 0.25s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateX(0)";
-      });
-
-      // Animate result
-      if (tool.status === "loading") {
-        setTimeout(() => {
-          card.style.transition = "opacity 0.2s ease";
-          card.style.opacity = "0.6";
-          setTimeout(() => {
-            card.style.opacity = "1";
-            const dot = card.querySelector("span");
-            if (dot) {
-              dot.style.background = COLORS.success;
-              dot.style.animation = "none";
-            }
-          }, 200);
-        }, delay);
+      @keyframes typingBounce {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1); }
       }
+    `;
+    document.head.appendChild(styleEl);
 
-      return card;
-    }
-
-    function escapeHtml(text: string): string {
-      return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\n/g, "<br>");
-    }
-
-    function scrollToBottom() {
-      if (chat) {
+    function addMsg(html: string) {
+      const wrapper = document.createElement("div");
+      wrapper.innerHTML = html;
+      const el = wrapper.firstElementChild as HTMLElement;
+      if (!el) return;
+      chat.appendChild(el);
+      // Scroll into view
+      setTimeout(() => {
         chat.scrollTop = chat.scrollHeight;
+      }, 20);
+      return el;
+    }
+
+    function animateIn(el: HTMLElement, delay: number) {
+      setTimeout(() => {
+        el.style.opacity = "1";
+        el.style.transform = el.classList.contains("tool-call-card") ? "translateX(0)" : "translateY(0)";
+      }, delay);
+    }
+
+    function doneTool(el: HTMLElement) {
+      // Mark status dot as green
+      const dot = el.querySelector(".tool-status-dot") as HTMLElement;
+      if (dot) {
+        dot.style.background = COLORS.success;
+        dot.style.animation = "none";
       }
     }
 
-    // Build animation
-    const now = new Date();
+    // ── User message ──────────────────────────────────────────────────
+    const userEl = addMsg(buildUserMsg(SCENARIO_MSGS[0].content!, ts));
+    if (userEl) animateIn(userEl, 0);
 
-    SCENARIO.messages.forEach((msg) => {
-      if (msg.sender === "tool-call" && msg.toolCalls) {
-        const baseDelay = msg.timestamp ?? 0;
-        msg.toolCalls.forEach((tool, i) => {
-          setTimeout(() => {
-            createToolCallCard(tool, 600);
-            scrollToBottom();
-          }, baseDelay + i * 50);
-        });
-      } else if (msg.sender === "tool-result") {
-        const delay = msg.timestamp ?? 0;
-        setTimeout(() => {
-          const el = createMessageEl("tool-result", msg.content, createTimestamp(new Date(now.getTime() + delay)));
-          chat.appendChild(el);
-          el.style.transition = "opacity 0.2s ease, transform 0.2s ease";
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-          scrollToBottom();
-        }, delay);
-      } else {
-        const delay = msg.timestamp ?? 0;
-        setTimeout(() => {
-          const el = createMessageEl(msg.sender, msg.content, createTimestamp(new Date(now.getTime() + delay)));
-          chat.appendChild(el);
-          el.style.transition = "opacity 0.25s ease, transform 0.25s ease";
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-          scrollToBottom();
-        }, delay);
+    // ── AI starts (typing indicator) ─────────────────────────────────
+    const aiStartEl = addMsg(buildAiStart());
+    if (aiStartEl) animateIn(aiStartEl, SCENARIO_MSGS[1].t);
+
+    // ── Thinking bubble ──────────────────────────────────────────────
+    const thinkingEl = addMsg(buildThinking(SCENARIO_MSGS[2].content!));
+    if (thinkingEl) animateIn(thinkingEl, SCENARIO_MSGS[2].t);
+
+    // ── Tool call 1: composio_get_toolkit_docs ────────────────────────
+    const tc1 = addMsg(buildToolCall("composio_get_toolkit_docs", { toolkit_slug: "gmail" }, false));
+    if (tc1) {
+      animateIn(tc1, SCENARIO_MSGS[3].t);
+      animateIn(tc1, SCENARIO_MSGS[4].t - 300);
+      doneTool(tc1);
+    }
+
+    // ── Tool result 1 ────────────────────────────────────────────────
+    const tr1 = addMsg(buildToolResult(SCENARIO_MSGS[4].content!));
+    if (tr1) animateIn(tr1, SCENARIO_MSGS[4].t);
+
+    // ── Tool call 2: composio_list_connections ───────────────────────
+    const tc2 = addMsg(buildToolCall("composio_list_connections", {}, false));
+    if (tc2) {
+      animateIn(tc2, SCENARIO_MSGS[5].t);
+      animateIn(tc2, SCENARIO_MSGS[6].t - 300);
+      doneTool(tc2);
+    }
+
+    // ── Tool result 2 ────────────────────────────────────────────────
+    const tr2 = addMsg(buildToolResult(SCENARIO_MSGS[6].content!));
+    if (tr2) animateIn(tr2, SCENARIO_MSGS[6].t);
+
+    // ── Tool call 3: create_workflow ─────────────────────────────────
+    const tc3 = addMsg(buildToolCall("create_workflow", {
+      trigger: "schedule",
+      cron: "0 9 * * *",
+      name: "Daily Newsletter Digest",
+      steps: "GMAIL_SEARCH_EMAILS → AI → Send Notification",
+    }, false));
+    if (tc3) {
+      animateIn(tc3, SCENARIO_MSGS[7].t);
+      animateIn(tc3, SCENARIO_MSGS[8].t - 300);
+      doneTool(tc3);
+    }
+
+    // ── Tool result 3 ────────────────────────────────────────────────
+    const tr3 = addMsg(buildToolResult(SCENARIO_MSGS[8].content!));
+    if (tr3) animateIn(tr3, SCENARIO_MSGS[8].t);
+
+    // ── Tool call 4: send_notification ───────────────────────────────
+    const tc4 = addMsg(buildToolCall("send_notification", {
+      title: "Newsletter Agent Active",
+      body: "Daily digest scheduled. First report in 24h.",
+    }, false));
+    if (tc4) {
+      animateIn(tc4, SCENARIO_MSGS[9].t);
+      animateIn(tc4, SCENARIO_MSGS[10].t - 300);
+      doneTool(tc4);
+    }
+
+    // ── Tool result 4 ────────────────────────────────────────────────
+    const tr4 = addMsg(buildToolResult(SCENARIO_MSGS[10].content!));
+    if (tr4) animateIn(tr4, SCENARIO_MSGS[10].t);
+
+    // ── Final AI response ─────────────────────────────────────────────
+    const aiCompleteEl = addMsg(buildAiComplete(SCENARIO_MSGS[11].content!));
+    if (aiCompleteEl) {
+      animateIn(aiCompleteEl, SCENARIO_MSGS[11].t);
+      // fade out typing indicator when AI response appears
+      const typing = chat.querySelector(".ai-bubble-typing") as HTMLElement;
+      if (typing) {
+        typing.style.transition = "opacity 0.2s";
+        typing.style.opacity = "0";
       }
-    });
+    }
 
     return () => {
-      if (!chatRef.current) return;
-      chatRef.current.innerHTML = "";
+      document.head.removeChild(styleEl);
     };
   }, []);
 
@@ -393,208 +587,233 @@ export function ChatAnimation() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
         width: "100%",
-        padding: "0 16px 24px",
+        padding: "0 16px 32px",
       }}
     >
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(0.85); }
+        }
+        @keyframes typingBounce {
+          0%, 100% { opacity: 0.3; transform: scale(0.8); }
+          50% { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
       <div
         style={{
           width: "100%",
-          maxWidth: "420px",
-          aspectRatio: "9/16",
-          maxHeight: "680px",
+          maxWidth: "400px",
+          aspectRatio: "9 / 16",
+          maxHeight: "660px",
           background: COLORS.bg,
           borderRadius: "20px",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
-          border: `1px solid ${COLORS.border}`,
-          boxShadow: "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04) inset",
+          border: `1px solid ${COLORS.surfaceHighest}`,
+          boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03) inset",
           position: "relative",
+          fontFamily: "'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         }}
       >
-        {/* Status bar */}
+        {/* ── Status bar ─────────────────────────────────────────────── */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "8px 16px 6px",
+            padding: "8px 14px 6px",
             background: COLORS.bg,
-            borderBottom: `1px solid ${COLORS.border}`,
+            borderBottom: `1px solid ${COLORS.surfaceHighest}`,
+            flexShrink: 0,
           }}
         >
+          {/* Left: avatar + name */}
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            {/* History icon placeholder */}
+            <div style={{
+              width: "26px", height: "26px",
+              borderRadius: "50%",
+              background: "rgba(255,255,255,0.06)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={COLORS.onSurfaceVariant} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 .49-4.5" />
+              </svg>
+            </div>
+            {/* Avatar */}
             <div
               style={{
-                width: "28px",
-                height: "28px",
+                width: "30px",
+                height: "30px",
                 borderRadius: "50%",
-                background: `linear-gradient(135deg, ${COLORS.toolAccent}, #60a5fa)`,
+                background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "12px",
+                fontSize: "13px",
                 fontWeight: "700",
                 color: "#fff",
               }}
             >
               T
             </div>
+            {/* Name + status */}
             <div>
-              <div style={{ fontSize: "13px", fontWeight: "600", color: COLORS.onSurface }}>
+              <div style={{ fontSize: "13px", fontWeight: "600", color: COLORS.onBg }}>
                 Twent AI
               </div>
-              <div style={{ fontSize: "10px", color: COLORS.success }}>● Online</div>
+              <div style={{ fontSize: "10px", color: COLORS.success }}>
+                ● Online
+              </div>
             </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "4px",
-              fontSize: "11px",
-              color: COLORS.onSurfaceVariant,
-              fontFamily: "monospace",
-            }}
-          >
+
+          {/* Right: provider tag */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+            fontSize: "11px",
+            color: COLORS.onSurfaceVariant,
+          }}>
             <span>●</span>
-            <span style={{ color: COLORS.success }}>Deepseek</span>
-            <span style={{ marginLeft: "6px", fontSize: "10px" }}>v3</span>
+            <span style={{ color: COLORS.secondary }}>Deepseek v3</span>
           </div>
         </div>
 
-        {/* Toolset bar */}
+        {/* ── Toolset bar ─────────────────────────────────────────────── */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "6px",
-            padding: "6px 12px",
-            background: `${COLORS.surface}`,
-            borderBottom: `1px solid ${COLORS.border}`,
+            gap: "5px",
+            padding: "5px 12px",
+            background: COLORS.surface,
+            borderBottom: `1px solid ${COLORS.surfaceHighest}`,
             overflowX: "auto",
+            flexShrink: 0,
           }}
         >
-          {["Android", "Safety", "Web", "Skills"].map((t, i) => (
+          {[
+            { label: "Android", active: true },
+            { label: "Safety", active: false },
+            { label: "Web", active: false },
+            { label: "Skills", active: false },
+          ].map(({ label, active }) => (
             <div
-              key={t}
+              key={label}
               style={{
-                padding: "3px 8px",
+                padding: "3px 9px",
                 borderRadius: "6px",
                 fontSize: "10px",
-                background: i === 0 ? `${COLORS.toolAccent}22` : "transparent",
-                color: i === 0 ? COLORS.toolAccent : COLORS.onSurfaceVariant,
-                border: `1px solid ${i === 0 ? COLORS.toolAccent + "44" : COLORS.border}`,
+                fontWeight: active ? "600" : "400",
+                background: active ? COLORS.primaryAlpha15 : "transparent",
+                color: active ? COLORS.primary : COLORS.onSurfaceVariant,
+                border: `1px solid ${active ? COLORS.primary + "44" : COLORS.surfaceHighest}`,
                 whiteSpace: "nowrap",
-                fontWeight: i === 0 ? "600" : "400",
+                letterSpacing: "0.02em",
               }}
             >
-              {t}
+              {label}
             </div>
           ))}
-          <div style={{ marginLeft: "auto", fontSize: "10px", color: COLORS.onSurfaceVariant }}>
+          {/* Toolsets count */}
+          <div style={{
+            marginLeft: "auto",
+            fontSize: "10px",
+            color: COLORS.onSurfaceVariant,
+            whiteSpace: "nowrap",
+            flexShrink: 0,
+          }}>
             6/6 toolsets
           </div>
         </div>
 
-        {/* Chat area */}
+        {/* ── Chat area ───────────────────────────────────────────────── */}
         <div
           ref={chatRef}
           style={{
             flex: 1,
             overflowY: "auto",
-            padding: "12px 10px",
+            padding: "12px 0 8px",
             display: "flex",
             flexDirection: "column",
-            gap: "4px",
-            scrollBehavior: "smooth",
           }}
         />
 
-        {/* Input area */}
+        {/* ── Input bar ───────────────────────────────────────────────── */}
         <div
           style={{
-            padding: "8px 10px",
-            background: COLORS.surface,
-            borderTop: `1px solid ${COLORS.border}`,
             display: "flex",
             alignItems: "center",
             gap: "8px",
+            padding: "10px 14px",
+            background: COLORS.surface,
+            borderTop: `1px solid ${COLORS.surfaceHighest}`,
+            flexShrink: 0,
           }}
         >
-          <div
-            style={{
-              flex: 1,
-              padding: "8px 12px",
-              borderRadius: "10px",
-              border: `1px solid ${COLORS.border}`,
-              background: COLORS.surfaceVariant,
-              fontSize: "12px",
-              color: COLORS.onSurfaceVariant,
-              fontFamily: "inherit",
-            }}
-          >
-            Type a message...
-          </div>
-          <div
-            style={{
-              width: "32px",
-              height: "32px",
-              borderRadius: "50%",
-              background: COLORS.toolAccent,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontSize: "14px",
-            }}
-          >
-            ↑
-          </div>
-        </div>
-
-        {/* Bottom notch area */}
-        <div
-          style={{
-            height: "24px",
-            background: COLORS.bg,
+          {/* Plus button */}
+          <div style={{
+            width: "34px", height: "34px",
+            borderRadius: "50%",
+            background: COLORS.surfaceVariant,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "60px",
-              height: "4px",
-              borderRadius: "2px",
-              background: COLORS.border,
-            }}
-          />
+            cursor: "pointer",
+          }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={COLORS.onSurfaceVariant} strokeWidth="2.5" strokeLinecap="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </div>
+          {/* Input field */}
+          <div style={{
+            flex: 1,
+            background: COLORS.surfaceVariant,
+            borderRadius: "18px",
+            padding: "9px 14px",
+            fontSize: "13px",
+            color: COLORS.onSurfaceVariant,
+            border: `1px solid ${COLORS.surfaceHighest}`,
+          }}>
+            Ask Twent anything...
+          </div>
+          {/* Send button (disabled, decorative) */}
+          <div style={{
+            width: "34px", height: "34px",
+            borderRadius: "50%",
+            background: COLORS.primary + "33",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={COLORS.primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </div>
         </div>
-      </div>
 
-      {/* Label */}
-      <div
-        style={{
-          marginTop: "16px",
-          fontSize: "12px",
-          color: COLORS.onSurfaceVariant,
-          fontFamily: "monospace",
-          textAlign: "center",
-        }}
-      >
-        AI Chat — Twent
+        {/* ── Bottom notch indicator ──────────────────────────────────── */}
+        <div style={{
+          position: "absolute",
+          bottom: "8px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "80px",
+          height: "4px",
+          borderRadius: "2px",
+          background: COLORS.surfaceHighest,
+        }} />
       </div>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
-      `}</style>
     </div>
   );
 }
