@@ -1,5 +1,19 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { DocsPage } from "./components/DocsPage";
+import { PricingPage } from "./components/PricingPage";
+import { BlogPage } from "./components/BlogPage";
+import { ChangelogPage } from "./components/ChangelogPage";
+import { TermsOfService } from "./components/TermsOfService";
+import { PrivacyPolicy } from "./components/PrivacyPolicy";
+import { MarketplaceBlogPost } from "./components/MarketplaceBlogPost";
+import { BestAiAppsAndroid } from "./components/BestAiAppsAndroid";
+import { AiAgentForDevelopers } from "./components/AiAgentForDevelopers";
+import { AndroidAutomationPowerUser } from "./components/AndroidAutomationPowerUser";
+import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
+import { TerminalOnAndroid } from "./components/TerminalOnAndroid";
+import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
+import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
@@ -23,28 +37,6 @@ const PerplexityComparisonPage = lazy(() => import("./pages/vs/perplexity"));
 const MakeComparisonPage = lazy(() => import("./pages/vs/make"));
 const ZapierComparisonPage = lazy(() => import("./pages/vs/zapier"));
 const QordinateComparisonPage = lazy(() => import("./pages/vs/qordinate"));
-const PageLoader = () => (
-  <div className="min-h-screen bg-white dark:bg-[#09090b] flex items-center justify-center">
-    <div className="flex flex-col items-center gap-4">
-      <div className="w-10 h-10 border-4 border-zinc-200 dark:border-zinc-800 border-t-blue-500 rounded-full animate-spin" />
-      <p className="text-zinc-500 text-sm font-mono">Loading...</p>
-    </div>
-  </div>
-);
-const DocsPage = lazy(() => import(/* @vite-ignore */ "./components/DocsPage").then(m => ({ default: m.DocsPage })));
-const PricingPage = lazy(() => import(/* @vite-ignore */ "./components/PricingPage").then(m => ({ default: m.PricingPage })));
-const BlogPage = lazy(() => import(/* @vite-ignore */ "./components/BlogPage").then(m => ({ default: m.BlogPage })));
-const ChangelogPage = lazy(() => import(/* @vite-ignore */ "./components/ChangelogPage").then(m => ({ default: m.ChangelogPage })));
-const TermsOfService = lazy(() => import(/* @vite-ignore */ "./components/TermsOfService").then(m => ({ default: m.TermsOfService })));
-const PrivacyPolicy = lazy(() => import(/* @vite-ignore */ "./components/PrivacyPolicy").then(m => ({ default: m.PrivacyPolicy })));
-const MarketplaceBlogPost = lazy(() => import(/* @vite-ignore */ "./components/MarketplaceBlogPost").then(m => ({ default: m.MarketplaceBlogPost })));
-const BestAiAppsAndroid = lazy(() => import(/* @vite-ignore */ "./components/BestAiAppsAndroid").then(m => ({ default: m.BestAiAppsAndroid })));
-const AiAgentForDevelopers = lazy(() => import(/* @vite-ignore */ "./components/AiAgentForDevelopers").then(m => ({ default: m.AiAgentForDevelopers })));
-const AndroidAutomationPowerUser = lazy(() => import(/* @vite-ignore */ "./components/AndroidAutomationPowerUser").then(m => ({ default: m.AndroidAutomationPowerUser })));
-const PrivacyFirstAiAndroid = lazy(() => import(/* @vite-ignore */ "./components/PrivacyFirstAiAndroid").then(m => ({ default: m.PrivacyFirstAiAndroid })));
-const TerminalOnAndroid = lazy(() => import(/* @vite-ignore */ "./components/TerminalOnAndroid").then(m => ({ default: m.TerminalOnAndroid })));
-const AiMarketplaceCreators = lazy(() => import(/* @vite-ignore */ "./components/AiMarketplaceCreators").then(m => ({ default: m.AiMarketplaceCreators })));
-const EnterpriseAiAgent = lazy(() => import(/* @vite-ignore */ "./components/EnterpriseAiAgent").then(m => ({ default: m.EnterpriseAiAgent })));
 const OmnaraComparisonPage = lazy(() => import("./pages/vs/omnara"));
 const ManusComparisonPage = lazy(() => import("./pages/vs/manus"));
 const OnspaceComparisonPage = lazy(() => import("./pages/vs/onspace"));
@@ -203,9 +195,9 @@ export default function App() {
   if (routePath.startsWith("/docs")) {
     return (
       <>
-        <HreflangTags currentPath={routePath} />
+<HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><DocsPage dark={dark} onToggle={toggle} /></Suspense>
+        <DocsPage dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -215,7 +207,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><AiAgentForDevelopers dark={dark} onToggle={toggle} /></Suspense>
+        <AiAgentForDevelopers dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -225,7 +217,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><AndroidAutomationPowerUser dark={dark} onToggle={toggle} /></Suspense>
+        <AndroidAutomationPowerUser dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -235,7 +227,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><PrivacyFirstAiAndroid dark={dark} onToggle={toggle} /></Suspense>
+        <PrivacyFirstAiAndroid dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -245,7 +237,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><TerminalOnAndroid dark={dark} onToggle={toggle} /></Suspense>
+        <TerminalOnAndroid dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -255,7 +247,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><AiMarketplaceCreators dark={dark} onToggle={toggle} /></Suspense>
+        <AiMarketplaceCreators dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -265,7 +257,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><EnterpriseAiAgent dark={dark} onToggle={toggle} /></Suspense>
+        <EnterpriseAiAgent dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -275,7 +267,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><MarketplaceBlogPost dark={dark} onToggle={toggle} /></Suspense>
+        <MarketplaceBlogPost dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -285,7 +277,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><BestAiAppsAndroid dark={dark} onToggle={toggle} /></Suspense>
+        <BestAiAppsAndroid dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -295,7 +287,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><BlogPage dark={dark} onToggle={toggle} /></Suspense>
+        <BlogPage dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -305,7 +297,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><ChangelogPage dark={dark} onToggle={toggle} /></Suspense>
+        <ChangelogPage dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -315,7 +307,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><TermsOfService dark={dark} onToggle={toggle} /></Suspense>
+        <TermsOfService dark={dark} onToggle={toggle} />
       </>
     );
   }
@@ -325,18 +317,18 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <Suspense fallback={<PageLoader />}><PrivacyPolicy dark={dark} onToggle={toggle} /></Suspense>
+        <PrivacyPolicy dark={dark} onToggle={toggle} />
       </>
     );
   }
 
   if (routePath.startsWith("/pricing")) {
     return (
-      <Suspense fallback={<PageLoader />}>
+      <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <PricingPage />
-      </Suspense>
+      </>
     );
   }
 
