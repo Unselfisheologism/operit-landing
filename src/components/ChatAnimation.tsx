@@ -1,817 +1,393 @@
 import { useEffect, useRef } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════
-// TWENT ANDROID APP — EXACT COLOR PALETTE FROM Color.kt + Theme.kt
+// EXACT COLORS FROM THE TWENT APP (verified via screenshot pixel analysis)
 // ═══════════════════════════════════════════════════════════════════════
-const COLORS = {
-  // Core background colors from Twent's DarkColorScheme
-  bg: "#1E1E1E",               // DarkBg — main background
-  surface: "#141414",          // DarkSurface — message bubbles
-  surfaceVariant: "#282828",    // DarkSurfaceHigh — tool results
-  surfaceHighest: "#3C3C3C",   // DarkSurfaceHighest — borders
-
-  // Brand colors
-  primary: "#F09020",          // OrangePrimary — main accent (orange)
-  secondary: "#80C0F0",        // CyanPrimary — secondary accent (cyan)
-  tertiary: "#809090",          // SteelPrimary — tertiary
-
-  // Text colors
-  onBg: "#B0B0B0",             // OnDarkBg — primary text on dark
-  onSurfaceVariant: "#909090",  // muted text
-  onPrimaryContainer: "#ffffff", // white on user bubble
-
-  // Status colors
-  success: "#4CAF50",          // green for tool results
-  warning: "#F09020",          // orange for thinking/process
-  error: "#FF4444",
-
-  // Transparent variants
-  primaryAlpha15: "rgba(240,144,32,0.15)",
-  secondaryAlpha15: "rgba(128,192,240,0.15)",
-  borderAlpha30: "rgba(128,128,128,0.3)",
+const C = {
+  // Brand accent (used for the ENTIRE top header)
+  orange: "#F09020",
+  // Logo colors (from FINAL TWENT LOGO.png)
+  logoDark: "#181E23",
+  logoRed: "#C94828",
+  logoCyan: "#A9F7F9",
+  // Background colors
+  bg: "#1E1E1E",        // DarkBg
+  surface: "#141414",   // DarkSurface
+  surfaceHigh: "#202020", // DarkSurfaceHigh
+  surfaceHighest: "#3C3C3C", // DarkSurfaceHighest
+  // User message — PURPLE as seen in screenshot
+  userBubble: "#4B3582",
+  userText: "#EAD9FF",  // light purple/white
+  // AI content
+  aiText: "#B0B0B0",    // OnDarkBg
+  aiMuted: "#909090",   // secondary text
+  // Accents
+  success: "#4CAF50",   // green checkmark
+  cyan: "#80C0F0",      // CyanPrimary from Color.kt
+  // Input bar
+  inputBg: "#2C221A",   // warm dark
+  inputBorder: "#3C3C3C",
 };
 
-// Tool icon map (from ToolDisplayComponents.kt getToolIcon function)
-const TOOL_ICONS: Record<string, string> = {
-  composio_get_toolkit_docs: "📦",
-  composio_list_connections: "🔗",
-  create_workflow: "⚙️",
-  send_notification: "🔔",
-  gmail_search: "📧",
-  gmail_get_email: "📬",
-  default: "⬡",
-};
-
-function getToolIcon(toolName: string): string {
-  for (const [key, icon] of Object.entries(TOOL_ICONS)) {
-    if (toolName.toLowerCase().includes(key)) return icon;
-  }
-  return TOOL_ICONS.default;
-}
-
 // ═══════════════════════════════════════════════════════════════════════
-// ANIMATION SEQUENCE — 10.5 seconds total
+// ANIMATION SEQUENCE TIMING (~10s total)
 // ═══════════════════════════════════════════════════════════════════════
-const SCENARIO_MSGS = [
-  // 0ms — User sends message
-  {
-    t: 0,
-    sender: "user",
-    content: "everyday at 9AM, report to me with all the actionable insights from all my newsletters.",
-  },
-  // 350ms — AI starts responding (empty bubble + "Response" header appears)
-  {
-    t: 350,
-    sender: "ai-start",
-    content: "",
-  },
-  // 600ms — Thinking bubble appears
-  {
-    t: 600,
-    sender: "thinking",
-    content: "Setting up a daily newsletter digest workflow. First I'll check the Gmail toolkit, then create a scheduled automation.",
-  },
-  // 1400ms — Tool call: composio_get_toolkit_docs
-  {
-    t: 1400,
-    sender: "tool-call",
-    tool: "composio_get_toolkit_docs",
-    params: { toolkit_slug: "gmail" },
-  },
-  // 2000ms — Tool result
-  {
-    t: 2000,
-    sender: "tool-result",
-    content: "Gmail toolkit loaded — 47 tools: GMAIL_SEARCH_EMAILS, GMAIL_GET_EMAIL, GMAIL_LIST_LABELS, GMAIL_SEND_EMAIL...",
-  },
-  // 2700ms — Tool call: composio_list_connections
-  {
-    t: 2700,
-    sender: "tool-call",
-    tool: "composio_list_connections",
-    params: {},
-  },
-  // 3200ms — Tool result
-  {
-    t: 3200,
-    sender: "tool-result",
-    content: "Connected: gmail_primary (OAuth, last sync: 5 min ago)",
-  },
-  // 3900ms — Tool call: create_workflow
-  {
-    t: 3900,
-    sender: "tool-call",
-    tool: "create_workflow",
-    params: {
-      trigger: "schedule",
-      cron: "0 9 * * *",
-      name: "Daily Newsletter Digest",
-      steps: "GMAIL_SEARCH_EMAILS → AI Extract Insights → Send Notification",
-    },
-  },
-  // 4700ms — Tool result
-  {
-    t: 4700,
-    sender: "tool-result",
-    content: "Workflow created ✓ wf_newsletter_daily — triggers at 09:00 AM daily",
-  },
-  // 5400ms — Tool call: send_notification
-  {
-    t: 5400,
-    sender: "tool-call",
-    tool: "send_notification",
-    params: {
-      title: "Newsletter Agent Active",
-      body: "Daily digest scheduled. First report in 24h.",
-    },
-  },
-  // 6000ms — Tool result
-  {
-    t: 6000,
-    sender: "tool-result",
-    content: "Notification delivered ✓",
-  },
-  // 6800ms — Final AI response
-  {
-    t: 6800,
-    sender: "ai-complete",
-    content: `Done! Your **Daily Newsletter Digest** workflow is now active.\n\n• Searches your Gmail for newsletter emails every morning\n• Extracts actionable insights using AI analysis\n• Sends you a notification at **9:00 AM** with a digest\n\n**Workflow:** wf_newsletter_daily | **Connection:** gmail_primary | **Next run:** Tomorrow 9:00 AM`,
-  },
+const S = [
+  { t: 0,    type: "user",    msg: "everyday at 9AM, report to me with all the actionable insights from all my newsletters." },
+  { t: 400,  type: "ai-start" },
+  { t: 700,  type: "think",   msg: "Setting up a daily newsletter digest workflow. First I'll check the Gmail toolkit, then create a scheduled automation." },
+  { t: 1500, type: "tool",    name: "composio_get_toolkit_docs", params: { "toolkit_slug": "gmail" } },
+  { t: 2200, type: "result",  msg: "Gmail toolkit loaded — 47 tools available" },
+  { t: 2900, type: "tool",    name: "composio_list_connections", params: {} },
+  { t: 3500, type: "result",  msg: "Connected: gmail_primary (OAuth, last sync: 5 min ago)" },
+  { t: 4200, type: "tool",    name: "create_workflow", params: { "trigger": "schedule", "cron": "0 9 * * *", "name": "Daily Newsletter Digest" } },
+  { t: 5000, type: "result",  msg: "Workflow created ✓ wf_newsletter_daily — triggers at 09:00 AM" },
+  { t: 5700, type: "tool",    name: "send_notification", params: { "title": "Newsletter Agent Active", "body": "First report in 24h" } },
+  { t: 6300, type: "result",  msg: "Notification delivered ✓" },
+  { t: 7100, type: "ai-end",  msg: "Done! Your Daily Newsletter Digest workflow is now active.\n\n• Searches Gmail for newsletter emails every morning\n• Extracts actionable insights using AI analysis\n• Sends a notification at 9:00 AM with the digest" },
 ];
 
-// ═══════════════════════════════════════════════════════════════════════
-// ESCAPE HTML
-// ═══════════════════════════════════════════════════════════════════════
-function escHtml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
+function esc(s: string) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
 
 // ═══════════════════════════════════════════════════════════════════════
-// BUILD MESSAGE ELEMENTS
+// HTML BUILDERS
 // ═══════════════════════════════════════════════════════════════════════
 
-function buildUserMsg(content: string, ts: string): string {
-  return `
-  <div class="msg-user-wrap" style="
-    width: 100%;
-    margin-bottom: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  ">
-    <div style="
-      max-width: 88%;
-      background: ${COLORS.surfaceVariant};
-      border: 1px solid ${COLORS.borderAlpha30};
-      border-radius: 8px;
-      overflow: hidden;
-    ">
-      <div style="
-        padding: 8px 14px 0;
-        font-size: 10px;
-        color: ${COLORS.onSurfaceVariant};
-        font-weight: 500;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-      ">Prompt</div>
-      <div style="
-        padding: 6px 14px 10px;
-        color: ${COLORS.onBg};
-        font-size: 13.5px;
-        line-height: 1.55;
-        word-break: break-word;
-      ">${escHtml(content)}</div>
-    </div>
-    <div style="
-      font-size: 10px;
-      color: ${COLORS.onSurfaceVariant};
-      margin-top: 3px;
-      padding: 0 4px;
-    ">${ts}</div>
-  </div>`;
-}
-
-function buildAiHeader(_provider: string = "Twen AI", model: string = "Deepseek v3"): string {
-  return `<div style="
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 16px 6px;
-    margin-bottom: 4px;
-  ">
-    <span style="font-size: 10px; color: ${COLORS.onSurfaceVariant}; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;">Response</span>
-    <span style="font-size: 10px; color: ${COLORS.tertiary};">${model}</span>
-  </div>`;
-}
-
-function buildAiStart(): string {
-  return `
-  <div class="msg-ai-wrap" style="
-    width: 100%;
-    margin-bottom: 4px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-  ">
-    ${buildAiHeader()}
-    <div class="ai-bubble-typing" style="
-      align-self: flex-start;
-      padding: 4px 16px;
-    ">
-      <span style="
-        display: inline-block;
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: ${COLORS.tertiary};
-        margin-right: 4px;
-        animation: typingBounce 1.2s infinite;
-      "></span>
-      <span style="
-        display: inline-block;
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: ${COLORS.tertiary};
-        margin-right: 4px;
-        animation: typingBounce 1.2s infinite 0.2s;
-      "></span>
-      <span style="
-        display: inline-block;
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: ${COLORS.tertiary};
-        animation: typingBounce 1.2s infinite 0.4s;
-      "></span>
+function userBubble(msg: string) {
+  return `<div class="msg" style="width:100%;margin-bottom:8px;display:flex;flex-direction:column;align-items:flex-end;opacity:0;transform:translateY(12px);transition:all 0.35s ease;">
+    <div style="max-width:90%;background:${C.userBubble};border-radius:8px 8px 8px 8px;overflow:hidden;">
+      <div style="padding:8px 14px 0;font-size:10px;color:${C.userText}80;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;">Prompt</div>
+      <div style="padding:4px 14px 10px;color:${C.userText};font-size:13px;line-height:1.55;word-break:break-word;">${esc(msg)}</div>
     </div>
   </div>`;
 }
 
-function buildThinking(content: string): string {
-  return `
-  <div class="msg-thinking-wrap" style="
-    width: 100%;
-    margin-bottom: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  ">
-    <div style="
-      max-width: 90%;
-      background: ${COLORS.surface};
-      border: 1px solid ${COLORS.borderAlpha30};
-      border-left: 2px solid ${COLORS.warning};
-      border-radius: 4px;
-      padding: 8px 12px;
-    ">
-      <div style="
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        margin-bottom: 5px;
-      ">
-        <span style="color: ${COLORS.warning}; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">Thinking</span>
-        <span style="
-          display: inline-block;
-          width: 5px; height: 5px;
-          border-radius: 50%;
-          background: ${COLORS.warning};
-          animation: pulse 1s infinite;
-        "></span>
+function typingDots() {
+  return `<div class="msg" style="width:100%;margin-bottom:4px;display:flex;flex-direction:column;opacity:0;transition:opacity 0.3s;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 16px 4px;">
+      <span style="font-size:10px;color:${C.aiMuted};font-weight:500;letter-spacing:0.05em;text-transform:uppercase;">Response</span>
+      <span style="font-size:9px;color:${C.cyan};">Deepseek v3</span>
+    </div>
+    <div style="padding:4px 16px;display:flex;gap:4px;">
+      <span class="d" style="width:5px;height:5px;border-radius:50%;background:${C.aiMuted};animation:bounce 1.2s infinite;display:inline-block;"></span>
+      <span class="d" style="width:5px;height:5px;border-radius:50%;background:${C.aiMuted};animation:bounce 1.2s infinite 0.15s;display:inline-block;"></span>
+      <span class="d" style="width:5px;height:5px;border-radius:50%;background:${C.aiMuted};animation:bounce 1.2s infinite 0.3s;display:inline-block;"></span>
+    </div>
+  </div>`;
+}
+
+function thinking(msg: string) {
+  return `<div class="msg" style="width:100%;margin-bottom:6px;display:flex;flex-direction:column;align-items:flex-start;opacity:0;transform:translateX(-8px);transition:all 0.3s ease;">
+    <div style="max-width:92%;background:${C.surface};border:1px solid ${C.surfaceHighest};border-left:2px solid ${C.orange};border-radius:4px;padding:8px 12px;">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+        <span style="color:${C.orange};font-size:9px;text-transform:uppercase;letter-spacing:0.07em;font-weight:600;">Thinking</span>
+        <span class="p" style="display:inline-block;width:4px;height:4px;border-radius:50%;background:${C.orange};animation:pulse 1s infinite;"></span>
       </div>
-      <div style="
-        color: ${COLORS.onSurfaceVariant};
-        font-size: 11.5px;
-        line-height: 1.55;
-        font-style: italic;
-        opacity: 0.85;
-      ">${escHtml(content)}</div>
+      <div style="color:${C.aiMuted};font-size:11.5px;line-height:1.55;font-style:italic;opacity:0.85;">${esc(msg)}</div>
     </div>
   </div>`;
 }
 
-function buildToolCall(toolName: string, params: Record<string, string>, resultDone: boolean): string {
-  const icon = getToolIcon(toolName);
-  const paramsHtml = Object.keys(params).length > 0
-    ? `<div style="
-        margin-top: 8px;
-        padding: 8px 10px;
-        background: rgba(0,0,0,0.25);
-        border-top: 1px solid ${COLORS.borderAlpha30};
-        font-size: 11px;
-        font-family: 'JetBrains Mono', 'Courier New', monospace;
-      ">
-        ${Object.entries(params).map(([k, v]) => `
-          <div style="margin-top: 3px;">
-            <span style="color: ${COLORS.secondary}; font-weight: 500;">${escHtml(k)}:</span>
-            <span style="color: ${COLORS.onSurfaceVariant};"> ${escHtml(v)}</span>
-          </div>
-        `).join("")}
+function toolCard(name: string, params: Record<string, string>) {
+  const pHtml = Object.keys(params).length > 0
+    ? `<div style="margin-top:6px;padding:6px 10px;background:rgba(0,0,0,0.25);border-top:1px solid ${C.surfaceHighest};font-size:10.5px;font-family:monospace;">
+        ${Object.entries(params).map(([k, v]) => `<div style="margin-top:2px;"><span style="color:${C.cyan};">${esc(k)}:</span> <span style="color:${C.aiMuted};">${esc(v)}</span></div>`).join("")}
       </div>`
     : "";
-
-  return `
-  <div class="tool-call-card" style="
-    width: 100%;
-    margin-bottom: 5px;
-    opacity: 0;
-    transform: translateX(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    background: ${COLORS.surface};
-    border: 1px solid ${COLORS.borderAlpha30};
-    border-radius: 8px;
-    overflow: hidden;
-  ">
-    <div style="
-      display: flex;
-      align-items: center;
-      padding: 7px 12px;
-      gap: 8px;
-    ">
-      <span style="
-        color: ${COLORS.onSurfaceVariant};
-        font-size: 11px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      ">
-        <span class="tool-status-dot" style="
-          display: inline-block;
-          width: 6px; height: 6px;
-          border-radius: 50%;
-          background: ${resultDone ? COLORS.success : COLORS.warning};
-          ${!resultDone ? "animation: pulse 1s infinite;" : ""}
-        "></span>
-        <span>${icon}</span>
-      </span>
-      <span style="
-        font-size: 12px;
-        font-weight: 500;
-        color: ${COLORS.primary};
-        font-family: 'JetBrains Mono', 'Courier New', monospace;
-      ">${escHtml(toolName)}</span>
-      ${paramsHtml ? `<div style="flex: 1; display: none;"></div>` : ""}
-    </div>
-    ${paramsHtml}
-  </div>`;
-}
-
-function buildToolResult(content: string): string {
-  return `
-  <div class="msg-tool-result-wrap" style="
-    width: 100%;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  ">
-    <div style="
-      max-width: 90%;
-      background: ${COLORS.surface};
-      border: 1px solid ${COLORS.borderAlpha30};
-      border-left: 2px solid ${COLORS.success};
-      border-radius: 4px;
-      padding: 6px 12px;
-      font-size: 11.5px;
-      font-family: 'JetBrains Mono', 'Courier New', monospace;
-      color: ${COLORS.onSurfaceVariant};
-      line-height: 1.55;
-    ">
-      <span style="color: ${COLORS.success}; font-weight: 600;">✓</span>
-      <span style="margin-left: 6px;">${escHtml(content)}</span>
+  return `<div class="msg tc" style="width:100%;margin-bottom:5px;display:flex;flex-direction:column;opacity:0;transform:translateX(-8px);transition:all 0.25s ease;">
+    <div style="background:${C.surface};border:1px solid ${C.surfaceHighest};border-radius:8px;overflow:hidden;">
+      <div style="display:flex;align-items:center;padding:7px 12px;gap:8px;">
+        <span style="color:${C.aiMuted};font-size:11px;display:flex;align-items:center;gap:5px;">
+          <span class="td" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${C.orange};animation:pulse 1s infinite;"></span>
+          <span>⚡</span>
+        </span>
+        <span style="font-size:11.5px;font-weight:500;color:${C.orange};font-family:monospace;">${esc(name)}</span>
+      </div>
+      ${pHtml}
     </div>
   </div>`;
 }
 
-function buildAiComplete(content: string): string {
-  // Simple markdown-ish rendering: **bold**, line breaks
-  const rendered = content
-    .split("\n")
-    .map(line => {
-      // Bold: **text**
-      line = line.replace(/\*\*(.+?)\*\*/g, `<strong style="color:${COLORS.onBg};font-weight:600;">$1</strong>`);
-      return line;
-    })
-    .join("<br>");
-
-  return `
-  <div class="msg-ai-complete-wrap" style="
-    width: 100%;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-  ">
-    ${buildAiHeader()}
-    <div style="
-      align-self: flex-start;
-      max-width: 92%;
-      background: ${COLORS.surface};
-      border: 1px solid ${COLORS.borderAlpha30};
-      border-radius: 8px;
-      padding: 10px 16px 12px;
-    ">
-      <div style="
-        color: ${COLORS.onBg};
-        font-size: 13px;
-        line-height: 1.65;
-        word-break: break-word;
-      ">${rendered}</div>
+function toolResult(msg: string) {
+  return `<div class="msg" style="width:100%;margin-bottom:5px;display:flex;flex-direction:column;align-items:flex-start;opacity:0;transform:translateY(6px);transition:all 0.25s ease;">
+    <div style="max-width:92%;background:${C.surface};border:1px solid ${C.surfaceHighest};border-left:2px solid ${C.success};border-radius:4px;padding:5px 12px;font-size:11px;font-family:monospace;color:${C.aiMuted};line-height:1.5;">
+      <span style="color:${C.success};font-weight:600;">✓</span> <span style="margin-left:4px;">${esc(msg)}</span>
     </div>
   </div>`;
 }
 
-function buildTimestamp(): string {
-  const now = new Date();
-  return `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
+function aiComplete(msg: string) {
+  const body = msg.split("\n").map(l => l.replace(/\*\*(.+?)\*\*/g, `<strong style="color:${C.aiText};">$1</strong>`)).join("<br>");
+  return `<div class="msg" style="width:100%;margin-bottom:8px;display:flex;flex-direction:column;opacity:0;transform:translateY(10px);transition:all 0.4s ease;">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 16px 4px;">
+      <span style="font-size:10px;color:${C.aiMuted};font-weight:500;letter-spacing:0.05em;text-transform:uppercase;">Response</span>
+      <span style="font-size:9px;color:${C.cyan};">Deepseek v3</span>
+    </div>
+    <div style="margin:0 8px;background:${C.surface};border:1px solid ${C.surfaceHighest};border-radius:8px;padding:10px 14px 12px;">
+      <div style="color:${C.aiText};font-size:13px;line-height:1.65;word-break:break-word;">${body}</div>
+    </div>
+  </div>`;
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// MAIN COMPONENT
+// COMPONENT
 // ═══════════════════════════════════════════════════════════════════════
 export function ChatAnimation() {
-  const chatRef = useRef<HTMLDivElement>(null);
-  const startedRef = useRef(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const done = useRef(false);
 
   useEffect(() => {
-    if (!chatRef.current || startedRef.current) return;
-    startedRef.current = true;
+    if (!ref.current || done.current) return;
+    done.current = true;
 
-    const chat = chatRef.current;
-    const ts = buildTimestamp();
+    const ch = ref.current;
 
     // Inject keyframes once
-    const styleEl = document.createElement("style");
-    styleEl.textContent = `
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.4; transform: scale(0.85); }
-      }
-      @keyframes typingBounce {
-        0%, 100% { opacity: 0.3; transform: scale(0.8); }
-        50% { opacity: 1; transform: scale(1); }
-      }
-    `;
-    document.head.appendChild(styleEl);
+    const ks = document.createElement("style");
+    ks.textContent = `
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(.85)}}
+@keyframes bounce{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+`;
+    document.head.appendChild(ks);
 
-    function addMsg(html: string) {
-      const wrapper = document.createElement("div");
-      wrapper.innerHTML = html;
-      const el = wrapper.firstElementChild as HTMLElement;
-      if (!el) return;
-      chat.appendChild(el);
-      // Scroll into view
-      setTimeout(() => {
-        chat.scrollTop = chat.scrollHeight;
-      }, 20);
-      return el;
+    function add(html: string) {
+      const d = document.createElement("div");
+      d.innerHTML = html;
+      const e = d.firstElementChild as HTMLElement | null;
+      if (e) ch.appendChild(e);
+      return e;
     }
 
-    function animateIn(el: HTMLElement, delay: number) {
+    function arrive(el: HTMLElement, ms: number, transformDone?: (e: HTMLElement) => void) {
       setTimeout(() => {
         el.style.opacity = "1";
-        el.style.transform = el.classList.contains("tool-call-card") ? "translateX(0)" : "translateY(0)";
-      }, delay);
+        el.style.transform = el.classList.contains("tc") ? "translateX(0)" : "translateY(0)";
+        if (transformDone) setTimeout(() => transformDone(el), 400);
+      }, ms);
     }
 
-    function doneTool(el: HTMLElement) {
-      // Mark status dot as green
-      const dot = el.querySelector(".tool-status-dot") as HTMLElement;
-      if (dot) {
-        dot.style.background = COLORS.success;
-        dot.style.animation = "none";
-      }
+    // ── User message ──────────────────────────────────
+    const u = add(userBubble(S[0].msg!));
+    if (u) arrive(u, S[0].t);
+
+    // ── AI starts typing ──────────────────────────────
+    const as = add(typingDots());
+    if (as) arrive(as, S[1].t);
+
+    // ── Thinking ──────────────────────────────────────
+    const th = add(thinking(S[2].msg!));
+    if (th) arrive(th, S[2].t);
+
+    // ── Tool 1: composio_get_toolkit_docs ─────────────
+    const t1 = add(toolCard("composio_get_toolkit_docs", { "toolkit_slug": "gmail" }));
+    if (t1) {
+      arrive(t1, S[3].t, (e) => {
+        const dot = e.querySelector(".td") as HTMLElement;
+        if (dot) { dot.style.background = C.success; dot.style.animation = "none"; }
+      });
     }
 
-    // ── User message ──────────────────────────────────────────────────
-    const userEl = addMsg(buildUserMsg(SCENARIO_MSGS[0].content!, ts));
-    if (userEl) animateIn(userEl, 0);
+    // ── Result 1 ──────────────────────────────────────
+    const r1 = add(toolResult(S[4].msg!));
+    if (r1) arrive(r1, S[4].t);
 
-    // ── AI starts (typing indicator) ─────────────────────────────────
-    const aiStartEl = addMsg(buildAiStart());
-    if (aiStartEl) animateIn(aiStartEl, SCENARIO_MSGS[1].t);
-
-    // ── Thinking bubble ──────────────────────────────────────────────
-    const thinkingEl = addMsg(buildThinking(SCENARIO_MSGS[2].content!));
-    if (thinkingEl) animateIn(thinkingEl, SCENARIO_MSGS[2].t);
-
-    // ── Tool call 1: composio_get_toolkit_docs ────────────────────────
-    const tc1 = addMsg(buildToolCall("composio_get_toolkit_docs", { toolkit_slug: "gmail" }, false));
-    if (tc1) {
-      animateIn(tc1, SCENARIO_MSGS[3].t);
-      animateIn(tc1, SCENARIO_MSGS[4].t - 300);
-      doneTool(tc1);
+    // ── Tool 2: composio_list_connections ─────────────
+    const t2 = add(toolCard("composio_list_connections", {}));
+    if (t2) {
+      arrive(t2, S[5].t, (e) => {
+        const dot = e.querySelector(".td") as HTMLElement;
+        if (dot) { dot.style.background = C.success; dot.style.animation = "none"; }
+      });
     }
 
-    // ── Tool result 1 ────────────────────────────────────────────────
-    const tr1 = addMsg(buildToolResult(SCENARIO_MSGS[4].content!));
-    if (tr1) animateIn(tr1, SCENARIO_MSGS[4].t);
+    // ── Result 2 ──────────────────────────────────────
+    const r2 = add(toolResult(S[6].msg!));
+    if (r2) arrive(r2, S[6].t);
 
-    // ── Tool call 2: composio_list_connections ───────────────────────
-    const tc2 = addMsg(buildToolCall("composio_list_connections", {}, false));
-    if (tc2) {
-      animateIn(tc2, SCENARIO_MSGS[5].t);
-      animateIn(tc2, SCENARIO_MSGS[6].t - 300);
-      doneTool(tc2);
+    // ── Tool 3: create_workflow ───────────────────────
+    const t3 = add(toolCard("create_workflow", { "trigger": "schedule", "cron": "0 9 * * *", "name": "Daily Newsletter Digest" }));
+    if (t3) {
+      arrive(t3, S[7].t, (e) => {
+        const dot = e.querySelector(".td") as HTMLElement;
+        if (dot) { dot.style.background = C.success; dot.style.animation = "none"; }
+      });
     }
 
-    // ── Tool result 2 ────────────────────────────────────────────────
-    const tr2 = addMsg(buildToolResult(SCENARIO_MSGS[6].content!));
-    if (tr2) animateIn(tr2, SCENARIO_MSGS[6].t);
+    // ── Result 3 ──────────────────────────────────────
+    const r3 = add(toolResult(S[8].msg!));
+    if (r3) arrive(r3, S[8].t);
 
-    // ── Tool call 3: create_workflow ─────────────────────────────────
-    const tc3 = addMsg(buildToolCall("create_workflow", {
-      trigger: "schedule",
-      cron: "0 9 * * *",
-      name: "Daily Newsletter Digest",
-      steps: "GMAIL_SEARCH_EMAILS → AI → Send Notification",
-    }, false));
-    if (tc3) {
-      animateIn(tc3, SCENARIO_MSGS[7].t);
-      animateIn(tc3, SCENARIO_MSGS[8].t - 300);
-      doneTool(tc3);
+    // ── Tool 4: send_notification ─────────────────────
+    const t4 = add(toolCard("send_notification", { "title": "Newsletter Agent Active", "body": "First report in 24h" }));
+    if (t4) {
+      arrive(t4, S[9].t, (e) => {
+        const dot = e.querySelector(".td") as HTMLElement;
+        if (dot) { dot.style.background = C.success; dot.style.animation = "none"; }
+      });
     }
 
-    // ── Tool result 3 ────────────────────────────────────────────────
-    const tr3 = addMsg(buildToolResult(SCENARIO_MSGS[8].content!));
-    if (tr3) animateIn(tr3, SCENARIO_MSGS[8].t);
+    // ── Result 4 ──────────────────────────────────────
+    const r4 = add(toolResult(S[10].msg!));
+    if (r4) arrive(r4, S[10].t);
 
-    // ── Tool call 4: send_notification ───────────────────────────────
-    const tc4 = addMsg(buildToolCall("send_notification", {
-      title: "Newsletter Agent Active",
-      body: "Daily digest scheduled. First report in 24h.",
-    }, false));
-    if (tc4) {
-      animateIn(tc4, SCENARIO_MSGS[9].t);
-      animateIn(tc4, SCENARIO_MSGS[10].t - 300);
-      doneTool(tc4);
+    // ── Final AI response ─────────────────────────────
+    const ae = add(aiComplete(S[11].msg!));
+    if (ae) {
+      arrive(ae, S[11].t);
+      // Fade typing indicator
+      const dots = ch.querySelector(".d")?.parentElement?.parentElement;
+      if (dots) { (dots as HTMLElement).style.transition = "opacity 0.3s"; (dots as HTMLElement).style.opacity = "0"; }
     }
 
-    // ── Tool result 4 ────────────────────────────────────────────────
-    const tr4 = addMsg(buildToolResult(SCENARIO_MSGS[10].content!));
-    if (tr4) animateIn(tr4, SCENARIO_MSGS[10].t);
+    // Auto-scroll
+    const check = setInterval(() => { ch.scrollTop = ch.scrollHeight; }, 100);
+    setTimeout(() => clearInterval(check), 8500);
 
-    // ── Final AI response ─────────────────────────────────────────────
-    const aiCompleteEl = addMsg(buildAiComplete(SCENARIO_MSGS[11].content!));
-    if (aiCompleteEl) {
-      animateIn(aiCompleteEl, SCENARIO_MSGS[11].t);
-      // fade out typing indicator when AI response appears
-      const typing = chat.querySelector(".ai-bubble-typing") as HTMLElement;
-      if (typing) {
-        typing.style.transition = "opacity 0.2s";
-        typing.style.opacity = "0";
-      }
-    }
-
-    return () => {
-      document.head.removeChild(styleEl);
-    };
+    return () => { document.head.removeChild(ks); clearInterval(check); };
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100%",
-        padding: "0 16px 32px",
-      }}
-    >
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); }
-          50% { opacity: 0.4; transform: scale(0.85); }
-        }
-        @keyframes typingBounce {
-          0%, 100% { opacity: 0.3; transform: scale(0.8); }
-          50% { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "400px",
-          aspectRatio: "9 / 16",
-          maxHeight: "660px",
-          background: COLORS.bg,
-          borderRadius: "20px",
-          overflow: "hidden",
-          display: "flex",
-          flexDirection: "column",
-          border: `1px solid ${COLORS.surfaceHighest}`,
-          boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03) inset",
-          position: "relative",
-          fontFamily: "'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
-        }}
-      >
-        {/* ── Status bar ─────────────────────────────────────────────── */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "8px 14px 6px",
-            background: COLORS.bg,
-            borderBottom: `1px solid ${COLORS.surfaceHighest}`,
-            flexShrink: 0,
-          }}
-        >
-          {/* Left: avatar + name */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            {/* History icon placeholder */}
-            <div style={{
-              width: "26px", height: "26px",
-              borderRadius: "50%",
-              background: "rgba(255,255,255,0.06)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={COLORS.onSurfaceVariant} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="1 4 1 10 7 10" />
-                <path d="M3.51 15a9 9 0 1 0 .49-4.5" />
-              </svg>
-            </div>
-            {/* Avatar */}
-            <div
-              style={{
-                width: "30px",
-                height: "30px",
-                borderRadius: "50%",
-                background: `linear-gradient(135deg, ${COLORS.primary}, ${COLORS.secondary})`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "13px",
-                fontWeight: "700",
-                color: "#fff",
-              }}
-            >
-              T
-            </div>
-            {/* Name + status */}
-            <div>
-              <div style={{ fontSize: "13px", fontWeight: "600", color: COLORS.onBg }}>
-                Twent AI
-              </div>
-              <div style={{ fontSize: "10px", color: COLORS.success }}>
-                ● Online
-              </div>
-            </div>
-          </div>
-
-          {/* Right: provider tag */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            fontSize: "11px",
-            color: COLORS.onSurfaceVariant,
-          }}>
-            <span>●</span>
-            <span style={{ color: COLORS.secondary }}>Deepseek v3</span>
-          </div>
-        </div>
-
-        {/* ── Toolset bar ─────────────────────────────────────────────── */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "5px",
-            padding: "5px 12px",
-            background: COLORS.surface,
-            borderBottom: `1px solid ${COLORS.surfaceHighest}`,
-            overflowX: "auto",
-            flexShrink: 0,
-          }}
-        >
-          {[
-            { label: "Android", active: true },
-            { label: "Safety", active: false },
-            { label: "Web", active: false },
-            { label: "Skills", active: false },
-          ].map(({ label, active }) => (
-            <div
-              key={label}
-              style={{
-                padding: "3px 9px",
-                borderRadius: "6px",
-                fontSize: "10px",
-                fontWeight: active ? "600" : "400",
-                background: active ? COLORS.primaryAlpha15 : "transparent",
-                color: active ? COLORS.primary : COLORS.onSurfaceVariant,
-                border: `1px solid ${active ? COLORS.primary + "44" : COLORS.surfaceHighest}`,
-                whiteSpace: "nowrap",
-                letterSpacing: "0.02em",
-              }}
-            >
-              {label}
-            </div>
-          ))}
-          {/* Toolsets count */}
-          <div style={{
-            marginLeft: "auto",
-            fontSize: "10px",
-            color: COLORS.onSurfaceVariant,
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-          }}>
-            6/6 toolsets
-          </div>
-        </div>
-
-        {/* ── Chat area ───────────────────────────────────────────────── */}
-        <div
-          ref={chatRef}
-          style={{
-            flex: 1,
-            overflowY: "auto",
-            padding: "12px 0 8px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        />
-
-        {/* ── Input bar ───────────────────────────────────────────────── */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            padding: "10px 14px",
-            background: COLORS.surface,
-            borderTop: `1px solid ${COLORS.surfaceHighest}`,
-            flexShrink: 0,
-          }}
-        >
-          {/* Plus button */}
-          <div style={{
-            width: "34px", height: "34px",
-            borderRadius: "50%",
-            background: COLORS.surfaceVariant,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-          }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={COLORS.onSurfaceVariant} strokeWidth="2.5" strokeLinecap="round">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
-          </div>
-          {/* Input field */}
-          <div style={{
-            flex: 1,
-            background: COLORS.surfaceVariant,
-            borderRadius: "18px",
-            padding: "9px 14px",
-            fontSize: "13px",
-            color: COLORS.onSurfaceVariant,
-            border: `1px solid ${COLORS.surfaceHighest}`,
-          }}>
-            Ask Twent anything...
-          </div>
-          {/* Send button (disabled, decorative) */}
-          <div style={{
-            width: "34px", height: "34px",
-            borderRadius: "50%",
-            background: COLORS.primary + "33",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={COLORS.primary} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
-          </div>
-        </div>
-
-        {/* ── Bottom notch indicator ──────────────────────────────────── */}
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", padding: "0 16px 32px" }}>
+      <div style={{
+        width: "100%", maxWidth: "390px",
+        aspectRatio: "9 / 16", maxHeight: "660px",
+        background: C.bg,
+        borderRadius: "20px", overflow: "hidden",
+        display: "flex", flexDirection: "column",
+        border: `1px solid ${C.surfaceHighest}`,
+        boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
+        position: "relative",
+      }}>
+        {/* ── ORANGE HEADER (entire top bar) ─────────────*/}
         <div style={{
-          position: "absolute",
-          bottom: "8px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "80px",
-          height: "4px",
-          borderRadius: "2px",
-          background: COLORS.surfaceHighest,
+          background: C.orange,
+          flexShrink: 0,
+          position: "relative",
+        }}>
+          {/* Status bar + header combined */}
+          <div style={{
+            height: "48px",
+            display: "flex", alignItems: "center",
+            padding: "0 12px",
+            gap: "8px",
+          }}>
+            {/* T Avatar — dark circle with T logo */}
+            <div style={{
+              width: "34px", height: "34px",
+              borderRadius: "50%",
+              background: C.logoDark,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              position: "relative",
+              overflow: "hidden",
+              flexShrink: 0,
+            }}>
+              {/* Cyan accent arc at top */}
+              <div style={{
+                position: "absolute", top: "-4px", left: "50%",
+                transform: "translateX(-50%)",
+                width: "12px", height: "12px",
+                borderRadius: "50% 50% 0 0",
+                background: C.logoCyan,
+                opacity: 0.6,
+              }} />
+              {/* T letter in red-orange */}
+              <span style={{
+                color: C.logoRed,
+                fontSize: "18px", fontWeight: "700",
+                fontFamily: "serif",
+                lineHeight: 1,
+                position: "relative",
+                zIndex: 1,
+              }}>T</span>
+            </div>
+            {/* Title */}
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: "14px", fontWeight: "600", color: "#fff", lineHeight: 1.2 }}>Twent AI</div>
+            </div>
+            {/* Provider tag */}
+            <div style={{
+              background: "rgba(255,255,255,0.15)",
+              borderRadius: "10px",
+              padding: "2px 8px",
+              fontSize: "9px",
+              color: "#fff",
+              fontWeight: "500",
+              whiteSpace: "nowrap",
+            }}>
+              Deepseek v3
+            </div>
+          </div>
+
+          {/* Toolset bar pills */}
+          <div style={{
+            display: "flex", alignItems: "center", gap: "4px",
+            padding: "4px 12px 8px",
+            overflowX: "auto",
+          }}>
+            {[
+              { l: "Android", a: true }, { l: "Safety", a: false },
+              { l: "Web", a: false }, { l: "Skills", a: false },
+            ].map(({ l, a }) => (
+              <div key={l} style={{
+                padding: "2px 8px", borderRadius: "4px",
+                fontSize: "9.5px", fontWeight: a ? "600" : "400",
+                background: a ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.15)",
+                color: a ? "#fff" : "rgba(255,255,255,0.7)",
+                border: `1px solid ${a ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.1)"}`,
+                whiteSpace: "nowrap",
+              }}>{l}</div>
+            ))}
+            <div style={{
+              marginLeft: "auto", fontSize: "9px",
+              color: "rgba(255,255,255,0.6)",
+              whiteSpace: "nowrap",
+            }}>6/6 toolsets</div>
+          </div>
+        </div>
+
+        {/* ── CHAT AREA ──────────────────────────────────*/}
+        <div ref={ref} style={{
+          flex: 1, overflowY: "auto",
+          padding: "10px 10px 4px",
+          display: "flex", flexDirection: "column",
+        }} />
+
+        {/* ── INPUT BAR ──────────────────────────────────*/}
+        <div style={{
+          display: "flex", alignItems: "center", gap: "8px",
+          padding: "8px 12px",
+          background: C.inputBg,
+          borderTop: `1px solid ${C.surfaceHighest}`,
+          flexShrink: 0,
+        }}>
+          {/* Plus */}
+          <div style={{
+            width: "32px", height: "32px", borderRadius: "50%",
+            background: C.surfaceHigh, display: "flex",
+            alignItems: "center", justifyContent: "center",
+          }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={C.aiMuted} strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          {/* Field */}
+          <div style={{
+            flex: 1, background: C.surfaceHigh, borderRadius: "16px",
+            padding: "8px 12px", fontSize: "12px", color: C.aiMuted,
+            border: `1px solid ${C.surfaceHighest}`,
+          }}>Ask Twent anything...</div>
+          {/* Send */}
+          <div style={{
+            width: "32px", height: "32px", borderRadius: "50%",
+            background: `${C.orange}44`, display: "flex",
+            alignItems: "center", justifyContent: "center",
+          }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={C.orange} strokeWidth="2" strokeLinecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+        </div>
+
+        {/* bottom notch */}
+        <div style={{
+          position: "absolute", bottom: "6px", left: "50%", transform: "translateX(-50%)",
+          width: "70px", height: "4px", borderRadius: "2px", background: C.surfaceHighest,
         }} />
       </div>
     </div>
