@@ -14,43 +14,6 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog", external: false },
 ];
 
-// Minecraft-style pixel toggle
-function ThemeToggle({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
-  return (
-    <label htmlFor="theme-toggle" className="relative inline-block w-[4em] h-[2em] cursor-pointer shrink-0">
-      <input
-        id="theme-toggle"
-        type="checkbox"
-        checked={dark}
-        onChange={onToggle}
-        className="sr-only"
-        aria-label="Toggle dark mode"
-      />
-      <span className="absolute inset-0 bg-zinc-300 dark:bg-zinc-600 transition-colors duration-400" />
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAA0klEQVR42u3Z2w2DMAxAUaboBGzYATtXxQ+VkCoUEscxdrkqjvJHHkcJOA+mKdOP0vv5YGm2nKAEsUH6PoZARvq3D01lQ8lh075mt/JoMYdB0nQWq+m2Ujw6Zn+N0FZXIxR2/qpbfS+vWWD5x4Wq5oNo5aopKvrJlBYrMBwrNYUJoYkyGSYrduLOaEIGKUFi8HUHaZYa1VJg1lRDpd10zQjlS/2vIEqkxq1lxNUetx9i7RhZe2rWqYN1LmOdXHFne9ztB+5+KK/0EnRvEO5fh2NaActc24OaqNouAAAAAElFTkSuQmCC"
-        alt=""
-        aria-hidden="true"
-        className="absolute top-0 left-0 h-12 w-12 transition-all duration-400"
-        style={{
-          opacity: dark ? 0 : 1,
-          transform: dark ? "translateX(3rem)" : "translateX(0)",
-        }}
-      />
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAVUlEQVR42u3WMQ4AEBBEUfe/pyhcQi/R7nz8F/2MCLY1SZJE08dElDgtUJVArXyPZINU9p5SkFq9T/Mu3ZsHV/bzPHLV/33HSQ2I0wVx/oJOqJIkkSz0aFrRzLUSOAAAAABJRU5ErkJggg=="
-        alt=""
-        aria-hidden="true"
-        className="absolute top-0 left-0 h-12 w-12 transition-all duration-400"
-        style={{
-          opacity: dark ? 1 : 0,
-          transform: dark ? "translateX(3rem)" : "translateX(0)",
-        }}
-      />
-    </label>
-  );
-}
-
 function DownloadButton({ className = "", iconOnly = false }: { className?: string; iconOnly?: boolean }) {
   return (
     <a
@@ -238,7 +201,7 @@ function DesktopHeader({
         ))}
       </div>
 
-      {/* RIGHT: Download + Toggle + Language — fades in when scrolled */}
+{/* RIGHT: Download — fades in when scrolled */}
       <div
         className={`flex items-center transition-all duration-500 overflow-hidden ${
           scrolled
@@ -248,7 +211,6 @@ function DesktopHeader({
       >
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
         <DownloadButton iconOnly className="!w-8 !h-8" />
-        <ThemeToggle dark={dark} onToggle={onToggle} />
       </div>
     </div>
   );
@@ -292,10 +254,9 @@ function MobileHeader({
         </span>
       </a>
 
-      {/* Right: download icon + toggle + hamburger */}
+{/* Right: download icon + hamburger */}
       <div className="flex items-center gap-1">
         <DownloadButton iconOnly className="!w-8 !h-8" />
-        <ThemeToggle dark={dark} onToggle={onToggle} />
         <HamburgerIcon
           open={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -351,7 +312,7 @@ export function Nav({ dark, onToggle }: NavProps) {
         </span>
       </a>
 
-      {/* Top-right: download + toggle OUTSIDE the header. Disappears on scroll. */}
+{/* Top-right: download OUTSIDE the header. Disappears on scroll. */}
       <div
         className={`hidden md:flex fixed top-5 right-6 z-40 items-center gap-3 transition-all duration-500 ${
           scrolled
@@ -360,7 +321,6 @@ export function Nav({ dark, onToggle }: NavProps) {
         }`}
       >
         <DownloadButton iconOnly />
-        <ThemeToggle dark={dark} onToggle={onToggle} />
       </div>
 
       {/* Top-center: floating pill header (the main nav) */}
