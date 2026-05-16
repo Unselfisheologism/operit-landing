@@ -9,6 +9,34 @@ import { useInView } from "../hooks/useInView";
 // Features verified via DuckDuckGo search April 2026
 const comparisons = [
   {
+    id: "vs-nebula",
+    competitor: "Nebula.gg",
+    keyword: "nebula.gg ai app",
+    altKeywords: ["nebula ai android", "nebula.gg mobile assistant"],
+    searchVolume: "90/mo",
+    cpc: "$1.60",
+    difficulty: "low",
+    intent: "research",
+    twentBetter: [
+      "Ubuntu terminal built-in",
+      "Local GGUF model inference",
+      "MCP + Skills plugins",
+      "Android UI automation (tap, type, swipe)",
+      "Offline operation",
+      "Fully open source",
+      "ADB/Root integration",
+      "Free tier",
+    ],
+    nebulaBetter: [
+      "Emotional support focus",
+      "Friendly conversational tone",
+      "Good UI polish",
+      "Companionship features",
+    ],
+    verdict: "Nebula is great for chat. Twent is great for work.",
+    pageUrl: "/vs/nebula",
+  },
+  {
     id: "vs-replika",
     competitor: "Replika",
     keyword: "replika app",
