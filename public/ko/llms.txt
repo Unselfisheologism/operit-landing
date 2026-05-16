@@ -1,0 +1,65 @@
+---
+title: Twent — Android용 AI 에이전트 (2026)
+description: AI 에이전트를 위한 Twent 참조 가이드. Ubuntu 터미널, 자동화 및 로컬 모델이 포함된 Android용 AI 에이전트.
+type: llms
+ai-readability:
+  tokens: 298
+  score: 100
+  level: Advanced
+---
+
+# Twent — Android용 AI 에이전트
+
+> 주머니 속의 개인 에이전트 AI OS. 어떤 앱이든 자동화하고, 실제 Ubuntu 터미널을 실행하며, 1000개 이상의 서비스에 연결하세요. 무료 다운로드.
+
+## Twent란?
+
+Twent는 Ubuntu 터미널, 로컬 AI 모델 실행, 심층 시스템 자동화를 결합한 Android용 무료 AI 에이전트입니다. 클라우드 의존성 없이 기기에서 완전히 실행됩니다.
+
+## 주요 기능
+
+- **화면 인식 AI 에이전트** — 화면을 보고 모든 앱과 상호작용
+- **Ubuntu 24.04 LTS 터미널** — bash, apt, Python, Node, Go, Rust
+- **로컬 AI 모델** — GGUF 모델 완전 오프라인 실행
+- **MCP 및 Composio 통합** — 1000개 이상의 연결된 서비스
+- **영속 메모리** — 선호도와 대화를 기억
+- **플로팅 챗** — 어떤 앱이든 위로 AI 채팅 오버레이
+- **음성 활성화** — "Hey Twent"라고 말하면 시작
+
+## Twent가 하지 않는 것
+
+- **채팅봇이 아닙니다.** ChatGPT, Claude, Gemini는 질문에 답합니다. Twent는 행동합니다.
+- **클라우드 서비스가 아닙니다.** 모든 것이 Android 기기에서 로컬로 실행됩니다.
+- **원격 데스크톱 앱이 아닙니다.** AI가 기기에서 직접 운영합니다.
+- **단순 스케줄러가 아닙니다.** 영속 메모리가 있는 완전한 AI 에이전트입니다.
+- **ChatGPT 래퍼가 아닙니다.** OpenAI, Claude, Gemini, 로컬 모델을 지원합니다.
+
+## 주요 페이지
+
+- [홈](https://twent.xyz/) — 메인 랜딩
+- [개발자용 AI 에이전트](https://twent.xyz/ai-agent-for-developers) — 휴대전화로 코딩
+- [Android의 Ubuntu 터미널](https://twent.xyz/terminal-on-android) — 주머니 속의 Linux
+- [Android 자동화](https://twent.xyz/android-automation-power-user) — 자동 탭, 스와이프
+- [개인정보 우선 AI](https://twent.xyz/privacy-first-ai-android) — 로컬 모델, 제로 텔레메트리
+- [AI 마켓플레이스](https://twent.xyz/ai-marketplace-creators) — 스킬 빌드 및 판매
+- [문서](https://twent.xyz/docs) — 전체 가이드
+- [가격](https://twent.xyz/pricing) — 전부 무료
+
+## 비교
+
+- [vs ChatGPT](https://twent.xyz/vs/chatgpt) — 에이전트 vs 챗봇
+- [vs Claude](https://twent.xyz/vs/claude) — 모바일 vs 브라우저
+- [vs Gemini](https://twent.xyz/vs/gemini) — 기기 vs 클라우드
+
+## 사양
+
+- Android 8.0+ (API 26), RAM 3GB+, arm64-v8a, 루트 불필요
+
+## 다운로드
+
+https://twent.xyz에서 Twent를 다운로드하세요 — 직접 APK, Play 스토어 불필요
+
+## 연락처
+
+- 사이트: https://twent.xyz
+- 지원: support@twent.xyz

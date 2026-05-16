@@ -1,40 +1,53 @@
 ---
-title: Twent Blog — News and Tutorials
-description: Tutorials, deep-dives & product news. Learn how to get the most from your Android device with AI assistance.
+title: Twent Blog — Tutorials, News & Deep Dives
+description: Tutorials, deep-dives and product news. Learn how to get the most from your Android device with AI assistance.
 type: blog
 ai-readability:
-  tokens: 258
+  tokens: 184
   score: 100
   level: Advanced
 ---
 
-# Twent Blog — News and Tutorials
+# Twent Blog — Tutorials, News & Deep Dives
 
-> Tutorials, deep-dives & product news. Learn how to get the most from your Android device with AI assistance.
+> Tutorials, deep-dives and product news. Learn how to get the most from your Android device with AI assistance.
 
 ## The Twent Journal
 
 Deep dives on agentic AI, on-device intelligence, and building the future of human-computer interaction.
 
-## Articles
+## Latest Articles
 
 ### The Twent Marketplace: Your Agentic App Store
+
+Your automations are products. Your skills are currencies.
+
 - Published: April 19, 2026
 - Category: Product
 - Read time: 5 min
-[Read the full article](https://twent.xyz/blog/marketplace)
+- [Read the full article](https://twent.xyz/blog/marketplace)
 
-### 25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer
+### 25 Best AI Apps for Android in 2026
+
+A curated ranking of the top AI apps for Android — from chatbots to agentic tools.
+
 - Published: April 29, 2026
 - Category: Roundup
 - Read time: 12 min
-[Read the full article](https://twent.xyz/blog/best-ai-apps-android)
+- [Read the full article](https://twent.xyz/blog/best-ai-apps-android)
 
-## About Twent
+## What is Twent?
 
-Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
+Twent is a personal agentic AI OS for Android that combines:
+- Full Ubuntu 24.04 LTS terminal
+- Local AI model execution (GGUF/MNN)
+- Deep system automation (tap, swipe, type on any app)
+- Floating AI chat overlay
+- 1000+ integrations via MCP and Composio
+- Persistent memory across sessions
 
-## Related Pages
+All free. All local. No cloud dependency.
 
-- [Home](https://twent.xyz/) - Main landing page
-- [Pricing](https://twent.xyz/pricing) - Free plan details
+## Download
+
+Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.

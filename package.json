@@ -9,8 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dualmark:generate": "node scripts/generate-markdown-twins.js",
-    "dualmark:verify": "node -e \"const{findSync}=require('fs');console.log('Markdown twins:',findSync('public',/\\\\.md$/).length)\"",
-    "build:full": "npm run dualmark:generate && npm run build"
+    "dualmark:verify": "bunx @dualmark/cli verify https://twent.xyz --json || bunx @dualmark/cli verify https://twent.xyz",
+    "dualmark:verify:all": "bunx @dualmark/cli verify https://twent.xyz && bunx @dualmark/cli verify https://twent.xyz/pricing && bunx @dualmark/cli verify https://twent.xyz/docs && bunx @dualmark/cli verify https://twent.xyz/ai-agent-for-developers",
+    "build:full": "npm run dualmark:generate && npm run build && npm run dualmark:verify"
   },
   "dependencies": {
     "@databuddy/sdk": "^2.4.0",

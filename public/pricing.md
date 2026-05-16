@@ -1,61 +1,99 @@
 ---
 title: Twent Pricing — Free AI Agent for Android
-description: No credit card needed. Get full access to Android automation, Ubuntu terminal & 1000+ integrations — completely free.
+description: No credit card needed. Get full access to Android automation, Ubuntu terminal and 1000+ integrations — completely free.
 type: pricing
 ai-readability:
-  tokens: 384
+  tokens: 412
   score: 100
   level: Advanced
 ---
 
 # Twent Pricing — Free AI Agent for Android
 
-> No credit card needed. Get full access to Android automation, Ubuntu terminal & 1000+ integrations — completely free.
+> No credit card needed. Get full access to Android automation, Ubuntu terminal and 1000+ integrations — completely free.
 
-## Pricing
+## Your Receipt, Sir
 
-**Your receipt, sir. Total damage: $0.00.**
+**Total: $0.00**
 
-Every feature. Every tool. Every capability. All included, all free.
+Every feature. Every tool. Every capability. All included. All free.
 
-## Features Included Free
+## What's Included Free
 
-| Feature | Price |
-|---------|-------|
-| Ubuntu 24.04 Terminal | $0.00 |
-| UI Automation Agent | $0.00 |
-| 50+ Built-in Tools | $0.00 |
-| MCP Server Support | $0.00 |
-| Skills & Workflows | $0.00 |
-| Voice Activation | $0.00 |
-| Smart Memory | $0.00 |
-| BYOK (Your API Keys) | $0.00 |
-| Local Model Support | $0.00 |
-| File Generation | $0.00 |
-| Mini-Apps | $0.00 |
-| Character Cards | $0.00 |
+### AI Agent
+
+| Feature | Free |
+|---|---|
+| Floating chat overlay | ✅ |
+| Screen reading & UI automation | ✅ |
+| Tap, swipe, type, scroll | ✅ |
+| Voice wake word | ✅ |
+| Persistent memory | ✅ |
+| 50+ built-in tools | ✅ |
+| Claude Code integration | ✅ |
+| OpenAI Codex support | ✅ |
+| Hermes Agent support | ✅ |
+
+### Ubuntu Terminal
+
+| Feature | Free |
+|---|---|
+| Ubuntu 24.04 LTS | ✅ |
+| Bash, zsh, fish shells | ✅ |
+| apt, npm, pip, cargo | ✅ |
+| Python 3, Node.js, Go, Rust, C/C++ | ✅ |
+| Git and GitHub CLI | ✅ |
+| SSH client and server | ✅ |
+| VS Code Server | ✅ |
+| No root required | ✅ |
+
+### Privacy & Local AI
+
+| Feature | Free |
+|---|---|
+| GGUF local models | ✅ |
+| MNN inference | ✅ |
+| BYOK (Bring Your Own Key) | ✅ |
+| Android KeyStore encryption | ✅ |
+| Zero telemetry | ✅ |
+| Fully offline mode | ✅ |
+| On-device embeddings | ✅ |
+
+### Integrations
+
+| Feature | Free |
+|---|---|
+| MCP server support | ✅ |
+| Composio (1000+ connections) | ✅ |
+| Skills marketplace access | ✅ |
+| Workflow builder | ✅ |
+| Tasker integration | ✅ |
 
 ## FAQ
 
 ### Is Twent really free?
-Yes. Right now, everything is completely free. All 50+ tools, the Ubuntu terminal, overlay agent, MCP servers, skills, workflows — the whole thing.
+
+Yes. Everything is completely free. All 50+ tools, the Ubuntu terminal, overlay agent, MCP servers, skills, workflows — the entire thing.
 
 ### How do you distribute the app if it's not on the Play Store?
+
 We distribute the APK directly from our website. Download, install, and you're good to go.
 
 ### Will there be ads?
-Eventually, yes — powered by AI ads. A future Pro plan ($20) will remove them entirely.
+
+Eventually, yes — powered by AI ads. A future Pro plan will remove them entirely. No ads in the current free tier.
 
 ### What's the marketplace?
-The marketplace is an upcoming agentic app store — users can sell skills, workflows, plugins, and MCP servers.
 
-## Technical Requirements
+The marketplace is an agentic app store — users can sell skills, workflows, plugins, and MCP servers. The core app is free, marketplace items have their own pricing.
 
-- Android 8.0+ (API 26)
-- 3GB+ RAM recommended
-- 500MB+ storage
-- arm64-v8a architecture
-- No root required
+### What API providers does Twent support?
+
+OpenAI, Claude, Gemini, Deepseek, OpenRouter, Kilo Gateway, NVIDIA NIMS, LM Studio, and local GGUF/MNN models.
+
+### Do I need an API key?
+
+Only if you want to use cloud AI models. You can also run local GGUF models entirely offline with no API key.
 
 ## Download
 

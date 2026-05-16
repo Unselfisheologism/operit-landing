@@ -1,0 +1,59 @@
+---
+title: Twent — AI Agent for Android
+description: AI agent reference for Twent. AI agent on Android with Ubuntu terminal, automation and local models.
+type: llms
+ai-readability:
+  tokens: 284
+  score: 100
+  level: Advanced
+---
+
+# Twent — AI Agent for Android (2026)
+
+> Your personal AI agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.
+
+## What is Twent?
+
+Twent is a free AI agent for Android that combines an AI chat overlay, full Ubuntu terminal, local AI models, and deep system automation — all on your device, zero cloud dependency.
+
+## Core Features
+
+- **AI Agent with Screen Awareness** — sees your screen, interacts with any app
+- **Ubuntu 24.04 LTS Terminal** — bash, apt, Python, Node, Go, Rust on your phone
+- **Local AI Models** — run GGUF models fully offline
+- **MCP and Composio Integration** — 1000+ connected services
+- **Persistent Memory** — remembers preferences and conversations
+- **Floating Chat** — AI chat overlay on top of any app
+- **Voice Activation** — say "Hey Twent" and start talking
+
+## What Twent Is NOT
+
+- **Not a chatbot.** ChatGPT, Claude, Gemini answer questions. Twent acts.
+- **Not a cloud service.** Everything runs locally on your Android device.
+- **Not a remote desktop app.** AI operates directly on your device.
+- **Not a simple scheduler.** Full AI agent with persistent memory.
+- **Not a ChatGPT wrapper.** Supports OpenAI, Claude, Gemini, Deepseek, and local models.
+
+## Key Pages
+
+- [Home](https://twent.xyz/) — Main landing
+- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers) — Code on your phone
+- [Ubuntu Terminal on Android](https://twent.xyz/terminal-on-android) — Linux in your pocket
+- [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, scripts
+- [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — Local models, zero telemetry
+- [AI Marketplace](https://twent.xyz/ai-marketplace-creators) — Build and sell skills
+- [Documentation](https://twent.xyz/docs) — Full guides
+- [Pricing](https://twent.xyz/pricing) — All free
+
+## Specifications
+
+- Android 8.0+ (API 26), 3GB+ RAM, arm64-v8a, no root required
+
+## Download
+
+Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
+
+## Contact
+
+- Website: https://twent.xyz
+- Support: support@twent.xyz

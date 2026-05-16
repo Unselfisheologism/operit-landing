@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Twent — AI-Optimized Sitemap (sitemap-llms.xml)
+  
+  This sitemap is specifically designed for LLM crawlers and AI agents.
+  It lists all markdown twins (.md) alongside the canonical URLs.
+  AI agents should:
+  1. Check if a .md twin exists for each URL
+  2. Use the .md twin as the primary content source (it's AI-optimized)
+  3. The edge middleware (functions/_middleware.js) serves .md to AI User-Agents
+  
+  Reference: dualmark.dev spec — "Markdown twins" + "AI sitemap"
+-->
+<sitemap-llms xmlns="https://dualmark.dev/schema/sitemap-llms/v1">
+  <metadata>
+    <site>https://twent.xyz</site>
+    <generated>2026-05-16T00:00:00Z</generated>
+    <generator>Twent-Dualmark/2.0</generator>
+    <format>https://dualmark.dev/spec/sitemap-llms</format>
+    <version>1.0</version>
+    <note>All pages below have AI-optimized markdown twins at the same path with .md extension.</note>
+    <note>Example: https://twent.xyz/ai-agent-for-developers.md</note>
+  </metadata>
+  
+  <!-- Core pages -->
+  <url>
+    <canonical>https://twent.xyz/</canonical>
+    <md>https://twent.xyz/index.md</md>
+    <type>landing</type>
+    <summary>Main landing page — AI agent for Android, free download, key features overview</summary>
+    <keywords>AI agent, Android automation, Ubuntu terminal, local AI, free APK</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/pricing</canonical>
+    <md>https://twent.xyz/pricing.md</md>
+    <type>pricing</type>
+    <summary>Free AI agent — all features included at $0. No credit card, no subscription.</summary>
+    <keywords>pricing, free, free tier, features, no credit card</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/docs</canonical>
+    <md>https://twent.xyz/docs.md</md>
+    <type>docs</type>
+    <summary>Full documentation — installation, configuration, tools, MCP setup, automation</summary>
+    <keywords>documentation, docs, getting started, reference, tutorial</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/blog</canonical>
+    <md>https://twent.xyz/blog.md</md>
+    <type>blog</type>
+    <summary>The Twent Journal — tutorials, deep dives, product news</summary>
+    <keywords>blog, tutorials, news, guides</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/blog/marketplace</canonical>
+    <md>https://twent.xyz/blog/marketplace.md</md>
+    <type>blog</type>
+    <summary>AI marketplace — build and sell skills, MCP servers, and tool packages</summary>
+    <keywords>marketplace, skills, MCP, plugins, creators</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/blog/best-ai-apps-android</canonical>
+    <md>https://twent.xyz/blog/best-ai-apps-android.md</md>
+    <type>blog</type>
+    <summary>25 best AI apps for Android 2026 — curated ranking and comparison</summary>
+    <keywords>best AI apps, Android AI, ranking, top AI apps</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/changelog</canonical>
+    <md>https://twent.xyz/changelog.md</md>
+    <type>changelog</type>
+    <summary>Complete changelog — every update, feature, and bug fix. Version history.</summary>
+    <keywords>changelog, updates, releases, version history</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Feature landing pages -->
+  <url>
+    <canonical>https://twent.xyz/ai-agent-for-developers</canonical>
+    <md>https://twent.xyz/ai-agent-for-developers.md</md>
+    <type>landing</type>
+    <summary>Claude Code, OpenAI Codex, Git, SSH on Android. Full dev environment in your pocket.</summary>
+    <keywords>coding, developers, Claude Code, Codex, Git, SSH, VS Code Server, CLI</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/terminal-on-android</canonical>
+    <md>https://twent.xyz/terminal-on-android.md</md>
+    <type>landing</type>
+    <summary>Ubuntu 24.04 LTS on Android. apt, Python, Node, Go, Rust, C/C++. No root, no cloud.</summary>
+    <keywords>Ubuntu, terminal, Linux, Android, bash, apt, SSH, development environment</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/android-automation-power-user</canonical>
+    <md>https://twent.xyz/android-automation-power-user.md</md>
+    <type>landing</type>
+    <summary>Auto-tap, swipe, type on any app. AI-driven automation with visual workflow builder.</summary>
+    <keywords>automation, auto-tap, UI automation, scripts, workflows, Tasker, power user</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/privacy-first-ai-android</canonical>
+    <md>https://twent.xyz/privacy-first-ai-android.md</md>
+    <type>landing</type>
+    <summary>BYOK, local GGUF models, zero telemetry. Privacy-first AI on your device.</summary>
+    <keywords>privacy, BYOK, local AI, offline, zero telemetry, GGUF, MNN, encryption</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/ai-marketplace-creators</canonical>
+    <md>https://twent.xyz/ai-marketplace-creators.md</md>
+    <type>landing</type>
+    <summary>Build AI skills, sell to millions. Agentic app store for Android.</summary>
+    <keywords>marketplace, AI skills, build and sell, creators, revenue, packages</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/enterprise-ai-agent</canonical>
+    <md>https://twent.xyz/enterprise-ai-agent.md</md>
+    <type>landing</type>
+    <summary>Team deployment with admin controls, compliance settings, usage analytics.</summary>
+    <keywords>enterprise, team management, admin controls, deployment, MDM, organization</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Competitor comparisons -->
+  <url>
+    <canonical>https://twent.xyz/vs/chatgpt</canonical>
+    <md>https://twent.xyz/vs/chatgpt.md</md>
+    <type>compare</type>
+    <summary>Twent acts. ChatGPT chats. On-device vs cloud, automation vs Q&amp;A.</summary>
+    <keywords>vs ChatGPT, OpenAI, comparison, AI chatbot vs agent</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/claude</canonical>
+    <md>https://twent.xyz/vs/claude.md</md>
+    <type>compare</type>
+    <summary>Mobile Claude Code execution, floating overlay, Android UI control vs browser Claude.</summary>
+    <keywords>vs Claude, Anthropic, comparison, Claude Code</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/gemini</canonical>
+    <md>https://twent.xyz/vs/gemini.md</md>
+    <type>compare</type>
+    <summary>BYOK privacy, offline models, full automation on device vs browser-based Gemini.</summary>
+    <keywords>vs Gemini, Google, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/copilot</canonical>
+    <md>https://twent.xyz/vs/copilot.md</md>
+    <type>compare</type>
+    <summary>Floating AI overlay, automation, local models on device vs browser Copilot.</summary>
+    <keywords>vs Copilot, Microsoft, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/perplexity</canonical>
+    <md>https://twent.xyz/vs/perplexity.md</md>
+    <type>compare</type>
+    <summary>Action AI vs search AI. Twent automates, Perplexity finds answers.</summary>
+    <keywords>vs Perplexity, comparison, AI search</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/replika</canonical>
+    <md>https://twent.xyz/vs/replika.md</md>
+    <type>compare</type>
+    <summary>Productivity vs companion AI. Twent automates, Replika chats.</summary>
+    <keywords>vs Replika, comparison, AI companion</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/nebula</canonical>
+    <md>https://twent.xyz/vs/nebula.md</md>
+    <type>compare</type>
+    <summary>More integrations, offline models, Ubuntu terminal. Twent vs Nebula for power users.</summary>
+    <keywords>vs Nebula, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/openclaw</canonical>
+    <md>https://twent.xyz/vs/openclaw.md</md>
+    <type>compare</type>
+    <summary>More integrations, offline models, UI automation. Twent vs OpenClaw comparison.</summary>
+    <keywords>vs OpenClaw, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/hermes-agent</canonical>
+    <md>https://twent.xyz/vs/hermes-agent.md</md>
+    <type>compare</type>
+    <summary>Hermes Agent runs inside Twent with Ubuntu terminal and UI control.</summary>
+    <keywords>vs Hermes Agent, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/n8n</canonical>
+    <md>https://twent.xyz/vs/n8n.md</md>
+    <type>compare</type>
+    <summary>On-device automation vs cloud workflows. No internet required, Ubuntu terminal.</summary>
+    <keywords>vs n8n, comparison, workflow automation</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/make</canonical>
+    <md>https://twent.xyz/vs/make.md</md>
+    <type>compare</type>
+    <summary>Local agents on Android vs visual cloud workflows. Ubuntu terminal, no internet.</summary>
+    <keywords>vs Make, Make.com, comparison, workflow automation</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/zapier</canonical>
+    <md>https://twent.xyz/vs/zapier.md</md>
+    <type>compare</type>
+    <summary>Android device automation vs cloud app integrations. What Zapier cannot reach, Twent can.</summary>
+    <keywords>vs Zapier, comparison, automation</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/anything-llm</canonical>
+    <md>https://twent.xyz/vs/anything-llm.md</md>
+    <type>compare</type>
+    <summary>Mobile-first agentic AI vs desktop-first document AI. Twent on your phone.</summary>
+    <keywords>vs AnythingLLM, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/manus</canonical>
+    <md>https://twent.xyz/vs/manus.md</md>
+    <type>compare</type>
+    <summary>On-device AI vs cloud agents. Local models, terminal, offline mode.</summary>
+    <keywords>vs Manus, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/qordinate</canonical>
+    <md>https://twent.xyz/vs/qordinate.md</md>
+    <type>compare</type>
+    <summary>More integrations, offline capability, automation depth. Twent vs Qordinate.</summary>
+    <keywords>vs Qordinate, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/omnara</canonical>
+    <md>https://twent.xyz/vs/omnara.md</md>
+    <type>compare</type>
+    <summary>Device-level automation, MCP ecosystem, skills marketplace. Twent vs Omnara.</summary>
+    <keywords>vs Omnara, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/onspace</canonical>
+    <md>https://twent.xyz/vs/onspace.md</md>
+    <type>compare</type>
+    <summary>Privacy-first, offline models, Ubuntu terminal. Twent vs Onspace for Android.</summary>
+    <keywords>vs Onspace, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Legal -->
+  <url>
+    <canonical>https://twent.xyz/privacy</canonical>
+    <md>https://twent.xyz/privacy.md</md>
+    <type>legal</type>
+    <summary>Privacy policy — zero data collection, BYOK encryption, no telemetry.</summary>
+    <keywords>privacy, data, encryption, security, policy</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/terms</canonical>
+    <md>https://twent.xyz/terms.md</md>
+    <type>legal</type>
+    <summary>Terms of service — clear, human-readable terms for a free product.</summary>
+    <keywords>terms, terms of service, legal, agreement</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- AI discovery resources -->
+  <url>
+    <canonical>https://twent.xyz/llms.txt</canonical>
+    <md>https://twent.xyz/llms.txt</md>
+    <type>llms-guide</type>
+    <summary>AI consumer guide (concise) — what is Twent, key features, comparisons, download links.</summary>
+    <keywords>llms.txt, AI guide, consumer guide</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/llms-full.txt</canonical>
+    <md>https://twent.xyz/llms-full.txt</md>
+    <type>llms-guide</type>
+    <summary>AI consumer guide (full) — complete Twent reference for AI agents and LLM crawlers.</summary>
+    <keywords>llms-full.txt, AI guide, full reference</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/sitemap.md</canonical>
+    <md>https://twent.xyz/sitemap.md</md>
+    <type>sitemap</type>
+    <summary>Markdown sitemap for AI agents — all pages with markdown twin references.</summary>
+    <keywords>sitemap, AI, markdown</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/docs/llms.txt</canonical>
+    <md>https://twent.xyz/docs/llms.txt</md>
+    <type>llms-guide</type>
+    <summary>AI consumer guide for Twent documentation — tool reference, setup, configuration.</summary>
+    <keywords>docs, llms.txt, AI guide, documentation</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/docs/llms-full.txt</canonical>
+    <md>https://twent.xyz/docs/llms-full.txt</md>
+    <type>llms-guide</type>
+    <summary>Full AI reference for Twent documentation — complete technical guide for AI agents.</summary>
+    <keywords>docs, llms-full.txt, AI guide, full reference</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</sitemap-llms>

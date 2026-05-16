@@ -207,8 +207,10 @@ export async function onRequest(context) {
 
   // ─── AI Bot implicit markdown (optional spec extension) ───
   let serveMarkdown = negotiated === 'markdown';
-  if (aiBot && !accept.includes('text/html') && !accept.includes('application/xhtml')) {
-    serveMarkdown = true;
+  if (aiBot) {
+    // AI bots: serve markdown unless they explicitly prefer HTML
+    const prefersHtml = accept.includes('text/html') || accept.includes('application/xhtml');
+    if (!prefersHtml) serveMarkdown = true;
   }
 
   // ─── Markdown Twin ───
@@ -270,6 +272,7 @@ export async function onRequest(context) {
   newHeaders.set('Link', existingLink ? `${existingLink}, ${newLink}` : newLink);
   newHeaders.set('Surrogate-Key', 'dualmark markdown-twin');
   newHeaders.set('X-AEO-Version', '1.0');
+  newHeaders.set('X-Generator', 'Twent-Dualmark/1.0');
 
   return new Response(htmlResponse.body, {
     status: htmlResponse.status,

@@ -244,7 +244,37 @@
 # HTML responses: Link header points to markdown twin
 # ═══════════════════════════════════════════════════════
 
-# Markdown twins — headers set by edge function (functions/_middleware.js)
+# Docs llms guides (Dualmark llms.txt spec) — AI consumer guides for docs
+/docs/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  Vary: Accept
+  X-Robots-Tag: noindex, nofollow
+  X-AEO-Version: 1.0
+  X-Content-Type-Options: nosniff
+  X-Generator: Twent-Dualmark/1.0
+
+/docs/llms-full.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Access-Control-Allow-Origin: *
+  Vary: Accept
+  X-Robots-Tag: noindex, nofollow
+  X-AEO-Version: 1.0
+  X-Content-Type-Options: nosniff
+  X-Generator: Twent-Dualmark/1.0
+
+/sitemap-llms.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Robots-Tag: noindex, follow
+  X-AEO-Version: 1.0
+  X-Generator: Twent-Dualmark/1.0
+  Allow: *
 # Note: Cloudflare Pages _headers does NOT support glob patterns (e.g. *.md)
 # Individual files below. Edge function sets all other markdown headers.
 # AI consumer guides (Dualmark llms.txt spec)

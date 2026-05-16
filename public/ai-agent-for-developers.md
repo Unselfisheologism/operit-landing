@@ -2,8 +2,9 @@
 title: Code on Your Phone — MCP, CLI & Ubuntu Terminal
 description: Run Claude Code, Codex & full CLI tools on your Android device. Git, SSH, MCP & VS Code Server in a mobile shell.
 type: landing
+keywords: [coding on phone, Claude Code, OpenAI Codex, Git, SSH, VS Code Server, developers, mobile development]
 ai-readability:
-  tokens: 521
+  tokens: 810
   score: 100
   level: Advanced
 ---
@@ -12,72 +13,148 @@ ai-readability:
 
 > Run Claude Code, Codex & full CLI tools on your Android device. Git, SSH, MCP & VS Code Server in a mobile shell.
 
-## What is Twent?
+## What You Get on Your Phone
 
-Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
+Twent turns your Android device into a complete development workstation. Run the same tools you'd use on a laptop — but from your pocket.
 
-## Core Features
+## Claude Code on Android
 
-### AI Agent Capabilities
-- Screen reading and UI automation (tap, swipe, scroll, type)
-- Floating chat bubble overlay
-- Voice wake word activation
-- Persistent memory system
-- MCP (Model Context Protocol) plugins
-- Composio integration (1000+ app connections)
+Claude Code is Anthropic's CLI agent for serious code refactoring. Twent runs it directly on your phone:
 
-### Full Ubuntu Terminal
-- Runs Ubuntu 24.04 (Noble) on Android without root
-- Full CLI with bash, zsh, fish shells
-- Package manager (apt, npm, pip, cargo)
-- Git, SSH, and development tools
-- Compiler support: Python, Node.js, Go, Rust, C/C++
+```bash
+# SSH into a server and refactor a codebase
+ssh user@production-server
+git clone https://github.com/org/repo
+cd repo
+claude --review "refactor the auth module to use JWT"
 
-### Local AI & Privacy
-- Runs GGUF models locally on device
-- BYOK - Bring Your Own Key for API access (encrypted locally)
-- MNN (Mobile Neural Networks) for efficient inference
-- Zero telemetry - no data leaves your device
-- On-device embedding generation
+# Or run locally on your device
+claude --edit "add error handling to all API calls"
+```
 
-### Developer Tools
-- Claude Code integration
-- OpenAI Codex support
-- Git and GitHub CLI
-- VS Code Server
-- SSH client and server
+- Full Claude Code execution on your Android device
+- Works with any Git repository
+- Handles complex multi-file refactoring
+- Remembers context across commands
 
-### Automation & Workflows
-- Visual workflow builder
-- Tasker integration
-- Scheduled triggers
-- Conditional logic (if/then/else)
+## OpenAI Codex Integration
 
-## Pricing
+Codex runs at the command line for quick script generation:
 
-Twent is free. Everything is free. No credit card required.
-- **Free**: Ubuntu terminal, basic AI, no cloud dependency
-- **Pro**: All features, priority support ($9.99/mo — coming later)
+```bash
+# Generate a Python script from a description
+codex "find all large files in /home and list them by size"
 
-## Technical Requirements
+# Generate a bash one-liner
+codex "show me all running Docker containers sorted by memory"
 
-- Android 8.0+ (API 26)
-- 3GB+ RAM recommended
-- 500MB+ storage
-- arm64-v8a architecture
-- No root required
+# Create a script to auto-commit and push
+codex "create a script that commits all changes with timestamp"
+```
+
+## Full Development Environment
+
+```bash
+# Python — data science, automation, scripts
+apt install python3-pip
+pip install requests pandas numpy matplotlib
+
+python3 analyze_data.py
+
+# Node.js — JavaScript/TypeScript development
+apt install nodejs npm
+npm install -g typescript ts-node
+ts-node my-script.ts
+
+# Go — systems programming
+apt install golang-go
+go run main.go
+
+# Rust — safe systems language
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo build --release
+
+# C/C++ — compiled languages
+apt install gcc g++ make cmake
+gcc -o program program.c
+```
+
+## Git & GitHub CLI
+
+Full version control from your phone:
+
+```bash
+# Clone and work on any repo
+git clone https://github.com/user/repo
+cd repo
+git checkout -b feature/my-feature
+
+# Stage, commit, push
+git add .
+git commit -m "feat: add user authentication"
+git push -u origin feature/my-feature
+
+# Use gh CLI for GitHub
+gh issue list --state open
+gh pr create --title "Feature: new login" --body "Adds OAuth login"
+gh pr review feature/my-feature --approve
+```
+
+## SSH Client & Server
+
+Connect to any server from your Android device:
+
+```bash
+# SSH into remote servers
+ssh -i ~/.ssh/key user@server.com
+
+# SSH with port forwarding
+ssh -L 3000:localhost:3000 user@server.com
+
+# Run a background SSH tunnel
+ssh -f -N -L 8080:localhost:80 user@server.com
+
+# Start SSH server on your Android
+sudo apt install openssh-server
+sudo service ssh start
+```
+
+## VS Code Server
+
+Run VS Code in a browser connected to your phone's environment:
+
+```bash
+# Install code-server
+curl -fsSL https://code-server.dev/install.sh | sh
+code-server --port 8443 --host 0.0.0.0
+
+# Connect from any browser
+# https://your-phone-ip:8443
+```
+
+## MCP Servers for Development
+
+Install MCP servers and your AI gets development superpowers:
+
+- **Git MCP** — Commit, branch, PR management via AI
+- **Filesystem MCP** — Deep file operations with watch support
+- **SQLite MCP** — Query local databases
+- **Puppeteer MCP** — Browser automation for testing
+
+## What Twent Is NOT
+
+- Not just a code editor — it is a full Linux development environment
+- Not cloud-based — everything runs locally on your device
+- Not a simple shell — it includes Claude Code, Codex, Git, SSH, and AI agent capabilities
 
 ## Related Pages
 
-- [Home](/) - Main landing page
-- [Pricing](/pricing) - Free plan details
-- [Documentation](/docs) - Full documentation
+- [Ubuntu Terminal](/terminal-on-android) — Full Linux in your pocket
+- [Android Automation](/android-automation-power-user) — Automate your workflow
+- [Privacy-First AI](/privacy-first-ai-android) — Keep your code private
+- [Home](/) — Main landing page
 
 ## Download
 
-Get Twent at https://twent.xyz — direct APK download, no Play Store required.
+Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
 
-## Contact
-
-- Website: https://twent.xyz
-- Support: support@twent.xyz

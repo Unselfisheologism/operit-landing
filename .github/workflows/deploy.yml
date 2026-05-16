@@ -1,0 +1,111 @@
+name: Deploy & AEO Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run AEO verification weekly
+    - cron: '0 3 * * 0'
+
+jobs:
+  # ── Dualmark AEO Verification ──────────────────────────────────────────────
+  dualmark-verify:
+    name: Dualmark AEO Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Generate markdown twins
+        run: bun run dualmark:generate
+
+      - name: Verify homepage AEO score
+        run: bunx @dualmark/cli verify https://twent.xyz --json | tee dualmark-home.json
+        continue-on-error: true
+
+      - name: Verify key pages AEO score
+        run: |
+          echo "=== Pricing page ===" && bunx @dualmark/cli verify https://twent.xyz/pricing || true
+          echo "=== Docs page ===" && bunx @dualmark/cli verify https://twent.xyz/docs || true
+          echo "=== AI Agent for Developers ===" && bunx @dualmark/cli verify https://twent.xyz/ai-agent-for-developers || true
+          echo "=== llms.txt ===" && bunx @dualmark/cli verify https://twent.xyz/llms.txt || true
+        continue-on-error: true
+
+      - name: Parse dualmark score
+        id: score
+        run: |
+          SCORE=$(cat dualmark-home.json 2>/dev/null | grep -o '"score":[0-9]*' | head -1 | cut -d: -f2 || echo "unknown")
+          MAX=$(cat dualmark-home.json 2>/dev/null | grep -o '"maxScore":[0-9]*' | head -1 | cut -d: -f2 || echo "125")
+          echo "SCORE=$SCORE" >> $GITHUB_OUTPUT
+          echo "MAX=$MAX" >> $GITHUB_OUTPUT
+
+      - name: Check AEO threshold
+        run: |
+          SCORE=${SCORE:-0}
+          if [ "$SCORE" -ge 119 ]; then
+            echo "✅ ADVANCED conformance: $SCORE/125"
+          elif [ "$SCORE" -ge 100 ]; then
+            echo "✅ STANDARD conformance: $SCORE/125"
+          elif [ "$SCORE" -ge 75 ]; then
+            echo "⚠️  BASIC conformance: $SCORE/125"
+          else:
+            echo "❌ Below Basic threshold: $SCORE/125"
+            echo "::warning::AEO score below Basic threshold (75/125). Run 'npm run dualmark:generate && npm run dualmark:verify' locally."
+          fi
+
+      - name: Upload dualmark report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dualmark-report
+          path: dualmark-home.json
+          retention-days: 7
+
+  # ── Build & Deploy ──────────────────────────────────────────────────────────
+  build-deploy:
+    name: Build & Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: dualmark-verify
+    
+    # Only deploy on main branch push, not on PRs or scheduled runs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Full build with dualmark generation
+        run: bun run build:full
+        env:
+          NODE_ENV: production
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: twent-landing
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'

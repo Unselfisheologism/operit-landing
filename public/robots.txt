@@ -466,3 +466,6 @@ Sitemap: https://twent.xyz/sitemap.md
 # LLM consumer guides (Dualmark llms.txt spec)
 Sitemap: https://twent.xyz/llms.txt
 Sitemap: https://twent.xyz/llms-full.txt
+
+# AI-optimized XML sitemap (Dualmark sitemap-llms spec)
+Sitemap: https://twent.xyz/sitemap-llms.xml

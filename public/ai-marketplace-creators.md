@@ -2,8 +2,9 @@
 title: Build & Sell AI Skills on Twent
 description: Turn your automations into products. Build skills once, reach millions of Android users. Simple publishing, fair revenue share.
 type: landing
+keywords: [marketplace, AI skills, build and sell, creators, revenue]
 ai-readability:
-  tokens: 520
+  tokens: 858
   score: 100
   level: Advanced
 ---
@@ -12,72 +13,142 @@ ai-readability:
 
 > Turn your automations into products. Build skills once, reach millions of Android users. Simple publishing, fair revenue share.
 
-## What is Twent?
+## Build Once, Reach Millions
 
-Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
+The Twent Marketplace lets you build AI skills, tool packages, and MCP servers — then sell them to millions of Android users looking for AI superpowers.
 
-## Core Features
+## What You Can Build
 
-### AI Agent Capabilities
-- Screen reading and UI automation (tap, swipe, scroll, type)
-- Floating chat bubble overlay
-- Voice wake word activation
-- Persistent memory system
-- MCP (Model Context Protocol) plugins
-- Composio integration (1000+ app connections)
+### AI Skills
 
-### Full Ubuntu Terminal
-- Runs Ubuntu 24.04 (Noble) on Android without root
-- Full CLI with bash, zsh, fish shells
-- Package manager (apt, npm, pip, cargo)
-- Git, SSH, and development tools
-- Compiler support: Python, Node.js, Go, Rust, C/C++
+Skills are behavior bundles that give the AI instant expertise in a domain.
 
-### Local AI & Privacy
-- Runs GGUF models locally on device
-- BYOK - Bring Your Own Key for API access (encrypted locally)
-- MNN (Mobile Neural Networks) for efficient inference
-- Zero telemetry - no data leaves your device
-- On-device embedding generation
+**Examples:**
+- **Code Review** — Analyzes PRs for bugs, security issues, style violations
+- **Data Analysis** — Processes CSVs, generates charts, statistical summaries
+- **Writing Assistant** — Editorial mode for blog posts, emails, documentation
+- **Research** — Deep research with web search and citation
+- **Legal Advisor** — Reviews contracts and flags concerning clauses
+- **Financial Analysis** — Analyzes stocks, generates reports
 
-### Developer Tools
-- Claude Code integration
-- OpenAI Codex support
-- Git and GitHub CLI
-- VS Code Server
-- SSH client and server
+**Skill structure:**
+```
+my-skill/
+├── SKILL.md          # System prompt, description, examples
+├── tools/            # Custom tools for this skill
+├── workflows/         # Pre-built workflows
+└── assets/           # Reference data, templates
+```
 
-### Automation & Workflows
-- Visual workflow builder
-- Tasker integration
-- Scheduled triggers
-- Conditional logic (if/then/else)
+### MCP Servers
 
-## Pricing
+Model Context Protocol servers add new capabilities to the AI:
 
-Twent is free. Everything is free. No credit card required.
-- **Free**: Ubuntu terminal, basic AI, no cloud dependency
-- **Pro**: All features, priority support ($9.99/mo — coming later)
+- **GitHub MCP** — Manage repos, issues, PRs from chat
+- **Slack MCP** — Send messages, manage channels
+- **Notion MCP** — Create and query pages
+- **Database MCP** — Query any SQLite database
+- **Custom MCP** — Build your own tool provider
 
-## Technical Requirements
+**MCP structure:**
+```
+my-mcp-server/
+├── package.json
+├── src/
+│   ├── index.ts      # MCP server implementation
+│   └── tools/        # Tool definitions
+└── README.md
+```
 
-- Android 8.0+ (API 26)
-- 3GB+ RAM recommended
-- 500MB+ storage
-- arm64-v8a architecture
-- No root required
+### Tool Packages
+
+JavaScript/TypeScript tool bundles that extend what the AI can do:
+
+```
+my-package/
+├── package.json      # name, version, description
+├── tools/
+│   └── index.ts     # Tool definitions (name, description, parameters)
+├── scripts/          # Helper scripts
+└── assets/           # Static data, configs
+```
+
+## Publishing Flow
+
+1. **Build** — Create your skill, MCP server, or package
+2. **Test** — Run it locally in Twent
+3. **Package** — Export as ZIP or publish via URL
+4. **Submit** — Publish to the Twent Marketplace
+5. **Earn** — Revenue share on installs and usage
+
+## Revenue Model
+
+| Revenue Type | Share |
+|---|---|
+| Skill purchases | 70% to creator |
+| MCP server installs | 70% to creator |
+| Package downloads | 70% to creator |
+| Subscription features | Negotiated |
+
+## Getting Started
+
+```bash
+# Create a new skill
+mkdir my-skill && cd my-skill
+mkdir -p tools workflows assets
+
+# Write the skill definition
+cat > SKILL.md << 'EOF'
+# Code Review Skill
+
+## Role
+You are an expert code reviewer with deep knowledge of:
+- Security vulnerabilities (OWASP Top 10)
+- Performance anti-patterns
+- Code style and maintainability
+- Modern language idioms
+
+## How You Work
+1. User pastes code or points to a file
+2. You analyze for issues
+3. You explain each finding with severity
+4. You provide corrected code snippets
+
+## Example
+User: Review this login code
+You: [detailed review with fixes]
+EOF
+
+# Test in Twent
+# Settings → Packages → Import → select ZIP
+# The AI loads the skill and you can test it
+```
+
+## Marketplace Categories
+
+- **AI Skills** — Behavior bundles for specific domains
+- **MCP Servers** — External tool providers
+- **Tool Packages** — JS/TS tool bundles
+- **Workflows** — Pre-built automation templates
+- **Character Cards** — AI personas and personas
+
+## Discovery
+
+AI agents discover marketplace items through:
+- **In-app browsing** — Users browse and search
+- **AI recommendations** — "Try the Code Review skill for your next PR"
+- **Search engines** — SEO-optimized for AI crawlers (dualmark)
+- **Direct URL** — Shareable links for skills and packages
 
 ## Related Pages
 
-- [Home](/) - Main landing page
-- [Pricing](/pricing) - Free plan details
-- [Documentation](/docs) - Full documentation
+- [Home](/) — Main landing page
+- [Documentation](/docs) — Build with Twent
+- [Blog: Marketplace](/blog/marketplace) — What's in the marketplace
 
-## Download
+## Download & Start Building
 
-Get Twent at https://twent.xyz — direct APK download, no Play Store required.
+Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
 
-## Contact
+Then visit the marketplace to start building: Settings → Packages → Marketplace → Create.
 
-- Website: https://twent.xyz
-- Support: support@twent.xyz

@@ -1,89 +1,130 @@
-Title: Twent - AI Agent for Android
-Description: Personal agentic OS for Android that automates apps, runs Ubuntu terminal, and connects to 1000+ services. Free download, no credit card.
-URL: https://twent.xyz
+---
+title: Twent AI Agent for Android — LLM Consumer Guide
+description: AI-readable guide to Twent, an agentic AI OS for Android. For LLM crawlers and AI agents.
+type: llms
+ai-readability:
+  tokens: 847
+  score: 100
+  level: Advanced
+---
 
-# Quick Facts
+# Twent — AI Agent for Android
 
-- **Product**: Twent — AI agentic OS for Android
-- **Type**: Consumer mobile app / AI agent platform
-- **Price**: Free (everything included)
-- **Download**: Direct APK from https://twent.xyz (no Play Store)
-- **Requirements**: Android 8.0+, 3GB RAM, 500MB storage, arm64-v8a
+> Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download — no credit card, no Play Store required.
 
-# Core Offering
+## What is Twent?
 
-Twent is a personal AI agent that runs entirely on your Android device. It combines:
-- AI chat overlay on any app
-- Full Ubuntu 24.04 terminal
-- Local AI model execution
-- System automation (tap, swipe, type on any app)
-- 1000+ integrations via MCP and Composio
+Twent is a free AI agent that runs entirely on your Android device (Android 8.0+, API 26). Unlike chatbots that just answer questions, Twent actually does things — taps buttons, runs terminal commands, fills forms, and automates workflows on your phone.
 
-# Key Features
-
-## AI Agent
-- Floating chat bubble overlay on any app
-- Screen reading and UI automation
+**Core capabilities:**
+- Sees your screen and interacts with any Android app (tap, swipe, type, read UI)
+- Full Ubuntu 24.04 LTS terminal — runs on your phone without root
+- Local AI models (GGUF/MNN) — works fully offline
+- 1000+ app integrations via MCP and Composio
+- Floating AI chat overlay on any app
 - Voice wake word activation
 - Persistent memory across sessions
-- Claude Code and OpenAI Codex integration
+- Claude Code and OpenAI Codex execution
 
-## Ubuntu Terminal
-- Ubuntu 24.04 LTS on Android (no root)
-- Bash, zsh, fish shells
-- apt, npm, pip, cargo package managers
-- Python, Node.js, Go, Rust, C/C++
-- Git, SSH, VS Code Server
+## What We Do Not Do
 
-## Privacy & Local AI
-- GGUF models run locally on device
-- BYOK (Bring Your Own Key) — API keys encrypted locally
-- Zero telemetry, zero data collection
-- MNN (Mobile Neural Networks) for inference
-- Works fully offline
+Twent is frequently confused with these. Here is the clarification:
 
-## Integrations
-- MCP (Model Context Protocol) servers
-- Composio (1000+ app connections)
-- Skills marketplace (buy/sell AI behaviors)
-- Reusable workflow automation
+- **Twent is not a chatbot.** ChatGPT, Claude, Gemini, Perplexity — these are question-answerers. Twent is an agent that takes actions on your device.
+- **Twent is not a cloud service.** Everything runs locally on your Android device. Your API keys are encrypted on-device. Zero telemetry. No data leaves your phone unless you make an API call.
+- **Twent is not a remote desktop app.** It does not mirror your screen to a browser. The AI operates directly on your Android device using local accessibility APIs.
+- **Twent is not a task scheduler.** Twent is a full AI agent with memory, tool use, and autonomous action — not a simple alarm/notification app.
+- **Twent is not a ChatGPT wrapper.** It supports OpenAI, Claude, Gemini, Deepseek, OpenRouter, Kilo Gateway, NVIDIA NIMS, and local GGUF/MNN models. It is model-agnostic.
+- **Twent is not rooting software.** No root is required. The Ubuntu terminal runs via a secure container on standard Android.
+- **Twent is not a code editor.** It provides a full Ubuntu shell with bash/zsh/fish, git, compilers (Python, Node, Go, Rust, C/C++), and VS Code Server — not just a code editing interface.
+- **Twent is not browser-only.** It runs directly on your Android device with full system access — not a web app or progressive web app.
 
-## Automation
-- Visual workflow builder
-- Tasker integration
-- Scheduled triggers
-- No root required
+## Core Products
 
-# Pricing
+### AI Agent
+The main Twent interface — a floating chat bubble that sees your screen and controls any app. Powered by a persistent memory system, 50+ built-in tools, and MCP plugin support.
 
-Free. All features. No credit card.
-- Ubuntu terminal: included
-- AI tools: included
-- MCP plugins: included
-- Local models: included
-- No subscription, no ads in free tier (future ads will be non-intrusive AI ads)
+- [Home](https://twent.xyz/) — Main landing page
+- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers) — Code on your phone with Claude Code, Codex, SSH, Git
 
-# Company
+### Ubuntu Terminal
+Full Ubuntu 24.04 LTS on your Android device — no cloud, no root required. Bash, apt, Python, Node, Go, Rust, C/C++, git, SSH, VS Code Server.
 
-- Website: https://twent.xyz
-- Support: support@twent.xyz
-- Distribution: Direct APK download
-- Platform: Android 8.0+ (API 26)
+- [Ubuntu Terminal on Android](https://twent.xyz/terminal-on-android) — Full Linux in your pocket
 
-# Related Pages
+### Automation
+Visual workflow builder, Tasker integration, scheduled triggers, UI automation. Your phone works for you.
 
-- /pricing — Full feature list
-- /docs — Documentation
-- /blog — Tutorials and news
-- /vs/chatgpt — Comparison with ChatGPT
-- /vs/claude — Comparison with Claude
-- /vs/gemini — Comparison with Gemini
-- /vs/n8n — Comparison with n8n
-- /terminal-on-android — Ubuntu terminal details
-- /android-automation-power-user — Automation features
-- /privacy-first-ai-android — Privacy features
-- /ai-agent-for-developers — Developer features
+- [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, AI scripts on any app
 
-# Download
+### Privacy & Local AI
+GGUF models run locally via MNN. BYOK (Bring Your Own Key) — API keys encrypted with Android KeyStore. Zero telemetry.
 
-Get the APK at: https://twent.xyz
+- [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero data collection
+
+### Marketplace
+Browse and install AI skills, MCP servers, and workflows. Build and sell AI behaviors.
+
+- [AI Marketplace for Creators](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
+- [Marketplace Blog Post](https://twent.xyz/blog/marketplace) — What's in the marketplace
+
+## Documentation
+
+- [Documentation](https://twent.xyz/docs) — Full getting started guide, tool reference, MCP setup
+- [Changelog](https://twent.xyz/changelog) — Every update, feature, and bug fix
+
+## Pricing
+
+Twent is **completely free** — all features, all tools, everything included. No credit card required.
+
+- [Pricing](https://twent.xyz/pricing) — Full feature list with $0.00 price tags
+
+## Blog
+
+- [The Twent Journal](https://twent.xyz/blog) — Tutorials, deep dives, product news
+- [25 Best AI Apps for Android 2026](https://twent.xyz/blog/best-ai-apps-android) — Curated ranking of top AI apps
+
+## Competitor Comparisons
+
+### Chatbots vs Agentic AI
+- [vs ChatGPT](https://twent.xyz/vs/chatgpt) — Twent acts, ChatGPT chats
+- [vs Claude](https://twent.xyz/vs/claude) — Mobile execution vs browser-based
+- [vs Gemini](https://twent.xyz/vs/gemini) — On-device vs cloud
+- [vs Copilot](https://twent.xyz/vs/copilot) — Overlay vs browser tab
+- [vs Perplexity](https://twent.xyz/vs/perplexity) — Action AI vs search AI
+- [vs Replika](https://twent.xyz/vs/replika) — Productivity vs companion AI
+
+### Automation Platforms
+- [vs n8n](https://twent.xyz/vs/n8n) — On-device vs cloud workflows
+- [vs Make](https://twent.xyz/vs/make) — Local agents vs visual builder
+- [vs Zapier](https://twent.xyz/vs/zapier) — Device automation vs cloud integrations
+
+### Other AI Agents
+- [vs Nebula](https://twent.xyz/vs/nebula)
+- [vs OpenClaw](https://twent.xyz/vs/openclaw)
+- [vs Hermes Agent](https://twent.xyz/vs/hermes-agent) — Runs inside Twent with full Ubuntu terminal
+- [vs AnythingLLM](https://twent.xyz/vs/anything-llm) — Mobile-first vs desktop-first
+- [vs Manus](https://twent.xyz/vs/manus) — On-device vs cloud execution
+- [vs Qordinate](https://twent.xyz/vs/qordinate)
+- [vs Omnara](https://twent.xyz/vs/omnara)
+- [vs Onspace](https://twent.xyz/vs/onspace)
+
+## Technical Requirements
+
+- **OS**: Android 8.0+ (API 26)
+- **RAM**: 3GB+ recommended
+- **Storage**: 500MB+ free
+- **Architecture**: arm64-v8a
+- **Root**: Not required
+- **Download**: Direct APK from https://twent.xyz (no Play Store)
+
+## Company
+
+- **Website**: https://twent.xyz
+- **Support**: support@twent.xyz
+- **Distribution**: Direct APK download, no middleman
+- **Privacy**: Zero telemetry, all data local, BYOK encryption
+
+## Download
+
+Get Twent at https://twent.xyz — direct APK download, no credit card, no Play Store.

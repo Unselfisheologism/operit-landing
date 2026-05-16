@@ -1,0 +1,66 @@
+---
+title: Twent — AI Agent pour Android (2026)
+description: Guide de référence de Twent pour agents IA. IA agentic sur Android avec terminal Ubuntu, automatisation et modèles locaux.
+type: llms
+ai-readability:
+  tokens: 312
+  score: 100
+  level: Advanced
+---
+
+# Twent — IA Agent pour Android
+
+> Votre système d'exploitation agentic IA personnel dans votre poche. Automatisez n'importe quelle application, exécutez un vrai terminal Ubuntu, connectez 1000+ services. Téléchargement gratuit.
+
+## Qu'est-ce que Twent ?
+
+Twent est un agent IA gratuit pour Android qui combine un overlay de chat IA, un terminal Ubuntu complet, des modèles IA locaux et une automatisation système profonde — tout sur votre appareil, sans dépendance au cloud.
+
+## Fonctionnalités principales
+
+- **Agent IA avec écran partagé** — voit votre écran, interagit avec n'importe quelle application
+- **Terminal Ubuntu 24.04 LTS** — bash, apt, Python, Node, Go, Rust sur votre téléphone
+- **Modèles IA locaux** — exécutez des modèles GGUF entièrement hors ligne
+- **Intégrations MCP et Composio** — 1000+ services connectés
+- **Mémoire persistante** — se souvient de vos préférences et discussions
+- **Terminal flottant** — chat IA par-dessus n'importe quelle application
+- **Activation vocale** — "Hey Twent" et commencez à parler
+
+## Ce que Twent ne fait PAS
+
+- **Twent n'est pas un chatbot.** ChatGPT, Claude, Gemini répondent aux questions. Twent agit.
+- **Twent n'est pas un service cloud.** Tout s'exécute localement sur votre appareil Android.
+- **Twent n'est pas une application de bureau à distance.** L'IA opère directement sur votre appareil.
+- **Twent n'est pas un simple planificateur.** C'est un agent IA complet avec mémoire persistante.
+- **Twent n'est pas un wrapper ChatGPT.** Il prend en charge OpenAI, Claude, Gemini, Deepseek, et les modèles locaux.
+- **Twent n'est pas un logiciel de root.** Aucune racine requise.
+
+## Pages principales
+
+- [Accueil](https://twent.xyz/) — Page principale
+- [Agent IA pour développeurs](https://twent.xyz/ai-agent-for-developers) — Codez sur votre téléphone
+- [Terminal Ubuntu sur Android](https://twent.xyz/terminal-on-android) — Linux dans votre poche
+- [Automatisation Android](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, scripts
+- [IA respects de la vie privée](https://twent.xyz/privacy-first-ai-android) — Modèles locaux, zéro télémétrie
+- [Marketplace IA](https://twent.xyz/ai-marketplace-creators) — Construisez et vendez des skills
+- [Documentation](https://twent.xyz/docs) — Guides complets
+- [Tarifs](https://twent.xyz/pricing) — Tout gratuit
+
+## Comparaisons
+
+- [vs ChatGPT](https://twent.xyz/vs/chatgpt) — Agent vs chatbot
+- [vs Claude](https://twent.xyz/vs/claude) — Mobile vs navigateur
+- [vs Gemini](https://twent.xyz/vs/gemini) — Sur appareil vs cloud
+
+## Configuration requise
+
+- Android 8.0+ (API 26), RAM 3GB+, arm64-v8a, pas de root requis
+
+## Téléchargement
+
+Obtenez Twent sur https://twent.xyz — APK direct, sans Play Store, sans carte de crédit.
+
+## Contact
+
+- Site: https://twent.xyz
+- Support: support@twent.xyz

@@ -1,71 +1,117 @@
 ---
 title: Twent Docs — Getting Started
-description: Step-by-step guides: automate apps, run Ubuntu terminal, connect MCP skills. Everything you need to get started.
+description: Step-by-step guides: install Twent, configure AI models, use tools, set up MCP servers. Everything you need to get started.
 type: docs
 ai-readability:
-  tokens: 481
+  tokens: 298
   score: 100
   level: Advanced
 ---
 
 # Twent Docs — Getting Started
 
-> Step-by-step guides: automate apps, run Ubuntu terminal, connect MCP skills. Everything you need to get started.
+> Step-by-step guides: install Twent, configure AI models, use tools, set up MCP servers. Everything you need to get started.
 
-## Twent Documentation
+## Getting Started
 
-### Getting Started
+### 1. Install Twent
 
-1. Download the APK from https://twent.xyz
-2. Install on Android 8.0+ (no root required)
-3. Launch Twent and start chatting
+Download the APK from https://twent.xyz and install it on your Android 8.0+ device.
 
-### Core Concepts
+Requirements:
+- Android 8.0+ (API 26)
+- 3GB+ RAM
+- 500MB+ storage
+- arm64-v8a architecture
 
-#### AI Agent
-Twent's AI agent can see your screen, interact with any app, and execute tasks on your behalf. It uses a floating chat bubble overlay for easy access.
+No root required.
 
-#### Ubuntu Terminal
-Access a full Ubuntu 24.04 LTS terminal on your Android device. Run Python scripts, use Git, SSH into servers — all from your phone.
+### 2. Configure Your AI Model
 
-#### Skills
-Skills are behavior bundles that give your AI instant expertise. Install a code review skill and it knows how to analyze diffs. One tap, new capability unlocked.
+Open Twent → Settings → Model & Parameters Configuration → Choose provider:
 
-#### MCP Servers
-Model Context Protocol servers plug your AI into GitHub, Slack, Notion, databases — any tool with an API.
+**Cloud models (need API key):**
+- OpenAI: gpt-4o, o1, o3-mini
+- Claude: claude-sonnet-4, claude-opus-4
+- Gemini: gemini-2.5-pro, gemini-2.0-flash
+- Deepseek: deepseek-chat, deepseek-coder
+- OpenRouter: Any model on the platform
 
-#### Memory
-Every conversation, preference, and piece of context gets stored in a local knowledge graph. Close the app, come back next week — your AI knows exactly where you left off.
+**Local models (no API key, fully offline):**
+- GGUF files via MNN
+- GGUF files via llama.cpp
+- MNN model files
 
-### Automation
+### 3. Start Chatting
 
-Twent can automate any Android app through UI interaction:
-- Tap buttons, fill forms, navigate menus
-- Extract data from any app
-- Chain tools into automated pipelines
-- Morning routines, file management, social posting
+Open the chat screen and type a message. Try:
 
-### Developer Tools
+- "What's the weather today?"
+- "Create a Python script to track my expenses"
+- "Run ls -la in my home directory"
+- "Open WhatsApp and send a message to John"
 
-- Claude Code integration for serious refactoring
-- OpenAI Codex for quick scripts
-- Full Git CLI
-- SSH client and server
-- VS Code Server support
+### 4. Enable Permissions (Recommended)
 
-### Privacy
+**Accessibility** (for UI automation):
+Settings → Accessibility → Twent → Enable
 
-- All data stays on your device
-- BYOK — Bring Your Own API keys (encrypted locally)
-- Zero telemetry, zero tracking
-- Local GGUF models via MNN
+**Display Over Other Apps** (for floating chat):
+Settings → Apps → Twent → Display over other apps → Allow
 
-### Pricing
+## Core Concepts
 
-Everything is free. No credit card required.
+### AI Agent
+
+The AI agent sees your screen, understands context, and takes actions. It uses a floating chat bubble for easy access from any app.
+
+### Ubuntu Terminal
+
+Access a full Ubuntu 24.04 LTS terminal on your device. Run Python scripts, use Git, SSH into servers — all from your phone.
+
+### Skills
+
+Skills are behavior bundles that give your AI instant expertise. Install a code review skill and it knows how to analyze diffs. One tap, new capability.
+
+### MCP Servers
+
+Model Context Protocol servers plug your AI into external tools. GitHub, Slack, Notion, databases — any tool with an API.
+
+### Memory
+
+The AI remembers your preferences, past discussions, and important information across sessions. Everything stored locally.
+
+## Tools Reference
+
+### File System
+- read_file — Read file contents with offset/limit
+- write_file — Write content to a file
+- patch — Find-and-replace edits
+- search_files — Search inside files or find by name
+
+### Shell
+- terminal — Execute Linux commands
+
+### Web
+- fetch_url — Fetch page content as markdown
+- search — DuckDuckGo, Tavily, Bing search
+
+### UI Automation
+- tap — Tap UI element by reference
+- swipe — Swipe gesture
+- scroll — Scroll direction
+- type — Type text into a field
+- screenshot — Capture the screen
+- get_ui_tree — Get UI hierarchy
+
+### Memory
+- memory_search — Search across memories
+- memory_save — Save new information
 
 ## Related Pages
 
-- [Home](https://twent.xyz/)
-- [Pricing](https://twent.xyz/pricing)
-- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers)
+- [Home](/) — Main landing page
+- [Pricing](/pricing) — Free plan details
+- [AI Agent for Developers](/ai-agent-for-developers) — Developer features
+- [Ubuntu Terminal](/terminal-on-android) — Terminal reference
+- [Android Automation](/android-automation-power-user) — Automation guide

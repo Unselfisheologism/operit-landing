@@ -1,93 +1,86 @@
+---
+title: Twent Documentation — LLM Consumer Guide
+description: AI-readable guide to Twent documentation. For LLM crawlers and AI agents.
+type: llms
+ai-readability:
+  tokens: 312
+  score: 100
+  level: Advanced
+---
+
 # Twent Documentation
-# https://twent.xyz/docs
+
+> Complete reference guide for Twent, the AI agent for Android. Covers installation, configuration, tools, automation, and advanced features.
+
+## What We Do Not Do
+
+- **Twent documentation is not a chatbot guide.** Twent is an agentic AI that acts on your device — not a chatbot you query. The docs cover real capabilities: terminal commands, UI automation, MCP setup, local models.
+- **Twent documentation is not a web app guide.** Twent is a native Android APK. It runs on your device, not in a browser.
+- **Twent documentation is not just about chat.** The chat interface is one feature. The docs cover 50+ tools, Ubuntu terminal, automation workflows, skills system, MCP servers, and local AI model support.
 
 ## Documentation Structure
 
 ### Getting Started
-- [Installation](https://twent.xyz/docs#installation) - How to install Twent on Android
-- [First Setup](https://twent.xyz/docs#first-setup) - Configuring your first AI model
-- [Your First Chat](https://twent.xyz/docs#first-chat) - Starting your first conversation
-- [Permissions](https://twent.xyz/docs#permissions) - Required and optional permissions
+- [Installation](https://twent.xyz/docs#installation) — APK download, Android 8.0+ requirement, ~80MB
+- [First Setup](https://twent.xyz/docs#first-setup) — Configure AI model (OpenAI, Claude, Gemini, Deepseek, OpenRouter, LM Studio, local GGUF)
+- [Your First Chat](https://twent.xyz/docs#first-chat) — Chat with the AI, tool transparency, streaming responses
+- [Permissions](https://twent.xyz/docs#permissions) — Storage, Network, Accessibility (UI automation), Display Over Apps (floating chat)
 
 ### Chat Features
-- [Chat Overview](https://twent.xyz/docs#chat-overview) - Main chat features and capabilities
-- [Chat Styles](https://twent.xyz/docs#chat-styles) - Cursor and bubble display modes
-- [Floating Chat](https://twent.xyz/docs#floating-chat) - Using Twent in overlay mode
+- [Chat Overview](https://twent.xyz/docs#chat-overview) — Streaming, tool transparency, conversation management, markdown rendering
+- [Chat Styles](https://twent.xyz/docs#chat-styles) — Cursor (streaming) and Bubble modes
+- [Floating Chat](https://twent.xyz/docs#floating-chat) — Bubble, Window, Fullscreen overlay modes
 
-### Tools (40+ Built-in Tools)
-- [Tools Overview](https://twent.xyz/docs#tools-overview) - All available tools
-- [File System](https://twent.xyz/docs#file-system) - Read, write, search files
-- [Shell & Terminal](https://twent.xyz/docs#shell) - Ubuntu terminal and commands
-- [Web Tools](https://twent.xyz/docs#web) - Fetch pages, search, download
-- [Media Tools](https://twent.xyz/docs#media) - FFmpeg, camera, OCR, TTS/STT
-- [UI Automation](https://twent.xyz/docs#ui-automation) - Tap, swipe, type, screenshot
-- [JavaScript](https://twent.xyz/docs#javascript) - Run JS/TS with Node.js
-- [MCP Tools](https://twent.xyz/docs#mcp) - Model Context Protocol servers
+### Tools (50+ Built-in Tools)
+- [Tools Overview](https://twent.xyz/docs#tools-overview) — Tool categories, parallel execution, transparency
+- [File System](https://twent.xyz/docs#file-system) — read_file, write_file, patch, search_files, compress/decompress
+- [Shell & Terminal](https://twent.xyz/docs#shell) — Ubuntu 24.04, apt, npm, pip, git, ssh, bash/zsh/fish
+- [Web](https://twent.xyz/docs#web) — fetch_url, search (DuckDuckGo, Tavily, Bing), download_file, web_visit
+- [Media](https://twent.xyz/docs#media) — FFmpeg, camera, OCR, TTS/STT (Sherpa-NCNN, OpenAI TTS, SiliconFlow)
+- [UI Automation](https://twent.xyz/docs#ui-automation) — tap, swipe, scroll, type, screenshot, get_ui_tree, press_key, open_app
+- [JavaScript](https://twent.xyz/docs#javascript) — execute_code with Node.js, npm packages
+- [MCP](https://twent.xyz/docs#mcp) — Model Context Protocol servers, tool injection
 
 ### Automation
-- [Automation Overview](https://twent.xyz/docs#automation-overview) - UI automation, workflows, triggers
-- [Tasker Integration](https://twent.xyz/docs#tasker) - Connect with Tasker app
+- [Automation Overview](https://twent.xyz/docs#automation-overview) — UI automation, shell, intents, workflows
+- [Tasker Integration](https://twent.xyz/docs#tasker) — Trigger Twent from Tasker and vice versa
 
 ### Packages & Marketplace
-- [Packages Overview](https://twent.xyz/docs#packages-overview) - Extension system
-- [Skills](https://twent.xyz/docs#skills) - AI behavior bundles
-- [Marketplace](https://twent.xyz/docs#marketplace) - Browse and install community packages
+- [Packages Overview](https://twent.xyz/docs#packages-overview) — JS/TS tool bundles, ZIP import
+- [Skills](https://twent.xyz/docs#skills) — AI behavior bundles (Code Review, Data Analysis, Writing, Research)
+- [Marketplace](https://twent.xyz/docs#marketplace) — Browse/install community packages, skills, MCP servers
 
 ### Workflows
-- [Workflows Overview](https://twent.xyz/docs#workflows-overview) - Multi-step automations
-- [Workflow Examples](https://twent.xyz/docs#workflow-examples) - Real-world examples
+- [Workflows Overview](https://twent.xyz/docs#workflows-overview) — Simple, chained, conditional, scheduled
+- [Workflow Examples](https://twent.xyz/docs#workflow-examples) — Morning briefing, file backup, low battery alert
 
-### More Features
-- [Memory](https://twent.xyz/docs#memory) - Persistent knowledge storage
-- [Voice](https://twent.xyz/docs#voice) - TTS, STT, wake word detection
-- [Settings](https://twent.xyz/docs#settings) - Deep customization options
-- [Toolbox](https://twent.xyz/docs#toolbox) - Built-in utility screens
-- [Tool Reference](https://twent.xyz/docs#tool-reference) - Complete parameter reference
+### Advanced Features
+- [Memory](https://twent.xyz/docs#memory) — Persistent knowledge storage, memory_search/save/update/link
+- [Voice](https://twent.xyz/docs#voice) — TTS (system, OpenAI, SiliconFlow), STT (Sherpa-NCNN offline), wake word
+- [Settings](https://twent.xyz/docs#settings) — Model config, themes, context, summarization
+- [Toolbox](https://twent.xyz/docs#toolbox) — Shell executor, terminal, file manager, SQL viewer, logcat, UI debugger
 
-## Key Concepts
+### Tool Reference
+- [Tool Reference](https://twent.xyz/docs#tool-reference) — Complete parameter reference for all tools
 
-### Tools
-Twent has 40+ built-in tools that give AI real capabilities on your device:
-- File system operations
-- Shell command execution
-- Web browsing and search
-- Media processing
-- UI automation
-- JavaScript execution
-- MCP server integration
+## Technical Specifications
+- Android 8.0+ (API 26), arm64-v8a, 3GB+ RAM, 500MB+ storage
+- Ubuntu 24.04 LTS (chroot container)
+- Package managers: apt, pip, npm, cargo, gem
+- Languages: Python 3, Node.js, Go, Rust, C/C++
+- Editors: vim, nano
+- Version control: git, gh CLI
+- AI models: OpenAI, Claude, Gemini, Deepseek, OpenRouter, Kilo Gateway, NVIDIA NIMS, LM Studio, local GGUF/MNN
 
-### Automation
-Twent automates anything on Android:
-- UI automation (tap, swipe, type)
-- Shell commands and scripts
-- Android intents
-- Workflow triggers and conditions
-- Tasker integration
+## Privacy & Security
+- All data stored locally on device
+- API keys encrypted with Android KeyStore (BYOK)
+- Zero telemetry, zero analytics, no data collection
+- Open source and auditable
+- Local AI models (MNN/llama.cpp) for offline inference
 
-### Packages
-Extension system for Twent:
-- Skills: AI behavior bundles
-- MCP Servers: External tool providers
-- Plugins: JS/TS tool bundles
-- Workflows: Pre-built automations
-
-### Privacy
-Twent is privacy-first:
-- BYOK (Bring Your Own Key)
-- Local AI models
-- No telemetry
-- Encrypted storage
-- Full data ownership
-
-## Technical Details
-- Android 8.0+ (API 26)
-- arm64-v8a architecture
-- 3GB RAM recommended
-- 500MB+ storage
-- No root required
-
-## Links
-- Main Website: https://twent.xyz
-- Documentation: https://twent.xyz/docs
+## Quick Reference
+- Download: https://twent.xyz (direct APK, no Play Store)
+- Support: support@twent.xyz
 - GitHub: https://github.com/twent
-- Download: https://twent.xyz (or GitHub releases)
+- Changelog: https://twent.xyz/changelog

@@ -2,8 +2,9 @@
 title: Twent Teams — AI Agents for Your Organization
 description: Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.
 type: landing
+keywords: [enterprise, team management, admin controls, deployment, organization]
 ai-readability:
-  tokens: 522
+  tokens: 669
   score: 100
   level: Advanced
 ---
@@ -12,72 +13,91 @@ ai-readability:
 
 > Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.
 
-## What is Twent?
+## Deploy AI Agents Across Your Android Fleet
 
-Twent is a personal agentic AI OS for Android that combines a full Ubuntu 24.04 terminal, local AI model execution, and deep system automation. It runs entirely on your Android device with no cloud dependency.
+Twent Teams gives your organization centralized control, compliance settings, and usage analytics — with the same powerful AI agent your team already uses.
 
-## Core Features
+## Admin Controls
 
-### AI Agent Capabilities
-- Screen reading and UI automation (tap, swipe, scroll, type)
-- Floating chat bubble overlay
-- Voice wake word activation
-- Persistent memory system
-- MCP (Model Context Protocol) plugins
-- Composio integration (1000+ app connections)
+### Centralized Management
+- **Fleet dashboard** — See all deployed Twent instances
+- **Device groups** — Organize by team, department, or role
+- **Bulk configuration** — Push settings to multiple devices at once
+- **Remote updates** — Push app updates without requiring user action
 
-### Full Ubuntu Terminal
-- Runs Ubuntu 24.04 (Noble) on Android without root
-- Full CLI with bash, zsh, fish shells
-- Package manager (apt, npm, pip, cargo)
-- Git, SSH, and development tools
-- Compiler support: Python, Node.js, Go, Rust, C/C++
+### Access Control
+- **Role-based permissions** — Admin, power user, standard user
+- **Feature flags** — Enable/disable features per group
+- **API key management** — Control which AI providers teams can use
+- **Local model enforcement** — Require offline models for sensitive data
 
-### Local AI & Privacy
-- Runs GGUF models locally on device
-- BYOK - Bring Your Own Key for API access (encrypted locally)
-- MNN (Mobile Neural Networks) for efficient inference
-- Zero telemetry - no data leaves your device
-- On-device embedding generation
+### Compliance Settings
+- **Data residency** — Require local model usage for certain regions
+- **Audit logs** — Track all AI interactions per device
+- **Session controls** — Auto-expire conversations after N days
+- **Screen capture logging** — Optional recording for compliance
 
-### Developer Tools
-- Claude Code integration
-- OpenAI Codex support
-- Git and GitHub CLI
-- VS Code Server
-- SSH client and server
+## Usage Analytics
 
-### Automation & Workflows
-- Visual workflow builder
-- Tasker integration
-- Scheduled triggers
-- Conditional logic (if/then/else)
+### Dashboard Metrics
+- **Active devices** — How many devices are in use
+- **AI usage** — Token counts by model and team
+- **Feature adoption** — Which skills and tools are most used
+- **Session data** — Average conversation length, tool usage patterns
+
+### Reports
+- **Weekly summaries** — Email reports to team leads
+- **Cost tracking** — Monitor API spend by team
+- **Security alerts** — Flag unusual activity patterns
+- **Export** — CSV/JSON exports for further analysis
+
+## Deployment Options
+
+| Option | Description |
+|---|---|
+| **Managed** | Twent hosts everything, you manage via dashboard |
+| **Self-hosted** | Deploy on your own infrastructure |
+| **BYOD** | Employees install on their own devices, you manage via MDM |
+
+## Integration
+
+### MDM Support
+- **Intune** — Deploy via Microsoft Intune
+- **Jamf** — macOS/iOS/Android management
+- **Workspace ONE** — VMware UEM
+- **Custom MDM** — REST API for any MDM solution
+
+### API Access
+- **REST API** — Manage devices, push configs, pull reports
+- **Webhook notifications** — Real-time alerts for events
+- **SSO** — SAML/OIDC integration with your identity provider
+
+## Security
+
+- **Encryption at rest** — All local data encrypted
+- **API key isolation** — Keys encrypted per-device with hardware backing
+- **No telemetry** — Zero data collection, even in enterprise
+- **Audit trail** — Every action logged with timestamp and user
 
 ## Pricing
 
-Twent is free. Everything is free. No credit card required.
-- **Free**: Ubuntu terminal, basic AI, no cloud dependency
-- **Pro**: All features, priority support ($9.99/mo — coming later)
+| Tier | Price | Devices |
+|---|---|---|
+| **Free** | $0 | Individual use only |
+| **Teams** | $X/device/mo | 5+ devices, admin controls |
+| **Enterprise** | Contact us | Unlimited, custom integrations |
 
-## Technical Requirements
-
-- Android 8.0+ (API 26)
-- 3GB+ RAM recommended
-- 500MB+ storage
-- arm64-v8a architecture
-- No root required
+*(Pro and Enterprise pricing TBD — see website for latest)*
 
 ## Related Pages
 
-- [Home](/) - Main landing page
-- [Pricing](/pricing) - Free plan details
-- [Documentation](/docs) - Full documentation
+- [Home](/) — Main landing page
+- [Privacy-First AI](/privacy-first-ai-android) — Enterprise privacy features
+- [Documentation](/docs) — Technical documentation
 
 ## Download
 
-Get Twent at https://twent.xyz — direct APK download, no Play Store required.
+Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
 
-## Contact
+Contact us for Teams pricing: support@twent.xyz
 
-- Website: https://twent.xyz
-- Support: support@twent.xyz
