@@ -27,25 +27,19 @@ export default defineConfig({
         try {
           let html = readFileSync(htmlPath, 'utf-8')
 
-          // Remove the Rollup-injected blocking <link rel="stylesheet"> tag.
-          // Our non-blocking preload is already in <head> — this duplicate causes
-          // a render-blocking CSS request that delays LCP.
-          // It looks like:   <link rel="stylesheet" crossorigin href="/assets/index-XXXX.css">
-          html = html.replace(
-            /\n    <link rel="stylesheet" crossorigin href="\/assets\/index-[^"]+\.css">/,
-            '',
-          )
-
           // Skip if already patched
           if (html.includes('Critical path preloads')) return
 
           const entryJs = html.match(/src="(\/assets\/index-[^"]+\.js)"/)?.[1] ?? ''
+          const entryCss = html.match(/href="(\/assets\/index-[^"]+\.css)"/)?.[1] ?? ''
 
           const criticalPreloads = [
             entryJs
-              ? `    <link rel="modulepreload" crossorigin href="${entryJs}">`
+              ? `    <link rel="modulepreload" crossorigin href="${entryJs}" />`
               : '',
-            // CSS is now inlined as critical CSS in index.html — skip duplicate preload injection
+            entryCss
+              ? `    <link rel="preload" as="style" crossorigin href="${entryCss}" />`
+              : '',
           ]
             .filter(Boolean)
             .join('\n')
@@ -55,19 +49,18 @@ export default defineConfig({
           // Inject before </head> — handle both CRLF and LF line endings
           html = html.replace(
             /<\/head>/,
-            `${criticalPreloads}
-  </head>`,
+            `${criticalPreloads}\n  </head>`,
           )
 
           writeFileSync(htmlPath, html, 'utf-8')
-          console.log('[critical-preloads] Injected critical path preloads')
+          console.log('[critical-preloads] Injected critical path preloads (CSS preload, NOT stripped)')
         } catch (err) {
           // No-op on first build before dist/index.html exists
         }
       },
     },
 
-    // ─── GZIP + Brotli Pre-compression ───────────────────────────────────────
+    // ─── GZIP + Brotli Pre-compression
     compression({
       algorithms: ['gzip', 'brotliCompress'],
       threshold: 1024,
