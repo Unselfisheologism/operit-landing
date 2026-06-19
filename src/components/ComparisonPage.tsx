@@ -30,12 +30,8 @@ function DetailedAnalysis({
   verdict: string;
   features: Feature[];
 }) {
-  const twentStrengths = features.filter(
-    (f) => f.twent && !f.competitor
-  );
-  const twentWeaknesses = features.filter(
-    (f) => !f.twent && f.competitor
-  );
+  const twentStrengths = features.filter((f) => f.twent && !f.competitor);
+  const twentWeaknesses = features.filter((f) => !f.twent && f.competitor);
 
   return (
     <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
@@ -59,8 +55,8 @@ function DetailedAnalysis({
                 verdict === "Better"
                   ? "bg-green-500/10 text-green-600 dark:text-green-400"
                   : verdict === "Twent Wins"
-                  ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                  : "bg-zinc-200 dark:bg-zinc-800 text-zinc-500"
+                    ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
+                    : "bg-zinc-200 dark:bg-zinc-800 text-zinc-500"
               }`}
             >
               {verdict}
@@ -249,7 +245,11 @@ export function ComparisonPage({
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", pageTitle);
     setMeta("twitter:description", description);
-    setMeta("twitter:image", `https://twent.xyz/og-${competitorSlug}.png`, true);
+    setMeta(
+      "twitter:image",
+      `https://twent.xyz/og-${competitorSlug}.png`,
+      true,
+    );
 
     // Article timestamps (Google Discover / News)
     setMeta("article:published_time", "2026-04-19T00:00:00Z");
@@ -345,7 +345,15 @@ export function ComparisonPage({
     }
 
     // Cleanup on unmount would be ideal but omitted for brevity
-  }, [faq, pageTitle, description, keywords, fullUrl, competitorSlug, competitorName]);
+  }, [
+    faq,
+    pageTitle,
+    description,
+    keywords,
+    fullUrl,
+    competitorSlug,
+    competitorName,
+  ]);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
@@ -403,13 +411,22 @@ export function ComparisonPage({
           Read more
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <a href="/blog/marketplace" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+          <a
+            href="/blog/marketplace"
+            className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
+          >
             Twent Marketplace — AI Skills &amp; Integrations →
           </a>
-          <a href="/blog/best-ai-apps-android" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+          <a
+            href="/blog/best-ai-apps-android"
+            className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
+          >
             25 Best AI Apps for Android →
           </a>
-          <a href="/docs" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200">
+          <a
+            href="/docs"
+            className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200"
+          >
             Read the Twent Docs →
           </a>
         </div>
@@ -418,7 +435,7 @@ export function ComparisonPage({
       <div className="text-center py-10 border-t border-gray-200">
         <h2 className="text-xl font-bold mb-4">Try twent AI For Free</h2>
         <a
-          href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+          href="https://assets.twent.xyz/app-release.apk"
           className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
         >
           Download App

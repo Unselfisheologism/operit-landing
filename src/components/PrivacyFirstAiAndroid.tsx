@@ -55,14 +55,30 @@ function BreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
-      { "@type": "ListItem", position: 3, name: "Privacy-First AI", item: "https://twent.xyz/blog/privacy-first-ai-android" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://twent.xyz",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://twent.xyz/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Privacy-First AI",
+        item: "https://twent.xyz/blog/privacy-first-ai-android",
+      },
     ],
   };
-  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+  return (
+    <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+  );
 }
-
 
 // Feature card component
 function FeatureCard({
@@ -163,12 +179,13 @@ export function PrivacyFirstAiAndroid({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                Privacy-first AI for Android: Twent is the only AI assistant with{" "}
-                <strong>BYOK via Android Keystore</strong>,{" "}
+                Privacy-first AI for Android: Twent is the only AI assistant
+                with <strong>BYOK via Android Keystore</strong>,{" "}
                 <strong>AES-256 encrypted storage</strong>, and{" "}
-                <strong>local MNN AI models that run 100% offline</strong>. 
-                Stop trusting cloud AI with your personal data — your chat history, API keys, and files never leave your device, 
-                verifiable via any network analysis tool.
+                <strong>local MNN AI models that run 100% offline</strong>. Stop
+                trusting cloud AI with your personal data — your chat history,
+                API keys, and files never leave your device, verifiable via any
+                network analysis tool.
               </p>
             </div>
 
@@ -209,7 +226,7 @@ export function PrivacyFirstAiAndroid({
               }`}
             >
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
@@ -235,7 +252,9 @@ export function PrivacyFirstAiAndroid({
               </a>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <span className="text-xs text-zinc-400 dark:text-zinc-600">Follow:</span>
+              <span className="text-xs text-zinc-400 dark:text-zinc-600">
+                Follow:
+              </span>
               <SocialLinksInline />
             </div>
           </div>
@@ -276,12 +295,13 @@ export function PrivacyFirstAiAndroid({
               The Problem: Cloud AI Harvests Your Data for Training
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-              Every major AI assistant stores your conversations on their servers, 
-              logs your API calls for "safety improvements," and may use your data to 
-              train future models. As the FTC warned: "your chat history being used 
-              to train next-gen models without consent" is a real, documented practice. 
-              Your personal data, work conversations, and queries become training 
-              fodder — often without clear disclosure.
+              Every major AI assistant stores your conversations on their
+              servers, logs your API calls for "safety improvements," and may
+              use your data to train future models. As the FTC warned: "your
+              chat history being used to train next-gen models without consent"
+              is a real, documented practice. Your personal data, work
+              conversations, and queries become training fodder — often without
+              clear disclosure.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
@@ -467,7 +487,8 @@ export function PrivacyFirstAiAndroid({
                 How Your Data Flows (or Doesn't)
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Precise transparency: exactly what stays local vs what goes to providers.
+                Precise transparency: exactly what stays local vs what goes to
+                providers.
               </p>
             </div>
 
@@ -479,31 +500,52 @@ export function PrivacyFirstAiAndroid({
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>All conversations</strong> — encrypted with AES-256-GCM via Android Keystore</span>
+                    <span>
+                      <strong>All conversations</strong> — encrypted with
+                      AES-256-GCM via Android Keystore
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>Memory and knowledge graph</strong> — stored locally, never synced</span>
+                    <span>
+                      <strong>Memory and knowledge graph</strong> — stored
+                      locally, never synced
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>API keys</strong> — encrypted via Android Keystore, never transmitted</span>
+                    <span>
+                      <strong>API keys</strong> — encrypted via Android
+                      Keystore, never transmitted
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>Files and documents</strong> — processed locally, no cloud upload</span>
+                    <span>
+                      <strong>Files and documents</strong> — processed locally,
+                      no cloud upload
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>Workflow configurations</strong> — stored in encrypted SharedPreferences</span>
+                    <span>
+                      <strong>Workflow configurations</strong> — stored in
+                      encrypted SharedPreferences
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>App settings and preferences</strong> — encrypted at rest</span>
+                    <span>
+                      <strong>App settings and preferences</strong> — encrypted
+                      at rest
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span><strong>MNN model weights</strong> — downloaded once, run entirely offline</span>
+                    <span>
+                      <strong>MNN model weights</strong> — downloaded once, run
+                      entirely offline
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -515,27 +557,47 @@ export function PrivacyFirstAiAndroid({
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>Only your prompt text</strong> — sent directly via HTTPS to your provider (OpenAI, Claude, Gemini, etc.) in an encrypted TLS 1.3 connection. No metadata, no device ID, no conversation history.</span>
+                    <span>
+                      <strong>Only your prompt text</strong> — sent directly via
+                      HTTPS to your provider (OpenAI, Claude, Gemini, etc.) in
+                      an encrypted TLS 1.3 connection. No metadata, no device
+                      ID, no conversation history.
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>Web search queries</strong> — only if you explicitly enable web search tools</span>
+                    <span>
+                      <strong>Web search queries</strong> — only if you
+                      explicitly enable web search tools
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>MCP server requests</strong> — only if you configure MCP connections</span>
+                    <span>
+                      <strong>MCP server requests</strong> — only if you
+                      configure MCP connections
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>Composio API calls</strong> — only if you connect Composio integrations</span>
+                    <span>
+                      <strong>Composio API calls</strong> — only if you connect
+                      Composio integrations
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>Cloud TTS/STT</strong> — only if you explicitly choose cloud speech services</span>
+                    <span>
+                      <strong>Cloud TTS/STT</strong> — only if you explicitly
+                      choose cloud speech services
+                    </span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500">⚡</span>
-                    <span><strong>Manual data exports</strong> — you initiate, you choose destination</span>
+                    <span>
+                      <strong>Manual data exports</strong> — you initiate, you
+                      choose destination
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -543,7 +605,14 @@ export function PrivacyFirstAiAndroid({
 
             <div className="mt-8 p-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
               <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                <strong className="text-green-500">Key architecture difference:</strong> When you use cloud AI, your prompt goes Twent → OpenAI's API. We only forward the text you typed — no conversation context, no history, no metadata. The provider sees your prompt; Twent never logs it. Your API keys stay on-device; only a temporary authorization header is generated for that single request.
+                <strong className="text-green-500">
+                  Key architecture difference:
+                </strong>{" "}
+                When you use cloud AI, your prompt goes Twent → OpenAI's API. We
+                only forward the text you typed — no conversation context, no
+                history, no metadata. The provider sees your prompt; Twent never
+                logs it. Your API keys stay on-device; only a temporary
+                authorization header is generated for that single request.
               </p>
             </div>
           </div>
@@ -557,7 +626,8 @@ export function PrivacyFirstAiAndroid({
                 Compliance, Trust, and Verification
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Legal frameworks, open source verification, and how to audit us yourself.
+                Legal frameworks, open source verification, and how to audit us
+                yourself.
               </p>
             </div>
 
@@ -567,7 +637,10 @@ export function PrivacyFirstAiAndroid({
                   GDPR Compliant
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Article 17 - Right to Erasure:</strong> Complete deletion of all personal data on request. Article 20 - Data Portability: Export in machine-readable JSON. Article 32: Technical measures including encryption at rest.
+                  <strong>Article 17 - Right to Erasure:</strong> Complete
+                  deletion of all personal data on request. Article 20 - Data
+                  Portability: Export in machine-readable JSON. Article 32:
+                  Technical measures including encryption at rest.
                 </p>
               </div>
 
@@ -576,7 +649,10 @@ export function PrivacyFirstAiAndroid({
                   CCPA Compliant
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  California Consumer Privacy Act compliant. Your "right to know," "right to delete," and "right to opt-out of sale" are all honored — though we don't sell data because we never have it.
+                  California Consumer Privacy Act compliant. Your "right to
+                  know," "right to delete," and "right to opt-out of sale" are
+                  all honored — though we don't sell data because we never have
+                  it.
                 </p>
               </div>
 
@@ -585,7 +661,9 @@ export function PrivacyFirstAiAndroid({
                   SOC2-Ready Architecture
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Minimal attack surface: no servers storing your data, no database of user records, no authentication service. Our architecture is designed for SOC2 compliance from day one.
+                  Minimal attack surface: no servers storing your data, no
+                  database of user records, no authentication service. Our
+                  architecture is designed for SOC2 compliance from day one.
                 </p>
               </div>
 
@@ -594,7 +672,9 @@ export function PrivacyFirstAiAndroid({
                   Open Source Audit
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  100% of Twent's code is on GitHub under Apache 2.0. Security researchers welcome. Reproducible builds ensure the APK you download matches the source code.
+                  100% of Twent's code is on GitHub under Apache 2.0. Security
+                  researchers welcome. Reproducible builds ensure the APK you
+                  download matches the source code.
                 </p>
               </div>
             </div>
@@ -619,7 +699,11 @@ export function PrivacyFirstAiAndroid({
                   Does Twent work completely offline?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Yes.</strong> When you use local MNN models (Phi-3.5-mini, Qwen2.5-3B, Stable Diffusion), the app requires zero network connectivity. No data ever leaves your device. Even app updates can be done manually via APK if you want maximum isolation.
+                  <strong>Yes.</strong> When you use local MNN models
+                  (Phi-3.5-mini, Qwen2.5-3B, Stable Diffusion), the app requires
+                  zero network connectivity. No data ever leaves your device.
+                  Even app updates can be done manually via APK if you want
+                  maximum isolation.
                 </p>
               </div>
 
@@ -628,7 +712,10 @@ export function PrivacyFirstAiAndroid({
                   Can I self-host my own AI backend?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Yes.</strong> Twent supports any OpenAI-compatible API endpoint. Point it to your self-hosted Ollama, LM Studio, or custom API server. Your prompts go directly to your infrastructure — Twent never touches them.
+                  <strong>Yes.</strong> Twent supports any OpenAI-compatible API
+                  endpoint. Point it to your self-hosted Ollama, LM Studio, or
+                  custom API server. Your prompts go directly to your
+                  infrastructure — Twent never touches them.
                 </p>
               </div>
 
@@ -637,7 +724,11 @@ export function PrivacyFirstAiAndroid({
                   How does my data leave my phone?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Only one way:</strong> when you explicitly request a cloud AI response. Your typed prompt is sent via HTTPS/TLS 1.3 directly to your chosen provider (OpenAI, Claude, Gemini, etc.). That's it. No background sync, no crash reports, no analytics pings. Verify with PacketCapture or PCAPdroid.
+                  <strong>Only one way:</strong> when you explicitly request a
+                  cloud AI response. Your typed prompt is sent via HTTPS/TLS 1.3
+                  directly to your chosen provider (OpenAI, Claude, Gemini,
+                  etc.). That's it. No background sync, no crash reports, no
+                  analytics pings. Verify with PacketCapture or PCAPdroid.
                 </p>
               </div>
 
@@ -646,8 +737,18 @@ export function PrivacyFirstAiAndroid({
                   What's the difference from ChatGPT's privacy mode?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>ChatGPT's privacy mode</strong> prevents your data from being used for training, but OpenAI still stores your conversations on their servers for 30 days (by default). They log API calls, may use metadata for safety monitoring, and you must create an account.<br/><br/>
-                  <strong>Twent</strong> never stores your conversations on any server. They're encrypted locally on your device. You don't need an account. There's no "training" risk because your data never leaves your phone unless you explicitly make an API call.
+                  <strong>ChatGPT's privacy mode</strong> prevents your data
+                  from being used for training, but OpenAI still stores your
+                  conversations on their servers for 30 days (by default). They
+                  log API calls, may use metadata for safety monitoring, and you
+                  must create an account.
+                  <br />
+                  <br />
+                  <strong>Twent</strong> never stores your conversations on any
+                  server. They're encrypted locally on your device. You don't
+                  need an account. There's no "training" risk because your data
+                  never leaves your phone unless you explicitly make an API
+                  call.
                 </p>
               </div>
 
@@ -656,7 +757,13 @@ export function PrivacyFirstAiAndroid({
                   How can I verify zero telemetry?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Use network analysis tools:</strong> Install PCAPdroid, PacketCapture, or similar apps to monitor all network traffic from Twent. You'll find zero outbound connections except direct HTTPS calls to your configured API provider — and only when you explicitly trigger them. No analytics SDKs, no Firebase, no Crashlytics, no third-party trackers.
+                  <strong>Use network analysis tools:</strong> Install
+                  PCAPdroid, PacketCapture, or similar apps to monitor all
+                  network traffic from Twent. You'll find zero outbound
+                  connections except direct HTTPS calls to your configured API
+                  provider — and only when you explicitly trigger them. No
+                  analytics SDKs, no Firebase, no Crashlytics, no third-party
+                  trackers.
                 </p>
               </div>
 
@@ -665,7 +772,11 @@ export function PrivacyFirstAiAndroid({
                   What happens to my data if Twent is deleted?
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>It's gone.</strong> Twent stores everything locally on your device. Uninstalling the app deletes all data — conversations, API keys, settings. There's no server-side backup because we never had your data. Use the built-in export feature before uninstalling if you want to keep records.
+                  <strong>It's gone.</strong> Twent stores everything locally on
+                  your device. Uninstalling the app deletes all data —
+                  conversations, API keys, settings. There's no server-side
+                  backup because we never had your data. Use the built-in export
+                  feature before uninstalling if you want to keep records.
                 </p>
               </div>
             </div>
@@ -716,7 +827,13 @@ export function PrivacyFirstAiAndroid({
                     ["No Account Required", "✓", "✗", "✗", "✗"],
                     ["Offline Mode", "✓", "✗", "✗", "✗"],
                     ["Open Source", "✓", "✗", "✗", "✗"],
-                    ["GDPR Art. 17 Right to Erasure", "✓", "Limited", "Limited", "Limited"],
+                    [
+                      "GDPR Art. 17 Right to Erasure",
+                      "✓",
+                      "Limited",
+                      "Limited",
+                      "Limited",
+                    ],
                     ["CCPA Compliant by Design", "✓", "✓", "✓", "✓"],
                   ].map((row, i) => (
                     <tr
@@ -790,9 +907,10 @@ export function PrivacyFirstAiAndroid({
                 <strong className="text-green-500">
                   Twent is the only Android AI assistant
                 </strong>{" "}
-                that offers AES-256 encryption via Android Keystore, local MNN AI models, 
-                zero verifiable telemetry, and GDPR Article 17 compliance by architecture. 
-                Every other AI assistant requires you to trust them with your data.
+                that offers AES-256 encryption via Android Keystore, local MNN
+                AI models, zero verifiable telemetry, and GDPR Article 17
+                compliance by architecture. Every other AI assistant requires
+                you to trust them with your data.
               </p>
             </div>
           </div>
@@ -808,13 +926,13 @@ export function PrivacyFirstAiAndroid({
               Ready for AI That Respects Your Privacy?
             </h2>
             <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of privacy-conscious users who've switched to Twent. 
-              BYOK with AES-256 encryption, local MNN AI models, zero telemetry — 
-              free, no account required.
+              Join thousands of privacy-conscious users who've switched to
+              Twent. BYOK with AES-256 encryption, local MNN AI models, zero
+              telemetry — free, no account required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
@@ -844,35 +962,72 @@ export function PrivacyFirstAiAndroid({
               <SocialLinksInline />
             </div>
             <p className="mt-6 text-sm text-zinc-500">
-              Free forever. No subscriptions. No ads. No data collection.
-              Zero telemetry. GDPR &amp; CCPA compliant.
+              Free forever. No subscriptions. No ads. No data collection. Zero
+              telemetry. GDPR &amp; CCPA compliant.
             </p>
           </div>
         </section>
         {/* Related Pages */}
         <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">
+              Explore Other Audiences
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <a href="/ai-agent-for-developers" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">AI Agent for Developers</div>
-                <div className="text-xs text-zinc-500">Claude Code, MCP tools, GitHub CLI, full IDE on mobile</div>
+              <a
+                href="/ai-agent-for-developers"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  AI Agent for Developers
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Claude Code, MCP tools, GitHub CLI, full IDE on mobile
+                </div>
               </a>
-              <a href="/terminal-on-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">Terminal on Android</div>
-                <div className="text-xs text-zinc-500">Full Linux on your phone — SSH, apt, git, daemons</div>
+              <a
+                href="/terminal-on-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  Terminal on Android
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Full Linux on your phone — SSH, apt, git, daemons
+                </div>
               </a>
-              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
-                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              <a
+                href="/android-automation-power-user"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">
+                  Automation Power User
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Automate everything — apps, APIs, Tasker, cron jobs
+                </div>
               </a>
-              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
-                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              <a
+                href="/ai-marketplace-creators"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">
+                  Marketplace Creators
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Sell AI skills, MCP servers, and custom tools
+                </div>
               </a>
-              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
-                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              <a
+                href="/enterprise-ai-agent"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">
+                  Enterprise
+                </div>
+                <div className="text-xs text-zinc-500">
+                  On-premise deployment, custom workflows, team management
+                </div>
               </a>
             </div>
           </div>

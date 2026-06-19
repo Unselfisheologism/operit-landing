@@ -25,10 +25,14 @@ export function HeroSection() {
         <HeroToast />
 
         {/* Main headline — Loss Aversion Framing (Principle 7) */}
-<h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.08] mb-6 animate-fade-in-up animate-delay-100 text-zinc-100">
-          <span className="text-zinc-100">Twent: Your AI agent can chat all day.</span>
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.08] mb-6 animate-fade-in-up animate-delay-100 text-zinc-100">
+          <span className="text-zinc-100">
+            Twent: Your AI agent can chat all day.
+          </span>
           <br />
-          <span className="text-orange-500">But it can&apos;t do a single thing on your phone.</span>
+          <span className="text-orange-500">
+            But it can&apos;t do a single thing on your phone.
+          </span>
         </h1>
 
         {/* Subheading */}
@@ -42,12 +46,21 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-300">
           {/* PRIMARY CTA — only one visually dominant button */}
           <a
-            href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+            href="https://assets.twent.xyz/app-release.apk"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-600 text-white font-secondary font-medium text-lg uppercase tracking-wider hover:bg-blue-500 transition-colors"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
@@ -56,7 +69,7 @@ export function HeroSection() {
           </a>
         </div>
 
-{/* Trust indicators */}
+        {/* Trust indicators */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-600 animate-fade-in-up animate-delay-400">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 bg-orange-500" />
@@ -65,7 +78,6 @@ export function HeroSection() {
           <span>BYOK — Your Keys, Your Privacy</span>
           <span>Local AI Support</span>
         </div>
-
       </div>
     </section>
   );

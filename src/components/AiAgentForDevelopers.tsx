@@ -100,14 +100,30 @@ function BreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
-      { "@type": "ListItem", position: 3, name: "AI Agent for Developers", item: "https://twent.xyz/blog/ai-agent-for-developers" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://twent.xyz",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://twent.xyz/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "AI Agent for Developers",
+        item: "https://twent.xyz/blog/ai-agent-for-developers",
+      },
     ],
   };
-  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+  return (
+    <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+  );
 }
-
 
 // Feature card component
 function FeatureCard({
@@ -149,10 +165,12 @@ function DayInTheLife({ visible }: { visible: boolean }) {
     {
       time: "8:47 AM — Standing on the train platform",
       icon: "🚇",
-      setup: "20 minutes of dead zone between stations. No WiFi. Phone signal barely alive.",
+      setup:
+        "20 minutes of dead zone between stations. No WiFi. Phone signal barely alive.",
       task: "Review a GitHub PR from yesterday's sprint",
       how: "Open the GitHub app → copy PR URL → paste into Twent → 'review this PR, comment on the auth refactor, check if the tests cover edge cases'",
-      result: "PR reviewed, commented on, and approved in 90 seconds before the tunnel.",
+      result:
+        "PR reviewed, commented on, and approved in 90 seconds before the tunnel.",
       accent: "orange" as const,
     },
     {
@@ -170,20 +188,23 @@ function DayInTheLife({ visible }: { visible: boolean }) {
       setup: "Phone on nightstand. Laptop across the room.",
       task: "A payment service is returning 500s",
       how: "Notification → Twent overlay → 'SSH into prod, check nginx logs for the past hour, find what's causing the 500s, roll back if needed'",
-      result: "Issue found, rolled back, alert resolved. From bed. In 4 minutes.",
+      result:
+        "Issue found, rolled back, alert resolved. From bed. In 4 minutes.",
       accent: "orange" as const,
     },
   ];
 
   return (
-    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <section
+      className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
             A Developer's Day, Reimagined
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            These aren't edge cases. This is how developers actually use Twent — 
+            These aren't edge cases. This is how developers actually use Twent —
             in the gaps between laptops.
           </p>
         </div>
@@ -200,15 +221,33 @@ function DayInTheLife({ visible }: { visible: boolean }) {
               <div className="flex items-start gap-4 mb-4">
                 <span className="text-3xl">{s.icon}</span>
                 <div>
-                  <p className="font-mono text-xs text-zinc-500 mb-1">{s.time}</p>
-                  <p className="text-sm text-zinc-500 mb-1"><strong className="text-zinc-700 dark:text-zinc-300">Setup:</strong> {s.setup}</p>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400"><strong className="text-zinc-900 dark:text-zinc-100">Task:</strong> {s.task}</p>
+                  <p className="font-mono text-xs text-zinc-500 mb-1">
+                    {s.time}
+                  </p>
+                  <p className="text-sm text-zinc-500 mb-1">
+                    <strong className="text-zinc-700 dark:text-zinc-300">
+                      Setup:
+                    </strong>{" "}
+                    {s.setup}
+                  </p>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                    <strong className="text-zinc-900 dark:text-zinc-100">
+                      Task:
+                    </strong>{" "}
+                    {s.task}
+                  </p>
                 </div>
               </div>
               <div className="pl-12">
-                <p className="text-xs font-secondary text-zinc-500 uppercase tracking-[0.15em] mb-1">How it works</p>
-                <p className="text-sm font-mono text-zinc-600 dark:text-zinc-400 mb-3 leading-relaxed">{s.how}</p>
-                <p className="text-sm text-green-600 dark:text-green-400"><strong>Result:</strong> {s.result}</p>
+                <p className="text-xs font-secondary text-zinc-500 uppercase tracking-[0.15em] mb-1">
+                  How it works
+                </p>
+                <p className="text-sm font-mono text-zinc-600 dark:text-zinc-400 mb-3 leading-relaxed">
+                  {s.how}
+                </p>
+                <p className="text-sm text-green-600 dark:text-green-400">
+                  <strong>Result:</strong> {s.result}
+                </p>
               </div>
             </div>
           ))}
@@ -224,34 +263,72 @@ function TerminalDeepDive({ visible }: { visible: boolean }) {
     {
       category: "Git & GitHub",
       items: [
-        { cmd: "git clone https://github.com/user/repo && cd repo && gh pr create --fill", desc: "Clone, enter, and create a PR with auto-filled description" },
-        { cmd: "gh issue list --state open --assignee @me --limit 20", desc: "See all your open issues across all repos" },
-        { cmd: "gh run view --web", desc: "Open the current repo's Actions in browser" },
-        { cmd: "git log --oneline -10 && git status", desc: "Quick sanity check before pushing" },
+        {
+          cmd: "git clone https://github.com/user/repo && cd repo && gh pr create --fill",
+          desc: "Clone, enter, and create a PR with auto-filled description",
+        },
+        {
+          cmd: "gh issue list --state open --assignee @me --limit 20",
+          desc: "See all your open issues across all repos",
+        },
+        {
+          cmd: "gh run view --web",
+          desc: "Open the current repo's Actions in browser",
+        },
+        {
+          cmd: "git log --oneline -10 && git status",
+          desc: "Quick sanity check before pushing",
+        },
       ],
     },
     {
       category: "DevOps & Deployment",
       items: [
-        { cmd: "docker build -t myapp . && docker run -d -p 3000:3000 --name myapp_container myapp", desc: "Build and run a Docker container" },
-        { cmd: "curl -s https://api.myapp.com/health | jq", desc: "Check API health with formatted JSON output" },
-        { cmd: "systemctl status nginx && journalctl -u nginx --since '1 hour ago'", desc: "Check nginx status and recent logs" },
-        { cmd: "ssh user@prod 'cd /opt/app && ./deploy.sh'", desc: "Deploy to production via SSH" },
+        {
+          cmd: "docker build -t myapp . && docker run -d -p 3000:3000 --name myapp_container myapp",
+          desc: "Build and run a Docker container",
+        },
+        {
+          cmd: "curl -s https://api.myapp.com/health | jq",
+          desc: "Check API health with formatted JSON output",
+        },
+        {
+          cmd: "systemctl status nginx && journalctl -u nginx --since '1 hour ago'",
+          desc: "Check nginx status and recent logs",
+        },
+        {
+          cmd: "ssh user@prod 'cd /opt/app && ./deploy.sh'",
+          desc: "Deploy to production via SSH",
+        },
       ],
     },
     {
       category: "Data & Analysis",
       items: [
-        { cmd: "psql -h localhost -U app -d prod -c 'SELECT COUNT(*) FROM users'", desc: "Query production user count" },
-        { cmd: "tail -f /var/log/nginx/access.log | grep 500", desc: "Watch for 500 errors in real time" },
-        { cmd: "cat /proc/cpuinfo | grep 'model name' && free -h", desc: "Check server specs" },
-        { cmd: "du -sh /var/log/* | sort -h | tail -5", desc: "Find largest log files" },
+        {
+          cmd: "psql -h localhost -U app -d prod -c 'SELECT COUNT(*) FROM users'",
+          desc: "Query production user count",
+        },
+        {
+          cmd: "tail -f /var/log/nginx/access.log | grep 500",
+          desc: "Watch for 500 errors in real time",
+        },
+        {
+          cmd: "cat /proc/cpuinfo | grep 'model name' && free -h",
+          desc: "Check server specs",
+        },
+        {
+          cmd: "du -sh /var/log/* | sort -h | tail -5",
+          desc: "Find largest log files",
+        },
       ],
     },
   ];
 
   return (
-    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <section
+      className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
@@ -264,11 +341,18 @@ function TerminalDeepDive({ visible }: { visible: boolean }) {
         <div className="space-y-8">
           {commands.map((group) => (
             <div key={group.category}>
-              <h3 className="font-secondary text-xs text-blue-500 uppercase tracking-[0.2em] mb-3">{group.category}</h3>
+              <h3 className="font-secondary text-xs text-blue-500 uppercase tracking-[0.2em] mb-3">
+                {group.category}
+              </h3>
               <div className="space-y-2">
                 {group.items.map((item) => (
-                  <div key={item.cmd} className="p-3 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
-                    <code className="text-xs font-mono text-blue-600 dark:text-blue-400 block mb-1 break-all">{item.cmd}</code>
+                  <div
+                    key={item.cmd}
+                    className="p-3 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800"
+                  >
+                    <code className="text-xs font-mono text-blue-600 dark:text-blue-400 block mb-1 break-all">
+                      {item.cmd}
+                    </code>
                     <p className="text-xs text-zinc-500">{item.desc}</p>
                   </div>
                 ))}
@@ -284,45 +368,106 @@ function TerminalDeepDive({ visible }: { visible: boolean }) {
 // LLM Use Cases Matrix
 function LLMUseCases({ visible }: { visible: boolean }) {
   const matrix = [
-    { task: "Code generation", best: "Claude 3.5 Sonnet", note: "Highest quality, best reasoning", alternatives: "Gemini 2.0 Flash, GPT-4o" },
-    { task: "Code review", best: "Claude 3.5 Sonnet", note: "Constitutional AI catches edge cases", alternatives: "GPT-4o" },
-    { task: "Bug explanation", best: "Claude 3.5 Sonnet", note: "Most thorough technical explanations", alternatives: "Gemini 2.0 Flash" },
-    { task: "Quick questions", best: "Gemini 2.0 Flash", note: "Fastest, cheapest, good enough", alternatives: "DeepSeek V3" },
-    { task: "Architecture design", best: "Claude 3.5 Sonnet", note: "Deep reasoning, diagrams via text", alternatives: "GPT-4o" },
-    { task: "Writing documentation", best: "Claude 3.5 Sonnet", note: "Clearest technical writing", alternatives: "GPT-4o" },
-    { task: "Data analysis", best: "Gemini 2.0 Flash", note: "Google ecosystem integration", alternatives: "DeepSeek V3" },
-    { task: "Terminal commands", best: "DeepSeek V3", note: "Fast, accurate shell scripting", alternatives: "Gemini 2.0 Flash" },
+    {
+      task: "Code generation",
+      best: "Claude 3.5 Sonnet",
+      note: "Highest quality, best reasoning",
+      alternatives: "Gemini 2.0 Flash, GPT-4o",
+    },
+    {
+      task: "Code review",
+      best: "Claude 3.5 Sonnet",
+      note: "Constitutional AI catches edge cases",
+      alternatives: "GPT-4o",
+    },
+    {
+      task: "Bug explanation",
+      best: "Claude 3.5 Sonnet",
+      note: "Most thorough technical explanations",
+      alternatives: "Gemini 2.0 Flash",
+    },
+    {
+      task: "Quick questions",
+      best: "Gemini 2.0 Flash",
+      note: "Fastest, cheapest, good enough",
+      alternatives: "DeepSeek V3",
+    },
+    {
+      task: "Architecture design",
+      best: "Claude 3.5 Sonnet",
+      note: "Deep reasoning, diagrams via text",
+      alternatives: "GPT-4o",
+    },
+    {
+      task: "Writing documentation",
+      best: "Claude 3.5 Sonnet",
+      note: "Clearest technical writing",
+      alternatives: "GPT-4o",
+    },
+    {
+      task: "Data analysis",
+      best: "Gemini 2.0 Flash",
+      note: "Google ecosystem integration",
+      alternatives: "DeepSeek V3",
+    },
+    {
+      task: "Terminal commands",
+      best: "DeepSeek V3",
+      note: "Fast, accurate shell scripting",
+      alternatives: "Gemini 2.0 Flash",
+    },
   ];
 
   return (
-    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <section
+      className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
             When to Use Which Model
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Not every task needs the most powerful model. Here's our recommendation matrix
-            based on real developer usage.
+            Not every task needs the most powerful model. Here's our
+            recommendation matrix based on real developer usage.
           </p>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse">
             <thead>
               <tr className="border-b border-zinc-200 dark:border-zinc-800">
-                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">Task</th>
-                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">Best Model</th>
-                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">Why</th>
-                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">Also good</th>
+                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">
+                  Task
+                </th>
+                <th className="text-left py-3 px-4 font-display text-zinc-900 dark:text-zinc-100 text-sm">
+                  Best Model
+                </th>
+                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">
+                  Why
+                </th>
+                <th className="text-left py-3 px-4 font-display text-zinc-500 text-sm">
+                  Also good
+                </th>
               </tr>
             </thead>
             <tbody>
               {matrix.map((row) => (
-                <tr key={row.task} className="border-b border-zinc-100 dark:border-zinc-900">
-                  <td className="py-3 px-4 text-sm text-zinc-700 dark:text-zinc-300">{row.task}</td>
-                  <td className="py-3 px-4 text-sm font-mono text-blue-500">{row.best}</td>
-                  <td className="py-3 px-4 text-sm text-zinc-600 dark:text-zinc-400">{row.note}</td>
-                  <td className="py-3 px-4 text-sm text-zinc-500">{row.alternatives}</td>
+                <tr
+                  key={row.task}
+                  className="border-b border-zinc-100 dark:border-zinc-900"
+                >
+                  <td className="py-3 px-4 text-sm text-zinc-700 dark:text-zinc-300">
+                    {row.task}
+                  </td>
+                  <td className="py-3 px-4 text-sm font-mono text-blue-500">
+                    {row.best}
+                  </td>
+                  <td className="py-3 px-4 text-sm text-zinc-600 dark:text-zinc-400">
+                    {row.note}
+                  </td>
+                  <td className="py-3 px-4 text-sm text-zinc-500">
+                    {row.alternatives}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -388,9 +533,7 @@ export function AiAgentForDevelopers({
             >
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter mb-6">
                 AI Agent for Developers:{" "}
-                <span className="text-blue-500">
-                  Ship Code From Anywhere
-                </span>
+                <span className="text-blue-500">Ship Code From Anywhere</span>
               </h1>
             </div>
 
@@ -403,9 +546,10 @@ export function AiAgentForDevelopers({
               }`}
             >
               <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed mb-8">
-                AI agent for developers: Run <strong>Claude Code</strong> with full tool use 
-                directly on your Android. SSH into production, run <strong>git rebase -i</strong>,
-                review PRs, push hotfixes — your entire dev workflow in your pocket.
+                AI agent for developers: Run <strong>Claude Code</strong> with
+                full tool use directly on your Android. SSH into production, run{" "}
+                <strong>git rebase -i</strong>, review PRs, push hotfixes — your
+                entire dev workflow in your pocket.
               </p>
             </div>
 
@@ -450,7 +594,7 @@ export function AiAgentForDevelopers({
               }`}
             >
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 aria-label="Download Twent APK"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
               >
@@ -477,7 +621,9 @@ export function AiAgentForDevelopers({
               </a>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <span className="text-xs text-zinc-400 dark:text-zinc-600">Follow:</span>
+              <span className="text-xs text-zinc-400 dark:text-zinc-600">
+                Follow:
+              </span>
               <SocialLinksInline />
             </div>
           </div>
@@ -518,8 +664,9 @@ export function AiAgentForDevelopers({
               The Problem: Getting Paged at 2am With No Laptop
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-              You wrote the code. You're on-call. But you're not at your desk. Your
-              phone can't SSH into production, run git rebase -i, or review a PR from the train.
+              You wrote the code. You're on-call. But you're not at your desk.
+              Your phone can't SSH into production, run git rebase -i, or review
+              a PR from the train.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
@@ -563,8 +710,8 @@ export function AiAgentForDevelopers({
                 Real Terminal. Real Git. Real Code.
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                Not a web terminal emulator. Full Ubuntu with real git, SSH, docker, npm —
-                everything you need to ship from anywhere.
+                Not a web terminal emulator. Full Ubuntu with real git, SSH,
+                docker, npm — everything you need to ship from anywhere.
               </p>
             </div>
 
@@ -720,7 +867,8 @@ export function AiAgentForDevelopers({
             <div className="space-y-6">
               {[
                 {
-                  title: "Open a PR, Ask Claude to Explain the Diff, Approve and Merge",
+                  title:
+                    "Open a PR, Ask Claude to Explain the Diff, Approve and Merge",
                   desc: "gh pr view 123, paste to Claude Code, ask for review, comment, approve, merge — all from your phone on the train.",
                   icon: "🚂",
                 },
@@ -783,7 +931,8 @@ export function AiAgentForDevelopers({
                 Why Twent is Different
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Only Twent has AI agent integration with full Linux terminal and git.
+                Only Twent has AI agent integration with full Linux terminal and
+                git.
               </p>
             </div>
 
@@ -982,13 +1131,13 @@ export function AiAgentForDevelopers({
               Ready to Ship Code from Anywhere?
             </h2>
             <p className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto">
-              Join thousands of developers who've ditched their laptops for quick
-              fixes. On-call at 2am? SSH in and fix it. Code review on the train? Merge
-              it from your phone.
+              Join thousands of developers who've ditched their laptops for
+              quick fixes. On-call at 2am? SSH in and fix it. Code review on the
+              train? Merge it from your phone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 aria-label="Download Twent APK"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
               >
@@ -1026,27 +1175,64 @@ export function AiAgentForDevelopers({
         {/* Related Pages */}
         <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">
+              Explore Other Audiences
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <a href="/terminal-on-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">Terminal on Android</div>
-                <div className="text-xs text-zinc-500">Full Linux on your phone — SSH, apt, git, daemons</div>
+              <a
+                href="/terminal-on-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  Terminal on Android
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Full Linux on your phone — SSH, apt, git, daemons
+                </div>
               </a>
-              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
-                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              <a
+                href="/privacy-first-ai-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">
+                  Privacy-First AI
+                </div>
+                <div className="text-xs text-zinc-500">
+                  BYOK encryption, local MNN models, zero telemetry
+                </div>
               </a>
-              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
-                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              <a
+                href="/android-automation-power-user"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">
+                  Automation Power User
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Automate everything — apps, APIs, Tasker, cron jobs
+                </div>
               </a>
-              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
-                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              <a
+                href="/ai-marketplace-creators"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">
+                  Marketplace Creators
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Sell AI skills, MCP servers, and custom tools
+                </div>
               </a>
-              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
-                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              <a
+                href="/enterprise-ai-agent"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">
+                  Enterprise
+                </div>
+                <div className="text-xs text-zinc-500">
+                  On-premise deployment, custom workflows, team management
+                </div>
               </a>
             </div>
           </div>

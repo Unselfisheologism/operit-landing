@@ -62,14 +62,30 @@ function BreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
-      { "@type": "ListItem", position: 3, name: "Terminal on Android", item: "https://twent.xyz/blog/terminal-on-android" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://twent.xyz",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://twent.xyz/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Terminal on Android",
+        item: "https://twent.xyz/blog/terminal-on-android",
+      },
     ],
   };
-  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+  return (
+    <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+  );
 }
-
 
 // Feature card component
 function FeatureCard({
@@ -173,7 +189,8 @@ export function TerminalOnAndroid({
                 <strong>apt install nginx</strong>,{" "}
                 <strong>python3 -m venv</strong>,{" "}
                 <strong>git clone && npm install && npm run build</strong>, and
-                real <strong>systemd services</strong>. No root required — real Linux in your pocket.
+                real <strong>systemd services</strong>. No root required — real
+                Linux in your pocket.
               </p>
             </div>
 
@@ -214,7 +231,7 @@ export function TerminalOnAndroid({
               }`}
             >
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 aria-label="Download Twent APK"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
               >
@@ -241,7 +258,9 @@ export function TerminalOnAndroid({
               </a>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <span className="text-xs text-zinc-400 dark:text-zinc-600">Follow:</span>
+              <span className="text-xs text-zinc-400 dark:text-zinc-600">
+                Follow:
+              </span>
               <SocialLinksInline />
             </div>
           </div>
@@ -473,8 +492,8 @@ export function TerminalOnAndroid({
                 How Twent Compares
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Only Twent gives you real apt, systemd services, and Docker
-                CLI — no root required.
+                Only Twent gives you real apt, systemd services, and Docker CLI
+                — no root required.
               </p>
             </div>
 
@@ -501,15 +520,63 @@ export function TerminalOnAndroid({
                 </thead>
                 <tbody>
                   {[
-                    ["apt install nginx", "Full apt", "pkg install", "apt", "No apt"],
-                    ["systemd services", "systemctl", "No systemd", "No systemd", "No systemd"],
-                    ["Docker CLI", "docker build", "No Docker", "docker", "No Docker"],
-                    ["cron jobs", "crontab -e", "cron support", "Limited cron", "No cron"],
+                    [
+                      "apt install nginx",
+                      "Full apt",
+                      "pkg install",
+                      "apt",
+                      "No apt",
+                    ],
+                    [
+                      "systemd services",
+                      "systemctl",
+                      "No systemd",
+                      "No systemd",
+                      "No systemd",
+                    ],
+                    [
+                      "Docker CLI",
+                      "docker build",
+                      "No Docker",
+                      "docker",
+                      "No Docker",
+                    ],
+                    [
+                      "cron jobs",
+                      "crontab -e",
+                      "cron support",
+                      "Limited cron",
+                      "No cron",
+                    ],
                     ["sshd server", "sshd enabled", "sshd", "sshd", "No sshd"],
-                    ["Full /home dir", "Real home", "$PREFIX/home", "chroot home", "No home"],
-                    ["No root required", "Works without root", "Works without root", "Root preferred", "No root"],
-                    ["tmux/screen", "tmux + screen", "tmux only", "Limited", "No tmux"],
-                    ["Background tasks", "nohup & disown", "nohup", "nohup", "Killed on sleep"],
+                    [
+                      "Full /home dir",
+                      "Real home",
+                      "$PREFIX/home",
+                      "chroot home",
+                      "No home",
+                    ],
+                    [
+                      "No root required",
+                      "Works without root",
+                      "Works without root",
+                      "Root preferred",
+                      "No root",
+                    ],
+                    [
+                      "tmux/screen",
+                      "tmux + screen",
+                      "tmux only",
+                      "Limited",
+                      "No tmux",
+                    ],
+                    [
+                      "Background tasks",
+                      "nohup & disown",
+                      "nohup",
+                      "nohup",
+                      "Killed on sleep",
+                    ],
                   ].map((row, i) => (
                     <tr
                       key={i}
@@ -528,9 +595,24 @@ export function TerminalOnAndroid({
                         {row[0]}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[1] === "Full apt" || row[1] === "systemctl" || row[1] === "docker build" || row[1] === "crontab -e" || row[1] === "sshd enabled" || row[1] === "Real home" || row[1] === "Works without root" || row[1] === "tmux + screen" || row[1] === "nohup & disown" ? (
+                        {row[1] === "Full apt" ||
+                        row[1] === "systemctl" ||
+                        row[1] === "docker build" ||
+                        row[1] === "crontab -e" ||
+                        row[1] === "sshd enabled" ||
+                        row[1] === "Real home" ||
+                        row[1] === "Works without root" ||
+                        row[1] === "tmux + screen" ||
+                        row[1] === "nohup & disown" ? (
                           <span className="text-green-500 font-bold">Yes</span>
-                        ) : row[1] === "No apt" || row[1] === "No systemd" || row[1] === "No Docker" || row[1] === "No cron" || row[1] === "No sshd" || row[1] === "No home" || row[1] === "Killed on sleep" || row[1] === "No tmux" ? (
+                        ) : row[1] === "No apt" ||
+                          row[1] === "No systemd" ||
+                          row[1] === "No Docker" ||
+                          row[1] === "No cron" ||
+                          row[1] === "No sshd" ||
+                          row[1] === "No home" ||
+                          row[1] === "Killed on sleep" ||
+                          row[1] === "No tmux" ? (
                           <span className="text-red-400">No</span>
                         ) : (
                           <span className="text-yellow-500 text-xs">
@@ -541,11 +623,18 @@ export function TerminalOnAndroid({
                       <td className="py-4 px-4 text-center">
                         {row[2] === "pkg install" ? (
                           <span className="text-green-500 font-bold">Yes</span>
-                        ) : row[2] === "No systemd" || row[2] === "No Docker" ? (
+                        ) : row[2] === "No systemd" ||
+                          row[2] === "No Docker" ? (
                           <span className="text-red-400">No</span>
                         ) : row[2] === "Limited cron" ? (
-                          <span className="text-yellow-500 text-xs">Limited</span>
-                        ) : row[2] === "sshd" || row[2] === "$PREFIX/home" || row[2] === "Works without root" || row[2] === "tmux only" || row[2] === "nohup" ? (
+                          <span className="text-yellow-500 text-xs">
+                            Limited
+                          </span>
+                        ) : row[2] === "sshd" ||
+                          row[2] === "$PREFIX/home" ||
+                          row[2] === "Works without root" ||
+                          row[2] === "tmux only" ||
+                          row[2] === "nohup" ? (
                           <span className="text-green-500 font-bold">Yes</span>
                         ) : (
                           <span className="text-red-400">No</span>
@@ -558,8 +647,12 @@ export function TerminalOnAndroid({
                           <span className="text-red-400">No</span>
                         ) : row[3] === "docker" ? (
                           <span className="text-green-500 font-bold">Yes</span>
-                        ) : row[3] === "Limited cron" || row[3] === "sshd" || row[3] === "chroot home" ? (
-                          <span className="text-yellow-500 text-xs">Limited</span>
+                        ) : row[3] === "Limited cron" ||
+                          row[3] === "sshd" ||
+                          row[3] === "chroot home" ? (
+                          <span className="text-yellow-500 text-xs">
+                            Limited
+                          </span>
                         ) : row[3] === "Root preferred" ? (
                           <span className="text-red-400">Root req.</span>
                         ) : (
@@ -567,7 +660,14 @@ export function TerminalOnAndroid({
                         )}
                       </td>
                       <td className="py-4 px-4 text-center">
-                        {row[4] === "No apt" || row[4] === "No systemd" || row[4] === "No Docker" || row[4] === "No cron" || row[4] === "No sshd" || row[4] === "No home" || row[4] === "Killed on sleep" || row[4] === "No tmux" ? (
+                        {row[4] === "No apt" ||
+                        row[4] === "No systemd" ||
+                        row[4] === "No Docker" ||
+                        row[4] === "No cron" ||
+                        row[4] === "No sshd" ||
+                        row[4] === "No home" ||
+                        row[4] === "Killed on sleep" ||
+                        row[4] === "No tmux" ? (
                           <span className="text-red-400">No</span>
                         ) : (
                           <span className="text-red-400">No</span>
@@ -668,7 +768,7 @@ export function TerminalOnAndroid({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 aria-label="Download Twent APK"
                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
               >
@@ -706,27 +806,64 @@ export function TerminalOnAndroid({
         {/* Related Pages */}
         <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">
+              Explore Other Audiences
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <a href="/ai-agent-for-developers" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">AI Agent for Developers</div>
-                <div className="text-xs text-zinc-500">Claude Code, MCP tools, GitHub CLI, full IDE on mobile</div>
+              <a
+                href="/ai-agent-for-developers"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  AI Agent for Developers
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Claude Code, MCP tools, GitHub CLI, full IDE on mobile
+                </div>
               </a>
-              <a href="/android-automation-power-user" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">Automation Power User</div>
-                <div className="text-xs text-zinc-500">Automate everything — apps, APIs, Tasker, cron jobs</div>
+              <a
+                href="/android-automation-power-user"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-orange-400 transition-colors mb-1">
+                  Automation Power User
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Automate everything — apps, APIs, Tasker, cron jobs
+                </div>
               </a>
-              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
-                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              <a
+                href="/privacy-first-ai-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">
+                  Privacy-First AI
+                </div>
+                <div className="text-xs text-zinc-500">
+                  BYOK encryption, local MNN models, zero telemetry
+                </div>
               </a>
-              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
-                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              <a
+                href="/ai-marketplace-creators"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">
+                  Marketplace Creators
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Sell AI skills, MCP servers, and custom tools
+                </div>
               </a>
-              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
-                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              <a
+                href="/enterprise-ai-agent"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">
+                  Enterprise
+                </div>
+                <div className="text-xs text-zinc-500">
+                  On-premise deployment, custom workflows, team management
+                </div>
               </a>
             </div>
           </div>

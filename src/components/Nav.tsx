@@ -14,26 +14,48 @@ const NAV_LINKS = [
   { label: "Blog", href: "/blog", external: false },
 ];
 
-function DownloadButton({ className = "", iconOnly = false }: { className?: string; iconOnly?: boolean }) {
+function DownloadButton({
+  className = "",
+  iconOnly = false,
+}: {
+  className?: string;
+  iconOnly?: boolean;
+}) {
   return (
     <a
-      href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+      href="https://assets.twent.xyz/app-release.apk"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Download Twent APK"
       className={`inline-flex items-center justify-center bg-orange-600 text-white hover:bg-orange-500 transition-colors ${iconOnly ? "w-9 h-9" : "gap-2 px-4 py-2 text-sm font-secondary uppercase tracking-wider"} ${className}`}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-        <polyline points="7 10 12 15 17 10"/>
-        <line x1="12" y1="15" x2="12" y2="3"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
       </svg>
       {!iconOnly && <span>Download</span>}
     </a>
   );
 }
 
-function HamburgerIcon({ open, onClick }: { open: boolean; onClick: () => void }) {
+function HamburgerIcon({
+  open,
+  onClick,
+}: {
+  open: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}
@@ -71,7 +93,9 @@ function MobileOverlay({
   return (
     <div
       className={`fixed inset-0 z-[70] transition-all duration-500 ${
-        open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        open
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       }`}
     >
       {/* Backdrop */}
@@ -142,7 +166,9 @@ function DesktopHeader({
               background: dark ? "rgba(0,0,0,0.9)" : "rgba(255,255,255,0.9)",
               backdropFilter: "blur(24px)",
               WebkitBackdropFilter: "blur(24px)",
-              border: dark ? "1px solid rgba(255,255,255,0.15)" : "1px solid rgba(0,0,0,0.1)",
+              border: dark
+                ? "1px solid rgba(255,255,255,0.15)"
+                : "1px solid rgba(0,0,0,0.1)",
               boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
               padding: "6px 8px",
               gap: "4px",
@@ -152,7 +178,9 @@ function DesktopHeader({
               background: dark ? "rgba(0,0,0,0.8)" : "rgba(255,255,255,0.8)",
               backdropFilter: "blur(24px)",
               WebkitBackdropFilter: "blur(24px)",
-              border: dark ? "1px solid rgba(255,255,255,0.15)" : "1px solid rgba(0,0,0,0.1)",
+              border: dark
+                ? "1px solid rgba(255,255,255,0.15)"
+                : "1px solid rgba(0,0,0,0.1)",
               boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
               padding: "8px 16px",
               gap: "0px",
@@ -168,7 +196,7 @@ function DesktopHeader({
             ? "w-11 h-11 opacity-100 ml-1 mr-2"
             : "w-0 h-0 opacity-0 ml-0 mr-0"
         }`}
->
+      >
         <img
           src="/twent-logo-48.webp"
           srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
@@ -201,7 +229,7 @@ function DesktopHeader({
         ))}
       </div>
 
-{/* RIGHT: Download — fades in when scrolled */}
+      {/* RIGHT: Download — fades in when scrolled */}
       <div
         className={`flex items-center transition-all duration-500 overflow-hidden ${
           scrolled
@@ -234,7 +262,12 @@ function MobileHeader({
   return (
     <div
       className="nav-pill md:hidden fixed top-3 left-3 right-3 z-50 flex items-center justify-between px-4 py-3 backdrop-blur-xl shadow-lg shadow-black/5"
-      style={{ background: dark ? "rgba(0,0,0,0.85)" : "rgba(255,255,255,0.85)", border: dark ? "1px solid rgba(255,255,255,0.15)" : "1px solid rgba(0,0,0,0.1)" }}
+      style={{
+        background: dark ? "rgba(0,0,0,0.85)" : "rgba(255,255,255,0.85)",
+        border: dark
+          ? "1px solid rgba(255,255,255,0.15)"
+          : "1px solid rgba(0,0,0,0.1)",
+      }}
     >
       {/* Left: icon + text logo */}
       <a href="#" className="flex items-center gap-2">
@@ -248,19 +281,16 @@ function MobileHeader({
           height="48"
           loading="eager"
           fetchPriority="high"
-/>
+        />
         <span className="font-display text-base text-black dark:text-white">
           Twent
         </span>
       </a>
 
-{/* Right: download icon + hamburger */}
+      {/* Right: download icon + hamburger */}
       <div className="flex items-center gap-1">
         <DownloadButton iconOnly className="!w-8 !h-8" />
-        <HamburgerIcon
-          open={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        />
+        <HamburgerIcon open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
       </div>
     </div>
   );
@@ -312,7 +342,7 @@ export function Nav({ dark, onToggle }: NavProps) {
         </span>
       </a>
 
-{/* Top-right: download OUTSIDE the header. Disappears on scroll. */}
+      {/* Top-right: download OUTSIDE the header. Disappears on scroll. */}
       <div
         className={`hidden md:flex fixed top-5 right-6 z-40 items-center gap-3 transition-all duration-500 ${
           scrolled

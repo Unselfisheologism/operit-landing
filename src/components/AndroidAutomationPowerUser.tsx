@@ -55,14 +55,30 @@ function BreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://twent.xyz" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://twent.xyz/blog" },
-      { "@type": "ListItem", position: 3, name: "Android Automation", item: "https://twent.xyz/blog/android-automation-power-user" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://twent.xyz",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://twent.xyz/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Android Automation",
+        item: "https://twent.xyz/blog/android-automation-power-user",
+      },
     ],
   };
-  return <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>;
+  return (
+    <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+  );
 }
-
 
 // Feature card component
 function FeatureCard({
@@ -100,7 +116,7 @@ function FeatureCard({
 
 // Automation tool showcase component
 function AutomationToolShowcase({ visible }: { visible: boolean }) {
-const tools = [
+  const tools = [
     { name: "tap", desc: "Tap any element on screen", params: "tap(ref: @e5)" },
     {
       name: "swipe",
@@ -117,8 +133,16 @@ const tools = [
       desc: "Type text into input fields",
       params: "type('meeting confirmed', into: @e12)",
     },
-    { name: "screenshot", desc: "Capture screen for analysis", params: "screenshot()" },
-    { name: "get_text", desc: "Extract text from elements", params: "get_text(from: @e5)" },
+    {
+      name: "screenshot",
+      desc: "Capture screen for analysis",
+      params: "screenshot()",
+    },
+    {
+      name: "get_text",
+      desc: "Extract text from elements",
+      params: "get_text(from: @e5)",
+    },
     { name: "press_key", desc: "Press system keys", params: "press_key(back)" },
     {
       name: "open_app",
@@ -208,15 +232,17 @@ function AutomationWorkflows({ visible }: { visible: boolean }) {
   ];
 
   return (
-    <section className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <section
+      className={`py-20 md:py-28 px-6 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
             What Automation Actually Looks Like
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            These aren't demos. Each workflow runs on your real apps, on your real phone,
-            while you drink your coffee.
+            These aren't demos. Each workflow runs on your real apps, on your
+            real phone, while you drink your coffee.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -236,7 +262,9 @@ function AutomationWorkflows({ visible }: { visible: boolean }) {
                 <span className="text-xs font-secondary text-zinc-500 uppercase tracking-[0.15em]">
                   {w.time}
                 </span>
-                <span className="text-xs font-mono text-zinc-500">· {w.steps} steps</span>
+                <span className="text-xs font-mono text-zinc-500">
+                  · {w.steps} steps
+                </span>
               </div>
               <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
                 {w.title}
@@ -292,25 +320,36 @@ function PermissionLevels({ visible }: { visible: boolean }) {
   ];
 
   return (
-    <section className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <section
+      className={`py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-4">
             Permission Levels That Match Your Needs
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Not every automation needs full permissions. Twent lets you dial in exactly how much
-            control you want to give it — start restrictive, unlock more as you trust the system.
+            Not every automation needs full permissions. Twent lets you dial in
+            exactly how much control you want to give it — start restrictive,
+            unlock more as you trust the system.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {levels.map((l) => (
-            <div key={l.level} className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors">
+            <div
+              key={l.level}
+              className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+            >
               <div className="text-2xl mb-2">{l.icon}</div>
-              <h3 className={`font-display text-lg mb-1 ${l.color}`}>{l.level}</h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">{l.desc}</p>
+              <h3 className={`font-display text-lg mb-1 ${l.color}`}>
+                {l.level}
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-3">
+                {l.desc}
+              </p>
               <p className="text-xs text-zinc-500">
-                <span className="text-zinc-400">Best for: </span>{l.useCase}
+                <span className="text-zinc-400">Best for: </span>
+                {l.useCase}
               </p>
             </div>
           ))}
@@ -392,8 +431,9 @@ export function AndroidAutomationPowerUser({
                 <strong>workflow builder</strong>,
                 <strong> shell scripting</strong>,{" "}
                 <strong>Tasker integration</strong>, and{" "}
-                <strong>1000+ app connections</strong>
-                {" "}into one powerful platform. Stop juggling 10 different automation apps — automate everything on your Android phone.
+                <strong>1000+ app connections</strong> into one powerful
+                platform. Stop juggling 10 different automation apps — automate
+                everything on your Android phone.
               </p>
             </div>
 
@@ -434,7 +474,7 @@ export function AndroidAutomationPowerUser({
               }`}
             >
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
@@ -460,7 +500,9 @@ export function AndroidAutomationPowerUser({
               </a>
             </div>
             <div className="mt-4 flex items-center gap-3">
-              <span className="text-xs text-zinc-400 dark:text-zinc-600">Follow:</span>
+              <span className="text-xs text-zinc-400 dark:text-zinc-600">
+                Follow:
+              </span>
               <SocialLinksInline />
             </div>
           </div>
@@ -500,15 +542,16 @@ export function AndroidAutomationPowerUser({
             <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-6">
               The Problem: Too Many Apps, Not Enough Integration
             </h2>
-<p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
               You're a power user. You want to automate everything on your
               phone. But you're stuck juggling Tasker for triggers, MacroDroid
-              for UI automation, Termux for scripts, and five other apps that don't
-              talk to each other — each one a silo, none of them integrated.
+              for UI automation, Termux for scripts, and five other apps that
+              don't talk to each other — each one a silo, none of them
+              integrated.
             </p>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
-{
+                {
                   problem: "Fragmented Automation",
                   desc: "Tasker handles triggers, MacroDroid handles UI, Termux handles scripts — but they don't talk to each other. Data gets stuck in silos.",
                 },
@@ -824,7 +867,7 @@ export function AndroidAutomationPowerUser({
 
             <div className="space-y-6">
               {[
-{
+                {
                   title: "Batch Form Filler",
                   desc: "Trigger: 'Fill forms' command. Actions: Open each form field via @e12, type your name/email/phone from context, scroll to next field, press submit. Auto-fill 50 forms while you grab coffee.",
                   icon: "📝",
@@ -922,7 +965,7 @@ export function AndroidAutomationPowerUser({
                   </tr>
                 </thead>
                 <tbody>
-{[
+                  {[
                     ["UI Automation", "✓", "Limited", "✓", "✗"],
                     ["Visual Workflow Builder", "✓", "✗", "✓", "✗"],
                     ["Full Ubuntu Terminal", "✓", "✗", "✗", "✓"],
@@ -1009,7 +1052,9 @@ export function AndroidAutomationPowerUser({
                 decisions in one place. Everything else is either missing key
                 features or requires multiple apps that don't integrate.
               </p>
-              <p className="text-xs text-zinc-500 mt-2">* Tasker requires one-time purchase ($3.99) after 7-day trial</p>
+              <p className="text-xs text-zinc-500 mt-2">
+                * Tasker requires one-time purchase ($3.99) after 7-day trial
+              </p>
             </div>
           </div>
         </section>
@@ -1081,7 +1126,7 @@ export function AndroidAutomationPowerUser({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                href="https://assets.twent.xyz/app-release.apk"
                 className="inline-flex items-center justify-center px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors duration-200"
               >
                 Download Free APK
@@ -1118,27 +1163,64 @@ export function AndroidAutomationPowerUser({
         {/* Related Pages */}
         <section className="py-16 px-6 bg-zinc-950 border-t border-zinc-800">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">Explore Other Audiences</h3>
+            <h3 className="text-lg font-medium text-zinc-400 mb-6 text-center">
+              Explore Other Audiences
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <a href="/ai-agent-for-developers" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">AI Agent for Developers</div>
-                <div className="text-xs text-zinc-500">Claude Code, MCP tools, GitHub CLI, full IDE on mobile</div>
+              <a
+                href="/ai-agent-for-developers"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  AI Agent for Developers
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Claude Code, MCP tools, GitHub CLI, full IDE on mobile
+                </div>
               </a>
-              <a href="/terminal-on-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">Terminal on Android</div>
-                <div className="text-xs text-zinc-500">Full Linux on your phone — SSH, apt, git, daemons</div>
+              <a
+                href="/terminal-on-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  Terminal on Android
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Full Linux on your phone — SSH, apt, git, daemons
+                </div>
               </a>
-              <a href="/privacy-first-ai-android" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">Privacy-First AI</div>
-                <div className="text-xs text-zinc-500">BYOK encryption, local MNN models, zero telemetry</div>
+              <a
+                href="/privacy-first-ai-android"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-green-400 transition-colors mb-1">
+                  Privacy-First AI
+                </div>
+                <div className="text-xs text-zinc-500">
+                  BYOK encryption, local MNN models, zero telemetry
+                </div>
               </a>
-              <a href="/ai-marketplace-creators" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">Marketplace Creators</div>
-                <div className="text-xs text-zinc-500">Sell AI skills, MCP servers, and custom tools</div>
+              <a
+                href="/ai-marketplace-creators"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">
+                  Marketplace Creators
+                </div>
+                <div className="text-xs text-zinc-500">
+                  Sell AI skills, MCP servers, and custom tools
+                </div>
               </a>
-              <a href="/enterprise-ai-agent" className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200">
-                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">Enterprise</div>
-                <div className="text-xs text-zinc-500">On-premise deployment, custom workflows, team management</div>
+              <a
+                href="/enterprise-ai-agent"
+                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
+              >
+                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">
+                  Enterprise
+                </div>
+                <div className="text-xs text-zinc-500">
+                  On-premise deployment, custom workflows, team management
+                </div>
               </a>
             </div>
           </div>

@@ -345,7 +345,7 @@ function PinnedScrollytelling() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
-useEffect(() => {
+  useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
@@ -394,10 +394,8 @@ useEffect(() => {
         <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Text content */}
           <div className="relative">
-<div key={active} className="animate-fadeIn">
-              <div
-                className="inline-flex items-center gap-2 mb-4 text-blue-500"
-              >
+            <div key={active} className="animate-fadeIn">
+              <div className="inline-flex items-center gap-2 mb-4 text-blue-500">
                 <span className="font-mono text-sm">
                   {String(active + 1).padStart(2, "0")}
                 </span>
@@ -490,7 +488,7 @@ export function ImmersiveLandingPage({
     return () => observer.disconnect();
   }, [heroRef]);
 
-return (
+  return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SharedSchemaMarkup />
       <GrainOverlay />
@@ -510,7 +508,7 @@ return (
                   : "opacity-0 translate-y-12"
               }`}
             >
-<h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter mb-6">
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter mb-6">
                 Your Personal Agentic OS for Android
               </h1>
             </div>
@@ -522,13 +520,13 @@ return (
                   : "opacity-0 translate-y-12"
               }`}
             >
-<p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
+              <p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
                 The AI assistant that connects, remembers, and automates. Run
                 Claude Code, control any app, and keep your data private.
               </p>
             </div>
 
-<div
+            <div
               className={`transition-all duration-1000 delay-500 ${
                 heroInView
                   ? "opacity-100 translate-y-0"
@@ -537,7 +535,7 @@ return (
             >
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+                  href="https://assets.twent.xyz/app-release.apk"
                   aria-label="Download Twent APK"
                   className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
                 >
@@ -563,7 +561,6 @@ return (
                   View Docs
                 </a>
               </div>
-
             </div>
 
             {/* Scroll Indicator */}
@@ -575,13 +572,13 @@ return (
               }`}
             >
               <div className="flex flex-col items-center gap-2">
-<span className="text-xs text-zinc-500 font-mono">
+                <span className="text-xs text-zinc-500 font-mono">
                   Scroll to explore
                 </span>
                 <div className="w-px h-12 bg-gradient-to-b from-zinc-600 to-transparent" />
               </div>
             </div>
-</div>
+          </div>
         </section>
 
         {/* Pinned Scrollytelling — 8 stories */}
@@ -628,13 +625,13 @@ return (
           </div>
         </section>
 
-{/* Pricing & FAQ */}
+        {/* Pricing & FAQ */}
         <Pricing />
 
         {/* VS Comparisons — capture [product] vs [competitor] search traffic */}
         <ComparisonBlock />
 
-{/* Final CTA */}
+        {/* Final CTA */}
         <section className="py-20 md:py-28 px-6 dark:bg-zinc-950">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl dark:text-zinc-100 text-zinc-900 tracking-tight mb-6">
@@ -643,8 +640,8 @@ return (
             <p className="text-lg dark:text-zinc-400 text-zinc-600 mb-8">
               Download Twent and see what your phone can really do.
             </p>
-<a
-              href="https://pub-84df04198c6b46f19ce9ed18d378ff7e.r2.dev/app-release.apk"
+            <a
+              href="https://assets.twent.xyz/app-release.apk"
               aria-label="Download Twent APK"
               className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:text-white text-white font-medium transition-colors duration-200"
             >
