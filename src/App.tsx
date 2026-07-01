@@ -14,6 +14,7 @@ import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
 import { TerminalOnAndroid } from "./components/TerminalOnAndroid";
 import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
 import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
+import { OsVsBrowserAutomation } from "./components/OsVsBrowserAutomation";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
@@ -281,6 +282,16 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <BestAiAppsAndroid dark={dark} onToggle={toggle} />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/blog/os-vs-browser-automation")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <OsVsBrowserAutomation dark={dark} onToggle={toggle} />
       </>
     );
   }

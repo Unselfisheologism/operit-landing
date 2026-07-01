@@ -398,6 +398,15 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
       image: "/marketplace-hero.png",
     },
     {
+      slug: "os-vs-browser-automation",
+      title: "Why OS-Level AI Automation Beats Browser-Level Every Time",
+      excerpt: "AI browsers are being hacked through prompt injection, cross-tab data leakage, and data harvesting. OS-level automation avoids every one of these risks.",
+      date: "July 1, 2026",
+      readTime: "7 min read",
+      category: "Engineering",
+      featured: false,
+    },
+    {
       slug: "best-ai-apps-android",
       title: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
       excerpt: "The definitive guide to the best AI apps for Android in 2025–2026. From ChatGPT to Twent — the 25 apps that unlock your phone's true potential.",
@@ -409,7 +418,7 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
     }
   ];
 
-  const categories = ["All", "Engineering", "Product", "AI Research", "Tutorials"];
+  const categories = ["All", "Engineering", "Product", "AI Research", "Tutorials", "Roundup"];
 
   // Filter posts by category
   const filteredPosts =
