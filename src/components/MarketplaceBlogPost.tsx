@@ -159,7 +159,6 @@ function AnimatedDate({ visible }: { visible: boolean }) {
 
 export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
   const [heroRef, heroInView] = useInView();
-  const [contentRef, contentInView] = useInView();
 
   // Schema.org BlogPosting markup — now properly deduplicated.
   // All structured data is rendered by <MarketplaceSchemaMarkup /> above.
@@ -257,11 +256,9 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
         </section>
 
         {/* Content area */}
-        <section ref={contentRef} className="max-w-4xl mx-auto px-6 pb-24">
+        <section className="max-w-4xl mx-auto px-6 pb-24">
           <div
-            className={`transition-all duration-700 ${
-              contentInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className="animate-fadeIn"
           >
             {/* Table of Contents */}
             <TableOfContents items={tocItems} />

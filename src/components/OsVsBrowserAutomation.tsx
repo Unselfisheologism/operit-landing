@@ -198,7 +198,6 @@ export function OsVsBrowserAutomation({
   onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
-  const [contentRef, contentInView] = useInView();
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
@@ -276,11 +275,9 @@ export function OsVsBrowserAutomation({
         </section>
 
         {/* Content area */}
-        <section ref={contentRef} className="max-w-4xl mx-auto px-6 pb-24">
+        <section className="max-w-4xl mx-auto px-6 pb-24">
           <div
-            className={`transition-all duration-700 ${
-              contentInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className="animate-fadeIn"
           >
             {/* Table of Contents */}
             <TableOfContents items={tocItems} />

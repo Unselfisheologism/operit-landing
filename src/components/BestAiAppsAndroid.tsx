@@ -275,7 +275,6 @@ function AppCard({ num, name, developer, price, description, standout }: {
 
 export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
   const [heroRef, heroInView] = useInView();
-  const [contentRef, contentInView] = useInView();
   const [tmentRef, tmentInView] = useInView();
   const schemaData = {
     "@context": "https://schema.org",
@@ -337,8 +336,7 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
 
         {/* ── ARTICLE BODY ─────────────────────────────────────────────── */}
         <section
-          ref={contentRef}
-          className={`max-w-4xl mx-auto px-6 pb-24 transition-all duration-700 ${contentInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`max-w-4xl mx-auto px-6 pb-24 animate-fadeIn`}
         >
           <div className="grid md:grid-cols-[1fr_220px] gap-12">
             <article className="min-w-0">
