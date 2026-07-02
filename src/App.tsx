@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { DocsPage } from "./components/DocsPage";
-import { DataDeletionInstructions } from "./components/DataDeletionInstructions";
 import { PricingPage } from "./components/PricingPage";
 import { BlogPage } from "./components/BlogPage";
 import { ChangelogPage } from "./components/ChangelogPage";
@@ -197,16 +196,6 @@ export default function App() {
   })();
 
   // Route based on routePath (without language prefix)
-  if (routePath.startsWith("/docs/data-deletion-instructions")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <DataDeletionInstructions dark={dark} onToggle={toggle} />
-      </>
-    );
-  }
-
   if (routePath.startsWith("/docs")) {
     return (
       <>

@@ -178,6 +178,12 @@ const sidebar: DocCategory[] = [
       { id: "tool-reference", label: "Tool Reference" },
     ],
   },
+  {
+    title: "Legal",
+    sections: [
+      { id: "data-deletion", label: "Data Deletion Instructions" },
+    ],
+  },
 ];
 
 /* ──────── Reusable markdown-ish renderers ──────── */
@@ -1189,6 +1195,52 @@ function DocToolReference() {
   );
 }
 
+function DocDataDeletion() {
+  return (
+    <section>
+      <H1>Data Deletion Instructions</H1>
+      <P>
+        App Name: <strong>Twent</strong>
+      </P>
+      <H2 id="how-to-delete">How to Delete Your Data</H2>
+      <P>
+        Twent is a local-first application. We do not store your personal data,
+        chat history, or agentic memory on our own servers. All your data is
+        stored locally on your device. To delete your data, please follow these
+        steps:
+      </P>
+      <H2 id="option-1">Option 1 (In-App)</H2>
+      <P>
+        Open the Twent app, navigate to Settings, and tap the "Clear All Local
+        Data" button.
+      </P>
+      <H2 id="option-2">Option 2 (Android System)</H2>
+      <P>
+        Go to your Android device Settings &gt; Apps &gt; Twent &gt; Storage
+        &amp; cache &gt; tap Clear Storage (or Clear Data).
+      </P>
+      <H2 id="what-is-deleted">What Data is Deleted</H2>
+      <P>
+        Executing the steps above will permanently and immediately delete all
+        locally stored data, including:
+      </P>
+      <UL>
+        <li>Chat history and conversation logs.</li>
+        <li>Agentic memory and knowledge base entries.</li>
+        <li>Saved workflows, templates, and local configurations.</li>
+      </UL>
+      <H2 id="third-party-data">What Data is Kept / Third-Party Data</H2>
+      <P>
+        Because Twent operates on a Bring-Your-Own-Key (BYOK) model, your
+        prompts and files are sent directly to the third-party AI providers you
+        choose (e.g., OpenAI, Anthropic). Twent does not retain this data. Any
+        data processed by these third-party providers is subject to their
+        respective privacy policies and data retention practices.
+      </P>
+    </section>
+  );
+}
+
 /* ──────── Section map ──────── */
 
 const sectionComponents: Record<string, React.FC> = {
@@ -1219,6 +1271,7 @@ const sectionComponents: Record<string, React.FC> = {
   settings: DocSettings,
   toolbox: DocToolbox,
   "tool-reference": DocToolReference,
+  "data-deletion": DocDataDeletion,
 };
 
 /* ──────── Main Docs Page ──────── */
