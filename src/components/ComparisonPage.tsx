@@ -433,12 +433,14 @@ export function ComparisonPage({
       </div>
 
       <div className="text-center py-10 border-t border-gray-200">
-        <h2 className="text-xl font-bold mb-4">Try twent AI For Free</h2>
+        <h2 className="text-xl font-bold mb-4">Get Twent on Google Play</h2>
         <a
-          href="https://assets.twent.xyz/app-release.apk"
-          className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+          href="https://play.google.com/apps/testing/com.twent"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-zinc-800 transition"
         >
-          Download App
+          Get it from Play Store
         </a>
       </div>
 

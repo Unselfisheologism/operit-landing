@@ -1,5 +1,6 @@
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
+import { PlayStoreBadge } from "./PlayStoreBadge";
 
 export function FinalCTA() {
   const [ref, inView] = useInView();
@@ -57,13 +58,14 @@ export function FinalCTA() {
         {/* Single primary CTA — Principle 9: choice reduction */}
         <div className="flex flex-col items-center gap-6">
           <a
-            href="https://assets.twent.xyz/app-release.apk"
+            href="https://play.google.com/apps/testing/com.twent"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Download Twent APK"
-            className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-blue-600 text-white font-secondary text-xl uppercase tracking-wider hover:bg-blue-500 transition-colors"
+            aria-label="Get Twent from Play Store"
+            className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black text-white font-secondary text-xl uppercase tracking-wider hover:bg-zinc-800 transition-colors"
           >
-            Download Twent
+            <PlayStoreBadge iconClassName="w-6 h-6" />
+            Get it from Play Store
           </a>
           <div className="flex items-center gap-3">
             <span className="text-xs text-zinc-400 dark:text-zinc-600">

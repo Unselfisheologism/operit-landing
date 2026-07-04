@@ -535,24 +535,13 @@ export function ImmersiveLandingPage({
             >
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://assets.twent.xyz/app-release.apk"
-                  aria-label="Download Twent APK"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
+                  href="https://play.google.com/apps/testing/com.twent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get Twent from Play Store"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
                 >
-                  Download Free APK
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                    />
-                  </svg>
+                  Get it from Play Store
                 </a>
                 <a
                   href="/docs"
@@ -641,24 +630,13 @@ export function ImmersiveLandingPage({
               Download Twent and see what your phone can really do.
             </p>
             <a
-              href="https://assets.twent.xyz/app-release.apk"
-              aria-label="Download Twent APK"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:text-white text-white font-medium transition-colors duration-200"
+              href="https://play.google.com/apps/testing/com.twent"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get Twent from Play Store"
+              className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 dark:text-white text-white font-medium transition-colors duration-200"
             >
-              Download Free APK
-              <svg
-                className="w-4 h-4 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
+              Get it from Play Store
             </a>
             <div className="mt-6 flex items-center justify-center gap-4">
               <span className="text-xs text-zinc-500">Follow:</span>

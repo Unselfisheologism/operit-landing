@@ -594,9 +594,11 @@ export function AiAgentForDevelopers({
               }`}
             >
               <a
-                href="https://assets.twent.xyz/app-release.apk"
-                aria-label="Download Twent APK"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
+                href="https://play.google.com/apps/testing/com.twent"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Twent from Play Store"
+                className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
               >
                 Ship Code from Anywhere
                 <svg
@@ -1137,9 +1139,11 @@ export function AiAgentForDevelopers({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://assets.twent.xyz/app-release.apk"
-                aria-label="Download Twent APK"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
+                href="https://play.google.com/apps/testing/com.twent"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Get Twent from Play Store"
+                className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
               >
                 Ship Code from Anywhere
                 <svg
@@ -1158,9 +1162,9 @@ export function AiAgentForDevelopers({
               </a>
               <a
                 href="/docs"
-                className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-600 text-white font-medium transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors duration-200"
               >
-                Read the Docs
+                View Documentation
               </a>
             </div>
             <div className="mt-6 flex items-center justify-center gap-3">
