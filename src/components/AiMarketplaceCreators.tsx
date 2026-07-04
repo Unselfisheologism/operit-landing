@@ -1,5 +1,6 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { PlayStoreBadge } from "./PlayStoreBadge";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 
@@ -469,6 +470,7 @@ export function AiMarketplaceCreators({
                 className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
               >
                 Get it from Play Store
+                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
               </a>
               <a
                 href="/docs#marketplace"
@@ -1028,6 +1030,7 @@ export function AiMarketplaceCreators({
                 className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-zinc-200 text-black font-medium transition-colors duration-200"
               >
                 Get it from Play Store
+                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
               </a>
               <a
                 href="/docs#marketplace"

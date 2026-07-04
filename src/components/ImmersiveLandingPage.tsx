@@ -5,6 +5,7 @@ import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
+import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -542,6 +543,7 @@ export function ImmersiveLandingPage({
                   className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
                 >
                   Get it from Play Store
+                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
                 </a>
                 <a
                   href="/docs"
@@ -637,16 +639,17 @@ export function ImmersiveLandingPage({
               className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 dark:text-white text-white font-medium transition-colors duration-200"
             >
               Get it from Play Store
+              <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
             </a>
             <div className="mt-6 flex items-center justify-center gap-4">
               <span className="text-xs text-zinc-500">Follow:</span>
               <SocialLinksInline />
             </div>
-          </div>
-        </section>
-      </main>
+            </div>
+            </section>
+            </main>
 
-      <Footer />
-    </div>
+            <Footer />
+            </div>
   );
 }

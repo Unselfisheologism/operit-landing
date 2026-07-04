@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { PlayStoreBadge } from "./PlayStoreBadge";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 
@@ -600,20 +601,8 @@ export function AiAgentForDevelopers({
                 aria-label="Get Twent from Play Store"
                 className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
               >
-                Ship Code from Anywhere
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                  />
-                </svg>
+                Get it from Play Store
+                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
               </a>
               <a
                 href="/docs"
@@ -1145,20 +1134,8 @@ export function AiAgentForDevelopers({
                 aria-label="Get Twent from Play Store"
                 className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
               >
-                Ship Code from Anywhere
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                  />
-                </svg>
+                Get it from Play Store
+                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
               </a>
               <a
                 href="/docs"
