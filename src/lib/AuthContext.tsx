@@ -31,10 +31,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    const initAuth = async () => {
+      // Check for implicit flow tokens in URL hash
+      const hash = window.location.hash;
+      if (hash && hash.includes("access_token=")) {
+        const params = new URLSearchParams(hash.substring(1));
+        const accessToken = params.get("access_token");
+        const refreshToken = params.get("refresh_token");
+
+        if (accessToken && refreshToken) {
+          try {
+            await supabase.auth.setSession({
+              access_token: accessToken,
+              refresh_token: refreshToken,
+            });
+          } catch {
+            // setSession may fail if tokens are invalid/expired
+          }
+          // Clean up URL hash
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
       setSession(session);
       setLoading(false);
-    });
+    };
+
+    initAuth();
 
     const {
       data: { subscription },
@@ -75,8 +99,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         },
       });
       if (error) return { error: error.message };
-      // signInWithOAuth auto-redirects via window.location.assign(data.url)
-      // The code below should not be reached
       if (data?.url) {
         window.location.href = data.url;
       }
