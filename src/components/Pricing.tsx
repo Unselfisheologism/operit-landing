@@ -60,12 +60,6 @@ const faqs = [
   },
 ];
 
-function DashedLine() {
-  return (
-    <div className="border-t border-dashed border-zinc-300 dark:border-zinc-700 my-2" />
-  );
-}
-
 export function Pricing() {
   const [ref, inView] = useInView();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
