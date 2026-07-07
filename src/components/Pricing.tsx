@@ -1,45 +1,62 @@
 import { useInView } from "../hooks/useInView";
 import { useState } from "react";
+import { useAuth } from "../lib/AuthContext";
+import { LoginModal } from "./LoginModal";
 
-const features = [
-  { name: "50+ Built-in Tools", price: "$0.00" },
-  { name: "UI Automation Agent", price: "$0.00" },
-  { name: "Ubuntu 24 Terminal", price: "$0.00" },
-  { name: "MCP Server Support", price: "$0.00" },
-  { name: "Skills & Workflows", price: "$0.00" },
-  { name: "Voice Activation", price: "$0.00" },
-  { name: "Smart Memory", price: "$0.00" },
-  { name: "BYOK (Your API Keys)", price: "$0.00" },
-  { name: "Local Model Support", price: "$0.00" },
-  { name: "File Generation", price: "$0.00" },
-  { name: "Mini-Apps", price: "$0.00" },
-  { name: "Character Cards", price: "$0.00" },
+const freeFeatures = [
+  "50+ Built-in Tools",
+  "UI Automation Agent",
+  "Ubuntu 24 Terminal",
+  "MCP Server Support",
+  "Skills & Workflows",
+  "Voice Activation",
+  "Smart Memory",
+  "BYOK (Your API Keys)",
+  "Local Model Support",
+  "File Generation",
+  "Mini-Apps",
+  "Character Cards",
+];
+
+const proFeatures = [
+  "Everything in Free",
+  "No Ads — Clean experience",
+  "Git & Filesystem (Workspace)",
+  "Import/Export Chats & History",
+  "Chat Sessions & Bot Sessions",
+  "Bots, Skills & Memory Sync",
+  "Private Discord Access",
+  "Custom Themes/Icons/Wallpapers",
+  "Custom Agent Voices/Names/Avatars",
+  "1,000+ Tool Integrations (Composio)",
+  "Drops, Flows & Shadows",
+  "Priority Email Support",
 ];
 
 const faqs = [
   {
-    q: "Is Twent really free?",
-    a: "Yes. Right now, everything is completely free. All 50+ tools, the Ubuntu terminal, overlay agent, MCP servers, skills, workflows — the whole thing. We're in pre-revenue and focused on building the best agent OS, not paywalling features.",
+    q: "Is there a free plan?",
+    a: "Yes. The Free plan includes all core features — 50+ tools, terminal, overlay agent, MCP servers, skills, workflows, voice activation, smart memory, and more. No credit card required.",
   },
   {
-    q: "How do you distribute the app if it's not on the Play Store?",
-    a: "We distribute the APK directly from our website. Download, install, and you're good to go. No middleman, no store fees, no waiting for approval.",
+    q: "What do I get with Pro?",
+    a: "Pro ($15/mo) removes ads, unlocks Git & Filesystem workspace, import/export everything, custom themes/icons/wallpapers, custom agent voices/names/avatars, 1,000+ tool integrations via Composio, Drops/Flows/Shadows, private Discord, and priority email support.",
   },
   {
-    q: "Will there be ads?",
-    a: "Eventually, yes — powered by AI ads (koahlabs.com). They'll be non-intrusive and contextually relevant. A future Pro plan ($20) will remove them entirely, along with cosmetic badges, early access to features, and zero marketplace commissions.",
+    q: "What are Drops, Flows, and Shadows?",
+    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Pro-only social utility features.",
   },
   {
-    q: "What's the marketplace?",
-    a: "The marketplace is an upcoming agentic app store — users can sell skills, workflows, plugins, and MCP servers. It doesn't exist yet. Once we move to the Play Store and start generating revenue, marketplace commissions will fund the free tier. Pro users ($20) get zero commissions.",
+    q: "How do I pay?",
+    a: "We use Dodo Payments — a secure payment processor. Click 'Upgrade to Pro', sign in, enter your payment details, and you're done. Cancel anytime.",
   },
   {
-    q: "What's the difference between free now and Pro later?",
-    a: "Right now: everything is free, Website APK distribution, AI ads, no marketplace, no cosmetic badges. Later (post-revenue): Play Store distribution, everything still free, AI ads, marketplace with commissions, and Pro ($20) for ad removal, cosmetic badges, early access features, and zero marketplace commissions.",
+    q: "Can I cancel anytime?",
+    a: "Yes. No contracts, no cancellation fees. Cancel from your account settings and your Pro access continues until the end of the billing period.",
   },
   {
-    q: "Why not just put it on the Play Store now?",
-    a: "Play Store means reviews, fees, and slower iteration. We're moving fast — shipping features weekly, breaking things, fixing them. Website APK distribution lets us do that. Once we're stable and generating revenue, Play Store is the move.",
+    q: "Will there be more plans?",
+    a: "Not right now. We're focused on making Pro excellent. Enterprise pricing may come later for teams and businesses.",
   },
 ];
 
@@ -52,6 +69,22 @@ function DashedLine() {
 export function Pricing() {
   const [ref, inView] = useInView();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { user } = useAuth();
+  const [showLogin, setShowLogin] = useState(false);
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+
+  const handleUpgrade = async () => {
+    if (!user) {
+      setShowLogin(true);
+      return;
+    }
+
+    setCheckoutLoading(true);
+    // Redirect to Dodo Payments checkout
+    // The Edge Function will handle creating the subscription
+    window.location.href = `https://cadlhnfgxvyzfddmchxw.supabase.co/functions/v1/create-checkout?user_id=${user.id}&email=${encodeURIComponent(user.email || "")}`;
+    setCheckoutLoading(false);
+  };
 
   return (
     <section id="pricing" className="relative py-20 sm:py-28 px-6">
@@ -69,111 +102,117 @@ export function Pricing() {
           <div className="w-8 h-px bg-orange-500" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-          Your receipt, sir.
+          Free forever.
           <br />
-          <span className="text-blue-500">Total damage: $0.00.</span>
+          <span className="text-blue-500">Pro when you're ready.</span>
         </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-16 text-center mx-auto">
-          Every feature. Every tool. Every capability. All included, all free.
-          Twent pricing starts at $0.00 — we're not gatekeeping anything while we build the future of mobile AI.
+          Start with everything you need. Upgrade to Pro for ad-free, workspace tools, custom everything, 1,000+ integrations, and priority support.
         </p>
 
-        {/* Receipt */}
-        <div className="max-w-md mx-auto mb-20">
-          {/* Printer top */}
-          <div className="bg-zinc-300 dark:bg-zinc-700 rounded-t-lg h-6 mx-8 relative">
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-zinc-400 dark:bg-zinc-600 rounded-full" />
-          </div>
-
-          {/* Receipt paper */}
-          <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-8 py-6 font-mono shadow-lg">
-            {/* Header */}
-            <div className="text-center mb-2">
-              <div className="text-sm font-bold tracking-[0.3em] text-zinc-900 dark:text-zinc-100 uppercase">
-                Twent
+        {/* Pricing Cards */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
+          {/* Free Plan */}
+          <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8">
+            <div className="mb-6">
+              <h3 className="text-lg font-display font-bold text-zinc-900 dark:text-zinc-100">
+                Free
+              </h3>
+              <div className="mt-3 flex items-baseline gap-1">
+                <span className="text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100">
+                  $0
+                </span>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                  /month
+                </span>
               </div>
-              <div className="text-[10px] text-zinc-500 tracking-wider uppercase">
-                Agentic Operating System
-              </div>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                Everything you need to get started.
+              </p>
             </div>
 
-            <DashedLine />
-
-            {/* Date */}
-            <div className="flex justify-between text-[10px] text-zinc-500 mb-1">
-              <span>
-                Date:{" "}
-                {new Date().toLocaleDateString("en-US", {
-                  month: "2-digit",
-                  day: "2-digit",
-                  year: "numeric",
-                })}
-              </span>
-              <span>
-                {new Date().toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                })}
-              </span>
-            </div>
-
-            <DashedLine />
-
-            {/* Features */}
-            <div className="space-y-1.5">
-              {features.map((f) => (
-                <div key={f.name} className="flex justify-between text-xs">
-                  <span className="text-zinc-700 dark:text-zinc-300">
-                    {f.name}
-                  </span>
-                  <span className="text-zinc-500 tabular-nums">{f.price}</span>
-                </div>
-              ))}
-            </div>
-
-            <DashedLine />
-
-            {/* Total */}
-            <div className="flex justify-between text-sm font-bold">
-              <span className="text-zinc-900 dark:text-zinc-100 tracking-wider">
-                TOTAL
-              </span>
-              <span className="text-orange-500 tabular-nums">$0.00</span>
-            </div>
-
-            <DashedLine />
-
-            {/* Footer */}
-            <div className="text-center mt-3">
-              <div className="text-[10px] text-zinc-500 tracking-wider">
-                THANK YOU FOR CHOOSING TWENT
-              </div>
-              <div className="text-[9px] text-zinc-400 mt-1">
-                Website APK Distribution • Pre-Revenue
-              </div>
-              <div className="mt-4 flex justify-center">
-                <div className="w-16 h-16 border border-zinc-300 dark:border-zinc-700 grid grid-cols-5 grid-rows-5 gap-px p-1">
-                  {Array.from({ length: 25 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`${
-                        [
-                          0, 1, 2, 4, 5, 6, 8, 10, 12, 14, 16, 18, 20, 21, 22,
-                          24,
-                        ].includes(i)
-                          ? "bg-zinc-900 dark:bg-zinc-100"
-                          : "bg-transparent"
-                      }`}
+            <ul className="space-y-3 mb-8">
+              {freeFeatures.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm">
+                  <svg
+                    className="w-4 h-4 text-green-500 mt-0.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
                     />
-                  ))}
-                </div>
-              </div>
+                  </svg>
+                  <span className="text-zinc-700 dark:text-zinc-300">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="text-center py-3 px-4 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 text-sm font-medium">
+              Current Plan
             </div>
           </div>
 
-          {/* Tear effect */}
-          <div className="h-4 bg-[repeating-linear-gradient(45deg,transparent,transparent_3px,var(--color-zinc-200)_3px,var(--color-zinc-200)_4px)] dark:bg-[repeating-linear-gradient(45deg,transparent,transparent_3px,var(--color-zinc-800)_3px,var(--color-zinc-800)_4px)]" />
+          {/* Pro Plan */}
+          <div className="bg-zinc-900 dark:bg-zinc-800 border border-orange-500/30 rounded-2xl p-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-bl-lg">
+              Popular
+            </div>
+
+            <div className="mb-6">
+              <h3 className="text-lg font-display font-bold text-zinc-100">
+                Pro
+              </h3>
+              <div className="mt-3 flex items-baseline gap-1">
+                <span className="text-4xl font-display font-bold text-orange-500">
+                  $15
+                </span>
+                <span className="text-sm text-zinc-400">/month</span>
+              </div>
+              <p className="mt-2 text-sm text-zinc-400">
+                Unlock the full Twent experience.
+              </p>
+            </div>
+
+            <ul className="space-y-3 mb-8">
+              {proFeatures.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm">
+                  <svg
+                    className="w-4 h-4 text-orange-500 mt-0.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-zinc-300">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button
+              onClick={handleUpgrade}
+              disabled={checkoutLoading}
+              className="w-full py-3 px-4 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {checkoutLoading
+                ? "Redirecting..."
+                : user
+                ? "Upgrade to Pro"
+                : "Sign in to Upgrade"}
+            </button>
+          </div>
         </div>
 
         {/* FAQ */}
@@ -220,6 +259,12 @@ export function Pricing() {
           </div>
         </div>
       </div>
+
+      <LoginModal
+        isOpen={showLogin}
+        onClose={() => setShowLogin(false)}
+        onSuccess={handleUpgrade}
+      />
     </section>
   );
 }

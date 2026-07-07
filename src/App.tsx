@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
+import { SuccessPage } from "./components/SuccessPage";
 import { BlogPage } from "./components/BlogPage";
 import { ChangelogPage } from "./components/ChangelogPage";
 import { TermsOfService } from "./components/TermsOfService";
@@ -342,6 +343,16 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <PricingPage />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/success")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <SuccessPage />
       </>
     );
   }
