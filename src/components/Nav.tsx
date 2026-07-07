@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { PlayStoreBadge } from "./PlayStoreBadge";
+import { LoginModal } from "./LoginModal";
+import { useAuth } from "../lib/AuthContext";
 
 interface NavProps {
   dark: boolean;
@@ -73,9 +75,15 @@ function HamburgerIcon({
 function MobileOverlay({
   open,
   onClose,
+  onSignIn,
+  user,
+  onSignOut,
 }: {
   open: boolean;
   onClose: () => void;
+  onSignIn: () => void;
+  user: { email?: string } | null;
+  onSignOut: () => void;
 }) {
   return (
     <div
@@ -119,6 +127,27 @@ function MobileOverlay({
           {/* Language Switcher - Mobile */}
           <div className="mb-6">
             <LanguageSwitcher />
+          </div>
+
+          <div className="section-divider mb-6" />
+
+          {/* Auth in mobile overlay */}
+          <div className="mb-6">
+            {user ? (
+              <button
+                onClick={() => { onSignOut(); onClose(); }}
+                className="block w-full px-4 py-3 text-sm font-secondary uppercase tracking-wider text-black dark:text-white hover:text-black/70 dark:hover:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-left"
+              >
+                Sign Out ({user.email?.split("@")[0]})
+              </button>
+            ) : (
+              <button
+                onClick={() => { onSignIn(); onClose(); }}
+                className="block w-full px-4 py-3 text-sm font-secondary uppercase tracking-wider text-black dark:text-white hover:text-black/70 dark:hover:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-left"
+              >
+                Sign In
+              </button>
+            )}
           </div>
 
           <div className="section-divider mb-6" />
@@ -216,7 +245,7 @@ function DesktopHeader({
         ))}
       </div>
 
-      {/* RIGHT: Download — fades in when scrolled */}
+      {/* RIGHT: Download + Auth — fades in when scrolled */}
       <div
         className={`flex items-center transition-all duration-500 overflow-hidden ${
           scrolled
@@ -225,6 +254,22 @@ function DesktopHeader({
         }`}
       >
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
+        {user ? (
+          <button
+            onClick={() => signOut()}
+            className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+            title="Sign out"
+          >
+            {user.email?.split("@")[0]}
+          </button>
+        ) : (
+          <button
+            onClick={() => setShowLogin(true)}
+            className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+          >
+            Sign In
+          </button>
+        )}
         <DownloadButton iconOnly className="!w-8 !h-8" />
       </div>
     </div>
@@ -287,6 +332,8 @@ function MobileHeader({
 export function Nav({ dark, onToggle }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const { user, signOut } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -329,7 +376,7 @@ export function Nav({ dark, onToggle }: NavProps) {
         </span>
       </a>
 
-      {/* Top-right: download OUTSIDE the header. Disappears on scroll. */}
+      {/* Top-right: auth + download OUTSIDE the header. Disappears on scroll. */}
       <div
         className={`hidden md:flex fixed top-5 right-6 z-40 items-center gap-3 transition-all duration-500 ${
           scrolled
@@ -337,6 +384,22 @@ export function Nav({ dark, onToggle }: NavProps) {
             : "opacity-100 translate-y-0"
         }`}
       >
+        {user ? (
+          <button
+            onClick={() => signOut()}
+            className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            title="Sign out"
+          >
+            {user.email?.split("@")[0]}
+          </button>
+        ) : (
+          <button
+            onClick={() => setShowLogin(true)}
+            className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+          >
+            Sign In
+          </button>
+        )}
         <DownloadButton iconOnly />
       </div>
 
@@ -352,7 +415,20 @@ export function Nav({ dark, onToggle }: NavProps) {
       />
 
       {/* Mobile overlay menu (contains all links + download) */}
-      <MobileOverlay open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <MobileOverlay
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onSignIn={() => setShowLogin(true)}
+        user={user}
+        onSignOut={signOut}
+      />
+
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={showLogin}
+        onClose={() => setShowLogin(false)}
+        onSuccess={() => setShowLogin(false)}
+      />
     </>
   );
 }
