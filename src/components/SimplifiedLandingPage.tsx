@@ -56,10 +56,9 @@ export function SimplifiedLandingPage({ dark = false, onToggle }: { dark?: boole
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get Twent from Play Store"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
+                className="inline-block hover:opacity-80 transition-opacity"
               >
-                <PlayStoreBadge iconClassName="w-5 h-5" />
-                Get it from Play Store
+                <PlayStoreBadge className="h-11" />
               </a>
               <a
                 href="/docs"
@@ -117,10 +116,9 @@ export function SimplifiedLandingPage({ dark = false, onToggle }: { dark?: boole
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get Twent from Play Store"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
+              className="inline-block hover:opacity-80 transition-opacity"
             >
-              <PlayStoreBadge iconClassName="w-5 h-5" />
-              Get it from Play Store
+              <PlayStoreBadge className="h-11" />
             </a>
           </div>
         </section>

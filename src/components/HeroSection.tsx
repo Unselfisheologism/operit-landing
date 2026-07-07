@@ -50,10 +50,9 @@ export function HeroSection() {
             href="https://play.google.com/apps/testing/com.twent"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-10 py-4 bg-black text-white font-secondary font-medium text-lg uppercase tracking-wider hover:bg-zinc-800 transition-colors"
+            className="inline-block hover:opacity-80 transition-opacity"
           >
-            <PlayStoreBadge iconClassName="w-5 h-5" />
-            Get it from Play Store
+            <PlayStoreBadge className="h-11" />
           </a>
         </div>
 

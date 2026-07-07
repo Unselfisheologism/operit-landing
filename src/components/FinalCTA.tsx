@@ -62,10 +62,9 @@ export function FinalCTA() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Get Twent from Play Store"
-            className="inline-flex items-center justify-center gap-3 px-12 py-5 bg-black text-white font-secondary text-xl uppercase tracking-wider hover:bg-zinc-800 transition-colors"
+            className="inline-block hover:opacity-80 transition-opacity"
           >
-            <PlayStoreBadge iconClassName="w-6 h-6" />
-            Get it from Play Store
+            <PlayStoreBadge className="h-12" />
           </a>
           <div className="flex items-center gap-3">
             <span className="text-xs text-zinc-400 dark:text-zinc-600">

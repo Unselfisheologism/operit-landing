@@ -19,21 +19,18 @@ const NAV_LINKS = [
 
 function DownloadButton({
   className = "",
-  iconOnly = false,
 }: {
   className?: string;
-  iconOnly?: boolean;
 }) {
   return (
     <a
       href="https://play.google.com/apps/testing/com.twent"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Get Twent from Play Store"
-      className={`inline-flex items-center justify-center bg-black text-white hover:bg-zinc-800 transition-colors ${iconOnly ? "w-9 h-9" : "gap-2 px-4 py-2 text-sm font-secondary uppercase tracking-wider"} ${className}`}
+      aria-label="Get Twent on Google Play"
+      className={`inline-flex items-center justify-center hover:opacity-80 transition-opacity ${className}`}
     >
-      <PlayStoreBadge iconClassName="w-[18px] h-[18px]" />
-      {!iconOnly && <span>Play Store</span>}
+      <PlayStoreBadge className="h-8" />
     </a>
   );
 }
@@ -293,7 +290,7 @@ function DesktopHeader({
             Sign In
           </button>
         )}
-        <DownloadButton iconOnly className="!w-8 !h-8" />
+        <DownloadButton />
       </div>
     </div>
   );
@@ -344,7 +341,7 @@ function MobileHeader({
 
       {/* Right: download icon + hamburger */}
       <div className="flex items-center gap-1">
-        <DownloadButton iconOnly className="!w-8 !h-8" />
+        <DownloadButton />
         <HamburgerIcon open={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
       </div>
     </div>
@@ -431,7 +428,7 @@ export function Nav({ dark, onToggle }: NavProps) {
             Sign In
           </button>
         )}
-        <DownloadButton iconOnly />
+        <DownloadButton />
       </div>
 
       {/* Top-center: floating pill header (the main nav) */}

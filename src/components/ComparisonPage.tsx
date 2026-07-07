@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // No external dependencies – head tags managed via useEffect
 
@@ -433,14 +434,13 @@ export function ComparisonPage({
       </div>
 
       <div className="text-center py-10 border-t border-gray-200">
-        <h2 className="text-xl font-bold mb-4">Get Twent on Google Play</h2>
         <a
           href="https://play.google.com/apps/testing/com.twent"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-zinc-800 transition"
+          className="inline-block hover:opacity-80 transition"
         >
-          Get it from Play Store
+          <PlayStoreBadge className="h-12" />
         </a>
       </div>
 

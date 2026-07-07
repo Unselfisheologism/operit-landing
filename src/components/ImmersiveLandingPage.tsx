@@ -540,10 +540,9 @@ export function ImmersiveLandingPage({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Get Twent from Play Store"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
+                  className="inline-block hover:opacity-80 transition-opacity"
                 >
-                  Get it from Play Store
-                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
+                  <PlayStoreBadge className="h-11" />
                 </a>
                 <a
                   href="/docs"
@@ -636,10 +635,9 @@ export function ImmersiveLandingPage({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get Twent from Play Store"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 dark:text-white text-white font-medium transition-colors duration-200"
+              className="inline-block hover:opacity-80 transition-opacity"
             >
-              Get it from Play Store
-              <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
+              <PlayStoreBadge className="h-11" />
             </a>
             <div className="mt-6 flex items-center justify-center gap-4">
               <span className="text-xs text-zinc-500">Follow:</span>

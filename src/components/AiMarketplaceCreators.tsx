@@ -467,10 +467,9 @@ export function AiMarketplaceCreators({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get Twent from Play Store"
-                className="inline-flex items-center justify-center px-8 py-4 bg-black hover:bg-zinc-800 text-white font-medium transition-colors duration-200"
+                className="inline-block hover:opacity-80 transition-opacity"
               >
-                Get it from Play Store
-                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
+                <PlayStoreBadge className="h-11" />
               </a>
               <a
                 href="/docs#marketplace"
@@ -1027,10 +1026,9 @@ export function AiMarketplaceCreators({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get Twent from Play Store"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-zinc-200 text-black font-medium transition-colors duration-200"
+                className="inline-block hover:opacity-80 transition-opacity"
               >
-                Get it from Play Store
-                <PlayStoreBadge iconClassName="w-5 h-5 ml-2" />
+                <PlayStoreBadge className="h-11" />
               </a>
               <a
                 href="/docs#marketplace"
