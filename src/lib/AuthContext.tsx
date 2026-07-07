@@ -26,47 +26,84 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
+function parseHashTokens(): { accessToken: string; refreshToken: string } | null {
+  const hash = window.location.hash;
+  if (!hash || !hash.includes("access_token=")) return null;
+  const params = new URLSearchParams(hash.substring(1));
+  const accessToken = params.get("access_token");
+  const refreshToken = params.get("refresh_token");
+  if (!accessToken || !refreshToken) return null;
+  return { accessToken, refreshToken };
+}
+
+function cleanupUrl() {
+  window.history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search
+  );
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const initAuth = async () => {
-      // Check for implicit flow tokens in URL hash
-      const hash = window.location.hash;
-      if (hash && hash.includes("access_token=")) {
-        const params = new URLSearchParams(hash.substring(1));
-        const accessToken = params.get("access_token");
-        const refreshToken = params.get("refresh_token");
+    let cancelled = false;
 
-        if (accessToken && refreshToken) {
-          try {
-            await supabase.auth.setSession({
-              access_token: accessToken,
-              refresh_token: refreshToken,
-            });
-          } catch {
-            // setSession may fail if tokens are invalid/expired
+    const initAuth = async () => {
+      console.log("[auth] initAuth start, hash:", window.location.hash.substring(0, 80));
+
+      // 1. Try to exchange implicit flow tokens from URL hash
+      const tokens = parseHashTokens();
+      if (tokens) {
+        console.log("[auth] found tokens in URL hash, calling setSession...");
+        cleanupUrl();
+        try {
+          const { data, error } = await supabase.auth.setSession({
+            access_token: tokens.accessToken,
+            refresh_token: tokens.refreshToken,
+          });
+          if (!cancelled) {
+            if (error) {
+              console.error("[auth] setSession error:", error.message);
+            } else {
+              console.log("[auth] setSession success, session:", !!data?.session);
+              setSession(data.session);
+            }
           }
-          // Clean up URL hash
-          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        } catch (e) {
+          console.error("[auth] setSession exception:", e);
         }
       }
 
-      const { data: { session } } = await supabase.auth.getSession();
-      setSession(session);
-      setLoading(false);
+      // 2. Also load any existing session from storage
+      const { data: { session: existingSession } } = await supabase.auth.getSession();
+      if (!cancelled) {
+        console.log("[auth] getSession result:", !!existingSession);
+        if (existingSession) {
+          setSession(existingSession);
+        }
+        setLoading(false);
+      }
     };
 
     initAuth();
 
+    // 3. Listen for future auth changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
+    } = supabase.auth.onAuthStateChange((event, newSession) => {
+      console.log("[auth] onAuthStateChange:", event, !!newSession);
+      if (!cancelled && newSession) {
+        setSession(newSession);
+      }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
 
   const signIn = async (email: string, password: string) => {
