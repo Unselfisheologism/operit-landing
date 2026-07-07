@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "./lib/AuthContext";
 import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
 import { SuccessPage } from "./components/SuccessPage";
@@ -17,6 +18,7 @@ import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
 import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
 import { OsVsBrowserAutomation } from "./components/OsVsBrowserAutomation";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
+import { DashboardPage } from "./components/DashboardPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
 
@@ -175,6 +177,7 @@ function useSpaNavigation() {
 export default function App() {
   const { dark, toggle } = useTheme();
   const { path } = useSpaNavigation();
+  const { user, loading: authLoading } = useAuth();
 
   // Handle docs SEO files - let Vite serve static files from public/docs directory
   // Static files are served directly by Vite, so we don't need to handle them here
@@ -353,6 +356,28 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <SuccessPage />
+      </>
+    );
+  }
+
+  // Dashboard — requires auth, shows billing/subscription
+  if (routePath.startsWith("/dashboard")) {
+    if (authLoading) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950">
+          <div className="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+        </div>
+      );
+    }
+    if (!user) {
+      // Not logged in — redirect to home
+      if (typeof window !== "undefined") window.history.replaceState({}, "", "/");
+      return <ImmersiveLandingPage dark={dark} toggle={toggle} />;
+    }
+    return (
+      <>
+        <MetaUpdater currentPath={routePath} />
+        <DashboardPage dark={dark} />
       </>
     );
   }
@@ -562,8 +587,19 @@ export default function App() {
     );
   }
 
-  // Main immersive landing page
+  // Main immersive landing page — redirect to dashboard if logged in
   if (routePath === "/" || routePath === "" || routePath === "/index.html") {
+    if (!authLoading && user) {
+      if (typeof window !== "undefined") {
+        window.history.replaceState({}, "", "/dashboard");
+      }
+      return (
+        <>
+          <MetaUpdater currentPath="/dashboard" />
+          <DashboardPage dark={dark} />
+        </>
+      );
+    }
     return (
       <>
         <HreflangTags currentPath={routePath || '/'} />

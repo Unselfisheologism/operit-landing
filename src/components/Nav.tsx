@@ -134,12 +134,21 @@ function MobileOverlay({
           {/* Auth in mobile overlay */}
           <div className="mb-6">
             {user ? (
-              <button
-                onClick={() => { onSignOut(); onClose(); }}
-                className="block w-full px-4 py-3 text-sm font-secondary uppercase tracking-wider text-black dark:text-white hover:text-black/70 dark:hover:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-left"
-              >
-                Sign Out ({user.email?.split("@")[0]})
-              </button>
+              <>
+                <a
+                  href="/dashboard"
+                  onClick={onClose}
+                  className="block px-4 py-3 text-sm font-secondary uppercase tracking-wider text-black dark:text-white hover:text-black/70 dark:hover:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
+                >
+                  Dashboard
+                </a>
+                <button
+                  onClick={() => { onSignOut(); onClose(); }}
+                  className="block w-full px-4 py-3 text-sm font-secondary uppercase tracking-wider text-black dark:text-white hover:text-black/70 dark:hover:text-white/70 hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-left"
+                >
+                  Sign Out ({user.email?.split("@")[0]})
+                </button>
+              </>
             ) : (
               <button
                 onClick={() => { onSignIn(); onClose(); }}
@@ -261,13 +270,21 @@ function DesktopHeader({
       >
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
         {user ? (
-          <button
-            onClick={() => onSignOut()}
-            className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
-            title="Sign out"
-          >
-            {user.email?.split("@")[0]}
-          </button>
+          <>
+            <a
+              href="/dashboard"
+              className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+            >
+              Dashboard
+            </a>
+            <button
+              onClick={() => onSignOut()}
+              className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+              title="Sign out"
+            >
+              {user.email?.split("@")[0]}
+            </button>
+          </>
         ) : (
           <button
             onClick={() => onSignIn()}
@@ -391,13 +408,21 @@ export function Nav({ dark, onToggle }: NavProps) {
         }`}
       >
         {user ? (
-          <button
-            onClick={() => signOut()}
-            className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
-            title="Sign out"
-          >
-            {user.email?.split("@")[0]}
-          </button>
+          <>
+            <a
+              href="/dashboard"
+              className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            >
+              Dashboard
+            </a>
+            <button
+              onClick={() => signOut()}
+              className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+              title="Sign out"
+            >
+              {user.email?.split("@")[0]}
+            </button>
+          </>
         ) : (
           <button
             onClick={() => setShowLogin(true)}
