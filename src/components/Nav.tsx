@@ -168,10 +168,16 @@ function DesktopHeader({
   dark,
   scrolled,
   onToggle: _onToggle,
+  user,
+  onSignIn,
+  onSignOut,
 }: {
   dark: boolean;
   onToggle: () => void;
   scrolled: boolean;
+  user: { email?: string } | null;
+  onSignIn: () => void;
+  onSignOut: () => void;
 }) {
   return (
     <div
@@ -256,7 +262,7 @@ function DesktopHeader({
         <span className="w-px h-5 bg-zinc-200 dark:bg-zinc-700" />
         {user ? (
           <button
-            onClick={() => signOut()}
+            onClick={() => onSignOut()}
             className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
             title="Sign out"
           >
@@ -264,7 +270,7 @@ function DesktopHeader({
           </button>
         ) : (
           <button
-            onClick={() => setShowLogin(true)}
+            onClick={() => onSignIn()}
             className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
           >
             Sign In
@@ -404,7 +410,7 @@ export function Nav({ dark, onToggle }: NavProps) {
       </div>
 
       {/* Top-center: floating pill header (the main nav) */}
-      <DesktopHeader dark={dark} onToggle={onToggle} scrolled={scrolled} />
+      <DesktopHeader dark={dark} onToggle={onToggle} scrolled={scrolled} user={user} onSignIn={() => setShowLogin(true)} onSignOut={signOut} />
 
       {/* === MOBILE (<768px) — Completely Different Header === */}
       <MobileHeader
