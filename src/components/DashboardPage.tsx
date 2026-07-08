@@ -31,6 +31,8 @@ export function DashboardPage({ dark }: { dark: boolean }) {
   const { user, signOut } = useAuth();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [portalLoading, setPortalLoading] = useState(false);
+  const [portalError, setPortalError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!user) return;
@@ -169,14 +171,39 @@ export function DashboardPage({ dark }: { dark: boolean }) {
           {/* CTA */}
           <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-700">
             {isPro ? (
+              <>
               <button
-                className="text-sm font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
-                onClick={() => {
-                  /* TODO: open customer portal */
+                className="text-sm font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors disabled:opacity-50"
+                disabled={portalLoading}
+                onClick={async () => {
+                  setPortalLoading(true);
+                  setPortalError(null);
+                  try {
+                    const { data: { session } } = await supabase.auth.getSession();
+                    if (!session) { setPortalError("Not logged in"); return; }
+                    const res = await fetch(
+                      `https://cadlhnfgxvyzfddmchxw.supabase.co/functions/v1/customer-portal`,
+                      { headers: { Authorization: `Bearer ${session.access_token}` } }
+                    );
+                    const data = await res.json();
+                    if (!res.ok || data.error) {
+                      setPortalError(data.error || "Failed to open portal");
+                    } else {
+                      window.location.href = data.link;
+                    }
+                  } catch (e) {
+                    setPortalError("Network error");
+                  } finally {
+                    setPortalLoading(false);
+                  }
                 }}
               >
-                Manage Subscription →
+                {portalLoading ? "Opening…" : "Manage Subscription →"}
               </button>
+              {portalError && (
+                <p className="mt-2 text-xs text-red-500">{portalError}</p>
+              )}
+              </>
             ) : (
               <a
                 href="/pricing"
