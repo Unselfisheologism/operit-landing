@@ -20,17 +20,15 @@ const freeFeatures = [
 
 const proFeatures = [
   "Everything in Free",
+  "1,000+ Integrations (Notion, Slack, GitHub, etc.)",
+  "Import/Export Chats, Workflows, Skills & Memory",
   "No Ads — Clean experience",
-  "Git & Filesystem (Workspace)",
-  "Import/Export Chats & History",
-  "Chat Sessions & Bot Sessions",
-  "Bots, Skills & Memory Sync",
-  "Private Discord Access",
+  "Direct Discord access to the dev team",
+  "Priority Email Support",
   "Custom Themes/Icons/Wallpapers",
   "Custom Agent Voices/Names/Avatars",
-  "1,000+ Tool Integrations (Composio)",
   "Drops, Flows & Shadows",
-  "Priority Email Support",
+  "Flex your Power User badge",
 ];
 
 const faqs = [
@@ -39,24 +37,24 @@ const faqs = [
     a: "Yes. The Free plan includes all core features — 50+ tools, terminal, overlay agent, MCP servers, skills, workflows, voice activation, smart memory, and more. No credit card required.",
   },
   {
-    q: "What do I get with Pro?",
-    a: "Pro ($15/mo) removes ads, unlocks Git & Filesystem workspace, import/export everything, custom themes/icons/wallpapers, custom agent voices/names/avatars, 1,000+ tool integrations via Composio, Drops/Flows/Shadows, private Discord, and priority email support.",
+    q: "What do I get with Power User?",
+    a: "Power User unlocks 1,000+ tool integrations via Composio (Notion, Slack, GitHub, etc.), import/export of chats, workflows, skills & memory, no ads, direct Discord access to the dev team, priority email support, custom everything, and Drops/Flows/Shadows.",
   },
   {
     q: "What are Drops, Flows, and Shadows?",
-    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Pro-only social utility features.",
+    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Power User-only social utility features.",
   },
   {
     q: "How do I pay?",
-    a: "We use Dodo Payments — a secure payment processor. Click 'Upgrade to Pro', sign in, enter your payment details, and you're done. Cancel anytime.",
+    a: "We use Dodo Payments — a secure payment processor. Choose monthly ($9.99/mo) or yearly ($79.99/yr, 33% savings). Click 'Upgrade', sign in, enter your payment details, and you're done. Cancel anytime.",
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. No contracts, no cancellation fees. Cancel from your account settings and your Pro access continues until the end of the billing period.",
+    a: "Yes. No contracts, no cancellation fees. Cancel from your account settings and your Power User access continues until the end of the billing period.",
   },
   {
     q: "Will there be more plans?",
-    a: "Not right now. We're focused on making Pro excellent. Enterprise pricing may come later for teams and businesses.",
+    a: "Not right now. We're focused on making Power User excellent. Enterprise pricing may come later for teams and businesses.",
   },
 ];
 
@@ -66,6 +64,7 @@ export function Pricing() {
   const { user } = useAuth();
   const [showLogin, setShowLogin] = useState(false);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
 
   const handleUpgrade = async () => {
     if (!user) {
@@ -74,9 +73,7 @@ export function Pricing() {
     }
 
     setCheckoutLoading(true);
-    // Redirect to Dodo Payments checkout
-    // The Edge Function will handle creating the subscription
-    window.location.href = `https://cadlhnfgxvyzfddmchxw.supabase.co/functions/v1/create-checkout?user_id=${user.id}&email=${encodeURIComponent(user.email || "")}`;
+    window.location.href = `https://cadlhnfgxvyzfddmchxw.supabase.co/functions/v1/create-checkout?user_id=${user.id}&email=${encodeURIComponent(user.email || "")}&plan=${billing}`;
     setCheckoutLoading(false);
   };
 
@@ -98,11 +95,36 @@ export function Pricing() {
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
           Free forever.
           <br />
-          <span className="text-blue-500">Pro when you're ready.</span>
+          <span className="text-blue-500">Power User when you're ready.</span>
         </h2>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-16 text-center mx-auto">
-          Start with everything you need. Upgrade to Pro for ad-free, workspace tools, custom everything, 1,000+ integrations, and priority support.
+        <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8 text-center mx-auto">
+          Start with everything you need. Upgrade for 1,000+ integrations, import/export, no ads, and priority support.
         </p>
+
+        {/* Billing Toggle */}
+        <div className="flex items-center justify-center gap-3 mb-16">
+          <button
+            onClick={() => setBilling("monthly")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              billing === "monthly"
+                ? "bg-orange-500 text-white"
+                : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            onClick={() => setBilling("yearly")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
+              billing === "yearly"
+                ? "bg-orange-500 text-white"
+                : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+            }`}
+          >
+            Yearly
+            <span className="ml-1.5 text-[10px] font-bold text-green-400">SAVE 33%</span>
+          </button>
+        </div>
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
@@ -153,7 +175,7 @@ export function Pricing() {
             </div>
           </div>
 
-          {/* Pro Plan */}
+          {/* Power User Plan */}
           <div className="bg-zinc-900 dark:bg-zinc-800 border border-orange-500/30 rounded-2xl p-8 relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-bl-lg">
               Popular
@@ -161,16 +183,20 @@ export function Pricing() {
 
             <div className="mb-6">
               <h3 className="text-lg font-display font-bold text-zinc-100">
-                Pro
+                Power User
               </h3>
               <div className="mt-3 flex items-baseline gap-1">
                 <span className="text-4xl font-display font-bold text-orange-500">
-                  $15
+                  {billing === "monthly" ? "$9.99" : "$79.99"}
                 </span>
-                <span className="text-sm text-zinc-400">/month</span>
+                <span className="text-sm text-zinc-400">
+                  /{billing === "monthly" ? "month" : "year"}
+                </span>
               </div>
               <p className="mt-2 text-sm text-zinc-400">
-                Unlock the full Twent experience.
+                {billing === "yearly"
+                  ? "$6.67/mo — save 33% vs monthly"
+                  : "or $79.99/year — save 33%"}
               </p>
             </div>
 
@@ -203,7 +229,7 @@ export function Pricing() {
               {checkoutLoading
                 ? "Redirecting..."
                 : user
-                ? "Upgrade to Pro"
+                ? "Upgrade to Power User"
                 : "Sign in to Upgrade"}
             </button>
           </div>

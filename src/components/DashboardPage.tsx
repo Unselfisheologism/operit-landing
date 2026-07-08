@@ -131,10 +131,10 @@ export function DashboardPage({ dark }: { dark: boolean }) {
                 Plan
               </p>
               <p className="text-lg font-display text-black dark:text-white">
-                {isPro ? "Twent Pro" : "Twent Free"}
+                {isPro ? "Twent Power User" : "Twent Free"}
               </p>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                {isPro ? "$15/month" : "$0/month"}
+                {isPro ? "$9.99/mo or $79.99/yr" : "$0/month"}
               </p>
             </div>
 
