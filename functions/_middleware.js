@@ -822,6 +822,19 @@ export async function onRequest(context) {
     console.log(`Prerender miss: ${pathname} — no markdown twin`);
   }
 
+  // ─── .md file requests from humans → redirect to HTML version ───
+  // Prevents duplicate content: /pricing.md and /pricing both being indexed
+  if (pathname.endsWith('.md')) {
+    const htmlPath = pathname.replace(/\.md$/, '') || '/';
+    return new Response(null, {
+      status: 301,
+      headers: {
+        'Location': htmlPath,
+        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+      },
+    });
+  }
+
   // ─── HTML Response (existing behavior for humans) ───
   const htmlResponse = await env.ASSETS.fetch(request);
 
