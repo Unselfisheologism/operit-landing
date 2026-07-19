@@ -65,19 +65,23 @@ export function HreflangTags({ currentPath }: { currentPath: string }) {
 
     // All SEO variants
     allSeoVariants.forEach((variant) => {
-      let newParts: string[];
+      let urlPath: string;
 
-      if (isLangPrefixed && pathParts.length > 0) {
+      if (variant.short === "en") {
+        // English uses root path — no /en/ prefix
+        urlPath = isLangPrefixed && pathParts.length > 1
+          ? "/" + pathParts.slice(1).join("/")
+          : currentPath;
+      } else if (isLangPrefixed && pathParts.length > 0) {
         // Replace existing language prefix
-        newParts = [variant.short, ...pathParts.slice(1)];
+        urlPath = "/" + [variant.short, ...pathParts.slice(1)].join("/");
       } else if (!isLangPrefixed) {
         // Prepend language prefix
-        newParts = [variant.short, ...pathParts];
+        urlPath = "/" + [variant.short, ...pathParts].join("/");
       } else {
         return; // already handled
       }
 
-      const urlPath = "/" + newParts.join("/");
       hreflangLinks.push({
         hreflang: variant.hreflang,
         href: `${baseUrl}${urlPath}`,

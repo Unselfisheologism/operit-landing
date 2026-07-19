@@ -112,6 +112,63 @@ const SEARCH_ENGINE_BOTS = [
   { pattern: /Yahoo! Slurp/i, name: 'Yahoo-Slurp', vendor: 'Yahoo' },
 ];
 
+// ─── Hreflang SEO variants ─────────────────────────────────────────────────
+const HREFLANG_VARIANTS = [
+  { short: 'en',    hreflang: 'en-US' },
+  { short: 'zh',    hreflang: 'zh-CN' },
+  { short: 'zh-TW', hreflang: 'zh-TW' },
+  { short: 'hi',    hreflang: 'hi-IN' },
+  { short: 'es',    hreflang: 'es-ES' },
+  { short: 'es-419', hreflang: 'es-419' },
+  { short: 'es-AR', hreflang: 'es-AR' },
+  { short: 'es-CO', hreflang: 'es-CO' },
+  { short: 'pt',    hreflang: 'pt-PT' },
+  { short: 'pt-BR', hreflang: 'pt-BR' },
+  { short: 'fr',    hreflang: 'fr-FR' },
+  { short: 'fr-CA', hreflang: 'fr-CA' },
+  { short: 'ja',    hreflang: 'ja-JP' },
+  { short: 'ko',    hreflang: 'ko-KR' },
+  { short: 'de',    hreflang: 'de-DE' },
+  { short: 'de-AT', hreflang: 'de-AT' },
+  { short: 'de-CH', hreflang: 'de-CH' },
+  { short: 'it',    hreflang: 'it-IT' },
+  { short: 'tr',    hreflang: 'tr-TR' },
+  { short: 'id',    hreflang: 'id-ID' },
+  { short: 'vi',    hreflang: 'vi-VN' },
+  { short: 'ar',    hreflang: 'ar-SA' },
+  { short: 'ar-AE', hreflang: 'ar-AE' },
+  { short: 'ar-EG', hreflang: 'ar-EG' },
+  { short: 'ru',    hreflang: 'ru-RU' },
+  { short: 'pl',    hreflang: 'pl-PL' },
+  { short: 'nl',    hreflang: 'nl-NL' },
+  { short: 'nl-BE', hreflang: 'nl-BE' },
+];
+const HREFLANG_SHORT_CODES = new Set(HREFLANG_VARIANTS.map(v => v.short));
+
+function generateHreflangLinks(pathname) {
+  const base = 'https://twent.xyz';
+  const parts = pathname.split('/').filter(Boolean);
+  const firstPart = parts[0];
+  const isLangPrefixed = HREFLANG_SHORT_CODES.has(firstPart);
+  const links = [];
+  // x-default → English (no lang prefix)
+  const englishPath = isLangPrefixed ? '/' + parts.slice(1).join('/') : pathname;
+  links.push(`<link rel="alternate" hreflang="x-default" href="${base}${englishPath === '/' ? '' : englishPath}" />`);
+  for (const variant of HREFLANG_VARIANTS) {
+    let variantPath;
+    if (variant.short === 'en') {
+      // English uses root path — no /en/ prefix
+      variantPath = englishPath === '/' ? '/' : englishPath;
+    } else if (isLangPrefixed) {
+      variantPath = '/' + [variant.short, ...parts.slice(1)].join('/');
+    } else {
+      variantPath = '/' + [variant.short, ...parts].join('/');
+    }
+    links.push(`<link rel="alternate" hreflang="${variant.hreflang}" href="${base}${variantPath}" />`);
+  }
+  return links.join('\n  ');
+}
+
 // ─── Page metadata from pages.json (embedded for edge performance) ───────────
 const PAGE_META = {
   '/': {
@@ -502,6 +559,7 @@ function wrapHtml({ pathname, title, description, bodyHtml, type, image, lastmod
   <meta name="author" content="Twent AI" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <link rel="canonical" href="${canonical}" />
+  ${generateHreflangLinks(pathname)}
 
   <!-- Open Graph -->
   <meta property="og:type" content="${type === 'article' ? 'article' : 'website'}" />
@@ -916,6 +974,13 @@ export async function onRequest(context) {
       `<link rel="canonical" href="${canonicalUrl}" />`
     );
   }
+
+  // Inject hreflang links for multilingual SEO
+  const hreflangLinks = generateHreflangLinks(pathname);
+  htmlText = htmlText.replace(
+    '</head>',
+    `  ${hreflangLinks}\n  </head>`
+  );
 
   let varyValue = 'Accept';
   if (aiBot) varyValue += ', User-Agent';
