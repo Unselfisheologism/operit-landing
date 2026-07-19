@@ -204,13 +204,26 @@ const PAGE_META = {
     type: 'article',
     image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
   },
+  '/blog/os-vs-browser-automation': {
+    title: 'Why OS-Level AI Automation Beats Browser-Level Automation',
+    description: 'AI browsers like Perplexity Comet and ChatGPT Atlas are unsafe due to prompt injection & data leakage. OS-level automation avoids every one of these risks.',
+    type: 'article',
+    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
+  },
+  '/success': {
+    title: 'Payment Successful | Twent',
+    description: 'Your Twent upgrade is confirmed. Enjoy premium features on your Android AI agent.',
+    type: 'website',
+    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
+  },
 };
 
 // Add comparison pages dynamically
 const VS_PAGES = [
   'chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent',
   'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make',
-  'zapier', 'qordinate', 'omnara', 'manus', 'onspace',
+  'zapier', 'qordinate', 'omnara', 'manus', 'onspace', 'pi',
+  'siri-bixby', 'google-ai-test-kitchen',
 ];
 for (const vs of VS_PAGES) {
   const name = vs.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -816,6 +829,81 @@ export async function onRequest(context) {
     return htmlResponse;
   }
 
+  // ─── Rewrite <title> and <meta description> in the served HTML ───
+  // This ensures EVERY visitor (crawlers, social previews, humans) sees
+  // the correct per-page title instead of the hardcoded SPA default.
+  const meta = PAGE_META[pathname] || PAGE_META['/'];
+  let htmlText = await htmlResponse.text();
+
+  // Replace <title>...</title>
+  htmlText = htmlText.replace(
+    /<title>[^<]*<\/title>/i,
+    `<title>${escapeHtmlAttr(meta.title)}</title>`
+  );
+
+  // Replace <meta name="title" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+name="title"\s+content="[^"]*"\s*\/?>/i,
+    `<meta name="title" content="${escapeHtmlAttr(meta.title)}" />`
+  );
+
+  // Replace <meta name="description" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i,
+    `<meta name="description" content="${escapeHtmlAttr(meta.description)}" />`
+  );
+
+  // Replace <meta property="og:title" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:title" content="${escapeHtmlAttr(meta.title)}" />`
+  );
+
+  // Replace <meta property="og:description" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:description" content="${escapeHtmlAttr(meta.description)}" />`
+  );
+
+  // Replace <meta property="og:url" content="..."> with current path
+  const canonicalUrl = `https://twent.xyz${pathname === '/' ? '' : pathname}`;
+  htmlText = htmlText.replace(
+    /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="og:url" content="${canonicalUrl}" />`
+  );
+
+  // Replace <meta property="twitter:title" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+property="twitter:title"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="twitter:title" content="${escapeHtmlAttr(meta.title)}" />`
+  );
+
+  // Replace <meta property="twitter:description" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+property="twitter:description"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="twitter:description" content="${escapeHtmlAttr(meta.description)}" />`
+  );
+
+  // Replace <meta property="twitter:url" content="...">
+  htmlText = htmlText.replace(
+    /<meta\s+property="twitter:url"\s+content="[^"]*"\s*\/?>/i,
+    `<meta property="twitter:url" content="${canonicalUrl}" />`
+  );
+
+  // Inject canonical link if not already present
+  if (!htmlText.includes('rel="canonical"')) {
+    htmlText = htmlText.replace(
+      '</head>',
+      `  <link rel="canonical" href="${canonicalUrl}" />\n  </head>`
+    );
+  } else {
+    // Update existing canonical
+    htmlText = htmlText.replace(
+      /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i,
+      `<link rel="canonical" href="${canonicalUrl}" />`
+    );
+  }
+
   let varyValue = 'Accept';
   if (aiBot) varyValue += ', User-Agent';
   if (searchBot) varyValue += ', User-Agent';
@@ -829,8 +917,9 @@ export async function onRequest(context) {
   newHeaders.set('Surrogate-Key', 'dualmark markdown-twin');
   newHeaders.set('X-AEO-Version', '1.0');
   newHeaders.set('X-Generator', 'Twent-Dualmark/1.0');
+  newHeaders.set('Content-Type', 'text/html; charset=utf-8');
 
-  return new Response(htmlResponse.body, {
+  return new Response(htmlText, {
     status: htmlResponse.status,
     statusText: htmlResponse.statusText,
     headers: newHeaders,

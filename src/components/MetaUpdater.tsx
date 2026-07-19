@@ -43,6 +43,16 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "A curated ranking of the top AI apps for Android in 2026 — from chatbots to agentic tools. Find the right one for you.",
   },
+  "/blog/os-vs-browser-automation": {
+    title: "Why OS-Level AI Automation Beats Browser-Level Automation",
+    description:
+      "AI browsers like Perplexity Comet and ChatGPT Atlas are unsafe due to prompt injection & data leakage. OS-level automation avoids every one of these risks.",
+  },
+  "/success": {
+    title: "Payment Successful | Twent",
+    description:
+      "Your Twent upgrade is confirmed. Enjoy premium features on your Android AI agent.",
+  },
   "/android-automation-power-user": {
     title: "Android Automation — Auto-Tap, Swipe & AI Scripts",
     description:
@@ -177,6 +187,21 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     title: "Twent vs Onspace - Android AI Agent Comparison (2026)",
     description:
       "Privacy-first, offline models & Ubuntu terminal. See how Twent and Onspace compare on Android in 2026.",
+  },
+  "/vs/pi": {
+    title: "Twent vs Pi (Inflection) — Empathetic Chatbot vs Action Agent (2026)",
+    description:
+      "Pi is an empathetic, conversational AI designed for supportive talk. Twent is an action-oriented AI agent that actually runs tasks on your Android phone.",
+  },
+  "/vs/siri-bixby": {
+    title: "Twent vs Siri & Bixby — Native Voice Assistants vs Real AI Agent (2026)",
+    description:
+      "Siri and Bixby are built-in voice assistants with deep OS integration but limited capabilities. Twent is a full AI agent OS that connects to any API, runs code, and automates your entire phone.",
+  },
+  "/vs/google-ai-test-kitchen": {
+    title: "Twent vs Google AI Test Kitchen — Experimental Demos vs Production Agent (2026)",
+    description:
+      "Google AI Test Kitchen is an experimental sandbox for testing early Google AI capabilities. Twent is a full production AI agent OS that runs code, automates tasks, and lives on your Android phone.",
   },
 };
 
@@ -409,6 +434,35 @@ const routeKeywords: Record<string, string[]> = {
     "Onspace AI alternative",
     "Onspace vs Twent privacy AI",
     "privacy AI Android comparison"
+  ],
+  "/blog/os-vs-browser-automation": [
+    "OS vs browser AI automation",
+    "prompt injection AI browser",
+    "browser automation security risks",
+    "Twent OS-level automation safety",
+    "Perplexity Comet security"
+  ],
+  "/success": [
+    "Twent payment success",
+    "Twent upgrade confirmed"
+  ],
+  "/vs/pi": [
+    "Pi AI chatbot alternative",
+    "Inflection Pi vs Twent",
+    "empathetic AI vs action agent",
+    "Pi AI Android comparison"
+  ],
+  "/vs/siri-bixby": [
+    "Siri vs Twent AI agent",
+    "Bixby alternative Android",
+    "voice assistant vs AI agent",
+    "Samsung Bixby automation alternative"
+  ],
+  "/vs/google-ai-test-kitchen": [
+    "Google AI Test Kitchen alternative",
+    "Google experimental AI vs Twent",
+    "Google AI sandbox comparison",
+    "Twent vs Google AI demos"
   ],
 };
 
