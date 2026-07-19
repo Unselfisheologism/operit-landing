@@ -94,6 +94,47 @@ function DocsSchemaMarkup() {
         },
       ],
     },
+    // HowTo schema — step-by-step getting started guide
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: "How to Set Up Twent AI Agent on Android",
+      description: "Step-by-step guide to install and configure Twent AI agent on your Android device.",
+      totalTime: "PT10M",
+      estimatedCost: {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "0",
+      },
+      step: [
+        {
+          "@type": "HowToStep",
+          name: "Download the APK",
+          text: "Download the latest Twent APK from twent.xyz. Tap the download button and save the file to your device.",
+          url: "https://twent.xyz/#download",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Install the app",
+          text: "Open the downloaded APK file. If prompted, enable 'Install from unknown sources' in your Android settings. Tap Install.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Grant permissions",
+          text: "Open Twent and grant the requested permissions. Storage and Network are required. Accessibility permission enables UI automation features.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Configure your AI provider",
+          text: "Go to Settings and add your API key (OpenAI, Anthropic, or any OpenAI-compatible provider). Or use local GGUF models for fully offline operation.",
+        },
+        {
+          "@type": "HowToStep",
+          name: "Start using Twent",
+          text: "Tap the floating bubble overlay to start interacting with your AI agent. Ask it to automate tasks, run terminal commands, or connect to services.",
+        },
+      ],
+    },
   ];
 
   return (

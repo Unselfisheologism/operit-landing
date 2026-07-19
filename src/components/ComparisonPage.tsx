@@ -292,7 +292,7 @@ export function ComparisonPage({
     });
     document.head.appendChild(websiteScript);
 
-    // BreadcrumbList structured data — 3-level: Home → Compare → vs Competitor
+    // BreadcrumbList structured data — 3-level: Home → vs Competitor
     const breadcrumbScript = document.createElement("script");
     breadcrumbScript.type = "application/ld+json";
     breadcrumbScript.text = JSON.stringify({
@@ -308,18 +308,30 @@ export function ComparisonPage({
         {
           "@type": "ListItem",
           position: 2,
-          name: "Compare",
-          item: "https://twent.xyz/vs/chatgpt",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: `vs ${competitorName.replace("ChatGPT Android App", "ChatGPT").replace("Android App", "").trim()}`,
+          name: `Twent vs ${competitorName.replace("Android App", "").trim()}`,
           item: fullUrl,
         },
       ],
     });
     document.head.appendChild(breadcrumbScript);
+
+    // ItemList schema — structured feature comparison for AI extraction
+    const itemListScript = document.createElement("script");
+    itemListScript.type = "application/ld+json";
+    itemListScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Twent vs ${competitorName.replace("Android App", "").trim()} — Feature Comparison`,
+      description: `Side-by-side feature comparison between Twent AI and ${competitorName} for Android.`,
+      numberOfItems: features.length,
+      itemListElement: features.map((feat, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: feat.name,
+        description: `Twent: ${feat.twent ? "Yes" : "No"} | ${competitorName.replace("Android App", "").trim()}: ${feat.competitor ? "Yes" : "No"}`,
+      })),
+    });
+    document.head.appendChild(itemListScript);
 
     // FAQ schema for AI answers
     if (faq && faq.length > 0) {

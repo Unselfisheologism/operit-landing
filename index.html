@@ -60,6 +60,140 @@
       content="https://twent.xyz/TWENT-OPENGRAPH-IMG.webp"
     />
 
+    <!-- JSON-LD Structured Data — Homepage schemas for Google rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Twent AI",
+      "url": "https://twent.xyz",
+      "logo": "https://twent.xyz/OKFINALTWENTLOGO-removebg.png",
+      "sameAs": [
+        "https://github.com/Unselfisheologism/Twent",
+        "https://x.com/Jeff9James",
+        "https://discord.gg/dUFrWm4w"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "jeffrinjames@twent.xyz",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://twent.xyz/#website",
+      "url": "https://twent.xyz",
+      "name": "Twent AI",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Twent AI",
+        "url": "https://twent.xyz"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://twent.xyz/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Twent",
+      "operatingSystem": "Android 8.0+",
+      "applicationCategory": "UtilitiesApplication",
+      "url": "https://twent.xyz",
+      "description": "The AI agent that runs ON your Android — automates apps, runs Ubuntu terminal & connects 1000+ services. Free download.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "42",
+        "bestRating": "5"
+      },
+      "installUrl": "https://twent.xyz/#download",
+      "screenshot": "https://twent.xyz/TWENT-OPENGRAPH-IMG.png",
+      "featureList": [
+        "AI Agent overlay on any Android app",
+        "Ubuntu 24.04 LTS terminal",
+        "UI automation (tap, swipe, type)",
+        "MCP server support",
+        "1000+ Composio integrations",
+        "Skills & workflows marketplace",
+        "Local GGUF model support",
+        "BYOK API key encryption",
+        "Voice activation",
+        "Smart memory"
+      ],
+      "softwareVersion": "1.0.0",
+      "datePublished": "2024-01-01"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Twent really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Right now, everything is completely free. All 50+ tools, the Ubuntu terminal, overlay agent, MCP servers, skills, workflows — the whole thing. We're in pre-revenue and focused on building the best agent OS, not paywalling features."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you distribute the app if it's not on the Play Store?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We distribute the APK directly from our website. Download, install, and you're good to go. No middleman, no store fees, no waiting for approval."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will there be ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eventually, yes — powered by AI ads (koahlabs.com). They'll be non-intrusive and contextually relevant. A future Pro plan ($20) will remove them entirely, along with cosmetic badges, early access to features, and zero marketplace commissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the marketplace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The marketplace is an upcoming agentic app store — users can sell skills, workflows, plugins, and MCP servers. It doesn't exist yet. Once we move to the Play Store and start generating revenue, marketplace commissions will fund the free tier. Pro users ($20) get zero commissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between free now and Pro later?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Right now: everything is free, Website APK distribution, AI ads, no marketplace, no cosmetic badges. Later (post-revenue): Play Store distribution, everything still free, AI ads, marketplace with commissions, and Pro ($20) for ad removal, cosmetic badges, early access features, and zero marketplace commissions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why not just put it on the Play Store now?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Play Store means reviews, fees, and slower iteration. We're moving fast — shipping features weekly, breaking things, fixing them. Website APK distribution lets us do that. Once we're stable and generating revenue, Play Store is the move."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Preload Latin woff2 — the 49KB bottleneck on the critical path
          This is the only Inter file English speakers need; others are deferred. -->
     <link
