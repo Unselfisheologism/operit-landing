@@ -481,10 +481,8 @@ function LLMUseCases({ visible }: { visible: boolean }) {
 
 export function AiAgentForDevelopers({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
@@ -501,7 +499,7 @@ export function AiAgentForDevelopers({
       <SchemaMarkup />
       <BreadcrumbSchema />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

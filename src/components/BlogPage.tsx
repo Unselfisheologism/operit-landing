@@ -380,7 +380,7 @@ function CategoryTags({
   );
 }
 
-export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
+export function BlogPage({ dark }: { dark: boolean }) {
   const [heroRef, heroInView] = useInView();
   const [contentRef, contentInView] = useInView();
   const [activeCategory, setActiveCategory] = useState("All");
@@ -434,7 +434,7 @@ export function BlogPage({ dark, onToggle }: { dark: boolean; onToggle: () => vo
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <BlogPageSchemaMarkup />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero — editorial masthead */}

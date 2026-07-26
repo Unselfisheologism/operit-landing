@@ -273,7 +273,7 @@ function AppCard({ num, name, developer, price, description, standout }: {
   );
 }
 
-export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
+export function BestAiAppsAndroid({ dark }: { dark: boolean }) {
   const [heroRef, heroInView] = useInView();
   const [tmentRef, tmentInView] = useInView();
   const schemaData = {
@@ -300,7 +300,7 @@ export function BestAiAppsAndroid({ dark, onToggle }: { dark: boolean; onToggle:
       <BestAiAppsSchemaMarkup />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* ── HERO ─────────────────────────────────────────────────────── */}

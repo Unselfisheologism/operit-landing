@@ -6,7 +6,6 @@ import { useAuth } from "../lib/AuthContext";
 
 interface NavProps {
   dark: boolean;
-  onToggle: () => void;
 }
 
 const NAV_LINKS = [
@@ -167,19 +166,14 @@ function MobileOverlay({
 }
 
 // === DESKTOP FLOATING PILL HEADER ===
-// Single pill that starts narrow (nav links only) and expands on scroll
-// to include icon logo on left and download+toggle on right.
-// Always centered, never full-width.
 function DesktopHeader({
   dark,
   scrolled,
-  onToggle: _onToggle,
   user,
   onSignIn,
   onSignOut,
 }: {
   dark: boolean;
-  onToggle: () => void;
   scrolled: boolean;
   user: { email?: string } | null;
   onSignIn: () => void;
@@ -297,17 +291,12 @@ function DesktopHeader({
 }
 
 // === MOBILE HEADER ===
-// Completely different from desktop. Always translucent glassmorphism.
-// Left: icon logo + "Twent" text. Right: toggle + hamburger.
-// Hamburger opens overlay with all nav links + download button.
 function MobileHeader({
   dark,
   menuOpen,
   setMenuOpen,
-  onToggle: _onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
   menuOpen: boolean;
   setMenuOpen: (v: boolean) => void;
 }) {
@@ -349,7 +338,7 @@ function MobileHeader({
 }
 
 // === MAIN NAV EXPORT ===
-export function Nav({ dark, onToggle }: NavProps) {
+export function Nav({ dark }: NavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -432,12 +421,11 @@ export function Nav({ dark, onToggle }: NavProps) {
       </div>
 
       {/* Top-center: floating pill header (the main nav) */}
-      <DesktopHeader dark={dark} onToggle={onToggle} scrolled={scrolled} user={user} onSignIn={() => setShowLogin(true)} onSignOut={signOut} />
+      <DesktopHeader dark={dark} scrolled={scrolled} user={user} onSignIn={() => setShowLogin(true)} onSignOut={signOut} />
 
       {/* === MOBILE (<768px) — Completely Different Header === */}
       <MobileHeader
         dark={dark}
-        onToggle={onToggle}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
       />

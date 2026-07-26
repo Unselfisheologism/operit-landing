@@ -31,11 +31,11 @@ function NotFoundSchemaMarkup() {
   );
 }
 
-export function NotFoundPage({ dark, toggle }: { dark: boolean; toggle: () => void }) {
+export function NotFoundPage({ dark }: { dark: boolean }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased flex flex-col">
       <NotFoundSchemaMarkup />
-      <Nav dark={dark} onToggle={toggle} />
+      <Nav dark={dark} />
 
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-24 text-center">
         <div className="max-w-xl">

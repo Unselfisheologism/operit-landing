@@ -467,10 +467,8 @@ function PinnedScrollytelling() {
 
 export function ImmersiveLandingPage({
   dark,
-  toggle,
 }: {
   dark: boolean;
-  toggle: () => void;
 }) {
   const [heroRef, setHeroRef] = useState<HTMLElement | null>(null);
   const [heroInView, setHeroInView] = useState(false);
@@ -493,7 +491,7 @@ export function ImmersiveLandingPage({
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <SharedSchemaMarkup />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={toggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

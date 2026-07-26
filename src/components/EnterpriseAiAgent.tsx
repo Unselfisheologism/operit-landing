@@ -303,10 +303,8 @@ function DeploymentOptions({ visible }: { visible: boolean }) {
 
 export function EnterpriseAiAgent({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
@@ -321,7 +319,7 @@ export function EnterpriseAiAgent({
       <SchemaMarkup />
       <BreadcrumbSchema />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

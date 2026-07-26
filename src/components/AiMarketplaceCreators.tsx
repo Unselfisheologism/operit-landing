@@ -351,10 +351,8 @@ function TopCategories({ visible }: { visible: boolean }) {
 
 export function AiMarketplaceCreators({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
@@ -368,7 +366,7 @@ export function AiMarketplaceCreators({
       <SchemaMarkup />
       <BreadcrumbSchema />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

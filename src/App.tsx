@@ -53,12 +53,19 @@ import { languages, changeLanguage, getDirection } from "./i18n";
 export function useTheme() {
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("twent-theme");
-      if (saved) return saved === "dark";
       return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return true;
   });
+
+  // Always follow the OS preference — listen for changes in real time
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = (e: MediaQueryListEvent) => setDark(e.matches);
+    mql.addEventListener("change", handler);
+    return () => mql.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -69,10 +76,9 @@ export function useTheme() {
       root.classList.remove("dark");
       root.classList.add("light");
     }
-    localStorage.setItem("twent-theme", dark ? "dark" : "light");
   }, [dark]);
 
-  return { dark, toggle: () => setDark((d) => !d) };
+  return { dark };
 }
 
 // SPA navigation: intercept internal <a> clicks and use pushState
@@ -175,7 +181,7 @@ function useSpaNavigation() {
 }
 
 export default function App() {
-  const { dark, toggle } = useTheme();
+  const { dark } = useTheme();
   const { path } = useSpaNavigation();
   const { user, loading: authLoading } = useAuth();
 
@@ -205,7 +211,7 @@ export default function App() {
       <>
 <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <DocsPage dark={dark} onToggle={toggle} />
+        <DocsPage dark={dark} />
       </>
     );
   }
@@ -215,7 +221,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <AiAgentForDevelopers dark={dark} onToggle={toggle} />
+        <AiAgentForDevelopers dark={dark} />
       </>
     );
   }
@@ -225,7 +231,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <AndroidAutomationPowerUser dark={dark} onToggle={toggle} />
+        <AndroidAutomationPowerUser dark={dark} />
       </>
     );
   }
@@ -235,7 +241,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <PrivacyFirstAiAndroid dark={dark} onToggle={toggle} />
+        <PrivacyFirstAiAndroid dark={dark} />
       </>
     );
   }
@@ -245,7 +251,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <TerminalOnAndroid dark={dark} onToggle={toggle} />
+        <TerminalOnAndroid dark={dark} />
       </>
     );
   }
@@ -255,7 +261,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <AiMarketplaceCreators dark={dark} onToggle={toggle} />
+        <AiMarketplaceCreators dark={dark} />
       </>
     );
   }
@@ -265,7 +271,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <EnterpriseAiAgent dark={dark} onToggle={toggle} />
+        <EnterpriseAiAgent dark={dark} />
       </>
     );
   }
@@ -275,7 +281,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <MarketplaceBlogPost dark={dark} onToggle={toggle} />
+        <MarketplaceBlogPost dark={dark} />
       </>
     );
   }
@@ -285,7 +291,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <BestAiAppsAndroid dark={dark} onToggle={toggle} />
+        <BestAiAppsAndroid dark={dark} />
       </>
     );
   }
@@ -295,7 +301,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <OsVsBrowserAutomation dark={dark} onToggle={toggle} />
+        <OsVsBrowserAutomation dark={dark} />
       </>
     );
   }
@@ -305,7 +311,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <BlogPage dark={dark} onToggle={toggle} />
+        <BlogPage dark={dark} />
       </>
     );
   }
@@ -315,7 +321,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <ChangelogPage dark={dark} onToggle={toggle} />
+        <ChangelogPage dark={dark} />
       </>
     );
   }
@@ -325,7 +331,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <TermsOfService dark={dark} onToggle={toggle} />
+        <TermsOfService dark={dark} />
       </>
     );
   }
@@ -335,7 +341,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
-        <PrivacyPolicy dark={dark} onToggle={toggle} />
+        <PrivacyPolicy dark={dark} />
       </>
     );
   }
@@ -372,7 +378,7 @@ export default function App() {
     if (!user) {
       // Not logged in — redirect to home
       if (typeof window !== "undefined") window.history.replaceState({}, "", "/");
-      return <ImmersiveLandingPage dark={dark} toggle={toggle} />;
+      return <ImmersiveLandingPage dark={dark} />;
     }
     return (
       <>
@@ -571,7 +577,7 @@ export default function App() {
       <>
         <HreflangTags currentPath="/" />
         <MetaUpdater currentPath="/" canonicalPath="/" />
-        <ImmersiveLandingPage dark={dark} toggle={toggle} />
+        <ImmersiveLandingPage dark={dark} />
       </>
     );
   }
@@ -582,7 +588,7 @@ export default function App() {
       <>
         <HreflangTags currentPath="/" />
         <MetaUpdater currentPath="/" canonicalPath="/" />
-        <ImmersiveLandingPage dark={dark} toggle={toggle} />
+        <ImmersiveLandingPage dark={dark} />
       </>
     );
   }
@@ -604,7 +610,7 @@ export default function App() {
       <>
         <HreflangTags currentPath={routePath || '/'} />
         <MetaUpdater currentPath={routePath || '/'} />
-        <ImmersiveLandingPage dark={dark} toggle={toggle} />
+        <ImmersiveLandingPage dark={dark} />
       </>
     );
   }
@@ -614,7 +620,7 @@ export default function App() {
     <>
       <HreflangTags currentPath={routePath} />
       <MetaUpdater currentPath={routePath} />
-      <NotFoundPage dark={dark} toggle={toggle} />
+      <NotFoundPage dark={dark} />
     </>
   );
 }

@@ -157,7 +157,7 @@ function AnimatedDate({ visible }: { visible: boolean }) {
   );
 }
 
-export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggle: () => void }) {
+export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
   const [heroRef, heroInView] = useInView();
 
   // Schema.org BlogPosting markup — now properly deduplicated.
@@ -167,7 +167,7 @@ export function MarketplaceBlogPost({ dark, onToggle }: { dark: boolean; onToggl
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <MarketplaceSchemaMarkup />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero — editorial masthead */}

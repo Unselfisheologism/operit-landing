@@ -362,10 +362,8 @@ function PermissionLevels({ visible }: { visible: boolean }) {
 
 export function AndroidAutomationPowerUser({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
@@ -381,7 +379,7 @@ export function AndroidAutomationPowerUser({
       <SchemaMarkup />
       <BreadcrumbSchema />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

@@ -1319,10 +1319,8 @@ const sectionComponents: Record<string, React.FC> = {
 
 export function DocsPage({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [active, setActive] = useState("installation");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -1380,36 +1378,6 @@ export function DocsPage({
             </a>
           </div>
           <div className="flex items-center gap-3">
-            {/* Minecraft theme toggle */}
-            <label className="relative inline-block w-[4em] h-[2em] cursor-pointer">
-              <input
-                type="checkbox"
-                checked={dark}
-                onChange={onToggle}
-                className="opacity-0 w-0 h-0"
-              />
-              <span className="absolute inset-0 bg-zinc-300 dark:bg-zinc-600 transition-colors duration-400" />
-              <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAA0klEQVR42u3Z2w2DMAxAUaboBGzYATtXxQ+VkCoUEscxdrkqjvJHHkcJOA+mKdOP0vv5YGm2nKAEsUH6PoZARvq3D01lQ8lh075mt/JoMYdB0nQWq+m2Ujw6Zn+N0FZXIxR2/qpbfS+vWWD5x4Wq5oNo5aopKvrJlBYrMBwrNYUJoYkyGSYrduLOaEIGKUFi8HUHaZYa1VJg1lRDpd10zQjlS/2vIEqkxq1lxNUetx9i7RhZe2rWqYN1LmOdXHFne9ztB+5+KK/0EnRvEO5fh2NaActc24OaqNouAAAAAElFTkSuQmCC"
-                alt=""
-                aria-hidden="true"
-                className="absolute top-0 left-0 h-12 w-12 transition-all duration-400"
-                style={{
-                  opacity: dark ? 0 : 1,
-                  transform: dark ? "translateX(3rem)" : "translateX(0)",
-                }}
-              />
-              <img
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAAAVUlEQVR42u3WMQ4AEBBEUfe/pyhcQi/R7nz8F/2MCLY1SZJE08dElDgtUJVArXyPZINU9p5SkFq9T/Mu3ZsHV/bzPHLV/33HSQ2I0wVx/oJOqJIkkSz0aFrRzLUSOAAAAABJRU5ErkJggg=="
-                alt=""
-                aria-hidden="true"
-                className="absolute top-0 left-0 h-12 w-12 transition-all duration-400"
-                style={{
-                  opacity: dark ? 1 : 0,
-                  transform: dark ? "translateX(3rem)" : "translateX(0)",
-                }}
-              />
-            </label>
             <a
               href="/"
               className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"

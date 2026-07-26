@@ -45,15 +45,13 @@ function TermsSchemaMarkup() {
 
 export function TermsOfService({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <TermsSchemaMarkup />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
       <main className="max-w-3xl mx-auto px-6 pt-28 pb-16">
         <h1 className="font-display text-3xl md:text-4xl mb-2">
           Terms of Service

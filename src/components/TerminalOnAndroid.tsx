@@ -124,10 +124,8 @@ function FeatureCard({
 
 export function TerminalOnAndroid({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
@@ -139,7 +137,7 @@ export function TerminalOnAndroid({
       <SchemaMarkup />
       <BreadcrumbSchema />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero Section */}

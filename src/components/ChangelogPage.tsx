@@ -153,15 +153,13 @@ const tocItems = entries.map((entry) => ({
 
 export function ChangelogPage({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       <ChangelogSchemaMarkup />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
       <main className="max-w-3xl mx-auto px-6 py-20">
         <h1 className="font-display text-4xl tracking-tight mb-2">Changelog</h1>
         <p className="text-zinc-500 dark:text-zinc-400 mb-16 text-sm tracking-wide">

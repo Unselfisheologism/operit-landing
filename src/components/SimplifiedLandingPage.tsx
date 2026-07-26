@@ -17,7 +17,7 @@ function GrainOverlay() {
   );
 }
 
-export function SimplifiedLandingPage({ dark = false, onToggle }: { dark?: boolean; onToggle: () => void }) {
+export function SimplifiedLandingPage({ dark = false }: { dark?: boolean }) {
   const [heroRef, heroInView] = useInView();
   const [featuresRef, featuresInView] = useInView();
   const [ctaRef, _ctaInView] = useInView();
@@ -25,7 +25,7 @@ export function SimplifiedLandingPage({ dark = false, onToggle }: { dark?: boole
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         <section ref={heroRef} className="relative pt-24 pb-16 md:pt-36 md:pb-24">

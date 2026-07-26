@@ -192,10 +192,8 @@ function AnimatedDate({ visible }: { visible: boolean }) {
 
 export function OsVsBrowserAutomation({
   dark,
-  onToggle,
 }: {
   dark: boolean;
-  onToggle: () => void;
 }) {
   const [heroRef, heroInView] = useInView();
 
@@ -203,7 +201,7 @@ export function OsVsBrowserAutomation({
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans antialiased">
       <OsVsBrowserSchemaMarkup />
       <GrainOverlay />
-      <Nav dark={dark} onToggle={onToggle} />
+      <Nav dark={dark} />
 
       <main>
         {/* Hero — editorial masthead */}
