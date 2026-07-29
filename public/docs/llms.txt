@@ -4,56 +4,56 @@
 
 ## Docs
 
-- [Introduction](https://docs.twent.xyz/): Twent is a personal AI agent for Android — automate any app, run a full Ubuntu terminal, and connect to 1000+ services. Free, local-first, and extensible.
+- [Introduction](https://twent.xyz/docs): Twent is a personal AI agent for Android — automate any app, run a full Ubuntu terminal, and connect to 1000+ services. Free, local-first, and extensible.
 
 ## Automation
 
-- [Automation](https://docs.twent.xyz/automation/overview): Twent automates anything on Android — UI automation, shell commands,
-- [Tasker Integration](https://docs.twent.xyz/automation/tasker): Connect Twent with the Tasker automation app for advanced scenarios.
+- [Automation](https://twent.xyz/docs/automation/overview): Twent automates anything on Android — UI automation, shell commands,
+- [Tasker Integration](https://twent.xyz/docs/automation/tasker): Connect Twent with the Tasker automation app for advanced scenarios.
 
 ## Chat
 
-- [Chat](https://docs.twent.xyz/chat/overview): The chat screen is where you interact with your AI assistant. Messages
-- [Chat Styles](https://docs.twent.xyz/chat/chat-styles): Two display modes and extensive visual customization.
-- [Floating Chat](https://docs.twent.xyz/chat/floating-chat): Use Twent in a floating overlay while doing other things. The AI can see
+- [Chat](https://twent.xyz/docs/chat/overview): The chat screen is where you interact with your AI assistant. Messages
+- [Chat Styles](https://twent.xyz/docs/chat/chat-styles): Two display modes and extensive visual customization.
+- [Floating Chat](https://twent.xyz/docs/chat/floating-chat): Use Twent in a floating overlay while doing other things. The AI can see
 
 ## Getting Started
 
-- [Installation](https://docs.twent.xyz/getting-started/installation): Twent runs on **Android 8.0+** (API 26).
-- [First Setup](https://docs.twent.xyz/getting-started/first-setup): After installing Twent, configure an AI model to talk to. Twent supports
-- [Your First Chat](https://docs.twent.xyz/getting-started/first-chat): Open the chat screen and type a message. The AI can answer questions,
-- [Permissions](https://docs.twent.xyz/getting-started/permissions): Twent uses Android's permission system to give AI access to device
+- [Installation](https://twent.xyz/docs/getting-started/installation): Twent runs on **Android 8.0+** (API 26).
+- [First Setup](https://twent.xyz/docs/getting-started/first-setup): After installing Twent, configure an AI model to talk to. Twent supports
+- [Your First Chat](https://twent.xyz/docs/getting-started/first-chat): Open the chat screen and type a message. The AI can answer questions,
+- [Permissions](https://twent.xyz/docs/getting-started/permissions): Twent uses Android's permission system to give AI access to device
 
 ## Legal
 
-- [Data Deletion Instructions](https://docs.twent.xyz/legal/data-deletion): App Name: **Twent**
+- [Data Deletion Instructions](https://twent.xyz/docs/legal/data-deletion): App Name: **Twent**
 
 ## More
 
-- [Memory](https://docs.twent.xyz/more/memory): Persistent knowledge storage that survives across conversations. The AI
-- [Voice](https://docs.twent.xyz/more/voice): Speak to your AI and hear it respond. Supports TTS, STT, wake word
-- [Settings](https://docs.twent.xyz/more/settings): Deep customization — every aspect of Twent is configurable.
-- [Toolbox](https://docs.twent.xyz/more/toolbox): Built-in utility screens for debugging, development, and system
-- [Tool Reference](https://docs.twent.xyz/more/tool-reference): Complete parameter reference for all built-in tools.
+- [Memory](https://twent.xyz/docs/more/memory): Persistent knowledge storage that survives across conversations. The AI
+- [Voice](https://twent.xyz/docs/more/voice): Speak to your AI and hear it respond. Supports TTS, STT, wake word
+- [Settings](https://twent.xyz/docs/more/settings): Deep customization — every aspect of Twent is configurable.
+- [Toolbox](https://twent.xyz/docs/more/toolbox): Built-in utility screens for debugging, development, and system
+- [Tool Reference](https://twent.xyz/docs/more/tool-reference): Complete parameter reference for all built-in tools.
 
 ## Packages
 
-- [Packages](https://docs.twent.xyz/packages/overview): Extension system for Twent — bundles tools, dependencies, and
-- [Skills](https://docs.twent.xyz/packages/skills): Pre-configured behavior bundles that teach the AI how to do specific
-- [Marketplace](https://docs.twent.xyz/packages/marketplace): Browse and install community-built packages, skills, and MCP servers.
+- [Packages](https://twent.xyz/docs/packages/overview): Extension system for Twent — bundles tools, dependencies, and
+- [Skills](https://twent.xyz/docs/packages/skills): Pre-configured behavior bundles that teach the AI how to do specific
+- [Marketplace](https://twent.xyz/docs/packages/marketplace): Browse and install community-built packages, skills, and MCP servers.
 
 ## Tools
 
-- [Tools](https://docs.twent.xyz/tools/overview): 40+ built-in tools give AI real capabilities on your device. Every tool
-- [File System Tools](https://docs.twent.xyz/tools/file-system): Read, write, search, and manage files on your device and in the built-in
-- [Shell & Terminal](https://docs.twent.xyz/tools/shell): Full Ubuntu 24 environment on your phone — apt, Python, Node.js, vim,
-- [Web Tools](https://docs.twent.xyz/tools/web): Browse the web, search, and download content.
-- [Media Tools](https://docs.twent.xyz/tools/media): Full FFmpeg, camera, OCR, image analysis, and speech processing built
-- [UI Automation](https://docs.twent.xyz/tools/ui-automation): The most powerful feature — the AI can see your screen and interact with
-- [JavaScript Tools](https://docs.twent.xyz/tools/javascript): Built-in JS engine for running custom code. Supports file I/O, HTTP,
-- [MCP Tools](https://docs.twent.xyz/tools/mcp): Model Context Protocol — a standard for giving AI access to external
+- [Tools](https://twent.xyz/docs/tools/overview): 40+ built-in tools give AI real capabilities on your device. Every tool
+- [File System Tools](https://twent.xyz/docs/tools/file-system): Read, write, search, and manage files on your device and in the built-in
+- [Shell & Terminal](https://twent.xyz/docs/tools/shell): Full Ubuntu 24 environment on your phone — apt, Python, Node.js, vim,
+- [Web Tools](https://twent.xyz/docs/tools/web): Browse the web, search, and download content.
+- [Media Tools](https://twent.xyz/docs/tools/media): Full FFmpeg, camera, OCR, image analysis, and speech processing built
+- [UI Automation](https://twent.xyz/docs/tools/ui-automation): The most powerful feature — the AI can see your screen and interact with
+- [JavaScript Tools](https://twent.xyz/docs/tools/javascript): Built-in JS engine for running custom code. Supports file I/O, HTTP,
+- [MCP Tools](https://twent.xyz/docs/tools/mcp): Model Context Protocol — a standard for giving AI access to external
 
 ## Workflows
 
-- [Workflows](https://docs.twent.xyz/workflows/overview): Multi-step automations combining triggers, conditions, and actions.
-- [Workflow Examples](https://docs.twent.xyz/workflows/examples): Trigger: Daily at 7:30am. Steps: get calendar events → get weather → AI
+- [Workflows](https://twent.xyz/docs/workflows/overview): Multi-step automations combining triggers, conditions, and actions.
+- [Workflow Examples](https://twent.xyz/docs/workflows/examples): Trigger: Daily at 7:30am. Steps: get calendar events → get weather → AI

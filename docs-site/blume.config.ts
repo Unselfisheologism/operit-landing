@@ -79,6 +79,7 @@ export default defineConfig({
 
   // ── Deployment ──
   deployment: {
-    site: "https://docs.twent.xyz",
+    site: "https://twent.xyz",
+    base: "/docs",
   },
 });
