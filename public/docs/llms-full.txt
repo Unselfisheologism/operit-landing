@@ -1,456 +1,1025 @@
----
-title: Twent Documentation — Full AI Reference Guide
-description: Complete technical reference for Twent AI agent for Android. Covers all features, tools, APIs, and configuration for AI agents and LLM crawlers.
-type: llms-full
-ai-readability:
-  tokens: 1847
-  score: 100
-  level: Advanced
----
+# Twent Docs
 
-# Twent Documentation — Full Reference
+> Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal & connect 1000+ services.
 
-**Purpose:** AI agent and LLM crawler reference for Twent, the agentic AI OS for Android. This document is the complete index of all Twent capabilities, organized for machine readability.
+# Introduction
+Source: https://docs.twent.xyz/
 
----
+Twent runs on **Android 8.0+** and gives you a real AI assistant that can see your screen, control any app, run shell commands, browse the web, manage files, and connect to external tools — all from a floating bubble or the main chat interface.
 
-## What We Do Not Do
+<CardGroup cols={2}>
+  <Card title="Installation" href="/getting-started/installation" icon="download">
+    Download the APK and install Twent on your device.
+  </Card>
+  <Card title="First Setup" href="/getting-started/first-setup" icon="settings">
+    Configure your AI provider and start chatting.
+  </Card>
+  <Card title="Tools" href="/tools/overview" icon="wrench">
+    40+ built-in tools — file system, shell, web, media, UI automation.
+  </Card>
+  <Card title="Workflows" href="/workflows/overview" icon="zap">
+    Multi-step automations with triggers and conditions.
+  </Card>
+</CardGroup>
 
-- **Twent is not a chatbot guide.** Twent is an agentic AI that acts on your Android device — not a text-based Q&A tool. The documentation covers real system capabilities: terminal execution, UI automation, MCP server injection, local model inference.
-- **Twent is not a web app.** Twent is a native Android APK (APK 26+) installed directly on your device. It is not hosted in a browser.
-- **Twent is not just about text.** The chat interface is one modality. The documentation covers 50+ tools, a full Ubuntu 24.04 terminal, workflow automation, skills system, MCP integration, and local AI model support.
+## Why Twent exists
 
----
+Most AI assistants live in a chat bubble and can't touch your device. Twent is different — it runs **on your phone** with full access to the OS, giving AI real agency: reading your screen, tapping buttons, running commands, and managing files.
 
-## Getting Started
+<CardGroup cols={3}>
+  <Card title="Local-First" icon="shield">
+    All data stays on your device. BYOK model — your keys, your data.
+  </Card>
+  <Card title="Open Source" icon="code">
+    Transparent, auditable, and extensible by the community.
+  </Card>
+  <Card title="Extensible" icon="plug">
+    MCP servers, packages, skills, and workflows for infinite capability.
+  </Card>
+</CardGroup>
 
-### Installation
-**Requirements:** Android 8.0+ (API 26), arm64-v8a, 3GB+ RAM, 500MB+ storage, no root required.
+## What Twent can do
 
-The APK (~80MB) includes:
-- Main application
-- Ubuntu 24.04 LTS environment (chroot container)
-- Local speech recognition (Sherpa-NCNN offline STT)
-- FFmpeg media toolkit
+<Accordion>
+  <AccordionItem title="Automate any Android app">
+    The AI can see your screen via Accessibility service, tap buttons, fill forms, swipe, scroll, and type — automating any app without API access or special integrations.
+  </AccordionItem>
+  <AccordionItem title="Run a full Linux environment">
+    Built-in Ubuntu 24.04 terminal — no root required. Install packages with apt, run Python scripts, use Git, SSH to servers, and build software.
+  </AccordionItem>
+  <AccordionItem title="Manage files and code">
+    Read, write, search, and edit files on your device. Run JavaScript/TypeScript code. Compress, decompress, and transfer files.
+  </AccordionItem>
+  <AccordionItem title="Browse the web">
+    Fetch web pages as markdown, search with DuckDuckGo/Bing/Scholar, download files, and use a built-in browser with JavaScript execution.
+  </AccordionItem>
+  <AccordionItem title="Process media">
+    Full FFmpeg engine, camera integration, OCR, image analysis, speech-to-text, and text-to-speech — all built in.
+  </AccordionItem>
+</Accordion>
 
-**Download:** https://twent.xyz — direct APK, no Play Store, no account required.
+## Quick start
 
-### First Setup
-After installing, configure an AI model to power the agent. Twent is fully model-agnostic:
+1. **Download Twent**
 
-**Cloud models:**
-- OpenAI: gpt-4o, gpt-4o-mini, o1, o3-mini, etc.
-- Claude: claude-sonnet-4, claude-opus-4, claude-3-5-sonnet
-- Gemini: gemini-2.5-pro, gemini-2.0-flash
-- Deepseek: deepseek-chat, deepseek-coder
-- OpenRouter: Any model on the OpenRouter platform
-- Kilo Gateway: Kilo AI endpoints
-- NVIDIA NIMS: NVIDIA NIM endpoints
-- LM Studio: Local LM Studio server
+    Get the latest APK from [twent.xyz](https://twent.xyz). The APK is ~80MB and includes everything you need.
 
-**Local models:**
-- GGUF files via MNN (Mobile Neural Networks)
-- GGUF files via llama.cpp
-- MNN model files (.mnn)
+2. **Install and grant permissions**
 
-**Setup path:** Settings → Model & Parameters Configuration → [Provider] → Enter API key → Select model.
+    Open the APK, enable "Install from unknown sources" if prompted, then grant the requested permissions. Storage and Network are required; Accessibility enables UI automation.
 
-### Your First Chat
-Open the chat screen and type a message. The AI can:
-- Answer questions and explain concepts
-- Run Linux commands in the Ubuntu terminal
-- Read and write files on your device
-- Browse the web and summarize pages
-- Interact with any Android app (tap, swipe, type)
-- Automate multi-step workflows
+3. **Configure your AI provider**
 
-Every tool call appears as an expandable card showing tool name, parameters, and results. Full transparency — you see exactly what the AI is doing.
+    Go to Settings → Model & Parameters Configuration. Add your API key (OpenAI, Claude, Gemini, OpenRouter, or many more).
 
-### Permissions
-Twent uses Android permissions to access device capabilities.
+4. **Start chatting**
 
-**Required:**
-- Storage: Read/write files on your device
-- Network: API calls, web browsing, MCP connections
+    Tap the floating bubble or open the chat screen. Ask Twent to do anything — run commands, automate apps, browse the web, or manage files.
 
-**Optional (Recommended):**
-- Accessibility: UI automation (tap, swipe, read screen). The most powerful permission — enables the AI to control any app.
-- Display Over Other Apps: Floating chat bubble, screen capture
-- Media Projection: Screenshot capture for visual AI understanding
+:::tip
+Twent is completely free. Paid model API usage is billed by your chosen provider (OpenAI, Anthropic, etc.). If someone asks you to pay for Twent itself, it's a scam.
+:::
 
-**Advanced:**
-- ADB: System-level commands (pm, am, dumpsys)
-- Root: Full system access (optional, not required for any core feature)
+## Next steps
 
----
-
-## Chat Features
-
-### Chat Overview
-The main chat interface. Key capabilities:
-- **Streaming responses** — AI writes character-by-character, no waiting for full reply
-- **Tool transparency** — Every tool call is visible with parameters and results
-- **Conversation management** — Edit messages, branch conversations, lock threads, auto-summarize
-- **Shared content** — Share files, links, screenshots from other apps into the conversation
-- **Markdown rendering** — Code blocks, tables, LaTeX math, Mermaid diagrams
-
-**Context window:** For long conversations, Twent auto-summarizes older messages to fit the model's context window. Configure in Settings → Context & Summary.
-
-### Chat Styles
-Two display modes:
-- **Cursor style** — Character-by-character streaming with blinking cursor (like Claude/ChatGPT)
-- **Bubble style** — Traditional chat bubbles with avatars
-
-Customize: Wallpapers, light/dark theme colors, font sizes, message spacing, code block styling. Settings → Theme.
-
-### Floating Chat
-Use Twent in an overlay on top of any app. The AI can see your screen and interact with any application.
-
-**Modes:**
-- **Bubble** — Small draggable bubble that expands on tap
-- **Window** — Resizable chat window
-- **Fullscreen** — Full overlay, blocks other apps
-
-**Use cases:**
-- Ask AI for help with what's currently on screen
-- Have AI fill out forms in any app
-- Debug errors while reading logcat
-- Translate text from any app in real time
-- Trigger workflows without leaving your current app
+<CardGroup cols={2}>
+  <Card title="Installation Guide" href="/getting-started/installation" icon="download">
+    Full system requirements and download instructions.
+  </Card>
+  <Card title="First Setup" href="/getting-started/first-setup" icon="settings">
+    Configure providers, set API keys, and pick a model.
+  </Card>
+  <Card title="Chat Overview" href="/chat/overview" icon="message-circle">
+    Streaming, tool calls, conversation management, and more.
+  </Card>
+  <Card title="Tool Reference" href="/more/tool-reference" icon="list">
+    Complete parameter reference for every built-in tool.
+  </Card>
+</CardGroup>
 
 ---
 
-## Tools (50+ Built-in Tools)
+# Automation
+Source: https://docs.twent.xyz/automation/overview
 
-Twent's tools give the AI real capabilities on your device. Every tool call is transparent — you always see the exact parameters and results.
+Twent automates anything on Android — UI automation, shell commands,
+ intents, and workflows.
 
-### Tool Categories
 
-**File System:**
-- `read_file(path, offset?, limit?)` — Read file contents with pagination
-- `write_file(path, content)` — Write/create files (creates directories)
-- `patch(path, old_string, new_string, replace_all?)` — Find-and-replace edits
-- `search_files(pattern, target?, path?, file_glob?, limit?)` — Search inside files or find by name
-- `compress/decompress` — ZIP, TAR, GZ operations
+## Methods
 
-**File locations:**
-- App data: `/data/data/com.ai.assistance.twent/`
-- Internal storage: `/sdcard/` or `/storage/emulated/0/`
-- Ubuntu environment: `~/` (inside built-in Linux)
+ **UI Automation** — control any app by tapping/swiping
 
-**Shell & Terminal:**
-- `terminal(command, timeout?, workdir?, background?, pty?)` — Execute Linux commands
 
-Full Ubuntu 24.04 environment:
+ **Shell** — run Linux commands and scripts
+
+
+ **Intents** — launch apps, send broadcasts
+
+
+ **Workflows** — multi-step automations with triggers
+
+---
+
+# Tasker Integration
+Source: https://docs.twent.xyz/automation/tasker
+
+Connect Twent with the Tasker automation app for advanced scenarios.
+ Twent registers as a Tasker plugin — you can trigger Twent from Tasker
+ and vice versa.
+
+
+## Setup
+Install Tasker from Play Store
+
+ Enable in `Settings → Integrations → Tasker`
+
+## Example: Battery Monitor
+
+
+ Tasker profile: Battery
+
+---
+
+# Chat Styles
+Source: https://docs.twent.xyz/chat/chat-styles
+
+Two display modes and extensive visual customization.
+
+## Display Modes
+
+ **Cursor style** — character-by-character streaming with
+ blinking cursor
+
+
+ **Bubble style** — traditional chat bubbles with avatars
+
+## Customization
+
+
+ Set custom wallpapers, adjust colors for light/dark themes, change font
+ sizes and message spacing, and configure code block styling. Go to
+ `Settings → Theme`.
+
+---
+
+# Floating Chat
+Source: https://docs.twent.xyz/chat/floating-chat
+
+Use Twent in a floating overlay while doing other things. The AI can see
+ your screen and interact with any app.
+
+
+## Modes
+
+ **Bubble** — small draggable bubble that expands on tap
+
+
+ **Window** — resizable chat window
+
+
+ **Fullscreen** — full-screen overlay
+
+## Use Cases
+
+
+ Get help with what's on screen, ask AI to fill forms, debug while
+ reading errors, translate text from any app.
+
+---
+
+# Chat
+Source: https://docs.twent.xyz/chat/overview
+
+The chat screen is where you interact with your AI assistant. Messages
+ stream in word-by-word, tool calls are visible in real time, and all
+ conversations are saved locally.
+
+
+## Key Features
+
+ **Streaming responses** — no waiting for full replies
+
+
+ **Tool transparency** — see every tool call, parameters,
+ and results
+
+
+ **Conversation management** — edit, branch, lock,
+ auto-summarize
+
+
+ **Shared content** — share files/links from other apps
+
+
+ **Markdown rendering** — code blocks, tables, LaTeX,
+ Mermaid diagrams
+
+## Context Window
+
+
+ The AI sees your recent conversation history. For long conversations,
+ Twent auto-summarizes older messages. Configure in
+ `Settings → Context & Summary`.
+
+---
+
+# Your First Chat
+Source: https://docs.twent.xyz/getting-started/first-chat
+
+Open the chat screen and type a message. The AI can answer questions,
+ run commands, browse the web, manage files, and automate UI
+ interactions.
+
+
+## Try these
+
+
 ```
-apt update && apt install python3-pip
-pip install requests numpy pandas
-git clone https://github.com/user/repo
-cd repo && npm install && npm run build
-ssh user@server.com
-```
-
-Package managers: apt, pip, npm, cargo, gem
-Shells: bash, zsh, fish
-Compilers: Python 3, Node.js, Go, Rust, C/C++
-Tools: git, gh, SSH, vim, nano, curl, wget
-
-**Web:**
-- `fetch_url(url, max_length?, raw?, start_index?)` — Fetch page content as markdown
-- `search(query, limit?, engine?)` — DuckDuckGo, Tavily, Bing, Scholar
-- `download_file(url, path?)` — Download files to device
-- `web_visit(url, question?)` — Built-in browser with JavaScript execution
-
-**Media:**
-- **FFmpeg:** Convert formats, extract audio, trim clips, merge files, extract frames, add subtitles
-- **Speech-to-Text:** Sherpa-NCNN (local/offline), HTTP STT (cloud)
-- **Text-to-Speech:** System TTS (built-in Android), OpenAI TTS (cloud), SiliconFlow TTS (cloud, Chinese voices)
-- **Camera:** Capture photos and videos
-- **OCR:** Extract text from images using built-in OCR
-
-**UI Automation** (requires Accessibility permission):
-- `tap(ref)` — Tap UI element by reference ID
-- `swipe(startX, startY, endX, endY, duration?)` — Swipe gesture with coordinates
-- `scroll(direction)` — Scroll up/down/left/right
-- `type(text, ref?)` — Type text into a field
-- `screenshot()` — Capture the current screen
-- `get_ui_tree()` — Get full UI element hierarchy with ref IDs
-- `press_key(key)` — Back, Home, Volume, Recents, etc.
-- `open_app(packageName)` — Launch an app by package name
-
-**Dual pipeline:** Twent uses both the Android Accessibility UI tree AND visual screenshots to understand your screen. Every tool call automatically captures screen context before executing.
-
-**JavaScript:**
-- `execute_code(code, lang?)` — Run Python code (built-in) or JavaScript (Node.js via shell)
-
-Install npm packages via shell, then use them in scripts:
-```bash
-cd /data/data/com.ai.assistance.twent/files/js
-npm install axios lodash
-```
-
-**MCP Tools:**
-- Tools injected from MCP servers — the AI gets new capabilities by installing MCP plugins
-
-### Parallel Execution
-Read-only tools (file reads, network checks, device info) run in parallel automatically — faster responses without sequential waiting.
-
----
-
-## MCP (Model Context Protocol)
-
-MCP is a standard for connecting AI to external tools. Install an MCP server and the AI gains new capabilities instantly.
-
-**Installation:**
-- Browse: Plugins → MCP → Shop Icon
-- Or add manually via JSON config
-
-**Popular servers:**
-- Filesystem: Extended file operations (walk directories, watch changes)
-- Git: Repository management (commits, branches, PRs)
-- SQLite: Query local databases
-- Brave Search: Web search without leaving the phone
-- Puppeteer: Browser automation on-device
-- GitHub: Issues, PRs, repos
-- Slack: Messaging and channels
-- Notion: Pages and databases
-
-The AI can install MCP servers autonomously when you ask it to — no manual configuration required. Just say "install the GitHub MCP server" and Twent handles it.
-
----
-
-## Automation & Workflows
-
-### Methods
-1. **UI Automation** — Control any app by tapping/swiping/reading the UI tree
-2. **Shell Commands** — Run Linux commands and scripts
-3. **Intents** — Launch apps, send broadcasts
-4. **Workflows** — Multi-step automations with triggers and conditions
-
-### Workflow Types
-- **Simple** — One trigger, one action (e.g., battery low → notify)
-- **Chained** — Multiple actions in sequence (e.g., morning trigger → weather → calendar → briefing)
-- **Conditional** — If/else branching (e.g., if WiFi connected, sync files, else skip)
-- **Scheduled** — Run on cron schedule, interval, or time-of-day
-
-### Trigger Types
-- Schedule: Cron-based timing
-- Interval: Every N minutes/hours
-- App Launch: When an app opens
-- Notification: On incoming notification
-- Battery: On battery level change
-- Wake Word: Voice trigger phrase
-
-### Tasker Integration
-Connect Twent with the Tasker automation app. Twent registers as a Tasker plugin — trigger Twent from Tasker profiles and vice versa.
-
-**Setup:** Settings → Integrations → Tasker → Enable
-
-**Example:** Battery < 20% → Tasker sends to Twent: "My battery is at 20%. Check what apps are draining it." Twent analyzes and gives recommendations.
-
----
-
-## Packages & Skills
-
-### Packages
-Extension system for Twent — bundles tools, dependencies, and configuration into installable units.
-
-**Structure:**
-```
-my-package/
-├── package.json       # Metadata (name, version, description)
-├── tools/index.ts     # Tool definitions
-├── scripts/           # Helper scripts
-└── assets/            # Static data
+`What's the weather today?
+Create a calorie tracker mini app
+Run ls -la in my home directory
+Search for the latest AI news`
 ```
 
-**Installing:**
-- From marketplace: Settings → Packages → Marketplace
-- Manual: Import ZIP or directory
-- Via URL: The AI can install packages for you
 
-### Skills
-Pre-configured behavior bundles that teach the AI how to do specific tasks — includes system prompts, tools, workflows, and assets.
+## Tool Calls
 
-**How skills work:** When you ask something, Twent checks if any installed skill is relevant. If so, it loads that skill's prompts and tools to handle the request.
 
-**Popular skills:**
-- Code Review: Analyze code for bugs, security issues, and style
-- Data Analysis: Process CSVs, generate charts, statistical summaries
-- Writing Assistant: Editorial mode for blog posts, documentation, emails
-- Research: Deep research on topics with web search and citation
+ When the AI uses a tool (running a command, reading a file, etc.), you
+ see it happen in real time as expandable cards showing the tool name,
+ parameters, and results.
 
-### Marketplace
+
+## Message Actions
+
+
+ Long-press any message to **Copy**, **Edit**
+ & resend, **Branch** the conversation, or
+ **Delete**.
+
+---
+
+# First Setup
+Source: https://docs.twent.xyz/getting-started/first-setup
+
+After installing Twent, configure an AI model to talk to. Twent supports
+ NVIDIA NIMS, Kilo Gateway, OpenAI, Claude, Deepseek, Gemini, OpenRouter,
+ LM Studio, local models (MNN/llama.cpp) and many more.
+
+
+## Setting up your API key
+
+ Open Twent → `Settings` →
+ `Model & Parameters Configuration`
+
+ Tap your provider of choice
+ Enter your API key
+
+ Select a model (e.g. `gpt-4o`,
+ `claude-sonnet-4-20250514`)
+
+## Local Models
+
+
+ Run AI completely offline by downloading GGUF or MNN models directly
+ on-device. Go to
+ `Settings → Model & Parameters Configuration → Local Model`.
+
+
+## Recommended Models
+
+
+| Provider | Model |
+| --- | --- |
+| OpenAI | gpt-5.4 |
+| Claude | claude-opus-4.6 |
+| OpenRouter | minimax/minimax-m2.7 |
+
+---
+
+# Installation
+Source: https://docs.twent.xyz/getting-started/installation
+
+Twent runs on **Android 8.0+** (API 26).
+
+
+## Download
+
+
+ Get the latest release from
+ [twent.xyz](https://twent.xyz)
+ . The APK is ~80MB and includes the main app, Ubuntu 24 environment,
+ local speech recognition (Sherpa-NCNN), and FFmpeg.
+
+
+## System Requirements
+
+
+| Requirement | Minimum |
+| --- | --- |
+| Android version | 8.0 (API 26) |
+| RAM | 3GB recommended |
+| Storage | 500MB+ free |
+| Architecture | arm64-v8a |
+
+
+ **Note:** Twent is completely free. If someone asks you to
+ pay for it, it's a scam.
+
+---
+
+# Permissions
+Source: https://docs.twent.xyz/getting-started/permissions
+
+Twent uses Android's permission system to give AI access to device
+ capabilities.
+
+
+## Required
+
+ **Storage** — file management, reading/writing documents
+
+
+ **Network** — API calls, web browsing, MCP connections
+
+## Optional (Recommended)
+
+ **Accessibility** — UI automation (tap, swipe, read
+ screen). The most powerful permission.
+
+
+ **Display Over Other Apps** — floating chat, screen
+ capture
+
+
+ **Media Projection** — screenshot capture for visual
+ automation
+
+## Advanced
+
+
+| Permission | Enables | Risk |
+| --- | --- | --- |
+| Storage | Read/write files | Low |
+| Network | API calls, web | Low |
+| Accessibility | UI automation | Medium |
+| ADB | System commands | Medium |
+| Root | Full system | High |
+
+---
+
+# Data Deletion Instructions
+Source: https://docs.twent.xyz/legal/data-deletion
+
+App Name: **Twent**
+
+
+## How to Delete Your Data
+
+
+ Twent is a local-first application. We do not store your personal data,
+ chat history, or agentic memory on our own servers. All your data is
+ stored locally on your device. To delete your data, please follow these
+ steps:
+
+
+## Option 1 (In-App)
+
+
+ Open the Twent app, navigate to Settings, and tap the "Clear All Local
+ Data" button.
+
+
+## Option 2 (Android System)
+
+
+ Go to your Android device Settings > Apps > Twent > Storage
+ & cache > tap Clear Storage (or Clear Data).
+
+
+## What Data is Deleted
+
+
+ Executing the steps above will permanently and immediately delete all
+ locally stored data, including:
+
+Chat history and conversation logs.
+ Agentic memory and knowledge base entries.
+ Saved workflows, templates, and local configurations.
+## What Data is Kept / Third-Party Data
+
+
+ Because Twent operates on a Bring-Your-Own-Key (BYOK) model, your
+ prompts and files are sent directly to the third-party AI providers you
+ choose (e.g., OpenAI, Anthropic). Twent does not retain this data. Any
+ data processed by these third-party providers is subject to their
+ respective privacy policies and data retention practices.
+
+---
+
+# Memory
+Source: https://docs.twent.xyz/more/memory
+
+Persistent knowledge storage that survives across conversations. The AI
+ remembers your preferences, past discussions, and important information.
+
+
+## Memory Types
+
+ **User Preferences** — communication style, apps,
+ contacts
+
+
+ **Conversation Summaries** — key decisions and action
+ items
+
+
+ **Knowledge Base** — notes, reference material, research
+
+## Memory Tools
+
+
+| Tool | Description |
+| --- | --- |
+| memory_search | Search across all memories |
+| memory_save | Save new information |
+| memory_update | Update existing memories |
+| memory_link | Create relationships between memories |
+
+
+ All memories are stored **locally** on your device. Nothing
+ leaves your device except API calls.
+
+---
+
+# Settings
+Source: https://docs.twent.xyz/more/settings
+
+Deep customization — every aspect of Twent is configurable.
+
+## Settings Sections
+
+
+| Section | What it covers |
+| --- | --- |
+| Quick Setup | Agent theme, model config, prompts |
+| Interface | Theme, display, language, layout |
+| Intelligence | API usage, context, summarization |
+| Data | Chat sessions, backup, custom headers |
+| System | Speech, tool permissions, power user mode |
+
+
+## Model Configuration
+
+
+ Support for OpenAI, Claude, Gemini, OpenRouter, LM Studio, and local
+ MNN/llama.cpp models. Configure temperature, max tokens, and other
+ parameters per model.
+
+
+## Themes
+
+
+ Full visual customization — colors, fonts, spacing, wallpapers. Create
+ custom themes and share them. Configure at `Settings → Theme`
+ .
+
+---
+
+# Tool Reference
+Source: https://docs.twent.xyz/more/tool-reference
+
+Complete parameter reference for all built-in tools.
+
+## read_file
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| path | string | Yes | File path |
+| offset | number | No | Start line (1-indexed) |
+| limit | number | No | Max lines (default: 500) |
+
+
+## write_file
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| path | string | Yes | File path |
+| content | string | Yes | Content to write |
+
+
+## terminal
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| command | string | Yes | Command to run |
+| timeout | number | No | Max seconds |
+| workdir | string | No | Working directory |
+| background | boolean | No | Run in background |
+| pty | boolean | No | Interactive mode |
+
+
+## tap
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| ref | string | Yes | Element reference ID (@e5) |
+
+
+## swipe
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| startX | number | Yes | Start X |
+| startY | number | Yes | Start Y |
+| endX | number | Yes | End X |
+| endY | number | Yes | End Y |
+| duration | number | No | Duration in ms |
+
+
+## type
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| text | string | Yes | Text to type |
+| ref | string | No | Element to type into |
+
+
+## scroll
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| direction | string | Yes | up, down, left, right |
+
+
+## press_key
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| key | string | Yes | back, home, volume_up, etc. |
+
+
+## open_app
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| packageName | string | Yes | Android package name |
+
+
+## fetch_url
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| url | string | Yes | URL to fetch |
+| max_length | number | No | Max characters |
+
+
+## memory_search
+
+
+| Param | Type | Required | Description |
+| --- | --- | --- | --- |
+| query | string | Yes | Search query |
+| limit | number | No | Max results |
+
+---
+
+# Toolbox
+Source: https://docs.twent.xyz/more/toolbox
+
+Built-in utility screens for debugging, development, and system
+ management.
+
+
+## Development Tools
+
+ **Shell Executor** — run commands directly
+
+
+ **Terminal** — full terminal emulator
+
+
+ **File Manager** — browse device files
+
+
+ **SQL Viewer** — query SQLite databases
+
+## System Tools
+
+ **Logcat Viewer** — Android system logs
+
+
+ **UI Debugger** — inspect UI hierarchy
+
+
+ **Tool Tester** — test individual tools
+
+
+ Access via `Settings → Toolbox`.
+
+---
+
+# Voice
+Source: https://docs.twent.xyz/more/voice
+
+Speak to your AI and hear it respond. Supports TTS, STT, wake word
+ detection, and hands-free conversation mode.
+
+
+## Text-to-Speech Engines
+
+
+| Engine | Type |
+| --- | --- |
+| System TTS | Built-in Android |
+| OpenAI TTS | Cloud, 50+ languages |
+| SiliconFlow TTS | Cloud, Chinese/English |
+
+
+## Speech-to-Text Engines
+
+
+| Engine | Offline |
+| --- | --- |
+| Sherpa-NCNN | Yes |
+| HTTP STT | No |
+
+
+## Wake Word
+
+
+ Set a custom trigger phrase in
+ `Settings → Speech Services → Wake Word`. The device listens
+ for the phrase and starts recording your command.
+
+---
+
+# Marketplace
+Source: https://docs.twent.xyz/packages/marketplace
+
 Browse and install community-built packages, skills, and MCP servers.
 
-**Sections:**
-- Packages — JS/TS tool bundles
-- Skills — AI behavior bundles
-- MCP Servers — External tool providers
 
-**Publishing:** Share your creations via Settings → Packages → Publish. Items are stored and indexed automatically.
+## Sections
 
----
+ **Packages** — JS/TS tool bundles
 
-## Memory System
 
-Persistent knowledge storage that survives across conversations. The AI remembers your preferences, past discussions, and important information.
+ **Skills** — AI behavior bundles
 
-**Memory types:**
-- User Preferences — Communication style, preferred apps, contacts
-- Conversation Summaries — Key decisions and action items
-- Knowledge Base — Notes, reference material, research
 
-**Memory tools:**
-- `memory_search(query, limit?)` — Search across all memories
-- `memory_save(content, target?)` — Save new information
-- `memory_update(old_text, new_text)` — Update existing memories
-- `memory_link(source_id, target_id, relationship)` — Create relationships between memories
+ **MCP Servers** — external tool providers
 
-All memories are stored locally on your device. Nothing leaves your device except API calls for processing.
+## Publishing
+
+
+ Share your creations via `Settings → Packages → Publish`.
+ Items are stored and indexed automatically.
 
 ---
 
-## Voice & Speech
+# Packages
+Source: https://docs.twent.xyz/packages/overview
 
-### Text-to-Speech Engines
-- **System TTS:** Built-in Android TTS (varies by device)
-- **OpenAI TTS:** Cloud, 50+ voices, high quality (requires API key)
-- **SiliconFlow TTS:** Cloud, optimized for Chinese/English voices (requires API key)
+Extension system for Twent — bundles tools, dependencies, and
+ configuration into installable units.
 
-### Speech-to-Text Engines
-- **Sherpa-NCNN:** Local and offline (no internet required)
-- **HTTP STT:** Cloud-based STT (requires API key)
 
-### Wake Word
-Set a custom trigger phrase in Settings → Speech Services → Wake Word. The device listens locally for the phrase and starts recording your command. Works offline.
+## Package Structure
 
-### Hands-free Mode
-Enable voice conversation mode and talk to your AI without touching your phone.
 
----
+```
+`my-package/
+├── package.json # Metadata
+├── tools/index.ts # Tool definitions
+├── scripts/ # Helper scripts
+└── assets/ # Static data`
+```
 
-## Settings & Configuration
 
-### Quick Setup
-- Agent theme (light/dark/auto)
-- Model configuration (provider, API key, model selection)
-- System prompts and instructions
+## Installing
 
-### Interface
-- Theme: Colors, fonts, spacing, wallpapers, chat bubble style
-- Display: Cursor vs bubble mode, message spacing
-- Language: UI language
-- Layout: Chat width, sidebar
+ From the marketplace: `Settings → Packages → Marketplace`
 
-### Intelligence
-- API usage settings (temperature, max tokens, top_p)
-- Context window and summarization settings
-- Memory retention period
-
-### Data
-- Chat session management
-- Backup and restore
-- Custom HTTP headers for API calls
-
-### System
-- Speech services (TTS/STT engine selection)
-- Tool permissions (enable/disable specific tool categories)
-- Power user mode (advanced features)
-- ADB and root access toggles
-
-### Model Configuration
-Configure any supported model: OpenAI, Claude, Gemini, Deepseek, OpenRouter, Kilo Gateway, NVIDIA NIMS, LM Studio, local GGUF/MNN. Set temperature, max tokens, and other parameters per model.
+ Manual: import ZIP or directory
+ Via URL: the AI can install packages for you
 
 ---
 
-## Toolbox
+# Skills
+Source: https://docs.twent.xyz/packages/skills
 
-Built-in utility screens for debugging, development, and system management.
+Pre-configured behavior bundles that teach the AI how to do specific
+ tasks — includes system prompts, tools, workflows, and assets.
 
-### Development Tools
-- **Shell Executor** — Run single commands directly
-- **Terminal** — Full terminal emulator
-- **File Manager** — Browse device files
-- **SQL Viewer** — Query SQLite databases on device
 
-### System Tools
-- **Logcat Viewer** — Android system logs with filtering
-- **UI Debugger** — Inspect UI hierarchy and element refs
-- **Tool Tester** — Test individual tools in isolation
+## How Skills Work
 
-Access via Settings → Toolbox.
 
----
+ When you ask something, Twent checks if any installed skill is relevant.
+ If so, it loads that skill's prompts and tools to handle the request.
 
-## Technical Specifications
 
-| Specification | Value |
-|---|---|
-| Platform | Android 8.0+ (API 26) |
-| Architecture | arm64-v8a |
-| RAM | 3GB+ recommended |
-| Storage | 500MB+ free |
-| Root required | No |
-| Terminal | Ubuntu 24.04 LTS (chroot container) |
-| Package managers | apt, pip, npm, cargo, gem |
-| Shells | bash, zsh, fish |
-| Languages | Python 3, Node.js, Go, Rust, C/C++ |
-| Editors | vim, nano |
-| Version control | git, gh CLI |
-| Editors | vim, nano, VS Code Server |
+## Popular Skills
 
-### AI Model Support
-- OpenAI (GPT-4o, o1, o3-mini, etc.)
-- Anthropic (Claude 3.5, Claude 4)
-- Google (Gemini 2.0, Gemini 2.5)
-- Deepseek (deepseek-chat, deepseek-coder)
-- OpenRouter (any model on platform)
-- Kilo Gateway
-- NVIDIA NIMS
-- LM Studio (local server)
-- Local GGUF models (MNN/llama.cpp)
+
+| Skill | What it does |
+| --- | --- |
+| Code Review | Analyze code for bugs and security |
+| Data Analysis | Process CSVs, generate charts |
+| Writing Assistant | Help with writing tasks |
+| Research | Deep research on topics |
 
 ---
 
-## Privacy & Security
+# File System Tools
+Source: https://docs.twent.xyz/tools/file-system
 
-- All data stored locally on device
-- API keys encrypted with Android KeyStore (BYOK — Bring Your Own Key)
-- API keys never leave your device — encrypted locally before any API call
-- Zero telemetry, zero analytics, no usage tracking
-- No data collection of any kind
-- Open source (core components on GitHub)
-- Local AI models (MNN/llama.cpp) for fully offline inference
-- On-device text embedding generation
+Read, write, search, and manage files on your device and in the built-in
+ Ubuntu environment.
 
----
 
-## Quick Reference
+## Available Tools
 
-### Download & Install
-1. Go to https://twent.xyz
-2. Download APK directly (no Play Store, no account)
-3. Enable "Unknown sources" in Android Settings → Security
-4. Install and launch — no setup wizard, no credit card
 
-### Key URLs
-- Website: https://twent.xyz
-- Documentation: https://twent.xyz/docs
-- Blog: https://twent.xyz/blog
-- Changelog: https://twent.xyz/changelog
-- Pricing: https://twent.xyz/pricing
-- Support: support@twent.xyz
+| Tool | Description |
+| --- | --- |
+| read_file | Read file contents (with offset/limit) |
+| write_file | Write content to a file (creates dirs) |
+| patch | Find-and-replace edits in a file |
+| search_files | Search inside files or find by name |
+| compress/decompress | ZIP, TAR, GZ operations |
 
-### Key Pages
-- [Home](https://twent.xyz/) — Main landing
-- [AI Agent for Developers](https://twent.xyz/ai-agent-for-developers) — Claude Code, Codex, SSH, Git on phone
-- [Ubuntu Terminal](https://twent.xyz/terminal-on-android) — Full Linux in your pocket
-- [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, AI scripts
-- [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero telemetry
-- [AI Marketplace](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
-- [Enterprise](https://twent.xyz/enterprise-ai-agent) — Team deployment with admin controls
+
+## File Locations
+
+
+| Location | Path |
+| --- | --- |
+| App data | /data/data/com.ai.assistance.twent/ |
+| Internal storage | /sdcard/ or /storage/emulated/0/ |
+| Ubuntu environment | ~/ (inside built-in Linux) |
 
 ---
 
-*This guide is generated for AI agents and LLM crawlers per the [Dualmark AEO specification](https://dualmark.dev). Last updated: May 16, 2026.*
+# JavaScript Tools
+Source: https://docs.twent.xyz/tools/javascript
+
+Built-in JS engine for running custom code. Supports file I/O, HTTP,
+ JSON, math, and npm packages.
+
+
+| Tool | Description |
+| --- | --- |
+| execute_code | Run Python code |
+
+ Install npm packages via the shell, then import them in scripts:
+
+```
+`cd /data/data/com.ai.assistance.twent/files/js
+npm install axios lodash`
+```
+
+---
+
+# MCP Tools
+Source: https://docs.twent.xyz/tools/mcp
+
+Model Context Protocol — a standard for giving AI access to external
+ tools. Install MCP servers and the AI gets new capabilities.
+
+
+## Installing
+
+ Browse `Plugins → MCP → Shop Icon`
+
+ Or add manually via JSON config
+## Popular Servers
+
+
+| Server | What it does |
+| --- | --- |
+| Filesystem | Extended file operations |
+| Git | Repository management |
+| SQLite | Query databases |
+| Brave Search | Web search |
+| Puppeteer | Browser automation |
+
+---
+
+# Media Tools
+Source: https://docs.twent.xyz/tools/media
+
+Full FFmpeg, camera, OCR, image analysis, and speech processing built
+ right in.
+
+
+## FFmpeg Engine
+Convert formats, extract audio, trim, merge
+ Extract frames, add subtitles, adjust quality
+## Speech-to-Text
+
+
+| Engine | Type |
+| --- | --- |
+| Sherpa-NCNN | Local/offline |
+| HTTP STT | Cloud-based |
+
+
+## Text-to-Speech
+
+
+| Engine | Type |
+| --- | --- |
+| System TTS | Built-in Android |
+| OpenAI TTS | Cloud, high quality |
+| SiliconFlow TTS | Cloud, Chinese voices |
+
+---
+
+# Tools
+Source: https://docs.twent.xyz/tools/overview
+
+40+ built-in tools give AI real capabilities on your device. Every tool
+ call is transparent — you always see what's happening.
+
+
+| Category | What it does |
+| --- | --- |
+| File System | Read, write, search, compress files |
+| Shell | Run Linux commands, install packages |
+| Web | Fetch pages, search, download |
+| Media | FFmpeg, camera, OCR, TTS/STT |
+| UI Automation | Tap, swipe, type, screenshot |
+| JavaScript | Run JS/TS with Node.js |
+| MCP | Tools from MCP servers |
+
+
+## Parallel Execution
+
+
+ Read-only tools run in parallel automatically — multiple file reads,
+ network checks, and device info queries execute simultaneously for
+ faster responses.
+
+---
+
+# Shell & Terminal
+Source: https://docs.twent.xyz/tools/shell
+
+Full Ubuntu 24 environment on your phone — apt, Python, Node.js, vim,
+ Git, everything.
+
+
+## Shell Tools
+
+
+| Tool | Description |
+| --- | --- |
+| terminal | Execute commands (supports background, PTY) |
+
+
+## Package Management
+
+
+```
+`apt update
+apt install python3-pip
+pip install requests
+npm install -g typescript`
+```
+
+
+## Permission Levels
+
+
+| Level | Access |
+| --- | --- |
+| Standard | Android shell |
+| ADB | pm, am, dumpsys |
+| Root | Full su access |
+| Shizuku | Elevated without root |
+
+---
+
+# UI Automation
+Source: https://docs.twent.xyz/tools/ui-automation
+
+The most powerful feature — the AI can see your screen and interact with
+ any app via tapping, swiping, and reading the UI tree.
+
+
+## Tools
+
+
+| Tool | Description |
+| --- | --- |
+| tap | Tap a UI element by reference ID |
+| swipe | Swipe gesture with coordinates |
+| scroll | Scroll up/down/left/right |
+| type | Type text into a field |
+| screenshot | Capture the screen |
+| get_ui_tree | Get full UI element hierarchy |
+| press_key | Back, Home, Volume, etc. |
+| open_app | Launch an app by package name |
+
+
+## Dual Pipeline
+
+
+ Twent uses both the Accessibility UI tree AND visual screenshots to
+ understand your screen. Every tool call automatically captures screen
+ context before executing.
+
+
+## Permission Levels
+
+
+| Mode | Requirement | Capability |
+| --- | --- | --- |
+| Accessibility | Enable service | Tap, type, scroll, read UI |
+| ADB | USB debugging | System-level automation |
+| Root | Rooted device | Full access |
+| Shizuku | Shizuku running | Elevated without root |
+
+---
+
+# Web Tools
+Source: https://docs.twent.xyz/tools/web
+
+Browse the web, search, and download content.
+
+| Tool | Description |
+| --- | --- |
+| fetch_url | Fetch URL content as markdown |
+| search | DuckDuckGo, Tavily, Bing, Scholar |
+| download_file | Download files |
+| web_visit | Built-in browser with JS execution |
+
+---
+
+# Workflow Examples
+Source: https://docs.twent.xyz/workflows/examples
+
+## Morning Briefing
+
+
+ Trigger: Daily at 7:30am. Steps: get calendar events → get weather → AI
+ summarizes → send notification.
+
+
+## File Backup
+
+
+ Trigger: Daily at midnight. Steps: list files → compress → upload to
+ cloud → notify.
+
+
+## Low Battery Alert
+
+
+ Trigger: Battery below 15%. Steps: get battery details → get running
+ apps → AI recommends which to close → notify.
+
+---
+
+# Workflows
+Source: https://docs.twent.xyz/workflows/overview
+
+Multi-step automations combining triggers, conditions, and actions.
+
+## Workflow Types
+
+ **Simple** — one trigger, one action
+
+
+ **Chained** — multiple actions in sequence
+
+
+ **Conditional** — if/else branching
+
+
+ **Scheduled** — run on a schedule
+
+## Trigger Types
+
+
+| Trigger | Description |
+| --- | --- |
+| Schedule | Cron-based timing |
+| Interval | Every N minutes/hours |
+| App Launch | When an app opens |
+| Notification | On incoming notification |
+| Battery | On battery level change |
+| Wake Word | Voice trigger phrase |

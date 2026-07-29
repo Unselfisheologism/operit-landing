@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "./lib/AuthContext";
-import { DocsPage } from "./components/DocsPage";
 import { PricingPage } from "./components/PricingPage";
 import { SuccessPage } from "./components/SuccessPage";
 import { BlogPage } from "./components/BlogPage";
@@ -164,6 +163,11 @@ function useSpaNavigation() {
       if (href.startsWith("#")) {
         return;
       }
+
+      // Don't intercept /docs links — served as static files from public/docs/
+      if (href === "/docs" || href.startsWith("/docs/") || href.startsWith("/docs?")) {
+        return;
+      }
       
       // Internal link
       e.preventDefault();
@@ -205,15 +209,13 @@ export default function App() {
     return path;
   })();
 
-  // Route based on routePath (without language prefix)
+  // Docs — static Blume site served from public/docs/
   if (routePath.startsWith("/docs")) {
-    return (
-      <>
-<HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <DocsPage dark={dark} />
-      </>
-    );
+    // Redirect to the static docs site
+    if (typeof window !== "undefined") {
+      window.location.replace("/docs/");
+    }
+    return null;
   }
 
   if (routePath.startsWith("/ai-agent-for-developers")) {
