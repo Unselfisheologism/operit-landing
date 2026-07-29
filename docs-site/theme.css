@@ -7,14 +7,26 @@
   --blume-muted: #f4f4f5;
   --blume-muted-foreground: #71717a;
   --blume-border: #e4e4e7;
-  --blume-radius: 0.5rem;
+  --blume-accent-foreground: #ffffff;
+  --blume-code-background: #f4f4f5;
+  --blume-code-foreground: #18181b;
 }
 
-:root[data-theme="dark"] {
+[data-theme="dark"] {
   --blume-background: #09090b;
   --blume-foreground: #fafafa;
-  --blume-muted: #1c1c1e;
+  --blume-muted: #27272a;
   --blume-muted-foreground: #a1a1aa;
-  --blume-border: #27272a;
-  --blume-accent: oklch(0.72 0.17 50);
+  --blume-border: #3f3f46;
+  --blume-accent-foreground: #ffffff;
+  --blume-code-background: #27272a;
+  --blume-code-foreground: #fafafa;
+}
+
+/* Fix: aside overflow-y-auto clips absolutely-positioned dropdown menus
+   (Open in Chat, Export). The page actions are at the bottom of the aside
+   so they won't cause the aside to scroll much. Removing overflow lets
+   the dropdown escape the container. */
+aside[data-blume-toc] {
+  overflow: visible !important;
 }

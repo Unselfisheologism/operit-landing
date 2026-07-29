@@ -1,0 +1,26 @@
+/* Fix: aside overflow clips absolute-positioned dropdowns (open-in-chat, export) */
+/* The aside[data-blume-toc] has overflow-y:auto which clips the absolutely-positioned
+   dropdown menus inside <details>. We fix this by allowing overflow on the details
+   and using fixed positioning for the menu when inside the aside. */
+aside[data-blume-toc] details[open] > [data-blume-menu] {
+  position: fixed;
+  /* Will be positioned by the existing Blume JS toggle handler */
+}
+
+/* Fallback: if the Blume JS repositions with top-full/bottom-full classes,
+   ensure the menu escapes the overflow container */
+aside[data-blume-toc] details {
+  overflow: visible;
+}
+
+/* Also ensure the aside itself doesn't clip the dropdown — use clip-path instead of overflow */
+aside[data-blume-toc] {
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+/* The details summary needs to stay clickable */
+aside[data-blume-toc] details > summary {
+  cursor: pointer;
+  user-select: none;
+}

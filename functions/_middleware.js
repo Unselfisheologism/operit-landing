@@ -742,7 +742,7 @@ function getMarkdownTwin(pathname) {
   return pathname.replace(/\/$/, '') + '.md';
 }
 
-const SKIP_PREFIXES = ['/api/', '/_next/', '/functions/', '/admin/', '/assets/'];
+const SKIP_PREFIXES = ['/api/', '/_next/', '/functions/', '/admin/', '/assets/', '/docs/'];
 const SKIP_EXTENSIONS = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.mp4', '.webm', '.ogg', '.mp3', '.wav', '.zip', '.tar', '.gz', '.pdf', '.avif'];
 
 // ─── Main Handler ────────────────────────────────────────────────────────────
