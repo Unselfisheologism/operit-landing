@@ -760,7 +760,7 @@ export function TerminalOnAndroid({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Get Twent from Play Store"
-                className="inline-block hover:opacity-80 transition-opacity"
+                className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
               >
                 <PlayStoreBadge className="h-11" />
               </a>
