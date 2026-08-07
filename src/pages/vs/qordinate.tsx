@@ -22,7 +22,6 @@ export default function QordinateComparisonPage() {
           { name: "Full Terminal Access", twent: true, competitor: false },
           { name: "Local Execution", twent: true, competitor: true },
           { name: "LLM Agent Capabilities", twent: true, competitor: true },
-          { name: "Open Source", twent: true, competitor: true },
           { name: "500+ Integrations", twent: false, competitor: true },
           { name: "Visual Node Editor", twent: false, competitor: true },
         ]}

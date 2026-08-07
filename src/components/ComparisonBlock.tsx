@@ -23,7 +23,6 @@ const comparisons = [
       "MCP + Skills plugins",
       "Android UI automation (tap, type, swipe)",
       "Offline operation",
-      "Fully open source",
       "ADB/Root integration",
       "Free tier",
     ],

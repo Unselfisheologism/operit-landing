@@ -40,7 +40,6 @@ export default function OnspaceComparisonPage() {
           { name: "Offline operation", twent: true, competitor: false },
           { name: "File system access", twent: true, competitor: true },
           { name: "Free tier available", twent: true, competitor: true },
-          { name: "Open source", twent: true, competitor: false },
         ]}
       />
     </div>

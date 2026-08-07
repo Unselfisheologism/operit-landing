@@ -36,7 +36,6 @@ export default function OmnaraComparisonPage() {
           { name: "Voice interaction", twent: true, competitor: true },
           { name: "Cloud session continuity", twent: false, competitor: true },
           { name: "Git integration", twent: false, competitor: true },
-          { name: "Open source", twent: true, competitor: false },
           { name: "Free tier available", twent: true, competitor: true },
           { name: "Floating bubble overlay", twent: true, competitor: false },
           { name: "File system access", twent: true, competitor: true },

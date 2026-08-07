@@ -40,7 +40,7 @@ function SchemaMarkup() {
       "Zero telemetry, zero analytics, no third-party trackers (verifiable via network analysis)",
       "All conversations stored locally using AES-256-GCM encryption",
       "GDPR Article 17 Right to Erasure & CCPA compliant by design",
-      "SOC2-ready architecture with open source auditable codebase",
+      "SOC2-ready architecture with verifiable on-device data handling",
       "Full data backup and export in standard JSON/Markdown formats",
       "Minimal permissions - no camera, microphone, or contacts access required",
       "No account required, no cloud dependency, no vendor lock-in",
@@ -459,8 +459,8 @@ export function PrivacyFirstAiAndroid({
                     />
                   </svg>
                 }
-                title="Open Source & Auditable"
-                description="100% open source on GitHub. Independent security audits welcome. SOC2-ready architecture with verifiable builds. No hidden code, no obfuscated binaries — inspect exactly what runs on your device."
+                title="Audit-Ready Architecture"
+                description="No analytics SDKs, no crash reporters, no trackers. Inspect exactly what runs on your device — verify with PacketCapture, PCAPdroid, or any network analysis tool."
                 visible={featuresInView}
                 delay={0.6}
               />
@@ -615,7 +615,7 @@ export function PrivacyFirstAiAndroid({
                 Compliance, Trust, and Verification
               </h2>
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
-                Legal frameworks, open source verification, and how to audit us
+                Legal frameworks, on-device verification, and how to audit us
                 yourself.
               </p>
             </div>
@@ -658,12 +658,13 @@ export function PrivacyFirstAiAndroid({
 
               <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                 <h3 className="font-display text-lg text-green-500 mb-3">
-                  Open Source Audit
+                  No Hidden Telemetry
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  100% of Twent's code is on GitHub under Apache 2.0. Security
-                  researchers welcome. Reproducible builds ensure the APK you
-                  download matches the source code.
+                  Zero analytics SDKs, zero crash reporters, zero third-party
+                  trackers. Verify yourself with PacketCapture or PCAPdroid —
+                  Twent makes no outbound connections except your explicit API
+                  calls.
                 </p>
               </div>
             </div>
@@ -815,7 +816,7 @@ export function PrivacyFirstAiAndroid({
                     ["Zero Telemetry (verifiable)", "✓", "✗", "✗", "✗"],
                     ["No Account Required", "✓", "✗", "✗", "✗"],
                     ["Offline Mode", "✓", "✗", "✗", "✗"],
-                    ["Open Source", "✓", "✗", "✗", "✗"],
+                    ["No Hidden Telemetry", "✓", "✗", "✗", "✗"],
                     [
                       "GDPR Art. 17 Right to Erasure",
                       "✓",

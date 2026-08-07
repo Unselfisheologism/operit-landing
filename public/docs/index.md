@@ -31,8 +31,8 @@ Most AI assistants live in a chat bubble and can't touch your device. Twent is d
   <Card title="Local-First" icon="shield">
     All data stays on your device. BYOK model — your keys, your data.
   </Card>
-  <Card title="Open Source" icon="code">
-    Transparent, auditable, and extensible by the community.
+  <Card title="No Hidden Telemetry" icon="eye-off">
+    Zero analytics SDKs, zero trackers, zero silent data collection. Verify with any network analysis tool.
   </Card>
   <Card title="Extensible" icon="plug">
     MCP servers, packages, skills, and workflows for infinite capability.

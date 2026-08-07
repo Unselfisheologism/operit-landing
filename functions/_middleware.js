@@ -511,9 +511,7 @@ function wrapHtml({ pathname, title, description, bodyHtml, type, image, lastmod
           name: 'Twent AI',
           url: 'https://twent.xyz',
           logo: 'https://twent.xyz/twent-logo-32.webp',
-          sameAs: [
-            'https://github.com/Unselfisheologism/Twent',
-          ],
+          sameAs: [],
         },
         {
           '@type': 'SoftwareApplication',

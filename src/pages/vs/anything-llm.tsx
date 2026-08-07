@@ -13,7 +13,6 @@ verdict="Anything LLM is the best open source RAG system for desktops/servers. t
         features={[
           { name: "Local Model Support", twent: true, competitor: true },
           { name: "RAG Knowledge Base", twent: true, competitor: true },
-          { name: "Open Source", twent: true, competitor: true },
           { name: "Native Android App", twent: true, competitor: false },
           { name: "Full Ubuntu Terminal", twent: true, competitor: false },
           { name: "Android System Automation", twent: true, competitor: false },

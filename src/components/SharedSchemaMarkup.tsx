@@ -126,7 +126,6 @@ export function SharedSchemaMarkup() {
         url: "https://twent.xyz",
         logo: "https://twent.xyz/OKFINALTWENTLOGO-removebg.png",
         sameAs: [
-          "https://github.com/Unselfisheologism/Twent",
           "https://x.com/Jeff9James",
           "https://discord.gg/dUFrWm4w",
           "mailto:jeffrinjames@twent.xyz",

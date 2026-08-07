@@ -22,7 +22,6 @@ export default function MakeComparisonPage() {
           { name: "Full Terminal Access", twent: true, competitor: false },
           { name: "Local Execution", twent: true, competitor: false },
           { name: "LLM Agent Capabilities", twent: true, competitor: true },
-          { name: "Open Source", twent: true, competitor: false },
           { name: "500+ Integrations", twent: false, competitor: true },
           { name: "Visual Node Editor", twent: false, competitor: true },
         ]}
