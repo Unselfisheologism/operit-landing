@@ -380,6 +380,25 @@ export function ComparisonPage({
         <p className="text-lg">{verdict}</p>
       </div>
 
+      {/* Play Store CTA — after verdict */}
+      <div className="text-center py-12 mb-10 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+        <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+          Try Twent free on the Play Store
+        </h2>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
+          Free to install · No account needed · Bring your own API key
+        </p>
+        <a
+          href="https://play.google.com/apps/testing/com.twent"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
+        >
+          <PlayStoreBadge className="h-8" />
+          <span className="font-medium">Get it from Play Store</span>
+        </a>
+      </div>
+
       <h2 className="text-2xl font-bold mb-6">Feature Comparison</h2>
 
       <div className="overflow-x-auto mb-12">
@@ -406,6 +425,25 @@ export function ComparisonPage({
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Play Store CTA — after comparison table */}
+      <div className="text-center py-12 mb-12 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+        <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+          The verdict is clear — install Twent free
+        </h2>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
+          Free to install · No account needed · Bring your own API key
+        </p>
+        <a
+          href="https://play.google.com/apps/testing/com.twent"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
+        >
+          <PlayStoreBadge className="h-8" />
+          <span className="font-medium">Get Twent from Play Store</span>
+        </a>
       </div>
 
       {/* Detailed Analysis Section */}
@@ -445,14 +483,22 @@ export function ComparisonPage({
         </div>
       </div>
 
-      <div className="text-center py-10 border-t border-gray-200">
+      {/* Play Store CTA — bottom */}
+      <div className="text-center py-12 border-t border-zinc-200 dark:border-zinc-800">
+        <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
+          Ready to automate your Android phone?
+        </h2>
+        <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
+          Twent is 100% free — no credit card, no account required.
+        </p>
         <a
           href="https://play.google.com/apps/testing/com.twent"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block hover:opacity-80 transition"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
         >
-          <PlayStoreBadge className="h-12" />
+          <PlayStoreBadge className="h-8" />
+          <span className="font-medium">Get it from Play Store</span>
         </a>
       </div>
 
