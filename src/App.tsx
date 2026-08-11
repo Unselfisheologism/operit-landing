@@ -15,6 +15,7 @@ import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
 import { TerminalOnAndroid } from "./components/TerminalOnAndroid";
 import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
 import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
+import { BestAndroidAiPillar } from "./components/BestAndroidAiPillar";
 import { OsVsBrowserAutomation } from "./components/OsVsBrowserAutomation";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 import { DashboardPage } from "./components/DashboardPage";
@@ -274,6 +275,16 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <EnterpriseAiAgent dark={dark} />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/best-android-ai")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <BestAndroidAiPillar dark={dark} />
       </>
     );
   }

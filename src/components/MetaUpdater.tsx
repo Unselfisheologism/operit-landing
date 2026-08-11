@@ -43,6 +43,10 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "A curated ranking of the top AI apps for Android in 2026 — from chatbots to agentic tools. Find the right one for you.",
   },
+  "/best-android-ai": {
+    title: "The Best AI Agent for Android (2026) | Twent",
+    description: "We tested the top AI apps on Android. Twent is the only true AI agent — it controls apps, automates tasks and keeps your data private. Free to start.",
+  },
   "/blog/os-vs-browser-automation": {
     title: "Why OS-Level AI Automation Beats Browser-Level Automation",
     description:
@@ -263,6 +267,14 @@ const routeKeywords: Record<string, string[]> = {
     "ChatGPT Android alternative",
     "best AI tools mobile",
     "AI app ranking",
+  ],
+  "/best-android-ai": [
+    "best AI agent for Android",
+    "AI agent Android app",
+    "best AI assistant Android 2026",
+    "Android AI automation app",
+    "AI that controls your phone",
+    "ChatGPT Android alternative agent",
   ],
   "/android-automation-power-user": [
     "Android automation app",

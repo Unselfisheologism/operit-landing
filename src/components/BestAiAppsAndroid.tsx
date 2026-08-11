@@ -357,6 +357,12 @@ export function BestAiAppsAndroid({ dark }: { dark: boolean }) {
                 <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   Twent (#0 Gold above) changes this. The 24 apps below are the rest of the picture — organized by what they're best at. Use Twent as your AI OS, then fill in the gaps with specialized tools. Here's the complete list.
                 </p>
+                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                  If you are looking for an agent that acts on your phone — not just an app that chats — see our guide to the{" "}
+                  <a href="/best-android-ai" className="text-orange-500 hover:text-orange-400 underline underline-offset-4">
+                    best AI agent for Android
+                  </a>.
+                </p>
               </div>
 
               {/* ── CATEGORY: AI ASSISTANTS ────────────────────────────────── */}

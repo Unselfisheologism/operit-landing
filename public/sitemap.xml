@@ -238,6 +238,39 @@
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/blog/os-vs-browser-automation" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url><url>
+    <loc>https://twent.xyz/best-android-ai</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/best-android-ai" />
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/best-android-ai" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://twent.xyz/ai-agent-for-developers</loc>
