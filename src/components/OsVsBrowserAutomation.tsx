@@ -3,6 +3,24 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { TableOfContents } from "./ui/TableOfContents";
+import { PlayStoreBadge } from "./PlayStoreBadge";
+
+const PLAY_STORE_URL = "https://play.google.com/apps/testing/com.twent";
+
+// Play Store CTA — matches ComparisonPage.tsx pattern
+function PlayStoreCta({ size = "h-8" }: { size?: string }) {
+  return (
+    <a
+      href={PLAY_STORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
+    >
+      <PlayStoreBadge className={size} />
+      <span className="font-medium">Get it from Play Store</span>
+    </a>
+  );
+}
 
 // JSON-LD Schema for OS vs Browser Automation Blog Post
 function OsVsBrowserSchemaMarkup() {
@@ -816,6 +834,19 @@ export function OsVsBrowserAutomation({
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Play Store conversion CTA */}
+        <section className="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/40">
+          <div className="max-w-3xl mx-auto px-6 py-16 text-center">
+            <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-3">
+              Try Twent on Android
+            </h2>
+            <p className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl mx-auto">
+              Install Twent free from the Play Store and automate your Android.
+            </p>
+            <PlayStoreCta />
           </div>
         </section>
       </main>
