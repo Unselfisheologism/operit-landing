@@ -8,7 +8,7 @@ import { useInView } from "../hooks/useInView";
 
 // Play Store CTA — delegates to shared component
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
-  return <PlayStoreCtaComponent.SharedCta size={size} />;
+  return <PlayStoreCtaComponent size={size} />;
 }
 
 // Section eyebrow (breadcrumb-style kicker)

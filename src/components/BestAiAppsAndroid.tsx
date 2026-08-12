@@ -10,7 +10,7 @@ import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Play Store CTA — delegates to shared component
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
-  return <PlayStoreCtaComponent.SharedCta size={size} />;
+  return <PlayStoreCtaComponent size={size} />;
 }
 
 // TOC items

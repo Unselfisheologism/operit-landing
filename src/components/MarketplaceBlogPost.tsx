@@ -10,7 +10,7 @@ import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Play Store CTA — matches ComparisonPage.tsx pattern
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
-  return <PlayStoreCtaComponent.SharedCta size={size} />;
+  return <PlayStoreCtaComponent size={size} />;
 }
 
 // JSON-LD Schema for Marketplace Blog Post
