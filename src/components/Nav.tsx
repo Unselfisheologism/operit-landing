@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { PlayStoreBadge } from "./PlayStoreBadge";
+import { PlayStoreCta } from "./PlayStoreCta";
 import { LoginModal } from "./LoginModal";
 import { useAuth } from "../lib/AuthContext";
 
@@ -22,15 +22,10 @@ function DownloadButton({
   className?: string;
 }) {
   return (
-    <a
-      href="https://play.google.com/apps/testing/com.twent"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Get Twent on Google Play"
+    <PlayStoreCta
+      size="h-8"
       className={`inline-flex items-center justify-center hover:opacity-80 transition-opacity ${className}`}
-    >
-      <PlayStoreBadge className="h-8" />
-    </a>
+    />
   );
 }
 

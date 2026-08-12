@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { PlayStoreCta } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // No external dependencies – head tags managed via useEffect
@@ -388,15 +389,7 @@ export function ComparisonPage({
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
           Free to install · No account needed · Bring your own API key
         </p>
-        <a
-          href="https://play.google.com/apps/testing/com.twent"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
-        >
-          <PlayStoreBadge className="h-8" />
-          <span className="font-medium">Get it from Play Store</span>
-        </a>
+        <PlayStoreCtaGroup size="h-8" />
       </div>
 
       <h2 className="text-2xl font-bold mb-6">Feature Comparison</h2>
@@ -435,15 +428,7 @@ export function ComparisonPage({
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
           Free to install · No account needed · Bring your own API key
         </p>
-        <a
-          href="https://play.google.com/apps/testing/com.twent"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
-        >
-          <PlayStoreBadge className="h-8" />
-          <span className="font-medium">Get Twent from Play Store</span>
-        </a>
+        <PlayStoreCtaGroup size="h-8" />
       </div>
 
       {/* Detailed Analysis Section */}
@@ -491,15 +476,7 @@ export function ComparisonPage({
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
           Twent is 100% free — no credit card, no account required.
         </p>
-        <a
-          href="https://play.google.com/apps/testing/com.twent"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
-        >
-          <PlayStoreBadge className="h-8" />
-          <span className="font-medium">Get it from Play Store</span>
-        </a>
+        <PlayStoreCtaGroup size="h-8" />
       </div>
 
       <footer className="mt-12 pt-6 border-t text-gray-500 text-sm flex items-center justify-between">

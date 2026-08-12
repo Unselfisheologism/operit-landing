@@ -1,5 +1,5 @@
 import { HeroToast } from "./HeroToast";
-import { PlayStoreBadge } from "./PlayStoreBadge";
+import { PlayStoreCta } from "./PlayStoreCta";
 
 export function HeroSection() {
   return (
@@ -46,14 +46,7 @@ export function HeroSection() {
         {/* CTA Buttons — Choice Reduction (Principle 9): 1 primary, 1 secondary */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animate-delay-300">
           {/* PRIMARY CTA — only one visually dominant button */}
-          <a
-            href="https://play.google.com/apps/testing/com.twent"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-80 transition-opacity"
-          >
-            <PlayStoreBadge className="h-11" />
-          </a>
+          <PlayStoreCta size="h-11" />
         </div>
 
         {/* Trust indicators */}

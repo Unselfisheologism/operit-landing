@@ -5,6 +5,7 @@ import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
+import { PlayStoreCta } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
@@ -533,15 +534,7 @@ export function ImmersiveLandingPage({
               }`}
             >
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://play.google.com/apps/testing/com.twent"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get Twent from Play Store"
-                  className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-                >
-                  <PlayStoreBadge className="h-11" />
-                </a>
+                <PlayStoreCta size="h-11" />
                 <a
                   href="/docs"
                   className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-500 text-zinc-100 font-medium transition-colors duration-200"
@@ -628,15 +621,7 @@ export function ImmersiveLandingPage({
             <p className="text-lg dark:text-zinc-400 text-zinc-600 mb-8">
               Download Twent and see what your phone can really do.
             </p>
-            <a
-              href="https://play.google.com/apps/testing/com.twent"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Twent from Play Store"
-              className="inline-block hover:opacity-80 transition-opacity"
-            >
-              <PlayStoreBadge className="h-11" />
-            </a>
+            <PlayStoreCta size="h-11" />
             <div className="mt-6 flex items-center justify-center gap-4">
               <span className="text-xs text-zinc-500">Follow:</span>
               <SocialLinksInline />

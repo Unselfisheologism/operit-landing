@@ -2,6 +2,7 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
+import { PlayStoreCta } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
@@ -224,15 +225,7 @@ export function PrivacyFirstAiAndroid({
                   : "opacity-0 translate-y-6"
               }`}
             >
-              <a
-                href="https://play.google.com/apps/testing/com.twent"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get Twent from Play Store"
-                className="inline-block hover:opacity-80 transition-opacity"
-              >
-                <PlayStoreBadge className="h-11" />
-              </a>
+              <PlayStoreCta size="h-11" />
               <a
                 href="/docs#permissions"
                 className="inline-flex items-center justify-center px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors duration-200"
@@ -921,15 +914,7 @@ export function PrivacyFirstAiAndroid({
               telemetry — free, no account required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://play.google.com/apps/testing/com.twent"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get Twent from Play Store"
-                className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-              >
-                <PlayStoreBadge className="h-11" />
-              </a>
+              <PlayStoreCta size="h-11" />
               <a
                 href="/docs#permissions"
                 className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-600 text-white font-medium transition-colors duration-200"

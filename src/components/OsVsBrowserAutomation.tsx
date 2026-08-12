@@ -3,23 +3,14 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { TableOfContents } from "./ui/TableOfContents";
+import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 
-const PLAY_STORE_URL = "https://play.google.com/apps/testing/com.twent";
 
-// Play Store CTA — matches ComparisonPage.tsx pattern
-function PlayStoreCta({ size = "h-8" }: { size?: string }) {
-  return (
-    <a
-      href={PLAY_STORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
-    >
-      <PlayStoreBadge className={size} />
-      <span className="font-medium">Get it from Play Store</span>
-    </a>
-  );
+
+// Play Store CTA — delegates to shared component
+function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
+  return <PlayStoreCtaComponent.SharedCta size={size} />;
 }
 
 // JSON-LD Schema for OS vs Browser Automation Blog Post
@@ -846,7 +837,7 @@ export function OsVsBrowserAutomation({
             <p className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 max-w-xl mx-auto">
               Install Twent free from the Play Store and automate your Android.
             </p>
-            <PlayStoreCta />
+            <PlayStoreCtaLocal />
           </div>
         </section>
       </main>

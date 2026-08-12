@@ -1,6 +1,6 @@
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
-import { PlayStoreBadge } from "./PlayStoreBadge";
+import { PlayStoreCta } from "./PlayStoreCta";
 
 export function FinalCTA() {
   const [ref, inView] = useInView();
@@ -57,15 +57,7 @@ export function FinalCTA() {
 
         {/* Single primary CTA — Principle 9: choice reduction */}
         <div className="flex flex-col items-center gap-6">
-          <a
-            href="https://play.google.com/apps/testing/com.twent"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Get Twent from Play Store"
-            className="inline-block hover:opacity-80 transition-opacity"
-          >
-            <PlayStoreBadge className="h-12" />
-          </a>
+          <PlayStoreCta size="h-12" />
           <div className="flex items-center gap-3">
             <span className="text-xs text-zinc-400 dark:text-zinc-600">
               Follow:

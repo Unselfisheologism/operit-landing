@@ -1,6 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
+import { PlayStoreCta } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
@@ -51,15 +52,7 @@ export function SimplifiedLandingPage({ dark = false }: { dark?: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <a
-                href="https://play.google.com/apps/testing/com.twent"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Get Twent from Play Store"
-                className="inline-block hover:opacity-80 transition-opacity"
-              >
-                <PlayStoreBadge className="h-11" />
-              </a>
+              <PlayStoreCta size="h-11" />
               <a
                 href="/docs"
                 className="inline-flex items-center justify-center px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors duration-200"
@@ -111,15 +104,7 @@ export function SimplifiedLandingPage({ dark = false }: { dark?: boolean }) {
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
               Get Twent from Play Store and use your phone like a real workstation.
             </p>
-            <a
-              href="https://play.google.com/apps/testing/com.twent"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Get Twent from Play Store"
-              className="inline-block hover:opacity-80 transition-opacity"
-            >
-              <PlayStoreBadge className="h-11" />
-            </a>
+            <PlayStoreCta size="h-11" />
           </div>
         </section>
       </main>

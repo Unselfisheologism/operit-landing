@@ -1,23 +1,14 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 import { PlayStoreBadge } from "./PlayStoreBadge";
 import { useInView } from "../hooks/useInView";
 
-const PLAY_STORE_URL = "https://play.google.com/apps/testing/com.twent";
 
-// Play Store CTA — matches ComparisonPage.tsx pattern
-function PlayStoreCta({ size = "h-8" }: { size?: string }) {
-  return (
-    <a
-      href={PLAY_STORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white hover:bg-zinc-800 transition"
-    >
-      <PlayStoreBadge className={size} />
-      <span className="font-medium">Get it from Play Store</span>
-    </a>
-  );
+
+// Play Store CTA — delegates to shared component
+function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
+  return <PlayStoreCtaComponent.SharedCta size={size} />;
 }
 
 // Section eyebrow (breadcrumb-style kicker)
@@ -154,15 +145,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
                 does things for you instead of just talking about them.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                <a
-                  href={PLAY_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get Twent from Play Store"
-                  className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-                >
-                  <PlayStoreBadge className="h-11" />
-                </a>
+                <PlayStoreCtaLocal size="h-11" />
                 <span className="text-sm text-zinc-400">
                   Free to start · No credit card · Works on any modern Android
                   phone
@@ -518,7 +501,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
                 Free to install · No account needed · Bring your own API key
               </p>
               <div className="flex justify-center">
-                <PlayStoreCta />
+                <PlayStoreCtaLocal />
               </div>
             </div>
           </div>
