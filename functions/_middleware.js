@@ -172,8 +172,8 @@ function generateHreflangLinks(pathname) {
 // ─── Page metadata from pages.json (embedded for edge performance) ───────────
 const PAGE_META = {
   '/': {
-    title: 'Twent - AI Agent for Android (2026) | Automates Everything',
-    description: 'The AI agent that runs ON your Android — automates apps, runs Ubuntu terminal & connects 1000+ services. Download Twent free.',
+    title: 'Twent — AI Agent for Android | Terminal, Local AI, App Automation',
+    description: 'Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.',
     type: 'website',
     image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
   },

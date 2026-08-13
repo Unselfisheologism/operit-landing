@@ -1,0 +1,15 @@
+name: databuddy-citation-tracker
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  track-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: npm run lint || true
+      - run: npm run build || true
+      - run: echo 'DataBuddy sync placeholder — re-win top citation phrases quarterly.'
