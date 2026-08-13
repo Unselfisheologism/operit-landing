@@ -53,6 +53,9 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [vs Omnara](https://twent.xyz/vs/omnara) — Twent vs Omnara
 - [vs Manus](https://twent.xyz/vs/manus) — Twent vs Manus
 - [vs Onspace](https://twent.xyz/vs/onspace) — Twent vs Onspace
+- [vs Pi](https://twent.xyz/vs/pi) — Twent vs Pi
+- [vs Siri/Bixby](https://twent.xyz/vs/siri-bixby) — Twent vs Siri/Bixby
+- [vs Google AI Test Kitchen](https://twent.xyz/vs/google-ai-test-kitchen) — Twent vs Google AI Test Kitchen
 
 ## Legal
 

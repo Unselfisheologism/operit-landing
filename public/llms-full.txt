@@ -213,16 +213,16 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 ## Competitor Comparisons
 
 ### Chatbots (Question-Answering AI)
-| Feature | Twent | ChatGPT | Claude | Gemini | Perplexity |
-|---|---|---|---|---|---|
-| Runs on your device | ✅ Android app | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud |
-| UI automation | ✅ Tap, swipe, type | ❌ | ❌ | ❌ | ❌ |
-| Ubuntu terminal | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Local AI models | ✅ GGUF/MNN | ❌ | ❌ | ❌ | ❌ |
-| BYOK privacy | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Zero telemetry | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Free tier | ✅ All features | ✅ Limited | ✅ Limited | ✅ Limited | ✅ Limited |
-| Claude Code execution | ✅ On-device | ❌ | ❌ | ❌ | ❌ |
+| Feature | Twent | ChatGPT | Claude | Gemini | Copilot | Perplexity | Replika |
+|---|---|---|---|---|---|---|---|
+| Runs on your device | ✅ Android app | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud | ❌ Cloud |
+| UI automation | ✅ Tap, swipe, type | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Ubuntu terminal | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Local AI models | ✅ GGUF/MNN | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| BYOK privacy | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Zero telemetry | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Free tier | ✅ All features | ✅ Limited | ✅ Limited | ✅ Limited | ✅ Limited | ✅ Limited | ✅ Limited |
+| Claude Code execution | ✅ On-device | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 ### Automation Platforms
 | Feature | Twent | n8n | Make | Zapier |
@@ -235,13 +235,23 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 | Local models | ✅ | ❌ | ❌ | ❌ |
 
 ### AI Agents
-| Feature | Twent | Nebula | OpenClaw | Hermes Agent |
+| Feature | Twent | Nebula | OpenClaw | Hermes Agent | Manus | Qordinate | Omnara | Onspace |
+|---|---|---|---|---|---|---|---|---|
+| Android automation | ✅ | ? | ? | ✅ (runs inside Twent) | ? | ? | ? | ? |
+| Ubuntu terminal | ✅ | ? | ? | ✅ | ? | ? | ? | ? |
+| Offline models | ✅ GGUF/MNN | ? | ? | ✅ | ? | ? | ? | ? |
+| Skills marketplace | ✅ | ? | ? | ❌ | ? | ? | ? | ? |
+| Free tier | ✅ Everything | ? | ? | ✅ | ? | ? | ? | ? |
+
+### Other AI Agents & Assistants
+| Feature | Twent | Pi | Siri/Bixby | Google AI Test Kitchen |
 |---|---|---|---|---|
-| Android automation | ✅ | ? | ? | ✅ (runs inside Twent) |
-| Ubuntu terminal | ✅ | ? | ? | ✅ |
-| Offline models | ✅ GGUF/MNN | ? | ? | ✅ |
-| Skills marketplace | ✅ | ? | ? | ❌ |
-| Free tier | ✅ Everything | ? | ? | ✅ |
+| OS-level automation | ✅ | ❌ | ❌ | ❌ |
+| On-device execution | ✅ | ✅ | Partial | Partial |
+| Terminal access | ✅ | ❌ | ❌ | ❌ |
+| UI automation | ✅ | ❌ | Limited | Limited |
+| Local models | ✅ | ❌ | ❌ | ❌ |
+| Open/agentic | ✅ | ❌ | ❌ | ❌ |
 
 ---
 

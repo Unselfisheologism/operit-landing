@@ -90,6 +90,28 @@
   </url>
   
   <url>
+    <canonical>https://twent.xyz/blog/os-vs-browser-automation</canonical>
+    <md>https://twent.xyz/blog/os-vs-browser-automation.md</md>
+    <type>blog</type>
+    <summary>Why OS-level AI automation beats browser-level — prompt injection, cross-tab leakage, data harvesting.</summary>
+    <keywords>OS-level AI automation, browser automation security, prompt injection, AI browser risks, Twent Android</keywords>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/best-android-ai</canonical>
+    <md>https://twent.xyz/best-android-ai.md</md>
+    <type>landing</type>
+    <summary>Best Android AI apps and tools — curated guide for Android AI in 2026.</summary>
+    <keywords>best Android AI, AI apps, Android AI tools, top AI apps Android</keywords>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <canonical>https://twent.xyz/changelog</canonical>
     <md>https://twent.xyz/changelog.md</md>
     <type>changelog</type>
@@ -350,6 +372,39 @@
     <type>compare</type>
     <summary>Privacy-first, offline models, Ubuntu terminal. Twent vs Onspace for Android.</summary>
     <keywords>vs Onspace, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/pi</canonical>
+    <md>https://twent.xyz/vs/pi.md</md>
+    <type>compare</type>
+    <summary>Privacy-first companion vs productivity agent. On-device execution, terminal access, automation depth.</summary>
+    <keywords>vs Pi, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/siri-bixby</canonical>
+    <md>https://twent.xyz/vs/siri-bixby.md</md>
+    <type>compare</type>
+    <summary>OS-level agent vs built-in assistant. Full device automation, terminal access, local models vs limited assistant commands.</summary>
+    <keywords>vs Siri, vs Bixby, comparison</keywords>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <canonical>https://twent.xyz/vs/google-ai-test-kitchen</canonical>
+    <md>https://twent.xyz/vs/google-ai-test-kitchen.md</md>
+    <type>compare</type>
+    <summary>Experimental AI sandbox vs production agent. Browser-based demos vs on-device automation, terminal, local models.</summary>
+    <keywords>vs Google AI Test Kitchen, comparison</keywords>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

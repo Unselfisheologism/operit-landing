@@ -66,6 +66,8 @@ GGUF models run locally via MNN. BYOK (Bring Your Own Key) — API keys encrypte
 Browse and install AI skills, MCP servers, and workflows. Build and sell AI behaviors.
 
 - [AI Marketplace for Creators](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
+- [Enterprise](https://twent.xyz/enterprise-ai-agent) — Team deployment and admin controls
+- [Best Android AI](https://twent.xyz/best-android-ai) — Curated ranking of top Android AI apps
 - [Marketplace Blog Post](https://twent.xyz/blog/marketplace) — What's in the marketplace
 
 ## Documentation
@@ -83,6 +85,7 @@ Twent is **completely free** — all features, all tools, everything included. N
 
 - [The Twent Journal](https://twent.xyz/blog) — Tutorials, deep dives, product news
 - [25 Best AI Apps for Android 2026](https://twent.xyz/blog/best-ai-apps-android) — Curated ranking of top AI apps
+- [OS vs Browser Automation](https://twent.xyz/blog/os-vs-browser-automation) — Why OS-level AI automation beats browser-level every time
 
 ## Competitor Comparisons
 
@@ -108,6 +111,9 @@ Twent is **completely free** — all features, all tools, everything included. N
 - [vs Qordinate](https://twent.xyz/vs/qordinate)
 - [vs Omnara](https://twent.xyz/vs/omnara)
 - [vs Onspace](https://twent.xyz/vs/onspace)
+- [vs Pi](https://twent.xyz/vs/pi) — Privacy-first companion vs productivity agent
+- [vs Siri/Bixby](https://twent.xyz/vs/siri-bixby) — OS-level agent vs built-in assistant
+- [vs Google AI Test Kitchen](https://twent.xyz/vs/google-ai-test-kitchen) — Experimental AI vs production agent
 
 ## Technical Requirements
 
