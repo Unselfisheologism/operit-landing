@@ -14,4 +14,4 @@ Replika is a companion chatbot with cloud models. Twent is a privacy-first agent
 Siri and Bixby are system assistants with limited extensibility. Twent is an open agent platform with MCP, skills, workflows, and full Android access.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

@@ -12,4 +12,4 @@ Twent is the enterprise-ready Android AI agent with BYOK encryption, zero teleme
 Copilot is best for Microsoft 365 creativity. Twent is best for Android device control, terminal workflows, and internal tool integrations.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

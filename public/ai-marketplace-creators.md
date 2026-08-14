@@ -14,4 +14,4 @@ n8n is a powerful workflow automation platform. Twent brings that power onto And
 Zapier connects web apps. Twent connects web apps, your terminal, local models, and your Android UI.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

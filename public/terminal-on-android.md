@@ -18,4 +18,4 @@ Omniara is a next-gen AI interface concept. Twent is the shipped product: termin
 Onspace is a productivity workspace. Twent is the Android-native agent layer underneath: terminal, AI, automation, and MCP.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

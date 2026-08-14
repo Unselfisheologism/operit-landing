@@ -1,9 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 import { useInView } from "../hooks/useInView";
-
 
 
 // Play Store CTA — delegates to shared component

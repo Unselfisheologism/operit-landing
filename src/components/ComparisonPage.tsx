@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { PlayStoreCta } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // No external dependencies – head tags managed via useEffect
 
@@ -381,10 +380,10 @@ export function ComparisonPage({
         <p className="text-lg">{verdict}</p>
       </div>
 
-      {/* Play Store CTA — after verdict */}
+      {/* Download CTA — after verdict */}
       <div className="text-center py-12 mb-10 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl">
         <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
-          Try Twent free on the Play Store
+          Try Twent free
         </h2>
         <p className="text-base text-zinc-600 dark:text-zinc-400 mb-6">
           Free to install · No account needed · Bring your own API key

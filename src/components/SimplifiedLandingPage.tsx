@@ -2,7 +2,6 @@ import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { PlayStoreCta } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {

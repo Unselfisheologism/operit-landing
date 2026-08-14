@@ -17,4 +17,4 @@ Manus is a browser-based autonomous agent. Twent is the Android-native agent wit
 OpenClaw is an open-source desktop AI assistant. Twent is the Android-native implementation with terminal and device automation.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

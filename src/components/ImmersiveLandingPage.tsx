@@ -6,7 +6,6 @@ import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 import { PlayStoreCta } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {

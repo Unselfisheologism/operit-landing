@@ -4,8 +4,6 @@ import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { TableOfContents } from "./ui/TableOfContents";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
-
 
 
 // Play Store CTA — matches ComparisonPage.tsx pattern

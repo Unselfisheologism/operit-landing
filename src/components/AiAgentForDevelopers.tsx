@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { PlayStoreCta } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 

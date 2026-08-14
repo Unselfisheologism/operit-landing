@@ -21,4 +21,4 @@ Gemini is strongest inside Google Workspace. Twent is strongest on-device: local
 Microsoft Copilot bundles GPT-4 + DALL-E for creativity. Twent bundles an Ubuntu terminal, Android automation, and MCP for shipping code.
 
 ## Install
-Download Twent from the Play Store or twent.xyz. No account required.
+Download Twent directly from twent.xyz. No account required.

@@ -3,7 +3,6 @@ import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 import { PlayStoreCta } from "./PlayStoreCta";
-import { PlayStoreBadge } from "./PlayStoreBadge";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
