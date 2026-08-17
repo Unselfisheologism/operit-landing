@@ -1,7 +1,7 @@
 import { defineMeta } from "blume";
 
 export default defineMeta({
-  title: "Packages",
-  icon: "package",
+  title: "Plugins",
+  icon: "puzzle",
   pages: ["overview", "skills", "marketplace"],
 });
