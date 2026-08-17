@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ComponentProps } from "react";
 import { motion, useAnimate } from "motion/react";
-import { arc } from "motion/react";
 
 import { cn } from "../../lib/utils";
 
@@ -35,6 +34,50 @@ export function BounceSidebar({
 
   const [dotSize, setDotSize] = useState(6);
   const [ready, setReady] = useState(false);
+
+  // Track scroll position to update active heading
+  useEffect(() => {
+    const headingElements = items
+      .map((item, index) => {
+        const href = typeof item === "string" ? undefined : item.href;
+        if (!href) return null;
+        const id = href.replace("#", "");
+        const el = document.getElementById(id);
+        return el ? { el, index } : null;
+      })
+      .filter(Boolean) as { el: HTMLElement; index: number }[];
+
+    if (headingElements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the first visible heading from the top
+        const visibleHeadings = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+        if (visibleHeadings.length > 0) {
+          const topHeading = visibleHeadings[0];
+          const index = headingElements.find(
+            (h) => h.el === topHeading.target
+          )?.index;
+          if (index !== undefined && index !== activeIndex) {
+            if (value === undefined) setInternalValue(index);
+            onChange?.(index);
+          }
+        }
+      },
+      {
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      }
+    );
+
+    headingElements.forEach(({ el }) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [items, activeIndex, value, onChange]);
+
   useEffect(() => {
     const dpr = window.devicePixelRatio || 1;
     setDotSize(Math.round(6 * dpr) / dpr);
@@ -84,15 +127,17 @@ export function BounceSidebar({
     if (delta === 0) return;
 
     const distance = Math.abs(delta);
-    const path = arc({
-      strength: Math.min(0.8, 14 / distance),
-      direction: delta > 0 ? "ccw" : "cw",
-    });
-
+    
+    // Use spring animation for bouncy effect
     animate(
       dot.current,
       { x: 0, y: toY },
-      { duration: 0.25, ease: "easeOut", path },
+      { 
+        type: "spring",
+        stiffness: 400,
+        damping: 15,
+        mass: 0.5,
+      }
     );
   }, [activeIndex, animate, dot, dotSize]);
 
@@ -107,16 +152,18 @@ export function BounceSidebar({
       className={cn("relative flex flex-col gap-1 pl-6", className)}
       {...props}
     >
-      <span
+      <motion.span
         ref={dot}
         aria-hidden
-        className="absolute left-2 top-0 rounded-full transition-opacity duration-150"
+        className="absolute left-2 top-0 rounded-full"
         style={{
           width: dotSize,
           height: dotSize,
           backgroundColor: dotColor,
           opacity: ready ? 1 : 0,
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: ready ? 1 : 0 }}
       />
 
       {items.map((item, index) => {
