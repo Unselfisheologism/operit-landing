@@ -6,6 +6,7 @@ import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 import { PlayStoreCta } from "./PlayStoreCta";
+import TrailingCursor from "./TrailingCursor";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -492,6 +493,7 @@ export function ImmersiveLandingPage({
       <SharedSchemaMarkup />
       <GrainOverlay />
       <Nav dark={dark} />
+      <TrailingCursor />
 
       <main>
         {/* Hero Section */}
