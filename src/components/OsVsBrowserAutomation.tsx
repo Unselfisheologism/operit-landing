@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
-import { TableOfContents } from "./ui/TableOfContents";
+import { BounceSidebar } from "./ui/BounceSidebar";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
 
@@ -285,7 +285,9 @@ export function OsVsBrowserAutomation({
             className="animate-fadeIn"
           >
             {/* Table of Contents */}
-            <TableOfContents items={tocItems} />
+            <BounceSidebar
+              items={tocItems.map((item) => ({ label: item.text, href: `#${item.id}` }))}
+            />
 
             <div className="prose prose-zinc dark:prose-invert max-w-none">
               {/* Opening hook */}

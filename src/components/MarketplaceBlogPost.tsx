@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
-import { TableOfContents } from "./ui/TableOfContents";
+import { BounceSidebar } from "./ui/BounceSidebar";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
 
@@ -108,12 +108,12 @@ function MarketplaceSchemaMarkup() {
 
 // TOC items for this blog post
 const tocItems = [
-  { id: "what-even-is-the-marketplace", text: "What even is the marketplace?", level: 2 },
-  { id: "how-does-pricing-work", text: "How does pricing work?", level: 2 },
-  { id: "why-this-matters", text: "Why this matters", level: 2 },
-  { id: "whats-next", text: "What's next?", level: 2 },
-  { id: "tldr", text: "TL;DR for the impatient", level: 2 },
-  { id: "faq", text: "Frequently Asked Questions", level: 2 },
+  "What even is the marketplace?",
+  "How does pricing work?",
+  "Why this matters",
+  "What's next?",
+  "TL;DR for the impatient",
+  "Frequently Asked Questions",
 ];
 
 // Grain overlay for editorial print feel
@@ -268,7 +268,19 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
             className="animate-fadeIn"
           >
             {/* Table of Contents */}
-            <TableOfContents items={tocItems} />
+            <BounceSidebar
+              items={tocItems.map((label, idx) => ({
+                label,
+                href: `#${[
+                  "what-even-is-the-marketplace",
+                  "how-does-pricing-work",
+                  "why-this-matters",
+                  "whats-next",
+                  "tldr",
+                  "faq",
+                ][idx]}`,
+              }))}
+            />
 
             <div className="prose prose-zinc dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed mb-8">

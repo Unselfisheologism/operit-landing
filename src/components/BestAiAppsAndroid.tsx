@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
-import { TableOfContents } from "./ui/TableOfContents";
+import { BounceSidebar } from "./ui/BounceSidebar";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
 
@@ -665,7 +665,9 @@ export function BestAiAppsAndroid({ dark }: { dark: boolean }) {
             {/* Sticky TOC */}
             <aside className="hidden md:block">
               <div className="sticky top-24">
-                <TableOfContents items={tocItems} />
+                <BounceSidebar
+                  items={tocItems.map((item) => ({ label: item.text, href: `#${item.id}` }))}
+                />
               </div>
             </aside>
           </div>
