@@ -165,11 +165,11 @@
   surface.style.left = '50%'
   surface.style.transform = 'translateX(-50%)'
   surface.style.overflow = 'hidden'
-  surface.style.border = '1px solid rgba(0,0,0,0.12)'
-  surface.style.background = 'rgba(255,255,255,0.75)'
-  surface.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)'
+  surface.style.border = '1px solid rgba(255,255,255,0.15)'
+  surface.style.background = 'rgba(0,0,0,0.85)'
+  surface.style.boxShadow = '0 10px 25px rgba(0,0,0,0.35)'
   surface.style.backdropFilter = 'blur(14px)'
-  surface.style.color = 'inherit'
+  surface.style.color = '#fff'
   surface.style.borderRadius = '999px'
   surface.style.transition = prefersReducedMotion
     ? 'none'
@@ -186,10 +186,9 @@
   collapsedMeasure.style.display = 'inline-flex'
   collapsedMeasure.style.alignItems = 'center'
   collapsedMeasure.style.gap = '10px'
-  collapsedMeasure.style.padding = '6px 2px 6px 8px'
+  collapsedMeasure.style.padding = '6px 8px'
   collapsedMeasure.innerHTML = `
     <span style="display:inline-flex;height:20px;width:20px;"></span>
-    <span style="white-space:nowrap;font-size:14px;font-weight:500;line-height:20px;"></span>
   `
   hiddenMeasure.appendChild(collapsedMeasure)
 
@@ -275,34 +274,19 @@
   circleWrap.style.flexShrink = '0'
   circleWrap.appendChild(svg)
 
-  const labelWrap = document.createElement('span')
-  labelWrap.style.position = 'relative'
-  labelWrap.style.height = '20px'
-  labelWrap.style.width = `${labelWidth}px`
-  labelWrap.style.display = 'inline-block'
-  labelWrap.style.verticalAlign = 'middle'
-
   const collapsedInner = document.createElement('button')
   collapsedInner.type = 'button'
   collapsedInner.setAttribute('aria-label', 'Show sections')
   collapsedInner.style.display = 'inline-flex'
   collapsedInner.style.alignItems = 'center'
-  collapsedInner.style.gap = '10px'
-  collapsedInner.style.padding = '6px 14px 6px 8px'
+  collapsedInner.style.justifyContent = 'center'
+  collapsedInner.style.padding = '6px'
   collapsedInner.style.background = 'transparent'
   collapsedInner.style.border = 'none'
   collapsedInner.style.color = 'inherit'
   collapsedInner.style.cursor = 'pointer'
   collapsedInner.style.font = 'inherit'
   collapsedInner.appendChild(circleWrap)
-
-  const currentLabel = document.createElement('span')
-  currentLabel.textContent = current.sections[0]?.label ?? ''
-  currentLabel.style.whiteSpace = 'nowrap'
-  currentLabel.style.fontSize = '14px'
-  currentLabel.style.fontWeight = '500'
-  currentLabel.style.lineHeight = '20px'
-  collapsedInner.appendChild(currentLabel)
 
   const openList = document.createElement('ul')
   openList.style.position = 'absolute'
@@ -365,7 +349,6 @@
       prevLabel = label
       labelVersion++
     }
-    currentLabel.textContent = label
     const openItems = openList.querySelectorAll('[data-section-id]')
     openItems.forEach((el) => {
       const item = el
@@ -373,8 +356,8 @@
       item.setAttribute('aria-current', isActive ? 'true' : 'false')
       const dot = item.querySelector('span:first-child')
       const text = item.querySelector('span:last-child')
-      if (dot) dot.style.background = isActive ? 'currentColor' : 'rgba(0,0,0,0.22)'
-      if (text) text.style.color = isActive ? 'inherit' : 'rgba(0,0,0,0.65)'
+      if (dot) dot.style.background = isActive ? '#fff' : 'rgba(255,255,255,0.45)'
+      if (text) text.style.color = isActive ? '#fff' : 'rgba(255,255,255,0.75)'
     })
   }
 
@@ -435,11 +418,11 @@
       dot.style.height = '6px'
       dot.style.width = '6px'
       dot.style.borderRadius = '999px'
-      dot.style.background = s.id === activeId ? 'currentColor' : 'rgba(0,0,0,0.22)'
+      dot.style.background = s.id === activeId ? '#fff' : 'rgba(255,255,255,0.45)'
 
       const text = document.createElement('span')
       text.textContent = s.label
-      text.style.color = s.id === activeId ? 'inherit' : 'rgba(0,0,0,0.65)'
+      text.style.color = s.id === activeId ? '#fff' : 'rgba(255,255,255,0.75)'
 
       btn.appendChild(dot)
       btn.appendChild(text)
