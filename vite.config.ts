@@ -60,6 +60,47 @@ export default defineConfig({
       },
     },
 
+    // ─── Docs Scroll Progress Auto-Injection ────────────────────────────────────
+    // Ensures all current and future /docs pages automatically include the
+    // scroll-progress widget by injecting the shared script into every docs
+    // HTML file at build time.
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      name: 'docs-scroll-progress',
+      apply: 'build',
+      enforce: 'post',
+      async writeBundle() {
+        const tag = '<script defer src="/docs/scroll-progress.js"></script>'
+        const docsDir = path.join(__dirname, 'dist', 'docs')
+        const fs = await import('fs')
+        if (!fs.existsSync(docsDir)) return
+
+        const htmlFiles = []
+        const walk = (dir) => {
+          for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+            const full = path.join(dir, entry.name)
+            if (entry.isDirectory()) walk(full)
+            else if (entry.isFile() && entry.name === 'index.html') htmlFiles.push(full)
+          }
+        }
+        walk(docsDir)
+
+        let count = 0
+        for (const htmlPath of htmlFiles) {
+          let html = readFileSync(htmlPath, 'utf-8')
+          if (!html.includes(tag)) {
+            html = html.replace(/<\/body>/i, `${tag}\n</body>`)
+            writeFileSync(htmlPath, html, 'utf-8')
+            count++
+          }
+        }
+
+        if (count > 0) {
+          console.log(`[docs-scroll-progress] Injected scroll-progress script into ${count} docs pages`)
+        }
+      },
+    },
+
     // ─── GZIP + Brotli Pre-compression
     compression({
       algorithms: ['gzip', 'brotliCompress'],
