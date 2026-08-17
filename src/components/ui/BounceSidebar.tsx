@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ComponentProps } from "react";
 import { motion, useAnimate } from "motion/react";
+import { arc } from "motion";
 
 import { cn } from "../../lib/utils";
 
@@ -51,7 +52,6 @@ export function BounceSidebar({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Find the first visible heading from the top
         const visibleHeadings = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
@@ -104,7 +104,7 @@ export function BounceSidebar({
       cancelled = true;
       cancelAnimationFrame(raf);
     };
-  }, [activeIndex, animate, dot]);
+  }, []);
 
   useEffect(() => {
     const el = itemRefs.current[activeIndex];
@@ -127,17 +127,15 @@ export function BounceSidebar({
     if (delta === 0) return;
 
     const distance = Math.abs(delta);
-    
-    // Use spring animation for bouncy effect
+    const path = arc({
+      strength: Math.min(0.8, 14 / distance),
+      direction: delta > 0 ? "ccw" : "cw",
+    });
+
     animate(
       dot.current,
       { x: 0, y: toY },
-      { 
-        type: "spring",
-        stiffness: 400,
-        damping: 15,
-        mass: 0.5,
-      }
+      { duration: 0.25, ease: "easeOut", path },
     );
   }, [activeIndex, animate, dot, dotSize]);
 
@@ -152,18 +150,16 @@ export function BounceSidebar({
       className={cn("relative flex flex-col gap-1 pl-6", className)}
       {...props}
     >
-      <motion.span
+      <span
         ref={dot}
         aria-hidden
-        className="absolute left-2 top-0 rounded-full"
+        className="absolute left-2 top-0 rounded-full transition-opacity duration-150"
         style={{
           width: dotSize,
           height: dotSize,
           backgroundColor: dotColor,
           opacity: ready ? 1 : 0,
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: ready ? 1 : 0 }}
       />
 
       {items.map((item, index) => {
