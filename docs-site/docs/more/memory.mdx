@@ -7,18 +7,15 @@ sidebar:
 ---
 
 Persistent knowledge storage that survives across conversations. The AI
- remembers your preferences, past discussions, and important information.
-
+remembers your preferences, past discussions, and important information, and its memory grows over time.
 
 ## Memory Types
 
  **User Preferences** — communication style, apps,
- contacts
-
+contacts
 
  **Conversation Summaries** — key decisions and action
- items
-
+items
 
  **Knowledge Base** — notes, reference material, research
 
@@ -32,6 +29,5 @@ Persistent knowledge storage that survives across conversations. The AI
 | memory_update | Update existing memories |
 | memory_link | Create relationships between memories |
 
-
  All memories are stored **locally** on your device. Nothing
- leaves your device except API calls.
+leaves your device except API calls.
