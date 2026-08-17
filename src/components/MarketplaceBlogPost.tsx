@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
-import { BounceSidebar } from "./ui/BounceSidebar";
+import { BlogPostShell } from "./BlogPostShell";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
 
@@ -262,27 +262,20 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
           </div>
         </section>
 
-        {/* Content area */}
-        <section className="max-w-4xl mx-auto px-6 pb-24">
-          <div
-            className="animate-fadeIn"
-          >
-            {/* Table of Contents */}
-            <BounceSidebar
-              items={tocItems.map((label, idx) => ({
-                label,
-                href: `#${[
-                  "what-even-is-the-marketplace",
-                  "how-does-pricing-work",
-                  "why-this-matters",
-                  "whats-next",
-                  "tldr",
-                  "faq",
-                ][idx]}`,
-              }))}
-            />
-
-            <div className="prose prose-zinc dark:prose-invert max-w-none">
+        <BlogPostShell
+          tocItems={tocItems.map((label, idx) => ({
+            label,
+            href: `#${[
+              "what-even-is-the-marketplace",
+              "how-does-pricing-work",
+              "why-this-matters",
+              "whats-next",
+              "tldr",
+              "faq",
+            ][idx]}`,
+          }))}
+        >
+          <div className="prose prose-zinc dark:prose-invert max-w-none">
               <p className="text-lg leading-relaxed mb-8">
                 The Twent Marketplace is an agentic app store for Android. It lets creators sell 
                 mini apps, prompt templates, workflow automation, skills, custom skins, and MCP servers 
@@ -598,12 +591,11 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </BlogPostShell>
 
-        {/* Play Store conversion CTA */}
-        <section className="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/40">
-          <div className="max-w-3xl mx-auto px-6 py-16 text-center">
+          {/* Play Store conversion CTA */}
+    <section className="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/40">
+      <div className="max-w-3xl mx-auto px-6 py-16 text-center">
             <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-3">
               Try Twent on Android
             </h2>
