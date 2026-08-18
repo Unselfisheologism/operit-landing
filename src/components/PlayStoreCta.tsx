@@ -1,4 +1,4 @@
-const APK_URL = "https://assets.twent.xyz/app-release.apk";
+const APK_THANKYOU_URL = "/apk";
 
 interface PlayStoreCtaProps {
   size?: string;
@@ -16,9 +16,9 @@ export function PlayStoreCta({
 }: PlayStoreCtaProps) {
   return (
     <a
-      href={APK_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={APK_THANKYOU_URL}
+      target="_self"
+      rel=""
       aria-label="Download Twent APK"
       className={`flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors ${className}`}
     >
@@ -54,9 +54,9 @@ export function PlayStoreCtaGroup({
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <a
-        href={APK_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={APK_THANKYOU_URL}
+        target="_self"
+        rel=""
         className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
       >
         <svg

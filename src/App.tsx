@@ -21,6 +21,7 @@ import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
 import { DashboardPage } from "./components/DashboardPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
+import { ApkThankYouPage } from "./components/ApkThankYouPage";
 
 // Competitor comparison pages — LAZY LOADED for code splitting
 // This reduces main bundle size by ~40%, dramatically improving FCP/TTFB
@@ -375,6 +376,16 @@ export default function App() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <SuccessPage />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/apk")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ApkThankYouPage />
       </>
     );
   }
