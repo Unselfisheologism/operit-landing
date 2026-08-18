@@ -56,7 +56,6 @@ function ApkContent() {
         await handle.done;
         activeHandle = null;
         if (cancelled) break;
-        break;
       }
     };
 
