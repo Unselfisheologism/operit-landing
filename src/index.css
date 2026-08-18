@@ -37,18 +37,18 @@
   --color-orange-400: #fb923c;
   --color-green-500: #22c55e;
   --color-red-500: #ef4444;
-  --color-grayscale-1: #000000;
-  --color-grayscale-2: #0f0f0f;
-  --color-grayscale-3: #1a1a1a;
-  --color-grayscale-4: #262626;
-  --color-grayscale-5: #333333;
-  --color-grayscale-6: #404040;
-  --color-grayscale-7: #525252;
-  --color-grayscale-8: #666666;
-  --color-grayscale-9: #808080;
-  --color-grayscale-10: #999999;
-  --color-grayscale-11: #b3b3b3;
-  --color-grayscale-12: #e5e5e5;
+  --color-grayscale-1: #fafafa;
+  --color-grayscale-2: #f5f5f5;
+  --color-grayscale-3: #eeeeee;
+  --color-grayscale-4: #e5e5e5;
+  --color-grayscale-5: #d4d4d4;
+  --color-grayscale-6: #a3a3a3;
+  --color-grayscale-7: #737373;
+  --color-grayscale-8: #525252;
+  --color-grayscale-9: #404040;
+  --color-grayscale-10: #262626;
+  --color-grayscale-11: #171717;
+  --color-grayscale-12: #0a0a0a;
 }
 
 * {
