@@ -1,5 +1,4 @@
 import type { CSSProperties, ReactNode } from "react";
-import { cn } from "@/lib/utils";
 
 const stampShadow =
   "drop-shadow(0 1px 1px rgb(15 15 15 / 12%)) drop-shadow(0 12px 22px rgb(15 15 15 / 9%))";
@@ -144,4 +143,8 @@ export function Stamp({
       </article>
     </div>
   );
+}
+
+function cn(...inputs: Array<string | false | null | undefined>) {
+  return inputs.filter(Boolean).join(" ");
 }

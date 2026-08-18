@@ -1,4 +1,5 @@
 import ElasticLine from "./fancy/physics/elastic-line"
+import { Stamp } from "./Stamp"
 
 export function Footer() {
   const links = {
@@ -288,7 +289,7 @@ export function Footer() {
           >
             <img
               alt="Twent aesthetic postage stamp"
-              className="object-cover"
+              className="absolute inset-0 size-full object-cover"
               draggable={false}
               src="/logos/twent-aesthetic-poststamp.png"
             />
