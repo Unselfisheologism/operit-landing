@@ -7,7 +7,6 @@ import { SocialLinksInline } from "./SocialLinks";
 import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 import { PlayStoreCta } from "./PlayStoreCta";
 import TrailingCursor from "./TrailingCursor";
-
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -564,7 +563,7 @@ export function ImmersiveLandingPage({
         </section>
 
         {/* Pinned Scrollytelling — 8 stories */}
-        <PinnedScrollytelling />
+        
 
         {/* Social Proof */}
         <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
