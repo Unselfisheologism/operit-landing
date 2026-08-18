@@ -216,26 +216,39 @@ export function Footer() {
         />
       </div>
       <div className="max-w-6xl mx-auto px-6 py-16">
-<div className="mb-12">
-          <div className="flex items-center gap-2 mb-3">
-            <img
-              src="/twent-logo-48.webp"
-              srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
-              sizes="48px"
-              alt="Twent logo - Personal AI agent for Android"
-              className="w-12 h-12 object-contain"
-              width="48"
-              height="48"
-              loading="eager"
-              fetchPriority="high"
-            />
-            <span className="font-display text-lg text-zinc-900 dark:text-zinc-100">
-              Twent
-            </span>
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <img
+                src="/twent-logo-48.webp"
+                srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
+                sizes="48px"
+                alt="Twent logo - Personal AI agent for Android"
+                className="w-12 h-12 object-contain"
+                width="48"
+                height="48"
+                loading="eager"
+                fetchPriority="high"
+              />
+              <span className="font-display text-lg text-zinc-900 dark:text-zinc-100">
+                Twent
+              </span>
+            </div>
+            <p className="text-sm text-zinc-500 max-w-sm">
+              Your personal agentic OS. An AI that can see, think, and act.
+            </p>
           </div>
-          <p className="text-sm text-zinc-500 max-w-sm">
-            Your personal agentic OS. An AI that can see, think, and act.
-          </p>
+          <Stamp
+            aria-label="Twent aesthetic postage stamp"
+            className="w-[130px] sm:w-[150px]"
+          >
+            <img
+              alt="Twent aesthetic postage stamp"
+              className="absolute inset-0 size-full object-contain"
+              draggable={false}
+              src="/logos/twent-aesthetic-poststamp.png"
+            />
+          </Stamp>
         </div>
 
 <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
@@ -283,17 +296,6 @@ export function Footer() {
               &copy; 2026 Twent AI. All rights reserved.
             </span>
           </div>
-          <Stamp
-            aria-label="Twent aesthetic postage stamp"
-            className="w-[130px] sm:w-[150px]"
-          >
-            <img
-              alt="Twent aesthetic postage stamp"
-              className="absolute inset-0 size-full object-cover"
-              draggable={false}
-              src="/logos/twent-aesthetic-poststamp.png"
-            />
-          </Stamp>
         </div>
       </div>
     </footer>
