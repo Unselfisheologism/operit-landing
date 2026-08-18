@@ -37,7 +37,7 @@ export default function StackingCards({
 
   return (
     <StackingCardsContext.Provider value={{ progress: scrollYProgress, scaleMultiplier, totalCards }}>
-      <div className={cn(className)} ref={targetRef} {...props}>
+      <div className={cn("relative", className)} ref={targetRef} {...props}>
         {children}
       </div>
     </StackingCardsContext.Provider>
@@ -47,13 +47,12 @@ export default function StackingCards({
 const StackingCardItem = ({ index, topPosition, className, children, ...props }: StackingCardItemProps) => {
   const { progress, scaleMultiplier, totalCards = 0 } = useStackingCardsContext()
   const scaleTo = 1 - (totalCards - index) * (scaleMultiplier ?? 0.03)
-  const rangeScale = [index * (1 / totalCards), 1]
-  const scale = useTransform(progress, rangeScale, [1, scaleTo])
-  const top = topPosition ?? `${5 + index * 3}%`
+  const rangeStart = index === 0 ? 0 : index * (1 / totalCards)
+  const scale = useTransform(progress, [rangeStart, 1], [1, scaleTo])
 
   return (
-    <div className={cn("h-full sticky top-0", className)} {...props}>
-      <motion.div className="origin-top relative h-full" style={{ top, scale }}>
+    <div className={cn("h-screen sticky top-0 w-full overflow-hidden", className)} {...props}>
+      <motion.div className="absolute inset-0" style={{ scale }}>
         {children}
       </motion.div>
     </div>
