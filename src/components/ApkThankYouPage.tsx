@@ -5,11 +5,13 @@ const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
 const APK_URL = "https://assets.twent.xyz/app-release.apk";
 
-// Blue / orange / grey cosine palette for the download thank-you sweep.
+// Tight blue/orange/grey cosine palette.
+// Low c keeps the hue range narrow so it reads as blue/grey/orange,
+// not rainbow.
 const DOWNLOAD_PALETTE = {
-  a: [0.50, 0.50, 0.50],
-  b: [0.25, 0.20, 0.25],
-  c: [1, 1, 1],
+  a: [0.40, 0.45, 0.55],
+  b: [0.25, 0.20, 0.15],
+  c: [0.30, 0.30, 0.30],
   d: [0.60, 0.15, 0.05],
 } as const;
 
@@ -34,8 +36,11 @@ function ApkContent() {
   useEffect(() => {
     let cancelled = false;
     let activeHandle: { cancel: () => void } | null = null;
+    let ran = false;
 
     const loop = async () => {
+      if (ran || cancelled) return;
+      ran = true;
       await triggerDownload();
       while (!cancelled) {
         const handle = sweep(
@@ -51,7 +56,7 @@ function ApkContent() {
         await handle.done;
         activeHandle = null;
         if (cancelled) break;
-        await new Promise((resolve) => setTimeout(resolve, 100));
+        break;
       }
     };
 
@@ -87,7 +92,7 @@ function ApkContent() {
             Thank you for installing Twent!
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-            Your APK download should start automatically. If your browser blocks it, use the button below.
+            Your APK download should start automatically. If the Download hasn't started, use the button below.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
