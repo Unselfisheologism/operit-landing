@@ -9,10 +9,10 @@ const APK_URL = "https://assets.twent.xyz/app-release.apk";
 // Low c keeps the hue range narrow so it reads as blue/grey/orange,
 // not rainbow.
 const DOWNLOAD_PALETTE = {
-  a: [0.40, 0.45, 0.55],
-  b: [0.25, 0.20, 0.15],
-  c: [0.30, 0.30, 0.30],
-  d: [0.60, 0.15, 0.05],
+  a: [0.38, 0.38, 0.40],
+  b: [0.22, 0.18, 0.20],
+  c: [0.18, 0.18, 0.18],
+  d: [0.55, 0.15, 0.40],
 } as const;
 
 const SWEEP_OPTIONS = {
