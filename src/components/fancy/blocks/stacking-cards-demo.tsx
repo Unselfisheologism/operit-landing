@@ -23,7 +23,7 @@ const cards = [
   },
   {
     bgColor: "bg-[#ff5941]",
-    textColor: "text-white",
+    textColor: "text-black",
     title: "For Developers",
     description:
       "Run Claude Code, OpenAI Codex, OpenCode, and Hermes Agent from a full Ubuntu 24.04 terminal on your phone. No laptop required for hotfixes, PR reviews, or deployments.",
@@ -54,9 +54,6 @@ export default function StackingCardsDemo() {
   return (
     <div className="text-white">
       <StackingCards totalCards={cards.length} className="h-[700vh]">
-        <div className="relative h-[620px] w-full z-10 text-2xl md:text-7xl font-bold uppercase flex justify-center items-center text-[#ff5941] whitespace-pre">
-          Scroll down ↓
-        </div>
         {cards.map(({ bgColor, textColor, description, image, title }, index) => (
           <StackingCardItem key={index} index={index} className="h-[620px]">
             <div
