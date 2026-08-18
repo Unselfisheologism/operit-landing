@@ -318,7 +318,7 @@ function ReceiptPrinterPaper({
   return (
     <article
       className={cn(
-        "relative z-10 min-h-80 bg-grayscale-12 bg-[url('/textures/receipt-paper.svg')] bg-cover px-6 pt-7 pb-8 font-mono text-grayscale-1 bg-blend-soft-light dark:bg-grayscale-1 dark:text-grayscale-12",
+        "relative z-10 min-h-80 bg-grayscale-12 bg-[url('/textures/receipt-paper.svg')] bg-cover px-6 pt-7 pb-8 font-mono text-black bg-blend-soft-light dark:bg-grayscale-1",
         className,
       )}
       style={{ clipPath: receiptClipPath, ...style }}
