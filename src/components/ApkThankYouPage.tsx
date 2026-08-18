@@ -3,6 +3,7 @@ import { GlimmProvider, useGlimm } from "glimm/react";
 
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
+const FEEDBACK_URL = "https://tally.so/r/81DyMk";
 const APK_URL = "https://assets.twent.xyz/app-release.apk";
 
 // Tight blue/orange/grey cosine palette.
@@ -116,11 +117,19 @@ function ApkContent() {
             >
               Discord
             </a>
+            <a
+              href={FEEDBACK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+            >
+              Feedback
+            </a>
             <button
               onClick={triggerDownload}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
             >
-              Download APK
+              Download Again
             </button>
           </div>
         </div>
