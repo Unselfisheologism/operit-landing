@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { GlimmProvider, useGlimm } from "glimm/react";
 
 const CHANGELOG_URL = "/changelog";
@@ -14,6 +14,13 @@ const DOWNLOAD_PALETTE = {
   c: [0.30, 0.30, 0.30],
   d: [0.60, 0.15, 0.05],
 } as const;
+
+const SWEEP_OPTIONS = {
+  sweepMs: 1800,
+  outroMs: 500,
+  palette: DOWNLOAD_PALETTE,
+  direction: "ltr" as const,
+};
 
 function ApkContent() {
   const { sweep } = useGlimm();
@@ -36,33 +43,32 @@ function ApkContent() {
   useEffect(() => {
     let cancelled = false;
     let activeHandle: { cancel: () => void } | null = null;
-    let ran = false;
+    let timeout: number | null = null;
 
-    const loop = async () => {
-      if (ran || cancelled) return;
-      ran = true;
-      await triggerDownload();
-      while (!cancelled) {
-        const handle = sweep(
-          () => {},
-          {
-            sweepMs: 1800,
-            outroMs: 500,
-            palette: DOWNLOAD_PALETTE,
-            direction: "ltr",
+    const run = () => {
+      if (cancelled) return;
+      const handle = sweep(() => {}, SWEEP_OPTIONS);
+      activeHandle = handle;
+      handle.done
+        .then(() => {
+          activeHandle = null;
+          if (!cancelled) {
+            timeout = window.setTimeout(run, 180);
           }
-        );
-        activeHandle = handle;
-        await handle.done;
-        activeHandle = null;
-        if (cancelled) break;
-      }
+        })
+        .catch(() => {
+          activeHandle = null;
+        });
     };
 
-    void loop();
+    void triggerDownload();
+    void run();
 
     return () => {
       cancelled = true;
+      if (timeout !== null) {
+        window.clearTimeout(timeout);
+      }
       activeHandle?.cancel();
     };
   }, [sweep, triggerDownload]);
@@ -91,7 +97,8 @@ function ApkContent() {
             Thank you for installing Twent!
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-            Your APK download should start automatically. If the Download hasn't started, use the button below.
+            Your APK download should start automatically. If the Download
+            hasn't started, use the button below.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
