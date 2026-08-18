@@ -1,72 +1,67 @@
+import { useCallback, useEffect, useState } from "react";
+import { GlimmProvider, useGlimm } from "glimm/react";
+
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
 const APK_URL = "https://assets.twent.xyz/app-release.apk";
 
-// Custom glimm palette using blue/orange/grey tones only.
+// Blue / orange / grey cosine palette for the download thank-you sweep.
 const DOWNLOAD_PALETTE = {
-  a: [0.08, 0.08, 0.10],
-  b: [0.35, 0.28, 0.18],
-  c: [0.45, 0.55, 0.35],
-  d: [0.12, 0.22, 0.38],
+  a: [0.50, 0.50, 0.50],
+  b: [0.25, 0.20, 0.25],
+  c: [1, 1, 1],
+  d: [0.60, 0.15, 0.05],
 } as const;
 
-import { GlimmProvider, useGlimm } from "glimm/react";
-import { useEffect, useState } from "react";
-
-function ThankYouContent() {
+function ApkContent() {
   const { sweep } = useGlimm();
-  const [status, setStatus] = useState("Waiting to start...");
+
+  const triggerDownload = useCallback(() => {
+    try {
+      const a = document.createElement("a");
+      a.href = APK_URL;
+      a.download = "twent.apk";
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch {
+      // ignore — manual button remains available
+    }
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
-    let controller: AbortController | null = null;
-    const start = async () => {
-      try {
-        setStatus("Starting download...");
-        controller = new AbortController();
-        const res = await fetch(APK_URL, { signal: controller.signal });
-        if (!res.ok || !res.body) throw new Error("Download failed");
-        const reader = res.body.getReader();
-        const contentLength = Number(res.headers.get("content-length") || 0);
-        let received = 0;
-        setStatus("Downloading APK...");
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done || cancelled) break;
-          received += value?.byteLength || 0;
-          if (contentLength > 0) {
-            const pct = Math.min(100, Math.round((received / contentLength) * 100));
-            setStatus(`Downloading... ${pct}%`);
-          } else {
-            setStatus(`Downloading... ${(received / 1024 / 1024).toFixed(1)} MB`);
+    let activeHandle: { cancel: () => void } | null = null;
+
+    const loop = async () => {
+      await triggerDownload();
+      while (!cancelled) {
+        const handle = sweep(
+          () => {},
+          {
+            sweepMs: 1800,
+            outroMs: 500,
+            palette: DOWNLOAD_PALETTE,
+            direction: "ltr",
           }
-        }
-        if (cancelled) return;
-        setStatus("Finishing download...");
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "twent.apk";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 60_000);
-        setStatus("Download started. Keep this page open while it completes.");
-        await new Promise((r) => setTimeout(r, 8000));
-        if (!cancelled) setStatus("Done! If the download hasn't finished, this page will stay open.");
-      } catch (err) {
-        if ((err as Error)?.name === "AbortError") return;
-        if (cancelled) return;
-        setStatus("Could not track completion automatically. Use the links below.");
+        );
+        activeHandle = handle;
+        await handle.done;
+        activeHandle = null;
+        if (cancelled) break;
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
     };
-    void start();
+
+    void loop();
+
     return () => {
       cancelled = true;
-      controller?.abort();
+      activeHandle?.cancel();
     };
-  }, []);
+  }, [sweep, triggerDownload]);
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
@@ -92,16 +87,8 @@ function ThankYouContent() {
             Thank you for installing Twent!
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-            Your APK download is starting. Stay on this page while it completes — the
-            glimm sweep will keep running until the file is saved.
+            Your APK download should start automatically. If your browser blocks it, use the button below.
           </p>
-
-          <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-4 mb-8">
-            <div className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-2">Status</div>
-            <div className="font-mono text-sm text-blue-600 dark:text-blue-400 break-words">
-              {status}
-            </div>
-          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -118,24 +105,11 @@ function ThankYouContent() {
             >
               Discord
             </a>
-          </div>
-
-          <div className="mt-10">
             <button
-              onClick={() =>
-                sweep(
-                  () => {},
-                  {
-                    sweepMs: 1800,
-                    outroMs: 500,
-                    palette: DOWNLOAD_PALETTE,
-                    direction: "ltr",
-                  }
-                )
-              }
-              className="text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 underline underline-offset-4"
+              onClick={triggerDownload}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
             >
-              Replay glimm sweep
+              Download APK
             </button>
           </div>
         </div>
@@ -153,7 +127,7 @@ export function ApkThankYouPage() {
       direction="ltr"
       bandTight={18}
     >
-      <ThankYouContent />
+      <ApkContent />
     </GlimmProvider>
   );
 }
