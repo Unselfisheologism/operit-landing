@@ -8,43 +8,43 @@ import StackingCards, { StackingCardItem } from "./stacking-cards"
 const cards = [
   {
     bgColor: "bg-[#f97316]",
-    title: "The Guiding Light",
+    title: "Under the Hood",
     description:
-      "Lighthouses have stood as beacons of hope for centuries, guiding sailors safely through treacherous waters. Their glowing light and towering presence serve as a reminder of humanity's connection to the sea.",
+      "Not just a chatbot. Twent exposes 50+ built-in tools, connects to 1000+ apps, and loads MCP servers on demand. Chain them together and your phone becomes a programmable agent.",
     image:
-      "https://plus.unsplash.com/premium_vector-1739262161806-d954eb02427c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXxxdGU5Smx2R3d0b3x8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#0015ff]",
-    title: "Life Beneath the Waves",
+    title: "UI Automation",
     description:
-      "From shimmering schools of fish to solitary hunters, the ocean is home to an incredible variety of marine life. Each species plays a vital role in maintaining the balance of underwater ecosystems.",
+      "The overlay agent sees your screen and interacts like a human: read elements, tap buttons, fill forms, and chain multi-step flows across Gmail, Maps, banking apps, and more.",
     image:
-      "https://plus.unsplash.com/premium_vector-1739200616200-69a138d91627?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MnxxdGU5Smx2R3d0b3x8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#ff5941]",
-    title: "Alone on the Open Sea",
+    title: "For Developers",
     description:
-      "Drifting across the endless horizon, traveling alone on the sea is a test of courage and resilience. With nothing but the waves and the sky, solitude becomes both a challenge and a source of deep reflection.",
+      "Run Claude Code, OpenAI Codex, OpenCode, and Hermes Agent from a full Ubuntu 24.04 terminal on your phone. No laptop required for hotfixes, PR reviews, or deployments.",
     image:
-      "https://plus.unsplash.com/premium_vector-1738597190290-a3b571590b9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8OHxxdGU5Smx2R3d0b3x8ZW58MHx8fHx8",
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#1f464d]",
-    title: "The Art of Sailing",
+    title: "Everything Else",
     description:
-      "Harnessing the power of the wind, sailing is both a skill and an adventure. Whether racing across the waves or leisurely cruising, it's a timeless way to explore the vast blue expanse.",
+      "Intelligent memory, voice interaction, mini-apps, file generation, character cards, and BYOK privacy. Twent remembers, creates, and adapts to how you work.",
     image:
-      "https://plus.unsplash.com/premium_vector-1738935247245-97940c74cced?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8cXRlOUpsdkd3dG98fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#0015ff]",
-    title: "The Era of Whaling",
+    title: "Privacy First",
     description:
-      "Once a thriving industry, whale hunting shaped economies and cultures across the world. Today, efforts to protect these majestic creatures highlight the shift toward conservation and respect for marine life.",
+      "Bring your own API key. Run local models with MNN and llama.cpp, or use OpenAI, Anthropic, and Google. Your data stays on your device unless you choose otherwise.",
     image:
-      "https://plus.unsplash.com/premium_vector-1738935247692-1c2f2c924fd8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MjJ8cXRlOUpsdkd3dG98fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800&auto=format&fit=crop&q=60",
   },
 ]
 
@@ -52,9 +52,9 @@ export default function StackingCardsDemo() {
   const container = useRef<HTMLDivElement>(null)
 
   return (
-    <div className="h-[620px] bg-white overflow-auto text-white" ref={container}>
+    <div className="h-[620px] overflow-auto text-white" ref={container}>
       <StackingCards totalCards={cards.length} scrollOptions={{ container: container }}>
-        <div className="relative font-calendas h-[620px] w-full z-10 text-2xl md:text-7xl font-bold uppercase flex justify-center items-center text-[#ff5941] whitespace-pre">
+        <div className="relative h-[620px] w-full z-10 text-2xl md:text-7xl font-bold uppercase flex justify-center items-center text-[#ff5941] whitespace-pre">
           Scroll down ↓
         </div>
         {cards.map(({ bgColor, description, image, title }, index) => (
@@ -81,12 +81,6 @@ export default function StackingCardsDemo() {
             </div>
           </StackingCardItem>
         ))}
-
-        <div className="w-full h-80 relative overflow-hidden">
-          <h2 className="absolute bottom-0 left-0 translate-y-1/3 sm:text-[192px] text-[80px] text-[#ff5941] font-calendas">
-            fancy
-          </h2>
-        </div>
       </StackingCards>
     </div>
   )
