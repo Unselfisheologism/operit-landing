@@ -136,17 +136,17 @@ export function Pricing() {
               <ReceiptPrinter.Paper>
                 <div className="space-y-3">
                   <div className="text-center border-b border-zinc-300 pb-3 mb-3">
-                    <p className="text-sm font-bold text-black">
+                    <p className="text-base font-bold text-black">
                       TWENT
                     </p>
-                    <p className="text-[10px] text-zinc-500">
+                    <p className="text-xs font-semibold text-zinc-500">
                       {i18n.language?.startsWith("zh") ? "AI 助手" : "AI Agent"}
                     </p>
                   </div>
 
                   <div className="space-y-1.5">
                     {allReceiptFeatures.map((feature) => (
-                      <div key={feature} className="flex justify-between text-[11px] leading-tight">
+                      <div key={feature} className="flex justify-between text-xs font-semibold leading-tight">
                         <span className="text-zinc-700 pr-2">
                           {feature}
                         </span>
@@ -158,13 +158,13 @@ export function Pricing() {
                   </div>
 
                   <div className="border-t border-zinc-300 pt-2 mt-3">
-                    <div className="flex justify-between text-sm font-bold">
+                    <div className="flex justify-between text-base font-bold">
                       <span>TOTAL</span>
                       <span>$0.00</span>
                     </div>
                   </div>
 
-                  <div className="text-center text-[10px] text-zinc-500 pt-2">
+                  <div className="text-center text-xs font-semibold text-zinc-500 pt-2">
                     {i18n.language?.startsWith("zh")
                       ? "感谢使用 Twent！"
                       : "Thanks for using Twent!"}
