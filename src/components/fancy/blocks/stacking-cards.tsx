@@ -5,7 +5,9 @@
 import { createContext, useContext, useRef, type HTMLAttributes, type PropsWithChildren } from "react"
 import { motion, useScroll, useTransform, type MotionValue, type UseScrollOptions } from "motion/react"
 
-import { cn } from "../../lib/utils"
+function cn(...inputs: Array<string | false | null | undefined>) {
+  return inputs.filter(Boolean).join(" ");
+}
 
 interface StackingCardsProps extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {
   scrollOptions?: UseScrollOptions
