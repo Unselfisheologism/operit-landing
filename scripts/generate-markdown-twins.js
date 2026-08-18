@@ -1272,7 +1272,7 @@ Twent Teams gives your organization centralized control, compliance settings, an
 
 Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
 
-Contact us for Teams pricing: support@twent.xyz
+Contact us for Teams pricing: jeffrinjames@twent.xyz
 `;
 
   // Default landing for index and other general landing pages
@@ -1365,7 +1365,7 @@ Get Twent at https://twent.xyz — direct APK download, no Play Store required.
 ## Contact
 
 - Website: https://twent.xyz
-- Support: support@twent.xyz
+- Support: jeffrinjames@twent.xyz
 `;
 }
 
@@ -1815,7 +1815,7 @@ Get the latest version at https://twent.xyz — direct APK, no Play Store, no cr
 
 - [Documentation](/docs) — Full feature guide
 - [Home](/) — Main landing page
-- [Support](mailto:support@twent.xyz) — Get help
+- [Support](mailto:jeffrinjames@twent.xyz) — Get help
 `;
 }
 
@@ -1888,7 +1888,7 @@ We will update this policy if our practices change. Significant changes will be 
 
 ## Contact
 
-For privacy concerns: privacy@twent.xyz or support@twent.xyz
+For privacy concerns: privacy@twent.xyz or jeffrinjames@twent.xyz
 
 ## Related Pages
 

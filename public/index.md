@@ -98,5 +98,5 @@ Get Twent at https://twent.xyz — direct APK download, no Play Store required.
 ## Contact
 
 - Website: https://twent.xyz
-- Support: support@twent.xyz
+- Support: jeffrinjames@twent.xyz
 

@@ -259,7 +259,7 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 
 - **Product**: Twent AI Agent for Android
 - **Website**: https://twent.xyz
-- **Support**: support@twent.xyz
+- **Support**: jeffrinjames@twent.xyz
 - **Distribution**: Direct APK download from website (no Play Store required)
 - **Status**: Active development, shipping weekly
 

@@ -64,7 +64,7 @@ We will update this policy if our practices change. Significant changes will be 
 
 ## Contact
 
-For privacy concerns: privacy@twent.xyz or support@twent.xyz
+For privacy concerns: privacy@twent.xyz or jeffrinjames@twent.xyz
 
 ## Related Pages
 

@@ -53,4 +53,4 @@ Get the latest version at https://twent.xyz — direct APK, no Play Store, no cr
 
 - [Documentation](/docs) — Full feature guide
 - [Home](/) — Main landing page
-- [Support](mailto:support@twent.xyz) — Get help
+- [Support](mailto:jeffrinjames@twent.xyz) — Get help

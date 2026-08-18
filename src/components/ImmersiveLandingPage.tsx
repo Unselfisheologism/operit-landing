@@ -522,8 +522,8 @@ export function ImmersiveLandingPage({
               }`}
             >
               <p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
-                The AI assistant that connects, remembers, and automates. Run
-                Claude Code, control any app, and keep your data private.
+                Why use your phone when AI can use it for you?
+                The AI assistant that connects, remembers, and automates.
               </p>
             </div>
 

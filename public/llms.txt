@@ -127,7 +127,7 @@ Twent is **completely free** — all features, all tools, everything included. N
 ## Company
 
 - **Website**: https://twent.xyz
-- **Support**: support@twent.xyz
+- Support: jeffrinjames@twent.xyz
 - **Distribution**: Direct APK download, no middleman
 - **Privacy**: Zero telemetry, all data local, BYOK encryption
 
