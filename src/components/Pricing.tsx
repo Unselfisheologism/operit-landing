@@ -103,14 +103,8 @@ export function Pricing() {
             <ReceiptPrinter.Machine>
               <ReceiptPrinter.Header>
                 <div className="flex items-center gap-2">
-                  <img
-                    alt=""
-                    className="size-6"
-                    src="/images/receipt-printer-logo.png"
-                  />
-                  <span className="text-sm font-display font-bold text-zinc-900 dark:text-zinc-100">
-                    Twent
-                  </span>
+                  <img alt="" className="size-6" src="/twent-logo.png" />
+                  <span className="text-sm font-display font-bold text-zinc-900 dark:text-zinc-100">Twent</span>
                 </div>
                 <a
                   href="/"
