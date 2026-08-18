@@ -1,7 +1,10 @@
 import { useInView } from "../hooks/useInView";
-import { useState } from "react";
-import { useAuth } from "../lib/AuthContext";
-import { LoginModal } from "./LoginModal";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  ReceiptPrinter,
+  type ReceiptPrinterStage,
+} from "./ReceiptPrinter";
 
 const freeFeatures = [
   "50+ Built-in Tools",
@@ -31,51 +34,44 @@ const proFeatures = [
   "Flex your Power User badge",
 ];
 
+const allReceiptFeatures = [...freeFeatures, ...proFeatures];
+
 const faqs = [
   {
-    q: "Is there a free plan?",
-    a: "Yes. The Free plan includes all core features — 50+ tools, terminal, overlay agent, MCP servers, skills, workflows, voice activation, smart memory, and more. No credit card required.",
+    q: "Is Twent really free?",
+    a: "Yes. Twent is 100% free with all core features included — 50+ tools, terminal, overlay agent, MCP servers, skills, workflows, voice activation, smart memory, and more. No credit card required.",
   },
   {
-    q: "What do I get with Power User?",
-    a: "Power User unlocks 1,000+ tool integrations via Composio (Notion, Slack, GitHub, etc.), import/export of chats, workflows, skills & memory, no ads, direct Discord access to the dev team, priority email support, custom everything, and Drops/Flows/Shadows.",
+    q: "Will there be paid plans?",
+    a: "Not right now. Twent is completely free. We may introduce optional upgrades in the future for advanced integrations and premium support, but the core experience remains free forever.",
   },
   {
     q: "What are Drops, Flows, and Shadows?",
-    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Power User-only social utility features.",
-  },
-  {
-    q: "How do I pay?",
-    a: "We use Dodo Payments — a secure payment processor. Choose monthly ($9.99/mo) or yearly ($79.99/yr, 33% savings). Click 'Upgrade', sign in, enter your payment details, and you're done. Cancel anytime.",
+    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Power User-only social utility features coming in future updates.",
   },
   {
     q: "Can I cancel anytime?",
-    a: "Yes. No contracts, no cancellation fees. Cancel from your account settings and your Power User access continues until the end of the billing period.",
-  },
-  {
-    q: "Will there be more plans?",
-    a: "Not right now. We're focused on making Power User excellent. Enterprise pricing may come later for teams and businesses.",
+    a: "Twent is free, so there's nothing to cancel. If we introduce paid plans in the future, there will be no contracts or cancellation fees.",
   },
 ];
 
 export function Pricing() {
   const [ref, inView] = useInView();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const { user } = useAuth();
-  const [showLogin, setShowLogin] = useState(false);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
-  const [billing, setBilling] = useState<"monthly" | "yearly">("yearly");
+  const [stage, setStage] = useState<ReceiptPrinterStage>("processing");
+  const { i18n } = useTranslation();
 
-  const handleUpgrade = async () => {
-    if (!user) {
-      setShowLogin(true);
-      return;
-    }
-
-    setCheckoutLoading(true);
-    window.location.href = `https://cadlhnfgxvyzfddmchxw.supabase.co/functions/v1/create-checkout?user_id=${user.id}&email=${encodeURIComponent(user.email || "")}&plan=${billing}`;
-    setCheckoutLoading(false);
+  const startReceipt = () => {
+    setStage("processing");
+    setTimeout(() => setStage("printing"), 600);
+    setTimeout(() => setStage("complete"), 1800);
   };
+
+  useEffect(() => {
+    if (inView) {
+      startReceipt();
+    }
+  }, [inView]);
 
   return (
     <section id="pricing" className="relative py-20 sm:py-28 px-6">
@@ -93,146 +89,96 @@ export function Pricing() {
           <div className="w-8 h-px bg-orange-500" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-          Free forever.
+          Completely free.
           <br />
-          <span className="text-blue-500">Power User when you're ready.</span>
+          <span className="text-blue-500">All features included.</span>
         </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8 text-center mx-auto">
-          Start with everything you need. Upgrade for 1,000+ integrations, import/export, no ads, and priority support.
+          Twent is 100% free with no hidden costs. Every feature is included from day one — no credit card required.
         </p>
 
-        {/* Billing Toggle */}
-        <div className="flex items-center justify-center gap-3 mb-16">
-          <button
-            onClick={() => setBilling("monthly")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              billing === "monthly"
-                ? "bg-orange-500 text-white"
-                : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => setBilling("yearly")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors relative ${
-              billing === "yearly"
-                ? "bg-orange-500 text-white"
-                : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-700"
-            }`}
-          >
-            Yearly
-            <span className="ml-1.5 text-[10px] font-bold text-green-400">SAVE 33%</span>
-          </button>
-        </div>
-
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-20">
-          {/* Free Plan */}
-          <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8">
-            <div className="mb-6">
-              <h3 className="text-lg font-display font-bold text-zinc-900 dark:text-zinc-100">
-                Free
-              </h3>
-              <div className="mt-3 flex items-baseline gap-1">
-                <span className="text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100">
-                  $0
-                </span>
-                <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                  /month
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Everything you need to get started.
-              </p>
-            </div>
-
-            <ul className="space-y-3 mb-8">
-              {freeFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm">
-                  <svg
-                    className="w-4 h-4 text-green-500 mt-0.5 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="text-zinc-700 dark:text-zinc-300">
-                    {feature}
+        {/* Receipt Printer */}
+        <div className="flex justify-center mb-20">
+          <ReceiptPrinter.Root stage={stage} className="w-full max-w-sm">
+            <ReceiptPrinter.Machine>
+              <ReceiptPrinter.Header>
+                <div className="flex items-center gap-2">
+                  <img
+                    alt=""
+                    className="size-6"
+                    src="/images/receipt-printer-logo.png"
+                  />
+                  <span className="text-sm font-display font-bold text-zinc-900 dark:text-zinc-100">
+                    Twent
                   </span>
-                </li>
-              ))}
-            </ul>
+                </div>
+                <a
+                  href="/"
+                  className="inline-flex items-center gap-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-blue-500 transition-colors"
+                >
+                  Home
+                </a>
+              </ReceiptPrinter.Header>
 
-            <div className="text-center py-3 px-4 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 text-sm font-medium">
-              Current Plan
-            </div>
-          </div>
+              <ReceiptPrinter.Screen>
+                <div className="flex justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                      {i18n.language?.startsWith("zh") ? "完整版" : "Full Plan"}
+                    </p>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                      {i18n.language?.startsWith("zh") ? "永久免费" : "Forever free"}
+                    </p>
+                  </div>
+                  <strong className="text-green-600">$0.00</strong>
+                </div>
+                <ReceiptPrinter.Status>
+                  {i18n.language?.startsWith("zh") ? "正在打印..." : "Printing your receipt..."}
+                </ReceiptPrinter.Status>
+              </ReceiptPrinter.Screen>
+            </ReceiptPrinter.Machine>
 
-          {/* Power User Plan */}
-          <div className="bg-zinc-900 dark:bg-zinc-800 border border-orange-500/30 rounded-2xl p-8 relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold tracking-wider uppercase px-3 py-1 rounded-bl-lg">
-              Popular
-            </div>
+            <ReceiptPrinter.Output>
+              <ReceiptPrinter.Paper>
+                <div className="space-y-3">
+                  <div className="text-center border-b border-zinc-300 dark:border-zinc-700 pb-3 mb-3">
+                    <p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">
+                      TWENT
+                    </p>
+                    <p className="text-[10px] text-zinc-500 dark:text-zinc-400">
+                      {i18n.language?.startsWith("zh") ? "AI 助手" : "AI Agent"}
+                    </p>
+                  </div>
 
-            <div className="mb-6">
-              <h3 className="text-lg font-display font-bold text-zinc-100">
-                Power User
-              </h3>
-              <div className="mt-3 flex items-baseline gap-1">
-                <span className="text-4xl font-display font-bold text-orange-500">
-                  {billing === "monthly" ? "$9.99" : "$79.99"}
-                </span>
-                <span className="text-sm text-zinc-400">
-                  /{billing === "monthly" ? "month" : "year"}
-                </span>
-              </div>
-              <p className="mt-2 text-sm text-zinc-400">
-                {billing === "yearly"
-                  ? "$6.67/mo — save 33% vs monthly"
-                  : "or $79.99/year — save 33%"}
-              </p>
-            </div>
+                  <div className="space-y-1.5">
+                    {allReceiptFeatures.map((feature) => (
+                      <div key={feature} className="flex justify-between text-[11px] leading-tight">
+                        <span className="text-zinc-700 dark:text-zinc-300 pr-2">
+                          {feature}
+                        </span>
+                        <span className="text-zinc-500 dark:text-zinc-400 shrink-0">
+                          $0.00
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
-            <ul className="space-y-3 mb-8">
-              {proFeatures.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm">
-                  <svg
-                    className="w-4 h-4 text-orange-500 mt-0.5 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="text-zinc-300">{feature}</span>
-                </li>
-              ))}
-            </ul>
+                  <div className="border-t border-zinc-300 dark:border-zinc-700 pt-2 mt-3">
+                    <div className="flex justify-between text-sm font-bold">
+                      <span>TOTAL</span>
+                      <span>$0.00</span>
+                    </div>
+                  </div>
 
-            <button
-              onClick={handleUpgrade}
-              disabled={checkoutLoading}
-              className="w-full py-3 px-4 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {checkoutLoading
-                ? "Redirecting..."
-                : user
-                ? "Upgrade to Power User"
-                : "Sign in to Upgrade"}
-            </button>
-          </div>
+                  <div className="text-center text-[10px] text-zinc-500 dark:text-zinc-400 pt-2">
+                    {i18n.language?.startsWith("zh")
+                      ? "感谢使用 Twent！"
+                      : "Thanks for using Twent!"}
+                  </div>
+                </div>
+              </ReceiptPrinter.Paper>
+            </ReceiptPrinter.Output>
+          </ReceiptPrinter.Root>
         </div>
 
         {/* FAQ */}
@@ -279,12 +225,6 @@ export function Pricing() {
           </div>
         </div>
       </div>
-
-      <LoginModal
-        isOpen={showLogin}
-        onClose={() => setShowLogin(false)}
-        onSuccess={handleUpgrade}
-      />
     </section>
   );
 }
