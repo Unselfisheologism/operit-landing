@@ -1,3 +1,5 @@
+import ElasticLine from "./fancy/physics/elastic-line"
+
 export function Footer() {
   const links = {
     Product: [
@@ -197,6 +199,21 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+      {/* Elastic interactive line — bounces when the cursor passes through or clicks it */}
+      <div className="relative w-full h-12 text-zinc-300 dark:text-zinc-700">
+        <ElasticLine
+          grabThreshold={20}
+          releaseThreshold={50}
+          strokeWidth={1.5}
+          className="overflow-visible"
+          animateInTransition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+            delay: 0.15,
+          }}
+        />
+      </div>
       <div className="max-w-6xl mx-auto px-6 py-16">
 <div className="mb-12">
           <div className="flex items-center gap-2 mb-3">
