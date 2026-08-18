@@ -198,9 +198,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
+    <footer className="relative bg-white dark:bg-zinc-950">
       {/* Elastic interactive line — bounces when the cursor passes through or clicks it */}
-      <div className="relative w-full h-12 text-zinc-300 dark:text-zinc-700">
+      <div className="relative w-full h-12 text-orange-500 dark:text-orange-500">
         <ElasticLine
           grabThreshold={20}
           releaseThreshold={50}
