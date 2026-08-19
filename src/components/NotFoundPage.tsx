@@ -97,6 +97,13 @@ export function NotFoundPage({ dark }: { dark: boolean }) {
             >
               Go back
             </button>
+
+            <a
+              href="/apk"
+              className="inline-flex items-center justify-center px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 font-medium transition-colors dark:rounded-none rounded-lg"
+            >
+              APK
+            </a>
           </div>
         </div>
       </main>

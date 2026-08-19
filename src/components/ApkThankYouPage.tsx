@@ -4,7 +4,7 @@ import { GlimmProvider, useGlimm } from "glimm/react";
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
 const FEEDBACK_URL = "https://tally.so/r/81DyMk";
-const APK_URL = "https://assets.twent.xyz/app-release.apk";
+const APK_URL = "https://assets.twent.xyz/twent.apk";
 
 // Tight blue/orange/grey cosine palette.
 // Low c keeps the hue range narrow so it reads as blue/grey/orange,
