@@ -34,7 +34,7 @@ export default function TextOnPathScroll({
     </svg>
   ),
   textProps,
-  scrollOffsets = [2500, -8000],
+  scrollOffsets = ["0%", "-100%"],
   springOptions = { stiffness: 50, damping: 20, restDelta: 0.001 },
 }: TextOnPathScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export default function TextOnPathScroll({
   const { scrollYProgress } = useScroll({
     target: containerRef,
     container: scrollContainerRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
   const smoothProgress = useSpring(scrollYProgress, springOptions);

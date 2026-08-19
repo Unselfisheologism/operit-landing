@@ -635,7 +635,7 @@ export function ImmersiveLandingPage({
         <TextOnPathScroll
           text="why use your phone when ai can use it for you? • "
           className="h-[700vh]"
-          scrollOffsets={["100%", "-100%"]}
+          scrollOffsets={["0%", "-100%"]}
           textProps={{ fontSize: 280 }}
         />
       </main>
