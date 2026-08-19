@@ -501,65 +501,82 @@ export function ImmersiveLandingPage({
         {/* Hero Section */}
         <section
           ref={setHeroRef}
-          className="relative min-h-screen flex items-center justify-center px-6 pt-24 md:pt-6"
+          className="relative min-h-screen flex items-center px-6 pt-24 md:pt-6"
         >
-          <div className="max-w-4xl mx-auto text-center">
-            <div
-              className={`transition-all duration-1000 ${
-                heroInView
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
-              }`}
-            >
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter mb-6">
-                The AI app for what's next
-              </h1>
-            </div>
+          <div className="max-w-7xl mx-auto w-full grid md:grid-cols-5 gap-12 md:gap-16 items-center">
+            <div className="md:col-span-3 space-y-6">
+              <div
+                className={`transition-all duration-1000 ${
+                  heroInView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
+                <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter text-left">
+                  The AI app for what's next
+                </h1>
+              </div>
 
-            <div
-              className={`transition-all duration-1000 delay-300 ${
-                heroInView
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
-              }`}
-            >
-              <p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
-                Till now, AI agents were only something technical people could use.
-                Twent brings the miracle of AI Agents to the rest of us.
-              </p>
-            </div>
+              <div
+                className={`transition-all duration-1000 delay-300 ${
+                  heroInView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
+                <p className="text-lg md:text-xl text-orange-500 leading-relaxed text-left">
+                  Till now, AI agents were only something technical people could use.
+                  Twent brings the miracle of AI Agents to the rest of us.
+                </p>
+              </div>
 
-            <div
-              className={`transition-all duration-1000 delay-500 ${
-                heroInView
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
-              }`}
-            >
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <PlayStoreCta size="h-11" />
-                <a
-                  href="/docs"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-500 text-zinc-100 font-medium transition-colors duration-200"
-                >
-                  View Docs
-                </a>
+              <div
+                className={`transition-all duration-1000 delay-500 ${
+                  heroInView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
+                <div className="flex flex-col sm:flex-row gap-4 justify-start">
+                  <PlayStoreCta size="h-11" />
+                  <a
+                    href="/docs"
+                    className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-500 text-zinc-100 font-medium transition-colors duration-200"
+                  >
+                    View Docs
+                  </a>
+                </div>
+              </div>
+
+              <div
+                className={`transition-all duration-1000 delay-700 ${
+                  heroInView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
+                <div className="flex flex-col items-start gap-2">
+                  <span className="text-xs text-zinc-500 font-mono">
+                    Scroll to explore
+                  </span>
+                  <div className="w-px h-12 bg-gradient-to-b from-zinc-600 to-transparent" />
+                </div>
               </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div
-              className={`mt-24 transition-all duration-1000 delay-700 ${
-                heroInView
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-12"
-              }`}
-            >
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-xs text-zinc-500 font-mono">
-                  Scroll to explore
-                </span>
-                <div className="w-px h-12 bg-gradient-to-b from-zinc-600 to-transparent" />
+            <div className="hidden md:flex md:col-span-2 items-center justify-center">
+              <div
+                className={`transition-all duration-1000 delay-300 ${
+                  heroInView
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }`}
+              >
+                <img
+                  src="/brain-robot-hero.png"
+                  alt="Brain robot"
+                  className="max-h-[520px] w-auto object-contain"
+                />
               </div>
             </div>
           </div>
