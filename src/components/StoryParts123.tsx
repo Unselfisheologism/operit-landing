@@ -12,6 +12,7 @@ import {
   type TabContent,
 } from "./ui/terminal-animation";
 import type { ReactNode } from "react";
+import { TechTerm } from "./ui/TechTerm";
 
 function SectionWrapper({
   children,
@@ -305,7 +306,7 @@ export function Part2ForDevs() {
 
       {/* CTA Button */}
       <div className="mt-12 text-center">
-<a
+        <a
           href="/ai-agent-for-developers"
           aria-label="Learn more about Twent for developers"
           className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"

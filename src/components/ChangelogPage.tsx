@@ -34,7 +34,7 @@ function ChangelogSchemaMarkup() {
       description: "Personal agentic OS for Android — AI agent that runs on your phone.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       softwareVersion: "0.6.0",
-      releaseNotes: "v0.6.0: System prompt enhancement, ClawHub integration, Tool-calling robustness. v0.5.0: Agent CLIs, Mini-apps, Toolset page. v0.4.0: Workflows, Composio integration, Skills, MCP, Linux terminal. v0.3.0: UI automation, Overlay Assistant, Voice activation, TTS. v0.2.0: AI Chat, API Provider support, Knowledge and Memory graph, Character Cards.",
+      releaseNotes: "v0.6.0: System prompt enhancement, ClawHub integration, Tool-calling robustness. v0.5.0: Agent CLIs, Code generation, Toolset page. v0.4.0: Workflows, Composio integration, Skills, MCP, Linux terminal. v0.3.0: UI automation, Overlay Assistant, Voice activation, TTS. v0.2.0: AI Chat, API Provider support, Knowledge and Memory graph, Character Cards.",
     },
     // FAQ schema — "what's new in Twent" search intent
     {
@@ -107,7 +107,7 @@ const entries: ChangelogEntry[] = [
     version: "v0.5.0",
     items: [
       "Agent CLIs",
-      "Mini-apps",
+      "Code generation",
       "Toolset page",
     ],
   },

@@ -8,6 +8,7 @@ import { SharedSchemaMarkup } from "./SharedSchemaMarkup";
 import { PlayStoreCta } from "./PlayStoreCta";
 import TrailingCursor from "./TrailingCursor";
 import StackingCardsDemo from "./fancy/blocks/stacking-cards-demo";
+import { TechTerm } from "./ui/TechTerm";
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -31,7 +32,7 @@ const STORIES = [
     tag: "The Problem",
     heading: "Your AI can chat. But it can't do anything.",
     description:
-      "AI assistant for Android that can actually do things: Every AI assistant on Android is a fancy chatbot. It can write poems, answer questions, and hallucinate facts. But it can't open an app, tap a button, run a command, or actually do anything useful on your phone. Twent changes that.",
+      "Every AI assistant on Android is a fancy chatbot. It can write poems, answer questions, and hallucinate facts. But it can't open an app, tap a button, run a command, or actually do anything useful on your phone. Twent changes that.",
     color: "blue" as const,
     visual: () => (
       <div className="space-y-3">
@@ -60,7 +61,7 @@ const STORIES = [
     tag: "Skills",
     heading: "Teach your AI to actually do things.",
     description:
-      "Skills are behavior bundles that give your AI instant expertise. Install a code review skill and it knows how to analyze diffs. Install a data skill and it can crunch CSVs. One tap, new capability unlocked.",
+      "<TechTerm>Skills</TechTerm> are behavior bundles that give your AI instant expertise. Install a code review skill and it knows how to analyze diffs. Install a data skill and it can crunch CSVs. One tap, new capability unlocked.",
     color: "blue" as const,
     visual: () => (
       <div className="space-y-3">
@@ -131,7 +132,7 @@ const STORIES = [
     tag: "Agent Swarm",
     heading: "Not one AI. A whole swarm.",
     description:
-      "Claude Code for serious refactoring. OpenAI Codex for quick scripts. Hermes for deep research. Each agent has its own superpower, and Twent runs them all — right on your phone, in a real terminal.",
+      "<TechTerm>Claude Code</TechTerm> for serious refactoring. <TechTerm>OpenAI Codex</TechTerm> for quick scripts. <TechTerm>Hermes</TechTerm> for deep research. Each agent has its own superpower, and Twent runs them all — right on your phone, in a real <TechTerm>terminal</TechTerm>.",
     color: "orange" as const,
     visual: () => (
       <div className="space-y-3">
@@ -141,7 +142,7 @@ const STORIES = [
             <div className="w-2 h-2 rounded-full bg-yellow-500" />
             <div className="w-2 h-2 rounded-full bg-green-500" />
             <span className="ml-2 text-xs text-zinc-500 font-mono">
-              twent terminal
+            <TechTerm>terminal</TechTerm>
             </span>
           </div>
           <pre className="text-xs text-green-400 font-mono">
@@ -208,7 +209,7 @@ const STORIES = [
     tag: "Privacy",
     heading: "Your data never leaves your device.",
     description:
-      "Bring your own API keys — encrypted locally, Twent never sees them. Run local AI models offline with MNN. Zero telemetry, zero tracking, zero data collection. Your phone, your AI, your business.",
+      "Bring your own API keys — encrypted locally, Twent never sees them. Run <TechTerm>local AI models</TechTerm> offline with MNN. Zero telemetry, zero tracking, zero data collection. Your phone, your AI, your business.",
     color: "purple" as const,
     visual: () => (
       <div className="space-y-3">
@@ -244,7 +245,7 @@ const STORIES = [
       <div className="space-y-3">
         <div className="grid grid-cols-2 gap-3">
           {[
-            { icon: "👆", label: "UI Automation", desc: "Tap, swipe, type" },
+            { icon: "👆", label: <TechTerm>UI Automation</TechTerm>, desc: "Tap, swipe, type" },
             { icon: "🔗", label: "Pipelines", desc: "Chain tools together" },
             { icon: "📱", label: "Any App", desc: "Works everywhere" },
             { icon: "⚡", label: "On Demand", desc: "Run anytime" },
@@ -266,7 +267,7 @@ const STORIES = [
   },
   {
     tag: "Build",
-    heading: "Generate mini-apps. Ship workflows.",
+    heading: "Generate Code generation. Ship workflows.",
     description:
       "Describe what you need, get a working HTML/CSS/JS app running inside Twent. Dashboards, tools, calculators, games — built in seconds. Package your best automations as reusable workflows and share them with the community.",
     color: "indigo" as const,
@@ -510,7 +511,7 @@ export function ImmersiveLandingPage({
               }`}
             >
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter mb-6">
-                Your Personal Agentic OS for Android
+                The AI app for what's next
               </h1>
             </div>
 
@@ -522,8 +523,8 @@ export function ImmersiveLandingPage({
               }`}
             >
               <p className="text-lg md:text-xl text-orange-500 max-w-2xl mx-auto leading-relaxed mb-12">
-                Why use your phone when AI can use it for you?
-                The AI assistant that connects, remembers, and automates.
+                Till now, AI agents were only something technical people could use.
+                Twent brings the miracle of AI Agents to the rest of us.
               </p>
             </div>
 
@@ -627,11 +628,11 @@ export function ImmersiveLandingPage({
               <span className="text-xs text-zinc-500">Follow:</span>
               <SocialLinksInline />
             </div>
-            </div>
-            </section>
-            </main>
+          </div>
+        </section>
+      </main>
 
-            <Footer />
-            </div>
+      <Footer />
+    </div>
   );
 }

@@ -42,7 +42,7 @@ export function SimplifiedLandingPage({ dark = false }: { dark?: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              Twent brings real shell automation, local LLMs, and desktop apps
+              Twent brings real shell automation, local AI, and desktop apps
               to your phone. No cloud session required.
             </p>
 
@@ -101,7 +101,7 @@ export function SimplifiedLandingPage({ dark = false }: { dark?: boolean }) {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl mb-4">Ready to try it?</h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-8">
-              Get Twent from Play Store and use your phone like a real workstation.
+              Get Twent and use your phone like a real workstation.
             </p>
             <PlayStoreCta size="h-11" />
           </div>

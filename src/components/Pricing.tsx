@@ -7,51 +7,37 @@ import {
 } from "./ReceiptPrinter";
 
 const freeFeatures = [
-  "50+ Built-in Tools",
-  "UI Automation Agent",
-  "Ubuntu 24 Terminal",
-  "MCP Server Support",
-  "Skills & Workflows",
-  "Voice Activation",
-  "Smart Memory",
-  "BYOK (Your API Keys)",
-  "Local Model Support",
-  "File Generation",
-  "Mini-Apps",
-  "Character Cards",
+  "Write code & generate websites",
+  "Create slide decks, videos & images",
+  "Build spreadsheets & mini tools",
+  "UI automation on your phone",
+  "Built-in Linux-style terminal",
+  "Memory that remembers context",
+  "Voice & scheduled triggers",
+  "BYOK — bring your own AI key",
+  "Run local AI models on device",
 ];
-
-const proFeatures = [
-  "Everything in Free",
-  "1,000+ Integrations (Notion, Slack, GitHub, etc.)",
-  "Import/Export Chats, Workflows, Skills & Memory",
-  "No Ads — Clean experience",
-  "Direct Discord access to the dev team",
-  "Priority Email Support",
-  "Custom Themes/Icons/Wallpapers",
-  "Custom Agent Voices/Names/Avatars",
-  "Drops, Flows & Shadows",
-  "Flex your Power User badge",
-];
-
-const allReceiptFeatures = [...freeFeatures, ...proFeatures];
 
 const faqs = [
   {
     q: "Is Twent really free?",
-    a: "Yes. Twent is 100% free with all core features included — 50+ tools, terminal, overlay agent, MCP servers, skills, workflows, voice activation, smart memory, and more. No credit card required.",
+    a: "Yes. Twent is completely free. You get code generation, content creation, phone automation, a terminal, memory, local AI support, and more — no credit card required.",
   },
   {
-    q: "Will there be paid plans?",
-    a: "Not right now. Twent is completely free. We may introduce optional upgrades in the future for advanced integrations and premium support, but the core experience remains free forever.",
+    q: "Do I need to connect lots of apps or services?",
+    a: "No. Twent works directly on your phone. It uses built-in phone automation instead of asking you to connect and authorize external tools one by one.",
   },
   {
-    q: "What are Drops, Flows, and Shadows?",
-    a: "Drops are contextual screen shortcuts. Flows are cross-app automations. Shadows are recorded UI replays you can share. These are Power User-only social utility features coming in future updates.",
+    q: "Does Twent replace my laptop?",
+    a: "For many everyday tasks, yes. Twent can write code, make documents, edit media, run terminal commands, and automate apps — right from your Android device.",
   },
   {
-    q: "Can I cancel anytime?",
-    a: "Twent is free, so there's nothing to cancel. If we introduce paid plans in the future, there will be no contracts or cancellation fees.",
+    q: "Is my data private?",
+    a: "Twent uses your own AI API key when you want, and can run local models on-device. Nothing has to leave your phone unless you choose.",
+  },
+  {
+    q: "What can Twent actually make?",
+    a: "Twent can write code, generate websites, create slide decks, make videos and images, build spreadsheets, and automate tasks on your phone.",
   },
 ];
 
@@ -84,7 +70,7 @@ export function Pricing() {
         <div className="flex items-center justify-center gap-3 mb-4">
           <div className="w-8 h-px bg-orange-500" />
           <span className="text-xs font-secondary text-orange-500 uppercase tracking-[0.2em]">
-            Pricing
+            What you get
           </span>
           <div className="w-8 h-px bg-orange-500" />
         </div>
@@ -117,7 +103,7 @@ export function Pricing() {
                 <div className="flex justify-between">
                   <div>
                     <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                      {i18n.language?.startsWith("zh") ? "完整版" : "Full Plan"}
+                      {i18n.language?.startsWith("zh") ? "完整版" : "Full plan"}
                     </p>
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">
                       {i18n.language?.startsWith("zh") ? "永久免费" : "Forever free"}
@@ -139,12 +125,12 @@ export function Pricing() {
                       TWENT
                     </p>
                     <p className="text-xs font-semibold text-zinc-500">
-                      {i18n.language?.startsWith("zh") ? "AI 助手" : "AI Agent"}
+                      {i18n.language?.startsWith("zh") ? "AI 助手" : "AI Assistant"}
                     </p>
                   </div>
 
                   <div className="space-y-1.5">
-                    {allReceiptFeatures.map((feature) => (
+                    {freeFeatures.map((feature) => (
                       <div key={feature} className="flex justify-between text-xs font-semibold leading-tight">
                         <span className="text-zinc-700 pr-2">
                           {feature}

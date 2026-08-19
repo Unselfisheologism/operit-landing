@@ -1,6 +1,7 @@
 import { useInView, useCountUp } from "../hooks/useInView";
 
 import type { ReactNode } from "react";
+import { TechTerm } from "./ui/TechTerm";
 
 function SectionWrapper({
   children,
@@ -37,7 +38,9 @@ function SectionLabel({
   color?: "blue" | "orange";
 }) {
   return (
-    <div className="flex items-center justify-center gap-3 mb-4">
+    <div
+      className={`flex items-center justify-center gap-3 mb-4`}
+    >
       <div
         className={`w-8 h-px ${color === "orange" ? "bg-orange-500" : "bg-blue-500"}`}
       />
@@ -498,224 +501,6 @@ export function Part6DX() {
                 <code className="text-xs font-mono text-zinc-600 dark:text-zinc-400 leading-relaxed whitespace-pre-wrap">{c.cmd}</code>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-    </SectionWrapper>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════
-   PART 7: End-User Features
-   ═══════════════════════════════════════════════════════════ */
-export function Part7EndUser() {
-  const features = [
-    {
-      title: "Intelligent Memory",
-      desc: "AI-powered knowledge graph. It remembers your preferences, past conversations, and context.",
-      stat: "Auto-categorized",
-    },
-    {
-      title: "Voice Interaction",
-      desc: "Natural conversations with local/cloud TTS, STT, custom voice tones, and wake word detection.",
-      stat: "Wake word ready",
-    },
-    {
-      title: "Mini-Apps",
-      desc: "Generate interactive HTML/CSS/JS apps that run inside Twent. Build tools, dashboards, games.",
-      stat: "Instant deploy",
-    },
-    {
-      title: "File Generation",
-      desc: "Create spreadsheets (XLSX), presentations (PPTX), documents (DOCX/PDF), and web pages.",
-      stat: "8+ formats",
-    },
-    {
-      title: "Character Cards",
-      desc: "Customize AI personality, speaking style. Import/export character cards (Tavern/JSON).",
-      stat: "Tavern compatible",
-    },
-    {
-      title: "BYOK Privacy",
-      desc: "Bring Your Own Key. Support for OpenAI, Anthropic, Google, local models (MNN/llama.cpp).",
-      stat: "100% local option",
-    },
-  ];
-
-  return (
-    <SectionWrapper id="end-user">
-      <SectionLabel>07 / Everything Else</SectionLabel>
-      <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-        An AI that remembers.
-        <br />
-        <span className="text-orange-500">An AI that creates.</span>
-      </h2>
-      <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-12">
-        Beyond automation, Twent is a creative partner and knowledge engine.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {features.map((f) => (
-          <div
-            key={f.title}
-            className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors group flex flex-col"
-          >
-            <div className="flex-1">
-              <h3 className="text-lg font-display text-zinc-900 dark:text-zinc-100 mb-2 group-hover:text-blue-500 transition-colors">
-                {f.title}
-              </h3>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-                {f.desc}
-              </p>
-            </div>
-            <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800">
-              <span className="text-xs font-secondary text-orange-500 uppercase tracking-[0.15em]">
-                {f.stat}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* What you can create */}
-      <div className="mt-16">
-        <SectionLabel>File Generation</SectionLabel>
-        <h3 className="font-display text-2xl sm:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-          Ask. It creates.
-          <br />
-          <span className="text-orange-500">In any format.</span>
-        </h3>
-        <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-10 mx-auto text-center">
-          Twent doesn&apos;t just chat — it generates real files you can open, share, and use. From spreadsheets to presentations to mini apps.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            { type: "Spreadsheets", formats: "XLSX, CSV, ODS", example: "Weekly expense tracker with auto-categorization and charts", icon: "📊" },
-            { type: "Presentations", formats: "PPTX, Google Slides", example: "Q3 sales deck generated from CRM data with speaker notes", icon: "📽️" },
-            { type: "Documents", formats: "DOCX, PDF, Markdown", example: "Meeting notes converted to formatted reports with action items", icon: "📄" },
-            { type: "Mini Apps", formats: "HTML/CSS/JS", example: "Habit tracker, Pomodoro timer, budget calculator — all inside Twent", icon: "🧩" },
-            { type: "Images", formats: "PNG, SVG, WebP", example: "OG images for blog posts, app icons, diagrams from descriptions", icon: "🖼️" },
-            { type: "Code Files", formats: "Any language", example: "Python scripts, React components, SQL queries, shell scripts", icon: "💻" },
-          ].map((c) => (
-            <div key={c.type} className="p-5 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/30 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-2xl">{c.icon}</span>
-                <div>
-                  <p className="font-display text-base text-zinc-900 dark:text-zinc-100">{c.type}</p>
-                  <p className="text-xs text-zinc-500">{c.formats}</p>
-                </div>
-              </div>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">{c.example}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* CTA Button */}
-      <div className="mt-12 text-center">
-        <a
-          href="/privacy-first-ai-android"
-          className="inline-flex items-center justify-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-medium transition-colors duration-200"
-        >
-          Learn More About Privacy-First AI
-          <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-    </SectionWrapper>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════
-   PART 8: Marketplace
-   ═══════════════════════════════════════════════════════════ */
-export function Part8Marketplace() {
-  return (
-    <SectionWrapper id="marketplace">
-      <SectionLabel color="orange">08 / Ecosystem</SectionLabel>
-      <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-        Don&apos;t build from scratch.
-        <br />
-        <span className="text-blue-500">Plug in what already works.</span>
-      </h2>
-      <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-12">
-        The Twent ecosystem extends your agent with skills, MCP servers,
-        plugins, and pre-built workflows.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {[
-          {
-            title: "Skills",
-            desc: "Teach your agent new abilities. Reusable instruction sets for specific tasks.",
-            count: "100+",
-            color: "border-blue-500/30",
-          },
-          {
-            title: "MCP Servers",
-            desc: "Model Context Protocol servers give your agent access to external tools and data sources.",
-            count: "100+",
-            color: "border-orange-500/30",
-          },
-          {
-            title: "Plugins",
-            desc: "Extend Twent with JavaScript/TypeScript packages. Build custom tools.",
-            count: "Growing",
-            color: "border-blue-500/30",
-          },
-          {
-            title: "Workflows",
-            desc: "Chain tools into automated pipelines. Schedule triggers, set conditions.",
-            count: "Unlimited",
-            color: "border-orange-500/30",
-          },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className={`p-6 bg-zinc-50 dark:bg-zinc-900/50 border ${item.color} hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors`}
-          >
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg font-display text-zinc-900 dark:text-zinc-100">
-                {item.title}
-              </h3>
-              <span className="text-xs font-mono text-zinc-500 bg-zinc-200 dark:bg-zinc-800 px-2 py-1">
-                {item.count}
-              </span>
-            </div>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12 p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700">
-        <div className="flex items-start gap-4">
-          <div className="w-10 h-10 bg-blue-500/10 flex items-center justify-center shrink-0">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#3b82f6"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-          <div>
-            <h3 className="font-display text-zinc-900 dark:text-zinc-100 mb-1">
-              Composio Integration — 1000+ Apps
-            </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Connect to GitHub, Slack, Notion, Gmail, Google Calendar, Jira,
-              and hundreds more.
-            </p>
           </div>
         </div>
       </div>

@@ -157,7 +157,7 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 | Local Model Support | ✅ Included |
 | Composio (1000+ integrations) | ✅ Included |
 | File Generation | ✅ Included |
-| Mini-Apps | ✅ Included |
+|Code generation | ✅ Included |
 | Character Cards | ✅ Included |
 
 **Future:** A Pro plan ($9.99/mo) will add priority support. Future free tier will include non-intrusive AI-powered ads.

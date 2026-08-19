@@ -51,8 +51,9 @@ export function FinalCTA() {
         </h2>
 
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Twent gives your AI hands, eyes, and a brain. 50+ tools. A full
-          terminal. 1000+ app connections.
+          Twent gives your AI hands, eyes, and a brain. It can write code, make
+          slide decks, videos, images, and websites, automate apps, and run
+          terminal tasks — all from your Android device.
         </p>
 
         {/* Single primary CTA — Principle 9: choice reduction */}

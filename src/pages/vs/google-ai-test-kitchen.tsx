@@ -75,7 +75,7 @@ export default function GoogleAiTestKitchenComparisonPage() {
             competitor: false,
           },
           {
-            name: "Skills and mini-apps marketplace",
+            name: "Skills and Code generation marketplace",
             twent: true,
             competitor: false,
           },

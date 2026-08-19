@@ -131,7 +131,7 @@ const comparisons = [
       "Actually runs on your phone",
       "Claude Code + tools",
       "Persistent memory",
-      "Skills and mini-apps",
+      "Skills and Code generation",
       "Marketplace for sharing",
     ],
     googleBetter: [
