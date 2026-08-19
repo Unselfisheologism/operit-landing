@@ -25,16 +25,16 @@ export default function TextOnPathScroll({
   className,
   scrollContainerRef,
   path = (
-    <svg viewBox="0 0 2207 208" className="w-full overflow-visible">
+    <svg viewBox="0 0 8000 208" className="w-full overflow-visible">
       <path
         id="scroll-path"
-        d="M0.257812 54.1707C0.257812 54.1707 332.27 258.365 829.258 194.671C1022.55 169.899 1292.6 78.4697 1536.76 21.6707C1804.19 -40.5439 2206.76 54.1714 2206.76 54.1714"
+        d="M0 100C500 200, 1000 0, 1500 100C2000 200, 2500 0, 3000 100C3500 200, 4000 0, 4500 100C5000 200, 5500 0, 6000 100C6500 200, 7000 0, 7500 100C8000 200, 8500 0, 9000 100C9500 200, 10000 0, 10500 100"
         fill="none"
       />
     </svg>
   ),
   textProps,
-  scrollOffsets = ["0%", "-100%"],
+  scrollOffsets = [2500, -8000],
   springOptions = { stiffness: 50, damping: 20, restDelta: 0.001 },
 }: TextOnPathScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export default function TextOnPathScroll({
   const { scrollYProgress } = useScroll({
     target: containerRef,
     container: scrollContainerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
   const smoothProgress = useSpring(scrollYProgress, springOptions);
