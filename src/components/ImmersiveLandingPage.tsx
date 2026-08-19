@@ -9,6 +9,7 @@ import { PlayStoreCta } from "./PlayStoreCta";
 import TrailingCursor from "./TrailingCursor";
 import StackingCardsDemo from "./fancy/blocks/stacking-cards-demo";
 import { TechTerm } from "./ui/TechTerm";
+import TextOnPathScroll from "./ui/TextOnPathScroll";
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
