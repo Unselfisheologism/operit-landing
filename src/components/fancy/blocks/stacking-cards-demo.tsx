@@ -5,14 +5,6 @@ import { TechTerm } from "../../ui/TechTerm";
 
 const cards = [
   {
-    bgColor: "bg-[#f97316]",
-    textColor: "text-black",
-    title: "Twent can make",
-    description: "Twent can write code, generate slide decks, videos, images, spreadsheets, and websites — all from a simple request.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
-  },
-  {
     bgColor: "bg-[#0015ff]",
     textColor: "text-white",
     title: "Twent can use your phone",
@@ -20,6 +12,14 @@ const cards = [
       "Twent can use your apps and any part of your phone (it's safe!), and run on autopilot. It can explain what's on screen",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=60",
+  },
+  {
+    bgColor: "bg-[#f97316]",
+    textColor: "text-black",
+    title: "Twent can make",
+    description: "Twent can write code, generate slide decks, videos, images, spreadsheets, and websites — all from a simple request.",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#ff5941]",
