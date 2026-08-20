@@ -17,16 +17,16 @@ const cards = [
     textColor: "text-white",
     title: "Twent can use your phone",
     description:
-      "Twent can see your screen, tap buttons, fill forms, and run whole multi-step tasks inside other apps for you — like a real personal assistant.",
+      "Twent can use your apps and any part of your phone (it's safe!), and run on autopilot. It can explain what's on screen",
     image:
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=60",
   },
   {
     bgColor: "bg-[#ff5941]",
     textColor: "text-black",
-    title: "Twent can run terminal tasks",
+    title: "Twent has a terminal",
     description:
-      "Twent can open a full Linux-style terminal on your phone, install tools, run scripts, and do the kind of work that used to need a laptop.",
+      "Twent has a full Linux-style terminal on your phone, can install tools, run scripts, and do the kind of work that used to need a laptop.",
     image:
       "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&auto=format&fit=crop&q=60",
   },
@@ -35,7 +35,7 @@ const cards = [
     textColor: "text-white",
     title: "Twent can remember",
     description:
-      "Twent can remember your preferences, past requests, and important context over time — so every new conversation picks up where the last one left off.",
+      "Twent can remember your preferences, past requests, and important context over time — it's memory grows overtime!",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60",
   },
