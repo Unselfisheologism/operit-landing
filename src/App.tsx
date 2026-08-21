@@ -91,6 +91,162 @@ const GoogleAiTestKitchenComparisonPage = lazy(() => import("./pages/vs/google-a
 
 import { languages, changeLanguage, getDirection, applyBrowserLanguage } from "./i18n";
 
+// ─── Route-chunk hover prefetch ─────────────────────────────────────────────
+// instant.page-style prefetch, adapted for an SPA: instead of prefetching the
+// target's HTML (which the client-side router discards), warm the lazy route
+// MODULE on hover so a click resolves with zero chunk-download wait. Uses the
+// same import specifiers as the lazy() defs above — the bundler dedupes them
+// into the same chunks, so this adds no new requests beyond the prefetch.
+// Most-specific prefixes first (mirrors the AppRoutes ordering).
+const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
+  ["/blog/marketplace", () => import("./components/MarketplaceBlogPost")],
+  ["/blog/best-ai-apps-android", () => import("./components/BestAiAppsAndroid")],
+  ["/blog/os-vs-browser-automation", () => import("./components/OsVsBrowserAutomation")],
+  ["/ai-agent-for-developers", () => import("./components/AiAgentForDevelopers")],
+  ["/android-automation-power-user", () => import("./components/AndroidAutomationPowerUser")],
+  ["/privacy-first-ai-android", () => import("./components/PrivacyFirstAiAndroid")],
+  ["/terminal-on-android", () => import("./components/TerminalOnAndroid")],
+  ["/ai-marketplace-creators", () => import("./components/AiMarketplaceCreators")],
+  ["/enterprise-ai-agent", () => import("./components/EnterpriseAiAgent")],
+  ["/best-android-ai", () => import("./components/BestAndroidAiPillar")],
+  ["/pricing", () => import("./components/PricingPage")],
+  ["/success", () => import("./components/SuccessPage")],
+  ["/blog", () => import("./components/BlogPage")],
+  ["/changelog", () => import("./components/ChangelogPage")],
+  ["/terms", () => import("./components/TermsOfService")],
+  ["/privacy", () => import("./components/PrivacyPolicy")],
+  ["/dashboard", () => import("./components/DashboardPage")],
+  ["/apk", () => import("./components/ApkThankYouPage")],
+  ["/vs/chatgpt", () => import("./pages/vs/chatgpt")],
+  ["/vs/nebula", () => import("./pages/vs/nebula")],
+  ["/vs/openclaw", () => import("./pages/vs/openclaw")],
+  ["/vs/hermes-agent", () => import("./pages/vs/hermes-agent")],
+  ["/vs/n8n", () => import("./pages/vs/n8n")],
+  ["/vs/anything-llm", () => import("./pages/vs/anything-llm")],
+  ["/vs/replika", () => import("./pages/vs/replika")],
+  ["/vs/copilot", () => import("./pages/vs/copilot")],
+  ["/vs/gemini", () => import("./pages/vs/gemini")],
+  ["/vs/claude", () => import("./pages/vs/claude")],
+  ["/vs/perplexity", () => import("./pages/vs/perplexity")],
+  ["/vs/make", () => import("./pages/vs/make")],
+  ["/vs/zapier", () => import("./pages/vs/zapier")],
+  ["/vs/qordinate", () => import("./pages/vs/qordinate")],
+  ["/vs/omnara", () => import("./pages/vs/omnara")],
+  ["/vs/manus", () => import("./pages/vs/manus")],
+  ["/vs/onspace", () => import("./pages/vs/onspace")],
+  ["/vs/pi", () => import("./pages/vs/pi")],
+  ["/vs/siri-bixby", () => import("./pages/vs/siri-bixby")],
+  ["/vs/google-ai-test-kitchen", () => import("./pages/vs/google-ai-test-kitchen")],
+];
+
+function prefetchRoute(path: string) {
+  // Strip a language prefix (e.g. /fr/pricing → /pricing) — same logic as AppRoutes
+  const parts = path.split("/").filter(Boolean);
+  let routePath = path;
+  if (parts.length > 0 && languages.some((l) => l.code === parts[0])) {
+    routePath = "/" + parts.slice(1).join("/");
+  }
+  const match = ROUTE_PREFETCHERS.find(([prefix]) => routePath.startsWith(prefix));
+  if (match) {
+    match[1]().catch(() => undefined); // best-effort prefetch
+  }
+}
+
+/**
+ * instant.page-style hover prefetch, applied site-wide: after 65 ms of hover
+ * (or immediately on touchstart, like instant.page's mobile behavior) the
+ * matching lazy route chunk is fetched and cached, so navigation resolves
+ * instantly. Delegated listeners mean every link — current and future, in the
+ * nav, footer, or body copy — gets it automatically. Respects data-saver.
+ */
+function useRoutePrefetch() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean } };
+    if (nav.connection?.saveData) return;
+
+    const HOVER_MS = 65;
+    const timers = new Map<Element, number>();
+    let current: Element | null = null;
+
+    const isPrefetchable = (a: HTMLAnchorElement): boolean => {
+      if (a.target === "_blank") return false;
+      const href = a.getAttribute("href");
+      if (!href || href.startsWith("#")) return false;
+      if (/^(mailto:|tel:|javascript:)/i.test(href)) return false;
+      // Static files and the static docs site are real navigations, not SPA
+      // routes (mirrors the click interceptor in useSpaNavigation).
+      if (/\.(txt|xml|json|png|jpe?g|svg|webp|apk|pdf|zip|gz|woff2?|md)$/i.test(href)) return false;
+      if (href.startsWith("/docs")) return false;
+      try {
+        const url = new URL(a.href, window.location.origin);
+        return url.origin === window.location.origin;
+      } catch {
+        return false;
+      }
+    };
+
+    const schedule = (a: HTMLAnchorElement) => {
+      if (timers.has(a)) return;
+      const t = window.setTimeout(() => {
+        timers.delete(a);
+        const href = a.getAttribute("href");
+        if (href) prefetchRoute(href);
+      }, HOVER_MS);
+      timers.set(a, t);
+    };
+
+    const cancel = (el: Element | null) => {
+      if (!el) return;
+      const t = timers.get(el);
+      if (t !== undefined) {
+        window.clearTimeout(t);
+        timers.delete(el);
+      }
+    };
+
+    const onOver = (e: MouseEvent) => {
+      const a = (e.target as Element).closest("a");
+      if (a === current) return; // still inside the same link
+      cancel(current);
+      current = a;
+      if (a && isPrefetchable(a as HTMLAnchorElement)) schedule(a as HTMLAnchorElement);
+    };
+
+    const onOut = (e: MouseEvent) => {
+      const a = (e.target as Element).closest("a");
+      if (a === current) {
+        cancel(current);
+        current = null;
+      }
+    };
+
+    const onTouchStart = (e: TouchEvent) => {
+      const a = (e.target as Element).closest("a");
+      if (a && isPrefetchable(a as HTMLAnchorElement)) {
+        const href = a.getAttribute("href");
+        if (href) prefetchRoute(href);
+      }
+    };
+
+    const onClick = (e: MouseEvent) => cancel((e.target as Element).closest("a"));
+
+    document.addEventListener("mouseover", onOver, { passive: true });
+    document.addEventListener("mouseout", onOut, { passive: true });
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
+    document.addEventListener("click", onClick, true);
+
+    return () => {
+      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseout", onOut);
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("click", onClick, true);
+      timers.forEach((t) => window.clearTimeout(t));
+      timers.clear();
+    };
+  }, []);
+}
+
 export function useTheme() {
   // OS color-scheme preference, read via useSyncExternalStore:
   // - The server snapshot is `true` (dark) so build-time prerendered HTML and
@@ -241,6 +397,10 @@ function useSpaNavigation() {
 // eager). Falls back to the prerendered home HTML on hydration until the
 // target route's chunk arrives.
 export default function App() {
+  // Site-wide route prefetching: hovering a link warms its lazy chunk so
+  // navigation is instant. Mounted once here — applies to every page and
+  // every link (delegated listeners).
+  useRoutePrefetch();
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <AppRoutes />
