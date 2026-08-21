@@ -138,7 +138,7 @@ export function Part4UnderTheHood() {
         {categories.map((cat) => (
           <div
             key={cat.num}
-            className="flex items-start gap-4 p-4 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all group"
+            data-sketch-card className="flex items-start gap-4 p-4 bg-zinc-50 dark:bg-zinc-900/50 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all group"
           >
             <span className="text-xs font-mono text-orange-500 mt-0.5 shrink-0 w-6">
               {cat.num}
@@ -305,7 +305,7 @@ export function Part5UIAutomation() {
               prompt: '"Post about this article on Twitter. Hook: shocking stat, body: key insight, hashtag: relevant ones"',
             },
           ].map((ex) => (
-            <div key={ex.title} className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500/30 transition-colors">
+            <div key={ex.title} data-sketch-card className="p-6 bg-white dark:bg-zinc-950 hover:border-blue-500/30 transition-colors">
               <h4 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">{ex.title}</h4>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{ex.desc}</p>
               <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-3 rounded">
@@ -376,7 +376,7 @@ export function Part6DX() {
           ))}
         </div>
 
-        <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6">
+        <div data-sketch-card className="bg-zinc-50 dark:bg-zinc-900 p-6">
           <h3 className="font-secondary text-sm text-orange-500 uppercase tracking-[0.2em] mb-4">
             Agent CLI Compatibility
           </h3>

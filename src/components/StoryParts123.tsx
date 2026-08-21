@@ -83,7 +83,7 @@ export function Part1What() {
       </SectionTitle>
 
       {/* Old AI comparison */}
-      <div className="mb-10 p-6 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+      <div data-sketch-card className="mb-10 p-6 bg-zinc-100 dark:bg-zinc-900">
         <p className="font-retro text-zinc-500 text-lg leading-relaxed mb-3">
           Old chatbots could only talk. They answered questions, wrote poems, and
           hallucinated facts. But they couldn&apos;t open an app, fill a form, or
@@ -154,7 +154,7 @@ export function Part1What() {
         ].map((item) => (
           <div
             key={item.step}
-            className="group p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+            data-sketch-card className="group p-6 bg-zinc-50 dark:bg-zinc-900 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className={`w-10 h-10 flex items-center justify-center ${item.accent === "orange" ? "bg-orange-500/10 text-orange-500" : "bg-blue-500/10 text-blue-500"} group-hover:bg-zinc-200 dark:group-hover:bg-zinc-800 transition-colors`}>
@@ -259,7 +259,7 @@ export function Part2ForDevs() {
           {clis.map((cli) => (
             <div
               key={cli.name}
-              className="flex items-center gap-4 p-4 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all group"
+              data-sketch-card className="flex items-center gap-4 p-4 bg-zinc-50 dark:bg-zinc-900 hover:border-zinc-400 dark:hover:border-zinc-700 transition-all group"
             >
               <div className="shrink-0 flex items-center justify-center w-8 h-8">
                 {cli.icon}
@@ -356,7 +356,7 @@ export function Part2DevWorkflows() {
       </SectionDesc>
       <div className="space-y-6">
         {workflows.map((w) => (
-          <div key={w.scenario} className="p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+          <div key={w.scenario} data-sketch-card className="p-6 bg-zinc-50 dark:bg-zinc-900">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-2xl">{w.icon}</span>
               <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100">{w.scenario}</h3>

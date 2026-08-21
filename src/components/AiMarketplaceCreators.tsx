@@ -207,7 +207,7 @@ function CreatorJourney({ visible }: { visible: boolean }) {
                   {s.step}
                 </div>
               </div>
-              <div className="flex-1 p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="flex-1 p-6 bg-white dark:bg-zinc-950">
                 <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-2">
                   {s.title}
                 </h3>
@@ -485,7 +485,7 @@ export function AiMarketplaceCreators({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="relative overflow-hidden">
               <img
                 src="/marketplace-creators-hero.webp"
                 width="1200"
@@ -535,7 +535,7 @@ export function AiMarketplaceCreators({
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <p className="font-display text-lg text-red-500 mb-2">
                     {item.problem}

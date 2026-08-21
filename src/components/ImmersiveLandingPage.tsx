@@ -78,7 +78,7 @@ const STORIES = [
         ].map((skill) => (
           <div
             key={skill.name}
-            className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800"
+            data-sketch-card className="flex items-center gap-3 p-3 bg-white dark:bg-zinc-900 rounded"
           >
             <div className="w-8 h-8 bg-blue-500/10 rounded flex items-center justify-center text-sm">
               {skill.icon}
@@ -174,7 +174,7 @@ const STORIES = [
     color: "green" as const,
     visual: () => (
       <div className="space-y-3">
-        <div className="p-4 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
+        <div data-sketch-card className="p-4 bg-white dark:bg-zinc-900 rounded">
           <div className="text-xs text-zinc-500 mb-2">Memory Graph</div>
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-xs">
@@ -215,7 +215,7 @@ const STORIES = [
     color: "purple" as const,
     visual: () => (
       <div className="space-y-3">
-        <div className="p-4 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
+        <div data-sketch-card className="p-4 bg-white dark:bg-zinc-900 rounded">
           {[
             "All data stays on your device",
             "API keys encrypted locally",
@@ -254,7 +254,7 @@ const STORIES = [
           ].map((item) => (
             <div
               key={item.label}
-              className="p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800"
+              data-sketch-card className="p-3 bg-white dark:bg-zinc-900 rounded"
             >
               <div className="text-xl mb-1">{item.icon}</div>
               <div className="text-xs font-mono text-zinc-900 dark:text-zinc-100">
@@ -279,7 +279,7 @@ const STORIES = [
           <div className="text-xs text-zinc-400 mb-2 font-mono">
             Generated app:
           </div>
-          <div className="p-3 bg-white dark:bg-zinc-900 rounded border border-zinc-200 dark:border-zinc-800">
+          <div data-sketch-card className="p-3 bg-white dark:bg-zinc-900 rounded">
             <div className="text-xs font-mono text-zinc-500 mb-1">todo-app</div>
             <div className="space-y-1">
               {["Buy groceries", "Ship the feature", "Touch grass"].map(
@@ -613,7 +613,7 @@ export function ImmersiveLandingPage({
               ].map((testimonial, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 italic">
                     "{testimonial.quote}"

@@ -274,3 +274,43 @@ body {
   height: 10px;
 }
 
+/* ══════════════════════════════════════════════════════════════
+   Rough theme — sketch cards + hand-drawn link underlines
+   ══════════════════════════════════════════════════════════════ */
+
+/* Cards marked [data-sketch-card] get a rough outline via JS; suppress
+   the CSS border/rounding so only the ink stroke shows. */
+.sketch-card {
+  position: relative;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.rough-card-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* Hand-drawn (rough squiggle) underline for text links in the footer and
+   prose bodies. Grey at rest, orange on hover — tertiary → secondary. */
+.sketch-link,
+footer a:not(:has(svg)):not(.drawably-host),
+[class*="prose"] a:not(.drawably-host) {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='4' viewBox='0 0 12 4'><path d='M1 2.6 Q 3 1.2 6 2.4 T 11 1.8' fill='none' stroke='%2371717a' stroke-width='1.3' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 12px 4px;
+  padding-bottom: 3px;
+}
+
+.sketch-link:hover,
+footer a:not(:has(svg)):hover,
+[class*="prose"] a:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='4' viewBox='0 0 12 4'><path d='M1 2.6 Q 3 1.2 6 2.4 T 11 1.8' fill='none' stroke='%23f97316' stroke-width='1.3' stroke-linecap='round'/></svg>");
+}
+

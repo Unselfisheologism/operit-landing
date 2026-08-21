@@ -148,7 +148,7 @@ function ComplianceArchitecture({ visible }: { visible: boolean }) {
         </div>
         <div className="grid md:grid-cols-2 gap-4">
           {specs.map((spec) => (
-            <div key={spec.regulation} className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+            <div key={spec.regulation} data-sketch-card className="p-5 bg-white dark:bg-zinc-950">
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-display text-sm text-indigo-500">{spec.regulation}</span>
                 <span className="text-xs font-mono text-green-500 bg-green-500/10 px-2 py-0.5 rounded">{spec.status}</span>
@@ -205,7 +205,7 @@ function CaseStudies({ visible }: { visible: boolean }) {
         </div>
         <div className="space-y-6">
           {cases.map((c, i) => (
-            <div key={i} className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800">
+            <div key={i} data-sketch-card className="p-6 bg-zinc-50 dark:bg-zinc-900/50">
               <div className="flex items-start gap-3 mb-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
@@ -277,7 +277,7 @@ function DeploymentOptions({ visible }: { visible: boolean }) {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {options.map((opt) => (
-            <div key={opt.title} className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-indigo-500/30 transition-colors">
+            <div key={opt.title} data-sketch-card className="p-6 bg-white dark:bg-zinc-950 hover:border-indigo-500/30 transition-colors">
               <h3 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-3">{opt.title}</h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{opt.desc}</p>
               <div className="space-y-2 pt-3 border-t border-zinc-200 dark:border-zinc-800">
@@ -454,7 +454,7 @@ export function EnterpriseAiAgent({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="relative overflow-hidden">
               <img
                 src="/enterprise-hero.webp"
                 width="1200"
@@ -503,7 +503,7 @@ export function EnterpriseAiAgent({
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <h3 className="font-display text-lg text-red-500 mb-2">
                     {item.problem}

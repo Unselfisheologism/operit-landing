@@ -249,7 +249,7 @@ export function PrivacyFirstAiAndroid({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="relative overflow-hidden">
               <img
                 src="/privacy-hero.webp"
                 width="1200"
@@ -302,7 +302,7 @@ export function PrivacyFirstAiAndroid({
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <h3 className="font-display text-lg text-red-500 mb-2">
                     {item.problem}
@@ -475,7 +475,7 @@ export function PrivacyFirstAiAndroid({
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <p className="font-display text-xl text-green-500 mb-4">
                   ✓ What Stays on Your Device (100% Local)
                 </p>
@@ -532,7 +532,7 @@ export function PrivacyFirstAiAndroid({
                 </ul>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <p className="font-display text-xl text-orange-500 mb-4">
                   ⚡ What Goes to Providers (Direct HTTPS, You Control)
                 </p>
@@ -614,7 +614,7 @@ export function PrivacyFirstAiAndroid({
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   GDPR Compliant
                 </h3>
@@ -626,7 +626,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   CCPA Compliant
                 </h3>
@@ -638,7 +638,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   SOC2-Ready Architecture
                 </h3>
@@ -649,7 +649,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   No Hidden Telemetry
                 </h3>
@@ -677,7 +677,7 @@ export function PrivacyFirstAiAndroid({
             </div>
 
             <div className="space-y-6">
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   Does Twent work completely offline?
                 </h3>
@@ -690,7 +690,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   Can I self-host my own AI backend?
                 </h3>
@@ -702,7 +702,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   How does my data leave my phone?
                 </h3>
@@ -715,7 +715,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   What's the difference from ChatGPT's privacy mode?
                 </h3>
@@ -735,7 +735,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   How can I verify zero telemetry?
                 </h3>
@@ -750,7 +750,7 @@ export function PrivacyFirstAiAndroid({
                 </p>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-green-500 mb-3">
                   What happens to my data if Twent is deleted?
                 </h3>

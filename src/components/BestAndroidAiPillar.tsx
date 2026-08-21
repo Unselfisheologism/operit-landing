@@ -3,6 +3,8 @@ import { Footer } from "./Footer";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 import { useInView } from "../hooks/useInView";
 
+import { RoughLine } from "./ui/rough";
+
 
 // Play Store CTA — delegates to shared component
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
@@ -13,7 +15,7 @@ function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
 function Eyebrow({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-3 mb-6">
-      <span className="w-8 h-px bg-orange-500" />
+      <RoughLine color="orange" className="w-8" />
       <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-orange-500">
         {label}
       </span>
@@ -192,7 +194,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
               ].map((card) => (
                 <div
                   key={card.title}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500"
                 >
                   <div className="w-12 h-12 bg-orange-500/10 flex items-center justify-center mb-4 text-2xl">
                     {card.emoji}
@@ -249,7 +251,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
               ].map((c) => (
                 <div
                   key={c.n}
-                  className="flex gap-5 p-5 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="flex gap-5 p-5 bg-zinc-50 dark:bg-zinc-900/50"
                 >
                   <span className="font-display text-2xl text-orange-500 font-bold shrink-0">
                     {c.n}
@@ -401,7 +403,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
               ].map((useCase) => (
                 <div
                   key={useCase.title}
-                  className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500"
+                  data-sketch-card className="p-6 bg-zinc-50 dark:bg-zinc-900/50 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all duration-500"
                 >
                   <p className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2 font-semibold">
                     {useCase.title}
@@ -491,7 +493,7 @@ export function BestAndroidAiPillar({ dark }: { dark: boolean }) {
               your data private. Install it free and see the difference in
               your first five minutes.
             </p>
-            <div className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-8 md:p-10 border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="bg-zinc-100 dark:bg-zinc-900 rounded-xl p-8 md:p-10">
               <h3 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
                 Try Twent free on the Play Store
               </h3>

@@ -6,7 +6,7 @@ import {
   type ReceiptPrinterStage,
 } from "./ReceiptPrinter";
 import { DButton } from "./ui/drawably";
-import { RoughAnnotation } from "./ui/rough";
+import { RoughAnnotation, RoughLine } from "./ui/rough";
 
 const freeFeatures = [
   "Write code & generate websites",
@@ -70,11 +70,9 @@ export function Pricing() {
         }`}
       >
         <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="w-8 h-px bg-orange-500" />
-          <span className="text-xs font-secondary text-orange-500 uppercase tracking-[0.2em]">
-            What you get
-          </span>
-          <div className="w-8 h-px bg-orange-500" />
+          <RoughLine color="orange" className="w-8" />
+          <RoughAnnotation text="What you get" type="underline" color="orange" strokeWidth={2} padding={3} />
+          <RoughLine color="orange" className="w-8" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
                   Completely free.
@@ -173,10 +171,8 @@ export function Pricing() {
         {/* FAQ */}
         <div id="faq" className="max-w-2xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-px bg-blue-500" />
-            <span className="text-xs font-secondary text-blue-500 uppercase tracking-[0.2em]">
-              FAQ
-            </span>
+            <RoughLine color="blue" className="w-8" />
+            <RoughAnnotation text="FAQ" type="underline" color="blue" strokeWidth={2} padding={3} />
           </div>
           <h3 className="font-display text-2xl sm:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-8">
             Common questions.

@@ -47,7 +47,7 @@ function DetailedAnalysis({
             when you should pick {competitorName} over Twent.
           </p>
         </div>
-        <div className="p-6 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+        <div data-sketch-card className="p-6 bg-white dark:bg-zinc-950">
           <div className="flex items-center gap-3 mb-4">
             <h3 className="font-display text-2xl text-zinc-900 dark:text-zinc-100">
               {competitorName}
@@ -164,7 +164,7 @@ function EnhancedFAQ({
             return (
               <div
                 key={i}
-                className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+                data-sketch-card className="p-6 bg-zinc-50 dark:bg-zinc-900/50"
               >
                 <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
                   {f.q}
@@ -442,7 +442,7 @@ export function ComparisonPage({
       <EnhancedFAQ faq={faq} competitorName={competitorName} />
 
       {/* ── Internal cross-links: blog & docs ── */}
-      <div className="my-10 p-6 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+      <div data-sketch-card className="my-10 p-6 rounded-xl">
         <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-600 mb-4">
           Read more
         </p>

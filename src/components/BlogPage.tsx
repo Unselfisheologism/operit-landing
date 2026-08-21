@@ -4,6 +4,8 @@ import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
 import { DButton } from "./ui/drawably";
 
+import { RoughLine } from "./ui/rough";
+
 // JSON-LD Schema for Blog Page
 function BlogPageSchemaMarkup() {
   const schema = [
@@ -157,7 +159,8 @@ function FeaturedPostCard({ post, visible }: { post: BlogPost; visible: boolean 
   return (
     <a
       href={`/blog/${post.slug}`}
-      className={`group block relative overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 transition-all duration-500 hover:border-zinc-300 dark:hover:border-zinc-700 ${
+      data-sketch-card
+      className={`group block relative overflow-hidden bg-white dark:bg-zinc-950 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: visible ? "0.2s" : "0s" }}
@@ -170,7 +173,7 @@ function FeaturedPostCard({ post, visible }: { post: BlogPost; visible: boolean 
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-orange-500 font-medium">
                 {post.category}
               </span>
-              <span className="w-8 h-px bg-zinc-300 dark:bg-zinc-700" />
+              <RoughLine color="grey" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400 dark:text-zinc-600">
                 Featured
               </span>
@@ -254,7 +257,8 @@ function PostCard({
   return (
     <a
       href={`/blog/${post.slug}`}
-      className={`group block border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 p-6 md:p-8 transition-all duration-500 hover:border-zinc-300 dark:hover:border-zinc-700 ${
+      data-sketch-card
+      className={`group block bg-white dark:bg-zinc-950 p-6 md:p-8 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: visible ? `${0.1 + index * 0.08}s` : "0s" }}
@@ -341,9 +345,9 @@ function EmptyState({ visible }: { visible: boolean }) {
 
         {/* Decorative divider */}
         <div className="flex items-center justify-center gap-4 mb-10">
-          <span className="w-16 h-px bg-zinc-200 dark:bg-zinc-800" />
+          <RoughLine color="grey" width={64} className="w-16" />
           <span className="w-1.5 h-1.5 rotate-45 border border-zinc-300 dark:border-zinc-700" />
-          <span className="w-16 h-px bg-zinc-200 dark:bg-zinc-800" />
+          <RoughLine color="grey" width={64} className="w-16" />
         </div>
 
 
@@ -450,7 +454,7 @@ export function BlogPage({ dark }: { dark: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="w-8 h-px bg-blue-500" />
+              <RoughLine color="blue" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-blue-500">
                 The Twent Journal
               </span>

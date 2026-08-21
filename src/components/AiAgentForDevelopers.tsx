@@ -6,6 +6,8 @@ import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 import { DLink } from "./ui/drawably";
 
+import { RoughLine } from "./ui/rough";
+
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -517,7 +519,7 @@ export function AiAgentForDevelopers({
                   : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="w-8 h-px bg-blue-500" />
+              <RoughLine color="blue" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-blue-500">
                 For Developers
               </span>
@@ -617,7 +619,7 @@ export function AiAgentForDevelopers({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="relative overflow-hidden">
               <img
                 src="/developer-hero.webp"
                 width="1200"
@@ -666,7 +668,7 @@ export function AiAgentForDevelopers({
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <p className="font-display text-lg text-red-500 mb-2">
                     {item.problem}

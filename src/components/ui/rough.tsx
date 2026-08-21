@@ -4,7 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { annotate } from "rough-notation";
 import type { Annotation, AnnotationType } from "rough-notation/lib/model";
 import rough from "roughjs";
-import { roughCheckmark } from "drawably";
+import { roughCheckmark, roughLine, roughRoundedRect } from "drawably";
 
 /**
  * Twent rough layer — hand-drawn annotations & doodles in the site palette:
@@ -14,6 +14,7 @@ export const ROUGH_COLORS = {
   blue: "#3b82f6",
   orange: "#f97316",
   grey: "#71717a",
+  purple: "#a855f7",
 } as const;
 
 export type RoughColor = keyof typeof ROUGH_COLORS;
@@ -213,4 +214,167 @@ export function RoughEllipse({
       style={style}
     />
   );
+}
+
+export interface RoughLineProps {
+  color?: RoughColor | string;
+  strokeWidth?: number;
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+/**
+ * A short hand-drawn line — replaces the plain `w-8 h-px` section-label
+ * dashes with a rough ink stroke.
+ */
+export function RoughLine({
+  color = "orange",
+  strokeWidth = 2,
+  width = 32,
+  height = 8,
+  className,
+}: RoughLineProps) {
+  const pathRef = useRef<SVGPathElement>(null);
+  const stroke = ROUGH_COLORS[color as RoughColor] ?? color;
+
+  useEffect(() => {
+    const el = pathRef.current;
+    if (!el) return;
+    const seed = Math.floor(Math.random() * 1e9);
+    el.setAttribute(
+      "d",
+      roughLine(2, height / 2, width - 2, height / 2, { seed, roughness: 1.2 }),
+    );
+  }, [width, height]);
+
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox={`0 0 ${width} ${height}`}
+      fill="none"
+      aria-hidden="true"
+      className={className}
+      style={{ flexShrink: 0, display: "inline-block" }}
+    >
+      <path
+        ref={pathRef}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const SVG_NS = "http://www.w3.org/2000/svg";
+const SKETCH_COLORS = {
+  blue: "#3b82f6",
+  orange: "#f97316",
+  grey: "#71717a",
+  red: "#ef4444",
+} as const;
+
+type SketchColor = keyof typeof SKETCH_COLORS;
+
+/**
+ * Global hand-drawn card theming: watches for `[data-sketch-card]` containers
+ * and draws a rough rounded-rect outline over each one (drawably's rough
+ * path generator, static per mount, redrawn on resize). The container keeps
+ * all of its own classes/layout — only its CSS border is suppressed.
+ *
+ * Mount once at the app root (e.g. in App). Cards can opt into a tint via
+ * `data-sketch-color="blue" | "orange" | "grey"` (default grey = tertiary).
+ */
+export function SketchCardProvider() {
+  const colorMapRef = useRef(new WeakMap<Element, { svg: SVGSVGElement; path: SVGPathElement; ro: ResizeObserver | null }>());
+
+  useEffect(() => {
+    const colorMap = colorMapRef.current;
+    let mounted = true;
+
+    const draw = (el: HTMLElement) => {
+      let entry = colorMap.get(el);
+      const w = Math.max(el.offsetWidth || 120, 24);
+      const h = Math.max(el.offsetHeight || 40, 24);
+      if (!entry) {
+        const svg = document.createElementNS(SVG_NS, "svg");
+        svg.setAttribute("class", "rough-card-overlay");
+        const path = document.createElementNS(SVG_NS, "path");
+        svg.appendChild(path);
+        el.appendChild(svg);
+        let ro: ResizeObserver | null = null;
+        if (typeof ResizeObserver !== "undefined") {
+          ro = new ResizeObserver(() => {
+            if (mounted && el.isConnected) draw(el);
+          });
+          ro.observe(el);
+        }
+        entry = { svg, path, ro };
+        colorMap.set(el, entry);
+      }
+      const seed = Math.floor(Math.random() * 1e9);
+      const color =
+        SKETCH_COLORS[(el.dataset.sketchColor as SketchColor) ?? "grey"] ??
+        "#71717a";
+      entry.path.setAttribute(
+        "d",
+        roughRoundedRect(2, 2, Math.max(w - 4, 8), Math.max(h - 4, 8), 12, {
+          seed,
+          roughness: 1.15,
+        }),
+      );
+      entry.path.setAttribute("stroke", color);
+      entry.path.setAttribute("stroke-width", "2");
+      entry.path.setAttribute("fill", "none");
+      entry.path.setAttribute("stroke-linecap", "round");
+      entry.path.setAttribute("stroke-linejoin", "round");
+    };
+
+    const teardown = (el: Element) => {
+      const entry = colorMap.get(el);
+      if (!entry) return;
+      entry.ro?.disconnect();
+      entry.svg.remove();
+      colorMap.delete(el);
+    };
+
+    const scan = (root: ParentNode) => {
+      root.querySelectorAll<HTMLElement>("[data-sketch-card]").forEach((el) => {
+        if (!colorMap.has(el) && el.isConnected) draw(el);
+      });
+    };
+
+    scan(document);
+    let mo: MutationObserver | null = null;
+    if (typeof MutationObserver !== "undefined") {
+      mo = new MutationObserver((records) => {
+        for (const rec of records) {
+          rec.removedNodes.forEach((n) => {
+            if (n instanceof Element) {
+              if (n.hasAttribute?.("data-sketch-card")) teardown(n);
+              n.querySelectorAll?.("[data-sketch-card]").forEach(teardown);
+            }
+          });
+          rec.addedNodes.forEach((n) => {
+            if (n instanceof Element) {
+              if (n.hasAttribute?.("data-sketch-card") && n.isConnected) draw(n as HTMLElement);
+              scan(n);
+            }
+          });
+        }
+      });
+      mo.observe(document.body, { childList: true, subtree: true });
+    }
+
+    return () => {
+      mounted = false;
+      mo?.disconnect();
+      [...colorMap.keys()].forEach(teardown);
+    };
+  }, []);
+
+  return null;
 }

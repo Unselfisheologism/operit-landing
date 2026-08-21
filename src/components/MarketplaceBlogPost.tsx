@@ -5,6 +5,8 @@ import { useInView } from "../hooks/useInView";
 import { BlogPostShell } from "./BlogPostShell";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
+import { RoughLine } from "./ui/rough";
+
 
 // Play Store CTA — matches ComparisonPage.tsx pattern
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
@@ -191,11 +193,11 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="w-8 h-px bg-orange-500" />
+              <RoughLine color="orange" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-orange-500">
                 Product
               </span>
-              <span className="w-8 h-px bg-zinc-300 dark:bg-zinc-700" />
+              <RoughLine color="grey" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-600">
                 April 19, 2026
               </span>
@@ -237,7 +239,7 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="relative overflow-hidden">
                 <img
                   src="/marketplace-hero.webp"
                   width="1200"
@@ -330,7 +332,7 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                     icon: "🔌"
                   }
                 ].map((item) => (
-                  <div key={item.title} className="p-6 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
+                  <div key={item.title} data-sketch-card className="p-6 bg-zinc-50 dark:bg-zinc-900/50 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">
                     <div className="text-2xl mb-3">{item.icon}</div>
                     <p className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
                       {item.title}
@@ -356,7 +358,7 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 Once we hit revenue, the marketplace opens with this revenue split:
               </p>
 
-              <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 mb-8">
+              <div data-sketch-card className="bg-zinc-50 dark:bg-zinc-900/50 p-6 mb-8">
                 <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   Revenue Split (post-revenue launch)
                 </h2>
@@ -412,7 +414,7 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 </ul>
               </div>
 
-              <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 mb-8">
+              <div data-sketch-card className="bg-zinc-50 dark:bg-zinc-900/50 p-6 mb-8">
                 <h2 className="font-display text-xl text-zinc-900 dark:text-zinc-100 mb-4">
                   Pre-revenue (now): free everything
                 </h2>

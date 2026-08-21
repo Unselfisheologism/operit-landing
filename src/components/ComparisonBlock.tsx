@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 import { DCard } from "./ui/drawably";
-import { RoughAnnotation, RoughCheck, RoughEllipse } from "./ui/rough";
+import { RoughAnnotation, RoughCheck, RoughEllipse, RoughLine } from "./ui/rough";
 
 // Verified competitor data — "vs" keywords with SEO metrics
 // Search volume: Google Keyword Planner exact match (12mo avg)
@@ -395,10 +395,8 @@ export function ComparisonBlock() {
       >
         {/* Section label */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-px bg-purple-500" />
-          <span className="text-xs font-secondary text-purple-500 uppercase tracking-[0.2em]">
-            How We Stack Up
-          </span>
+          <RoughLine color="purple" className="w-8" />
+          <RoughAnnotation text="How We Stack Up" type="underline" color="purple" strokeWidth={2} padding={3} />
         </div>
 
         {/* Heading */}

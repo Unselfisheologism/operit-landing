@@ -5,6 +5,8 @@ import { useInView } from "../hooks/useInView";
 import { BlogPostShell } from "./BlogPostShell";
 import { PlayStoreCta as PlayStoreCtaComponent, PlayStoreCtaGroup } from "./PlayStoreCta";
 
+import { RoughLine } from "./ui/rough";
+
 function PlayStoreCtaLocal({ size = "h-8" }: { size?: string }) {
   return <PlayStoreCtaComponent size={size} />;
 }
@@ -84,11 +86,11 @@ export function OsVsBrowserAutomation({ dark }: { dark: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="w-8 h-px bg-orange-500" />
+              <RoughLine color="orange" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-orange-500">
                 Engineering
               </span>
-              <span className="w-8 h-px bg-zinc-300 dark:bg-zinc-700" />
+              <RoughLine color="grey" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-zinc-400 dark:text-zinc-600">
                 July 1, 2026
               </span>
@@ -175,7 +177,7 @@ export function OsVsBrowserAutomation({ dark }: { dark: boolean }) {
               ].map((item) => (
                 <div
                   key={item.num}
-                  className="p-5 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-5 bg-zinc-50 dark:bg-zinc-900/50"
                 >
                   <span className="text-[10px] font-mono text-orange-500 tracking-[0.2em] block mb-2">
                     {item.num}
@@ -201,7 +203,7 @@ export function OsVsBrowserAutomation({ dark }: { dark: boolean }) {
 
             <p className="text-base leading-relaxed mb-6">Security researchers have demonstrated this repeatedly:</p>
 
-            <div className="bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 p-6 mb-8">
+            <div data-sketch-card className="bg-zinc-50 dark:bg-zinc-900/50 p-6 mb-8">
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                 <strong className="text-zinc-900 dark:text-zinc-100">Brave × Perplexity Comet:</strong>{" "}
                 Researchers at Brave asked Comet to summarize a Reddit thread. A
@@ -353,7 +355,7 @@ export function OsVsBrowserAutomation({ dark }: { dark: boolean }) {
               ].map((row) => (
                 <div
                   key={row.feature}
-                  className="p-4 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-4 bg-zinc-50 dark:bg-zinc-900/50"
                 >
                   <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-orange-500 mb-2">{row.feature}</p>
                   <div className="flex items-start gap-2 mb-1">

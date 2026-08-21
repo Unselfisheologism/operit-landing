@@ -5,6 +5,8 @@ import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 import { DLink } from "./ui/drawably";
 
+import { RoughLine } from "./ui/rough";
+
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -162,7 +164,7 @@ function AutomationToolShowcase({ visible }: { visible: boolean }) {
       {tools.map((tool, i) => (
         <div
           key={tool.name}
-          className="p-4 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800"
+          data-sketch-card className="p-4 bg-zinc-50 dark:bg-zinc-900/50"
           style={{ transitionDelay: visible ? `${0.1 + i * 0.05}s` : "0s" }}
         >
           <div className="font-mono text-sm text-orange-500 mb-1">
@@ -340,7 +342,7 @@ function PermissionLevels({ visible }: { visible: boolean }) {
           {levels.map((l) => (
             <div
               key={l.level}
-              className="p-5 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
+              data-sketch-card className="p-5 bg-white dark:bg-zinc-950 hover:border-zinc-400 dark:hover:border-zinc-700 transition-colors"
             >
               <div className="text-2xl mb-2">{l.icon}</div>
               <h3 className={`font-display text-lg mb-1 ${l.color}`}>
@@ -397,7 +399,7 @@ export function AndroidAutomationPowerUser({
                   : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="w-8 h-px bg-orange-500" />
+              <RoughLine color="orange" className="w-8" />
               <span className="text-[10px] font-mono uppercase tracking-[0.4em] text-orange-500">
                 For Power Users
               </span>
@@ -497,7 +499,7 @@ export function AndroidAutomationPowerUser({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div data-sketch-card className="relative overflow-hidden">
               <img
                 src="/automation-hero.webp"
                 width="1200"
@@ -548,7 +550,7 @@ export function AndroidAutomationPowerUser({
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <p className="font-display text-lg text-red-500 mb-2">
                     {item.problem}
@@ -737,7 +739,7 @@ export function AndroidAutomationPowerUser({
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-4">
                   Dual Pipeline Technology
                 </h3>
@@ -764,7 +766,7 @@ export function AndroidAutomationPowerUser({
                 </ul>
               </div>
 
-              <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+              <div data-sketch-card className="p-6 bg-white dark:bg-zinc-900">
                 <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-4">
                   Permission Levels
                 </h3>
@@ -1078,7 +1080,7 @@ export function AndroidAutomationPowerUser({
               ].map((faq, i) => (
                 <div
                   key={i}
-                  className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
+                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
                 >
                   <h3 className="font-display text-lg text-zinc-900 dark:text-zinc-100 mb-2">
                     {faq.q}

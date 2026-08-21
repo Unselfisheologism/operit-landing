@@ -1,7 +1,11 @@
 export function HeroToast() {
   return (
     <div className="flex flex-col items-center gap-3 mb-6 animate-fade-in-up">
-      <div className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-700">
+      <div
+        data-sketch-card
+        data-sketch-color="grey"
+        className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900"
+      >
         <span className="w-2 h-2 bg-orange-500 animate-pulse-glow" />
         <span className="text-xs font-mono text-zinc-300 tracking-wide uppercase">
           50+ tools. One pocket.

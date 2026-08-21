@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 import { DButton } from "./ui/drawably";
-import { RoughAnnotation } from "./ui/rough";
+import { RoughAnnotation, RoughLine } from "./ui/rough";
 
 const testimonials = [
   { quote: "I replaced my entire dev workflow on the go. Claude Code in a terminal on my phone? This is the future.", name: "Android Developer", role: "Early Adopter" },
@@ -23,9 +23,9 @@ export function Testimonials() {
     <section className="relative py-20 sm:py-28 px-6">
       <div ref={ref} className={`max-w-6xl mx-auto transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
         <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="w-8 h-px bg-blue-500" />
-          <span className="text-xs font-secondary text-blue-500 uppercase tracking-[0.2em]">Testimonials</span>
-          <div className="w-8 h-px bg-blue-500" />
+          <RoughLine color="blue" className="w-8" />
+          <RoughAnnotation text="Testimonials" type="underline" color="blue" strokeWidth={2} padding={3} />
+          <RoughLine color="blue" className="w-8" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-12 text-center">
                   People are building things<br />
@@ -44,7 +44,12 @@ export function Testimonials() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {visible.map((t, i) => (
-            <div key={i} className={`p-6 bg-zinc-50 dark:bg-zinc-900 border transition-colors flex flex-col ${'caseStudy' in t ? 'border-orange-500/30 md:col-span-1' : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-700'}`}>
+            <div
+              key={i}
+              data-sketch-card
+              data-sketch-color={'caseStudy' in t ? 'orange' : 'grey'}
+              className={`p-6 bg-zinc-50 dark:bg-zinc-900 transition-colors flex flex-col ${'caseStudy' in t ? 'md:col-span-1' : ''}`}
+            >
               {'caseStudy' in t && (
                 <div className="text-[10px] font-mono text-orange-500 uppercase tracking-wider mb-3">Case Study</div>
               )}
