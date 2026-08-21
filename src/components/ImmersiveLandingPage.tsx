@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import { Nav } from "./Nav";
-import { Footer } from "./Footer";
 import { Pricing } from "./Pricing";
 import { ComparisonBlock } from "./ComparisonBlock";
 import { SocialLinksInline } from "./SocialLinks";
@@ -356,17 +355,27 @@ function PinnedScrollytelling() {
 
     let rafId: number;
     let ticking = false;
+    // Cache the scrollable span — reading offsetHeight every scroll tick
+    // forces a reflow per frame; it only changes on resize.
+    let totalScroll = 0;
+    const measure = () => {
+      totalScroll = container.offsetHeight - window.innerHeight;
+    };
+    measure();
+    window.addEventListener("resize", measure);
 
     const update = () => {
       const rect = container.getBoundingClientRect();
-      const totalScroll = container.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
-      const pct = Math.max(0, Math.min(1, scrolled / totalScroll));
+      const span = totalScroll || 1;
+      const pct = Math.max(0, Math.min(1, scrolled / span));
       const idx = Math.min(
         STORIES.length - 1,
         Math.floor(pct * STORIES.length),
       );
-      setActive(idx);
+      // Bail out when the active story didn't change — avoids a re-render of
+      // this whole section on every scroll frame.
+      setActive((prev) => (prev === idx ? prev : idx));
       ticking = false;
     };
 
@@ -381,6 +390,7 @@ function PinnedScrollytelling() {
     update();
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", measure);
       if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
@@ -658,7 +668,29 @@ export function ImmersiveLandingPage({
         />
       </main>
 
-      <Footer />
+      <FooterSlot />
     </div>
   );
+}
+
+// Footer is below the fold — load its chunk lazily after mount instead of
+// putting it on the initial critical path. Rendered via state (not React
+// Suspense): both the build-time prerender and the client's first render
+// produce `null` deterministically, so hydration has nothing to reconcile —
+// Suspense boundaries whose server content is complete but whose client
+// render suspends trigger React hydration errors (#418) in production.
+function FooterSlot() {
+  const [FooterComp, setFooterComp] = useState<null | (() => React.ReactElement)>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    import("./Footer").then((m) => {
+      if (!cancelled) setFooterComp(() => m.Footer);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return FooterComp ? <FooterComp /> : null;
 }

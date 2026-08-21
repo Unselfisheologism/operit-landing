@@ -1,6 +1,15 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
-import { supabase } from "./supabase";
+
+// supabase-js is loaded on demand (dynamic import) instead of being bundled
+// into the initial JS. Auth is only needed on /dashboard, /success and the
+// login modal, so pulling ~40KB gz of supabase out of the critical path was a
+// major PageSpeed win. The client resolves from the same async chunk the
+// dashboard/success routes use, so it's fetched once and cached.
+async function getSupabase() {
+  const mod = await import("./supabase");
+  return mod.supabase;
+}
 
 interface AuthContextType {
   session: Session | null;
@@ -54,13 +63,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const initAuth = async () => {
       console.log("[auth] initAuth start, hash:", window.location.hash.substring(0, 80));
 
+      // Lazy-load the supabase client (kept out of the initial bundle)
+      const client = await getSupabase();
+
       // 1. Try to exchange implicit flow tokens from URL hash
       const tokens = parseHashTokens();
       if (tokens) {
         console.log("[auth] found tokens in URL hash, calling setSession...");
         cleanupUrl();
         try {
-          const { data, error } = await supabase.auth.setSession({
+          const { data, error } = await client.auth.setSession({
             access_token: tokens.accessToken,
             refresh_token: tokens.refreshToken,
           });
@@ -78,7 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       // 2. Also load any existing session from storage
-      const { data: { session: existingSession } } = await supabase.auth.getSession();
+      const { data: { session: existingSession } } = await client.auth.getSession();
       if (!cancelled) {
         console.log("[auth] getSession result:", !!existingSession);
         if (existingSession) {
@@ -91,23 +103,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     initAuth();
 
     // 3. Listen for future auth changes
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, newSession) => {
-      console.log("[auth] onAuthStateChange:", event, !!newSession);
-      if (!cancelled) {
-        setSession(newSession);
-      }
+    let subscription: { unsubscribe: () => void } | null = null;
+    getSupabase().then((client) => {
+      if (cancelled) return;
+      const { data: { subscription: sub } } = client.auth.onAuthStateChange((event, newSession) => {
+        console.log("[auth] onAuthStateChange:", event, !!newSession);
+        if (!cancelled) {
+          setSession(newSession);
+        }
+      });
+      subscription = sub;
     });
 
     return () => {
       cancelled = true;
-      subscription.unsubscribe();
+      subscription?.unsubscribe();
     };
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
+    const client = await getSupabase();
+    const { error } = await client.auth.signInWithPassword({
       email,
       password,
     });
@@ -115,7 +131,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signUp = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signUp({
+    const client = await getSupabase();
+    const { error } = await client.auth.signUp({
       email,
       password,
     });
@@ -123,12 +140,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    const client = await getSupabase();
+    await client.auth.signOut();
   };
 
   const signInWithGoogle = async () => {
     try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
+      const client = await getSupabase();
+      const { data, error } = await client.auth.signInWithOAuth({
         provider: "google",
         options: {
           redirectTo: window.location.origin,

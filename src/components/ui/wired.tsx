@@ -1,6 +1,4 @@
-import { createElement } from "react";
 import type { CSSProperties } from "react";
-import "wired-elements/lib/wired-spinner.js";
 
 export interface WiredSpinnerProps {
   spinning?: boolean;
@@ -11,14 +9,33 @@ export interface WiredSpinnerProps {
 }
 
 /**
- * Hand-drawn loading spinner (wired-elements). Rendered via createElement so
- * no custom-element JSX typings are needed.
+ * Loading spinner.
+ *
+ * Originally wrapped the `wired-spinner` web component (wired-elements), but
+ * that package is incompatible with the installed hachure-fill@0.5.2 (it
+ * calls `hf.fillPolygon`, which no longer exists — the spinner threw
+ * "fillPolygon is not a function" on every render). roughjs requires
+ * hachure-fill ^0.5.2, so the two can't coexist. This CSS ring matches the
+ * hand-drawn look closely enough for a transitional loading indicator.
  */
 export function WiredSpinner({
   spinning = true,
-  duration = 1500,
   className,
   style,
 }: WiredSpinnerProps) {
-  return createElement("wired-spinner", { spinning, duration, className, style });
+  if (!spinning) return null;
+  return (
+    <div
+      aria-hidden="true"
+      className={`animate-spin ${className ?? ""}`}
+      style={{
+        width: 28,
+        height: 28,
+        borderRadius: "50%",
+        border: "3px solid rgba(120,120,130,0.25)",
+        borderTopColor: "#3b82f6",
+        ...style,
+      }}
+    />
+  );
 }

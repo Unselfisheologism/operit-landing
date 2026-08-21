@@ -289,16 +289,33 @@ type SketchColor = keyof typeof SKETCH_COLORS;
  * `data-sketch-color="blue" | "orange" | "grey"` (default grey = tertiary).
  */
 export function SketchCardProvider() {
-  const colorMapRef = useRef(new WeakMap<Element, { svg: SVGSVGElement; path: SVGPathElement; ro: ResizeObserver | null }>());
+  const colorMapRef = useRef(new WeakMap<Element, { svg: SVGSVGElement; path: SVGPathElement; ro: ResizeObserver | null; w: number; h: number }>());
 
   useEffect(() => {
     const colorMap = colorMapRef.current;
     let mounted = true;
 
-    const draw = (el: HTMLElement) => {
+    const draw = (el: HTMLElement, w?: number, h?: number) => {
       let entry = colorMap.get(el);
-      const w = Math.max(el.offsetWidth || 120, 24);
-      const h = Math.max(el.offsetHeight || 40, 24);
+
+      // Without explicit dimensions (first draw / mutation-triggered redraw),
+      // defer the measurement one frame: reading offsetWidth/offsetHeight
+      // synchronously right after a DOM mutation is what forces reflows.
+      if (w === undefined || h === undefined) {
+        if (el.dataset.sketchPending === "1") return; // already scheduled
+        el.dataset.sketchPending = "1";
+        requestAnimationFrame(() => {
+          delete el.dataset.sketchPending;
+          if (!mounted || !el.isConnected) return;
+          draw(
+            el,
+            Math.max(el.offsetWidth || 120, 24),
+            Math.max(el.offsetHeight || 40, 24),
+          );
+        });
+        return;
+      }
+
       if (!entry) {
         const svg = document.createElementNS(SVG_NS, "svg");
         svg.setAttribute("class", "rough-card-overlay");
@@ -313,14 +330,22 @@ export function SketchCardProvider() {
         el.appendChild(svg);
         let ro: ResizeObserver | null = null;
         if (typeof ResizeObserver !== "undefined") {
-          ro = new ResizeObserver(() => {
-            if (mounted && el.isConnected) draw(el);
+          // ResizeObserver fires after layout — reading contentRect here never
+          // forces a synchronous reflow (unlike the old offsetWidth reads).
+          ro = new ResizeObserver((entries) => {
+            if (!mounted || !el.isConnected) return;
+            const cr = entries[entries.length - 1]?.contentRect;
+            if (cr) {
+              draw(el, Math.max(cr.width, 24), Math.max(cr.height, 24));
+            }
           });
           ro.observe(el);
         }
-        entry = { svg, path, ro };
+        entry = { svg, path, ro, w, h };
         colorMap.set(el, entry);
       }
+      entry.w = w;
+      entry.h = h;
       const seed = Math.floor(Math.random() * 1e9);
       const color =
         SKETCH_COLORS[(el.dataset.sketchColor as SketchColor) ?? "grey"] ??

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import compression from 'vite-plugin-compression2'
 import { readFileSync, writeFileSync } from 'fs'
+import { gzipSync, brotliCompressSync } from 'zlib'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -118,6 +119,66 @@ export default defineConfig({
       ],
       logLevel: 'info',
     }),
+
+    // ─── Home Page Prerender ──────────────────────────────────────────────────
+    // Renders the home route to static HTML at build time (SSG) and injects it
+    // into <div id="root"> in dist/index.html. The browser can then paint the
+    // nav + hero instantly — no JS download needed for first paint — and the
+    // client hydrates over it (see main.tsx). This collapses the LCP "element
+    // render delay" that a pure client-side SPA suffers.
+    //
+    // MUST run after the compression plugin (registered above): index.html is
+    // re-compressed here because we rewrite it after compression ran.
+    // ─────────────────────────────────────────────────────────────────────────
+    {
+      name: 'prerender-home',
+      apply: 'build',
+      enforce: 'post',
+      async writeBundle() {
+        const htmlPath = path.join(__dirname, 'dist', 'index.html')
+        let page: string
+        try {
+          page = readFileSync(htmlPath, 'utf-8')
+          // Skip if already prerendered
+          if (page.includes('data-prerendered="true"')) return
+        } catch {
+          return // no dist/index.html yet — nothing to patch
+        }
+
+        const { createServer } = await import('vite')
+        const server = await createServer({
+          server: { middlewareMode: true },
+          appType: 'custom',
+          logLevel: 'error',
+        })
+        try {
+          const { renderHome } = await server.ssrLoadModule('/src/entry-server.tsx')
+          const body = await renderHome()
+
+          // Inject the prerendered DOM into the root div
+          page = page.replace(
+            '<div id="root"></div>',
+            `<div id="root" data-prerendered="true">${body}</div>`,
+          )
+          // Force dark theme on the <html> element so the pre-hydration paint
+          // matches the app's default (One Dark) theme.
+          page = page.replace(
+            '<html lang="en">',
+            '<html lang="en" class="dark">',
+          )
+
+          writeFileSync(htmlPath, page, 'utf-8')
+          // Re-compress: index.html changed after vite-plugin-compression2 ran
+          writeFileSync(htmlPath + '.gz', gzipSync(page))
+          writeFileSync(htmlPath + '.br', brotliCompressSync(page))
+          console.log(
+            `[prerender-home] Injected ${body.length} chars of HTML into dist/index.html`,
+          )
+        } finally {
+          await server.close()
+        }
+      },
+    },
   ],
 
   // ─── Vendor Chunk Separation ───────────────────────────────────────────────

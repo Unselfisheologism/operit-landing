@@ -1,33 +1,72 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense, useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "./lib/AuthContext";
 import { WiredSpinner } from "./components/ui/wired";
-import { PricingPage } from "./components/PricingPage";
-import { SuccessPage } from "./components/SuccessPage";
-import { BlogPage } from "./components/BlogPage";
-import { ChangelogPage } from "./components/ChangelogPage";
-import { TermsOfService } from "./components/TermsOfService";
-import { PrivacyPolicy } from "./components/PrivacyPolicy";
-import { MarketplaceBlogPost } from "./components/MarketplaceBlogPost";
-import { BestAiAppsAndroid } from "./components/BestAiAppsAndroid";
-import { AiAgentForDevelopers } from "./components/AiAgentForDevelopers";
-import { AndroidAutomationPowerUser } from "./components/AndroidAutomationPowerUser";
-import { PrivacyFirstAiAndroid } from "./components/PrivacyFirstAiAndroid";
-import { TerminalOnAndroid } from "./components/TerminalOnAndroid";
-import { AiMarketplaceCreators } from "./components/AiMarketplaceCreators";
-import { EnterpriseAiAgent } from "./components/EnterpriseAiAgent";
-import { BestAndroidAiPillar } from "./components/BestAndroidAiPillar";
-import { OsVsBrowserAutomation } from "./components/OsVsBrowserAutomation";
 import { ImmersiveLandingPage } from "./components/ImmersiveLandingPage";
-import { DashboardPage } from "./components/DashboardPage";
 import { HreflangTags } from "./components/HreflangTags";
 import { MetaUpdater } from "./components/MetaUpdater";
-import { ApkThankYouPage } from "./components/ApkThankYouPage";
 
-// Competitor comparison pages — LAZY LOADED for code splitting
-// This reduces main bundle size by ~40%, dramatically improving FCP/TTFB
-import { lazy, Suspense } from "react";
-import { NotFoundPage } from "./components/NotFoundPage";
+// Route pages — LAZY LOADED for code splitting. Only the home route (and the
+// shared shell above) stays in the initial bundle; every other route ships as
+// an async chunk fetched on demand. This removed ~60% of the unused JS that
+// PageSpeed was flagging on the initial load.
+const PricingPage = lazy(() =>
+  import("./components/PricingPage").then((m) => ({ default: m.PricingPage })),
+);
+const SuccessPage = lazy(() =>
+  import("./components/SuccessPage").then((m) => ({ default: m.SuccessPage })),
+);
+const BlogPage = lazy(() =>
+  import("./components/BlogPage").then((m) => ({ default: m.BlogPage })),
+);
+const ChangelogPage = lazy(() =>
+  import("./components/ChangelogPage").then((m) => ({ default: m.ChangelogPage })),
+);
+const TermsOfService = lazy(() =>
+  import("./components/TermsOfService").then((m) => ({ default: m.TermsOfService })),
+);
+const PrivacyPolicy = lazy(() =>
+  import("./components/PrivacyPolicy").then((m) => ({ default: m.PrivacyPolicy })),
+);
+const MarketplaceBlogPost = lazy(() =>
+  import("./components/MarketplaceBlogPost").then((m) => ({ default: m.MarketplaceBlogPost })),
+);
+const BestAiAppsAndroid = lazy(() =>
+  import("./components/BestAiAppsAndroid").then((m) => ({ default: m.BestAiAppsAndroid })),
+);
+const AiAgentForDevelopers = lazy(() =>
+  import("./components/AiAgentForDevelopers").then((m) => ({ default: m.AiAgentForDevelopers })),
+);
+const AndroidAutomationPowerUser = lazy(() =>
+  import("./components/AndroidAutomationPowerUser").then((m) => ({ default: m.AndroidAutomationPowerUser })),
+);
+const PrivacyFirstAiAndroid = lazy(() =>
+  import("./components/PrivacyFirstAiAndroid").then((m) => ({ default: m.PrivacyFirstAiAndroid })),
+);
+const TerminalOnAndroid = lazy(() =>
+  import("./components/TerminalOnAndroid").then((m) => ({ default: m.TerminalOnAndroid })),
+);
+const AiMarketplaceCreators = lazy(() =>
+  import("./components/AiMarketplaceCreators").then((m) => ({ default: m.AiMarketplaceCreators })),
+);
+const EnterpriseAiAgent = lazy(() =>
+  import("./components/EnterpriseAiAgent").then((m) => ({ default: m.EnterpriseAiAgent })),
+);
+const BestAndroidAiPillar = lazy(() =>
+  import("./components/BestAndroidAiPillar").then((m) => ({ default: m.BestAndroidAiPillar })),
+);
+const OsVsBrowserAutomation = lazy(() =>
+  import("./components/OsVsBrowserAutomation").then((m) => ({ default: m.OsVsBrowserAutomation })),
+);
+const DashboardPage = lazy(() =>
+  import("./components/DashboardPage").then((m) => ({ default: m.DashboardPage })),
+);
+const ApkThankYouPage = lazy(() =>
+  import("./components/ApkThankYouPage").then((m) => ({ default: m.ApkThankYouPage })),
+);
+const NotFoundPage = lazy(() =>
+  import("./components/NotFoundPage").then((m) => ({ default: m.NotFoundPage })),
+);
 
 const ChatgptComparisonPage = lazy(() => import("./pages/vs/chatgpt"));
 const NebulaComparisonPage = lazy(() => import("./pages/vs/nebula"));
@@ -50,24 +89,19 @@ const PiComparisonPage = lazy(() => import("./pages/vs/pi"));
 const SiriBixbyComparisonPage = lazy(() => import("./pages/vs/siri-bixby"));
 const GoogleAiTestKitchenComparisonPage = lazy(() => import("./pages/vs/google-ai-test-kitchen"));
 
-import { languages, changeLanguage, getDirection } from "./i18n";
+import { languages, changeLanguage, getDirection, applyBrowserLanguage } from "./i18n";
 
 export function useTheme() {
-  const [dark, setDark] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return true;
-  });
-
-  // Always follow the OS preference — listen for changes in real time
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e: MediaQueryListEvent) => setDark(e.matches);
-    mql.addEventListener("change", handler);
-    return () => mql.removeEventListener("change", handler);
-  }, []);
+  // OS color-scheme preference, read via useSyncExternalStore:
+  // - The server snapshot is `true` (dark) so build-time prerendered HTML and
+  //   the client's first render always agree (no hydration mismatch).
+  // - After hydration the real OS preference is applied by the store, and
+  //   live changes are followed via the matchMedia change event.
+  const dark = useSyncExternalStore(
+    subscribeToColorScheme,
+    getColorSchemeSnapshot,
+    () => true,
+  );
 
   useEffect(() => {
     const root = document.documentElement;
@@ -81,6 +115,16 @@ export function useTheme() {
   }, [dark]);
 
   return { dark };
+}
+
+function subscribeToColorScheme(onStoreChange: () => void) {
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
+  mql.addEventListener("change", onStoreChange);
+  return () => mql.removeEventListener("change", onStoreChange);
+}
+
+function getColorSchemeSnapshot() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
 // SPA navigation: intercept internal <a> clicks and use pushState
@@ -112,8 +156,13 @@ function useSpaNavigation() {
       
       if (matchedLang && matchedLang.code !== i18n.language) {
         changeLanguage(matchedLang.code);
+        return;
       }
     }
+    // No language prefix in URL — apply browser-language detection after
+    // hydration (i18n's initial language is pinned to 'en' to match the
+    // build-time prerender).
+    applyBrowserLanguage();
   }, []);
 
   const navigate = useCallback((to: string) => {
@@ -187,7 +236,19 @@ function useSpaNavigation() {
   return { path, navigate };
 }
 
+// Top-level Suspense: any lazy-loaded route chunk suspends to a spinner while
+// it downloads, so the initial bundle stays small (only the home route is
+// eager). Falls back to the prerendered home HTML on hydration until the
+// target route's chunk arrives.
 export default function App() {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <AppRoutes />
+    </Suspense>
+  );
+}
+
+function AppRoutes() {
   const { dark } = useTheme();
   const { path } = useSpaNavigation();
   const { user, loading: authLoading } = useAuth();

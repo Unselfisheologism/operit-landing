@@ -93,12 +93,12 @@ const getInitialLanguage = () => {
   if (typeof window !== 'undefined') {
     const browserLang = navigator.language.split('-')[0];
     const supported = languages.map(l => l.code);
-    
+
     // Check exact match first
     if (supported.includes(browserLang)) {
       return browserLang;
     }
-    
+
     // Check language with region (e.g., pt-BR -> pt)
     const browserLangWithRegion = navigator.language;
     const langCode = browserLangWithRegion.split('-')[0];
@@ -107,6 +107,20 @@ const getInitialLanguage = () => {
     }
   }
   return 'en';
+};
+
+/**
+ * Apply browser-language detection AFTER hydration. The initial i18n language
+ * is pinned to 'en' (below) so the build-time prerender and the client's
+ * first render always agree — flipping to the user's language afterwards
+ * keeps the server HTML and client HTML in sync (no hydration mismatch).
+ */
+export const applyBrowserLanguage = () => {
+  if (typeof window === 'undefined') return;
+  const detected = getInitialLanguage();
+  if (detected !== i18n.language) {
+    i18n.changeLanguage(detected);
+  }
 };
 
 // Get text direction for a language
@@ -140,7 +154,11 @@ i18n
       nl: { translation: nl },
     },
     fallbackLng: 'en',
-    lng: getInitialLanguage(),
+    // Pinned to English so the build-time prerender (always 'en') and the
+    // client's first render agree — hydration must not see different text.
+    // The user's browser language is applied post-hydration via
+    // applyBrowserLanguage() (see App.tsx).
+    lng: 'en',
     interpolation: {
       escapeValue: false,
     },

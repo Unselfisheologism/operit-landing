@@ -6,17 +6,27 @@ export const useMousePosition = (
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    const updatePosition = (x: number, y: number) => {
-      if (containerRef && containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
-        const relativeX = x - rect.left
-        const relativeY = y - rect.top
+    // Reading getBoundingClientRect() on every mousemove forces a synchronous
+    // reflow whenever styles are dirty. Cache the rect and refresh it only on
+    // resize; also coalesce setState to one update per animation frame.
+    let cachedRect: { left: number; top: number } | null = null
+    const refreshRect = () => {
+      cachedRect = containerRef?.current?.getBoundingClientRect() ?? null
+    }
+    refreshRect()
 
-        // Calculate relative position even when outside the container
-        setPosition({ x: relativeX, y: relativeY })
-      } else {
-        setPosition({ x, y })
-      }
+    let rafId = 0
+    const updatePosition = (x: number, y: number) => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        rafId = 0
+        if (containerRef && containerRef.current) {
+          if (!cachedRect) cachedRect = containerRef.current.getBoundingClientRect()
+          setPosition({ x: x - cachedRect.left, y: y - cachedRect.top })
+        } else {
+          setPosition({ x, y })
+        }
+      })
     }
 
     const handleMouseMove = (ev: MouseEvent) => {
@@ -31,10 +41,13 @@ export const useMousePosition = (
     // Listen for both mouse and touch events
     window.addEventListener("mousemove", handleMouseMove)
     window.addEventListener("touchmove", handleTouchMove)
+    window.addEventListener("resize", refreshRect)
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
       window.removeEventListener("touchmove", handleTouchMove)
+      window.removeEventListener("resize", refreshRect)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [containerRef])
 
