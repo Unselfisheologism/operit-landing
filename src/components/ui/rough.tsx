@@ -304,6 +304,12 @@ export function SketchCardProvider() {
         svg.setAttribute("class", "rough-card-overlay");
         const path = document.createElementNS(SVG_NS, "path");
         svg.appendChild(path);
+        // Make the card its own containing block so the absolutely-positioned
+        // overlay anchors to the card, not to a sticky/transform ancestor or
+        // the viewport (which drew giant 1440x900 outlines at 0,0).
+        if (getComputedStyle(el).position === "static") {
+          el.style.position = "relative";
+        }
         el.appendChild(svg);
         let ro: ResizeObserver | null = null;
         if (typeof ResizeObserver !== "undefined") {
