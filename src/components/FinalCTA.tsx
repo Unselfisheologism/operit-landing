@@ -1,6 +1,7 @@
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
 import { PlayStoreCta } from "./PlayStoreCta";
+import { RoughAnnotation } from "./ui/rough";
 
 export function FinalCTA() {
   const [ref, inView] = useInView();
@@ -46,7 +47,16 @@ export function FinalCTA() {
           The best AI isn&apos;t the one that knows the most.
           <br />
           <span className="text-orange-500">
-            It&apos;s the one that does the most.
+            It&apos;s the one that{" "}
+            <RoughAnnotation
+              text="does the most."
+              type="highlight"
+              color="orange"
+              strokeWidth={2}
+              padding={4}
+              show={inView}
+              delay={250}
+            />
           </span>
         </h2>
 

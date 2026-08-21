@@ -1,6 +1,7 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { DButton, DLink } from "./ui/drawably";
+import { RoughAnnotation } from "./ui/rough";
 
 // JSON-LD Schema for 404 Page
 function NotFoundSchemaMarkup() {
@@ -41,8 +42,11 @@ export function NotFoundPage({ dark }: { dark: boolean }) {
       <main className="flex-1 flex flex-col items-center justify-center px-4 py-24 text-center">
         <div className="max-w-xl">
           <div className="flex items-center justify-center gap-2 mb-6 animate-fadeIn">
-            <span
-              className="text-[10rem] leading-none font-display text-blue-500"
+            <RoughAnnotation
+              text={
+                <>
+                  <span
+                    className="text-[10rem] leading-none font-display text-blue-500"
               style={{ fontFamily: "Calive Pixel, var(--font-display)" }}
             >
               4
@@ -72,9 +76,16 @@ export function NotFoundPage({ dark }: { dark: boolean }) {
             <span
               className="text-[10rem] leading-none font-display text-blue-500"
               style={{ fontFamily: "Calive Pixel, var(--font-display)" }}
-            >
-              4
-            </span>
+                  >
+                    4
+                  </span>
+                </>
+              }
+              type="circle"
+              color="blue"
+              strokeWidth={2}
+              padding={8}
+            />
           </div>
 
           <h1 className="text-2xl font-semibold mb-2">Page not found</h1>

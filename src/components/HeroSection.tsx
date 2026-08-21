@@ -1,5 +1,6 @@
 import { HeroToast } from "./HeroToast";
 import { PlayStoreCta } from "./PlayStoreCta";
+import { RoughAnnotation } from "./ui/rough";
 
 export function HeroSection() {
   return (
@@ -32,7 +33,16 @@ export function HeroSection() {
           </span>
           <br />
           <span className="text-orange-500">
-            Twent actually does things on your phone.
+            Twent{" "}
+            <RoughAnnotation
+              text="actually does things"
+              type="underline"
+              color="orange"
+              strokeWidth={2.5}
+              padding={4}
+              delay={700}
+            />{" "}
+            on your phone.
           </span>
         </h1>
 

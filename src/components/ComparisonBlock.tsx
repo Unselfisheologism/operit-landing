@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 import { DCard } from "./ui/drawably";
+import { RoughAnnotation, RoughCheck, RoughEllipse } from "./ui/rough";
 
 // Verified competitor data — "vs" keywords with SEO metrics
 // Search volume: Google Keyword Planner exact match (12mo avg)
@@ -270,8 +271,17 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
         className="w-full flex items-center justify-between p-5 text-left hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
       >
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center font-display text-sm text-zinc-900 dark:text-zinc-100">
-            vs
+          <div className="relative w-10 h-10 shrink-0">
+            <RoughEllipse
+              rx={22}
+              ry={22}
+              color="orange"
+              strokeWidth={2}
+              className="absolute -inset-1 pointer-events-none"
+            />
+            <div className="relative w-10 h-10 bg-zinc-100 dark:bg-zinc-900 rounded flex items-center justify-center font-display text-sm text-zinc-900 dark:text-zinc-100">
+              vs
+            </div>
           </div>
           <div>
             <p className="font-display text-base text-zinc-900 dark:text-zinc-100 font-semibold">
@@ -330,7 +340,7 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
               <ul className="space-y-1.5">
                 {comp.twentBetter.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm">
-                    <span className="text-blue-500 mt-0.5">✓</span>
+                    <RoughCheck color="blue" className="mt-0.5" size={13} />
                     <span className="text-zinc-700 dark:text-zinc-300">{item}</span>
                   </li>
                 ))}
@@ -348,7 +358,7 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
               <ul className="space-y-1.5">
                 {(comp as unknown as Record<string, string[]>)[`${comp.id.split("-")[1]}Better`]?.map((item: string) => (
                   <li key={item} className="flex items-start gap-2 text-sm">
-                    <span className="text-zinc-400 mt-0.5">✓</span>
+                    <RoughCheck color="grey" className="mt-0.5" size={13} />
                     <span className="text-zinc-500 dark:text-zinc-500">{item}</span>
                   </li>
                 ))}
@@ -394,7 +404,16 @@ export function ComparisonBlock() {
         {/* Heading */}
         <div className="mb-2">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
-            Twent vs the rest.
+            Twent{" "}
+            <RoughAnnotation
+              text="vs the rest."
+              type="underline"
+              color="orange"
+              strokeWidth={2.5}
+              padding={4}
+              show={inView}
+              delay={200}
+            />
           </h2>
         <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-2">
           See how Twent vs the competition stacks up — compare AI assistants, automation tools, and productivity apps to find what actually works for you.

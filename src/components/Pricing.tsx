@@ -6,6 +6,7 @@ import {
   type ReceiptPrinterStage,
 } from "./ReceiptPrinter";
 import { DButton } from "./ui/drawably";
+import { RoughAnnotation } from "./ui/rough";
 
 const freeFeatures = [
   "Write code & generate websites",
@@ -76,10 +77,18 @@ export function Pricing() {
           <div className="w-8 h-px bg-orange-500" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-          Completely free.
-          <br />
-          <span className="text-blue-500">All features included.</span>
-        </h2>
+                  Completely free.
+                  <br />
+                  <RoughAnnotation
+                    text={<span className="text-blue-500">All features included.</span>}
+                    type="underline"
+                    color="blue"
+                    strokeWidth={2.5}
+                    padding={4}
+                    show={inView}
+                    delay={200}
+                  />
+                </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8 text-center mx-auto">
           Twent is 100% free with no hidden costs. Every feature is included from day one — no credit card required.
         </p>

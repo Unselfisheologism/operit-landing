@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../lib/AuthContext";
 import { supabase } from "../lib/supabase";
 import { DButton, DCard, DLink } from "./ui/drawably";
+import { WiredSpinner } from "./ui/wired";
 
 interface Profile {
   subscription_tier: string;
@@ -51,7 +52,7 @@ export function DashboardPage({ dark }: { dark: boolean }) {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950">
-        <div className="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+        <WiredSpinner />
       </div>
     );
   }

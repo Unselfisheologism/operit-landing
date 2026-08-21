@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "./lib/AuthContext";
+import { WiredSpinner } from "./components/ui/wired";
 import { PricingPage } from "./components/PricingPage";
 import { SuccessPage } from "./components/SuccessPage";
 import { BlogPage } from "./components/BlogPage";
@@ -393,12 +394,12 @@ export default function App() {
   // Dashboard — requires auth, shows billing/subscription
   if (routePath.startsWith("/dashboard")) {
     if (authLoading) {
-      return (
-        <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950">
-          <div className="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
-        </div>
-      );
-    }
+        return (
+          <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950">
+            <WiredSpinner />
+          </div>
+        );
+      }
     if (!user) {
       // Not logged in — redirect to home
       if (typeof window !== "undefined") window.history.replaceState({}, "", "/");
@@ -653,7 +654,7 @@ export default function App() {
 function LoadingSpinner() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950">
-      <div className="w-8 h-8 border-2 border-zinc-300 dark:border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+      <WiredSpinner />
     </div>
   );
 }

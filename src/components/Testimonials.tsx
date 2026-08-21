@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
 import { DButton } from "./ui/drawably";
+import { RoughAnnotation } from "./ui/rough";
 
 const testimonials = [
   { quote: "I replaced my entire dev workflow on the go. Claude Code in a terminal on my phone? This is the future.", name: "Android Developer", role: "Early Adopter" },
@@ -27,8 +28,19 @@ export function Testimonials() {
           <div className="w-8 h-px bg-blue-500" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-12 text-center">
-          People are building things<br /><span className="text-orange-500">we never imagined.</span>
-        </h2>
+                  People are building things<br />
+                  <span className="text-orange-500">
+                    <RoughAnnotation
+                      text="we never imagined."
+                      type="underline"
+                      color="orange"
+                      strokeWidth={2.5}
+                      padding={4}
+                      show={inView}
+                      delay={200}
+                    />
+                  </span>
+                </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {visible.map((t, i) => (

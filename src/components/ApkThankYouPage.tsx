@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { GlimmProvider, useGlimm } from "glimm/react";
 import { DButton, DLink } from "./ui/drawably";
+import { RoughAnnotation } from "./ui/rough";
 
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
@@ -79,21 +80,29 @@ function ApkContent() {
     <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="max-w-md w-full px-6 text-center">
-          <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg
-              className="w-8 h-8 text-blue-500 dark:text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
+          <RoughAnnotation
+            text={
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg
+                  className="w-8 h-8 text-blue-500 dark:text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            }
+            type="circle"
+            color="blue"
+            strokeWidth={2}
+            padding={6}
+          />
 
           <h1 className="font-display text-3xl md:text-4xl tracking-tight mb-4">
             Thank you for installing Twent!
