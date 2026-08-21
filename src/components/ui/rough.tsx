@@ -192,14 +192,15 @@ export function RoughEllipse({
     if (!svg) return;
     svg.replaceChildren();
     const rc = rough.svg(svg);
-    const drawable = rc.ellipse(cx, cy, rx, ry, {
+    // rc.ellipse() renders AND returns the <g>; append it directly.
+    const g = rc.ellipse(cx - rx, cy - ry, rx * 2, ry * 2, {
       stroke,
       strokeWidth,
       roughness: 1.2,
       fill,
       fillStyle: "solid",
     });
-    rc.draw(drawable);
+    svg.appendChild(g);
   }, [rx, ry, stroke, strokeWidth, fill, cx, cy]);
 
   return (
