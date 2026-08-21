@@ -22,8 +22,8 @@ const cards = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
   },
   {
-    bgColor: "bg-[#ff5941]",
-    textColor: "text-black",
+    bgColor: "bg-[#0015ff]",
+    textColor: "text-white",
     title: "Twent has a terminal",
     description:
       "Twent has a full Linux-style terminal on your phone, can install tools, run scripts, and do the kind of work that used to need a laptop.",
@@ -31,8 +31,8 @@ const cards = [
       "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&auto=format&fit=crop&q=60",
   },
   {
-    bgColor: "bg-[#1f464d]",
-    textColor: "text-white",
+    bgColor: "bg-[#f97316]",
+    textColor: "text-black",
     title: "Twent can remember",
     description:
       "Twent can remember your preferences, past requests, and important context over time — it's memory grows overtime!",
