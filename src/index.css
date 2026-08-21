@@ -190,3 +190,87 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   Drawably — hand-drawn controls in the Twent palette
+   blue = primary · orange = secondary · grey = tertiary
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  --drawably-stroke: #3b82f6; /* blue-500 — primary */
+  --drawably-fill: #3b82f6;   /* blue-500 — primary */
+  --drawably-paper: #ffffff;
+  --drawably-width: 2;
+  --drawably-error: #ef4444;
+  --drawably-success: #22c55e;
+}
+
+/* Brighter stroke on dark backgrounds so blue sketches stay legible */
+.dark {
+  --drawably-stroke: #60a5fa; /* blue-400 */
+}
+
+/* Keep the site's font (Courier New) inside control hosts */
+.drawably-host {
+  font-family: inherit;
+}
+
+/* Neutral tone maps to the site's tertiary grey */
+.drawably-button--neutral {
+  --drawably-stroke: #71717a; /* zinc-500 — tertiary */
+  --drawably-fill: #71717a;
+}
+
+/* Small gap between icon and label inside sketch buttons */
+.drawably-button {
+  gap: 8px;
+}
+
+/* ── Size / layout helpers (unlayered, loaded after drawably/style.css) ── */
+.d-btn-sm {
+  padding: 3px 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.d-btn-lg {
+  padding: 12px 22px;
+  font-size: 15px;
+}
+
+.d-btn-icon {
+  padding: 5px;
+}
+
+.d-btn-row {
+  width: 100%;
+  justify-content: space-between;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.d-btn-block {
+  width: 100%;
+}
+
+.d-input-block {
+  display: block;
+  width: 100%;
+}
+
+.d-card-flush {
+  padding: 0;
+}
+
+.d-card-lg {
+  padding: 2rem;
+}
+
+.d-card-xl {
+  padding: 3rem;
+}
+
+.d-divider {
+  height: 10px;
+}
+

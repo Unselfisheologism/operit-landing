@@ -3,6 +3,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 import { PlayStoreCta } from "./PlayStoreCta";
 import { LoginModal } from "./LoginModal";
 import { useAuth } from "../lib/AuthContext";
+import { DButton, DDivider } from "./ui/drawably";
 
 interface NavProps {
   dark: boolean;
@@ -36,9 +37,11 @@ function HamburgerIcon({
   onClick: () => void;
 }) {
   return (
-    <button
+    <DButton
       onClick={onClick}
-      className="relative w-10 h-10 flex items-center justify-center shrink-0"
+      variant="outline"
+      color="grey"
+      className="d-btn-icon relative w-10 h-10 shrink-0"
       aria-label="Menu"
     >
       <div className="w-5 flex flex-col gap-[5px]">
@@ -58,7 +61,7 @@ function HamburgerIcon({
           }`}
         />
       </div>
-    </button>
+    </DButton>
   );
 }
 
@@ -112,14 +115,14 @@ function MobileOverlay({
             ))}
           </div>
 
-          <div className="section-divider mb-6" />
+          <DDivider className="mb-6" />
 
           {/* Language Switcher - Mobile */}
           <div className="mb-6">
             <LanguageSwitcher />
           </div>
 
-          <div className="section-divider mb-6" />
+          <DDivider className="mb-6" />
 
           {/* Auth in mobile overlay */}
           <div className="mb-6">
@@ -149,7 +152,7 @@ function MobileOverlay({
             )}
           </div>
 
-          <div className="section-divider mb-6" />
+          <DDivider className="mb-6" />
 
           {/* Download inside overlay */}
           <DownloadButton className="w-full justify-center" />
@@ -262,21 +265,23 @@ function DesktopHeader({
             >
               Dashboard
             </a>
-            <button
+            <DButton
               onClick={() => onSignOut()}
-              className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+              color="grey"
+              className="d-btn-sm uppercase tracking-wider whitespace-nowrap"
               title="Sign out"
             >
               {user.email?.split("@")[0]}
-            </button>
+            </DButton>
           </>
         ) : (
-          <button
+          <DButton
             onClick={() => onSignIn()}
-            className="text-[11px] font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white px-2 py-1.5 transition-colors whitespace-nowrap"
+            color="grey"
+            className="d-btn-sm uppercase tracking-wider whitespace-nowrap"
           >
             Sign In
-          </button>
+          </DButton>
         )}
         <DownloadButton />
       </div>
@@ -395,21 +400,23 @@ export function Nav({ dark }: NavProps) {
             >
               Dashboard
             </a>
-            <button
+            <DButton
               onClick={() => signOut()}
-              className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+              color="grey"
+              className="d-btn-sm uppercase tracking-wider"
               title="Sign out"
             >
               {user.email?.split("@")[0]}
-            </button>
+            </DButton>
           </>
         ) : (
-          <button
+          <DButton
             onClick={() => setShowLogin(true)}
-            className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+            color="grey"
+            className="d-btn-sm uppercase tracking-wider"
           >
             Sign In
-          </button>
+          </DButton>
         )}
         <DownloadButton />
       </div>

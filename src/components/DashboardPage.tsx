@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../lib/AuthContext";
 import { supabase } from "../lib/supabase";
+import { DButton, DCard, DLink } from "./ui/drawably";
 
 interface Profile {
   subscription_tier: string;
@@ -77,15 +78,16 @@ export function DashboardPage({ dark }: { dark: boolean }) {
             </span>
           </a>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-zinc-500 dark:text-zinc-400 hidden sm:block">
-              {profile?.email ?? user?.email}
-            </span>
-            <button
-              onClick={signOut}
-              className="text-xs font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
-            >
-              Sign Out
-            </button>
+                      <span className="text-sm text-zinc-500 dark:text-zinc-400 hidden sm:block">
+                        {profile?.email ?? user?.email}
+                      </span>
+                      <DButton
+                        onClick={signOut}
+                        color="grey"
+                        className="d-btn-sm uppercase tracking-wider"
+                      >
+                        Sign Out
+                      </DButton>
           </div>
         </div>
       </header>
@@ -97,13 +99,15 @@ export function DashboardPage({ dark }: { dark: boolean }) {
         </h1>
 
         {/* Subscription card */}
-        <div
-          className={`rounded-2xl border p-8 mb-8 ${
-            isPro
-              ? "border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20"
-              : "border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900"
-          }`}
-        >
+                <DCard
+                  color={isPro ? "orange" : "grey"}
+                  pad="lg"
+                  className={`mb-8 ${
+                    isPro
+                      ? "bg-amber-50/50 dark:bg-amber-950/20"
+                      : "bg-zinc-50 dark:bg-zinc-900"
+                  }`}
+                >
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="font-display text-xl text-black dark:text-white">
@@ -172,8 +176,10 @@ export function DashboardPage({ dark }: { dark: boolean }) {
           <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-700">
             {isPro ? (
               <>
-              <button
-                className="text-sm font-secondary uppercase tracking-wider text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors disabled:opacity-50"
+              <DButton
+                variant="outline"
+                color="blue"
+                className="d-btn-sm uppercase tracking-wider"
                 disabled={portalLoading}
                 onClick={async () => {
                   setPortalLoading(true);
@@ -199,24 +205,29 @@ export function DashboardPage({ dark }: { dark: boolean }) {
                 }}
               >
                 {portalLoading ? "Opening…" : "Manage Subscription →"}
-              </button>
+              </DButton>
               {portalError && (
                 <p className="mt-2 text-xs text-red-500">{portalError}</p>
               )}
               </>
             ) : (
-              <a
+              <DLink
                 href="/pricing"
-                className="inline-flex items-center justify-center bg-black text-white hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200 transition-colors px-5 py-2.5 text-sm font-secondary uppercase tracking-wider"
+                variant="solid"
+                className="d-btn-lg uppercase tracking-wider"
               >
                 Upgrade to Pro →
-              </a>
+              </DLink>
             )}
           </div>
-        </div>
+      </DCard>
 
         {/* Account info */}
-        <div className="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 p-8">
+        <DCard
+          color="grey"
+          pad="lg"
+          className="bg-zinc-50 dark:bg-zinc-900"
+        >
           <h2 className="font-display text-xl text-black dark:text-white mb-6">
             Account
           </h2>
@@ -238,7 +249,7 @@ export function DashboardPage({ dark }: { dark: boolean }) {
               </p>
             </div>
           </div>
-        </div>
+        </DCard>
       </main>
     </div>
   );

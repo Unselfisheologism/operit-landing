@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { PlayStoreCta } from "./PlayStoreCta";
+import { PlayStoreCtaGroup } from "./PlayStoreCta";
+import { DCard } from "./ui/drawably";
 
 // No external dependencies – head tags managed via useEffect
 
@@ -381,7 +382,7 @@ export function ComparisonPage({
       </div>
 
       {/* Download CTA — after verdict */}
-      <div className="text-center py-12 mb-10 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+      <DCard color="grey" pad="xl" className="text-center mb-10 bg-zinc-50 dark:bg-zinc-900/50">
         <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
           Try Twent free
         </h2>
@@ -389,7 +390,7 @@ export function ComparisonPage({
           Free to install · No account needed · Bring your own API key
         </p>
         <PlayStoreCtaGroup size="h-8" />
-      </div>
+      </DCard>
 
       <h2 className="text-2xl font-bold mb-6">Feature Comparison</h2>
 
@@ -420,7 +421,7 @@ export function ComparisonPage({
       </div>
 
       {/* Play Store CTA — after comparison table */}
-      <div className="text-center py-12 mb-12 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+      <DCard color="grey" pad="xl" className="text-center mb-12 bg-zinc-50 dark:bg-zinc-900/50">
         <h2 className="font-display text-2xl md:text-3xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-2">
           The verdict is clear — install Twent free
         </h2>
@@ -428,7 +429,7 @@ export function ComparisonPage({
           Free to install · No account needed · Bring your own API key
         </p>
         <PlayStoreCtaGroup size="h-8" />
-      </div>
+      </DCard>
 
       {/* Detailed Analysis Section */}
       <DetailedAnalysis

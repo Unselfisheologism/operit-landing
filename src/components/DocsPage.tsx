@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { DButton } from "./ui/drawably";
 
 /* ──────────────────────────────────────────────
    Twent Docs — inline documentation page
@@ -1347,9 +1348,12 @@ export function DocsPage({
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <button
+            <DButton
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-1.5 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              variant="outline"
+              color="grey"
+              className="d-btn-icon lg:hidden"
+              aria-label="Toggle docs navigation"
             >
               <svg
                 className="w-5 h-5"
@@ -1364,7 +1368,7 @@ export function DocsPage({
                   d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
-            </button>
+            </DButton>
 <a href="/" className="flex items-center gap-2">
               <img
                 src="/twent-logo-48.webp"

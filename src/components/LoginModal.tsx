@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../lib/AuthContext";
+import { DButton, DCard, DDivider, DInput } from "./ui/drawably";
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -40,19 +41,26 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-      <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 w-full max-w-md mx-4 shadow-2xl">
+      <DCard
+        color="grey"
+        pad="lg"
+        className="bg-white dark:bg-zinc-900 shadow-2xl w-full max-w-md mx-4"
+      >
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-display font-bold text-zinc-900 dark:text-zinc-100">
             {isSignUp ? "Create Account" : "Sign In"}
           </h2>
-          <button
+          <DButton
             onClick={onClose}
-            className="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 transition-colors"
+            variant="scribble"
+            color="orange"
+            className="d-btn-icon"
+            aria-label="Close"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
-          </button>
+          </DButton>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -60,12 +68,11 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
             <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
               Email
             </label>
-            <input
+            <DInput
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="you@example.com"
             />
           </div>
@@ -74,13 +81,12 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
             <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
               Password
             </label>
-            <input
+            <DInput
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
-              className="w-full px-4 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="••••••••"
             />
           </div>
@@ -89,26 +95,28 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
             <p className="text-sm text-red-500 dark:text-red-400">{error}</p>
           )}
 
-          <button
+          <DButton
             type="submit"
+            variant="solid"
+            className="d-btn-block d-btn-lg"
+            state={loading ? "loading" : "idle"}
             disabled={loading}
-            className="w-full py-2.5 px-4 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Loading..." : isSignUp ? "Create Account" : "Sign In"}
-          </button>
+          </DButton>
         </form>
 
         <div className="mt-4">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-zinc-200 dark:border-zinc-700" />
+              <DDivider className="w-full" />
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="bg-white dark:bg-zinc-900 px-2 text-zinc-400">or continue with</span>
             </div>
           </div>
 
-          <button
+          <DButton
             onClick={async () => {
               setError("");
               setLoading(true);
@@ -117,7 +125,9 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
               if (result.error) setError(result.error);
             }}
             disabled={loading}
-            className="mt-3 w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-750 text-zinc-700 dark:text-zinc-200 font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            color="grey"
+            variant="outline"
+            className="mt-3 d-btn-block d-btn-lg"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
@@ -126,7 +136,7 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
             Google
-          </button>
+          </DButton>
         </div>
 
         <div className="mt-4 text-center">
@@ -142,7 +152,7 @@ export function LoginModal({ isOpen, onClose, onSuccess }: LoginModalProps) {
               : "Don't have an account? Sign up"}
           </button>
         </div>
-      </div>
+      </DCard>
     </div>
   );
 }

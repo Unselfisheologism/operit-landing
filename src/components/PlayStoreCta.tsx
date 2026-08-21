@@ -1,3 +1,5 @@
+import { DLink } from "./ui/drawably";
+
 const APK_THANKYOU_URL = "/apk";
 
 interface PlayStoreCtaProps {
@@ -7,20 +9,25 @@ interface PlayStoreCtaProps {
 }
 
 /**
- * Renders the APK download link only.
+ * Renders the APK download link only — as a hand-drawn control.
+ * Small (nav) renders a grey outline; large (hero/final CTA) renders a
+ * solid blue primary button.
  */
 export function PlayStoreCta({
   size = "h-11",
   className = "",
   showText = false,
 }: PlayStoreCtaProps) {
+  const big = size !== "h-8";
   return (
-    <a
+    <DLink
       href={APK_THANKYOU_URL}
       target="_self"
       rel=""
       aria-label="Download Twent APK"
-      className={`flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors ${className}`}
+      variant={big ? "solid" : "outline"}
+      color={big ? "blue" : "grey"}
+      className={`${big ? "d-btn-lg" : "d-btn-sm"} ${className}`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,12 +44,12 @@ export function PlayStoreCta({
         />
       </svg>
       <span className="hidden sm:inline">APK</span>
-    </a>
+    </DLink>
   );
 }
 
 /**
- * APK-only button variant.
+ * APK-only button variant — big solid primary CTA.
  */
 export function PlayStoreCtaGroup({
   size = "h-8",
@@ -53,11 +60,12 @@ export function PlayStoreCtaGroup({
 }) {
   return (
     <div className={`flex items-center justify-center ${className}`}>
-      <a
+      <DLink
         href={APK_THANKYOU_URL}
         target="_self"
         rel=""
-        className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+        variant="solid"
+        className="d-btn-lg"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +82,7 @@ export function PlayStoreCtaGroup({
           />
         </svg>
         <span className="font-medium">Download APK</span>
-      </a>
+      </DLink>
     </div>
   );
 }

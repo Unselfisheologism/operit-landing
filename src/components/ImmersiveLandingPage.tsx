@@ -10,6 +10,7 @@ import TrailingCursor from "./TrailingCursor";
 import StackingCardsDemo from "./fancy/blocks/stacking-cards-demo";
 import { TechTerm } from "./ui/TechTerm";
 import TextOnPathScroll from "./ui/TextOnPathScroll";
+import { DLink } from "./ui/drawably";
 // Grain overlay for editorial print feel
 function GrainOverlay() {
   return (
@@ -539,12 +540,12 @@ export function ImmersiveLandingPage({
               >
                 <div className="flex flex-col sm:flex-row gap-4 justify-start">
                   <PlayStoreCta size="h-11" />
-                  <a
+                  <DLink
                     href="/docs"
-                    className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-500 text-zinc-100 font-medium transition-colors duration-200"
+                    className="d-btn-lg"
                   >
                     View Docs
-                  </a>
+                  </DLink>
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { languages, changeLanguage } from '../i18n';
+import { DButton } from './ui/drawably';
 
 // Globe icon SVG
 const GlobeIcon = () => (
@@ -105,13 +106,11 @@ export function LanguageSwitcher({ variant = 'default', className = '' }: Langua
   return (
     <div ref={dropdownRef} className={`relative ${className}`}>
       {/* Trigger Button */}
-      <button
+      <DButton
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200"
-        style={{
-          backgroundColor: 'transparent',
-          color: 'inherit',
-        }}
+        variant="outline"
+        color="grey"
+        className="d-btn-sm"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-label="Select language"
@@ -120,7 +119,7 @@ export function LanguageSwitcher({ variant = 'default', className = '' }: Langua
         <span className="hidden sm:inline">{currentLang.nativeName}</span>
         <span>{currentLang.flag}</span>
         <ChevronIcon up={isOpen} />
-      </button>
+      </DButton>
       
       {/* Dropdown */}
       {isOpen && (

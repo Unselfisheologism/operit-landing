@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
+import { DCard } from "./ui/drawably";
 
 // Verified competitor data — "vs" keywords with SEO metrics
 // Search volume: Google Keyword Planner exact match (12mo avg)
@@ -256,12 +257,13 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
   return (
     <div
       ref={ref}
-      className={`border border-zinc-200 dark:border-zinc-800 transition-all duration-500 ${
+      className={`transition-all duration-500 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
       id={comp.id}
     >
+      <DCard color="grey" pad="none" className="mb-2">
       {/* Header — clickable */}
       <button
         onClick={() => setExpanded(!expanded)}
@@ -362,6 +364,7 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
           </div>
         </div>
       </div>
+      </DCard>
     </div>
   );
 }

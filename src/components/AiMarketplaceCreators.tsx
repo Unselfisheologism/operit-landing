@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 import { PlayStoreCta } from "./PlayStoreCta";
 import { useInView } from "../hooks/useInView";
 import { SocialLinksInline } from "./SocialLinks";
+import { DLink } from "./ui/drawably";
 
 // Grain overlay for editorial print feel
 function GrainOverlay() {
@@ -461,12 +462,12 @@ export function AiMarketplaceCreators({
               }`}
             >
               <PlayStoreCta size="h-11" />
-              <a
+              <DLink
                 href="/docs#marketplace"
-                className="inline-flex items-center justify-center px-8 py-4 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors duration-200"
+                className="d-btn-lg"
               >
                 View Marketplace Docs
-              </a>
+              </DLink>
             </div>
             <div className="mt-4 flex items-center gap-3">
               <span className="text-xs text-zinc-400 dark:text-zinc-600">
@@ -1012,12 +1013,13 @@ export function AiMarketplaceCreators({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <PlayStoreCta size="h-11" />
-              <a
+              <DLink
                 href="/docs#marketplace"
-                className="inline-flex items-center justify-center px-8 py-4 border border-zinc-700 hover:border-zinc-600 text-white font-medium transition-colors duration-200"
+                color="orange"
+                className="d-btn-lg"
               >
                 Read the Docs
-              </a>
+              </DLink>
             </div>
             <div className="mt-6 flex items-center justify-center gap-3">
               <span className="text-xs text-zinc-500">Follow:</span>

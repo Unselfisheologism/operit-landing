@@ -5,6 +5,7 @@ import {
   ReceiptPrinter,
   type ReceiptPrinterStage,
 } from "./ReceiptPrinter";
+import { DButton } from "./ui/drawably";
 
 const freeFeatures = [
   "Write code & generate websites",
@@ -172,12 +173,15 @@ export function Pricing() {
             Common questions.
           </h3>
 
-          <div className="space-y-0 divide-y divide-zinc-200 dark:divide-zinc-800">
+          <div className="space-y-2">
             {faqs.map((faq, i) => (
               <div key={i}>
-                <button
+                <DButton
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between py-5 text-left group"
+                  variant="outline"
+                  color="grey"
+                  className="d-btn-row group"
+                  aria-expanded={openFaq === i}
                 >
                   <span className="text-sm font-display text-zinc-900 dark:text-zinc-100 group-hover:text-blue-500 transition-colors pr-4">
                     {faq.q}
@@ -189,13 +193,13 @@ export function Pricing() {
                   >
                     +
                   </span>
-                </button>
+                </DButton>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openFaq === i ? "max-h-40 pb-5" : "max-h-0"
+                    openFaq === i ? "max-h-40 pt-3 pb-5" : "max-h-0"
                   }`}
                 >
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed px-2">
                     {faq.a}
                   </p>
                 </div>

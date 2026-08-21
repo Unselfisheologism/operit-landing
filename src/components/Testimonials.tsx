@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
+import { DButton } from "./ui/drawably";
 
 const testimonials = [
   { quote: "I replaced my entire dev workflow on the go. Claude Code in a terminal on my phone? This is the future.", name: "Android Developer", role: "Early Adopter" },
@@ -47,13 +48,13 @@ export function Testimonials() {
         </div>
 
         {!expanded && (
-          <div className="mt-8 text-center">
-            <button onClick={() => setExpanded(true)} className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-200 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-sm font-secondary uppercase tracking-wider hover:bg-zinc-300 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors cursor-pointer">
-              Show all testimonials
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
-            </button>
-          </div>
-        )}
+                  <div className="mt-8 text-center">
+                    <DButton onClick={() => setExpanded(true)} variant="outline" color="orange" className="d-btn-lg uppercase tracking-wider">
+                      Show all testimonials
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+                    </DButton>
+                  </div>
+                )}
       </div>
     </section>
   );

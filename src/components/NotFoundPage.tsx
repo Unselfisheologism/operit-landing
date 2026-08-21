@@ -1,5 +1,6 @@
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
+import { DButton, DLink } from "./ui/drawably";
 
 // JSON-LD Schema for 404 Page
 function NotFoundSchemaMarkup() {
@@ -84,27 +85,32 @@ export function NotFoundPage({ dark }: { dark: boolean }) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/"
-              className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors dark:rounded-none rounded-lg"
-            >
-              Go back home
-            </a>
+                      <DLink
+                        href="/"
+                        variant="solid"
+                        className="d-btn-lg"
+                      >
+                        Go back home
+                      </DLink>
 
-            <button
-              onClick={() => window.history.back()}
-              className="inline-flex items-center justify-center px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 font-medium transition-colors dark:rounded-none rounded-lg"
-            >
-              Go back
-            </button>
+                      <DButton
+                        onClick={() => window.history.back()}
+                        variant="outline"
+                        color="grey"
+                        className="d-btn-lg"
+                      >
+                        Go back
+                      </DButton>
 
-            <a
-              href="/apk"
-              className="inline-flex items-center justify-center px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 font-medium transition-colors dark:rounded-none rounded-lg"
-            >
-              APK
-            </a>
-          </div>
+                      <DLink
+                        href="/apk"
+                        variant="outline"
+                        color="grey"
+                        className="d-btn-lg"
+                      >
+                        APK
+                      </DLink>
+                    </div>
         </div>
       </main>
 

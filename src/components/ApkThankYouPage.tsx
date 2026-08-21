@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { GlimmProvider, useGlimm } from "glimm/react";
+import { DButton, DLink } from "./ui/drawably";
 
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
@@ -103,34 +104,41 @@ function ApkContent() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
+            <DLink
               href={CHANGELOG_URL}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+              variant="outline"
+              color="grey"
+              className="d-btn-lg"
             >
               Changelog
-            </a>
-            <a
+            </DLink>
+            <DLink
               href={DISCORD_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+              variant="outline"
+              color="grey"
+              className="d-btn-lg"
             >
               Discord
-            </a>
-            <a
+            </DLink>
+            <DLink
               href={FEEDBACK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+              variant="outline"
+              color="grey"
+              className="d-btn-lg"
             >
               Feedback
-            </a>
-            <button
+            </DLink>
+            <DButton
               onClick={triggerDownload}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-900 dark:text-zinc-100 font-medium transition-colors"
+              variant="solid"
+              className="d-btn-lg"
             >
               Download Again
-            </button>
+            </DButton>
           </div>
         </div>
       </div>

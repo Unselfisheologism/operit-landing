@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { useInView } from "../hooks/useInView";
+import { DButton } from "./ui/drawably";
 
 // JSON-LD Schema for Blog Page
 function BlogPageSchemaMarkup() {
@@ -364,17 +365,15 @@ function CategoryTags({
   return (
     <div className="flex flex-wrap gap-2">
       {categories.map((cat) => (
-        <button
+        <DButton
           key={cat}
           onClick={() => onSelect(cat)}
-          className={`px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.2em] border transition-all duration-200 ${
-            active === cat
-              ? "border-blue-500 bg-blue-500 text-white"
-              : "border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:border-zinc-400 dark:hover:border-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300"
-          }`}
+          variant={active === cat ? "solid" : "outline"}
+          color={active === cat ? "blue" : "grey"}
+          className="d-btn-sm uppercase tracking-[0.2em]"
         >
           {cat}
-        </button>
+        </DButton>
       ))}
     </div>
   );
