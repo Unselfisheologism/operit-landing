@@ -5,11 +5,11 @@ import PhoneVideoPlayer from "./PhoneVideoPlayer"
 
 const phoneVideos = [
   {
-    src: "/videos/makeanimageofadonkeyuiautomationvideo.mp4",
+    src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787407427/makeanimageofadonkeyuiautomationvideo_ra7obd.mp4",
     description: "Twent using the Gemini app to make an image of a donkey",
   },
   {
-    src: "/videos/emptyrecyclebinuiautomationvideo.mp4",
+    src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787407406/emptyrecyclebinuiautomationvideo_x5k84q.mp4",
     description: "Twent empties Recycle Bin (on user confirmation) in the My Files app",
   },
 ]
