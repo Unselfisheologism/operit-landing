@@ -1,17 +1,36 @@
 "use client"
 
 import StackingCards, { StackingCardItem } from "./stacking-cards"
-import { TechTerm } from "../../ui/TechTerm";
+import PhoneVideoPlayer from "./PhoneVideoPlayer"
 
-const cards = [
+const phoneVideos = [
+  {
+    src: "/videos/makeanimageofadonkeyuiautomationvideo.mp4",
+    description: "Twent using the Gemini app to make an image of a donkey",
+  },
+  {
+    src: "/videos/emptyrecyclebinuiautomationvideo.mp4",
+    description: "Twent empties Recycle Bin (on user confirmation) in the My Files app",
+  },
+]
+
+type Card = {
+  bgColor: string
+  textColor: string
+  title: string
+  description: string
+  image?: string
+  videos?: { src: string; description: string }[]
+}
+
+const cards: Card[] = [
   {
     bgColor: "bg-[#0015ff]",
     textColor: "text-white",
     title: "Twent can use your phone",
     description:
       "Twent can use your apps and any part of your phone (it's safe!), and run on autopilot. It can explain what's on screen",
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&auto=format&fit=crop&q=60",
+    videos: phoneVideos,
   },
   {
     bgColor: "bg-[#f97316]",
@@ -54,7 +73,7 @@ export default function StackingCardsDemo() {
   return (
     <div className="text-white">
       <StackingCards totalCards={cards.length} className="h-[700vh]">
-        {cards.map(({ bgColor, textColor, description, image, title }, index) => (
+        {cards.map(({ bgColor, textColor, description, videos, image, title }, index) => (
           <StackingCardItem key={index} index={index} className="h-[620px]">
             <div
               className={
@@ -70,12 +89,16 @@ export default function StackingCardsDemo() {
               </div>
 
               <div className="w-full sm:w-1/2 rounded-xl aspect-video relative overflow-hidden">
-                <img
-                  src={image}
-                  alt={title}
-                  className="object-cover"
-                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-                />
+                {videos ? (
+                  <PhoneVideoPlayer videos={videos} />
+                ) : (
+                  <img
+                    src={image}
+                    alt={title}
+                    className="object-cover"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+                  />
+                )}
               </div>
             </div>
           </StackingCardItem>
