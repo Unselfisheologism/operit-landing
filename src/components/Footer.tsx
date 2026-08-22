@@ -1,5 +1,6 @@
 import ElasticLine from "./fancy/physics/elastic-line"
 import { Stamp } from "./Stamp"
+import { NewsletterSignup } from "./NewsletterSignup"
 
 export function Footer() {
   const links = {
@@ -216,6 +217,7 @@ export function Footer() {
         />
       </div>
       <div className="max-w-6xl mx-auto px-6 py-16">
+        <NewsletterSignup />
         <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 mb-3">
