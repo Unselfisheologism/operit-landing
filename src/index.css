@@ -314,3 +314,8 @@ footer a:not(:has(svg)):hover,
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='4' viewBox='0 0 12 4'><path d='M1 2.6 Q 3 1.2 6 2.4 T 11 1.8' fill='none' stroke='%23f97316' stroke-width='1.3' stroke-linecap='round'/></svg>");
 }
 
+
+/* Hide site nav while a video popup is open (zoomed-in view) */
+body.video-popup-open .site-nav {
+  display: none !important;
+}

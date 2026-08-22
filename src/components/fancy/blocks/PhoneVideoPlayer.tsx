@@ -53,13 +53,15 @@ export default function PhoneVideoPlayer({
     return () => window.removeEventListener("keydown", onKey)
   }, [expanded])
 
-  // lock page scroll while the popup is open
+  // lock page scroll + hide site nav while the popup is open
   useEffect(() => {
     if (!expanded) return
     const prev = document.body.style.overflow
     document.body.style.overflow = "hidden"
+    document.body.classList.add("video-popup-open")
     return () => {
       document.body.style.overflow = prev
+      document.body.classList.remove("video-popup-open")
     }
   }, [expanded])
 

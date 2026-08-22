@@ -178,7 +178,7 @@ function DesktopHeader({
 }) {
   return (
     <div
-      className="nav-pill hidden md:flex fixed top-4 z-50 left-1/2 -translate-x-1/2 items-center transition-all duration-500 ease-out"
+      className="site-nav nav-pill hidden md:flex fixed top-4 z-50 left-1/2 -translate-x-1/2 items-center transition-all duration-500 ease-out"
       style={{
         ...(scrolled
           ? {
@@ -301,7 +301,7 @@ function MobileHeader({
 }) {
   return (
     <div
-      className="nav-pill md:hidden fixed top-3 left-3 right-3 z-50 flex items-center justify-between px-4 py-3 backdrop-blur-xl shadow-lg shadow-black/5"
+      className="site-nav nav-pill md:hidden fixed top-3 left-3 right-3 z-50 flex items-center justify-between px-4 py-3 backdrop-blur-xl shadow-lg shadow-black/5"
       style={{
         background: dark ? "rgba(0,0,0,0.85)" : "rgba(255,255,255,0.85)",
         border: dark
@@ -373,7 +373,7 @@ export function Nav({ dark }: NavProps) {
       {/* Top-left: text logo OUTSIDE the header. Disappears on scroll. */}
       <a
         href="#"
-        className={`hidden md:flex fixed top-5 left-6 z-40 items-center gap-2 transition-all duration-500 ${
+        className={`site-nav hidden md:flex fixed top-5 left-6 z-40 items-center gap-2 transition-all duration-500 ${
           scrolled
             ? "opacity-0 -translate-y-4 pointer-events-none"
             : "opacity-100 translate-y-0"
@@ -386,7 +386,7 @@ export function Nav({ dark }: NavProps) {
 
       {/* Top-right: auth + download OUTSIDE the header. Disappears on scroll. */}
       <div
-        className={`hidden md:flex fixed top-5 right-6 z-40 items-center gap-3 transition-all duration-500 ${
+        className={`site-nav hidden md:flex fixed top-5 right-6 z-40 items-center gap-3 transition-all duration-500 ${
           scrolled
             ? "opacity-0 -translate-y-4 pointer-events-none"
             : "opacity-100 translate-y-0"
