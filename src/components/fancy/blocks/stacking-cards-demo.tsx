@@ -73,11 +73,19 @@ const cards: Card[] = [
   {
     bgColor: "bg-[#0015ff]",
     textColor: "text-white",
-    title: "Twent can grow with you",
+    title: "Twent confirms or asks if it needs to",
     description:
-      "Twent can use extra abilities you add, run on its own on a schedule or when you trigger it, and even ask you when it needs a real decision.",
-    image:
-      "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800&auto=format&fit=crop&q=60",
+      "Twent asks for confirmation, before doing anything serious or deleting stuff. It asks for Information if it needs you to make a decision, choose an option, etc.",
+    videos: [
+      {
+        src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787414501/lv_0_20260822213044_jzsldc.mp4",
+        description: "Twent confirming before emptying the Recycle Bin (user told it to).",
+      },
+      {
+        src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787414601/lv_0_20260822213241_jaigtp.mp4",
+        description: "Twent asking when it needs your opinion",
+      },
+    ],
   },
 ]
 
