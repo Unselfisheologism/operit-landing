@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
 const SPEEDS = [0.5, 1, 2]
 
@@ -204,21 +205,23 @@ export default function PhoneVideoPlayer({
     <>
       {!expanded && player(false)}
 
-      {expanded && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-xl"
-          onClick={() => setExpanded(false)}
-          role="dialog"
-          aria-modal="true"
-        >
+      {expanded &&
+        createPortal(
           <div
-            className="w-full max-w-[min(92vw,540px)] h-[85vh] max-h-[900px]"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-8 bg-black/60 backdrop-blur-xl"
+            onClick={() => setExpanded(false)}
+            role="dialog"
+            aria-modal="true"
           >
-            {player(true)}
-          </div>
-        </div>
-      )}
+            <div
+              className="w-full max-w-[min(92vw,540px)] h-[calc(100dvh-1.5rem)] sm:h-[calc(100dvh-4rem)]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {player(true)}
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   )
 }
