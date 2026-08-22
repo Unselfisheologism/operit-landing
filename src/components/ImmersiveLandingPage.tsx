@@ -575,7 +575,7 @@ export function ImmersiveLandingPage({
               </div>
             </div>
 
-            <div className="hidden md:flex md:col-span-2 items-center justify-center">
+            <div className="flex md:col-span-2 items-center justify-center">
               <div
                 className={`transition-all duration-1000 delay-300 ${
                   heroInView
@@ -586,7 +586,7 @@ export function ImmersiveLandingPage({
                 <img
                   src="/brain-robot-hero.png"
                   alt="Brain robot"
-                  className="max-h-[520px] w-auto object-contain"
+                  className="max-h-[260px] sm:max-h-[360px] md:max-h-[520px] w-auto object-contain"
                 />
               </div>
             </div>
