@@ -75,13 +75,15 @@ export default function PhoneVideoPlayer({
       <div className="bg-black/90 text-white text-xs px-3 py-2">
         <p className="mb-1.5 leading-snug">{videos[index].description}</p>
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => go(-1)}
-            aria-label="Previous video"
-            className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition"
-          >
-            ◀
-          </button>
+          {videos.length > 1 && (
+            <button
+              onClick={() => go(-1)}
+              aria-label="Previous video"
+              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition"
+            >
+              ◀
+            </button>
+          )}
           <button
             onClick={() => setSpeedIdx((s) => Math.max(0, s - 1))}
             disabled={speedIdx === 0}
@@ -101,13 +103,15 @@ export default function PhoneVideoPlayer({
           >
             <FastForwardIcon />
           </button>
-          <button
-            onClick={() => go(1)}
-            aria-label="Next video"
-            className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition"
-          >
-            ▶
-          </button>
+          {videos.length > 1 && (
+            <button
+              onClick={() => go(1)}
+              aria-label="Next video"
+              className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition"
+            >
+              ▶
+            </button>
+          )}
         </div>
       </div>
     </div>

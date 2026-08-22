@@ -37,8 +37,12 @@ const cards: Card[] = [
     textColor: "text-black",
     title: "Twent can make",
     description: "Twent can write code, generate slide decks, videos, images, spreadsheets, and websites — all from a simple request.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=60",
+    videos: [
+      {
+        src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787412593/lv_0_20260822203703_y0uqiv.mp4",
+        description: "Twent creating something from a simple request",
+      },
+    ],
   },
   {
     bgColor: "bg-[#0015ff]",
@@ -46,8 +50,12 @@ const cards: Card[] = [
     title: "Twent has a terminal",
     description:
       "Twent has a full Linux-style terminal on your phone, can install tools, run scripts, and do the kind of work that used to need a laptop.",
-    image:
-      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=800&auto=format&fit=crop&q=60",
+    videos: [
+      {
+        src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787412082/lv_0_20260822204900_btagzf.mp4",
+        description: "Twent running a Linux-style terminal on the phone",
+      },
+    ],
   },
   {
     bgColor: "bg-[#f97316]",
@@ -55,8 +63,12 @@ const cards: Card[] = [
     title: "Twent can remember",
     description:
       "Twent can remember your preferences, past requests, and important context over time — it's memory grows overtime!",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop&q=60",
+    videos: [
+      {
+        src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787414081/lv_0_20260822212259_mhes06.mp4",
+        description: "Twent remembering preferences and past context",
+      },
+    ],
   },
   {
     bgColor: "bg-[#0015ff]",
