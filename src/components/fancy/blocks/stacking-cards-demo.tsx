@@ -111,7 +111,10 @@ export default function StackingCardsDemo() {
                 <p>{description}</p>
               </div>
 
-              <div className="w-full sm:w-1/2 rounded-xl aspect-video relative overflow-hidden">
+              <div
+                className="rounded-xl relative overflow-hidden flex-1 min-h-0 mx-auto sm:flex-none sm:self-stretch"
+                style={{ aspectRatio: "9 / 16", maxWidth: "100%" }}
+              >
                 {videos ? (
                   <PhoneVideoPlayer videos={videos} accentColor={accentColor} />
                 ) : (
