@@ -20,6 +20,7 @@ type Card = {
   title: string
   description: string
   image?: string
+  accentColor?: string
   videos?: { src: string; description: string }[]
 }
 
@@ -37,6 +38,7 @@ const cards: Card[] = [
     textColor: "text-black",
     title: "Twent can make",
     description: "Twent can write code, generate slide decks, videos, images, spreadsheets, and websites — all from a simple request.",
+    accentColor: "#0015ff",
     videos: [
       {
         src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787412593/lv_0_20260822203703_y0uqiv.mp4",
@@ -63,6 +65,7 @@ const cards: Card[] = [
     title: "Twent can remember",
     description:
       "Twent can remember your preferences, past requests, and important context over time — it's memory grows overtime!",
+    accentColor: "#0015ff",
     videos: [
       {
         src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787414081/lv_0_20260822212259_mhes06.mp4",
@@ -93,7 +96,7 @@ export default function StackingCardsDemo() {
   return (
     <div className="text-white">
       <StackingCards totalCards={cards.length} className="h-[700vh]">
-        {cards.map(({ bgColor, textColor, description, videos, image, title }, index) => (
+        {cards.map(({ bgColor, textColor, description, videos, image, title, accentColor }, index) => (
           <StackingCardItem key={index} index={index} className="h-[620px]">
             <div
               className={
@@ -110,7 +113,7 @@ export default function StackingCardsDemo() {
 
               <div className="w-full sm:w-1/2 rounded-xl aspect-video relative overflow-hidden">
                 {videos ? (
-                  <PhoneVideoPlayer videos={videos} />
+                  <PhoneVideoPlayer videos={videos} accentColor={accentColor} />
                 ) : (
                   <img
                     src={image}

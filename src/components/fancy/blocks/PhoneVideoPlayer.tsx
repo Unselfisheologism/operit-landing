@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 
 const SPEEDS = [0.5, 1, 2]
 
@@ -20,59 +20,131 @@ function SlowDownIcon() {
 
 export default function PhoneVideoPlayer({
   videos,
+  accentColor = "#f97316",
 }: {
   videos: { src: string; description: string }[]
+  accentColor?: string
 }) {
   const [index, setIndex] = useState(0)
   const [speedIdx, setSpeedIdx] = useState(1)
   const [progress, setProgress] = useState(0)
+  const [expanded, setExpanded] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  // last known playback position + rate, so the popup can resume seamlessly
+  const savedTimeRef = useRef(0)
+  const speedRef = useRef(SPEEDS[1])
 
   const speed = SPEEDS[speedIdx]
 
   useEffect(() => {
+    speedRef.current = speed
     const v = videoRef.current
     if (!v) return
     v.playbackRate = speed
   }, [speed, index])
 
+  // close popup on Escape
+  useEffect(() => {
+    if (!expanded) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setExpanded(false)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [expanded])
+
+  // lock page scroll while the popup is open
+  useEffect(() => {
+    if (!expanded) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [expanded])
+
+  const applyRate = useCallback(() => {
+    const v = videoRef.current
+    if (v) v.playbackRate = speedRef.current
+  }, [])
+
+  // after the popup's video mounts, jump back to where playback was
+  const restorePosition = useCallback(
+    (v: HTMLVideoElement | null) => {
+      videoRef.current = v
+      if (!v) return
+      const seek = () => {
+        v.currentTime = savedTimeRef.current
+        v.playbackRate = speedRef.current
+        v.play().catch(() => {})
+      }
+      if (v.readyState >= 1) seek()
+      else v.addEventListener("loadedmetadata", seek, { once: true })
+    },
+    []
+  )
+
+  const changeSpeed = (dir: -1 | 1) => {
+    const next = Math.min(SPEEDS.length - 1, Math.max(0, speedIdx + dir))
+    setSpeedIdx(next)
+    const v = videoRef.current
+    if (v) v.playbackRate = SPEEDS[next]
+  }
+
   const go = (dir: -1 | 1) => {
     setIndex((i) => (i + dir + videos.length) % videos.length)
     setProgress(0)
+    savedTimeRef.current = 0
   }
 
   const onEnded = () => {
     setIndex((i) => (i + 1) % videos.length)
     setProgress(0)
+    savedTimeRef.current = 0
   }
 
   const onTimeUpdate = () => {
     const v = videoRef.current
-    if (v && v.duration > 0) setProgress((v.currentTime / v.duration) * 100)
+    if (v && v.duration > 0) {
+      savedTimeRef.current = v.currentTime
+      setProgress((v.currentTime / v.duration) * 100)
+    }
   }
 
-  return (
-    <div className="w-full h-full flex flex-col bg-black rounded-xl overflow-hidden relative">
+  const openPopup = () => setExpanded(true)
+
+  const player = (isExpanded: boolean) => (
+    <div
+      className={
+        "w-full h-full flex flex-col bg-black overflow-hidden relative " +
+        (isExpanded ? "rounded-2xl shadow-2xl" : "rounded-xl")
+      }
+    >
       {/* thin progress bar */}
       <div className="h-1 w-full bg-white/20">
-        <div className="h-full bg-[#f97316]" style={{ width: `${progress}%` }} />
+        <div className="h-full" style={{ width: `${progress}%`, backgroundColor: accentColor }} />
       </div>
 
       <video
         key={videos[index].src}
-        ref={videoRef}
+        ref={isExpanded ? restorePosition : videoRef}
         src={videos[index].src}
-        autoPlay
+        autoPlay={!isExpanded}
         muted
         loop={false}
         playsInline
+        onLoadedMetadata={applyRate}
+        onPlay={applyRate}
         onEnded={onEnded}
         onTimeUpdate={onTimeUpdate}
-        className="flex-1 min-h-0 object-contain"
+        onClick={isExpanded ? undefined : openPopup}
+        className={
+          "flex-1 min-h-0 object-contain " + (isExpanded ? "" : "cursor-zoom-in")
+        }
       />
 
       {/* description + controls */}
-      <div className="bg-black/90 text-white text-xs px-3 py-2">
+      <div className={"bg-black/90 text-white text-xs px-3 py-2 " + (isExpanded ? "text-sm px-4 py-3" : "")}>
         <p className="mb-1.5 leading-snug">{videos[index].description}</p>
         <div className="flex items-center gap-2">
           {videos.length > 1 && (
@@ -85,7 +157,7 @@ export default function PhoneVideoPlayer({
             </button>
           )}
           <button
-            onClick={() => setSpeedIdx((s) => Math.max(0, s - 1))}
+            onClick={() => changeSpeed(-1)}
             disabled={speedIdx === 0}
             aria-label="Slow down"
             className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition disabled:opacity-30"
@@ -96,7 +168,7 @@ export default function PhoneVideoPlayer({
             {speed}×
           </span>
           <button
-            onClick={() => setSpeedIdx((s) => Math.min(SPEEDS.length - 1, s + 1))}
+            onClick={() => changeSpeed(1)}
             disabled={speedIdx === SPEEDS.length - 1}
             aria-label="Fast forward"
             className="px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition disabled:opacity-30"
@@ -112,8 +184,39 @@ export default function PhoneVideoPlayer({
               ▶
             </button>
           )}
+          {isExpanded && (
+            <button
+              onClick={() => setExpanded(false)}
+              aria-label="Close"
+              className="ml-auto px-2 py-0.5 rounded bg-white/10 hover:bg-white/25 active:scale-95 transition"
+            >
+              ✕
+            </button>
+          )}
         </div>
       </div>
     </div>
+  )
+
+  return (
+    <>
+      {!expanded && player(false)}
+
+      {expanded && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/60 backdrop-blur-xl"
+          onClick={() => setExpanded(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="w-full max-w-[min(92vw,540px)] h-[85vh] max-h-[900px]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {player(true)}
+          </div>
+        </div>
+      )}
+    </>
   )
 }
