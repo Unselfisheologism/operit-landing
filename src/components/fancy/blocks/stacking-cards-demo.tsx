@@ -26,7 +26,7 @@ type Card = {
 
 const cards: Card[] = [
   {
-    bgColor: "bg-[#0015ff]",
+    bgColor: "bg-blue-500",
     textColor: "text-white",
     title: "Twent can use your phone",
     description:
@@ -34,11 +34,11 @@ const cards: Card[] = [
     videos: phoneVideos,
   },
   {
-    bgColor: "bg-[#f97316]",
+    bgColor: "bg-orange-500",
     textColor: "text-black",
     title: "Twent can make",
     description: "Twent can write code, generate slide decks, videos, images, spreadsheets, and websites — all from a simple request.",
-    accentColor: "#0015ff",
+    accentColor: "#3b82f6",
     videos: [
       {
         src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787412593/lv_0_20260822203703_y0uqiv.mp4",
@@ -47,7 +47,7 @@ const cards: Card[] = [
     ],
   },
   {
-    bgColor: "bg-[#0015ff]",
+    bgColor: "bg-blue-500",
     textColor: "text-white",
     title: "Twent has a terminal",
     description:
@@ -60,12 +60,12 @@ const cards: Card[] = [
     ],
   },
   {
-    bgColor: "bg-[#f97316]",
+    bgColor: "bg-orange-500",
     textColor: "text-black",
     title: "Twent can remember",
     description:
       "Twent can remember your preferences, past requests, and important context over time — it's memory grows overtime!",
-    accentColor: "#0015ff",
+    accentColor: "#3b82f6",
     videos: [
       {
         src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787414081/lv_0_20260822212259_mhes06.mp4",
@@ -74,7 +74,7 @@ const cards: Card[] = [
     ],
   },
   {
-    bgColor: "bg-[#0015ff]",
+    bgColor: "bg-blue-500",
     textColor: "text-white",
     title: "Twent confirms or asks if it needs to",
     description:
