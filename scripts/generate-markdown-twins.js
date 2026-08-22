@@ -141,6 +141,22 @@ const PAGES = [
     keywords: ['changelog', 'updates', 'releases', 'version history'],
   },
   {
+    slug: 'about',
+    url: '/about',
+    title: 'About Twent AI — On-Device AI Agent for Android',
+    description: 'Twent AI builds Twent, a free on-device AI agent for Android: app automation, Ubuntu terminal, local AI models, zero telemetry.',
+    type: 'trust',
+    keywords: ['about Twent', 'Twent AI company'],
+  },
+  {
+    slug: 'contact',
+    url: '/contact',
+    title: 'Contact Twent AI — Support & Community',
+    description: 'Reach the Twent team: support email jeffrinjames@twent.xyz, Discord community, and response expectations.',
+    type: 'trust',
+    keywords: ['contact Twent', 'Twent support'],
+  },
+  {
     slug: 'privacy',
     url: '/privacy',
     title: 'Twent Privacy Policy — Your Data, Your Control',
@@ -2005,8 +2021,72 @@ function generateBySlug(page) {
   
   if (page.type === 'legal') return generateLegal(page);
   if (page.type === 'changelog') return generateChangelog(page);
+  if (slug === 'about' || slug === 'contact') return generateTrustPage(page);
   
   return generate(page);
+}
+
+// ─── Trust anchor pages (About / Contact) ─────────────────────────────────────
+function generateTrustPage(page) {
+  const isAbout = page.slug === 'about';
+  const body = isAbout ? `# About Twent AI
+
+Twent AI is the independent team behind Twent, a free AI agent that runs entirely on Android devices. We believe the next generation of AI should live in your pocket, see what you see, and act on your behalf without shipping your data to anyone.
+
+## What We Build
+
+Twent is an agentic OS layer for Android 8.0+ (arm64-v8a):
+
+- **Screen-level automation** — sees your screen via Android accessibility APIs and can tap, swipe, and type into any app.
+- **Ubuntu 24.04 LTS terminal** — bash, apt, Python, Node, Go, Rust, git, SSH, VS Code Server. No root required.
+- **Claude Code and OpenAI Codex execution** — full CLI agent runs directly on the device against any Git repository.
+- **Local AI models** — GGUF and MNN models run offline; nothing leaves the device unless you choose a cloud model.
+- **1000+ integrations** — MCP servers and Composio connections.
+- **Workflow builder** — visual automations, Tasker integration, scheduled triggers, plus a skills marketplace.
+
+## How We Make Money
+
+Twent is completely free — every feature included, no credit card, no subscription, no Play Store middleman. Distributed as a direct APK from https://twent.xyz. You bring your own AI provider keys, encrypted on-device with Android KeyStore; we never see or store them.
+
+## Privacy by Architecture
+
+Zero telemetry. No usage analytics, no data sales, no cloud dependency by default. Full practices: https://twent.xyz/privacy
+
+## Contact
+
+- Email: jeffrinjames@twent.xyz
+- Contact page: https://twent.xyz/contact
+- X: https://x.com/Jeff9James
+- Discord: https://discord.gg/dUFrWm4w
+` : `# Contact Twent AI
+
+The fastest way to reach the team is email at jeffrinjames@twent.xyz — our customer service and technical support address. Typical reply time: within a few business days, often faster. When reporting a bug, include your Android version, device model, and Twent version.
+
+## Community
+
+- Discord: https://discord.gg/dUFrWm4w — quickest answers; marketplace creators and MCP skill authors welcome.
+- X: https://x.com/Jeff9James
+
+## Documentation & Agent Access
+
+- Docs: https://twent.xyz/docs
+- AI agents: fetch https://twent.xyz/llms.txt, https://twent.xyz/agent.txt, and https://twent.xyz/openapi.json for machine-readable access.
+
+## Business & Press
+
+Partnership, enterprise deployment, or press inquiries: email jeffrinjames@twent.xyz with "Business" or "Press" in the subject line. Company background: https://twent.xyz/about
+`;
+  return `---
+title: ${page.title}
+description: ${page.description}
+type: trust
+ai-readability:
+  tokens: ${estimateTokens(body)}
+  score: 100
+  level: Advanced
+---
+
+${body}`;
 }
 
 // ─── MAIN ─────────────────────────────────────────────────────────────────────
@@ -2083,6 +2163,11 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 
 ${['chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent', 'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make', 'zapier', 'qordinate', 'omnara', 'manus', 'onspace'].map(name => `- [vs ${name.charAt(0).toUpperCase() + name.slice(1)}](https://twent.xyz/vs/${name}) — Twent vs ${name.charAt(0).toUpperCase() + name.slice(1)}`).join('\n')}
 
+## Company
+
+- [About](https://twent.xyz/about) — Who builds Twent
+- [Contact](https://twent.xyz/contact) — Support email and community
+
 ## Legal
 
 - [Privacy Policy](https://twent.xyz/privacy) — Data handling and encryption
@@ -2094,6 +2179,8 @@ ${['chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent', 'n8n', '
 - [llms-full.txt](https://twent.xyz/llms-full.txt) — AI consumer guide (full)
 - [sitemap.xml](https://twent.xyz/sitemap.xml) — XML sitemap for search engines
 - [sitemap.md](https://twent.xyz/sitemap.md) — Markdown sitemap for AI agents
+- [OpenAPI spec](https://twent.xyz/openapi.json) — OpenAPI 3.1 API surface
+- [agent.txt](https://twent.xyz/agent.txt) — When-to-use guidance and fetch protocol for agents
 
 ## Technical Notes for AI Agents
 

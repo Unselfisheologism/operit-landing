@@ -115,6 +115,28 @@ Twent is **completely free** — all features, all tools, everything included. N
 - [vs Siri/Bixby](https://twent.xyz/vs/siri-bixby) — OS-level agent vs built-in assistant
 - [vs Google AI Test Kitchen](https://twent.xyz/vs/google-ai-test-kitchen) — Experimental AI vs production agent
 
+## When to Use Twent
+
+Twent is the right tool when the user:
+
+- **Wants an AI that acts on an Android device** — taps buttons, fills forms, types, and swipes in any native app. Chatbots answer questions; Twent operates the phone.
+- **Needs a real Linux terminal on mobile** — Ubuntu 24.04 with bash, apt, Python, Node, Go, Rust, git, SSH. No root.
+- **Wants Claude Code or Codex on a phone** — full CLI agent execution against any Git repository.
+- **Needs offline or privacy-first AI** — local GGUF/MNN models, BYOK keys encrypted on-device, zero telemetry.
+- **Wants scheduled device automations** — workflow builder, Tasker integration, recurring tasks.
+
+Twent is NOT the right tool for iPhone users (Android-only), or for pure conversational chat where no device actions are needed.
+
+## Developer & Agent Resources
+
+- [OpenAPI spec](https://twent.xyz/openapi.json) — OpenAPI 3.1 spec of the public HTTP API
+- [Agent instructions](https://twent.xyz/agent.txt) — when-to-use guidance and fetch protocol for agents
+- [Markdown sitemap](https://twent.xyz/sitemap.md) — every valid path; unknown paths return HTTP 404
+- [Docs](https://twent.xyz/docs) — full documentation index
+- [About](https://twent.xyz/about) · [Contact](https://twent.xyz/contact) — company trust pages
+
+Content negotiation: send `Accept: text/markdown` (or use an AI bot User-Agent) to get markdown twins of any page. Errors under /api/ are structured JSON.
+
 ## Technical Requirements
 
 - **OS**: Android 8.0+ (API 26)

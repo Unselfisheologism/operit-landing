@@ -3,7 +3,7 @@ title: Twent Sitemap (AI-Optimized)
 description: Complete sitemap of all Twent pages in markdown format for AI agents
 type: sitemap
 ai-readability:
-  tokens: 360
+  tokens: 384
   score: 100
   level: Advanced
 ---
@@ -53,9 +53,11 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [vs Omnara](https://twent.xyz/vs/omnara) — Twent vs Omnara
 - [vs Manus](https://twent.xyz/vs/manus) — Twent vs Manus
 - [vs Onspace](https://twent.xyz/vs/onspace) — Twent vs Onspace
-- [vs Pi](https://twent.xyz/vs/pi) — Twent vs Pi
-- [vs Siri/Bixby](https://twent.xyz/vs/siri-bixby) — Twent vs Siri/Bixby
-- [vs Google AI Test Kitchen](https://twent.xyz/vs/google-ai-test-kitchen) — Twent vs Google AI Test Kitchen
+
+## Company
+
+- [About](https://twent.xyz/about) — Who builds Twent
+- [Contact](https://twent.xyz/contact) — Support email and community
 
 ## Legal
 
@@ -68,6 +70,9 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [llms-full.txt](https://twent.xyz/llms-full.txt) — AI consumer guide (full)
 - [sitemap.xml](https://twent.xyz/sitemap.xml) — XML sitemap for search engines
 - [sitemap.md](https://twent.xyz/sitemap.md) — Markdown sitemap for AI agents
+- [OpenAPI spec](https://twent.xyz/openapi.json) — OpenAPI 3.1 API surface
+- [MCP manifest](https://twent.xyz/.well-known/mcp-manifest.json) — MCP server manifest (Streamable HTTP)
+- [agent.txt](https://twent.xyz/agent.txt) — When-to-use guidance and fetch protocol for agents
 
 ## Technical Notes for AI Agents
 

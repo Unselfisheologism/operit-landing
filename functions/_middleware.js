@@ -237,6 +237,18 @@ const PAGE_META = {
     type: 'website',
     image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
   },
+  '/about': {
+    title: 'About Twent AI — On-Device AI Agent for Android',
+    description: 'Twent AI builds Twent, a free on-device AI agent for Android: app automation, Ubuntu terminal, local AI models, zero telemetry.',
+    type: 'website',
+    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
+  },
+  '/contact': {
+    title: 'Contact Twent AI — Support & Community',
+    description: 'Reach the Twent team: support email, Discord community, and response expectations. We read every message.',
+    type: 'website',
+    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
+  },
   '/privacy': {
     title: 'Twent Privacy Policy - Your Data, Your Control',
     description: 'How your data is handled: encryption standards, what we never collect, and our transparency commitments.',
@@ -512,6 +524,15 @@ function wrapHtml({ pathname, title, description, bodyHtml, type, image, lastmod
           url: 'https://twent.xyz',
           logo: 'https://twent.xyz/twent-logo-32.webp',
           sameAs: [],
+          contactPoint: {
+            '@type': 'ContactPoint',
+            email: 'jeffrinjames@twent.xyz',
+            contactType: 'customer service',
+          },
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'IN',
+          },
         },
         {
           '@type': 'SoftwareApplication',
@@ -743,6 +764,113 @@ function getMarkdownTwin(pathname) {
 const SKIP_PREFIXES = ['/api/', '/_next/', '/functions/', '/admin/', '/assets/', '/docs/'];
 const SKIP_EXTENSIONS = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.ico', '.woff', '.woff2', '.ttf', '.eot', '.mp4', '.webm', '.ogg', '.mp3', '.wav', '.zip', '.tar', '.gz', '.pdf', '.avif'];
 
+// ─── Known routes (single source of truth for real HTTP 404s) ────────────────
+// Any GET/HEAD path not in this list (and not a static asset / language
+// prefix / markdown twin of a known route) gets a REAL 404 — never a 200
+// with the app shell. Agents probing for resources rely on this.
+const KNOWN_ROUTES = new Set([
+  '/', '/index.html',
+  '/pricing', '/docs', '/blog', '/changelog', '/terms', '/privacy',
+  '/about', '/contact',
+  '/success', '/apk', '/dashboard',
+  '/simple', '/details',
+  '/ai-agent-for-developers',
+  '/android-automation-power-user',
+  '/privacy-first-ai-android',
+  '/terminal-on-android',
+  '/ai-marketplace-creators',
+  '/enterprise-ai-agent',
+  '/best-android-ai',
+  '/blog/marketplace',
+  '/blog/best-ai-apps-android',
+  '/blog/os-vs-browser-automation',
+  // Machine-readable agent resources
+  '/llms.txt', '/llms-full.txt', '/sitemap.md', '/sitemap.xml', '/sitemap-llms.xml',
+  '/robots.txt', '/humans.txt', '/agent.txt', '/favicon.ico', '/favicon.svg',
+  '/openapi.json', '/api/openapi.json', '/api/openapi.yaml',
+  '/404.html',
+]);
+const VS_SLUGS = [
+  'chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent',
+  'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make',
+  'zapier', 'qordinate', 'omnara', 'manus', 'onspace', 'pi',
+  'siri-bixby', 'google-ai-test-kitchen',
+];
+for (const vs of VS_SLUGS) KNOWN_ROUTES.add(`/vs/${vs}`);
+
+// Language-prefixed variants of every known route (e.g. /zh/pricing)
+const LANG_PREFIXES = [
+  'zh', 'zh-TW', 'hi', 'es', 'es-419', 'es-AR', 'es-CO', 'pt', 'pt-BR',
+  'fr', 'fr-CA', 'ja', 'ko', 'de', 'de-AT', 'de-CH', 'it', 'tr', 'id',
+  'vi', 'ar', 'ar-AE', 'ar-EG', 'ru', 'pl', 'nl', 'nl-BE',
+];
+const BASE_ROUTE_SNAPSHOT = [...KNOWN_ROUTES];
+for (const lang of LANG_PREFIXES) {
+  for (const route of BASE_ROUTE_SNAPSHOT) {
+    KNOWN_ROUTES.add(`/${lang}${route === '/' ? '' : route}`);
+  }
+}
+
+function isKnownPath(pathname) {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (KNOWN_ROUTES.has(clean)) return true;
+  // Markdown twin of a known route (/pricing.md → /pricing)
+  if (clean.endsWith('.md')) {
+    return KNOWN_ROUTES.has(clean.slice(0, -3) || '/');
+  }
+  return false;
+}
+
+// ─── Agent-friendly 404 bodies ───────────────────────────────────────────────
+function notFoundResponse(request, pathname, aiBot) {
+  const wantsJson =
+    (request.headers.get('accept') || '').includes('application/json') ||
+    pathname.startsWith('/api/');
+
+  if (wantsJson) {
+    return new Response(
+      JSON.stringify({
+        error: 'not_found',
+        status: 404,
+        message: `No resource exists at ${pathname}.`,
+        resolution: 'Fetch https://twent.xyz/sitemap.md for the list of valid paths, https://twent.xyz/llms.txt for the AI guide, or https://twent.xyz/openapi.json for the API surface.',
+      }),
+      {
+        status: 404,
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+          'Cache-Control': 'public, max-age=300',
+          'X-Content-Type-Options': 'nosniff',
+          'Access-Control-Allow-Origin': '*',
+        },
+      },
+    );
+  }
+
+  const body = `# 404 — Not Found
+
+The path **${pathname}** does not exist on twent.xyz.
+
+## Where to go instead
+
+- [Sitemap (all valid paths)](https://twent.xyz/sitemap.md)
+- [llms.txt — AI agent guide](https://twent.xyz/llms.txt)
+- [OpenAPI spec](https://twent.xyz/openapi.json)
+- [Docs index](https://twent.xyz/docs)
+- [Homepage](https://twent.xyz/)
+`;
+
+  return new Response(body, {
+    status: 404,
+    headers: {
+      'Content-Type': 'text/markdown; charset=utf-8',
+      'Cache-Control': 'public, max-age=300',
+      'X-Content-Type-Options': 'nosniff',
+      ...(aiBot ? { Vary: 'Accept, User-Agent' } : {}),
+    },
+  });
+}
+
 // ─── Main Handler ────────────────────────────────────────────────────────────
 export async function onRequest(context) {
   const { request, env } = context;
@@ -757,11 +885,37 @@ export async function onRequest(context) {
   const ext = pathname.includes('.') ? '.' + pathname.split('.').pop().split('?')[0].toLowerCase() : '';
 
   if (SKIP_EXTENSIONS.includes(ext) || SKIP_PREFIXES.some((p) => pathname.startsWith(p))) {
+    // Mirror: /api/openapi.json serves the same spec as /openapi.json
+    if (pathname === '/api/openapi.json' || pathname === '/api/openapi.yaml') {
+      const specUrl = new URL(request.url);
+      specUrl.pathname = '/openapi.json';
+      const specResponse = await env.ASSETS.fetch(specUrl.toString());
+      if (specResponse.ok) {
+        return new Response(specResponse.body, {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+            'Access-Control-Allow-Origin': '*',
+            'X-Content-Type-Options': 'nosniff',
+          },
+        });
+      }
+    }
+    // API paths get structured JSON errors; other skipped paths fall through
+    if (pathname.startsWith('/api/')) {
+      return notFoundResponse(request, pathname, null);
+    }
     return env.ASSETS.fetch(request);
   }
 
+  // ─── Real HTTP 404 for unknown paths (never a 200 with the app shell) ───
   const accept = request.headers.get('accept') || '';
   const userAgent = request.headers.get('user-agent') || '';
+  if (!isKnownPath(pathname)) {
+    return notFoundResponse(request, pathname, detectAiBot(userAgent));
+  }
+
   const aiBot = detectAiBot(userAgent);
   const searchBot = detectSearchBot(userAgent);
 

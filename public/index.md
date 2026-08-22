@@ -1,15 +1,15 @@
 ---
-title: Twent — AI Agent for Android | Terminal, Local AI, App Automation
+title: Twent — AI Agent for Android (2026)
 description: Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.
 type: landing
-keywords: [AI agent for Android, local AI on Android, Android terminal, ChatGPT vs Twent, Claude on Android, Copilot Android, Gemini alternative, Perplexity alternative, Android automation app, Ubuntu on Android, mobile AI agent, offline AI, AI app automation, AI agent signup]
+keywords: [AI agent, Android automation, Ubuntu terminal, AI overlay, local AI]
 ai-readability:
   tokens: 617
   score: 100
   level: Advanced
 ---
 
-# Twent — AI Agent for Android | Terminal, Local AI, App Automation
+# Twent — AI Agent for Android (2026)
 
 > Your personal agentic OS in your pocket. Automate any app, run a real Ubuntu terminal, connect 1000+ services. Free download.
 

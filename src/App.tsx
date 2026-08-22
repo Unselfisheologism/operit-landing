@@ -67,6 +67,12 @@ const ApkThankYouPage = lazy(() =>
 const NotFoundPage = lazy(() =>
   import("./components/NotFoundPage").then((m) => ({ default: m.NotFoundPage })),
 );
+const AboutPage = lazy(() =>
+  import("./components/AboutPage").then((m) => ({ default: m.AboutPage })),
+);
+const ContactPage = lazy(() =>
+  import("./components/ContactPage").then((m) => ({ default: m.ContactPage })),
+);
 
 const ChatgptComparisonPage = lazy(() => import("./pages/vs/chatgpt"));
 const NebulaComparisonPage = lazy(() => import("./pages/vs/nebula"));
@@ -578,6 +584,26 @@ function AppRoutes() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <PrivacyPolicy dark={dark} />
+      </>
+    );
+  }
+
+  if (routePath === "/about") {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <AboutPage dark={dark} />
+      </>
+    );
+  }
+
+  if (routePath === "/contact") {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <ContactPage dark={dark} />
       </>
     );
   }

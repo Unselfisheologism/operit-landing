@@ -135,6 +135,10 @@ export function SharedSchemaMarkup() {
           email: "jeffrinjames@twent.xyz",
           contactType: "customer service",
         },
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "IN",
+        },
       },
       // FAQPage schema — drives "Questions and answers" rich results in Google
       {

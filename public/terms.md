@@ -54,7 +54,7 @@ We may update these terms at any time. Continued use constitutes acceptance.
 
 ## Contact
 
-jeffrinjames@twent.xyz
+support@twent.xyz
 
 ## Related Pages
 

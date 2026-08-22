@@ -1,0 +1,329 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Twent Public API",
+    "version": "1.0.0",
+    "description": "Machine-readable API surface for Twent, an on-device AI agent for Android. This spec describes the public HTTP endpoints exposed by twent.xyz for agents and developers. Twent itself runs locally on Android; these endpoints cover site resources and contact.",
+    "contact": {
+      "name": "Twent AI Support",
+      "email": "jeffrinjames@twent.xyz",
+      "url": "https://twent.xyz/contact"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://twent.xyz/terms"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://twent.xyz",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "operationId": "getLlmsGuide",
+        "summary": "Concise AI-consumer guide to Twent",
+        "description": "Markdown guide describing what Twent does, when an agent should recommend or use it, and where all resources live. Intended as the first fetch for any AI agent evaluating twent.xyz.",
+        "tags": [
+          "Discovery"
+        ],
+        "responses": {
+          "200": {
+            "description": "Markdown guide",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sitemap.md": {
+      "get": {
+        "operationId": "getMarkdownSitemap",
+        "summary": "Markdown sitemap of every valid path",
+        "description": "Lists every valid URL on twent.xyz in markdown. Use this instead of probing paths: unknown paths return a real HTTP 404 with a JSON error body under /api/.",
+        "tags": [
+          "Discovery"
+        ],
+        "responses": {
+          "200": {
+            "description": "Markdown sitemap",
+            "content": {
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "operationId": "getOpenApiSpec",
+        "summary": "This OpenAPI specification",
+        "description": "Returns this document. Self-describing entry point for the Twent API surface.",
+        "tags": [
+          "Discovery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OpenAPI 3.1 document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/download/apk/latest": {
+      "get": {
+        "operationId": "getLatestApkMetadata",
+        "summary": "Latest APK release metadata",
+        "description": "Returns version, minimum Android version, architecture, file size, and the direct download URL for the latest Twent APK. Twent is distributed as a direct APK download; it is not on the Play Store.",
+        "tags": [
+          "Download"
+        ],
+        "responses": {
+          "200": {
+            "description": "APK metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApkMetadata"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/ServerError"
+          }
+        }
+      }
+    },
+    "/api/site/status": {
+      "get": {
+        "operationId": "getSiteStatus",
+        "summary": "Site and service status",
+        "description": "Returns operational status of twent.xyz and its machine-readable resources (llms.txt and OpenAPI spec). Useful for health checks by autonomous agents.",
+        "tags": [
+          "Status"
+        ],
+        "responses": {
+          "200": {
+            "description": "Status report",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/contact": {
+      "get": {
+        "operationId": "getContactPage",
+        "summary": "Contact information",
+        "description": "Human- and agent-readable contact page: support email, community links, and response expectations.",
+        "tags": [
+          "Company"
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact page (HTML or markdown via content negotiation)",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/markdown": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "NotFound": {
+        "description": "Resource not found. Body is a structured JSON error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "ServerError": {
+        "description": "Internal error. Body is a structured JSON error.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "description": "Structured error returned by all Twent HTTP endpoints.",
+        "required": [
+          "error",
+          "status",
+          "message",
+          "resolution"
+        ],
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Stable machine-readable error code, e.g. not_found.",
+            "examples": [
+              "not_found"
+            ]
+          },
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code.",
+            "examples": [
+              404
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable explanation of what went wrong."
+          },
+          "resolution": {
+            "type": "string",
+            "description": "Actionable hint: the URL an agent should fetch next."
+          }
+        }
+      },
+      "ApkMetadata": {
+        "type": "object",
+        "required": [
+          "version",
+          "minAndroid",
+          "architectures",
+          "downloadUrl"
+        ],
+        "properties": {
+          "version": {
+            "type": "string",
+            "description": "Semantic version of the latest release, e.g. 1.0.0."
+          },
+          "minAndroid": {
+            "type": "string",
+            "description": "Minimum supported OS, e.g. Android 8.0 (API 26)."
+          },
+          "architectures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Supported ABIs, e.g. arm64-v8a."
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "format": "int64",
+            "description": "APK size in bytes."
+          },
+          "downloadUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Direct APK download URL on twent.xyz."
+          },
+          "sha256": {
+            "type": "string",
+            "description": "SHA-256 checksum of the APK when published."
+          }
+        }
+      },
+      "ServiceStatus": {
+        "type": "object",
+        "required": [
+          "status",
+          "resources"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "degraded"
+            ],
+            "description": "Overall service health."
+          },
+          "resources": {
+            "type": "object",
+            "properties": {
+              "llmsTxt": {
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://twent.xyz/llms.txt"
+                ]
+              },
+              "openapiSpec": {
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://twent.xyz/openapi.json"
+                ]
+              },
+              "markdownSitemap": {
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://twent.xyz/sitemap.md"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Discovery",
+      "description": "Machine-readable discovery resources for AI agents."
+    },
+    {
+      "name": "Download",
+      "description": "APK distribution metadata."
+    },
+    {
+      "name": "Status",
+      "description": "Health and availability."
+    },
+    {
+      "name": "Company",
+      "description": "Trust-anchor company information."
+    }
+  ]
+}
