@@ -106,7 +106,7 @@ export default function StackingCardsDemo() {
                 " h-[80%] sm:h-[70%] flex-col sm:flex-row aspect-video px-8 py-10 flex w-11/12 rounded-3xl mx-auto relative"
               }
             >
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="flex-1 flex flex-col justify-center sm:max-w-[50%]">
                 <h3 className="font-bold text-2xl mb-5">{title}</h3>
                 <p>{description}</p>
               </div>
