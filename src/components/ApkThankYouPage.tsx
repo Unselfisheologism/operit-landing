@@ -2,11 +2,16 @@ import { useCallback, useEffect, useRef } from "react";
 import { GlimmProvider, useGlimm } from "glimm/react";
 import { DButton, DLink } from "./ui/drawably";
 import { RoughAnnotation } from "./ui/rough";
+import PhoneVideoPlayer from "./fancy/blocks/PhoneVideoPlayer";
 
 const CHANGELOG_URL = "/changelog";
 const DISCORD_URL = "https://discord.gg/dUFrWm4w";
 const FEEDBACK_URL = "https://tally.so/r/81DyMk";
 const APK_URL = "https://assets.twent.xyz/twent.apk";
+const SETUP_VIDEO = {
+  src: "https://res.cloudinary.com/dcpcpoyzj/video/upload/v1787466575/lv_0_20260823112114_se0sch.mp4",
+  description: "How to install Twent: allow the install and complete setup",
+};
 
 // Tight blue/orange/grey cosine palette.
 // Low c keeps the hue range narrow so it reads as blue/grey/orange,
@@ -29,18 +34,34 @@ function ApkContent() {
   const { sweep } = useGlimm();
 
   const triggerDownload = useCallback(() => {
-    try {
-      const a = document.createElement("a");
-      a.href = APK_URL;
-      a.download = "twent.apk";
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    } catch {
-      // ignore — manual button remains available
-    }
+    // Fetch as a blob first: a plain cross-origin <a download> click is
+    // ignored by mobile browsers, which instead *navigate* to the .apk URL
+    // and take the user off /apk. A same-origin blob URL downloads properly
+    // everywhere while the page stays put.
+    fetch(APK_URL, { mode: "cors" })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.blob();
+      })
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "twent.apk";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      })
+      .catch(() => {
+        // Fallback: open in a new tab so the current page (with its manual
+        // button) remains available.
+        try {
+          window.open(APK_URL, "_blank", "noopener,noreferrer");
+        } catch {
+          // ignore — manual button remains available
+        }
+      });
   }, []);
 
   useEffect(() => {
@@ -148,6 +169,19 @@ function ApkContent() {
             >
               Download Again
             </DButton>
+          </div>
+
+          {/* Installation / setup video tutorial — tap to open in a blurred popup */}
+          <div className="mt-10 text-center">
+            <h2 className="font-display text-lg tracking-tight mb-1">
+              Installation setup video
+            </h2>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4">
+              Tap the video to watch it full-screen.
+            </p>
+            <div className="mx-auto max-w-[300px] aspect-[9/16]">
+              <PhoneVideoPlayer videos={[SETUP_VIDEO]} accentColor="#3b82f6" />
+            </div>
           </div>
         </div>
       </div>
