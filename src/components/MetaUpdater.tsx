@@ -72,11 +72,6 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "Run Ubuntu 24.04 LTS on your Android phone. apt, Python, Node, SSH — a real Linux environment in your pocket.",
   },
-  "/enterprise-ai-agent": {
-    title: "Twent Teams — AI Agents for Your Organization",
-    description:
-      "Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.",
-  },
   "/ai-agent-for-developers": {
     title: "Code on Your Phone — MCP, CLI & Ubuntu Terminal",
     description:
@@ -146,11 +141,6 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     title: "Twent vs Replika - Productivity vs Companion AI (2026)",
     description:
       "Replika is for conversation. Twent is for getting things done — automation, terminal & integrations on Android.",
-  },
-  "/vs/copilot": {
-    title: "Twent vs Copilot - Android AI Comparison (2026)",
-    description:
-      "Copilot is browser-based. Twent gives you a floating AI overlay, automation & local models on your device.",
   },
   "/vs/claude": {
     title: "Twent vs Claude - Mobile AI Agent (2026)",
@@ -310,12 +300,6 @@ const routeKeywords: Record<string, string[]> = {
     "Python terminal Android",
     "mobile development environment phone"
   ],
-  "/enterprise-ai-agent": [
-    "team AI deployment",
-    "business automation",
-    "AI admin dashboard",
-    "enterprise mobile tools",
-  ],
   "/ai-agent-for-developers": [
     "Claude Code mobile",
     "code on phone",
@@ -396,12 +380,6 @@ const routeKeywords: Record<string, string[]> = {
     "AI companion vs AI agent",
     "Replika alternative Android free",
     "best AI for Android mental health"
-  ],
-  "/vs/copilot": [
-    "Microsoft Copilot Android app",
-    "Copilot vs Twent AI",
-    "Windows AI assistant mobile alternative",
-    "best AI for Android Microsoft users"
   ],
   "/vs/claude": [
     "Claude Android download",

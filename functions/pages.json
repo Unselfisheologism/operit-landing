@@ -77,13 +77,6 @@
     "type": "landing"
   },
   {
-    "slug": "enterprise-ai-agent",
-    "url": "/enterprise-ai-agent",
-    "title": "Twent Teams — AI Agents for Your Organization",
-    "description": "Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.",
-    "type": "landing"
-  },
-  {
     "slug": "changelog",
     "url": "/changelog",
     "title": "Twent Changelog (2026) - What's New",
@@ -165,13 +158,6 @@
     "url": "/vs/replika",
     "title": "Twent vs Replika - Productivity vs Companion AI (2026)",
     "description": "Replika is for conversation. Twent is for getting things done — automation, terminal & integrations on Android.",
-    "type": "compare"
-  },
-  {
-    "slug": "vs/copilot",
-    "url": "/vs/copilot",
-    "title": "Twent vs Copilot - Android AI Comparison (2026)",
-    "description": "Copilot is browser-based. Twent gives you a floating AI overlay, automation & local models on your device.",
     "type": "compare"
   },
   {

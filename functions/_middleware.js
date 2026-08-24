@@ -231,12 +231,6 @@ const PAGE_META = {
     type: 'website',
     image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
   },
-  '/enterprise-ai-agent': {
-    title: 'Twent Teams — AI Agents for Your Organization',
-    description: 'Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.',
-    type: 'website',
-    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
-  },
   '/about': {
     title: 'About Twent AI — On-Device AI Agent for Android',
     description: 'Twent AI builds Twent, a free on-device AI agent for Android: app automation, Ubuntu terminal, local AI models, zero telemetry.',
@@ -290,7 +284,7 @@ const PAGE_META = {
 // Add comparison pages dynamically
 const VS_PAGES = [
   'chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent',
-  'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make',
+  'n8n', 'anything-llm', 'replika', 'perplexity', 'make',
   'zapier', 'qordinate', 'omnara', 'manus', 'onspace', 'pi',
   'siri-bixby', 'google-ai-test-kitchen',
 ];
@@ -779,7 +773,6 @@ const KNOWN_ROUTES = new Set([
   '/privacy-first-ai-android',
   '/terminal-on-android',
   '/ai-marketplace-creators',
-  '/enterprise-ai-agent',
   '/best-android-ai',
   '/blog/marketplace',
   '/blog/best-ai-apps-android',
@@ -792,7 +785,7 @@ const KNOWN_ROUTES = new Set([
 ]);
 const VS_SLUGS = [
   'chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent',
-  'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make',
+  'n8n', 'anything-llm', 'replika', 'perplexity', 'make',
   'zapier', 'qordinate', 'omnara', 'manus', 'onspace', 'pi',
   'siri-bixby', 'google-ai-test-kitchen',
 ];

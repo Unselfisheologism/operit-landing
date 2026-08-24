@@ -178,16 +178,6 @@
     <priority>0.8</priority>
   </url>
   
-  <url>
-    <canonical>https://twent.xyz/enterprise-ai-agent</canonical>
-    <md>https://twent.xyz/enterprise-ai-agent.md</md>
-    <type>landing</type>
-    <summary>Team deployment with admin controls, compliance settings, usage analytics.</summary>
-    <keywords>enterprise, team management, admin controls, deployment, MDM, organization</keywords>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   
   <!-- Competitor comparisons -->
   <url>
@@ -223,16 +213,6 @@
     <priority>0.7</priority>
   </url>
   
-  <url>
-    <canonical>https://twent.xyz/vs/copilot</canonical>
-    <md>https://twent.xyz/vs/copilot.md</md>
-    <type>compare</type>
-    <summary>Floating AI overlay, automation, local models on device vs browser Copilot.</summary>
-    <keywords>vs Copilot, Microsoft, comparison</keywords>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   
   <url>
     <canonical>https://twent.xyz/vs/perplexity</canonical>

@@ -59,6 +59,11 @@ export function HeroSection() {
           <PlayStoreCta size="h-11" />
         </div>
 
+        {/* Anti-clone trust line — twent.xyz is the only official source */}
+        <p className="mt-3 text-xs text-zinc-500 text-center">
+          twent.xyz is the only official Twent site — always download the APK here.
+        </p>
+
         {/* Trust indicators */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-zinc-600 animate-fade-in-up animate-delay-400">
           <span className="flex items-center gap-1.5">

@@ -10,4 +10,3 @@ AEO citation typically dies in about 3 months. Twent re-wins top phrases quarter
 
 Related pages:
 - https://twent.xyz/vs/claude
-- https://twent.xyz/vs/copilot

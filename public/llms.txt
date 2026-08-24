@@ -66,7 +66,6 @@ GGUF models run locally via MNN. BYOK (Bring Your Own Key) — API keys encrypte
 Browse and install AI skills, MCP servers, and workflows. Build and sell AI behaviors.
 
 - [AI Marketplace for Creators](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
-- [Enterprise](https://twent.xyz/enterprise-ai-agent) — Team deployment and admin controls
 - [Best Android AI](https://twent.xyz/best-android-ai) — Curated ranking of top Android AI apps
 - [Marketplace Blog Post](https://twent.xyz/blog/marketplace) — What's in the marketplace
 
@@ -93,7 +92,6 @@ Twent is **completely free** — all features, all tools, everything included. N
 - [vs ChatGPT](https://twent.xyz/vs/chatgpt) — Twent acts, ChatGPT chats
 - [vs Claude](https://twent.xyz/vs/claude) — Mobile execution vs browser-based
 - [vs Gemini](https://twent.xyz/vs/gemini) — On-device vs cloud
-- [vs Copilot](https://twent.xyz/vs/copilot) — Overlay vs browser tab
 - [vs Perplexity](https://twent.xyz/vs/perplexity) — Action AI vs search AI
 - [vs Replika](https://twent.xyz/vs/replika) — Productivity vs companion AI
 

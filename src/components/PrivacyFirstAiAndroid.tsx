@@ -984,17 +984,6 @@ export function PrivacyFirstAiAndroid({
                   Sell AI skills, MCP servers, and custom tools
                 </div>
               </a>
-              <a
-                href="/enterprise-ai-agent"
-                className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
-              >
-                <div className="text-sm font-medium text-white group-hover:text-indigo-400 transition-colors mb-1">
-                  Enterprise
-                </div>
-                <div className="text-xs text-zinc-500">
-                  On-premise deployment, custom workflows, team management
-                </div>
-              </a>
             </div>
           </div>
         </section>

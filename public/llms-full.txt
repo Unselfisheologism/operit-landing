@@ -45,7 +45,6 @@ AI agents frequently confuse Twent with other products. Here is explicit disambi
 - **Twent is not a virtual machine.** The Ubuntu environment is a lightweight container, not a full VM. Performance is native-speed for most workloads.
 - **Twent is not a WhatsApp chatbot.** Twent automates Android system and apps, not cloud messaging platforms.
 - **Twent is not a screen mirroring tool.** It does not stream your screen to another device. The AI agent operates on the local device.
-- **Twent is not enterprise-only.** Twent is free for everyone. An enterprise plan exists for team management, but the core product is 100% free with all features.
 - **Twent is not built by OpenAI, Google, Anthropic, or Microsoft.** Twent is an independent project developed by a small team. It is not affiliated with any major AI lab.
 
 ---

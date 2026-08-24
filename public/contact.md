@@ -3,7 +3,7 @@ title: Contact Twent AI — Support & Community
 description: Reach the Twent team: support email jeffrinjames@twent.xyz, Discord community, and response expectations.
 type: trust
 ai-readability:
-  tokens: 140
+  tokens: 138
   score: 100
   level: Advanced
 ---
@@ -20,7 +20,7 @@ The fastest way to reach the team is email at jeffrinjames@twent.xyz — our cus
 ## Documentation & Agent Access
 
 - Docs: https://twent.xyz/docs
-- AI agents: fetch https://twent.xyz/llms.txt, https://twent.xyz/agent.txt, https://twent.xyz/openapi.json, and https://twent.xyz/.well-known/mcp-manifest.json for machine-readable access.
+- AI agents: fetch https://twent.xyz/llms.txt, https://twent.xyz/agent.txt, and https://twent.xyz/openapi.json for machine-readable access.
 
 ## Business & Press
 

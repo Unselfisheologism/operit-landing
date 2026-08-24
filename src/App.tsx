@@ -49,9 +49,6 @@ const TerminalOnAndroid = lazy(() =>
 const AiMarketplaceCreators = lazy(() =>
   import("./components/AiMarketplaceCreators").then((m) => ({ default: m.AiMarketplaceCreators })),
 );
-const EnterpriseAiAgent = lazy(() =>
-  import("./components/EnterpriseAiAgent").then((m) => ({ default: m.EnterpriseAiAgent })),
-);
 const BestAndroidAiPillar = lazy(() =>
   import("./components/BestAndroidAiPillar").then((m) => ({ default: m.BestAndroidAiPillar })),
 );
@@ -81,7 +78,6 @@ const HermesAgentComparisonPage = lazy(() => import("./pages/vs/hermes-agent"));
 const N8nComparisonPage = lazy(() => import("./pages/vs/n8n"));
 const AnythingLlmComparisonPage = lazy(() => import("./pages/vs/anything-llm"));
 const ReplikaComparisonPage = lazy(() => import("./pages/vs/replika"));
-const CopilotComparisonPage = lazy(() => import("./pages/vs/copilot"));
 const GeminiComparisonPage = lazy(() => import("./pages/vs/gemini"));
 const ClaudeComparisonPage = lazy(() => import("./pages/vs/claude"));
 const PerplexityComparisonPage = lazy(() => import("./pages/vs/perplexity"));
@@ -113,7 +109,6 @@ const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
   ["/privacy-first-ai-android", () => import("./components/PrivacyFirstAiAndroid")],
   ["/terminal-on-android", () => import("./components/TerminalOnAndroid")],
   ["/ai-marketplace-creators", () => import("./components/AiMarketplaceCreators")],
-  ["/enterprise-ai-agent", () => import("./components/EnterpriseAiAgent")],
   ["/best-android-ai", () => import("./components/BestAndroidAiPillar")],
   ["/pricing", () => import("./components/PricingPage")],
   ["/success", () => import("./components/SuccessPage")],
@@ -130,7 +125,6 @@ const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
   ["/vs/n8n", () => import("./pages/vs/n8n")],
   ["/vs/anything-llm", () => import("./pages/vs/anything-llm")],
   ["/vs/replika", () => import("./pages/vs/replika")],
-  ["/vs/copilot", () => import("./pages/vs/copilot")],
   ["/vs/gemini", () => import("./pages/vs/gemini")],
   ["/vs/claude", () => import("./pages/vs/claude")],
   ["/vs/perplexity", () => import("./pages/vs/perplexity")],
@@ -498,16 +492,6 @@ function AppRoutes() {
     );
   }
 
-  if (routePath.startsWith("/enterprise-ai-agent")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <EnterpriseAiAgent dark={dark} />
-      </>
-    );
-  }
-
   if (routePath.startsWith("/best-android-ai")) {
     return (
       <>
@@ -721,15 +705,6 @@ function AppRoutes() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <ReplikaComparisonPage />
-      </Suspense>
-    );
-  }
-  if (routePath.startsWith("/vs/copilot")) {
-    return (
-      <Suspense fallback={<LoadingSpinner />}>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <CopilotComparisonPage />
       </Suspense>
     );
   }

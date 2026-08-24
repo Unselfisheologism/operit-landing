@@ -414,7 +414,6 @@ Allow: /vs/hermes-agent
 Allow: /vs/anything-llm
 Allow: /vs/claude
 Allow: /vs/replika
-Allow: /vs/copilot
 Allow: /vs/make
 Allow: /vs/zapier
 Allow: /vs/qordinate
@@ -430,7 +429,6 @@ Allow: /android-automation-power-user
 Allow: /privacy-first-ai-android
 Allow: /terminal-on-android
 Allow: /ai-marketplace-creators
-Allow: /enterprise-ai-agent
 Allow: /changelog
 Allow: /terms
 Allow: /privacy

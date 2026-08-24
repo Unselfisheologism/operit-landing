@@ -443,40 +443,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://twent.xyz/enterprise-ai-agent</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/enterprise-ai-agent" />
-    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/enterprise-ai-agent" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://twent.xyz/changelog</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/changelog" />
     <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/changelog" />
@@ -881,40 +847,6 @@
     <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/vs/replika" />
     <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/vs/replika" />
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/vs/replika" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.xyz/vs/copilot</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/vs/copilot" />
-    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/vs/copilot" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

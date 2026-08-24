@@ -557,7 +557,6 @@ export function BlogPage({ dark }: { dark: boolean }) {
                     { label: "vs ChatGPT", href: "/vs/chatgpt" },
                     { label: "vs Claude", href: "/vs/claude" },
                     { label: "vs Gemini", href: "/vs/gemini" },
-                    { label: "vs Copilot", href: "/vs/copilot" },
                     { label: "vs Perplexity", href: "/vs/perplexity" },
                     { label: "vs Zapier", href: "/vs/zapier" },
                     { label: "vs n8n", href: "/vs/n8n" },

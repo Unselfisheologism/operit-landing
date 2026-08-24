@@ -158,6 +158,10 @@ function ApkContent() {
           <h1 className="font-display text-3xl md:text-4xl tracking-tight mb-4">
             Thank you for installing Twent!
           </h1>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-4">
+            twent.xyz is the only official Twent site — the APK comes from
+            assets.twent.xyz.
+          </p>
           <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
             Your APK download should start automatically. If it hasn&apos;t,
             tap the Download button below.

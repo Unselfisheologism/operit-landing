@@ -52,12 +52,6 @@ export function Footer() {
         external: false,
         icon: null,
       },
-      {
-        label: "For Enterprises",
-        href: "/enterprise-ai-agent",
-        external: false,
-        icon: null,
-      },
     ],
     Company: [
       {

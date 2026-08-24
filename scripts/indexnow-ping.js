@@ -27,7 +27,6 @@ const defaults = [
   "/android-automation-power-user",
   "/privacy-first-ai-android",
   "/terminal-on-android",
-  "/enterprise-ai-agent",
 ];
 
 const args = process.argv.slice(2);

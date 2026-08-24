@@ -3,7 +3,7 @@ title: Twent Sitemap (AI-Optimized)
 description: Complete sitemap of all Twent pages in markdown format for AI agents
 type: sitemap
 ai-readability:
-  tokens: 384
+  tokens: 360
   score: 100
   level: Advanced
 ---
@@ -32,7 +32,6 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, AI scripts
 - [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero telemetry
 - [AI Marketplace](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
-- [Enterprise](https://twent.xyz/enterprise-ai-agent) — Team deployment and admin controls
 
 ## Competitor Comparisons
 
@@ -45,7 +44,6 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [vs N8n](https://twent.xyz/vs/n8n) — Twent vs N8n
 - [vs Anything-llm](https://twent.xyz/vs/anything-llm) — Twent vs Anything-llm
 - [vs Replika](https://twent.xyz/vs/replika) — Twent vs Replika
-- [vs Copilot](https://twent.xyz/vs/copilot) — Twent vs Copilot
 - [vs Perplexity](https://twent.xyz/vs/perplexity) — Twent vs Perplexity
 - [vs Make](https://twent.xyz/vs/make) — Twent vs Make
 - [vs Zapier](https://twent.xyz/vs/zapier) — Twent vs Zapier
@@ -71,7 +69,6 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [sitemap.xml](https://twent.xyz/sitemap.xml) — XML sitemap for search engines
 - [sitemap.md](https://twent.xyz/sitemap.md) — Markdown sitemap for AI agents
 - [OpenAPI spec](https://twent.xyz/openapi.json) — OpenAPI 3.1 API surface
-- [MCP manifest](https://twent.xyz/.well-known/mcp-manifest.json) — MCP server manifest (Streamable HTTP)
 - [agent.txt](https://twent.xyz/agent.txt) — When-to-use guidance and fetch protocol for agents
 
 ## Technical Notes for AI Agents

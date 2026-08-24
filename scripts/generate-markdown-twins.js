@@ -122,14 +122,6 @@ const PAGES = [
     type: 'landing',
     keywords: ['marketplace', 'AI skills', 'build and sell', 'creators', 'revenue'],
   },
-  {
-    slug: 'enterprise-ai-agent',
-    url: '/enterprise-ai-agent',
-    title: 'Twent Teams — AI Agents for Your Organization',
-    description: 'Deploy AI agents across your team with admin controls, compliance settings & usage dashboards. Built for Android fleets.',
-    type: 'landing',
-    keywords: ['enterprise', 'team management', 'admin controls', 'deployment', 'organization'],
-  },
 
   // ── UTILITY PAGES ────────────────────────────────────────────────────────────
   {
@@ -272,17 +264,6 @@ const PAGES = [
     competitorDescription: 'AI companion focused on conversation and emotional support.',
     competitorWeaknesses: ['Companion-focused, not action-oriented', 'No automation', 'No terminal', 'No Android control', 'No developer tools'],
     keywords: ['vs Replika', 'Replika comparison', 'AI companion'],
-  },
-  {
-    slug: 'vs/copilot',
-    url: '/vs/copilot',
-    title: 'Twent vs Copilot — Android AI Comparison (2026)',
-    description: 'Copilot is browser-based. Twent gives you a floating AI overlay, automation & local models on your device.',
-    type: 'compare',
-    competitor: 'Microsoft Copilot',
-    competitorDescription: 'Microsoft\'s AI assistant — browser-based, cloud-centric.',
-    competitorWeaknesses: ['Browser-only, not on-device', 'No Android automation', 'No local models', 'No terminal access', 'No Ubuntu'],
-    keywords: ['vs Copilot', 'Microsoft Copilot', 'Copilot comparison'],
   },
   {
     slug: 'vs/perplexity',
@@ -1198,98 +1179,6 @@ Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
 Then visit the marketplace to start building: Settings → Packages → Marketplace → Create.
 `;
 
-  if (slug === 'enterprise-ai-agent') return `# ${page.title}
-
-> ${page.description}
-
-## Deploy AI Agents Across Your Android Fleet
-
-Twent Teams gives your organization centralized control, compliance settings, and usage analytics — with the same powerful AI agent your team already uses.
-
-## Admin Controls
-
-### Centralized Management
-- **Fleet dashboard** — See all deployed Twent instances
-- **Device groups** — Organize by team, department, or role
-- **Bulk configuration** — Push settings to multiple devices at once
-- **Remote updates** — Push app updates without requiring user action
-
-### Access Control
-- **Role-based permissions** — Admin, power user, standard user
-- **Feature flags** — Enable/disable features per group
-- **API key management** — Control which AI providers teams can use
-- **Local model enforcement** — Require offline models for sensitive data
-
-### Compliance Settings
-- **Data residency** — Require local model usage for certain regions
-- **Audit logs** — Track all AI interactions per device
-- **Session controls** — Auto-expire conversations after N days
-- **Screen capture logging** — Optional recording for compliance
-
-## Usage Analytics
-
-### Dashboard Metrics
-- **Active devices** — How many devices are in use
-- **AI usage** — Token counts by model and team
-- **Feature adoption** — Which skills and tools are most used
-- **Session data** — Average conversation length, tool usage patterns
-
-### Reports
-- **Weekly summaries** — Email reports to team leads
-- **Cost tracking** — Monitor API spend by team
-- **Security alerts** — Flag unusual activity patterns
-- **Export** — CSV/JSON exports for further analysis
-
-## Deployment Options
-
-| Option | Description |
-|---|---|
-| **Managed** | Twent hosts everything, you manage via dashboard |
-| **Self-hosted** | Deploy on your own infrastructure |
-| **BYOD** | Employees install on their own devices, you manage via MDM |
-
-## Integration
-
-### MDM Support
-- **Intune** — Deploy via Microsoft Intune
-- **Jamf** — macOS/iOS/Android management
-- **Workspace ONE** — VMware UEM
-- **Custom MDM** — REST API for any MDM solution
-
-### API Access
-- **REST API** — Manage devices, push configs, pull reports
-- **Webhook notifications** — Real-time alerts for events
-- **SSO** — SAML/OIDC integration with your identity provider
-
-## Security
-
-- **Encryption at rest** — All local data encrypted
-- **API key isolation** — Keys encrypted per-device with hardware backing
-- **No telemetry** — Zero data collection, even in enterprise
-- **Audit trail** — Every action logged with timestamp and user
-
-## Pricing
-
-| Tier | Price | Devices |
-|---|---|---|
-| **Free** | $0 | Individual use only |
-| **Teams** | $X/device/mo | 5+ devices, admin controls |
-| **Enterprise** | Contact us | Unlimited, custom integrations |
-
-*(Pro and Enterprise pricing TBD — see website for latest)*
-
-## Related Pages
-
-- [Home](/) — Main landing page
-- [Privacy-First AI](/privacy-first-ai-android) — Enterprise privacy features
-- [Documentation](/docs) — Technical documentation
-
-## Download
-
-Get Twent at https://twent.xyz — direct APK, no Play Store, no credit card.
-
-Contact us for Teams pricing: jeffrinjames@twent.xyz
-`;
 
   // Default landing for index and other general landing pages
   return `# ${page.title}
@@ -2157,11 +2046,10 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, AI scripts
 - [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero telemetry
 - [AI Marketplace](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
-- [Enterprise](https://twent.xyz/enterprise-ai-agent) — Team deployment and admin controls
 
 ## Competitor Comparisons
 
-${['chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent', 'n8n', 'anything-llm', 'replika', 'copilot', 'perplexity', 'make', 'zapier', 'qordinate', 'omnara', 'manus', 'onspace'].map(name => `- [vs ${name.charAt(0).toUpperCase() + name.slice(1)}](https://twent.xyz/vs/${name}) — Twent vs ${name.charAt(0).toUpperCase() + name.slice(1)}`).join('\n')}
+${['chatgpt', 'claude', 'gemini', 'nebula', 'openclaw', 'hermes-agent', 'n8n', 'anything-llm', 'replika', 'perplexity', 'make', 'zapier', 'qordinate', 'omnara', 'manus', 'onspace'].map(name => `- [vs ${name.charAt(0).toUpperCase() + name.slice(1)}](https://twent.xyz/vs/${name}) — Twent vs ${name.charAt(0).toUpperCase() + name.slice(1)}`).join('\n')}
 
 ## Company
 
