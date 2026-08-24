@@ -17,10 +17,10 @@ const SETUP_VIDEO = {
 // Low c keeps the hue range narrow so it reads as blue/grey/orange,
 // not rainbow.
 const DOWNLOAD_PALETTE = {
-  a: [0.38, 0.38, 0.40],
-  b: [0.22, 0.18, 0.20],
+  a: [0.38, 0.38, 0.4],
+  b: [0.22, 0.18, 0.2],
   c: [0.18, 0.18, 0.18],
-  d: [0.55, 0.15, 0.40],
+  d: [0.55, 0.15, 0.4],
 } as const;
 
 const SWEEP_OPTIONS = {
@@ -32,21 +32,11 @@ const SWEEP_OPTIONS = {
 
 function ApkContent() {
   const { sweep } = useGlimm();
-
-  // Mobile browsers ignore programmatic/iframe downloads of cross-origin
-  // files — the only reliable route is a real top-level tap on an <a href>.
-  // So on mobile we DON'T auto-trigger anything (that used to bounce the
-  // user off this page to assets.twent.xyz); instead we show a prominent
-  // tappable Download button below.
-  const isMobile =
-    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
-    (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.platform));
+  const autoTriggered = useRef(false);
 
   const triggerDownload = useCallback(() => {
-    // Fetch as a blob first: a plain cross-origin <a download> click is
-    // ignored by mobile browsers, which instead *navigate* to the .apk URL
-    // and take the user off /apk. A same-origin blob URL downloads properly
-    // everywhere while the page stays put.
+    // Desktop path: fetch as a blob so the file downloads while this page
+    // stays put.
     fetch(APK_URL, { mode: "cors" })
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -63,13 +53,13 @@ function ApkContent() {
         window.setTimeout(() => URL.revokeObjectURL(url), 60_000);
       })
       .catch(() => {
-        // Fallback: open in a new tab so the current page (with its manual
-        // button) remains available.
-        try {
-          window.open(APK_URL, "_blank", "noopener,noreferrer");
-        } catch {
-          // ignore — manual button remains available
-        }
+        // CORS/network failure: hidden iframe still triggers the
+        // attachment download without navigating this tab away.
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = APK_URL;
+        document.body.appendChild(iframe);
+        window.setTimeout(() => iframe.remove(), 120_000);
       });
   }, []);
 
@@ -96,24 +86,51 @@ function ApkContent() {
 
     void run();
 
-    // Only auto-download on desktop. On mobile, the user taps the Download
-    // button (a real anchor navigation) — auto-triggering would either do
-    // nothing or yank them off this page.
-    if (!isMobile) void triggerDownload();
+    // Mobile auto-download: assign location.href to the APK URL. Because the
+    // R2 asset serves Content-Disposition: attachment, the browser starts
+    // the download WITHOUT leaving this page — this works on Android/iOS
+    // browsers where programmatic <a>.click() and hidden iframes are ignored.
+    // Small delay so the page paints first.
+    const ua = navigator.userAgent;
+    const isMobile =
+      /Android|iPhone|iPad|iPod|Mobile/i.test(ua) ||
+      (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.platform));
+    let dlTimeout: number | null = null;
+    if (isMobile && !autoTriggered.current) {
+      autoTriggered.current = true;
+      dlTimeout = window.setTimeout(() => {
+        if (!cancelled) window.location.href = APK_URL;
+      }, 1000);
+    }
 
     return () => {
       cancelled = true;
       if (timeout !== null) {
         window.clearTimeout(timeout);
       }
+      if (dlTimeout !== null) {
+        window.clearTimeout(dlTimeout);
+      }
       activeHandle?.cancel();
     };
-  }, [sweep, triggerDownload, isMobile]);
+  }, [sweep]);
+
+  // Desktop: start downloading immediately on mount.
+  const desktop = !(
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+    (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.platform))
+  );
+  useEffect(() => {
+    if (desktop) triggerDownload();
+  }, [desktop, triggerDownload]);
 
   return (
-    <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="max-w-md w-full px-6 text-center">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+      {/* Normal flow (NOT absolute inset-0): content taller than one viewport
+          must extend the page and scroll — absolute centering clipped it and
+          left dead white space below on mobile. */}
+      <div className="flex min-h-screen items-start sm:items-center justify-center">
+        <div className="max-w-md w-full px-6 pt-10 pb-16 text-center">
           <RoughAnnotation
             text={
               <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -141,28 +158,23 @@ function ApkContent() {
           <h1 className="font-display text-3xl md:text-4xl tracking-tight mb-4">
             Thank you for installing Twent!
           </h1>
-          {isMobile ? (
-            <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-              Tap the button below to download Twent. Your browser will keep
-              this page open while the download runs.
-            </p>
-          ) : (
-            <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-              Your APK download should start automatically. If the Download
-              hasn't started, use the button below.
-            </p>
-          )}
+          <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
+            Your APK download should start automatically. If it hasn&apos;t,
+            tap the Download button below.
+          </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          {/* flex-wrap keeps buttons on one row where they fit (desktop) and
+              wraps cleanly instead of stacking a full-width tower (mobile). */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
             {/* Real anchor: mobile browsers only start downloads for genuine
-                top-level taps on an href — programmatic clicks are ignored. */}
+                taps on an href — programmatic clicks are ignored. */}
             <DLink
               href={APK_URL}
               variant="solid"
               color="blue"
               className="d-btn-lg"
             >
-              {isMobile ? "Download Twent" : "Download Again"}
+              Download
             </DLink>
             <DLink
               href={CHANGELOG_URL}
@@ -181,16 +193,6 @@ function ApkContent() {
               className="d-btn-lg"
             >
               Discord
-            </DLink>
-            <DLink
-              href={FEEDBACK_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              color="grey"
-              className="d-btn-lg"
-            >
-              Feedback
             </DLink>
           </div>
 
