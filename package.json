@@ -11,7 +11,8 @@
     "dualmark:generate": "node scripts/generate-markdown-twins.js",
     "dualmark:verify": "bunx @dualmark/cli verify https://twent.xyz --json || bunx @dualmark/cli verify https://twent.xyz",
     "dualmark:verify:all": "bunx @dualmark/cli verify https://twent.xyz && bunx @dualmark/cli verify https://twent.xyz/pricing && bunx @dualmark/cli verify https://twent.xyz/docs && bunx @dualmark/cli verify https://twent.xyz/ai-agent-for-developers",
-    "build:full": "npm run dualmark:generate && npm run build && npm run dualmark:verify"
+    "build:full": "npm run dualmark:generate && npm run build && npm run dualmark:verify",
+    "indexnow": "node scripts/indexnow-ping.js"
   },
   "dependencies": {
     "@databuddy/sdk": "^2.4.0",

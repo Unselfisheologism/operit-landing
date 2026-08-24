@@ -67,6 +67,20 @@ Allow: /
 User-agent: o4-mini
 Allow: /
 
+# Microsoft Bing — CRITICAL: ChatGPT search results run on the Bing index.
+# Getting indexed by Bing is how twent.xyz content reaches ChatGPT answers.
+User-agent: bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: adidxbot
+Allow: /
+
 # Google DeepMind / Gemini
 User-agent: Google-Extended
 Allow: /
