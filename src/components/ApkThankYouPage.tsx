@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import { GlimmProvider, useGlimm } from "glimm/react";
-import { DButton, DLink } from "./ui/drawably";
+import { DCard, DLink } from "./ui/drawably";
 import { RoughAnnotation } from "./ui/rough";
 import PhoneVideoPlayer from "./fancy/blocks/PhoneVideoPlayer";
 
@@ -32,6 +32,15 @@ const SWEEP_OPTIONS = {
 
 function ApkContent() {
   const { sweep } = useGlimm();
+
+  // Mobile browsers ignore programmatic/iframe downloads of cross-origin
+  // files — the only reliable route is a real top-level tap on an <a href>.
+  // So on mobile we DON'T auto-trigger anything (that used to bounce the
+  // user off this page to assets.twent.xyz); instead we show a prominent
+  // tappable Download button below.
+  const isMobile =
+    /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
+    (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.platform));
 
   const triggerDownload = useCallback(() => {
     // Fetch as a blob first: a plain cross-origin <a download> click is
@@ -85,8 +94,12 @@ function ApkContent() {
         });
     };
 
-    void triggerDownload();
     void run();
+
+    // Only auto-download on desktop. On mobile, the user taps the Download
+    // button (a real anchor navigation) — auto-triggering would either do
+    // nothing or yank them off this page.
+    if (!isMobile) void triggerDownload();
 
     return () => {
       cancelled = true;
@@ -95,7 +108,7 @@ function ApkContent() {
       }
       activeHandle?.cancel();
     };
-  }, [sweep, triggerDownload]);
+  }, [sweep, triggerDownload, isMobile]);
 
   return (
     <div className="relative min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
@@ -128,12 +141,29 @@ function ApkContent() {
           <h1 className="font-display text-3xl md:text-4xl tracking-tight mb-4">
             Thank you for installing Twent!
           </h1>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
-            Your APK download should start automatically. If the Download
-            hasn't started, use the button below.
-          </p>
+          {isMobile ? (
+            <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
+              Tap the button below to download Twent. Your browser will keep
+              this page open while the download runs.
+            </p>
+          ) : (
+            <p className="text-zinc-600 dark:text-zinc-400 mb-8 text-sm md:text-base">
+              Your APK download should start automatically. If the Download
+              hasn't started, use the button below.
+            </p>
+          )}
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            {/* Real anchor: mobile browsers only start downloads for genuine
+                top-level taps on an href — programmatic clicks are ignored. */}
+            <DLink
+              href={APK_URL}
+              variant="solid"
+              color="blue"
+              className="d-btn-lg"
+            >
+              {isMobile ? "Download Twent" : "Download Again"}
+            </DLink>
             <DLink
               href={CHANGELOG_URL}
               variant="outline"
@@ -162,13 +192,32 @@ function ApkContent() {
             >
               Feedback
             </DLink>
-            <DButton
-              onClick={triggerDownload}
-              variant="solid"
-              className="d-btn-lg"
-            >
-              Download Again
-            </DButton>
+          </div>
+
+          {/* Survey CTA — direct feedback from people who just installed */}
+          <div className="mt-10">
+            <DCard color="orange" pad="lg" className="text-center">
+              <h2 className="font-display text-xl sm:text-2xl tracking-tight mb-2">
+                Can you answer this survey about Twent?
+              </h2>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-5">
+                It will help us improve Twent{" "}
+                <span className="font-bold text-orange-600 dark:text-orange-400">
+                  DRASTICALLY!
+                </span>{" "}
+                6 quick questions, under a minute.
+              </p>
+              <DLink
+                href={FEEDBACK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="solid"
+                color="orange"
+                className="d-btn-lg"
+              >
+                Take the survey
+              </DLink>
+            </DCard>
           </div>
 
           {/* Installation / setup video tutorial — tap to open in a blurred popup */}
