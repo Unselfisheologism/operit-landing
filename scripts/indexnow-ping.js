@@ -9,11 +9,11 @@
  *   node scripts/indexnow-ping.js                     # ping homepage + key pages
  *   node scripts/indexnow-ping.js /vs/claude /pricing # ping specific paths
  *
- * The key file public/cd5287f369272c04383b923b454c5748.txt must be deployed
+ * The key file public/7e3d406144954cdb80a244066e105dda.txt must be deployed
  * before this works — IndexNow fetches it to verify ownership.
  */
 
-const KEY = "cd5287f369272c04383b923b454c5748";
+const KEY = "7e3d406144954cdb80a244066e105dda";
 const HOST = "twent.xyz";
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 
