@@ -45,8 +45,8 @@ export default defineConfig({
   navigation: {
     tabs: [
       { label: "Getting Started", path: "/getting-started", icon: "rocket" },
-      { label: "Tools", path: "/tools", icon: "wrench" },
-      { label: "Advanced", path: "/automation", icon: "zap" },
+      { label: "Plugins", path: "/plugins", icon: "puzzle" },
+      { label: "Features", path: "/features", icon: "zap" },
       { label: "Reference", path: "/more", icon: "book-open" },
     ],
     sidebar: {
@@ -85,10 +85,10 @@ export default defineConfig({
   search: {
     provider: "orama",
     popular: [
-      { href: "/getting-started/installation", icon: "download", label: "Installation" },
-      { href: "/tools/overview", icon: "wrench", label: "Tools Overview" },
-      { href: "/automation/overview", icon: "zap", label: "Automation" },
-      { href: "/chat/overview", icon: "message-circle", label: "Chat" },
+      { href: "/getting-started/start-using-twent", icon: "download", label: "Start Using Twent" },
+      { href: "/plugins/mcp", icon: "puzzle", label: "MCP" },
+      { href: "/features/agent-capabilities", icon: "zap", label: "Agent Capabilities" },
+      { href: "/more/glossary", icon: "book-open", label: "Glossary" },
     ],
     indexing: {
       includeHiddenPages: false,
@@ -185,6 +185,20 @@ export default defineConfig({
 
   // ── Redirects ──
   redirects: [
-    { from: "/getting-started", to: "/getting-started/installation", status: 301 },
+    { from: "/getting-started", to: "/getting-started/start-using-twent", status: 301 },
+    { from: "/getting-started/installation", to: "/getting-started/start-using-twent", status: 301 },
+    { from: "/getting-started/first-setup", to: "/getting-started/start-using-twent", status: 301 },
+    { from: "/getting-started/first-chat", to: "/getting-started/start-using-twent", status: 301 },
+    { from: "/getting-started/permissions", to: "/getting-started/start-using-twent", status: 301 },
+    { from: "/plugins/overview", to: "/plugins/mcp", status: 301 },
+    { from: "/plugins/marketplace", to: "/plugins/skills", status: 301 },
+    { from: "/tools/overview", to: "/plugins/mcp", status: 301 },
+    { from: "/tools/mcp", to: "/plugins/mcp", status: 301 },
+    { from: "/automation/overview", to: "/features/bots", status: 301 },
+    { from: "/workflows/overview", to: "/features/bots", status: 301 },
+    { from: "/workflows/examples", to: "/features/bots", status: 301 },
+    { from: "/chat/overview", to: "/", status: 301 },
+    { from: "/chat/chat-styles", to: "/", status: 301 },
+    { from: "/chat/overlaying", to: "/", status: 301 },
   ],
 });

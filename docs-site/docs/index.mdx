@@ -1,25 +1,25 @@
 ---
 title: Introduction
-description: Twent is an AI agentic Android app. The AI agent connects to MCP servers, installs skills, automates apps, runs a built-in Ubuntu terminal, and uses your phone UI — all from one app. Free, BYOK, and customizable.
+description: Twent is a free AI agent for Android — it automates apps, runs an Ubuntu terminal, connects to MCP servers and skills. BYOK.
 sidebar:
   label: Introduction
   order: 0
 ---
 
-Twent runs on **Android 8.0+** and gives you a real AI assistant that can see your screen, control any app, run shell commands, browse the web, manage files, and connect to external tools — all from a floating bubble or the main chat interface. The agent can also install MCP servers and skills for itself, delegate to subagents, and ask you for clarification before hard decisions.
+Twent runs on **Android 8.0+** and gives you a real AI assistant that can see your screen, control any app, run shell commands, browse the web, manage files, and connect to external tools — all from one app. The agent can also install MCP servers and skills for itself, delegate to subagents, and ask you for clarification before hard decisions.
 
 <CardGroup cols={2}>
-  <Card title="Installation" href="/getting-started/installation" icon="download">
-    Download the APK and install Twent on your device.
+  <Card title="Start Using Twent" href="/getting-started/start-using-twent" icon="download">
+    Download the APK, install Twent, grant permissions, and connect an AI provider — step by step.
   </Card>
-  <Card title="First Setup" href="/getting-started/first-setup" icon="settings">
-    Configure your AI provider and start chatting.
+  <Card title="Plugins" href="/plugins/mcp" icon="puzzle">
+    Extend the agent with MCP servers and Skills.
   </Card>
-  <Card title="Tools" href="/tools/overview" icon="wrench">
-    40+ built-in tools — file system, shell, web, media, UI automation, memory, and more.
+  <Card title="Features" href="/features/agent-capabilities" icon="zap">
+    Web research, persistent memory, Agent CLIs, Token Config, and the built-in Ubuntu terminal.
   </Card>
-  <Card title="Automation" href="/automation/overview" icon="zap">
-    Trigger workflows manually, on a schedule, or by events — and delegate to subagents.
+  <Card title="Glossary" href="/more/glossary" icon="book-open">
+    Plain-English explanations of every technical term used in these docs.
   </Card>
 </CardGroup>
 
@@ -48,65 +48,19 @@ Most AI assistants live in a chat bubble and can't touch your device. Twent is d
   </Card>
 </CardGroup>
 
-## What Twent can do
-
-<Accordion>
-  <AccordionItem title="Be your agentic assistant">
-    Twent's AI agent connects to MCP servers and installs skills for itself. It can automate tasks with a manual, scheduled, or event-based trigger, and it can delegate work to subagents — you stay in control while the agent and its subagents do the work.
-  </AccordionItem>
-  <AccordionItem title="Automate any Android app">
-    The AI can see your screen via Accessibility service, tap buttons, fill forms, swipe, scroll, and type — automating any app without API access or special integrations. It can also explain what is on your screen.
-  </AccordionItem>
-  <AccordionItem title="Run a full Linux environment">
-    Built-in Ubuntu 24.04 terminal — no root required. Install packages with apt, run Python scripts, use Git, SSH to servers, and build software. Both you and the AI agent can use the terminal, and you can run agent CLIs like Claude Code or Codex inside it.
-  </AccordionItem>
-  <AccordionItem title="Manage files and code">
-    Read, write, search, and edit files on your device. Built-in filesystem and Git UIs let you browse folders and control repositories visually. Compress, decompress, and transfer files.
-  </AccordionItem>
-  <AccordionItem title="Browse the web">
-    Fetch web pages as markdown, search with DuckDuckGo/Bing/Scholar, download files, and use a built-in browser with JavaScript execution.
-  </AccordionItem>
-  <AccordionItem title="Process media">
-    Full FFmpeg engine, camera integration, OCR, image analysis, speech-to-text, and text-to-speech — all built in.
-  </AccordionItem>
-  <AccordionItem title="Run local AI on-device">
-    Use local models directly on your phone — Twent supports GGUF/MNN/llama.cpp/local providers, so you can run AI offline without relying on cloud providers.
-  </AccordionItem>
-  <AccordionItem title="Ask before acting">
-    If the agent has a doubt, it can pause and ask for your input before making a hard decision.
-  </AccordionItem>
-</Accordion>
-
 ## Quick start
 
 <Steps>
-  <Step title="Download Twent">
-    Get the latest APK from [twent.xyz](https://twent.xyz). The APK is ~80MB and includes everything you need.
+  <Step title="Download & install the APK">
+    Follow [Start Using Twent](/getting-started/start-using-twent) — download link, "install unknown apps", and Play Protect workarounds included.
   </Step>
-  <Step title="Install and grant permissions">
-    Open the APK, enable "Install from unknown sources" if prompted, then grant the requested permissions. Storage and Network are required; Accessibility enables UI automation.
+  <Step title="Grant permissions & pick a provider">
+    Allow everything on the Permissions page, then add an API key under Settings → Model Settings (Nous Research, Opencode Zen, or NVIDIA NIMS are good starts).
   </Step>
-  <Step title="Configure your AI provider">
-    Go to Settings → Model & Parameters Configuration. Add your API key (OpenAI, Claude, Gemini, OpenRouter, or many more). Twent is completely free — you only pay your chosen model provider.
+  <Step title="Wait for terminal setup">
+    Open the Terminal page once — setup takes 8–10 minutes and runs by itself.
   </Step>
-  <Step title="Start chatting">
-    Open the chat screen or activate the overlay AI Agent with a home/power long-press. Ask Twent to do anything — run commands, automate apps, browse the web, manage files, or install new plugins and skills for itself.
+  <Step title="Start searching">
+    Start the ddg-search server under Plugins → MCP, then ask Twent anything.
   </Step>
 </Steps>
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="Installation Guide" href="/getting-started/installation" icon="download">
-    Full system requirements and download instructions.
-  </Card>
-  <Card title="First Setup" href="/getting-started/first-setup" icon="settings">
-    Configure providers, set API keys, and pick a model.
-  </Card>
-  <Card title="Tools Overview" href="/tools/overview" icon="wrench">
-    File system, shell, web, media, UI automation, memory, MCP, and more.
-  </Card>
-  <Card title="Automation Overview" href="/automation/overview" icon="zap">
-    Manual, scheduled, and event-based triggers with subagent delegation.
-  </Card>
-</CardGroup>
