@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Twent Docs — Changelog</title>
+  <link>https://twent.xyz/docs/docs</link>
+  <description>Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal &amp; connect 1000+ services.</description>
+  <atom:link href="https://twent.xyz/docs/docs/changelog/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title>v1.0.0</title>
+    <link>https://twent.xyz/docs/docs/changelog/v1-0-0</link>
+    <guid isPermaLink="true">https://twent.xyz/docs/docs/changelog/v1-0-0</guid>
+    <description>Public docs refresh: Blume upgraded to v1.4.3 with full AEO, search, and agent-readability enabled.</description>
+    <pubDate>Thu, 13 Aug 2026 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
