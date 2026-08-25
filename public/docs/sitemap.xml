@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://twent.xyz/docs/changelog/v1-0-0</loc></url>
+  <url><loc>https://twent.xyz/docs/changelog</loc></url>
+  <url><loc>https://twent.xyz/docs/features/agent-capabilities</loc></url>
+  <url><loc>https://twent.xyz/docs/features/agent-clis</loc></url>
+  <url><loc>https://twent.xyz/docs/features/ai-media-generation</loc></url>
+  <url><loc>https://twent.xyz/docs/features/bots</loc></url>
+  <url><loc>https://twent.xyz/docs/features/subagents</loc></url>
+  <url><loc>https://twent.xyz/docs/features/terminal</loc></url>
+  <url><loc>https://twent.xyz/docs/features/token-config</loc></url>
+  <url><loc>https://twent.xyz/docs/getting-started/start-using-twent</loc></url>
+  <url><loc>https://twent.xyz/docs/legal/data-deletion</loc></url>
+  <url><loc>https://twent.xyz/docs/more/glossary</loc></url>
+  <url><loc>https://twent.xyz/docs/more/memory</loc></url>
+  <url><loc>https://twent.xyz/docs/more/settings</loc></url>
+  <url><loc>https://twent.xyz/docs/more/tool-reference</loc></url>
+  <url><loc>https://twent.xyz/docs/more/toolbox</loc></url>
+  <url><loc>https://twent.xyz/docs/more/voice</loc></url>
+  <url><loc>https://twent.xyz/docs/plugins/mcp</loc></url>
+  <url><loc>https://twent.xyz/docs/plugins/skills</loc></url>
+  <url><loc>https://twent.xyz/docs</loc></url>
+</urlset>

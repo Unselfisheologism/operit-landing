@@ -1,0 +1,67 @@
+---
+title: Introduction
+description: Twent is a free AI agent for Android — it automates apps, runs an Ubuntu terminal, connects to MCP servers and skills. BYOK.
+sidebar:
+  label: Introduction
+  order: 0
+---
+
+Twent runs on **Android 8.0+** and gives you a real AI assistant that can see your screen, control any app, run shell commands, browse the web, manage files, and connect to external tools — all from one app. The agent can also install MCP servers and skills for itself, delegate to subagents, and ask you for clarification before hard decisions.
+
+<CardGroup cols={2}>
+  <Card title="Start Using Twent" href="/getting-started/start-using-twent" icon="download">
+    Download the APK, install Twent, grant permissions, and connect an AI provider — step by step.
+  </Card>
+  <Card title="Plugins" href="/plugins/mcp" icon="puzzle">
+    Extend the agent with MCP servers and Skills.
+  </Card>
+  <Card title="Features" href="/features/agent-capabilities" icon="zap">
+    Web research, persistent memory, Agent CLIs, Token Config, and the built-in Ubuntu terminal.
+  </Card>
+  <Card title="Glossary" href="/more/glossary" icon="book-open">
+    Plain-English explanations of every technical term used in these docs.
+  </Card>
+</CardGroup>
+
+## Why Twent exists
+
+Most AI assistants live in a chat bubble and can't touch your device. Twent is different — it runs **on your phone** with full access to the OS, giving AI real agency: reading your screen, tapping buttons, running commands, and managing files.
+
+<CardGroup cols={3}>
+  <Card title="Local-First" icon="shield">
+    All data stays on your device. BYOK model — your keys, your data.
+  </Card>
+  <Card title="Free to Use" icon="gift">
+    Twent is completely free. Paid model API usage is billed by your chosen provider. If someone asks you to pay for Twent itself, it's a scam.
+  </Card>
+  <Card title="Extensible" icon="plug">
+    MCP servers, plugins, skills, and workflows for infinite capability.
+  </Card>
+  <Card title="Persistent Memory" icon="brain">
+    The agent remembers relevant details across conversations, and its memory grows over time.
+  </Card>
+  <Card title="Customizable" icon="palette">
+    Customize both the app UI and the AI agent's behavior to match your workflow.
+  </Card>
+  <Card title="Privacy First" icon="lock">
+    Zero hidden telemetry. Nothing leaves your device except your explicit API calls.
+  </Card>
+</CardGroup>
+
+## Quick start
+
+1. **Download & install the APK**
+
+    Follow [Start Using Twent](/getting-started/start-using-twent) — download link, "install unknown apps", and Play Protect workarounds included.
+
+2. **Grant permissions & pick a provider**
+
+    Allow everything on the Permissions page, then add an API key under Settings → Model Settings (Nous Research, Opencode Zen, or NVIDIA NIMS are good starts).
+
+3. **Wait for terminal setup**
+
+    Open the Terminal page once — setup takes 8–10 minutes and runs by itself.
+
+4. **Start searching**
+
+    Start the ddg-search server under Plugins → MCP, then ask Twent anything.

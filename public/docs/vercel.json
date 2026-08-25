@@ -1,0 +1,79 @@
+{
+  "redirects": [
+    {
+      "destination": "/docs/getting-started/start-using-twent",
+      "source": "/docs/getting-started",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/getting-started/start-using-twent",
+      "source": "/docs/getting-started/installation",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/getting-started/start-using-twent",
+      "source": "/docs/getting-started/first-setup",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/getting-started/start-using-twent",
+      "source": "/docs/getting-started/first-chat",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/getting-started/start-using-twent",
+      "source": "/docs/getting-started/permissions",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/plugins/mcp",
+      "source": "/docs/plugins/overview",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/plugins/skills",
+      "source": "/docs/plugins/marketplace",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/plugins/mcp",
+      "source": "/docs/tools/overview",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/plugins/mcp",
+      "source": "/docs/tools/mcp",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/features/bots",
+      "source": "/docs/automation/overview",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/features/bots",
+      "source": "/docs/workflows/overview",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs/features/bots",
+      "source": "/docs/workflows/examples",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs",
+      "source": "/docs/chat/overview",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs",
+      "source": "/docs/chat/chat-styles",
+      "statusCode": 301
+    },
+    {
+      "destination": "/docs",
+      "source": "/docs/chat/overlaying",
+      "statusCode": 301
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "from": "/docs/getting-started",
+    "status": 301,
+    "to": "/docs/getting-started/start-using-twent"
+  },
+  {
+    "from": "/docs/getting-started/installation",
+    "status": 301,
+    "to": "/docs/getting-started/start-using-twent"
+  },
+  {
+    "from": "/docs/getting-started/first-setup",
+    "status": 301,
+    "to": "/docs/getting-started/start-using-twent"
+  },
+  {
+    "from": "/docs/getting-started/first-chat",
+    "status": 301,
+    "to": "/docs/getting-started/start-using-twent"
+  },
+  {
+    "from": "/docs/getting-started/permissions",
+    "status": 301,
+    "to": "/docs/getting-started/start-using-twent"
+  },
+  {
+    "from": "/docs/plugins/overview",
+    "status": 301,
+    "to": "/docs/plugins/mcp"
+  },
+  {
+    "from": "/docs/plugins/marketplace",
+    "status": 301,
+    "to": "/docs/plugins/skills"
+  },
+  {
+    "from": "/docs/tools/overview",
+    "status": 301,
+    "to": "/docs/plugins/mcp"
+  },
+  {
+    "from": "/docs/tools/mcp",
+    "status": 301,
+    "to": "/docs/plugins/mcp"
+  },
+  {
+    "from": "/docs/automation/overview",
+    "status": 301,
+    "to": "/docs/features/bots"
+  },
+  {
+    "from": "/docs/workflows/overview",
+    "status": 301,
+    "to": "/docs/features/bots"
+  },
+  {
+    "from": "/docs/workflows/examples",
+    "status": 301,
+    "to": "/docs/features/bots"
+  },
+  {
+    "from": "/docs/chat/overview",
+    "status": 301,
+    "to": "/docs"
+  },
+  {
+    "from": "/docs/chat/chat-styles",
+    "status": 301,
+    "to": "/docs"
+  },
+  {
+    "from": "/docs/chat/overlaying",
+    "status": 301,
+    "to": "/docs"
+  }
+]

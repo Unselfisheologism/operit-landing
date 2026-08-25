@@ -3,5 +3,5 @@ import { defineMeta } from "blume";
 export default defineMeta({
   title: "Features",
   icon: "zap",
-  pages: ["agent-capabilities", "agent-clis", "token-config", "terminal", "bots", "subagents"],
+  pages: ["agent-capabilities", "agent-clis", "token-config", "terminal", "bots", "subagents", "ai-media-generation"],
 });
