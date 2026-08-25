@@ -18,6 +18,7 @@
 - [Terminal](https://twent.xyz/docs/features/terminal): A full Ubuntu Linux computer inside Twent, with automatic first-time setup.
 - [Bots](https://twent.xyz/docs/features/bots): Twent agents with a specific task, triggered manually, on a schedule, by webhook, or by MCP events.
 - [Subagents](https://twent.xyz/docs/features/subagents): The Twent agent can delegate subagents to do tasks in parallel.
+- [AI Content/Media Generation](https://twent.xyz/docs/features/ai-media-generation): Point Twent at your favorite AI media tools — it drives them for you to generate images, videos, audio, music, and 3D models.
 
 ## Getting Started
 
