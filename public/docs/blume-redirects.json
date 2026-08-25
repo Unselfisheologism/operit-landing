@@ -37,12 +37,22 @@
   {
     "from": "/docs/tools/overview",
     "status": 301,
-    "to": "/docs/plugins/mcp"
+    "to": "/docs/features/agent-capabilities"
   },
   {
     "from": "/docs/tools/mcp",
     "status": 301,
     "to": "/docs/plugins/mcp"
+  },
+  {
+    "from": "/docs/more/toolbox",
+    "status": 301,
+    "to": "/docs"
+  },
+  {
+    "from": "/docs/more/tool-reference",
+    "status": 301,
+    "to": "/docs/features/agent-capabilities"
   },
   {
     "from": "/docs/automation/overview",

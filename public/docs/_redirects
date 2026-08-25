@@ -5,8 +5,10 @@
 /docs/getting-started/permissions /docs/getting-started/start-using-twent 301
 /docs/plugins/overview /docs/plugins/mcp 301
 /docs/plugins/marketplace /docs/plugins/skills 301
-/docs/tools/overview /docs/plugins/mcp 301
+/docs/tools/overview /docs/features/agent-capabilities 301
 /docs/tools/mcp /docs/plugins/mcp 301
+/docs/more/toolbox /docs 301
+/docs/more/tool-reference /docs/features/agent-capabilities 301
 /docs/automation/overview /docs/features/bots 301
 /docs/workflows/overview /docs/features/bots 301
 /docs/workflows/examples /docs/features/bots 301

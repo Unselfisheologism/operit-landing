@@ -31,10 +31,8 @@
 ## More
 
 - [Memory](https://twent.xyz/docs/more/memory): Persistent knowledge storage that survives across conversations, editable in the AI's Memory page.
-- [Settings](https://twent.xyz/docs/more/settings): Deep customization — every aspect of Twent is configurable.
 - [Voice](https://twent.xyz/docs/more/voice): Speak to your AI and hear it respond — TTS, speech-to-text, and hands-free voice sessions.
-- [Toolbox](https://twent.xyz/docs/more/toolbox): Built-in utility screens for debugging, development, and system management.
-- [Tool Reference](https://twent.xyz/docs/more/tool-reference): Reference for the main built-in tools the Twent agent can call.
+- [Settings](https://twent.xyz/docs/more/settings): Deep customization — every aspect of Twent is configurable.
 - [Glossary](https://twent.xyz/docs/more/glossary): Plain-English explanations of every technical term used in the Twent docs.
 
 ## Plugins
