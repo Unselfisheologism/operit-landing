@@ -51,15 +51,6 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [vs Omnara](https://twent.xyz/vs/omnara) — Twent vs Omnara
 - [vs Manus](https://twent.xyz/vs/manus) — Twent vs Manus
 - [vs Onspace](https://twent.xyz/vs/onspace) — Twent vs Onspace
-- [vs Pi](https://twent.xyz/vs/pi) — Empathetic chatbot vs action agent ([markdown twin](https://twent.xyz/vs/pi.md))
-- [vs Siri/Bixby](https://twent.xyz/vs/siri-bixby) — Native assistants vs real AI agent ([markdown twin](https://twent.xyz/vs/siri-bixby.md))
-- [vs Google AI Test Kitchen](https://twent.xyz/vs/google-ai-test-kitchen) — Experimental demos vs production agent ([markdown twin](https://twent.xyz/vs/google-ai-test-kitchen.md))
-
-- [Best Android AI](https://twent.xyz/best-android-ai) — Pillar: best AI apps for Android
-
-## Download Pages
-
-- [/apk](https://twent.xyz/apk) — APK download thank-you page with setup guide ([markdown twin](https://twent.xyz/apk.md))
 
 ## Company
 
