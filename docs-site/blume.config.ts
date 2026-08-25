@@ -44,13 +44,10 @@ export default defineConfig({
   // ── Navigation ──
   navigation: {
     tabs: [
-      { label: "Getting Started", path: "/getting-started", icon: "rocket" },
-      { label: "Plugins", path: "/plugins", icon: "puzzle" },
-      { label: "Features", path: "/features", icon: "zap" },
-      { label: "Reference", path: "/more", icon: "book-open" },
+
     ],
     sidebar: {
-      display: "group",
+      display: "flat",
     },
     featured: [
       { label: "Twent Home", href: "https://twent.xyz", icon: "home" },
