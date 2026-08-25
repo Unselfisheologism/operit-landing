@@ -175,7 +175,7 @@ export default defineConfig({
 
   // ── Deployment ──
   deployment: {
-    site: "https://twent.xyz/docs",
+    site: "https://twent.xyz",
     base: "/docs",
     output: "static",
   },

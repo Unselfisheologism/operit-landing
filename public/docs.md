@@ -1,117 +1,44 @@
 ---
-title: Twent Docs — Getting Started
-description: Step-by-step guides: install Twent, configure AI models, use tools, set up MCP servers. Everything you need to get started.
+title: Twent Docs — Introduction
+description: Twent is a free AI agent for Android. Automate apps, run an Ubuntu terminal, connect MCP servers and skills. BYOK.
 type: docs
 ai-readability:
-  tokens: 298
+  tokens: 620
   score: 100
   level: Advanced
 ---
 
-# Twent Docs — Getting Started
+# Twent Docs
 
-> Step-by-step guides: install Twent, configure AI models, use tools, set up MCP servers. Everything you need to get started.
+> Twent is a free AI agent for Android. It automates any app, runs a full Ubuntu terminal, connects to MCP servers and skills, and remembers across sessions. Bring your own API key.
+
+This is the user manual for the Twent Android app. Every page below also has a markdown twin — append .md to any docs URL to read it as raw markdown.
 
 ## Getting Started
 
-### 1. Install Twent
+- [Start Using Twent](https://twent.xyz/docs/getting-started/start-using-twent): Download the APK, install it (including the "install unknown apps" and Play Protect steps), grant permissions, connect an AI provider (Nous Research, Opencode Zen, or NVIDIA NIMS), wait for the 8-10 minute terminal setup, and start the ddg-search server.
 
-Download the APK from https://twent.xyz and install it on your Android 8.0+ device.
+## Plugins
 
-Requirements:
-- Android 8.0+ (API 26)
-- 3GB+ RAM
-- 500MB+ storage
-- arm64-v8a architecture
+- [MCP](https://twent.xyz/docs/plugins/mcp): Connect external tools via streamable-http or STDIO MCP servers — browser-flow auth, token auth, no-auth remote servers, or fully local ones like ddg-search. Browse published servers in-app; installed servers appear under "My Servers".
+- [Skills](https://twent.xyz/docs/plugins/skills): Install skills from the in-app catalog and tag them with "/" in your prompt. The agent can also install skills on demand.
 
-No root required.
+## Features
 
-### 2. Configure Your AI Model
+- [Agent Capabilities](https://twent.xyz/docs/features/agent-capabilities): Web research via ddg-search, plus persistent memory that grows with use and is editable in the "AI's Memory" page.
+- [Agent CLIs](https://twent.xyz/docs/features/agent-clis): Browse and install agent CLIs (claude-code, codex, hermes-agent, amp-code, pi-agent, roo-code, kilocode...) into the Ubuntu terminal.
+- [Token Config](https://twent.xyz/docs/features/token-config): Get an API key for any provider from the provider's own site, inside the app.
+- [Terminal](https://twent.xyz/docs/features/terminal): A full Ubuntu environment. First-run setup takes 8-10 minutes automatically; see what was installed via "Environment Setup" (bottom-right).
+- [Bots](https://twent.xyz/docs/features/bots): Agents with a specific task, triggered manually, on a schedule, or by events.
+- [Subagents](https://twent.xyz/docs/features/subagents): The main agent delegates subagents; view bots and subagents in the calendar-like "Bots & Tasks" page.
 
-Open Twent → Settings → Model & Parameters Configuration → Choose provider:
+## Reference
 
-**Cloud models (need API key):**
-- OpenAI: gpt-4o, o1, o3-mini
-- Claude: claude-sonnet-4, claude-opus-4
-- Gemini: gemini-2.5-pro, gemini-2.0-flash
-- Deepseek: deepseek-chat, deepseek-coder
-- OpenRouter: Any model on the platform
-
-**Local models (no API key, fully offline):**
-- GGUF files via MNN
-- GGUF files via llama.cpp
-- MNN model files
-
-### 3. Start Chatting
-
-Open the chat screen and type a message. Try:
-
-- "What's the weather today?"
-- "Create a Python script to track my expenses"
-- "Run ls -la in my home directory"
-- "Open WhatsApp and send a message to John"
-
-### 4. Enable Permissions (Recommended)
-
-**Accessibility** (for UI automation):
-Settings → Accessibility → Twent → Enable
-
-**Display Over Other Apps** (for floating chat):
-Settings → Apps → Twent → Display over other apps → Allow
-
-## Core Concepts
-
-### AI Agent
-
-The AI agent sees your screen, understands context, and takes actions. It uses a floating chat bubble for easy access from any app.
-
-### Ubuntu Terminal
-
-Access a full Ubuntu 24.04 LTS terminal on your device. Run Python scripts, use Git, SSH into servers — all from your phone.
-
-### Skills
-
-Skills are behavior bundles that give your AI instant expertise. Install a code review skill and it knows how to analyze diffs. One tap, new capability.
-
-### MCP Servers
-
-Model Context Protocol servers plug your AI into external tools. GitHub, Slack, Notion, databases — any tool with an API.
-
-### Memory
-
-The AI remembers your preferences, past discussions, and important information across sessions. Everything stored locally.
-
-## Tools Reference
-
-### File System
-- read_file — Read file contents with offset/limit
-- write_file — Write content to a file
-- patch — Find-and-replace edits
-- search_files — Search inside files or find by name
-
-### Shell
-- terminal — Execute Linux commands
-
-### Web
-- fetch_url — Fetch page content as markdown
-- search — DuckDuckGo, Tavily, Bing search
-
-### UI Automation
-- tap — Tap UI element by reference
-- swipe — Swipe gesture
-- scroll — Scroll direction
-- type — Type text into a field
-- screenshot — Capture the screen
-- get_ui_tree — Get UI hierarchy
-
-### Memory
-- memory_search — Search across memories
-- memory_save — Save new information
+- [Memory](https://twent.xyz/docs/more/memory), [Settings](https://twent.xyz/docs/more/settings), [Voice](https://twent.xyz/docs/more/voice), [Toolbox](https://twent.xyz/docs/more/toolbox), [Tool Reference](https://twent.xyz/docs/more/tool-reference)
+- [Glossary](https://twent.xyz/docs/more/glossary): plain-English explanations of every technical term (APK, sideloading, API key, MCP, STDIO...).
 
 ## Related Pages
 
-- [Home](/) — Main landing page
-- [Pricing](/pricing) — Free plan details
-- [AI Agent for Developers](/ai-agent-for-developers) — Developer features
-- [Ubuntu Terminal](/terminal-on-android) — Terminal reference
-- [Android Automation](/android-automation-power-user) — Automation guide
+- [Home](/) - Main landing page
+- [Download](/apk) - Get the APK
+- [Pricing](/pricing) - Free plan details

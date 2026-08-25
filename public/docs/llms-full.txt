@@ -3,7 +3,7 @@
 > Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal & connect 1000+ services.
 
 # Introduction
-Source: https://twent.xyz/docs/docs
+Source: https://twent.xyz/docs
 
 Twent runs on **Android 8.0+** and gives you a real AI assistant that can see your screen, control any app, run shell commands, browse the web, manage files, and connect to external tools — all from one app. The agent can also install MCP servers and skills for itself, delegate to subagents, and ask you for clarification before hard decisions.
 
@@ -68,7 +68,7 @@ Most AI assistants live in a chat bubble and can't touch your device. Twent is d
 ---
 
 # v1.0.0
-Source: https://twent.xyz/docs/docs/changelog/v1-0-0
+Source: https://twent.xyz/docs/changelog/v1-0-0
 
 - Docs rebuilt with Blume `1.4.3`.
 - Enabled agent-readability manifest, `llms.txt`, raw Markdown mirrors, and branded OG images.
@@ -78,7 +78,7 @@ Source: https://twent.xyz/docs/docs/changelog/v1-0-0
 ---
 
 # Agent Capabilities
-Source: https://twent.xyz/docs/docs/features/agent-capabilities
+Source: https://twent.xyz/docs/features/agent-capabilities
 
 ## 1 · Search and research the web
 
@@ -97,7 +97,7 @@ You stay in control — view, edit, or clear everything the AI remembers in the 
 ---
 
 # Agent CLIs
-Source: https://twent.xyz/docs/docs/features/agent-clis
+Source: https://twent.xyz/docs/features/agent-clis
 
 An [Agent CLI](https://en.wikipedia.org/wiki/Command-line_interface) is an AI agent that runs as a program in a terminal instead of in a chat app — tools like Claude Code or Codex that read, write, and run code for you.
 
@@ -119,7 +119,7 @@ Make sure your [Terminal setup](/features/terminal) has completed first.
 ---
 
 # Bots
-Source: https://twent.xyz/docs/docs/features/bots
+Source: https://twent.xyz/docs/features/bots
 
 Bots are essentially [AI agents](https://en.wikipedia.org/wiki/Intelligent_agent) that are given a specific task — and they keep doing it without you having to ask each time. You can create a bot yourself, or your Twent agent can create one on your behalf.
 
@@ -142,7 +142,7 @@ A bot is just an agent plus a task plus a trigger — describe what should happe
 ---
 
 # Subagents
-Source: https://twent.xyz/docs/docs/features/subagents
+Source: https://twent.xyz/docs/features/subagents
 
 The Twent agent can delegate **subagents** — helper agents that carry out the specific tasks the main agent assigns them. This lets bigger jobs get split into pieces and done while the main agent stays focused on coordinating.
 
@@ -157,7 +157,7 @@ Bots and subagents can both be viewed from the **"Bots & Tasks"** page, which gi
 ---
 
 # Terminal
-Source: https://twent.xyz/docs/docs/features/terminal
+Source: https://twent.xyz/docs/features/terminal
 
 The **Terminal** page is where an entire [Ubuntu Linux](https://en.wikipedia.org/wiki/Ubuntu) environment lives, right inside the Twent app. Both you and your agent can use it to install software, run scripts, manage files, and more.
 
@@ -174,7 +174,7 @@ Many other features depend on this setup being done — including starting MCP s
 ---
 
 # Token Config
-Source: https://twent.xyz/docs/docs/features/token-config
+Source: https://twent.xyz/docs/features/token-config
 
 An [API key](https://en.wikipedia.org/wiki/API_key) ("token") is what connects Twent to an [AI model](https://en.wikipedia.org/wiki/Large_language_model) provider.
 
@@ -185,7 +185,7 @@ Prefer to configure manually? You can always paste keys yourself under **Setting
 ---
 
 # Start Using Twent
-Source: https://twent.xyz/docs/docs/getting-started/start-using-twent
+Source: https://twent.xyz/docs/getting-started/start-using-twent
 
 Everything you need to go from download to your first working AI agent on your phone. If any word below feels unfamiliar (APK, API key, MCP…), click it — every technical term is linked to a plain-English explanation, and they are all collected on the [Glossary](/more/glossary) page.
 
@@ -258,7 +258,7 @@ You're set. Try asking Twent something, or explore what it can do on [Agent Capa
 ---
 
 # Data Deletion Instructions
-Source: https://twent.xyz/docs/docs/legal/data-deletion
+Source: https://twent.xyz/docs/legal/data-deletion
 
 App Name: **Twent**
 
@@ -307,7 +307,7 @@ Chat history and conversation logs.
 ---
 
 # Glossary
-Source: https://twent.xyz/docs/docs/more/glossary
+Source: https://twent.xyz/docs/more/glossary
 
 The Twent docs use some technical words. Here's what each one means — the same terms are clickable wherever they appear in these docs.
 
@@ -335,7 +335,7 @@ The Twent docs use some technical words. Here's what each one means — the same
 ---
 
 # Memory
-Source: https://twent.xyz/docs/docs/more/memory
+Source: https://twent.xyz/docs/more/memory
 
 Persistent knowledge storage that survives across conversations. The AI
 remembers your preferences, past discussions, and important information, and its memory grows over time.
@@ -366,7 +366,7 @@ leaves your device except API calls.
 ---
 
 # Settings
-Source: https://twent.xyz/docs/docs/more/settings
+Source: https://twent.xyz/docs/more/settings
 
 Deep customization — every aspect of Twent is configurable.
 
@@ -400,7 +400,7 @@ Deep customization — every aspect of Twent is configurable.
 ---
 
 # Tool Reference
-Source: https://twent.xyz/docs/docs/more/tool-reference
+Source: https://twent.xyz/docs/more/tool-reference
 
 Complete parameter reference for all built-in tools.
 
@@ -508,7 +508,7 @@ Complete parameter reference for all built-in tools.
 ---
 
 # Toolbox
-Source: https://twent.xyz/docs/docs/more/toolbox
+Source: https://twent.xyz/docs/more/toolbox
 
 Built-in utility screens for debugging, development, and system
  management.
@@ -543,7 +543,7 @@ Built-in utility screens for debugging, development, and system
 ---
 
 # Voice
-Source: https://twent.xyz/docs/docs/more/voice
+Source: https://twent.xyz/docs/more/voice
 
 Speak to your AI and hear it respond. Supports TTS, STT, wake word
  detection, and hands-free conversation mode.
@@ -578,7 +578,7 @@ Speak to your AI and hear it respond. Supports TTS, STT, wake word
 ---
 
 # MCP
-Source: https://twent.xyz/docs/docs/plugins/mcp
+Source: https://twent.xyz/docs/plugins/mcp
 
 [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) (Model Context Protocol) is an open standard for plugging extra tools into an AI agent. An [MCP server](https://modelcontextprotocol.io/docs/learn/architecture) can do anything from web search to GitHub management, and Twent speaks it natively.
 
@@ -616,7 +616,7 @@ The built-in **ddg-search** server gives your agent web search. Start it once yo
 ---
 
 # Skills
-Source: https://twent.xyz/docs/docs/plugins/skills
+Source: https://twent.xyz/docs/plugins/skills
 
 Skills are ready-made instruction packs that teach your agent how to do specific jobs well — writing styles, workflows, tool recipes. Find them under **Plugins → Skills tab**.
 
