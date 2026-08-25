@@ -1,1 +1,0 @@
-import{t as e}from"./drawer-inert.Cc0xwqs1.js";e();
