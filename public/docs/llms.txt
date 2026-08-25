@@ -16,7 +16,7 @@
 - [Agent CLIs](https://twent.xyz/docs/features/agent-clis): Browse and install AI coding agents like Claude Code, Codex CLI, and Hermes Agent inside Twent's Ubuntu terminal.
 - [Token Config](https://twent.xyz/docs/features/token-config): Get API keys for any AI provider without leaving the Twent app.
 - [Terminal](https://twent.xyz/docs/features/terminal): A full Ubuntu Linux computer inside Twent, with automatic first-time setup.
-- [Bots](https://twent.xyz/docs/features/bots): Twent agents with a specific task, triggered manually, on a schedule, or by events.
+- [Bots](https://twent.xyz/docs/features/bots): Twent agents with a specific task, triggered manually, on a schedule, by webhook, or by MCP events.
 - [Subagents](https://twent.xyz/docs/features/subagents): The Twent agent can delegate subagents to do tasks in parallel.
 
 ## Getting Started

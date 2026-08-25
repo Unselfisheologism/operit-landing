@@ -27,7 +27,7 @@ Twent works with two kinds of MCP servers:
 
 You don't have to hunt for configs yourself:
 
-- Browse and search **publicly-published MCP servers** from sources like [GitHub](https://github.com/topic/model-context-protocol) and [mcpservers.org](https://mcpservers.org) — right inside the MCP section of Twent
+- Browse and search **publicly-published MCP servers** from the [official MCP Registry](https://registry.modelcontextprotocol.io) — right inside the MCP section of Twent
 - Your Twent agent can also **install and run MCP servers on demand**, if it thinks one would help with the task at hand
 
 ## Managing servers

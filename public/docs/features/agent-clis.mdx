@@ -15,9 +15,8 @@ The **Agent CLIs** page of Twent lets you browse all the supported agent CLIs an
 - hermes-agent
 - amp-code
 - pi-agent
-- roo-code
 - kilocode
-- …and more
+- …and many more (aider, opencode, gemini-cli, qwen-code, goose, cline, and others)
 
 :::tip
 Make sure your [Terminal setup](/features/terminal) has completed first.

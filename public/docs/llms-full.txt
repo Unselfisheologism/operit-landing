@@ -108,9 +108,8 @@ The **Agent CLIs** page of Twent lets you browse all the supported agent CLIs an
 - hermes-agent
 - amp-code
 - pi-agent
-- roo-code
 - kilocode
-- …and more
+- …and many more (aider, opencode, gemini-cli, qwen-code, goose, cline, and others)
 
 :::tip
 Make sure your [Terminal setup](/features/terminal) has completed first.
@@ -125,11 +124,14 @@ Bots are essentially [AI agents](https://en.wikipedia.org/wiki/Intelligent_agent
 
 ## Triggers
 
-Each bot runs on one of three trigger types:
+Each bot runs on one of four trigger types:
 
-- **Manual** — you press run whenever you want it
-- **Schedule-based** — runs automatically on a schedule you set
-- **Event-based** — runs when something happens (an event fires)
+- **Manual** — no automatic firing; you (or the chat agent) trigger it whenever you want
+- **Scheduled** — fires automatically on a [cron](https://en.wikipedia.org/wiki/Cron) schedule you set
+- **Webhook** — fires when Twent's local HTTP server receives a matching POST request
+- **MCP event** — fires when a subscribed [MCP server](https://modelcontextprotocol.io/docs/getting-started/intro) emits a matching event
+
+Any bot can also be fired manually at any time — via the calendar page button or by asking the chat agent. Bots can be created by you directly in the bot form, or by the chat agent itself.
 
 ## Managing bots
 
@@ -241,7 +243,7 @@ Good options:
 | --- | --- | --- |
 | Nous Research | [portal.nousresearch.com](https://portal.nousresearch.com) | Fast responses, very generous free tier, constant free promos |
 | Opencode Zen | [opencode.ai/zen](https://opencode.ai/zen) | Faster responses, generous free tier |
-| NVIDIA NIMS | [build.nvidia.com/models](https://build.nvidia.com/models) | Access to many [open-weights models](https://huggingface.co/models); slower responses |
+| NVIDIA NIMS | [build.nvidia.com](https://build.nvidia.com/explore/discover) | Access to many [open-weights models](https://huggingface.co/models); slower responses |
 
 ## Step 6 · Wait for terminal setup
 
@@ -601,7 +603,7 @@ Twent works with two kinds of MCP servers:
 
 You don't have to hunt for configs yourself:
 
-- Browse and search **publicly-published MCP servers** from sources like [GitHub](https://github.com/topic/model-context-protocol) and [mcpservers.org](https://mcpservers.org) — right inside the MCP section of Twent
+- Browse and search **publicly-published MCP servers** from the [official MCP Registry](https://registry.modelcontextprotocol.io) — right inside the MCP section of Twent
 - Your Twent agent can also **install and run MCP servers on demand**, if it thinks one would help with the task at hand
 
 ## Managing servers

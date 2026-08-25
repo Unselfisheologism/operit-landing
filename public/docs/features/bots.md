@@ -1,6 +1,6 @@
 ---
 title: Bots
-description: Twent agents with a specific task, triggered manually, on a schedule, or by events.
+description: Twent agents with a specific task, triggered manually, on a schedule, by webhook, or by MCP events.
 sidebar:
   label: Bots
   order: 5
@@ -10,11 +10,14 @@ Bots are essentially [AI agents](https://en.wikipedia.org/wiki/Intelligent_agent
 
 ## Triggers
 
-Each bot runs on one of three trigger types:
+Each bot runs on one of four trigger types:
 
-- **Manual** — you press run whenever you want it
-- **Schedule-based** — runs automatically on a schedule you set
-- **Event-based** — runs when something happens (an event fires)
+- **Manual** — no automatic firing; you (or the chat agent) trigger it whenever you want
+- **Scheduled** — fires automatically on a [cron](https://en.wikipedia.org/wiki/Cron) schedule you set
+- **Webhook** — fires when Twent's local HTTP server receives a matching POST request
+- **MCP event** — fires when a subscribed [MCP server](https://modelcontextprotocol.io/docs/getting-started/intro) emits a matching event
+
+Any bot can also be fired manually at any time — via the calendar page button or by asking the chat agent. Bots can be created by you directly in the bot form, or by the chat agent itself.
 
 ## Managing bots
 

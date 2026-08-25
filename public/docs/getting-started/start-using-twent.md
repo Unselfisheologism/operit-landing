@@ -60,7 +60,7 @@ Good options:
 | --- | --- | --- |
 | Nous Research | [portal.nousresearch.com](https://portal.nousresearch.com) | Fast responses, very generous free tier, constant free promos |
 | Opencode Zen | [opencode.ai/zen](https://opencode.ai/zen) | Faster responses, generous free tier |
-| NVIDIA NIMS | [build.nvidia.com/models](https://build.nvidia.com/models) | Access to many [open-weights models](https://huggingface.co/models); slower responses |
+| NVIDIA NIMS | [build.nvidia.com](https://build.nvidia.com/explore/discover) | Access to many [open-weights models](https://huggingface.co/models); slower responses |
 
 ## Step 6 · Wait for terminal setup
 

@@ -1,19 +1,19 @@
 {
   "artifacts": {
     "markdown": {
-      "pattern": "https://twent.xyz/docs/docs/{route}.md"
+      "pattern": "https://twent.xyz/docs/{route}.md"
     },
-    "llmsFullTxt": "https://twent.xyz/docs/docs/llms-full.txt",
-    "llmsTxt": "https://twent.xyz/docs/docs/llms.txt",
-    "sitemap": "https://twent.xyz/docs/docs/sitemap.xml",
+    "llmsFullTxt": "https://twent.xyz/docs/llms-full.txt",
+    "llmsTxt": "https://twent.xyz/docs/llms.txt",
+    "sitemap": "https://twent.xyz/docs/sitemap.xml",
     "feeds": [
-      "https://twent.xyz/docs/docs/changelog/rss.xml"
+      "https://twent.xyz/docs/changelog/rss.xml"
     ]
   },
   "description": "Step-by-step guides for Twent AI agent on Android — automate apps, run Ubuntu terminal & connect 1000+ services.",
   "generator": "blume@1.4.3",
   "name": "Twent Docs",
-  "site": "https://twent.xyz/docs",
+  "site": "https://twent.xyz",
   "contentUsage": {
     "search": true,
     "ai-input": true,
