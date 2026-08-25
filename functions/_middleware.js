@@ -1025,17 +1025,34 @@ export async function onRequest(context) {
     console.log(`Prerender miss: ${pathname} — no markdown twin`);
   }
 
-  // ─── .md file requests from humans → redirect to HTML version ───
-  // Prevents duplicate content: /pricing.md and /pricing both being indexed
+  // ─── .md file requests from humans → serve raw markdown ───
+  // AI bots already got markdown above; humans explicitly asking for /x.md
+  // get the markdown source directly (Content-Type: text/markdown).
+  // X-Robots-Tag: noindex prevents duplicate-content indexing of the twin,
+  // which is why this used to be a 301 to the HTML version.
   if (pathname.endsWith('.md')) {
-    const htmlPath = pathname.replace(/\.md$/, '') || '/';
-    return new Response(null, {
-      status: 301,
-      headers: {
-        'Location': htmlPath,
-        'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
-      },
-    });
+    const mdResponse = await env.ASSETS.fetch(request);
+    const headers = {
+      'Content-Type': 'text/markdown; charset=utf-8',
+      'X-Robots-Tag': 'noindex, nofollow',
+      'X-Markdown-Twin': 'true',
+      'X-Generator': 'Twent-Dualmark/1.0',
+      'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+      'Link': `<${pathname.replace(/\.md$/, '') || '/'}>; rel="alternate"; type="text/html"; title="HTML version"`,
+    };
+    if (!mdResponse.ok) {
+      // No twin on disk — fall back to the old redirect behavior
+      const htmlPath = pathname.replace(/\.md$/, '') || '/';
+      return new Response(null, {
+        status: 301,
+        headers: {
+          'Location': htmlPath,
+          'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        },
+      });
+    }
+    if (request.method === 'HEAD') return new Response(null, { status: 200, headers });
+    return new Response(await mdResponse.text(), { status: 200, headers });
   }
 
   // ─── HTML Response (existing behavior for humans) ───
