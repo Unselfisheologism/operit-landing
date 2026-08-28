@@ -19,15 +19,6 @@ Deep dives on agentic AI, on-device intelligence, and building the future of hum
 
 ## Latest Articles
 
-### The Twent Marketplace: Your Agentic App Store
-
-Your automations are products. Your skills are currencies.
-
-- Published: April 19, 2026
-- Category: Product
-- Read time: 5 min
-- [Read the full article](https://twent.xyz/blog/marketplace)
-
 ### Personal, Proactive, Self-Driving Android AI Assistant and Agent App
 
 A short, honest take on why most AI on Android still feels like a chatbot — and what Twent is building instead.

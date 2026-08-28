@@ -62,13 +62,6 @@ GGUF models run locally via MNN. BYOK (Bring Your Own Key) — API keys encrypte
 
 - [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero data collection
 
-### Marketplace
-Browse and install AI skills, MCP servers, and workflows. Build and sell AI behaviors.
-
-- [AI Marketplace for Creators](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
-- [Best Android AI](https://twent.xyz/best-android-ai) — Curated ranking of top Android AI apps
-- [Marketplace Blog Post](https://twent.xyz/blog/marketplace) — What's in the marketplace
-
 ## Documentation
 
 - [Documentation](https://twent.xyz/docs) — Full getting started guide, tool reference, MCP setup

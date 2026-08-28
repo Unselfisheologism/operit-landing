@@ -30,7 +30,7 @@ This ranking focuses on apps that are genuinely useful for power users, develope
 ### Twent — Best Agentic AI for Android
 Twent is the only app on this list that qualifies as a true AI agent. It sees your screen, taps, swipes, and types in any app. It runs a full Ubuntu 24.04 terminal on your device with no root required. It executes Claude Code, SSH, Git, and VS Code Server directly on your phone.
 
-Why it's different: every other app on this list is either a chatbot, a coding tool, or an automation helper. Twent is all three at once — plus a terminal, local AI models, MCP server support, and a skills marketplace.
+Why it's different: every other app on this list is either a chatbot, a coding tool, or an automation helper. Twent is all three at once — plus a terminal, local AI models, MCP server support, and skills.
 
 - [Twent homepage](https://twent.xyz/) — Free download, no Play Store
 - [Twent vs ChatGPT](https://twent.xyz/vs/chatgpt) — Agent vs chatbot

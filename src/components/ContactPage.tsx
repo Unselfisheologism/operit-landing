@@ -112,8 +112,8 @@ export function ContactPage({
             >
               @Jeff9James on X
             </a>
-            . Marketplace creators and MCP skill authors are especially welcome —
-            most marketplace questions get answered by the community within
+            . MCP skill authors are especially welcome —
+            most questions get answered by the community within
             hours.
           </p>
 

@@ -28,9 +28,6 @@ const TermsOfService = lazy(() =>
 const PrivacyPolicy = lazy(() =>
   import("./components/PrivacyPolicy").then((m) => ({ default: m.PrivacyPolicy })),
 );
-const MarketplaceBlogPost = lazy(() =>
-  import("./components/MarketplaceBlogPost").then((m) => ({ default: m.MarketplaceBlogPost })),
-);
 const BestAiAppsAndroid = lazy(() =>
   import("./components/BestAiAppsAndroid").then((m) => ({ default: m.BestAiAppsAndroid })),
 );
@@ -45,9 +42,6 @@ const PrivacyFirstAiAndroid = lazy(() =>
 );
 const TerminalOnAndroid = lazy(() =>
   import("./components/TerminalOnAndroid").then((m) => ({ default: m.TerminalOnAndroid })),
-);
-const AiMarketplaceCreators = lazy(() =>
-  import("./components/AiMarketplaceCreators").then((m) => ({ default: m.AiMarketplaceCreators })),
 );
 const BestAndroidAiPillar = lazy(() =>
   import("./components/BestAndroidAiPillar").then((m) => ({ default: m.BestAndroidAiPillar })),
@@ -104,7 +98,6 @@ import { languages, changeLanguage, getDirection, applyBrowserLanguage } from ".
 // into the same chunks, so this adds no new requests beyond the prefetch.
 // Most-specific prefixes first (mirrors the AppRoutes ordering).
 const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
-  ["/blog/marketplace", () => import("./components/MarketplaceBlogPost")],
   ["/blog/best-ai-apps-android", () => import("./components/BestAiAppsAndroid")],
   ["/blog/os-vs-browser-automation", () => import("./components/OsVsBrowserAutomation")],
   ["/blog/personal-proactive-android-ai", () => import("./components/PersonalProactiveAndroidBlog")],
@@ -112,7 +105,6 @@ const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
   ["/android-automation-power-user", () => import("./components/AndroidAutomationPowerUser")],
   ["/privacy-first-ai-android", () => import("./components/PrivacyFirstAiAndroid")],
   ["/terminal-on-android", () => import("./components/TerminalOnAndroid")],
-  ["/ai-marketplace-creators", () => import("./components/AiMarketplaceCreators")],
   ["/best-android-ai", () => import("./components/BestAndroidAiPillar")],
   ["/pricing", () => import("./components/PricingPage")],
   ["/success", () => import("./components/SuccessPage")],
@@ -486,32 +478,12 @@ function AppRoutes() {
     );
   }
 
-  if (routePath.startsWith("/ai-marketplace-creators")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <AiMarketplaceCreators dark={dark} />
-      </>
-    );
-  }
-
   if (routePath.startsWith("/best-android-ai")) {
     return (
       <>
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <BestAndroidAiPillar dark={dark} />
-      </>
-    );
-  }
-
-  if (routePath.startsWith("/blog/marketplace")) {
-    return (
-      <>
-        <HreflangTags currentPath={routePath} />
-        <MetaUpdater currentPath={routePath} />
-        <MarketplaceBlogPost dark={dark} />
       </>
     );
   }

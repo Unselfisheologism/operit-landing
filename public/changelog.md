@@ -21,7 +21,7 @@ ai-readability:
 - AI chat overlay on any app
 - 50+ built-in tools
 - MCP server support
-- Skills system and marketplace
+- Skills system
 - Workflow automation builder
 - Tasker integration
 - Voice wake word activation

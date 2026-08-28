@@ -151,21 +151,7 @@ export function TermsOfService({
 
           <section>
             <h2 className="font-secondary text-lg text-zinc-900 dark:text-zinc-100 mb-3">
-              6. Marketplace
-            </h2>
-            <p>
-              The Twent Marketplace allows users to buy and sell agentic apps,
-              skills, MCP servers, and other add-ons. Twent takes a commission
-              on marketplace transactions. PRO users pay zero commission.
-              Creators are responsible for the quality and legality of their
-              listed items. Twent reserves the right to remove listings that
-              violate these terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-secondary text-lg text-zinc-900 dark:text-zinc-100 mb-3">
-              7. Intellectual Property
+              6. Intellectual Property
             </h2>
             <p>
               Twent is a proprietary application. All rights not expressly
@@ -259,9 +245,6 @@ href="https://discord.gg/dUFrWm4w"
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <a href="/" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
               Home — AI Agent for Android →
-            </a>
-            <a href="/blog/marketplace" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
-              Twent Marketplace →
             </a>
             <a href="/blog/best-ai-apps-android" className="px-4 py-3 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 hover:border-blue-400 dark:hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-200 rounded-lg">
               Best AI Apps for Android →

@@ -28,11 +28,6 @@ const pageMeta: Record<string, { title: string; description: string; ogImage?: s
     description:
       "Tutorials, deep-dives & product news. Learn how to get the most from your Android device with AI assistance.",
   },
-  "/blog/marketplace": {
-    title: "Twent Marketplace — AI Skills & Integrations",
-    description:
-      "Browse AI skills, MCP tools & Composio connections. Supercharge your Android setup with curated extensions.",
-  },
   "/ai-marketplace-creators": {
     title: "Build & Sell AI Skills on Twent",
     description:
@@ -225,7 +220,7 @@ const routeKeywords: Record<string, string[]> = {
     "Android AI assistant setup guide",
     "automate apps with AI Android",
     "MCP tools tutorial Android",
-    "skills marketplace Twent guide"
+    "skills Twent guide"
   ],
   "/blog": [
     "Twent AI blog",
@@ -236,18 +231,10 @@ const routeKeywords: Record<string, string[]> = {
     "Android AI tips and tricks",
     "phone AI assistant guides"
   ],
-  "/blog/marketplace": [
-    "Twent AI skills store",
-    "MCP plugins Android",
-    "Composio AI integrations",
-    "AI plugins for Twent",
-    "buy AI skills Android",
-    "Twent marketplace apps"
-  ],
   "/ai-marketplace-creators": [
     "sell AI skills Android",
     "build AI mini apps",
-    "AI app store creator",
+    "AI tool store creator",
     "monetize AI tools",
     "Twent developer platform",
     "make money AI apps"

@@ -10,7 +10,6 @@ interface NavProps {
 }
 
 const NAV_LINKS = [
-  { label: "Marketplace", href: "/blog/marketplace", external: false },
   { label: "Pricing", href: "/pricing", external: false },
   { label: "Docs", href: "/docs", external: false },
   { label: "Blog", href: "/blog", external: false },

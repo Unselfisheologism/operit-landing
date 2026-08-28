@@ -87,8 +87,8 @@ export function AboutPage({
             with no root required. It executes Claude Code and OpenAI Codex
             directly on the device, runs local GGUF and MNN models offline, and
             connects to more than 1,000 external services through MCP and
-            Composio. A visual workflow builder, Tasker integration, and a
-            skills marketplace round out the automation story.
+            Composio. A visual workflow builder, Tasker integration, and
+            skills round out the automation story.
           </p>
 
           <h2 className="font-display text-xl md:text-2xl pt-4">How we make money</h2>

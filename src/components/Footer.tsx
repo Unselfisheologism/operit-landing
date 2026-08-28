@@ -6,12 +6,6 @@ export function Footer() {
   const links = {
     Product: [
       { label: "Features", href: "#features", external: false, icon: null },
-      {
-        label: "Marketplace",
-        href: "#marketplace",
-        external: false,
-        icon: null,
-      },
       { label: "Pricing", href: "#pricing", external: false, icon: null },
       { label: "FAQ", href: "#faq", external: false, icon: null },
       {
@@ -43,12 +37,6 @@ export function Footer() {
       {
         label: "Terminal on Android",
         href: "/terminal-on-android",
-        external: false,
-        icon: null,
-      },
-      {
-        label: "For Creators",
-        href: "/ai-marketplace-creators",
         external: false,
         icon: null,
       },

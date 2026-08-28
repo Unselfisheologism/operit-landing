@@ -31,7 +31,6 @@ All pages have markdown twins at the same URL with .md extension. The edge middl
 - [Ubuntu Terminal on Android](https://twent.xyz/terminal-on-android) — Full Ubuntu 24.04 on your device
 - [Android Automation](https://twent.xyz/android-automation-power-user) — Auto-tap, swipe, AI scripts
 - [Privacy-First AI](https://twent.xyz/privacy-first-ai-android) — BYOK, local models, zero telemetry
-- [AI Marketplace](https://twent.xyz/ai-marketplace-creators) — Build and sell AI skills
 
 ## Competitor Comparisons
 

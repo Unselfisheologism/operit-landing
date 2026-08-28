@@ -14,7 +14,7 @@ The fastest way to reach the team is email at jeffrinjames@twent.xyz — our cus
 
 ## Community
 
-- Discord: https://discord.gg/dUFrWm4w — quickest answers; marketplace creators and MCP skill authors welcome.
+- Discord: https://discord.gg/dUFrWm4w — quickest answers; MCP skill authors welcome.
 - X: https://x.com/Jeff9James
 
 ## Documentation & Agent Access

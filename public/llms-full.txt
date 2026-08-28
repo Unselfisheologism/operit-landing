@@ -71,8 +71,6 @@ Skills are behavior bundles that give your AI instant expertise:
 - Install a writing skill → AI switches to editorial mode
 - One tap → new capability unlocked, no configuration
 
-Skills are bought and sold in the Twent marketplace. Creators build skills once and reach millions of Android users.
-
 ### 3. Full Ubuntu 24.04 Terminal on Android
 
 No cloud, no root, no emulation. A real Ubuntu 24.04 (Noble) environment runs natively in a secure container on your phone:
@@ -156,10 +154,8 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 | Local Model Support | ✅ Included |
 | Composio (1000+ integrations) | ✅ Included |
 | File Generation | ✅ Included |
-|Code generation | ✅ Included |
+| Code generation | ✅ Included |
 | Character Cards | ✅ Included |
-
-**Future:** A Pro plan ($9.99/mo) will add priority support. Future free tier will include non-intrusive AI-powered ads.
 
 ---
 
@@ -214,7 +210,6 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 - [Personal, Proactive, Self-Driving Android AI Assistant and Agent App](https://twent.xyz/blog/personal-proactive-android-ai) — Why most AI on Android still feels like a chatbot — and what Twent is building instead
 - [25 Best AI Apps for Android in 2026](https://twent.xyz/blog/best-ai-apps-android) — Curated ranking of top AI apps
 - [Why OS-Level AI Automation Beats Browser-Level Every Time](https://twent.xyz/blog/os-vs-browser-automation) — Prompt injection, cross-tab leakage, data harvesting explained
-- [The Twent Marketplace: Your Agentic App Store](https://twent.xyz/blog/marketplace) — Build and sell AI skills, MCP servers, and tool packages
 
 ---
 
@@ -248,7 +243,7 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 | Android automation | ✅ | ? | ? | ✅ (runs inside Twent) | ? | ? | ? | ? |
 | Ubuntu terminal | ✅ | ? | ? | ✅ | ? | ? | ? | ? |
 | Offline models | ✅ GGUF/MNN | ? | ? | ✅ | ? | ? | ? | ? |
-| Skills marketplace | ✅ | ? | ? | ❌ | ? | ? | ? | ? |
+| Skills | ✅ | ? | ? | ❌ | ? | ? | ? | ? |
 | Free tier | ✅ Everything | ? | ? | ✅ | ? | ? | ? | ? |
 
 ### Other AI Agents & Assistants
@@ -294,4 +289,4 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 
 ---
 
-*This guide is generated for AI agents and LLM crawlers per the [Dualmark AEO specification](https://dualmark.dev). Last updated: May 16, 2026.*
+*This guide is generated for AI agents and LLM crawlers per the Dualmark AEO specification. Last updated: May 16, 2026.*

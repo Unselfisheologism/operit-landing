@@ -200,7 +200,6 @@ const sidebar: DocCategory[] = [
     sections: [
       { id: "packages-overview", label: "Overview" },
       { id: "skills", label: "Skills" },
-      { id: "marketplace", label: "Marketplace" },
     ],
   },
   {
@@ -872,9 +871,6 @@ function DocPackages() {
 └── assets/            # Static data`}</Pre>
       <H2 id="installing">Installing</H2>
       <UL>
-        <li>
-          From the marketplace: <Code>Settings → Packages → Marketplace</Code>
-        </li>
         <li>Manual: import ZIP or directory</li>
         <li>Via URL: the AI can install packages for you</li>
       </UL>
@@ -909,10 +905,10 @@ function DocSkills() {
   );
 }
 
-function DocMarketplace() {
+function DocPackages() {
   return (
     <section>
-      <H1>Marketplace</H1>
+      <H1>Packages</H1>
       <P>
         Browse and install community-built packages, skills, and MCP servers.
       </P>
@@ -1458,7 +1454,7 @@ export function DocsPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { label: "Blog — The Twent Journal", href: "/blog" },
-                { label: "Twent Marketplace", href: "/blog/marketplace" },
+                { label: "Best AI Apps for Android", href: "/blog/best-ai-apps-android" },
                 { label: "vs ChatGPT — compare AI apps", href: "/vs/chatgpt" },
                 { label: "vs Claude — AI agent comparison", href: "/vs/claude" },
                 { label: "vs Gemini — Google AI vs Twent", href: "/vs/gemini" },

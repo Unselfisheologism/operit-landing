@@ -1062,7 +1062,7 @@ export function AiAgentForDevelopers({
                 },
                 {
                   q: "Does it support MCP tools?",
-                  a: "Yes. Twent supports Model Context Protocol tools including GitHub, Jira, Slack, Linear, Notion, and 1000+ Composio integrations. <a href='/ai-marketplace-creators' className='text-blue-500 hover:underline'>Browse the MCP marketplace &rarr;</a>",
+                  a: "Yes. Twent supports Model Context Protocol tools including GitHub, Jira, Slack, Linear, Notion, and 1000+ Composio integrations. <a href='/docs' className='text-blue-500 hover:underline'>See the MCP docs &rarr;</a>",
                 },
                 {
                   q: "How does BYOK (Bring Your Own Key) work?",

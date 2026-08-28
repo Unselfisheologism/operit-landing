@@ -12,20 +12,7 @@ ai-readability:
 
 > Tutorials, deep-dives and product news. Learn how to get the most from your Android device with AI assistance.
 
-## The Twent Journal
-
-Deep dives on agentic AI, on-device intelligence, and building the future of human-computer interaction.
-
 ## Latest Articles
-
-### The Twent Marketplace: Your Agentic App Store
-
-Your automations are products. Your skills are currencies.
-
-- Published: April 19, 2026
-- Category: Product
-- Read time: 5 min
-- [Read the full article](https://twent.xyz/blog/marketplace)
 
 ### 25 Best AI Apps for Android in 2026
 

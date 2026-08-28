@@ -97,7 +97,7 @@ export function SharedSchemaMarkup() {
           "UI automation (tap, swipe, type)",
           "MCP server support",
           "1000+ Composio integrations",
-          "Skills & workflows marketplace",
+          "Skills & workflows",
           "Local GGUF model support",
           "BYOK API key encryption",
           "Voice activation",

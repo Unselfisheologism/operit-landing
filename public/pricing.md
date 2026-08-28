@@ -65,7 +65,7 @@ Every feature. Every tool. Every capability. All included. All free.
 |---|---|
 | MCP server support | ✅ |
 | Composio (1000+ connections) | ✅ |
-| Skills marketplace access | ✅ |
+| Skills access | ✅ |
 | Workflow builder | ✅ |
 | Tasker integration | ✅ |
 
@@ -83,9 +83,9 @@ We distribute the APK directly from our website. Download, install, and you're g
 
 Eventually, yes — powered by AI ads. A future Pro plan will remove them entirely. No ads in the current free tier.
 
-### What's the marketplace?
+### What's included
 
-The marketplace is an agentic app store — users can sell skills, workflows, plugins, and MCP servers. The core app is free, marketplace items have their own pricing.
+Twent is a free AI agent with optional extensions.
 
 ### What API providers does Twent support?
 

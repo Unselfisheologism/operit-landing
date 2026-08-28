@@ -68,17 +68,6 @@
   </url>
   
   <url>
-    <canonical>https://twent.xyz/blog/marketplace</canonical>
-    <md>https://twent.xyz/blog/marketplace.md</md>
-    <type>blog</type>
-    <summary>AI marketplace — build and sell skills, MCP servers, and tool packages</summary>
-    <keywords>marketplace, skills, MCP, plugins, creators</keywords>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <canonical>https://twent.xyz/blog/best-ai-apps-android</canonical>
     <md>https://twent.xyz/blog/best-ai-apps-android.md</md>
     <type>blog</type>
@@ -350,7 +339,7 @@
     <canonical>https://twent.xyz/vs/omnara</canonical>
     <md>https://twent.xyz/vs/omnara.md</md>
     <type>compare</type>
-    <summary>Device-level automation, MCP ecosystem, skills marketplace. Twent vs Omnara.</summary>
+    <summary>Device-level automation, MCP ecosystem, skills. Twent vs Omnara.</summary>
     <keywords>vs Omnara, comparison</keywords>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>

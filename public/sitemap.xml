@@ -138,40 +138,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://twent.xyz/blog/marketplace</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/blog/marketplace" />
-    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/blog/marketplace" />
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://twent.xyz/blog/best-ai-apps-android</loc>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/blog/best-ai-apps-android" />
     <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/blog/best-ai-apps-android" />
@@ -440,40 +406,6 @@
     <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/terminal-on-android" />
     <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/terminal-on-android" />
     <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/terminal-on-android" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://twent.xyz/ai-marketplace-creators</loc>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://twent.xyz/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://twent.xyz/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://twent.xyz/zh/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://twent.xyz/zh-TW/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://twent.xyz/hi/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="es-ES" href="https://twent.xyz/es/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="es-419" href="https://twent.xyz/es-419/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="es-AR" href="https://twent.xyz/es-AR/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://twent.xyz/es-CO/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://twent.xyz/pt/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://twent.xyz/pt-BR/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://twent.xyz/fr/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://twent.xyz/fr-CA/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://twent.xyz/ja/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ko-KR" href="https://twent.xyz/ko/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://twent.xyz/de/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="de-AT" href="https://twent.xyz/de-AT/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="de-CH" href="https://twent.xyz/de-CH/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://twent.xyz/it/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="tr-TR" href="https://twent.xyz/tr/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="id-ID" href="https://twent.xyz/id/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="vi-VN" href="https://twent.xyz/vi/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ar-SA" href="https://twent.xyz/ar/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ar-AE" href="https://twent.xyz/ar-AE/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ar-EG" href="https://twent.xyz/ar-EG/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="ru-RU" href="https://twent.xyz/ru/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="pl-PL" href="https://twent.xyz/pl/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://twent.xyz/nl/ai-marketplace-creators" />
-    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://twent.xyz/nl-BE/ai-marketplace-creators" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

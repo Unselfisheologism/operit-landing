@@ -1168,14 +1168,14 @@ export function AndroidAutomationPowerUser({
                 </div>
               </a>
               <a
-                href="/ai-marketplace-creators"
+                href="/docs"
                 className="group p-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-all duration-200"
               >
-                <div className="text-sm font-medium text-white group-hover:text-purple-400 transition-colors mb-1">
-                  Marketplace Creators
+                <div className="text-sm font-medium text-white group-hover:text-blue-400 transition-colors mb-1">
+                  Documentation
                 </div>
                 <div className="text-xs text-zinc-500">
-                  Sell AI skills, MCP servers, and custom tools
+                  Guides, setup, and MCP tool reference
                 </div>
               </a>
             </div>

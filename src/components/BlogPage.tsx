@@ -46,26 +46,20 @@ function BlogPageSchemaMarkup() {
         {
           "@type": "ListItem",
           position: 1,
-          name: "The Twent Marketplace: Your Agentic App Store",
-          url: "https://twent.xyz/blog/marketplace",
+          name: "25 Best AI Apps for Android",
+          url: "https://twent.xyz/blog/best-ai-apps-android",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Why OS-Level AI Automation Beats Browser-Level Every Time",
+          url: "https://twent.xyz/blog/os-vs-browser-automation",
         },
         {
           "@type": "ListItem",
           position: 3,
           name: "Personal, Proactive, Self-Driving Android AI Assistant and Agent App",
           url: "https://twent.xyz/blog/personal-proactive-android-ai",
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
-          url: "https://twent.xyz/blog/best-ai-apps-android",
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Why OS-Level AI Automation Beats Browser-Level Every Time",
-          url: "https://twent.xyz/blog/os-vs-browser-automation",
         },
       ],
     },
@@ -382,18 +376,8 @@ export function BlogPage({ dark }: { dark: boolean }) {
   const [contentRef, contentInView] = useInView();
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Sample blog posts — marketplace post added
+  // Sample blog posts
   const posts: BlogPost[] = [
-    {
-      slug: "marketplace",
-      title: "The Twent Marketplace: Your Agentic App Store",
-      excerpt: "where creators sell anything from mini apps to custom skins, and everyone else gets to level up their agent for free (▀̿Ĺ̯▀̿ ̿)",
-      date: "April 19, 2026",
-      readTime: "5 min read",
-      category: "Product",
-      featured: true,
-      image: "/marketplace-hero.png",
-    },
     {
       slug: "os-vs-browser-automation",
       title: "Why OS-Level AI Automation Beats Browser-Level Every Time",

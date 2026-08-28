@@ -80,7 +80,7 @@ const comparisons = [
       "UI automation",
       "Local AI model support",
       "Overlay floating assistant",
-      "Skills + workflows marketplace",
+      "Skills + workflows",
     ],
     chatgptBetter: [
       "Broader model access (o1, o3)",

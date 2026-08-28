@@ -1,451 +1,449 @@
-# As a condition of accessing this website, you agree to abide by the following
-# content signals:
-
-# (a)  If a Content-Signal = yes, you may collect content for the corresponding
-#      use.
-# (b)  If a Content-Signal = no, you may not collect content for the
-#      corresponding use.
-# (c)  If the website operator does not include a Content-Signal for a
-#      corresponding use, the website operator neither grants nor restricts
-#      permission via Content-Signal with respect to the corresponding use.
-
-# The content signals and their meanings are:
-
-# search:   building a search index and providing search results (e.g., returning
-#           hyperlinks and short excerpts from your website's contents). Search does not
-#           include providing AI-generated search summaries.
-# ai-input: inputting content into one or more AI models (e.g., retrieval
-#           augmented generation, grounding, or other real-time taking of content for
-#           generative AI search answers).
-# ai-train: training or fine-tuning AI models.
-
-# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
-# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
-# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
-
-# Cloudflare managed section is auto-injected at deploy time.
-# The AI crawler Allow blocks below are the source of truth —
-# first matching User-agent block wins per robots.txt spec.
-
-# Twent.xyz - robots.txt
-# Dualmark: AI agents get structured markdown via content negotiation
-# AI agents: see llms.txt and llms-full.txt for full content
-# Sitemap: https://twent.xyz/sitemap.xml
-# AI Sitemap (markdown): https://twent.xyz/sitemap.md
-
-# ─── AI CRAWLER ALLOWANCE ───────────────────────────────────────────
-# All AI crawlers are allowed full access to all pages
-# Dualmark content negotiation serves markdown to AI agents automatically
-# ───────────────────────────────────────────────────────────────────
-
-# Anthropic
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: Claude
-Allow: /
-
-User-agent: claude-bot
-Allow: /
-
-# OpenAI
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: OpenAI
-Allow: /
-
-User-agent: o3-bot
-Allow: /
-
-User-agent: o4-mini
-Allow: /
-
-# Microsoft Bing — CRITICAL: ChatGPT search results run on the Bing index.
-# Getting indexed by Bing is how twent.xyz content reaches ChatGPT answers.
-User-agent: bingbot
-Allow: /
-
-User-agent: BingPreview
-Allow: /
-
-User-agent: msnbot
-Allow: /
-
-User-agent: adidxbot
-Allow: /
-
-# Google DeepMind / Gemini
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Gemini
-Allow: /
-
-User-agent: Google-CloudAI
-Allow: /
-
-User-agent: GoogleOther
-Allow: /
-
-User-agent: GoogleOther-Image
-Allow: /
-
-User-agent: GoogleOther-Video
-Allow: /
-
-# Meta / Facebook
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-# Amazon
-User-agent: Amazonbot
-Allow: /
-
-# Apple
-User-agent: Applebot
-Allow: /
-
-# Common AI crawlers
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: CC Intelligence
-Allow: /
-
-User-agent: DataEnrichmentBot
-Allow: /
-
-User-agent: Datario
-Allow: /
-
-User-agent: Diffbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: embedchain
-Allow: /
-
-User-agent: FriendlyCrawler
-Allow: /
-
-User-agent: iasksmartbot
-Allow: /
-
-User-agent: ICC-Crawler
-Allow: /
-
-User-agent: ImagesiftBot
-Allow: /
-
-User-agent: InfoTigerBot
-Allow: /
-
-User-agent: ipfc-bot
-Allow: /
-
-User-agent: Kangaroo Bot
-Allow: /
-
-User-agent: Keen耀
-Allow: /
-
-User-agent: Magpie
-Allow: /
-
-User-agent: Mantra WebSpeed Tester
-Allow: /
-
-User-agent: Mediapartners-Google
-Allow: /
-
-User-agent: Meltwater
-Allow: /
-
-User-agent: Mistral
-Allow: /
-
-User-agent: Mona
-Allow: /
-
-User-agent: MozScan
-Allow: /
-
-User-agent: nu-dev
-Allow: /
-
-User-agent: omgili
-Allow: /
-
-User-agent: omgilibot
-Allow: /
-
-User-agent: PanguBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Petal Bot
-Allow: /
-
-User-agent: PhantomJS
-Allow: /
-
-User-agent: Pinterest
-Allow: /
-
-User-agent: proudspectrebot
-Allow: /
-
-User-agent: RTG-Google-Free
-Allow: /
-
-User-agent: Saleswise
-Allow: /
-
-User-agent: Scrapy
-Allow: /
-
-User-agent: ScribbleReader
-Allow: /
-
-User-agent: SeekWriteAI
-Allow: /
-
-User-agent: SemiProxy
-Allow: /
-
-User-agent: SEOd.ai
-Allow: /
-
-User-agent: SerpAPIClient
-Allow: /
-
-User-agent: Sentify
-Allow: /
-
-User-agent: serpstatbot
-Allow: /
-
-User-agent: ShiftSecurityBot
-Allow: /
-
-User-agent: ShopGPT
-Allow: /
-
-User-agent: Sir-Travelo
-Allow: /
-
-User-agent: Slackbot
-Allow: /
-
-User-agent: SocialSearchBot
-Allow: /
-
-User-agent: Sogou web spider
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: TheFindBot
-Allow: /
-
-User-agent: TinTin
-Allow: /
-
-User-agent: ToplistBot
-Allow: /
-
-User-agent: Trendictionbot
-Allow: /
-
-User-agent: TurnitinBot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: UptimeRobot
-Allow: /
-
-User-agent: Waschatabot
-Allow: /
-
-User-agent: WebBot
-Allow: /
-
-User-agent: Xenu Link Sleuth
-Allow: /
-
-User-agent: XING-contenttab-receiver
-Allow: /
-
-User-agent: YaCy
-Allow: /
-
-User-agent: YouCodeBot
-Allow: /
-
-User-agent: ZooBot
-Allow: /
-
-# Additional AI agent and LLM crawlers
-User-agent: AI2B-Crawler
-Allow: /
-
-User-agent: AI-Crawler
-Allow: /
-
-User-agent: Aria
-Allow: /
-
-User-agent: Auto-GPT
-Allow: /
-
-User-agent: LangChain
-Allow: /
-
-User-agent: Llama
-Allow: /
-
-User-agent: cohere
-Allow: /
-
-User-agent: MetaAI
-Allow: /
-
-User-agent: Voyager
-Allow: /
-
-User-agent: Windsurf
-Allow: /
-
-User-agent: Cursor
-Allow: /
-
-User-agent: claude-code
-Allow: /
-
-User-agent: opencode
-Allow: /
-
-User-agent: Aider
-Allow: /
-
-User-agent: Augment
-Allow: /
-
-User-agent: devin
-Allow: /
-
-User-agent: SWE-agent
-Allow: /
-
-User-agent: jina
-Allow: /
-
-User-agent: Ai2Dev
-Allow: /
-
-User-agent: AiDevBot
-Allow: /
-
-# ─── DEFAULT CRAWLER (allow all) ───────────────────────────────────
-User-agent: *
-Allow: /
-
-# Language subdirectories
-Allow: /zh/
-Allow: /zh-TW/
-Allow: /hi/
-Allow: /es/
-Allow: /es-419/
-Allow: /es-AR/
-Allow: /es-CO/
-Allow: /pt-BR/
-Allow: /pt/
-Allow: /fr/
-Allow: /fr-CA/
-Allow: /ja/
-Allow: /ko/
-Allow: /de/
-Allow: /de-AT/
-Allow: /de-CH/
-Allow: /it/
-Allow: /tr/
-Allow: /id/
-Allow: /vi/
-Allow: /ar/
-Allow: /ar-AE/
-Allow: /ar-EG/
-Allow: /ru/
-Allow: /pl/
-Allow: /nl/
-Allow: /nl-BE/
-
-# SEO pages
-Allow: /pricing
-Allow: /docs
-Allow: /blog
-Allow: /blog/marketplace
-Allow: /blog/best-ai-apps-android
-Allow: /vs/chatgpt
-Allow: /vs/gemini
-Allow: /vs/nebula
-Allow: /vs/n8n
-Allow: /vs/openclaw
-Allow: /vs/hermes-agent
-Allow: /vs/anything-llm
-Allow: /vs/claude
-Allow: /vs/replika
-Allow: /vs/make
-Allow: /vs/zapier
-Allow: /vs/qordinate
-Allow: /vs/omnara
-Allow: /vs/manus
-Allow: /vs/onspace
-Allow: /vs/perplexity
-Allow: /vs/pi
-Allow: /vs/siri-bixby
-Allow: /vs/google-ai-test-kitchen
-Allow: /ai-agent-for-developers
-Allow: /android-automation-power-user
-Allow: /privacy-first-ai-android
-Allow: /terminal-on-android
-Allow: /ai-marketplace-creators
-Allow: /changelog
-Allow: /terms
-Allow: /privacy
-Allow: /simple
-Allow: /details
-
-# ─── SITEMAPS ──────────────────────────────────────────────────────
-# XML sitemap for search engines
-Sitemap: https://twent.xyz/sitemap.xml
-
-# Markdown sitemap for AI agents (Dualmark)
-# AI agents: fetch https://twent.xyz/sitemap.md for structured site map
-Sitemap: https://twent.xyz/sitemap.md
-
-# LLM consumer guides (Dualmark llms.txt spec)
-Sitemap: https://twent.xyz/llms.txt
-Sitemap: https://twent.xyz/llms-full.txt
-
-# AI-optimized XML sitemap (Dualmark sitemap-llms spec)
-Sitemap: https://twent.xyz/sitemap-llms.xml
+1|# As a condition of accessing this website, you agree to abide by the following
+2|# content signals:
+3|
+4|# (a)  If a Content-Signal = yes, you may collect content for the corresponding
+5|#      use.
+6|# (b)  If a Content-Signal = no, you may not collect content for the
+7|#      corresponding use.
+8|# (c)  If the website operator does not include a Content-Signal for a
+9|#      corresponding use, the website operator neither grants nor restricts
+10|#      permission via Content-Signal with respect to the corresponding use.
+11|
+12|# The content signals and their meanings are:
+13|
+14|# search:   building a search index and providing search results (e.g., returning
+15|#           hyperlinks and short excerpts from your website's contents). Search does not
+16|#           include providing AI-generated search summaries.
+17|# ai-input: inputting content into one or more AI models (e.g., retrieval
+18|#           augmented generation, grounding, or other real-time taking of content for
+19|#           generative AI search answers).
+20|# ai-train: training or fine-tuning AI models.
+21|
+22|# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
+23|# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
+24|# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
+25|
+26|# Cloudflare managed section is auto-injected at deploy time.
+27|# The AI crawler Allow blocks below are the source of truth —
+28|# first matching User-agent block wins per robots.txt spec.
+29|
+30|# Twent.xyz - robots.txt
+31|# Dualmark: AI agents get structured markdown via content negotiation
+32|# AI agents: see llms.txt and llms-full.txt for full content
+33|# Sitemap: https://twent.xyz/sitemap.xml
+34|# AI Sitemap (markdown): https://twent.xyz/sitemap.md
+35|
+36|# ─── AI CRAWLER ALLOWANCE ───────────────────────────────────────────
+37|# All AI crawlers are allowed full access to all pages
+38|# Dualmark content negotiation serves markdown to AI agents automatically
+39|# ───────────────────────────────────────────────────────────────────
+40|
+41|# Anthropic
+42|User-agent: ClaudeBot
+43|Allow: /
+44|
+45|User-agent: anthropic-ai
+46|Allow: /
+47|
+48|User-agent: Claude
+49|Allow: /
+50|
+51|User-agent: claude-bot
+52|Allow: /
+53|
+54|# OpenAI
+55|User-agent: GPTBot
+56|Allow: /
+57|
+58|User-agent: ChatGPT-User
+59|Allow: /
+60|
+61|User-agent: OpenAI
+62|Allow: /
+63|
+64|User-agent: o3-bot
+65|Allow: /
+66|
+67|User-agent: o4-mini
+68|Allow: /
+69|
+70|# Microsoft Bing — CRITICAL: ChatGPT search results run on the Bing index.
+71|# Getting indexed by Bing is how twent.xyz content reaches ChatGPT answers.
+72|User-agent: bingbot
+73|Allow: /
+74|
+75|User-agent: BingPreview
+76|Allow: /
+77|
+78|User-agent: msnbot
+79|Allow: /
+80|
+81|User-agent: adidxbot
+82|Allow: /
+83|
+84|# Google DeepMind / Gemini
+85|User-agent: Google-Extended
+86|Allow: /
+87|
+88|User-agent: Gemini
+89|Allow: /
+90|
+91|User-agent: Google-CloudAI
+92|Allow: /
+93|
+94|User-agent: GoogleOther
+95|Allow: /
+96|
+97|User-agent: GoogleOther-Image
+98|Allow: /
+99|
+100|User-agent: GoogleOther-Video
+101|Allow: /
+102|
+103|# Meta / Facebook
+104|User-agent: Meta-ExternalAgent
+105|Allow: /
+106|
+107|User-agent: FacebookBot
+108|Allow: /
+109|
+110|# Amazon
+111|User-agent: Amazonbot
+112|Allow: /
+113|
+114|# Apple
+115|User-agent: Applebot
+116|Allow: /
+117|
+118|# Common AI crawlers
+119|User-agent: Bytespider
+120|Allow: /
+121|
+122|User-agent: CCBot
+123|Allow: /
+124|
+125|User-agent: CC Intelligence
+126|Allow: /
+127|
+128|User-agent: DataEnrichmentBot
+129|Allow: /
+130|
+131|User-agent: Datario
+132|Allow: /
+133|
+134|User-agent: Diffbot
+135|Allow: /
+136|
+137|User-agent: DuckDuckBot
+138|Allow: /
+139|
+140|User-agent: embedchain
+141|Allow: /
+142|
+143|User-agent: FriendlyCrawler
+144|Allow: /
+145|
+146|User-agent: iasksmartbot
+147|Allow: /
+148|
+149|User-agent: ICC-Crawler
+150|Allow: /
+151|
+152|User-agent: ImagesiftBot
+153|Allow: /
+154|
+155|User-agent: InfoTigerBot
+156|Allow: /
+157|
+158|User-agent: ipfc-bot
+159|Allow: /
+160|
+161|User-agent: Kangaroo Bot
+162|Allow: /
+163|
+164|User-agent: Keen耀
+165|Allow: /
+166|
+167|User-agent: Magpie
+168|Allow: /
+169|
+170|User-agent: Mantra WebSpeed Tester
+171|Allow: /
+172|
+173|User-agent: Mediapartners-Google
+174|Allow: /
+175|
+176|User-agent: Meltwater
+177|Allow: /
+178|
+179|User-agent: Mistral
+180|Allow: /
+181|
+182|User-agent: Mona
+183|Allow: /
+184|
+185|User-agent: MozScan
+186|Allow: /
+187|
+188|User-agent: nu-dev
+189|Allow: /
+190|
+191|User-agent: omgili
+192|Allow: /
+193|
+194|User-agent: omgilibot
+195|Allow: /
+196|
+197|User-agent: PanguBot
+198|Allow: /
+199|
+200|User-agent: PerplexityBot
+201|Allow: /
+202|
+203|User-agent: Petal Bot
+204|Allow: /
+205|
+206|User-agent: PhantomJS
+207|Allow: /
+208|
+209|User-agent: Pinterest
+210|Allow: /
+211|
+212|User-agent: proudspectrebot
+213|Allow: /
+214|
+215|User-agent: RTG-Google-Free
+216|Allow: /
+217|
+218|User-agent: Saleswise
+219|Allow: /
+220|
+221|User-agent: Scrapy
+222|Allow: /
+223|
+224|User-agent: ScribbleReader
+225|Allow: /
+226|
+227|User-agent: SeekWriteAI
+228|Allow: /
+229|
+230|User-agent: SemiProxy
+231|Allow: /
+232|
+233|User-agent: SEOd.ai
+234|Allow: /
+235|
+236|User-agent: SerpAPIClient
+237|Allow: /
+238|
+239|User-agent: Sentify
+240|Allow: /
+241|
+242|User-agent: serpstatbot
+243|Allow: /
+244|
+245|User-agent: ShiftSecurityBot
+246|Allow: /
+247|
+248|User-agent: ShopGPT
+249|Allow: /
+250|
+251|User-agent: Sir-Travelo
+252|Allow: /
+253|
+254|User-agent: Slackbot
+255|Allow: /
+256|
+257|User-agent: SocialSearchBot
+258|Allow: /
+259|
+260|User-agent: Sogou web spider
+261|Allow: /
+262|
+263|User-agent: TelegramBot
+264|Allow: /
+265|
+266|User-agent: TheFindBot
+267|Allow: /
+268|
+269|User-agent: TinTin
+270|Allow: /
+271|
+272|User-agent: ToplistBot
+273|Allow: /
+274|
+275|User-agent: Trendictionbot
+276|Allow: /
+277|
+278|User-agent: TurnitinBot
+279|Allow: /
+280|
+281|User-agent: Twitterbot
+282|Allow: /
+283|
+284|User-agent: UptimeRobot
+285|Allow: /
+286|
+287|User-agent: Waschatabot
+288|Allow: /
+289|
+290|User-agent: WebBot
+291|Allow: /
+292|
+293|User-agent: Xenu Link Sleuth
+294|Allow: /
+295|
+296|User-agent: XING-contenttab-receiver
+297|Allow: /
+298|
+299|User-agent: YaCy
+300|Allow: /
+301|
+302|User-agent: YouCodeBot
+303|Allow: /
+304|
+305|User-agent: ZooBot
+306|Allow: /
+307|
+308|# Additional AI agent and LLM crawlers
+309|User-agent: AI2B-Crawler
+310|Allow: /
+311|
+312|User-agent: AI-Crawler
+313|Allow: /
+314|
+315|User-agent: Aria
+316|Allow: /
+317|
+318|User-agent: Auto-GPT
+319|Allow: /
+320|
+321|User-agent: LangChain
+322|Allow: /
+323|
+324|User-agent: Llama
+325|Allow: /
+326|
+327|User-agent: cohere
+328|Allow: /
+329|
+330|User-agent: MetaAI
+331|Allow: /
+332|
+333|User-agent: Voyager
+334|Allow: /
+335|
+336|User-agent: Windsurf
+337|Allow: /
+338|
+339|User-agent: Cursor
+340|Allow: /
+341|
+342|User-agent: claude-code
+343|Allow: /
+344|
+345|User-agent: opencode
+346|Allow: /
+347|
+348|User-agent: Aider
+349|Allow: /
+350|
+351|User-agent: Augment
+352|Allow: /
+353|
+354|User-agent: devin
+355|Allow: /
+356|
+357|User-agent: SWE-agent
+358|Allow: /
+359|
+360|User-agent: jina
+361|Allow: /
+362|
+363|User-agent: Ai2Dev
+364|Allow: /
+365|
+366|User-agent: AiDevBot
+367|Allow: /
+368|
+369|# ─── DEFAULT CRAWLER (allow all) ───────────────────────────────────
+370|User-agent: *
+371|Allow: /
+372|
+373|# Language subdirectories
+374|Allow: /zh/
+375|Allow: /zh-TW/
+376|Allow: /hi/
+377|Allow: /es/
+378|Allow: /es-419/
+379|Allow: /es-AR/
+380|Allow: /es-CO/
+381|Allow: /pt-BR/
+382|Allow: /pt/
+383|Allow: /fr/
+384|Allow: /fr-CA/
+385|Allow: /ja/
+386|Allow: /ko/
+387|Allow: /de/
+388|Allow: /de-AT/
+389|Allow: /de-CH/
+390|Allow: /it/
+391|Allow: /tr/
+392|Allow: /id/
+393|Allow: /vi/
+394|Allow: /ar/
+395|Allow: /ar-AE/
+396|Allow: /ar-EG/
+397|Allow: /ru/
+398|Allow: /pl/
+399|Allow: /nl/
+400|Allow: /nl-BE/
+401|
+402|# SEO pages
+403|Allow: /pricing
+404|Allow: /docs
+405|Allow: /blog
+406|407|Allow: /blog/best-ai-apps-android
+408|Allow: /vs/chatgpt
+409|Allow: /vs/gemini
+410|Allow: /vs/nebula
+411|Allow: /vs/n8n
+412|Allow: /vs/openclaw
+413|Allow: /vs/hermes-agent
+414|Allow: /vs/anything-llm
+415|Allow: /vs/claude
+416|Allow: /vs/replika
+417|Allow: /vs/make
+418|Allow: /vs/zapier
+419|Allow: /vs/qordinate
+420|Allow: /vs/omnara
+421|Allow: /vs/manus
+422|Allow: /vs/onspace
+423|Allow: /vs/perplexity
+424|Allow: /vs/pi
+425|Allow: /vs/siri-bixby
+426|Allow: /vs/google-ai-test-kitchen
+427|Allow: /ai-agent-for-developers
+428|Allow: /android-automation-power-user
+429|Allow: /privacy-first-ai-android
+430|Allow: /terminal-on-android
+431|432|Allow: /changelog
+433|Allow: /terms
+434|Allow: /privacy
+435|Allow: /simple
+436|Allow: /details
+437|
+438|# ─── SITEMAPS ──────────────────────────────────────────────────────
+439|# XML sitemap for search engines
+440|Sitemap: https://twent.xyz/sitemap.xml
+441|
+442|# Markdown sitemap for AI agents (Dualmark)
+443|# AI agents: fetch https://twent.xyz/sitemap.md for structured site map
+444|Sitemap: https://twent.xyz/sitemap.md
+445|
+446|# LLM consumer guides (Dualmark llms.txt spec)
+447|Sitemap: https://twent.xyz/llms.txt
+448|Sitemap: https://twent.xyz/llms-full.txt
+449|
+450|# AI-optimized XML sitemap (Dualmark sitemap-llms spec)
+451|Sitemap: https://twent.xyz/sitemap-llms.xml
