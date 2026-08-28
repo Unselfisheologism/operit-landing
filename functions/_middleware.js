@@ -273,6 +273,12 @@ const PAGE_META = {
     type: 'article',
     image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
   },
+  '/blog/personal-proactive-android-ai': {
+    title: 'Personal, Proactive, Self-Driving Android AI Assistant and Agent App',
+    description: 'A short, honest take on why most AI on Android still feels like a chatbot — and what Twent is building instead.',
+    type: 'article',
+    image: 'https://twent.xyz/TWENT-OPENGRAPH-IMG.webp',
+  },
   '/success': {
     title: 'Payment Successful | Twent',
     description: 'Your Twent upgrade is confirmed. Enjoy premium features on your Android AI agent.',
@@ -777,6 +783,7 @@ const KNOWN_ROUTES = new Set([
   '/blog/marketplace',
   '/blog/best-ai-apps-android',
   '/blog/os-vs-browser-automation',
+  '/blog/personal-proactive-android-ai',
   // Machine-readable agent resources
   '/llms.txt', '/llms-full.txt', '/sitemap.md', '/sitemap.xml', '/sitemap-llms.xml',
   '/robots.txt', '/humans.txt', '/agent.txt', '/favicon.ico', '/favicon.svg',

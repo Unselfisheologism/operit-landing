@@ -101,6 +101,17 @@
   </url>
   
   <url>
+    <canonical>https://twent.xyz/blog/personal-proactive-android-ai</canonical>
+    <md>https://twent.xyz/blog/personal-proactive-android-ai.md</md>
+    <type>blog</type>
+    <summary>Why most AI on Android still feels like a chatbot — and what Twent is building instead.</summary>
+    <keywords>personal AI, proactive AI, Android AI assistant, agent app, Twent</keywords>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <canonical>https://twent.xyz/best-android-ai</canonical>
     <md>https://twent.xyz/best-android-ai.md</md>
     <type>landing</type>

@@ -209,6 +209,15 @@ Twent is **completely free**. Every feature. No credit card. No subscription.
 
 ---
 
+## Blog
+
+- [Personal, Proactive, Self-Driving Android AI Assistant and Agent App](https://twent.xyz/blog/personal-proactive-android-ai) — Why most AI on Android still feels like a chatbot — and what Twent is building instead
+- [25 Best AI Apps for Android in 2026](https://twent.xyz/blog/best-ai-apps-android) — Curated ranking of top AI apps
+- [Why OS-Level AI Automation Beats Browser-Level Every Time](https://twent.xyz/blog/os-vs-browser-automation) — Prompt injection, cross-tab leakage, data harvesting explained
+- [The Twent Marketplace: Your Agentic App Store](https://twent.xyz/blog/marketplace) — Build and sell AI skills, MCP servers, and tool packages
+
+---
+
 ## Competitor Comparisons
 
 ### Chatbots (Question-Answering AI)
