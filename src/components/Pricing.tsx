@@ -231,7 +231,7 @@ export function Pricing() {
                 </DButton>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openFaq === i ? "max-h-40 pt-3 pb-5" : "max-h-0"
+                    openFaq === i ? "max-h-[1000px] pt-3 pb-5" : "max-h-0"
                   }`}
                 >
                   <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed px-2">
