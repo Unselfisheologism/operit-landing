@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 92">
+  <defs>
+    <linearGradient id="gp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#212121"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="245" height="92" rx="8" fill="url(#gp-bg)"/>
+  <g transform="translate(18, 14)">
+    <path d="M24 19c0-4-3.2-7.2-7.2-7.2S9.6 15 9.6 19s3.2 7.2 7.2 7.2 7.2-3.2 7.2-7.2zm0 12c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M29.5 38.5c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" fill="#FFFFFF"/>
+  </g>
+  <text x="62" y="44" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" letter-spacing="0.5">Get it on</text>
+  <text x="62" y="70" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="bold" letter-spacing="0.5">Google Play</text>
+</svg>

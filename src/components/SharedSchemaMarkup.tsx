@@ -18,7 +18,7 @@ const faqData = [
   {
     question: "Will there be ads?",
     answer:
-      "Eventually, yes — powered by AI ads (koahlabs.com). They'll be non-intrusive and contextually relevant. A future Pro plan ($20) will remove them entirely, along with cosmetic badges, early access to features, and zero marketplace commissions.",
+      "Eventually, yes — powered by AI ads (koahlabs.com). They'll be non-intrusive and contextually relevant. A future Pro plan ($20) will remove them entirely, along with cosmetic badges, early access features, and zero marketplace commissions.",
   },
   {
     question: "What's the marketplace?",
@@ -34,6 +34,11 @@ const faqData = [
     question: "Why not just put it on the Play Store now?",
     answer:
       "Play Store means reviews, fees, and slower iteration. We're moving fast — shipping features weekly, breaking things, fixing them. Website APK distribution lets us do that. Once we're stable and generating revenue, Play Store is the move.",
+  },
+  {
+    question: "Should I download from Play Store or from the APK?",
+    answer:
+      "Download from Play Store. It is much easier to install and setup. The APK is only for the rare cases if you want to get the absolute (updated 1 hour ago) latest version which is actually very unstable and buggy and unpolished. So yeah, avoid APK and go download from Play Store. There is absolutely 0% difference between the two in terms of features they offer. There is no reason to get the APK (it is actually worse), but if you still want it, here it is: https://twent.xyz/apk",
   },
 ];
 
@@ -85,7 +90,7 @@ export function SharedSchemaMarkup() {
           "@type": "ImageObject",
           url: "https://twent.xyz/TWENT-OPENGRAPH-IMG.png",
         },
-        installUrl: "https://twent.xyz/#download",
+        installUrl: "https://play.google.com/store/apps/details?id=com.twent",
         featureList: [
           "AI Agent overlay on any Android app",
           "Ubuntu 24.04 LTS terminal",

@@ -41,6 +41,36 @@ const faqs = [
     q: "What can Twent actually make?",
     a: "Twent can write code, generate websites, create slide decks, make videos and images, build spreadsheets, and automate tasks on your phone.",
   },
+  {
+    q: "Should I download from Play Store or from the APK?",
+    a: (
+      <span>
+        Download from Play Store. It is much easier to install and setup. The APK is only for the rare cases if you want to get the absolute (updated 1 hour ago) latest version which is actually very unstable and buggy and unpolished. So yeah, avoid APK and go download from Play Store. There is absolutely 0% difference between the two in terms of features they offer. There is no reason to get the APK (it is actually worse), but if you still want it, here it is:
+        <br />
+        <br />
+        <a
+          href="/apk"
+          className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-600 transition-colors"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          Download APK
+        </a>
+      </span>
+    ),
+  },
 ];
 
 export function Pricing() {
@@ -75,18 +105,18 @@ export function Pricing() {
           <RoughLine color="orange" className="w-8" />
         </div>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight mb-4 text-center">
-                  Completely free.
-                  <br />
-                  <RoughAnnotation
-                    text={<span className="text-blue-500">All features included.</span>}
-                    type="underline"
-                    color="blue"
-                    strokeWidth={2.5}
-                    padding={4}
-                    show={inView}
-                    delay={200}
-                  />
-                </h2>
+          Completely free.
+          <br />
+          <RoughAnnotation
+            text={<span className="text-blue-500">All features included.</span>}
+            type="underline"
+            color="blue"
+            strokeWidth={2.5}
+            padding={4}
+            show={inView}
+            delay={200}
+          />
+        </h2>
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-8 text-center mx-auto">
           Twent is 100% free with no hidden costs. Every feature is included from day one — no credit card required.
         </p>
