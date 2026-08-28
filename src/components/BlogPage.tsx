@@ -51,27 +51,21 @@ function BlogPageSchemaMarkup() {
         },
         {
           "@type": "ListItem",
-          position: 2,
+          position: 3,
+          name: "Personal, Proactive, Self-Driving Android AI Assistant and Agent App",
+          url: "https://twent.xyz/blog/personal-proactive-android-ai",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
           name: "25 Best AI Apps for Android to Turn Your Phone Into a Supercomputer",
           url: "https://twent.xyz/blog/best-ai-apps-android",
         },
         {
           "@type": "ListItem",
-          position: 3,
-          name: "How to Build a Calorie Tracker with Twent",
-          url: "https://twent.xyz/blog/calorie-tracker",
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "Top 5 Android Automation Scripts",
-          url: "https://twent.xyz/blog/android-automation-scripts",
-        },
-        {
-          "@type": "ListItem",
           position: 5,
-          name: "Local AI Models on Android: A Complete Guide",
-          url: "https://twent.xyz/blog/local-ai-android",
+          name: "Why OS-Level AI Automation Beats Browser-Level Every Time",
+          url: "https://twent.xyz/blog/os-vs-browser-automation",
         },
       ],
     },
@@ -418,6 +412,15 @@ export function BlogPage({ dark }: { dark: boolean }) {
       category: "Roundup",
       featured: false,
       image: "/best-ai-apps-android-hero.png",
+    },
+    {
+      slug: "personal-proactive-android-ai",
+      title: "Personal, Proactive, Self-Driving Android AI Assistant and Agent App",
+      excerpt: "A short, honest take on why most AI on Android still feels like a chatbot — and what Twent is building instead.",
+      date: "Just now",
+      readTime: "2 min read",
+      category: "Product",
+      featured: false,
     }
   ];
 

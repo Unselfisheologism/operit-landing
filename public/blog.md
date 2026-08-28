@@ -36,6 +36,15 @@ A curated ranking of the top AI apps for Android — from chatbots to agentic to
 - Read time: 12 min
 - [Read the full article](https://twent.xyz/blog/best-ai-apps-android)
 
+### Personal, Proactive, Self-Driving Android AI Assistant and Agent App
+
+A short, honest take on why most AI on Android still feels like a chatbot — and what Twent is building instead.
+
+- Published: Just now
+- Category: Product
+- Read time: 2 min
+- [Read the full article](https://twent.xyz/blog/personal-proactive-android-ai)
+
 ## What is Twent?
 
 Twent is a personal agentic AI OS for Android that combines:
