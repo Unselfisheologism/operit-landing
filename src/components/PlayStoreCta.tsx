@@ -8,7 +8,10 @@ interface PlayStoreCtaProps {
 
 /**
  * Renders the Google Play badge — links to the Play Store listing.
- * Small (nav) renders at 66×32; large (hero/final CTA) renders at 88×44.
+ * The badge uses the official GetItOnGooglePlay_Badge_Web_color_English.svg.
+ * SVG scales naturally (preserves its ~3.37:1 aspect ratio); height is
+ * capped at the CSS h- value (h-8 = 32px, h-11 = 44px) which both exceed
+ * the Google Play minimum of 28px.
  */
 export function PlayStoreCta({
   size = "h-11",
@@ -23,14 +26,12 @@ export function PlayStoreCta({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Get it on Google Play"
-      className={`${big ? "d-btn-lg" : "d-btn-sm"} ${className}`}
+      className={`inline-flex items-center justify-center ${className}`}
     >
       <img
         src="/GetItOnGooglePlay_Badge_Web_color_English.svg"
         alt="Get it on Google Play"
         className={big ? "h-11" : "h-8"}
-        width={big ? 88 : 66}
-        height={big ? 44 : 32}
         loading="eager"
       />
     </a>
@@ -53,15 +54,12 @@ export function PlayStoreCtaGroup({
         href={PLAY_STORE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="d-btn-lg"
         aria-label="Get it on Google Play"
       >
         <img
           src="/GetItOnGooglePlay_Badge_Web_color_English.svg"
           alt="Get it on Google Play"
           className="h-8"
-          width={66}
-          height={32}
           loading="eager"
         />
       </a>
