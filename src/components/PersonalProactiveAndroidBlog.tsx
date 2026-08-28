@@ -119,7 +119,7 @@ export function PersonalProactiveAndroidBlog({ dark }: { dark: boolean }) {
             >
               <div data-sketch-card className="relative overflow-hidden">
                 <img
-                  src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dhMdLQ3YNNV5ujt5buQGUA.png"
+                  src="/image.png_202608281938.jpeg"
                   width="1200"
                   height="630"
                   fetchPriority="high"
