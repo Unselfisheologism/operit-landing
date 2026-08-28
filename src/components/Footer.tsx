@@ -216,9 +216,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <img
-                src="/twent-logo-48.webp"
-                srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
-                sizes="48px"
+                src="/twent-logo.png"
                 alt="Twent logo - Personal AI agent for Android"
                 className="w-12 h-12 object-contain"
                 width="48"
@@ -281,9 +279,7 @@ export function Footer() {
         <div className="pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <img
-              src="/twent-logo-48.webp"
-              srcSet="/twent-logo-48.webp 48w, /twent-logo-96.webp 96w"
-              sizes="32px"
+              src="/twent-logo.png"
               alt="Twent logo - Personal AI agent for Android"
               className="w-8 h-8 object-contain"
               loading="eager"

@@ -68,7 +68,7 @@ export function DashboardPage({ dark }: { dark: boolean }) {
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
             <img
-              src="/twent-logo-48.webp"
+              src="/twent-logo.png"
               alt="Twent"
               className="w-8 h-8 object-contain"
               width="32"
