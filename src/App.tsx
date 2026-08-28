@@ -55,6 +55,9 @@ const BestAndroidAiPillar = lazy(() =>
 const OsVsBrowserAutomation = lazy(() =>
   import("./components/OsVsBrowserAutomation").then((m) => ({ default: m.OsVsBrowserAutomation })),
 );
+const PersonalProactiveAndroidBlog = lazy(() =>
+  import("./components/PersonalProactiveAndroidBlog").then((m) => ({ default: m.PersonalProactiveAndroidBlog })),
+);
 const DashboardPage = lazy(() =>
   import("./components/DashboardPage").then((m) => ({ default: m.DashboardPage })),
 );
@@ -104,6 +107,7 @@ const ROUTE_PREFETCHERS: Array<[string, () => Promise<unknown>]> = [
   ["/blog/marketplace", () => import("./components/MarketplaceBlogPost")],
   ["/blog/best-ai-apps-android", () => import("./components/BestAiAppsAndroid")],
   ["/blog/os-vs-browser-automation", () => import("./components/OsVsBrowserAutomation")],
+  ["/blog/personal-proactive-android-ai", () => import("./components/PersonalProactiveAndroidBlog")],
   ["/ai-agent-for-developers", () => import("./components/AiAgentForDevelopers")],
   ["/android-automation-power-user", () => import("./components/AndroidAutomationPowerUser")],
   ["/privacy-first-ai-android", () => import("./components/PrivacyFirstAiAndroid")],
@@ -528,6 +532,16 @@ function AppRoutes() {
         <HreflangTags currentPath={routePath} />
         <MetaUpdater currentPath={routePath} />
         <OsVsBrowserAutomation dark={dark} />
+      </>
+    );
+  }
+
+  if (routePath.startsWith("/blog/personal-proactive-android-ai")) {
+    return (
+      <>
+        <HreflangTags currentPath={routePath} />
+        <MetaUpdater currentPath={routePath} />
+        <PersonalProactiveAndroidBlog dark={dark} />
       </>
     );
   }
