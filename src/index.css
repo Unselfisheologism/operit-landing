@@ -280,10 +280,18 @@ body {
 
 /* Cards marked [data-sketch-card] get a rough outline via JS; suppress
    the CSS border/rounding so only the ink stroke shows. */
-.sketch-card {
-  position: relative;
+.sketch-card,
+[data-sketch-card] {
+  position: relative !important;
   border: none !important;
   border-radius: 0 !important;
+  box-sizing: border-box !important;
+  padding: inherit !important;
+}
+
+[data-sketch-card] > * {
+  position: relative;
+  z-index: 1;
 }
 
 .rough-card-overlay {

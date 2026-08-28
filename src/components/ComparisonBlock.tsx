@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useInView } from "../hooks/useInView";
-import { DCard } from "./ui/drawably";
 import { RoughAnnotation, RoughCheck, RoughEllipse, RoughLine } from "./ui/rough";
 
 // Verified competitor data — "vs" keywords with SEO metrics
@@ -226,6 +225,18 @@ interface ComparisonCardProps {
   index: number;
 }
 
+function RoughVSCard({ index, children }: { index: number; children: React.ReactNode }) {
+  return (
+    <div
+      data-sketch-card
+      className="mb-2 bg-white dark:bg-zinc-950"
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function ComparisonCard({ comp, index }: ComparisonCardProps) {
   const [ref, inView] = useInView();
   const [expanded, setExpanded] = useState(false);
@@ -236,10 +247,9 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
       className={`transition-all duration-500 ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
       id={comp.id}
     >
-      <DCard color="grey" pad="none" className="mb-2">
+      <RoughVSCard index={index}>
       {/* Header — clickable */}
       <button
         onClick={() => setExpanded(!expanded)}
@@ -349,7 +359,7 @@ function ComparisonCard({ comp, index }: ComparisonCardProps) {
           </div>
         </div>
       </div>
-      </DCard>
+      </RoughVSCard>
     </div>
   );
 }

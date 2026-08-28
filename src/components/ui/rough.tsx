@@ -352,7 +352,7 @@ export function SketchCardProvider() {
         "#71717a";
       entry.path.setAttribute(
         "d",
-        roughRoundedRect(2, 2, Math.max(w - 4, 8), Math.max(h - 4, 8), 12, {
+        roughRoundedRect(6, 6, Math.max(w - 12, 10), Math.max(h - 12, 10), 12, {
           seed,
           roughness: 1.15,
         }),

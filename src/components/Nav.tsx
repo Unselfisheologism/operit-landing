@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { PlayStoreCta } from "./PlayStoreCta";
 import { LoginModal } from "./LoginModal";
 import { useAuth } from "../lib/AuthContext";
@@ -112,13 +111,6 @@ function MobileOverlay({
                 {link.label}
               </a>
             ))}
-          </div>
-
-          <DDivider className="mb-6" />
-
-          {/* Language Switcher - Mobile */}
-          <div className="mb-6">
-            <LanguageSwitcher />
           </div>
 
           <DDivider className="mb-6" />
