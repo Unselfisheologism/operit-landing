@@ -148,7 +148,7 @@ function FeaturedPostCard({ post, visible }: { post: BlogPost; visible: boolean 
     <a
       href={`/blog/${post.slug}`}
       data-sketch-card
-      className={`group block relative overflow-hidden bg-white dark:bg-zinc-950 p-0 md:p-0 transition-all duration-500 ${
+      className={`group block relative bg-white dark:bg-zinc-950 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{ transitionDelay: visible ? "0.2s" : "0s" }}

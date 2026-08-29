@@ -330,14 +330,11 @@ export function SketchCardProvider() {
         el.appendChild(svg);
         let ro: ResizeObserver | null = null;
         if (typeof ResizeObserver !== "undefined") {
-          // ResizeObserver fires after layout — reading contentRect here never
-          // forces a synchronous reflow (unlike the old offsetWidth reads).
-          ro = new ResizeObserver((entries) => {
+          // Use the element's full rendered size including padding/border;
+          // contentRect alone excludes padding and causes undersized outlines.
+          ro = new ResizeObserver(() => {
             if (!mounted || !el.isConnected) return;
-            const cr = entries[entries.length - 1]?.contentRect;
-            if (cr) {
-              draw(el, Math.max(cr.width, 24), Math.max(cr.height, 24));
-            }
+            draw(el, Math.max(el.offsetWidth, 24), Math.max(el.offsetHeight, 24));
           });
           ro.observe(el);
         }
@@ -352,7 +349,7 @@ export function SketchCardProvider() {
         "#71717a";
       entry.path.setAttribute(
         "d",
-        roughRoundedRect(6, 6, Math.max(w - 12, 10), Math.max(h - 12, 10), 12, {
+        roughRoundedRect(8, 8, Math.max(w - 16, 10), Math.max(h - 16, 10), 12, {
           seed,
           roughness: 1.15,
         }),

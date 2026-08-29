@@ -619,7 +619,7 @@ export function AiAgentForDevelopers({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div data-sketch-card className="relative overflow-hidden">
+            <div data-sketch-card className="relative">
               <img
                 src="/developer-hero.webp"
                 width="1200"

@@ -485,7 +485,7 @@ export function AiMarketplaceCreators({
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <div data-sketch-card className="relative overflow-hidden">
+            <div data-sketch-card className="relative">
               <img
                 src="/marketplace-creators-hero.webp"
                 width="1200"

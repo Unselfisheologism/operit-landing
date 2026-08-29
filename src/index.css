@@ -282,11 +282,9 @@ body {
    the CSS border/rounding so only the ink stroke shows. */
 .sketch-card,
 [data-sketch-card] {
-  position: relative !important;
   border: none !important;
   border-radius: 0 !important;
   box-sizing: border-box !important;
-  padding: inherit !important;
 }
 
 [data-sketch-card] > * {

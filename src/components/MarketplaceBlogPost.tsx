@@ -239,7 +239,7 @@ export function MarketplaceBlogPost({ dark }: { dark: boolean }) {
                 heroInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <div data-sketch-card className="relative overflow-hidden">
+              <div data-sketch-card className="relative">
                 <img
                   src="/marketplace-hero.webp"
                   width="1200"
