@@ -596,47 +596,6 @@ export function ImmersiveLandingPage({
         {/* StackingCards scrollytelling */}
         <StackingCardsDemo />
 
-        {/* Social Proof */}
-        <section className="py-20 md:py-28 px-6 bg-zinc-50 dark:bg-zinc-900/50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl text-zinc-900 dark:text-zinc-100 tracking-tight mb-12">
-              What people are saying
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  quote:
-                    "Finally, Claude Code on my phone. This changes everything for quick fixes.",
-                  author: "Developer",
-                },
-                {
-                  quote:
-                    "The UI automation is insane. My phone does things for me now.",
-                  author: "Power User",
-                },
-                {
-                  quote:
-                    "Privacy-first AI that actually works. No data leaves my device.",
-                  author: "Privacy Advocate",
-                },
-              ].map((testimonial, i) => (
-                <div
-                  key={i}
-                  data-sketch-card className="p-6 bg-white dark:bg-zinc-900"
-                >
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4 italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <p className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
-                    — {testimonial.author}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Pricing & FAQ */}
         <Pricing />
 
