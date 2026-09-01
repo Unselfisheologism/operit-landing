@@ -95,17 +95,13 @@ console.log('\n2. robots.txt, sitemap.xml, llms.txt, JSON endpoints (200 on prod
   ok('robots.txt lists sitemap', prodRobots.body.includes('Sitemap:'));
 }
 
-console.log('\n3. Search Console + Bing verification + sitemaps submitted');
+console.log('\n3. Sitemaps + verification (GSC/Bing via other means)');
 {
-  const r = await fetchPath('/');
-  // Verification meta (may be commented placeholders — warn not fail)
-  const hasGoogleMeta = r.body.includes('google-site-verification');
-  const hasBingMeta = r.body.includes('msvalidate.01');
-  warn('google-site-verification meta present (or placeholder)', hasGoogleMeta, 'add <meta name="google-site-verification">');
-  warn('Bing msvalidate.01 meta present (or placeholder)', hasBingMeta, 'add <meta name="msvalidate.01">');
-  // File-based verification: the hex file should return 200
+  // Verification already done via other means (e.g. DNS) — no meta placeholders required.
+  // Keep sitemap checks only; verification file if present is informational.
   const vFile = await fetchPath('/7e3d406144954cdb80a244066e105dda.txt');
-  ok('verification file /7e3d406...txt returns 200', vFile.status === 200);
+  if (vFile.status === 200) console.log('  ℹ️  verification file /7e3d406...txt present (200) — informational');
+  else console.log('  ℹ️  verification file not present — ok (verified via other means)');
   // sitemap.xml should be valid XML and contain urls
   const sm = await fetchPath('/sitemap.xml');
   ok('sitemap.xml is XML with <url> entries', sm.body.includes('<url>') && sm.body.includes('<loc>'));
@@ -142,5 +138,5 @@ console.log('\n4. Analytics beacons + alert webhook');
 }
 
 console.log('\n' + (failures===0 ? '✨ All critical checks passed' : `💥 ${failures} critical failure(s)`) + (warnings ? `, ${warnings} warning(s)` : '') + '\n');
-if (failures) console.log('Fix failures before launch. Warnings are placeholders to fill (verification tokens).');
+if (failures) console.log('Fix failures before launch.');
 process.exit(failures===0 ? 0 : 1);
