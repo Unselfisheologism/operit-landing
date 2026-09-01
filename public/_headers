@@ -125,10 +125,12 @@
 # ═══════════════════════════════════════════════════════
 
 /TWENT-OPENGRAPH-IMG.webp
-  Content-Type: image/png
+  Content-Type: image/webp
   Cache-Control: public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; img-src 'self' data: https://twent.xyz; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
 
 /*.png
   Content-Type: image/png

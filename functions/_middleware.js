@@ -788,6 +788,7 @@ const KNOWN_ROUTES = new Set([
   '/llms.txt', '/llms-full.txt', '/sitemap.md', '/sitemap.xml', '/sitemap-llms.xml',
   '/robots.txt', '/humans.txt', '/agent.txt', '/favicon.ico', '/favicon.svg',
   '/openapi.json', '/api/openapi.json', '/api/openapi.yaml',
+  '/api/site/status', '/api/download/apk/latest',
   '/404.html',
 ]);
 const VS_SLUGS = [
@@ -871,10 +872,72 @@ The path **${pathname}** does not exist on twent.xyz.
   });
 }
 
+// ─── Staging host detection → noindex ─────────────────────────────────────────
+// Any hostname that is NOT the canonical production host gets X-Robots-Tag
+// noindex and a restrictive robots.txt so staging/preview deploys never leak
+// into the index while production stays index,follow.
+const PROD_HOST = 'twent.xyz';
+function isStagingHost(host) {
+  const h = (host || '').toLowerCase();
+  if (!h) return false;
+  if (h === PROD_HOST || h === `www.${PROD_HOST}`) return false;
+  // Cloudflare Pages preview / staging subdomains, localhost, etc.
+  return h.includes('staging') || h.includes('preview') || h.includes('pages.dev') || h.includes('localhost') || h.includes('127.0.0.1') || h !== PROD_HOST;
+}
+
+// ─── JSON endpoint payloads (must return 200 on production) ────────────────
+function siteStatusPayload() {
+  return {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    site: 'https://twent.xyz',
+    resources: {
+      llmsTxt: 'https://twent.xyz/llms.txt',
+      llmsFullTxt: 'https://twent.xyz/llms-full.txt',
+      openapiSpec: 'https://twent.xyz/openapi.json',
+      markdownSitemap: 'https://twent.xyz/sitemap.md',
+      sitemapXml: 'https://twent.xyz/sitemap.xml',
+    },
+  };
+}
+function apkMetadataPayload() {
+  return {
+    version: '1.0.0',
+    minAndroid: 'Android 8.0 (API 26)',
+    architectures: ['arm64-v8a'],
+    downloadUrl: 'https://twent.xyz/apk',
+    sizeBytes: null,
+    sha256: null,
+  };
+}
+
 // ─── Main Handler ────────────────────────────────────────────────────────────
 export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
+  const host = request.headers.get('host') || url.hostname || '';
+  const staging = isStagingHost(host);
+
+  // Staging hosts: override robots.txt to deny all + inject noindex via headers
+  // (actual header injection happens per-response below via maybeAddStagingHeaders)
+  if (staging && url.pathname === '/robots.txt') {
+    return new Response('User-agent: *\nDisallow: /\n', {
+      status: 200,
+      headers: {
+        'Content-Type': 'text/plain; charset=utf-8',
+        'X-Robots-Tag': 'noindex, nofollow, noarchive',
+        'Cache-Control': 'public, max-age=300',
+        'X-Content-Type-Options': 'nosniff',
+      },
+    });
+  }
+
+  function maybeAddStagingHeaders(headers) {
+    if (!staging) return headers;
+    const h = new Headers(headers);
+    h.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
+    return h;
+  }
 
   // Only handle GET and HEAD
   if (!['GET', 'HEAD'].includes(request.method)) {
@@ -883,6 +946,30 @@ export async function onRequest(context) {
 
   const pathname = url.pathname;
   const ext = pathname.includes('.') ? '.' + pathname.split('.').pop().split('?')[0].toLowerCase() : '';
+
+  // ─── JSON health endpoints — must return 200 on production ───
+  if (pathname === '/api/site/status') {
+    const body = JSON.stringify(siteStatusPayload());
+    const headers = maybeAddStagingHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'public, max-age=60, stale-while-revalidate=600',
+      'Access-Control-Allow-Origin': '*',
+      'X-Content-Type-Options': 'nosniff',
+    });
+    if (request.method === 'HEAD') return new Response(null, { status: 200, headers });
+    return new Response(body, { status: 200, headers });
+  }
+  if (pathname === '/api/download/apk/latest') {
+    const body = JSON.stringify(apkMetadataPayload());
+    const headers = maybeAddStagingHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
+      'Access-Control-Allow-Origin': '*',
+      'X-Content-Type-Options': 'nosniff',
+    });
+    if (request.method === 'HEAD') return new Response(null, { status: 200, headers });
+    return new Response(body, { status: 200, headers });
+  }
 
   if (SKIP_EXTENSIONS.includes(ext) || SKIP_PREFIXES.some((p) => pathname.startsWith(p))) {
     // Mirror: /api/openapi.json serves the same spec as /openapi.json
@@ -1020,6 +1107,7 @@ export async function onRequest(context) {
         'X-Generator': 'Twent-Dualmark/1.0',
         'Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
         'Link': `<${getMarkdownTwin(pathname)}>; rel="alternate"; type="text/markdown"; title="AI-readable markdown twin"`,
+        ...(staging ? { 'X-Robots-Tag': 'noindex, nofollow, noarchive' } : {}),
       };
 
       if (request.method === 'HEAD') {
@@ -1165,6 +1253,7 @@ export async function onRequest(context) {
   newHeaders.set('X-AEO-Version', '1.0');
   newHeaders.set('X-Generator', 'Twent-Dualmark/1.0');
   newHeaders.set('Content-Type', 'text/html; charset=utf-8');
+  if (staging) newHeaders.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
 
   return new Response(htmlText, {
     status: htmlResponse.status,

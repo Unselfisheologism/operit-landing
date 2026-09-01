@@ -12,6 +12,9 @@
     "dualmark:verify": "bunx @dualmark/cli verify https://twent.xyz --json || bunx @dualmark/cli verify https://twent.xyz",
     "dualmark:verify:all": "bunx @dualmark/cli verify https://twent.xyz && bunx @dualmark/cli verify https://twent.xyz/pricing && bunx @dualmark/cli verify https://twent.xyz/docs && bunx @dualmark/cli verify https://twent.xyz/ai-agent-for-developers",
     "build:full": "npm run dualmark:generate && npm run build && (npm run dualmark:verify || echo '[warn] dualmark verify failed against live site - continuing deploy', false)",
+    "prelaunch:verify": "node scripts/verify-prelaunch.js",
+    "prelaunch:verify:live": "node scripts/verify-prelaunch.js https://twent.xyz",
+    "prelaunch:webhook": "node scripts/send-webhook-test.js",
     "indexnow": "node scripts/indexnow-ping.js"
   },
   "dependencies": {
