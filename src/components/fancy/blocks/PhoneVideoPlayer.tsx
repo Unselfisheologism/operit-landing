@@ -119,38 +119,39 @@ export default function PhoneVideoPlayer({
   const player = (isExpanded: boolean) => (
     <div
       className={
-        "w-full h-full flex flex-col bg-black overflow-hidden relative " +
+        // Box itself is exactly 9:16 (height-driven, width from aspect) so a
+        // 9:16 video fills it with no side bars and no cropping. Progress +
+        // caption are absolute overlays so they never change the box shape.
+        "relative h-full max-h-full aspect-[9/16] w-auto max-w-full mx-auto bg-black overflow-hidden " +
         (isExpanded ? "rounded-2xl shadow-2xl" : "rounded-xl")
       }
     >
-      {/* thin progress bar */}
-      <div className="h-1 w-full bg-white/20">
+      <video
+        key={videos[index].src}
+        ref={isExpanded ? restorePosition : videoRef}
+        src={videos[index].src}
+        autoPlay={!isExpanded}
+        muted
+        loop={false}
+        playsInline
+        onLoadedMetadata={applyRate}
+        onPlay={applyRate}
+        onEnded={onEnded}
+        onTimeUpdate={onTimeUpdate}
+        onClick={isExpanded ? undefined : openPopup}
+        className={
+          "absolute inset-0 w-full h-full object-contain bg-black " +
+          (isExpanded ? "" : "cursor-zoom-in")
+        }
+      />
+
+      {/* thin progress bar — overlay, doesn't affect layout */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-white/20 z-10">
         <div className="h-full" style={{ width: `${progress}%`, backgroundColor: accentColor }} />
       </div>
 
-      {/* video area — fills its box so a 9:16 video shows no side bars */}
-      <div className="flex-1 min-h-0 bg-black flex items-center justify-center overflow-hidden">
-        <video
-          key={videos[index].src}
-          ref={isExpanded ? restorePosition : videoRef}
-          src={videos[index].src}
-          autoPlay={!isExpanded}
-          muted
-          loop={false}
-          playsInline
-          onLoadedMetadata={applyRate}
-          onPlay={applyRate}
-          onEnded={onEnded}
-          onTimeUpdate={onTimeUpdate}
-          onClick={isExpanded ? undefined : openPopup}
-          className={
-            "w-full h-full object-cover " + (isExpanded ? "" : "cursor-zoom-in")
-          }
-        />
-      </div>
-
-      {/* description + controls */}
-      <div className={"bg-black/90 text-white text-xs px-3 py-2 " + (isExpanded ? "text-sm px-4 py-3" : "")}>
+      {/* description + controls — bottom overlay, doesn't affect layout */}
+      <div className={"absolute bottom-0 left-0 right-0 z-10 bg-gradient-to-t from-black/95 via-black/80 to-transparent text-white text-xs px-3 pt-6 pb-2 " + (isExpanded ? "text-sm px-4 pb-3" : "")}>
         <p className="mb-1.5 leading-snug">{videos[index].description}</p>
         <div className="flex items-center gap-2">
           {videos.length > 1 && (
@@ -217,7 +218,7 @@ export default function PhoneVideoPlayer({
             aria-modal="true"
           >
             <div
-              className="w-full max-w-[min(92vw,540px)] h-[calc(100dvh-1.5rem)] sm:h-[calc(100dvh-4rem)]"
+              className="w-full max-w-[min(92vw,540px)] h-[calc(100dvh-1.5rem)] sm:h-[calc(100dvh-4rem)] flex justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               {player(true)}
