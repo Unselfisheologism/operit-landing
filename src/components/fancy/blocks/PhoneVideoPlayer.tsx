@@ -128,23 +128,26 @@ export default function PhoneVideoPlayer({
         <div className="h-full" style={{ width: `${progress}%`, backgroundColor: accentColor }} />
       </div>
 
-      <video
-        key={videos[index].src}
-        ref={isExpanded ? restorePosition : videoRef}
-        src={videos[index].src}
-        autoPlay={!isExpanded}
-        muted
-        loop={false}
-        playsInline
-        onLoadedMetadata={applyRate}
-        onPlay={applyRate}
-        onEnded={onEnded}
-        onTimeUpdate={onTimeUpdate}
-        onClick={isExpanded ? undefined : openPopup}
-        className={
-          "flex-1 min-h-0 object-contain " + (isExpanded ? "" : "cursor-zoom-in")
-        }
-      />
+      {/* video area — fills its box so a 9:16 video shows no side bars */}
+      <div className="flex-1 min-h-0 bg-black flex items-center justify-center overflow-hidden">
+        <video
+          key={videos[index].src}
+          ref={isExpanded ? restorePosition : videoRef}
+          src={videos[index].src}
+          autoPlay={!isExpanded}
+          muted
+          loop={false}
+          playsInline
+          onLoadedMetadata={applyRate}
+          onPlay={applyRate}
+          onEnded={onEnded}
+          onTimeUpdate={onTimeUpdate}
+          onClick={isExpanded ? undefined : openPopup}
+          className={
+            "w-full h-full object-cover " + (isExpanded ? "" : "cursor-zoom-in")
+          }
+        />
+      </div>
 
       {/* description + controls */}
       <div className={"bg-black/90 text-white text-xs px-3 py-2 " + (isExpanded ? "text-sm px-4 py-3" : "")}>
