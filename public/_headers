@@ -248,6 +248,16 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
 
+# ─── ANDROID ASSET LINKS (Zero-Tap Sign-In / WebAuthn RP verification) ───────
+# Must serve with no redirects; Google fetches it to bind restore keys to the app.
+
+/.well-known/assetlinks.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+  Access-Control-Allow-Origin: *
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+
 /api/openapi.json
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
