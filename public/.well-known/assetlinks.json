@@ -4,7 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.twent",
-      "sha256_cert_fingerprints": ["PASTE_APP_SIGNING_SHA256_HERE"]
+      "sha256_cert_fingerprints": ["8F:FD:DF:75:B1:B1:38:EA:97:E3:52:A3:AB:AC:05:FA:BE:2A:F4:50:37:15:C1:BB:C4:D7:3A:7F:74:5C:1F:91"]
     }
   }
 ]
