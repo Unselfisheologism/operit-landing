@@ -524,7 +524,7 @@ export function ImmersiveLandingPage({
                 }`}
               >
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-blue-500 leading-[1.1] tracking-tighter text-left">
-                  The AI app for what's next
+                  AI for Android that can do ANYTHING
                 </h1>
               </div>
 
